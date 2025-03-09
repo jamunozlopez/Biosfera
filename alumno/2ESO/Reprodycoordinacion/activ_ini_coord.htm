@@ -391,7 +391,7 @@ function isRightAns(nAns,risp)
 
 function DoneBefore()
 {
-  window.alert("¡Esta pregunda ya fué respondida¡");
+  window.alert("Â¡Esta pregunda ya fuÃ© respondidaÂ¡");
 }
 
 
@@ -586,7 +586,7 @@ function PrintQuizResults(doc)
  doc.writeln("<TR><TD bgcolor='#000000'><TABLE cellpadding=3 border=0 cellspacing=1><TR><TD bgcolor=white colspan=2>");
  doc.writeln("<TABLE cellpadding=5 border=0 width=100%><TR><TD><FONT color=000000 face=arial size=4>"+quizTitle+"</TD>");
  doc.writeln("</TR></TABLE></TD></TR>");
- doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;NÚmero  de preguntas &#160;&#160;</TD>");
+ doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;NÃšmero  de preguntas &#160;&#160;</TD>");
  doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;"+(questions-invisibleQuests)+"&#160;&#160;</TD></TR>");
  if (identityName!="") {
    doc.writeln("<TR><TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;Nombre del alumno &#160;&#160;</TD>");
@@ -613,7 +613,7 @@ function PrintQuizResults(doc)
  doc.writeln("<TR><TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;Fecha &#160;&#160;</TD>");
  doc.writeln("    <TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;"+DataToStringa()+"&#160;&#160;</TD></TR>");
 
- doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;PUNTUACIÓN&#160;&#160;</TD>");
+ doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;PUNTUACIÃ“N&#160;&#160;</TD>");
  if (computeMarkErr==0) {
    doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;<FONT SIZE=4 FACE='Arial' class='table1'>"+voto+"</FONT>/"+maxvoto+"&#160;&#160;</TD></TR>");
  }
@@ -1016,11 +1016,11 @@ function PrintReport(documento)
     else if (valid[i]==5) {
       documento.write("puntajes "+nScore[i]);
       if (groups[i]==0)
-                documento.writeln(" (PUNTUACIÓN "+maxScore[i]+")<BR>");
+                documento.writeln(" (PUNTUACIÃ“N "+maxScore[i]+")<BR>");
       else if (groups[i]==1)
                 documento.writeln("<BR>Nota incluye la pregunta anterior<BR>");
       else if (groups[i]==2)
-                documento.writeln("<BR>PUNTUACIÓN (Calcula desde la suma del puntaje de la siguiente pregunta): "+maxScore[i]+"<BR>");
+                documento.writeln("<BR>PUNTUACIÃ“N (Calcula desde la suma del puntaje de la siguiente pregunta): "+maxScore[i]+"<BR>");
     }
     documento.writeln("</I>");
 
@@ -1425,7 +1425,7 @@ function Timer()
    SetClock(getTimeString(delta));
 
   if ((delta<=0)&&(end_test==0)) {
-   window.alert("Se excedió en el tiempo ¡¡");
+   window.alert("Se excediÃ³ en el tiempo Â¡Â¡");
    end_test=1;
    EndQuiz();
  }
@@ -1507,7 +1507,7 @@ function getRightAnswer(n,m,explan)
      msg+=explan[i] + "<BR>";
    }
  }
- return getHTMLResultBox(okIcon,"Bien ¡ Respuesta correcta","#000080",msg,m);
+ return getHTMLResultBox(okIcon,"Bien Â¡ Respuesta correcta","#000080",msg,m);
 }
 
 function getWrongAnswer(n,m,explan)
@@ -1539,7 +1539,7 @@ function getQuestionScore(n,m)
 
  title = "Nota " + nScore[n];
   if (groups[n]==0)
-    title += " / PUNTUACIÓN " + maxScore[n];
+    title += " / PUNTUACIÃ“N " + maxScore[n];
  
  if (getGuessAns(n)<getNumAns(n)) 
    msg = "La respuesta correcta es " + getListOfRightAns(n);
@@ -1570,7 +1570,7 @@ function PrintOpenAnswer(n) {
 
     if (end_test==1) {
     window.status = "";
-    window.alert("Ud. Contestó todas las preguntas");
+    window.alert("Ud. ContestÃ³ todas las preguntas");
     EndQuiz();
   }
   return end_test;
@@ -1606,7 +1606,7 @@ function PrintBooleanAnswer(n,m)
  
   if (end_test==1) {
    window.status = "";
-   window.alert("Ud. Contestó todas las preguntas");
+   window.alert("Ud. ContestÃ³ todas las preguntas");
    EndQuiz();
  } 
  
@@ -1651,7 +1651,7 @@ function PrintAnswer(n,m)
  
   if (end_test==1) {
    window.status = "";
-   window.alert("Ud. Contestó todas las preguntas");
+   window.alert("Ud. ContestÃ³ todas las preguntas");
    EndQuiz();
  } 
  return end_test;
@@ -1686,7 +1686,7 @@ function PrintQuestionScore(n,m)
 
   if (end_test==1) {
    window.status = "";
-   window.alert("Ud. Contestó todas las preguntas");
+   window.alert("Ud. ContestÃ³ todas las preguntas");
    EndQuiz();
  }
  return end_test;
@@ -1710,10 +1710,10 @@ function PrintWrongKeyword()
  frames.quiz_main.document.open();
  PrintOpenHTML(frames.quiz_main.document,"",1);
  frames.quiz_main.document.writeln ("<body BGCOLOR='"+bkCol1+"'>");
- frames.quiz_main.document.writeln("<CENTER><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>Cuidado¡¡</FONT><BR>");
+ frames.quiz_main.document.writeln("<CENTER><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>CuidadoÂ¡Â¡</FONT><BR>");
  frames.quiz_main.document.writeln ("<FONT SIZE=+2>Clave incorrecta</FONT><BR>");
  frames.quiz_main.document.writeln ("No es posible continuar con el test<BR>");
- frames.quiz_main.document.writeln ("Para mayor información, contactese con el autor del quiz<BR>");
+ frames.quiz_main.document.writeln ("Para mayor informaciÃ³n, contactese con el autor del quiz<BR>");
  frames.quiz_main.document.writeln("<P><INPUT TYPE='BUTTON' VALUE='SALIR' OnClick='top.close()'>");
  frames.quiz_main.document.writeln("</CENTER>");
  frames.quiz_main.document.writeln ("</body></html>");
@@ -1728,10 +1728,10 @@ function PrintNoReload()
  frames.quiz_main.document.open();
  PrintOpenHTML(frames.quiz_main.document,"",1);
  frames.quiz_main.document.writeln ("<body BGCOLOR='"+bkCol1+"'>");
- frames.quiz_main.document.writeln("<CENTER><BR><BR><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>Cuidado¡¡</FONT><BR>");
+ frames.quiz_main.document.writeln("<CENTER><BR><BR><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>CuidadoÂ¡Â¡</FONT><BR>");
  frames.quiz_main.document.writeln ("<FONT SIZE=+2>Reinicio del quiz no disponible</FONT><BR>");
  frames.quiz_main.document.writeln ("No se puede iniciar el test<BR>");
- frames.quiz_main.document.writeln ("Para mayor información, contactese con el autor del quiz<BR>");
+ frames.quiz_main.document.writeln ("Para mayor informaciÃ³n, contactese con el autor del quiz<BR>");
  frames.quiz_main.document.writeln("<P><INPUT TYPE='BUTTON' VALUE='SALIR' OnClick='top.close()'>");
  frames.quiz_main.document.writeln("</CENTER>");
  frames.quiz_main.document.writeln ("</body></html>");
@@ -1862,7 +1862,7 @@ function RepeatQuiz() {
 
 function AskPrintQuiz() {
  var i;
- if (window.confirm("¿Imprimir el test ?")) {
+ if (window.confirm("Â¿Imprimir el test ?")) {
    if (questSlide==0) {
      if (confirmEachQst==0) {
        frames.quiz_main.document.all.verifyButtonId.className="okButtonHidden";
@@ -1990,12 +1990,12 @@ function init_valid()
  window.status='';
 }
 function initShortQuestion() {
- qstHead[0]="¿Serías capaz de señalar entre las siguientes características aquellas que son p...";
- qstHead[1]="Entre todas esas características habrás identificado las tres funciones vitales ...";
- qstHead[2]="Estas cuatro funciones, junto con la composición química, nos permiten identific...";
- qstHead[3]="¿Cuál es la función diferente?";
- qstHead[4]="¿Cuál es su significado?";
- qstHead[5]="¿Cuántos tipos de reproducción conoces?";
+ qstHead[0]="Â¿SerÃ­as capaz de seÃ±alar entre las siguientes caracterÃ­sticas aquellas que son p...";
+ qstHead[1]="Entre todas esas caracterÃ­sticas habrÃ¡s identificado las tres funciones vitales ...";
+ qstHead[2]="Estas cuatro funciones, junto con la composiciÃ³n quÃ­mica, nos permiten identific...";
+ qstHead[3]="Â¿CuÃ¡l es la funciÃ³n diferente?";
+ qstHead[4]="Â¿CuÃ¡l es su significado?";
+ qstHead[5]="Â¿CuÃ¡ntos tipos de reproducciÃ³n conoces?";
 }
 
 

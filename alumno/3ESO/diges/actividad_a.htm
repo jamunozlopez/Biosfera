@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD><TITLE>¿Qué ocurre en cada parte del tubo digestivo?</TITLE>
+<HTML><HEAD><TITLE>Â¿QuÃ© ocurre en cada parte del tubo digestivo?</TITLE>
 <META content="text/html; charset=windows-1252" http-equiv=Content-Type><!--This file created 10:45  08/09/02 by Claris Home Page version 3.0-->
 <META content="Microsoft FrontPage 5.0" name=GENERATOR><X-CLARIS-WINDOW 
 RIGHT="782" LEFT="0" BOTTOM="435" TOP="0"><X-CLARIS-TAGVIEW MODE="minimal">
@@ -37,20 +37,20 @@ RIGHT="782" LEFT="0" BOTTOM="435" TOP="0"><X-CLARIS-TAGVIEW MODE="minimal">
 <BGSOUND id=fondSon>
 <SCRIPT><!--
 
-//Régine B-D ; 30/08/02 
+//RÃ©gine B-D ; 30/08/02 
 //http://perso.wanadoo.fr/jeux.lulu/
 //regine.bd@wanadoo.fr
-//Tous droits réservés
+//Tous droits rÃ©servÃ©s
 
 
 var nbCartes=12;
 //test=0 joueur a la main; =1 non
 var test=1;
-//etat=0 pas de carte reournée; =1 1 carte ; =2 2 cartes
+//etat=0 pas de carte reournÃ©e; =1 1 carte ; =2 2 cartes
 var etat=0;
-//numero des cartes sélectionnées
+//numero des cartes sÃ©lectionnÃ©es
 var retournees=new Array (-1,-1);
-//numero des boutons sélectionnés
+//numero des boutons sÃ©lectionnÃ©s
 var selectiones=new Array (-1,-1);
 var cartes = new Array(nbCartes);
 var lesImages = new Array(nbCartes/2);
@@ -94,7 +94,7 @@ function depart() {
 	test=0;
 	etat=0;
 	bons=0;
-	document.Formu.elements["nbEssais"].value="Número de intentos : 0";
+	document.Formu.elements["nbEssais"].value="NÃºmero de intentos : 0";
 	essais=0;
 }
 
@@ -144,7 +144,7 @@ function choix(x) {
 			boutonMontre(x);
 			if (etat==1) {			
 				essais+=1;
-				document.Formu.elements["nbEssais"].value="Número de intentos : "+essais;
+				document.Formu.elements["nbEssais"].value="NÃºmero de intentos : "+essais;
 			}
 			if (retournees[0]==retournees[1]) {
 				test=1;
@@ -181,7 +181,7 @@ function choix(x) {
 
 function suite() {
 		nbFois+=1;
-		document.Formu.Message.value="   ¡ HAS GANADO !";
+		document.Formu.Message.value="   Â¡ HAS GANADO !";
 		boutonDisparait(selectiones[0]);
 		boutonDisparait(selectiones[1]);
 }
@@ -202,7 +202,7 @@ function melange() {
 </HEAD>
 <BODY bgColor=#BBDDBB onload=depart0();>
 <CENTER>
-<p class="txt" style="text-align: center"><FONT size=+1>¿Qué ocurre en cada parte del tubo digestivo?</FONT><BR>Abre las ventanas y relaciona cada parte del aparato digestivo con el proceso que ocurre en ella:
+<p class="txt" style="text-align: center"><FONT size=+1>Â¿QuÃ© ocurre en cada parte del tubo digestivo?</FONT><BR>Abre las ventanas y relaciona cada parte del aparato digestivo con el proceso que ocurre en ella:
 </p>
 </CENTER>
 <P>
@@ -253,7 +253,7 @@ function melange() {
     <TD>
       <CENTER>
           <p></p>
-          </CENTER></TD></TR></TBODY></TABLE><INPUT class=essai name=nbEssais type=button value=" Número de intentos : 0 "><BR>
+          </CENTER></TD></TR></TBODY></TABLE><INPUT class=essai name=nbEssais type=button value=" NÃºmero de intentos : 0 "><BR>
 <INPUT 
 name=Message size="20"><BR><INPUT name=Rejouer onclick=depart() type=button value="Jugar de nuevo"></CENTER>
 <CENTER>

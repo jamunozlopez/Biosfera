@@ -1,7 +1,7 @@
 <HTML>
 <!--This file created 10:45  08/09/02 by Claris Home Page version 3.0-->
 <HEAD>
-   <TITLE>FecundaciÛn y desarrollo embrionario</TITLE>
+   <TITLE>Fecundaci√≥n y desarrollo embrionario</TITLE>
    <META NAME=GENERATOR CONTENT="Microsoft FrontPage 5.0">
    <X-CLARIS-WINDOW TOP=0 BOTTOM=435 LEFT=0 RIGHT=782>
    <X-CLARIS-TAGVIEW MODE=minimal>
@@ -17,20 +17,20 @@
 #boutonImage7 { background-image:url('imagenes/image8.gif'); }
 #boutonCarte { background-image:url('imagenes/invisibl.gif'); }</STYLE><BGSOUND ID="fondSon"><SCRIPT><!--
 
-//RÈgine B-D ; 30/08/02 
+//R√©gine B-D ; 30/08/02 
 //http://perso.wanadoo.fr/jeux.lulu/
 //regine.bd@wanadoo.fr
-//Tous droits rÈservÈs
+//Tous droits r√©serv√©s
 
 
 var nbCartes=16;
 //test=0 joueur a la main; =1 non
 var test=1;
-//etat=0 pas de carte reournÈe; =1 1 carte ; =2 2 cartes
+//etat=0 pas de carte reourn√©e; =1 1 carte ; =2 2 cartes
 var etat=0;
-//numero des cartes sÈlectionnÈes
+//numero des cartes s√©lectionn√©es
 var retournees=new Array (-1,-1);
-//numero des boutons sÈlectionnÈs
+//numero des boutons s√©lectionn√©s
 var selectiones=new Array (-1,-1);
 var cartes = new Array(nbCartes);
 var lesImages = new Array(nbCartes/2);
@@ -74,7 +74,7 @@ function depart() {
 	test=0;
 	etat=0;
 	bons=0;
-	document.Formu.elements["nbEssais"].value="N˙mero de intentos : 0";
+	document.Formu.elements["nbEssais"].value="N√∫mero de intentos : 0";
 	essais=0;
 }
 
@@ -124,7 +124,7 @@ function choix(x) {
 			boutonMontre(x);
 			if (etat==1) {			
 				essais+=1;
-				document.Formu.elements["nbEssais"].value="N˙mero de intentos : "+essais;
+				document.Formu.elements["nbEssais"].value="N√∫mero de intentos : "+essais;
 			}
 			if (retournees[0]==retournees[1]) {
 				test=1;
@@ -161,7 +161,7 @@ function choix(x) {
 
 function suite() {
 		nbFois+=1;
-		document.Formu.Message.value="   ° MUY BIEN !";
+		document.Formu.Message.value="   ¬° MUY BIEN !";
 		boutonDisparait(selectiones[0]);
 		boutonDisparait(selectiones[1]);
 }
@@ -182,7 +182,7 @@ function melange() {
 </HEAD>
 <BODY BGCOLOR="#E6FFE6" onload="depart0();">
 <center>
-<p class="txtnegro"><font size="3">Reconocimiento de los org·nulos</font></p>
+<p class="txtnegro"><font size="3">Reconocimiento de los org√°nulos</font></p>
 <p class="txtnegro">Intenta relacionar cada imagen con su nombre</p>
 </center>
 <P><FORM ACTION="" METHOD=POST name=Formu>
@@ -244,7 +244,7 @@ function melange() {
          </TD>
       </TR>
    </TABLE>
-    <INPUT TYPE=button NAME=nbEssais VALUE=" N˙mero de intentos : 0 " class=essai><BR>
+    <INPUT TYPE=button NAME=nbEssais VALUE=" N√∫mero de intentos : 0 " class=essai><BR>
    <INPUT TYPE=text NAME=Message VALUE="" SIZE=20><BR>
    <INPUT TYPE=button NAME=Rejouer VALUE="Jugar de nuevo" onclick="depart()"></CENTER>
    <CENTER><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></CENTER>
