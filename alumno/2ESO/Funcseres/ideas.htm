@@ -1,0 +1,661 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img src="imagenes/titulo.gif" width="722" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="761" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/animales.jpg" width="105" height="93"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/embrion.jpg" width="105" height="125"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/mariposa.jpg" width="105" height="102"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/mimosa.jpg" width="105" height="101"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/oveja.jpg" width="105" height="75"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/ajo1.jpg" width="105" height="84"></td>
+                              </tr>
+                            </table>
+                            </td>
+                            <td width="535" bgcolor="#e6ffe6" align="center" valign="top"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td width="477" height="19" bgcolor="#BBDDBB"><font class="txtnegro">&nbsp;&nbsp;&nbsp;&nbsp;
+								  IDEAS FUNDAMENTALES </font> </td>
+                                </tr>
+                              </table>
+                              <table width="535" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr>
+                                  <td width="499"> 
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="521" id="AutoNumber3">
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">&nbsp;</td>
+                                        <td width="499" height="30">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Las 
+                                        funciones de los seres vivos son tres:
+                                        <b>nutrición, relación y reproducción.<br>
+&nbsp;</b></span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los <b>
+                                        alimentos</b> son las sustancias que 
+                                        necesitan tomar los seres vivos del 
+                                        medio para vivir.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Estos 
+                                        alimentos están compuestos por 
+                                        sustancias químicas orgánicas e 
+                                        inorgánicas que llamamos <b>nutrientes</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        seres vivos que se nutren a partir de la 
+                                        energía del sol y de la materia 
+                                        inorgánica del suelo se llaman seres <b>
+                                        autótrofos</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        seres vivos incapaces de fabricar su 
+                                        materia y que necesitan tomar materia 
+                                        elaborada por otros seres vivos se 
+                                        denominan <b>heterótrofos</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        aparatos que intervienen en las 
+                                        funciones de nutrición son: <b>aparato 
+                                        digestivo, respiratorio, circulatorio y 
+                                        excretor</b>. Unos se encargan de la 
+                                        incorporación de sustancias en el 
+                                        organismo, otros de su transformación y 
+                                        distribución y otros de la eliminación 
+                                        de residuos.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">La 
+                                        nutrición autótrofa por <b>fotosíntesis</b> 
+                                        se realiza gracias a la absorción de 
+                                        agua y sales a través de las raíces 
+                                        (savia bruta), su conducción por vasos 
+                                        especializados hasta las hojas donde se 
+                                        absorbe dióxido de carbono y recibe la 
+                                        energía del sol transformándose la 
+                                        materia inorgánica en orgánica (savia 
+                                        elaborada) distribuyéndose por todo el 
+                                        vegetal.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">La 
+                                        fotosíntesis la realizan los <b>
+                                        cloroplastos</b> de la célula vegetal.
+                                        <br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">En las
+                                        <b>mitocondrias</b>, tanto de células 
+                                        animales como vegetales, se realiza la 
+                                        respiración celular. Se quema la materia 
+                                        orgánica en presencia de oxígeno y se 
+                                        libera energía química.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        seres vivos pueden ser <b>unicelulares y 
+                                        pluricelulares</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        pluricelulares agrupan las células en <b>
+                                        tejidos</b> especializados en funciones 
+                                        diversas.</span>.<br>
+&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        tejidos que cumplen una misma función se 
+                                        asocian en <b>órganos</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        órganos que participan de una misma 
+                                        función forman un <b>aparato o sistema.<br>
+&nbsp;</b></span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">El 
+                                        conjunto de aparatos y sistemas forman 
+                                        un <b>organismo</b> completo.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">El 
+                                        aparato <b>digestivo</b> humano (ejemplo 
+                                        de aparato animal) tiene distintos 
+                                        órganos desde la boca hasta la porción 
+                                        final del intestino grueso. <br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Existe 
+                                        un tubo por el que pasa el alimento 
+                                        predigerido (esófago), un estómago e 
+                                        intestino delgado, donde se realiza la 
+                                        verdadera digestión y absorción de 
+                                        nutrientes y un intestino grueso donde 
+                                        se reabsorbe el agua y se desecan los 
+                                        residuos sólidos. <br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">
+                                        Acompañan dos <b>glándulas</b>: el 
+                                        hígado y el páncreas, cuya misión es 
+                                        facilitar la digestión&nbsp; de los 
+                                        alimentos.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">La <b>
+                                        respiración</b> en animales se realiza 
+                                        bien por tráqueas, por branquias, por la 
+                                        piel o por pulmones. Se necesita oxígeno 
+                                        en las células para la respiración 
+                                        celular en las mitocondrias.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">De la 
+                                        función celular se desprenden sustancias 
+                                        tóxicas para la célula que se tienen que 
+                                        eliminar de ella. Los sistemas de <b>
+                                        excreción </b>pueden ser: la piel (por 
+                                        el sudor), el respiratorio (eliminando 
+                                        dióxido de carbono al espirar) y el 
+                                        aparato excretor (eliminando las 
+                                        sustancias tóxicas disueltas en agua).<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Una de 
+                                        los órganos más perfectos de excreción 
+                                        es el <b>riñón</b>, compuesto por 
+                                        nefronas y tubos que van filtrando las 
+                                        sustancias de deshecho hasta formar la 
+                                        orina.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Para el 
+                                        transporte de sustancias por el 
+                                        organismo se necesita un <b>aparato 
+                                        circulatorio</b>. Según el tipo de 
+                                        animal este aparato consta de vasos, 
+                                        venas, arterias y capilares y puede ser 
+                                        más&nbsp; o menos sofisticado. Puede ser 
+                                        abierto, cerrado, doble, sencillo, 
+                                        completa o incompleta.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">El <b>
+                                        corazón</b> de mamíferos y aves consta 
+                                        de dos ventrículos y dos aurículas. Es 
+                                        una circulación: doble, cerrada y 
+                                        completa.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Para 
+                                        relacionarse con el medio y reaccionar 
+                                        ante él, los organismos poseen una serie 
+                                        de órganos, aparatos y sistemas que le 
+                                        permiten recibir un estímulo y 
+                                        reaccionar ante él. Son las funciones de
+                                        <b>relación</b>. <br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Los 
+                                        órganos que reciben el estímulo son los
+                                        <b>órganos de los sentidos</b>. El que 
+                                        integra la información es el <b>sistema 
+                                        nervioso</b> y el que responde en muchos 
+                                        casos es el <b>sistema muscular y 
+                                        hormonal</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">La 
+                                        función de <b>reproducción</b> puede ser 
+                                        según los seres vivos más o menos 
+                                        compleja. Puede haber reproducción 
+                                        sexual y asexual.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Formas 
+                                        de reproducción <b>asexual</b> son: 
+                                        esporulación, gemación, bipartición, 
+                                        fragmentación...<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Formas 
+                                        de reproducción <b>sexual</b>: mitosis y 
+                                        meiosis.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">Existen 
+                                        seres vivos que en su <b>ciclo vital</b> 
+                                        contienen las dos fases reproductoras 
+                                        sexual y asexual: helechos y musgos.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">En los 
+                                        vegetales superiores existen órganos de 
+                                        reproducción específicos: la <b>flor</b>, 
+                                        tanto en angiospermas como en 
+                                        gimnospermas.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">En el 
+                                        reino animal también existen 
+                                        diferenciación de sexos. Existen 
+                                        glándulas (<b>gónadas</b>) en las que se 
+                                        fabrican <b>gametos</b> solo unos pocos 
+                                        seres vivos son hermafroditas.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="22" align="center" valign="top" height="30">
+                                        <img border="0" src="imagenes/bolo.gif" width="9" height="13"></td>
+                                        <td width="499" height="30">
+                                        <p class="txt" style="text-align: left">
+                                        <span style="font-family:Arial">La 
+                                        reproducción sexual confiere a la 
+                                        naturaleza algo fantástico: la <b>
+                                        diversidad</b>.<br>
+&nbsp;</span></td>
+                                      </tr>
+                                    </table>
+                                    
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/helecho.jpg" width="105" height="112"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/flor1.jpg" width="105" height="82"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/gusano%20seda.jpg" width="105" height="84"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/lobo.jpg" width="105" height="121"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/girasoles.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/Pulpo.jpg" width="105" height="87"></td>
+                              </tr>
+                            </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

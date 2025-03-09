@@ -1,0 +1,378 @@
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/citologia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (5/15) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <div align="center">
+                                <p align="left"><span class="txtnegro">4.a..- 
+                                  Membrana Plasm&aacute;tica:</span> </p>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La <span class="txtnegro">membrana 
+                                            plasm&aacute;tica</span> es una delgada 
+                                            l&aacute;mina de 75 
+                                          <font face="Arial">Å</font> que envuelve 
+                                            a la c&eacute;lula y la separa del 
+                                            medio externo. Puede variar su forma 
+                                            permitiendo movimientos y desplazamientos 
+                                            de la c&eacute;lula.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> Su <span class="txtnegro">estructura</span> 
+                                            es igual en todas las c&eacute;lulas 
+                                            y en todos los org&aacute;nulos citoplasm&aacute;ticos, 
+                                            por lo que se llama membrana unitaria. 
+                                            Seg&uacute;n Singer y Nicholson (1972) 
+                                            es una bicapa lip&iacute;dica, asociada 
+                                            con mol&eacute;culas de prote&iacute;nas, 
+                                            formando la estructura de mosaico 
+                                            fluido.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Posee una <span class="txtnegro">composici&oacute;n 
+                                            qu&iacute;mica</span> de 52% de prote&iacute;nas, 
+                                            40% de l&iacute;pidos y 8% de az&uacute;cares.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br><table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La <span class="txtnegro">funci&oacute;n</span> 
+                                            es fundamentalmente mantener estable 
+                                            el medio intracelular, regulando el 
+                                            paso de agua, mol&eacute;culas y elementos, 
+                                            mantener la diferencia de potencial 
+                                            i&oacute;nico, haciendo que el medio 
+                                            interno est&eacute; cargado negativamente 
+                                            y realizar los procesos de endocitosis 
+                                            y exocitosis..</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"><br>
+                                <a href="#">
+                              <img name="Image24" border="0" src="imagenes/membrana_letras.jpg" width="600" height="336" alt="&quot;Membrana Plasm&aacute;tica&quot;"></a> 
+                                <br>
+                              </p>
+                              <div align="center"></div>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ6.htm" class="txtnegrolink">Actividad 
+                                        6 </a></font> <a href="activ6.htm"><img src="imagenes/activ6.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p align="center"><br>
+                                <a name="act_inves5"></a></p>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      de investigaci&oacute;n 5: Las uniones celulares</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><img src="imagenes/membrana_plasmatica.gif" width="126" height="74" align="right" alt="&quot;Membrana Plasm&aacute;tica&quot;">Introducci&oacute;n: 
+                                      <font size="-2">La membrana, entre sus m&uacute;ltiples 
+                                      funciones, facilita las uniones de contacto 
+                                      celular necesarias para constituir tejidos. 
+                                      Unas veces son facilitadas por sustancias 
+                                      segregadas por las propias c&eacute;lulas 
+                                      y otras son debidas a especializaciones 
+                                      de la membrana plasm&aacute;tica.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Se pretende 
+                                        que conozcas mejor una de las funciones 
+                                        de la membrana plasm&aacute;tica, la de 
+                                        facilitar la uni&oacute;n celular entre 
+                                        c&eacute;lulas para la construcci&oacute;n 
+                                        de tejidos. Para ello realizaremos, tras 
+                                        la b&uacute;squeda y an&aacute;lisis de 
+                                        la informaci&oacute;n, un póster que ilustre 
+                                        algunos tipos de uniones celulares, como: 
+                                        las uniones adherentes o desmosomas, las 
+                                        uniones estrechas u ocluyentes y las uniones 
+                                        de hendidura o gap.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Descripci&oacute;n: <font size="-2">Analiza 
+                                        la informaci&oacute;n y, en un trabajo 
+                                        individual, realiza un póster que ilustre 
+                                        con im&aacute;genes y texto los tipos 
+                                        de uniones celulares y su funci&oacute;n 
+                                        biol&oacute;gica. </font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2"><a href="http://www.arrakis.es/%7Elluengo/diferenciaciones.html"><br>
+                                        <font color="#FFFFCC">Diferenciaciones 
+                                        de la membrana.</font></a> <br>
+                                        <a href="http://www.vet.unicen.edu.ar/catedras/cHistologia/Tejidoepitelial.pdf"><font color="#FFFFCC">TEJIDO 
+                                        EPITELIAL. </font></a><br>
+                                        <a href="http://www.uv.es/derma/CLindex/CLampollosas/desmo1.htm"><font color="#FFFFCC">Esquema 
+                                        de los desmosomas y su participaci&oacute;n 
+                                        en los p&eacute;nfigos. </font></a><br>
+                                        <a href="http://escuela.med.puc.cl/paginas/Cursos/segundo/histologia/HistologiaWeb/paginas/fotosBig/D2B18.html"><font color="#FFFFCC">Desmosomas 
+                                        (m&aacute;culas adherentes). </font></a><br>
+                                        <a href="http://www.cnice.mecd.es/mem2001/biologia/citoplasma/esqueleto5.htm"><font color="#FFFFCC">Citoesqueleto</font></a><font color="#FFFFCC">. 
+                                        </font></font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se evaluar&aacute; la capacidad 
+                                      de s&iacute;ntesis, an&aacute;lisis y presentaci&oacute;n 
+                                      del poster y su explicaci&oacute;n oral.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br>
+                              </p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (5/15) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

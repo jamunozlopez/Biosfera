@@ -1,0 +1,466 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="2556" >
+        <tr> 
+          <td height="35" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="4"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="4">
+              <tr> 
+                <td height="1" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top" height="2517"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reproduccion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="537" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="209" bgcolor="#BBDDBB">
+                            <p align="center"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"><span class="txtnegro">Para 
+                                saber m&aacute;s sobre la reproducci&oacute;n 
+                                asexual en vegetales</span></p>
+                              <p class="txt">La reproducci&oacute;n asexual m&aacute;s 
+                                habitual en vegetales se basa en tres mecanismos 
+                                diferentes:<img src="imagenes/mucor(x100).jpg" width="233" height="174" alt="&quot;Esporulaci&oacute;n en el moho del pan. Tomada de www.medsch.wisc.edu&quot;" align="right" hspace="15" vspace="15"></p>
+                              <table width="60%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt">a) En la formaci&oacute;n 
+                                          de Esporas 
+                                          <p>La formaci&oacute;n de esporas es 
+                                            muy importante en todos los vegetales, 
+                                            incluidas las plantas superiores. 
+                                            A partir de unas c&eacute;lulas llamadas 
+                                            c&eacute;lulas madre, por divisi&oacute;n 
+                                            (mitosis) se forman muchas esporas 
+                                            que son arrastradas por el viento 
+                                            o el agua y al germinar originan nuevas 
+                                            plantas.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <p>&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">b) En la fragmentaci&oacute;n 
+                                            accidental de alguna parte del vegetal 
+                                            que cae al suelo y ah&iacute; es capaz 
+                                            de enraizar y originar un nuevo individuo, 
+                                            como sucede con las hojas de los geranios. 
+                                            Puedes hacer la prueba plantando una 
+                                            hoja de geranio en una maceta.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">c) En la formaci&oacute;n 
+                                            de grupos de c&eacute;lulas embrionarias 
+                                            que se encuentran en diferentes lugares 
+                                            del vegetal, y que en ciertas condiciones 
+                                            son capaces de dividirse y originar 
+                                            un nuevo individuo. Esos grupos de 
+                                            c&eacute;lulas embrionarias se llaman 
+                                            YEMAS.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <ul>
+                                <li><span class="txtnegro">Yemas</span><img src="imagenes/yema.jpg" width="246" height="184" alt="&quot; En la imagen se observan dos yemas en las axilas de las hojas. Tomada de www.unex.es_botanica &quot;" align="right" hspace="15" vspace="15"><br>
+                                </li>
+                              </ul>
+                              <table width="60%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Son, igual que en los 
+                                            animales, grupos de c&eacute;lulas 
+                                            embrionarias que se dividen y originan 
+                                            unas estructuras llamadas YEMAS. Estas 
+                                            yemas pueden separarse y originar 
+                                            nuevos individuos, como sucede con 
+                                            los llamados &quot;ojos&quot; de las 
+                                            patatas.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"> En ocasiones se encuentran en otros 
+                                lugares de la planta pudiendo dar lugar a otras 
+                                formas de multiplicaci&oacute;n vegetativa, como 
+                                son: </p>
+                              &nbsp;<p>&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">o <b>Estolones</b> 
+                                          <img src="imagenes/estolon.jpg" width="218" height="145" alt="&quot;Tres plantas jóvenes separadas por estolones. Tomada de www.charlies-web.com &quot;" align="right" vspace="20" hspace="10"></p>
+                                          <p>Son tallos verdes que crecen pegados 
+                                            al suelo o muy cerca de &eacute;l, 
+                                            como si fueran arrastr&aacute;ndose, 
+                                            por lo que tambi&eacute;n se les llama 
+                                            &quot;tallos rastreros&quot;. Cada 
+                                            cierta longitud el estol&oacute;n 
+                                            emite unas ra&iacute;ces, llamadas 
+                                            ra&iacute;ces adventicias, que se 
+                                            entierran en el suelo origin&aacute;ndose 
+                                            una nueva planta. El estol&oacute;n 
+                                            puede romperse por esa nueva planta 
+                                            o puede seguir creciendo y produciendo 
+                                            m&aacute;s individuos. Existen muchas 
+                                            plantas estolon&iacute;feras, como 
+                                            son las fresas.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>o <b>Rizomas<img src="imagenes/rizomar.jpg" width="97" height="116" alt="&quot;Los rizomas son tallos subterr&aacute;neos. Tomada de fai.unne.edu.a &quot;" align="right" vspace="20" hspace="10"></b></p>
+                                          <p>Son tallos subterráneos 
+                                          horizontales (no son raíces), que crecen enterrados paralelos a la 
+                                            superficie del suelo. El rizoma est&aacute; 
+                                            por debajo y el estol&oacute;n est&aacute; 
+                                            por encima del suelo. Los rizomas 
+                                            tienen yemas que pueden dar lugar 
+                                            a plantas nuevas si las condiciones 
+                                            son favorables. Si el rizoma se rompe 
+                                            puede dar lugar a tantas plantas como 
+                                            fragmentos haya. Ocurre en algunos 
+                                            robles, en las ca&ntilde;as y juncos, 
+                                            etc.</p>
+                                          <p>&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>o <b>Tub&eacute;rculos<img src="imagenes/tubercule2r.jpg" width="92" height="110" alt="Patata con tres yemas, los llamados &quot;ojos&quot;. Tomada de www.cjbn.uhp-nancy.fr &quot;" align="right" hspace="10"></b></p>
+                                          <p>Son tallos subterr&aacute;neos cargados 
+                                            de sustancias nutritivas, en los que 
+                                            hay yemas. Estas yemas pueden desarrollarse 
+                                            y originar nuevas plantas aliment&aacute;ndose 
+                                            a partir de las sustancias almacenadas 
+                                            en el tub&eacute;rculo.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>o <b>Bulbos<img src="imagenes/cebolla.jpg" width="99" height="110" alt="&quot;Los bulbos son tallos recubiertos de hojas engrosadas.&quot;" align="right" hspace="10"></b></p>
+                                          <p>Son tallos subterr&aacute;neos recubiertos 
+                                            por una o muchas hojas en las que 
+                                            se almacenan sustancias nutritivas 
+                                            de reserva que servir&aacute;n para 
+                                            que se desarrolle el tallo que est&aacute; 
+                                            en el interior.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">o <b>Prop&aacute;gulos</b></p>
+                                          <p>Es una forma de reproducci&oacute;n 
+                                            asexual que se produce en vegetales 
+                                            inferiores (hep&aacute;ticas) y tambi&eacute;n 
+                                            en los l&iacute;quenes. Son agrupaciones 
+                                            de c&eacute;lulas que se desprenden 
+                                            de la planta madre para ser dispersados 
+                                            por el viento o por el agua.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <span class="txt"><br>
+                              <br>
+                              Existen ciertas formas de multiplicaci&oacute;n 
+                              vegetativa que podr&iacute;amos considerar artificiales. 
+                              Estas formas, que se basan en la capacidad de fragmentaci&oacute;n 
+                              propia de los vegetales, son m&eacute;todos ideados 
+                              y producidos por el hombre. Son:</span><br>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">- Los ESQUEJES, ramas 
+                                            o tallos j&oacute;venes o incluso 
+                                            hojas, que se plantan y originan nuevos 
+                                            individuos completos.<br>
+                                            - Los INJERTOS, que tambi&eacute;n 
+                                            son ramas o tallos, pero en lugar 
+                                            de plantarse en el suelo se insertan 
+                                            en ramas, tallos o troncos donde se 
+                                            integran pasando a formar parte de 
+                                            la nueva planta. Es curioso el hecho 
+                                            de que los injertos se pueden hacer, 
+                                            incluso, entre especies diferentes, 
+                                            como sucede con los melocotoneros 
+                                            y albaricoqueros.<br>
+                                            - Los ACODOS, que consisten en doblar 
+                                            una rama formando un codo que roza 
+                                            el suelo para, de esta manera, emitir 
+                                            ra&iacute;ces en la zona del codo, 
+                                            y originar una planta independiente.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><br>
+                                <img src="imagenes/injerto.jpg" width="500" height="329" alt="&quot;Un injerto es la inclusi&oacute;n de ramas en un tronco diferente. Tomada de agrobyte.lugo.usc.es &quot;"><br>
+                                <br>
+                              </div>
+                              <div align="CENTER"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        14</font> <a target="_blank" href="activrepcoor14.htm"><img src="imagenes/activ14.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <p align="right"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

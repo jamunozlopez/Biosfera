@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad de inicio</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad de inicio</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El sistema inmunológico</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se encuentra situado en los ganglios linfáticos.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Es difuso, se ubica por todo el cuerpo.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son los linfocitos.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúa sin variaciones o cambios a lo largo de la vida del individuo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué célula no es del sistema inmune?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Linfocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Mastocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Leucocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Eritrocito.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué célula es del sistema inmune?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Macrófago.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Osteocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Hepatocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Melanocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un macrófago es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una célula fagocítica.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un linfocito.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una célula que no pertenece al sistema inmune.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una célula productora de plaquetas.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un antígeno es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una sustancia sintetizada por el organismo para luchar contra una enfermedad.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Parte de un patógeno, que produce la activación del sistema inmune.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una proteína formada por células defensivas.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una inmunoglobulina.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un anticuerpo es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Parte de un patógeno que produce la enfermedad.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una proteína formada por células defensivas.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Parte de un patógeno, que produce la activación del sistema inmune.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La parte de un patógeno que destruye al cuerpo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los linfocitos son:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Células poco especializadas.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Células que, al activarse, destruyen el sistema inmune.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Células muy especializadas del sistema inmune.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Los macrófagos.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las vacunas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Introducen la inmunidad a un paciente enfermo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Crean inmunidad en un individuo sano.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Crean inmunidad en un individuo con una determinada enfermedad.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son antibióticos.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La inmunodeficiencia es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una enfermedad alérgica.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un ataque de las células inmunológicas a las células del propio organismo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una depresión en el sistema inmune.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una enfermedad producida por una vacuna.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una alergia es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El polen de las gramíneas.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una disfunción del sistema inmune.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una bajada de las defensas del organismo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una falta de hierro.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../contenidos.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

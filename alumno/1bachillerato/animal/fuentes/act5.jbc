@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>El aparato excretor&lt;center&gt;&lt;img src=&quot;../imagenes/excretor/rinonpntic.jpg&quot; alt=&quot;rinonpntic.jpg&quot; width=&quot;150&quot; height=&quot;205&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>El aparato excretor&lt;center&gt;&lt;img src=&quot;../imagenes/excretor/rinonpntic.jpg&quot; alt=&quot;rinonpntic.jpg&quot; width=&quot;150&quot; height=&quot;205&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El aparato excretor expulsa</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Sustancias tóxicas formadas en el aparato digestivo</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Sustancias tóxicas formadas en el metabolismo celular</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sustancias captadas por el sistema respiratorio</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Amoniaco</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los animales amoniotélicos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son siempre terrestres</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Expulsan urea y amoniaco</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Expulsan ácido úrico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Viven ligados a medios acuáticos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El ácido úrico</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Necesita mucha agua para disolverse</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Lo producen seres adaptados a medios muy secos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Lo producen los seres ureotélicos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es muy tóxico y no se expulsa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las células flamígeras</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Captan el amoniaco de la cavidad celómica</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Captan ácido úrico de la cavidad celómica</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Aparecen en artrópodos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son grandes células con cilios</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El metanefridio</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Está constituido por células con flagelos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es un tipo de protonefridio</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Capta sustancias tóxicas de la cavidad celómica</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Capta sustancias tóxicas de las células contiguas</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los tubos de Malpighi</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aparecen en crustáceos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Constan de nefrostoma, nefroducto y nefroporo</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Desembocan en el intestino</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son un tipo de protonefridios</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En aves, el riñón está formado por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tubos de Malpighi</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>nefridios</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Nefronas</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Glándulas verdes</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la cápsula de Bowman se produce</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El filtrado glomerular</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La reabsorción de agua</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La reabsorción de glucosa y proteínas</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La reabsorción de sales minerales</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la médula del riñón encontramos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tubos de Malpighi</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Pirámides de Malpighi</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Cápsulas de Bowman</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Tubos colectores</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

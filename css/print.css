@@ -1,0 +1,245 @@
+/* Estilos para los tags genericas html - Inicio */
+
+body{
+	font-family: Georgia, Times, Serif;
+	font-size: 0.7em;
+	color: #333;
+	margin: auto;
+}
+
+h1{
+	border-bottom: solid #000 1pt;
+}
+
+h2{
+	margin-top: 15pt;
+}
+
+h3{
+	margin-top: 15pt;
+	margin-bottom: -6pt;
+}
+
+p{
+	margin: 5pt 0 0pt 0;
+}
+
+/* Estilos generales para los formularios - Inicio */
+
+form{
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0px 0px 10px 0px;
+}
+
+fieldset{
+	float: left;
+	display: block;
+	width: 100%;
+	background-color: #f1f1f1;
+	border: none;
+	padding: 0px 0px 4px 0px;
+	margin: 10px 0px 0px 0px;
+}
+
+legend{
+	display: none;
+}
+
+.classlegend{
+	float: left;
+	width: 99%;
+	background-color: #fff;
+	border-bottom: solid #ccc 1px;
+	font-weight: bold;
+	padding: 2px 0px 2px 1%;
+	margin-bottom:4px;
+}
+
+label{	
+	float: left;
+	display: block;
+	padding: 2px 0px 2px 10px;
+	margin-right: 10px;
+}
+
+input, select, checkbox, radio{
+	float: left;
+}
+
+.label120{
+	width: 120px;
+}
+
+.cajafila{
+	float: left;
+	display: block;
+	width: 100%;
+	padding: 2px 0px 2px 0px;
+}
+
+/* Estilos generales para los formularios - Fin */
+
+/* Estilos generales para las tablas - Inicio */
+
+table{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+table caption{
+	text-align: left;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+table th{
+	background-color: #1F99C2;
+	text-align: left;
+	padding: 5px 5px 5px 15px;
+	color: #fff;
+	border: solid #fff 1px;
+	border-top: none;
+	border-right: none;
+	border-bottom: solid 2px #1F99C2; 
+}
+
+table td{
+	border: solid #ccc 1px;
+	border-right: none;
+	border-top: none;
+	padding: 5px 5px 5px 15px;
+}
+
+table .td1{
+	border-left: none;
+}
+
+table .color1{
+	background-color: #f1f1f1;
+}
+
+/* Estilos generales para las tablas - Fin */
+
+/* Estilos para la Cabecera - Inicio */
+
+#cabecera{
+	display: none;
+}
+
+/* Estilos para la Cabecera - Fin */
+
+/* Estilo para la capa general de toda la pagina - Inicio */
+
+#CapaGeneral{
+}
+
+#CapaGeneral2column{
+}
+
+.MenuCabecera{
+	display: none;
+}
+
+
+.MenuCabeceraIco{
+	display: none;
+}
+
+/* Estilo para el menu de la izquierda - Inicio */
+#menuLateral{
+}
+
+#menuLateral img{
+	margin-left: -45px;
+}
+
+
+.MenuNivel1{
+	display: none;
+}
+
+.MenuNivel2Parrafo{
+	display: none;
+}
+
+/* Estilo para el menu de la izquierda - FIn */
+
+#Contenido img{
+	display: none;
+}
+
+.CapaCentral{
+	width: 100%;
+}
+
+.CapaCentraAncha{
+	width: 100%;
+}
+
+p.RutaNavegacion{
+	display: none;
+}
+
+.BloqueCentral{
+	width: 100%;
+}
+
+.BloqueCentral img{
+}
+
+/* Estilo para las listas de la pagina de la home */
+.BloqueListas{
+	width: 100%;
+}
+
+
+.BloqueDestacado{
+	width: 100%;
+}
+
+/* Estilo para la tabla de calendario */
+
+.BloqueCalendario{
+	display: none;
+}
+
+/* Estilo para la Columna derecha de la pagina*/
+
+.CapaDrch{
+	width: 100%;
+}
+
+.CapaDrch hr{
+	display: none;
+}
+
+.CapaDrch .formCapaDrch{
+	display: none;
+}
+
+/* Estilo para el pie de pagina */
+
+.PiePagina{	
+	width: 100%;
+}
+
+.PiePagina hr{
+	margin-top: 10pt;
+}
+
+.PiePagina a{
+	text-decoration: none;
+	color: #333;
+}
+
+.PiePagina p{
+	margin: 0px;
+	padding: 0px;
+}
+
+.PiePagina ul{
+	display: none;
+}
+

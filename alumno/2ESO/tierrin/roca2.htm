@@ -1,0 +1,394 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../2bachillerato/estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="740">
+        <tr> 
+          <td height="35" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../../2bachillerato/img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="8"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="6">
+              <tr> 
+                <td height="1" valign="top">
+				<img border="0" src="../../2bachillerato/img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="697">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="titulin.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB">
+									<b>
+									<font class="txtnegro" face="Arial" size="2">
+									Identificación, textura y origen de las 
+									rocas</font></b></td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <b>
+									<font color="#006666" size="2" face="Arial">
+                                        <a title="Enlaza con la textura y origen de las rocas magmáticas." href="roca1.htm">
+									<span style="text-decoration: none">Anterior</span></a> 
+									/ <a href="cierre.htm">
+									<span style="text-decoration: none">Cerrar</span></a></font></b></td>
+                                </tr>
+                              </table>
+                              <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                                <tr>
+                                  <td width="4%">&nbsp;</td>
+                                  <td width="92%">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="100%">
+                                  <p align="left" class="txt">&nbsp;</p>
+									<p align="left" class="txt"><b>Rocas 
+									metamórficas</b></p>
+									<p align="left" class="txt">La acción de 
+									altas presiones y temperaturas aplicada 
+									sobre las rocas puede provocar grandes 
+									alteraciones, generando nuevas rocas. Estos 
+									procesos de transformación son muy lentos. 
+									Las rocas que surgen se denominan rocas 
+									metamórficas.</p>
+									<table border="0" width="100%" id="table7">
+										<tr>
+											<td width="322">
+                                  <p class="txt"><b>Tipos de metamorfismo</b></p>
+									<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="1">
+										<li class="MsoNormal">
+										<p class="txt"><b>Metamorfismo térmico, 
+										o de contacto</b>: <br>
+										Se produce por el calor que desprende el 
+										magma, transformando las rocas 
+										adyacentes, pero sin llegar a fundirlas.</li>
+									</ol></td>
+											<td>&nbsp;</td>
+											<td width="333">
+											<img border="0" src="imagenes/marmol.jpg" width="350" height="310" alt="Mármol. Imagen De Mier y Leva."></td>
+										</tr>
+										<tr>
+											<td width="322">&nbsp;</td>
+											<td>&nbsp;</td>
+											<td width="333">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="322">
+											<ol start="2">
+												<li>
+												<p class="txt"><b>Metamorfismo 
+												dinámico, o estructural</b>:<br>
+												En zonas de fallas producidas 
+												por los movimientos de la 
+												corteza terrestre las presiones 
+												que sufren las rocas son muy 
+												altas. Estas elevadas presiones 
+												son las responsables de la 
+												formación de nuevas rocas.</li>
+											</ol>
+											</td>
+											<td>&nbsp;</td>
+											<td width="333">
+											<img border="0" src="imagenes/milonita.jpg" width="350" height="262" alt="Milonita. Imagen tomada de http://web.usal.es/~epavila/webrocas/rmt.html"></td>
+										</tr>
+										<tr>
+											<td width="322">&nbsp;</td>
+											<td>&nbsp;</td>
+											<td width="333">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="322">
+											<ol start="3">
+												<li>
+												<p class="txt"><b>Metamorfismo 
+												regional, o termodinámico</b>:<br>
+												A grandes profundidades, la 
+												temperatura y la presión son muy 
+												elevadas. Estas condiciones se 
+												dan también&nbsp; en las zonas 
+												donde se forman las montañas 
+												(zonas orogénicas). La 
+												combinación de altas presiones y 
+												elevadas temperaturas origina la 
+												formación de nuevas rocas.</li>
+											</ol>
+											</td>
+											<td>&nbsp;</td>
+											<td width="333">
+											<img border="0" src="imagenes/gneis2.JPG" width="350" height="262" alt="Gneis. Imagen De Mier y Leva."></td>
+										</tr>
+									</table>
+									<p>
+									<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="742" height="439">
+										<param name="movie" value="imagenes/Metamorfismo.swf">
+										<param name="quality" value="High">
+										<embed src="imagenes/Metamorfismo.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="742" height="439"></object>
+									</p>
+									<table border="0" width="100%" id="table1">
+										<tr>
+											<td>&nbsp;</td>
+											<td>
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" id="table2" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="actividades/rocas/roca2.htm">Actividad 
+                                    16c</a></span><a target="_blank" href="actividades/rocas/roca2.htm"><img border="2" src="miniaturas/roca23.jpg" xthumbnail-orig-image="miniaturas/roca24.jpg"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        	</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+                                  <p align="left" class="txt"><b>Textura de las 
+									rocas metamórficas</b></p>
+                                  <p align="left" class="txt">El aspecto, o 
+									textura, de estas rocas es una característica 
+									que se utiliza para su identificación. Se 
+									pueden distinguir dos tipos de textura:</p>
+									<table border="0" width="100%" id="table8">
+										<tr>
+											<td width="315">
+											<p class="txtnegro">Textura 
+											orientada o con foliación:</p>
+											<p class="txt">La roca parece estar 
+											formada a partir de hojas 
+											superpuestas o por bandas. Rocas que 
+											presentan esta textura son la 
+											pizarra, el esquisto y los gneis.</td>
+											<td>&nbsp;</td>
+											<td>
+											<img border="0" src="imagenes/pizarra4.jpg" width="350" height="245" alt="La pizarra presenta láminas en su estructura. Imagen tomada de http://webs.ono.com/angarca13/geolo/pizarra1.jpg"></td>
+										</tr>
+										<tr>
+											<td width="315">
+											<p class="txtnegro">Textura no 
+											orientada o sin foliación:</p>
+											<p class="txt">La roca está formada 
+											por un único tipo de mineral, 
+											distribuido uniformemente en la 
+											roca. No aparecen capas ni bandas. 
+											Las rocas que presentan este tipo de 
+											textura son el mármol y la cuarcita.</td>
+											<td>&nbsp;</td>
+											<td>
+											<img border="0" src="imagenes/marmol2.jpg" width="350" height="233" alt="Textura de mármol"></td>
+										</tr>
+									</table>
+									<p class="txt" align="center">
+                                    &nbsp;</p>
+									<table border="0" width="100%" id="table5">
+										<tr>
+											<td>&nbsp;</td>
+											<td>
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" id="table6" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="actividades/rocas/autorocas.htm">Autoevaluación</a></span><a target="_blank" href="actividades/rocas/autorocas.htm"><img border="2" src="miniaturas/roca25.jpg" xthumbnail-orig-image="miniaturas/roca26.jpg"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        	</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+									<p class="txtnegrolink" align="left">&nbsp;</p>
+									<p class="txtnegrolink" align="left">&nbsp;</td>
+                                </tr>
+                              </table>
+                                  </td>
+                                  <td width="4%">&nbsp;</td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                    <p><b>
+									<font color="#006666" size="2" face="Arial">
+                                        <a title="Enlaza con la textura y origen de las rocas magmáticas." href="roca1.htm">
+									<span style="text-decoration: none">Anterior</span></a> 
+									/ <a href="cierre.htm">
+									<span style="text-decoration: none">Cerrar</span></a></font></b></p>
+                                        <p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

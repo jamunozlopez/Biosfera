@@ -1,0 +1,559 @@
+<html>
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script LANGUAGE="JavaScript">
+	var calificacion=0;
+	function notauno(form)
+	{
+		calificacion=0;
+		incorrectas="";
+		contestadas=0;
+		for (var i=0; i<document.uno.length-1; i++) 
+ 		{  
+ 			if (document.uno[i].checked)  
+  			{
+			    contestadas=contestadas+1; 
+   				if (document.uno[i].value=="1")
+				{
+				     calificacion=calificacion+1;
+				}
+				if (document.uno[i].value!="1")
+				{
+				incorrectas=incorrectas+document.uno[i].name.substring(7,9)+" ";      
+				}
+			}
+		}
+		error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 16.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r"+incorrectas;alert(mensaje);
+	}
+</script>
+<script LANGUAGE="JavaScript">
+	var calificacion=0;
+	function notados(form)
+	{
+		calificacion="";
+		incorrectas="";
+		contestadas=0;
+		error="";
+		
+		for (var i=0; i<document.dos.length-1; i++) 
+ 		{  
+ 			if (document.dos[i].checked)  
+  			{
+   				if (document.dos[i].value=="1")
+				{
+				     calificacion="Corrrecto";
+				}
+				if (document.dos[i].value!="1")
+				{
+					calificacion="Incorrrecto";      
+				}
+			}
+		}
+		error=calificacion;
+		alert(error);
+	}
+</script>
+
+<script LANGUAGE="JavaScript">
+	var calificacion=0;
+	function notatres(form)
+	{
+		calificacion="";
+		incorrectas="";
+		contestadas=0;
+		error="";
+		
+		for (var i=0; i<document.tres.length-1; i++) 
+ 		{  
+ 			if (document.tres[i].checked)  
+  			{
+   				if (document.tres[i].value=="1")
+				{
+				     calificacion="Corrrecto";
+				}
+				if (document.tres[i].value!="1")
+				{
+					calificacion="Incorrrecto";      
+				}
+			}
+		}
+		error=calificacion;
+		alert(error);
+	}
+</script>
+
+<script LANGUAGE="JavaScript">
+	var calificacion=0;
+	function notacuatro(form)
+	{
+		calificacion="";
+		incorrectas="";
+		contestadas=0;
+		error="";
+		
+		for (var i=0; i<document.cuatro.length-1; i++) 
+ 		{  
+ 			if (document.cuatro[i].checked)  
+  			{
+   				if (document.cuatro[i].value=="1")
+				{
+				     calificacion="Corrrecto";
+				}
+				if (document.cuatro[i].value!="1")
+				{
+					calificacion="Incorrrecto";      
+				}
+			}
+		}
+		error=calificacion;
+		alert(error);
+	}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img src="imagenes/titulo.gif" width="722" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" bgcolor="#006666" align="center">
+                    <tr> 
+                      <td valign="top"> 
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td height="19" bgcolor="#BBDDBB"> 
+                                  </td>
+				<td height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDAD INICIAL</font>
+                                  </td>
+				<td height="19" bgcolor="#BBDDBB"> 
+                                  </td>
+                                </tr>
+                                <tr bgcolor="#E6FFE6"> 
+				<td width="0%"></td>
+                                  <td><font class="txt"><br>Intenta contestar las siguientes preguntas
+								   y mira al final del test el resultado. Valorarás
+								   la importancia de pasearte por nuestras páginas
+								   dedicadas al mundo de los seres vivos unicelulares
+								   y pluricelulares. <br>
+&nbsp;</font><form name="uno">
+  <p> <font class="txtnegro">1.	¿Qué función tiene la nutrición en los seres vivos?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 1/ 3" value="2">
+      <font class="txt">Alimentarnos.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 1/ 3" value="3">
+      <font class="txt">Darnos la materia para vivir.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 1/ 3" value="1">
+      <font class="txt">Proporcionarnos los elementos indispensables para vivir y
+	  poder eliminar a su vez los que no utilizamos.</font></li>
+  </ol>
+  <p> <font class="txtnegro">2.	¿Qué función tiene la relación en un ser vivo?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 2/ 3" value="2">
+      <font class="txt">Hacer amistades y así poder vivir mejor.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 2/ 3" value="1">
+      <font class="txt">Relacionar al ser vivo con su medio, detectar los cambios en el mismo y poder reaccionar ante él.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 2/ 3" value="3">
+      <font class="txt">Provocar el movimiento y la coordinación de los seres vivos.</font></li>
+  </ol>
+  <p> <font class="txtnegro">3.	¿Para qué se perpetúan las especies?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 3/ 3" value="1">
+      <font class="txt">Para permitir la vida de la especie a lo largo de las generaciones.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 3/ 3" value="2">
+      <font class="txt">Para divertirse.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 3/ 3" value="3">
+      <font class="txt">Para que siempre vivan los mismos seres vivos.</font></li>
+  </ol>
+  <p> <font class="txtnegro">4.	¿Cuáles son los aparatos más importantes en la función de nutrición?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 4/ 3" value="2">
+      <font class="txt">El sistema nervioso y el locomotor, sin ellos no se puede cazar.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 4/ 3" value="1">
+      <font class="txt">El digestivo, excretor, respiratorio y circulatorio. </font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 4/ 3" value="3">
+      <font class="txt">Los órganos de los sentidos, sino no sabrían lo que comen.</font></li>
+  </ol>
+  <p> <font class="txtnegro">5.	¿Con qué órganos se relaciona un animal con el exterior?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 5/ 3" value="1">
+      <font class="txt">Con los órganos de los sentidos.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 5/ 3" value="2">
+      <font class="txt">Con los órganos del sistema nervioso.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 5/ 3" value="3">
+      <font class="txt">Con el sistema endocrino.</font></li>
+  </ol>
+  <p> <font class="txtnegro">6.	¿Qué aparatos relacionan al animal internamente?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 6/ 3" value="2">
+      <font class="txt">El circulatorio.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 6/ 3" value="3">
+      <font class="txt">El muscular.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 6/ 3" value="1">
+      <font class="txt">El nervioso y el endocrino.</font></li>
+  </ol>
+  <p> <font class="txtnegro">7.	¿Es lo mismo un alimento que un nutriente?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 7/ 3" value="2">
+      <font class="txt">No.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 7/ 3" value="1">
+      <font class="txt">No, uno es la composición del otro.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 7/ 3" value="3">
+      <font class="txt">Si.</font></li>
+  </ol>
+  <p> <font class="txtnegro">8.	¿La alimentación de un vegetal es?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 8/ 3" value="2">
+      <font class="txt">Igual que la de un animal.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 8/ 3" value="1">
+      <font class="txt">Autótrofa.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 8/ 3" value="3">
+      <font class="txt">Heterótrofa.</font></li>
+  </ol>
+  <p> <font class="txtnegro">9.	Un ser unicelular...</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 9/ 3" value="3">
+      <font class="txt">No realiza las mismas funciones que un ser pluricelular.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 9/ 3" value="2">
+      <font class="txt">Tiene menos funciones que un ser pluricelular porque es más sencillo.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 9/ 3" value="1">
+      <font class="txt">Realiza las mismas funciones que un ser pluricelular.</font></li>
+  </ol>
+  <p> <font class="txtnegro">10. En los animales el aparato digestivo es...</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 10/ 3" value="1">
+      <font class="txt">Distinto dependiendo de la dieta del animal.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 10/ 3" value="2">
+      <font class="txt">Igual en todos los animales.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 10/ 3" value="3">
+      <font class="txt">Solo se diferencian en la boca.</font></li>
+  </ol>
+  <p> <font class="txtnegro">11. Los peces respiran...</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 11/ 3" value="2">
+      <font class="txt">Por pulmones.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 11/ 3" value="3">
+      <font class="txt">Por tráqueas.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 11/ 3" value="1">
+      <font class="txt">Por branquias.</font></li>
+  </ol>
+  <p> <font class="txtnegro">12. El corazón de un mamífero es:</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 12/ 3" value="1">
+      <font class="txt">Tetracameral (cuatro cámaras: dos aurículas y dos ventrículos).</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 12/ 3" value="2">
+      <font class="txt">Tricameral (dos aurículas y un ventrículo).</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 12/ 3" value="3">
+      <font class="txt">Bicameral (una aurícula y un ventrículo).</font></li>
+  </ol>
+  <p> <font class="txtnegro">13. ¿Qué significa que la circulación de un animal es doble, cerrada y completa?</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 13/ 3" value="2">
+      <font class="txt">Que la sangre sigue un camino de ida y vuelta, que empieza
+	   y acaba en el mismo sitio llegando a unas lagunas donde se vierte.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 13/ 3" value="3">
+      <font class="txt">Que la sangre va por vasos circulatorios pero recorre un 
+	  solo circuito, va del corazón al cuerpo y del cuerpo al corazón.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 13/ 3" value="1">
+      <font class="txt">Que la sangre va encerrada en vasos circulatorios siempre, 
+	  que existen dos circuitos uno mayor y otro pulmonar y que la sangre entra 
+	  en el corazón de forma independiente al lado derecho y al lado izquierdo y
+	  sale de la misma forma. Siempre existe separación entre la sangre venosa y 
+	  la sangre arterial.</font></li>
+  </ol>
+  <p> <font class="txtnegro">14. El tipo de estímulos que detectan los seres vivos puede ser:</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 14/ 3" value="1">
+      <font class="txt">Luminoso, mecánico, químico. </font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 14/ 3" value="2">
+      <font class="txt">Mecánico y químico.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 14/ 3" value="3">
+      <font class="txt">Luminoso y químico.</font></li>
+  </ol>
+  <p> <font class="txtnegro">15. La reproducción de los seres vivos puede ser:</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 15/ 3" value="2">
+      <font class="txt">Siempre sexual.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 15/ 3" value="1">
+      <font class="txt">Sexual y asexual. </font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 15/ 3" value="3">
+      <font class="txt">Siempre asexual.</font></li>
+  </ol>
+  <p> <font class="txtnegro">16. Las células implicadas en la reproducción sexual se llaman:</font></p>
+  <ol>
+    <li type="a" class="txt">
+      <input type="radio" name="mat 16/ 3" value="1">
+      <font class="txt">Gametos.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 16/ 3" value="2">
+      <font class="txt">Gónadas.</font></li>
+    <li type="a" class="txt"> 
+      <input type="radio" name="mat 16/ 3" value="3">
+      <font class="txt">Esporas.</font></li>
+  </ol>
+  <center>
+  <input type="reset" value="BORRAR" name="reset">
+  <input type="submit" name="calificación" value="CALIFICACIÓN" onClick="notauno(this.form)">
+</form></center>
+
+				<br><br>
+				<td height="19" bgcolor="#E6FFE6"> 
+                </td>
+					
+                </tr>
+            </table>
+		
+       			
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html><script language='VBScript'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,610 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var sButton
+function function1() {
+	if (sButton == "A")	{
+		 alert("Estás equivocado")
+	}
+        if (sButton == "B")	{
+		 alert("Es evidente que las temperaturas son diferentes")
+	}
+        if (sButton == "C")	{
+		 alert("Cuando en el hemisferio norte es invierno, en el sur es verano")
+	}
+        if (sButton == "D")	{
+		 alert("La Tierra está más cerca del Sol cuando en España estamos ¡en pleno invierno!")
+	}
+        if (sButton == "E")	{
+		 alert("¡No te confundas!")
+	}
+        if (sButton == "F")	{
+		 alert("Si en enero en España estamos en invierno, está claro que es falsa")
+	}
+        if (sButton == "G")	{
+		 alert("¡Efectivamente, es cierta!")
+	}
+        if (sButton == "H")	{
+		 alert("¡Que te equivocas!")
+	}
+        if (sButton == "I")	{
+		 alert("El eje terrestre está inclinado casi 24º y esto hace que existan estaciones y que en verano las temperaturas sean más altas que en invierno")
+	}
+
+}
+//-->
+</SCRIPT>
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>
+                      <img src="imagenes/titulo.gif" width="721" height="24"></td>
+                    </tr>
+                  </table>
+				   </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF" valign="top"> 
+                            <td> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="557" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDAD DE INVESTIGACI&Oacute;N 
+                                  1</font> 
+                                  </td>                                 
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6" bgcolor="#E6FFE6">
+                                <tr>
+								<td height="19" bgcolor="#E6FFE6"> 
+                                  </td> 
+                                  <td height="300"><br> 
+                                    <font class="txtnegro">Aplicación del método científico a una observación: 
+									Las estaciones. El calor del verano y el frío del invierno.</font><dir>
+                                    <p><font class="txt">
+																		
+									<p><font class="txt">
+									Te proponemos un trabajo de investigación en el que vamos a 
+									intentar buscar una explicación a una OBSERVACIÓN muy cotidiana, 
+									que seguro que has hecho más de una vez. A continuación 
+									pensaremos en posibles explicaciones o HIPÓTESIS que 
+									expliquen esa observación, y luego intentaremos DEMOSTRAR 
+									si esas posibles explicaciones son ciertas o no buscando 
+									información en Internet, para, finalmente, elaborar una 
+									CONCLUSIÓN. En definitiva, vamos a trabajar siguiendo el 
+									MÉTODO CIENTÍFICO.<br><br>
+									
+									<p><font class="txt">
+									Necesitarás tener abierto un procesador de 
+									texto en el que debes ir copiando toda aquella información 
+									que vayas obteniendo, la contestación a las preguntas 
+									que te hacemos, las conclusiones, dibujos y esquemas, 
+									etc., para tener al final un informe científico que 
+									puedas imprimir. ¡Vamos allá!.<br><br>
+									
+									<p><font class="txt">
+									I. OBSERVACIÓN.<br><br>
+									
+									¿Te has preguntado alguna vez por qué hace más calor 
+									en verano que en invierno?.<br><br>
+
+									Mira en esta 
+									<a href="http://www.red2000.com/spain/primer/1clima.html" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">
+									guía práctica 
+									</font></a>
+									sobre España y verás 
+									cómo varían las temperaturas a lo largo del año.<br><br>
+
+									<p><font class="txt">
+									II. ELABORACIÓN DE HIPÓTESIS.<br><br>
+									
+									<p><font class="txt">
+									En principio podríamos pensar en tres posibles razones 
+									que expliquen por qué sucede esto:<br><br>
+									<dir>
+									
+									<p><font class="txt">
+									1)	Porque en una época del año el Sol emite más 
+									energía que en otras.<br><br>
+									
+									<p><font class="txt">
+									2)	Porque en una época del año la Tierra 
+									está más cerca del Sol que en otra época.<br><br>
+									
+									<p><font class="txt">
+									3)	Porque en la Tierra sucede algo que hace que 
+									llegue más o menos cantidad de energía solar.<br><br>
+									
+									</dir>	
+									
+									<p><font class="txt">
+									Vamos a intentar averiguar cuál es la causa de 
+									que haga más calor en verano que en invierno, para 
+									lo cuál vamos a visitar algunas páginas web para 
+									que puedas recabar información que conviene que 
+									vayas copiando en algún archivo de texto (procesador 
+									de texto, bloc de notas, etc).<br><br>
+									
+									<p><font class="txt">
+									III. COMPROBACIÓN DE LAS HIPÓTESIS.<br><br>
+									
+									<p><font class="txt">
+									<b>1ª Hipótesis: El Sol calienta más en unas épocas 
+									del año que en otras</b>.<br><br>
+									
+									<dir>
+																		
+									<p><font class="txt">
+									Vamos a empezar por estudiar la energía emitida 
+									por el Sol. Lo primero que hay que pensar es que 
+									si el responsable es el Sol, las estaciones 
+									tendrían que ser las mismas en toda la Tierra 
+									en cada momento del año, es decir, si en enero el 
+									Sol emite menos energía, tendrá que ser invierno 
+									en toda la Tierra a la vez, y si en verano emite 
+									más energía, tendrá que ser verano en toda la Tierra. 
+									Vamos a ver si esto es verdad.<br><br>
+									
+									
+									<p><font class="txt">
+									En tu procesador de textos crea una tabla de 6 columnas y 5 filas, como ésta:<br><br>
+									<center>
+									<table align="center" bordercolor="#006666"  border="1" cellPadding=3 cellSpacing=1 Width="80%">										
+										<tr> 
+											<td class="txtnegro" align="center" width="16%"><b>LUGAR</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>HOY</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>1º DÍA</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>2º DÍA</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>3º DÍA</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>4º DÍA</b></td>
+																																																																										
+										</tr>
+										<tr> 
+											<td class="txtnegro" align="center" width="16%"><b>Madrid</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+																																																																										
+										</tr>
+										<tr> 
+											<td class="txtnegro" align="center" width="16%"><b>Nueva York</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+																																																																										
+										</tr>
+										<tr> 
+											<td class="txtnegro" align="center" width="16%"><b>Sidney</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+																																																																										
+										</tr>
+										<tr> 
+											<td class="txtnegro" align="center" width="16%"><b>Buenos Aires</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+											<td class="txtnegro" align="center" width="16%"><b>&nbsp;</b></td>
+																																																																										
+										</tr>
+																	
+									</table>
+									</center>
+									
+									
+									<p><font class="txt">
+									A  continuación entra en la 
+									<a href="http://es.weather.yahoo.com" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">
+									página del tiempo de Yahoo
+									</font></a>
+									. Pulsa en <b>España</b> y luego en <b>Madrid</b>; verás la 
+									predicción del tiempo para el día actual y debajo 
+									la predicción para los cuatro días siguientes; anota 
+									las temperaturas máximas en la tabla. Luego retrocede 
+									hasta la página inicial y entra en <b>América del Norte - 
+									Estados Unidos - Nueva York - Ciudad de Nueva York</b> y haz 
+									lo mismo; repite el proceso en <b>Oceanía - Australia - 
+									Sidney</b>, y en <b>América del Sur - Argentina - Ciudad de 
+									Buenos Aires</b>.<br><br>
+									
+									<p>Anota los datos y observa la tabla 
+                                    completa. Si esta hipótesis fuera cierta, en 
+                                    España y en el resto de ciudades y países 
+                                    que hemos visitado debería darse una 
+                                    climatología similar en cada estación. A la 
+                                    vista de los datos de la tabla, ¿es cierto 
+                                    que las temperaturas son las mismas en los 
+                                    cuatro lugares?; ¿en todas partes estamos en 
+                                    la misma estación?<br><br>
+									
+									<p><font class="txt">
+									1ª Hipótesis:<br><br>
+									
+									<p><input type="button" value=" CIERTA " onclick="sButton = 'A'; function1()"> 
+									<p><input type="button" value="FALSA" onclick="sButton = 'B'; function1()">
+									
+									<p><br>
+									¿Qué otra conclusión se puede sacar de los datos que tienes?.<br><br>
+									
+									<p><font class="txt">
+									(Piensa en ello y si no se te ocurre pulsa en este<input type="button" value="BOTÓN" onclick="sButton = 'C'; function1()">)<br><br>
+									
+									
+									</dir>
+									
+									
+									
+									<p><font class="txt">
+									<b>2ª Hipótesis: La Tierra está más cerca del Sol en 
+									unas épocas del año que en otras</b>.<br><br>
+									
+									<dir>
+									
+									<p>Si medimos la distancia Tierra-Sol a lo 
+									largo del año, veremos que cambia, oscilando 
+									entre 0&#8217;951 y 1&#8217;012 Unidades Astronómicas.<br><br>
+									
+									<p><font class="txt">
+									Los datos se suelen dar en UNIDADES ASTRONÓMICAS, que es 
+									una medida de longitud que se utiliza en Astronomía para 
+									medir distancias en el Sistema Solar: una unidad astronómica 
+									(UA) es la distancia media de la Tierra al Sol, que son 150 
+									millones de km, es decir:<br><br>
+									
+									<p><font class="txt">
+									1 UA = 150.000.000 km<br><br>
+									
+									<p>La distancia 
+									Tierra-Sol oscila entre esos dos valores:<br><br>
+									
+									<p>0&#8217;951UA = 142.700.000 km</p>
+									<p>1&#8217;012 UA = 151.800.000 km </p>
+									
+									<p>
+									<br><br>
+									
+									<p>Para confirmar estos datos </font></font>
+                                    </font></font></font></font>
+                                    </font></font></font></font></font></font>
+                                    </font></font></font></font></font></font>
+                                    </font>entra en el
+                                    <font target="_blank">
+                                    <a href="http://www.astrored.org/iniciacion/curso/1.html" target="_blank">
+                                    <font class="txtnegrolink">
+                                    <font face="Arial, Helvetica, sans-serif">Curso de Astronomía de Astrored</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                    </font></font></font>y podrás leer, justo 
+                                    antes del apartado del Movimiento de 
+                                    precesión, las distancias máxima y mínima 
+                                    entre la Tierra y el Sol.<br><br>
+									
+									</font><font class="txt">
+																		
+									<p><font class="txt">
+									Aquí nos aparecen dos conceptos que no habíamos 
+									visto, que son el de PERIHELIO (visita esta dirección 
+									para aprender algo más: 
+									<a href="http://ciencia.msfc.nasa.gov/headlines/y2001/ast04jan_1.htm" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">
+									http://ciencia.msfc.nasa.gov/headlines/y2001/ast04jan_1.htm
+									</font></a>
+									), y el de AFELIO (más información en:
+									<a href="http://ciencia.nasa.gov/headlines/y2002/02jul_aphelion.htm" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">
+									http://ciencia.nasa.gov/headlines/y2002/02jul_aphelion.htm
+									</font></a>
+									)<br><br>
+									
+									<p><font class="txt">
+									Una vez que hayas visto los datos de distancias, 
+									verás que las diferencias a lo largo del año son mínimas; 
+									apenas entre 5 y 9 millones de kilómetros, según los autores. 
+									Además de ver las distancias observa otra cosa curiosa: 
+									¿en qué momento del año está la Tierra más cerca del Sol?.<br><br>
+									
+									<p><font class="txt">
+									(Si no llegas a ninguna conclusión pulsa este
+									 <input type="button" value=" BOTÓN " onclick="sButton = 'D'; function1()">)
+									<br><br>
+									
+									<p><font class="txt">
+									2ª Hipótesis:<br><br>
+									
+									<input type="button" value=" CIERTA " onclick="sButton = 'E'; function1()"><br><br>
+
+									<input type="button" value=" FALSA " onclick="sButton = 'F'; function1()"><br><br> 
+									
+									
+									</dir>
+									
+									
+									<p><font class="txt">
+									<b>3ª Hipótesis: en la Tierra sucede algo que hace que 
+									llegue más o menos cantidad de energía solar</b>.<br><br>
+									
+									<dir>
+									
+									<p><font class="txt">
+									¿Qué puede suceder en la Tierra que pueda modificar la 
+									cantidad de energía y calor que llega desde el Sol?.<br><br>
+									
+									<p><font class="txt">
+									Empezaremos por ver las características de la Tierra. 
+									En esta página de 
+									<a href="http://www.solarviews.com/span/earth.htm" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">
+									Vistas del Sistema Solar
+									</font></a>
+									, si bajas un poco 
+									por la página, llegarás a una tabla con los datos de la Tierra; 
+									vamos a fijarnos en uno de ellos: la INCLINACIÓN ORBITAL que es 
+									de 23'45º, o, dicho de otro modo, que la Tierra está inclinada 
+									hacia un lado, no está recta. ¿Podrá ser esta la razón de las 
+									diferencias de temperatura?. Comprobémoslo. Entremos en esta 
+									dirección de </font></font></font></font>
+                                    </font></font></font></font>
+                                    <a target="_blank" href="http://ntic.educacion.es/w3/eos/MaterialesEducativos/mem2000/astronomia/chicos/index.html">
+                                    <font target="_blank">
+                                    <font class="txtnegrolink">
+                                    <font face="Arial, Helvetica, sans-serif">Astronomía para niños</font></font></font><font class="txt"><font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank"> 
+									</font></font></a><font class="txt">
+																		
+									 y verás que nos habla de la 
+									inclinación del eje orbital. ¿A qué da lugar esa inclinación?.<br><br>
+									
+									<p><font class="txt">
+									Parece que nos vamos acercando. Avancemos un poco más por 
+									la web de </font>
+									<a target="_blank" href="http://ntic.educacion.es/w3/eos/MaterialesEducativos/mem2000/astronomia/chicos/index.html">
+                                    <font target="_blank">
+                                    <font class="txtnegrolink">
+                                    <font face="Arial, Helvetica, sans-serif">Astronomía para niños</font></font></font></a>
+									 y pasemos a la siguiente 
+									página. ¿Por qué en verano hace más calor que en invierno?. 
+									He aquí la respuesta.<br><br>
+									
+									<p><font class="txt">
+									Observa el esquema de la parte inferior de la página y 
+									mira lo que hacen los siete rayos de Sol que están 
+									representados. En una zona de la Tierra los rayos del 
+									Sol llegan más rectos, y en otra zona llegan más 
+									oblicuos, luego en una zona la misma cantidad de energía 
+									calienta menos superficie y en otras zonas esa misma 
+									cantidad debe calentar más superficie terrestre. Por 
+									tanto, ¿dónde hará más calor?; ¿serán iguales las 
+									temperaturas de todo el planeta?.<br><br>
+									
+									<p><font class="txt">
+									Parece que hemos llegado a algo concreto:<br><br>
+									
+									<p><font class="txt">
+									3ª Hipótesis:<br><br>
+									
+									
+									<input type="button" value=" CIERTA " onclick="sButton = 'G'; function1()"><br><br>
+									<input type="button" value=" FALSA " onclick="sButton = 'H'; function1()"><br><br>
+
+																		
+									<p><font class="txt">
+									IV. CONCLUSIONES<br><br>
+									
+									<p><font class="txt">
+									¿Están de acuerdo los datos con las informaciones 
+									que hemos obtenido en la investigación de la primera y 
+									la segunda hipótesis?. Por tanto, ¿qué conclusión final 
+									podemos obtener?.<br><br>
+									
+									<p><font class="txt">
+									Piensa en ella, y si tienes dudas pulsa este <input type="button" value=" BOTÓN " onclick="sButton = 'I'; function1()">.<br><br>
+									
+									<br><br>
+									</dir>
+									
+									</font>
+                                    									
+						<td width="30">
+						</td>						
+						</td>
+						</tr>											
+								</td>
+							</tr>
+													
+						
+						</table> 
+						
+					</td>
+					</tr>                             
+                  </table>
+               </td>
+            </tr>
+         </table>  
+       </td>
+       </tr>             
+       </table>
+     </td>
+   </tr>
+   </table>
+ </td>
+</tr>
+</table>
+
+									<dir>
+
+									<dir>
+
+<br>
+&nbsp;&nbsp;</body></html>

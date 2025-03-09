@@ -1,0 +1,344 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+-->
+</style>
+<link href="../../../1ESO/estilos/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" onload="MM_preloadImages('../../../1ESO/atmosfera/actividadini1.gif','../../../1ESO/atmosfera/img/actividades1.gif','../../../1ESO/atmosfera/img/mapa1.gif','../../../1ESO/atmosfera/img/ideas1.gif','../../../1ESO/atmosfera/img/autoevaluacion1.gif','../../../1ESO/atmosfera/img/enlaces1.gif','../../../1ESO/atmosfera/img/descargas1.gif','../../../1ESO/atmosfera/img/introduccion1gif.gif','../../../1ESO/atmosfera/img/inicio2B.gif','../../../1ESO/atmosfera/img/contenidos1.gif')" alink="#006666" bgcolor="#ffffff" link="#006666" marginheight="0" marginwidth="0" text="#000000" vlink="#006666">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="760">
+  <tbody><tr>
+    <td valign="top"> 
+      <table border="0" cellpadding="0" cellspacing="0" height="740" width="760">
+        <tbody><tr> 
+          <td height="35" width="760">
+            <table border="0" cellpadding="0" cellspacing="0" height="30" width="760">
+              <tbody><tr>
+                <td width="760"> 
+                  <img src="../../../1ESO/img/logo_biosfera.jpg" border="0" height="35" width="760"></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="697" valign="top">
+            <table bgcolor="#e6ffe6" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr> 
+                <td align="center" height="25"> 
+                  <table border="0" cellpadding="0" cellspacing="0" width="723">
+                    <tbody><tr> 
+                              <td height="25" width="723"> <img src="../imagenes/contenidos/tierra_cambia.gif" width="742" height="25"></td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table bgcolor="#006666" border="0" cellpadding="0" cellspacing="0" width="760">
+                    <tbody><tr align="center"> 
+                      <td valign="top">
+                        <table border="0" cellpadding="0" cellspacing="1" width="760">
+                          <tbody><tr bgcolor="#ffffff"> 
+                            <td align="center" bgcolor="#e6ffe6"> 
+                              <table style="border-collapse: collapse;" border="0" bordercolor="#111111" cellpadding="6" cellspacing="0" width="758">
+                                <tbody><tr> 
+                                  <td bgcolor="#bbddbb" height="19" width="486">
+									<p class="txtnegro">Reconstrucción de la 
+									historia geológica de territorio</p></td>
+                                  <td align="right" bgcolor="#bbddbb" height="19" width="260">&nbsp;
+                                  </td>
+                                </tr>
+                              </tbody></table>
+                              <table id="AutoNumber2" border="0" cellspacing="1" width="100%">
+                                <tbody><tr>
+                                  <td width="4%">&nbsp;</td>
+                                  <td width="92%">
+                              <table width="694" height="272" border="0" cellspacing="1">
+                                <tr>
+                                  <td width="444" height="270"><blockquote> 
+                                                        <p class="txt"><b>Introducci&oacute;n</b></p>
+                                                        <p align="left" class="txt">La 
+                                                          observaci&oacute;n de 
+                                                          la disposici&oacute;n 
+                                                          de las rocas en el campo 
+                                                          permite a los ge&oacute;logos 
+                                                          la apasionante labor 
+                                                          de reconstruir la historia 
+                                                          geol&oacute;gica de 
+                                                          una regi&oacute;n. Para 
+                                                          ello se aplican los 
+                                                          principios geol&oacute;gicos 
+                                                          como los de superposici&oacute;n 
+                                                          de los estratos, sucesi&oacute;n 
+                                                          faun&iacute;stica y 
+                                                          de eventos, actualismo, 
+                                                          etc. Pero no te preocupes, 
+                                                          estos principios no 
+                                                          dictan m&aacute;s que 
+                                                          cuestiones de pura l&oacute;gica, 
+                                                          con las que la reconstrucci&oacute;n 
+                                                          de una historia geol&oacute;gica 
+                                                          a partir de un corte 
+                                                          geol&oacute;gico es 
+                                                          una tarea relativamente 
+                                                          sencilla.</p>
+                                                      </blockquote>
+                                                      </td>
+                                  <td width="243"><p align="right" class="txt"><img src="image/GranCanon.jpg" width="243" height="208" vspace="5"></p>
+                                      </td>
+                                </tr>
+                              </table>
+                              <table style="border-collapse: collapse;" id="AutoNumber1" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                                    <tr> 
+                                                      <td valign="top" width="100%"> 
+                                                        <p class="txt" align="left"><b>Desarrollo 
+                                                          de la actividad</b></p>
+                                                        <p class="txt">A lo largo 
+                                                          de la actividad aprender&aacute;s 
+                                                          mediante un ejemplo 
+                                                          animado a reconstruir 
+                                                          la historia geol&oacute;gica 
+                                                          de una regi&oacute;n 
+                                                          a partir de un corte 
+                                                          o esquema geol&oacute;gico. 
+                                                          Posteriormente podr&aacute;s 
+                                                          iniciarte en la reconstrucci&oacute;n 
+                                                          de historias geol&oacute;gicas 
+                                                          a partir de otros cortes 
+                                                          y esquemas geol&oacute;gicos 
+                                                          sencillos. Para ello 
+                                                          deber&aacute;s introducirte 
+                                                          en las t&eacute;cnicas 
+                                                          de dataci&oacute;n por 
+                                                          medio de f&oacute;siles.</p>
+                                                        <p class="txt" style="text-align: center;" align="left"> 
+                                                          <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="705" height="417">
+															<param name="movie" value="image/Historia_Geol_gica.swf">
+															<param name="quality" value="High">
+															<embed src="image/Historia_Geol_gica.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="705" height="417" quality="High"></object>
+                                                        </p>
+                                                        <table id="table3" border="0" width="100%">
+                                                          <tbody>
+                                                            <tr> 
+                                                              <td width="50%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                                  <tbody>
+                                                                    <tr bgcolor="#bbddbb"> 
+                                                                      <td width="134"><p align="center"><span class="txtnegrolink"> 
+                                                                          <a class="txtnegrolink" target="_blank" href="actividad1.htm">Actividad 
+                                                                          1 </a></span><a target="_blank" href="actividad1.htm"><img src="image/miniaturas/activ1.jpg" width="100" height="75" border="2"></a></p></td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table></td>
+                                                              <td width="50%"> 
+                                                                <table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                                  <tbody>
+                                                                    <tr bgcolor="#bbddbb"> 
+                                                                      <td width="134"> 
+                                                                        <p align="center"><span class="txtnegrolink"> 
+                                                                          <a class="txtnegrolink" target="_blank" href="actividad2.htm">Actividad 
+                                                                          2 </a></span><a target="_blank" href="actividad2.htm"><img src="image/miniaturas/activ2.jpg" width="100" height="75" border="2"></a></p></td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                                </table></td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                        <blockquote> 
+                                                          <p class="txtnegro">&nbsp;</p>
+                                                        </blockquote>
+                                                        <p class="txtnegro"><strong>Actividades 
+                                                          de ampliaci&oacute;n:</strong></p>
+                                                        <blockquote>
+                                                          <table id="table3" border="0" width="100%">
+                                                            <tbody>
+                                                              <tr> 
+                                                                <td width="33%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                                    <tbody>
+                                                                      <tr bgcolor="#bbddbb"> 
+                                                                        <td width="134"><p align="center"><span class="txtnegrolink"> 
+                                                                            <a class="txtnegrolink" target="_blank" href="historia_geol_1.htm">Otras 
+                                                                            historias 
+                                                                            geol&oacute;gicas 
+                                                                            </a></span><a target="_blank" href="historia_geol_1.htm"><img src="image/miniaturas/activ1_.jpg" width="100" height="75" border="2"></a></p></td>
+                                                                      </tr>
+                                                                    </tbody>
+                                                                  </table></td>
+                                                                <td width="34%"> 
+                                                                  <table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                                    <tbody>
+                                                                      <tr bgcolor="#bbddbb"> 
+                                                                        <td width="134"> 
+                                                                          <p align="center"><span class="txtnegrolink"> 
+                                                                            <a class="txtnegrolink" target="_blank" href="historia_geol_2.htm">Los 
+                                                                            f&oacute;siles 
+                                                                            y 
+                                                                            la 
+                                                                            edad 
+                                                                            de 
+                                                                            las 
+                                                                            rocas 
+                                                                            </a></span><a target="_blank" href="historia_geol_2.htm"><img src="image/miniaturas/activ2_.jpg" width="100" height="75" border="2"></a></p></td>
+                                                                      </tr>
+                                                                    </tbody>
+                                                                  </table></td>
+                                                                <td width="33%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                                    <tbody>
+                                                                      <tr bgcolor="#bbddbb"> 
+                                                                        <td width="134"><p align="center">
+																		<span class="txtnegrolink"> 
+                                                                            <a class="txtnegrolink" target="_blank" href="historia_geol_3.htm">
+																		Evaluación: 
+                                                                            cortes 
+                                                                            geol&oacute;gicos</a></span><a target="_blank" href="historia_geol_3.htm"><img src="image/miniaturas/activ3_.jpg" width="100" height="75" border="2"></a></p></td>
+                                                                      </tr>
+                                                                    </tbody>
+                                                                  </table></td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                          
+                                                        </blockquote></td>
+                                </tr>
+                                <tr>
+                                                      <td width="100%" height="19"> 
+                                                        <div align="right">
+															<p class="txt" style="text-align: right">
+															<b>Autor: Juan Aznar</b></div>
+														<div align="center">&nbsp;</div>
+														<div align="center"><b>
+															<font color="#006666" face="Arial" size="2">
+															<a class="txtnegrolink" title="Enlaza con los tipos de sistemas circulatorios" href="../../../1ESO/atmosfera/tiempoyclima/cierre.htm">Cerrar</a></font></b> 
+                                                        </div></td>
+                                </tr>
+                              </tbody></table>
+                                  </td>
+                                  <td width="4%">&nbsp;</td>
+                                </tr>
+                              </tbody></table>
+                                        <p>&nbsp;</p>
+                              </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body></html>

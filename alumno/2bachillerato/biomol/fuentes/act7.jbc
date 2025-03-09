@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Ácidos nucleicos</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Ácidos nucleicos</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La unidad estrucutral de los ácidos nucleicos es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La base nitrogenada</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>El nucleósido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>El nucleótido</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>El ácido fosfórico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las bases púricas son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Adenina y Timina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Adenina y Guanina</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Citosina y Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Adenina y Uracilo</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las bases nitrogenadas pirimidínicas son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Timina, Guanina y Citosina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina, Adenina y Citosina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina, Uracilo y Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina, Citosina y Uracilo</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La base nitrogenada que SÓLO aparece en el ARN es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Adenina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Uracilo</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La desoxirribosa es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una pentosa que aparece en el ARN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una pentosa que aparece en el ADN</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Una hexosa que aparece en el ARN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una hexosa que apaece en el ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El enlace entre la pentosa y la base nitrogenada se llama</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>O - glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>N - glucosídico</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Peptídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>alfa - glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El primer nucleótido de una cadena de ácido nucleico tiene libre (sin unirse a otro nucleótido) el carbono</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>5 de la pentosa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>4 de la pentosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>3 de la pentosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>1 de la pentosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La estructura secundaria del ADN no tiene una de las siguientes características</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Las cadenas son antiparalelas</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La Adenina se une a la Timina por tres puentes de Hidrógeno</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Las hebras son complementarias</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Las hebras giran en torno a un eje</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las Histonas son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Proteínas ácidas que forman el nucleosoma</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Proteínas ácidas que aparecen en la estructura secundaria del ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Proteínas básicas que forman el nucleosoma</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Proteínas básicas que aparecen en la estructura secundaria del ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>act7b.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

@@ -1,0 +1,28 @@
+
+#wrapper{
+	width: 400px;
+	margin: 10px auto;
+}
+
+div.message, #contactForm li.special{
+	display: none;
+}
+div.message{
+	overflow: auto;
+}
+#alert{
+	width: 250px;
+	float: right;
+}
+
+#contactForm li{
+	list-style: none;
+	padding-bottom: 5px;
+	text-align: right;
+	
+}
+
+#contactForm input, #contactForm textarea{
+	width: 250px;
+	border: 1px solid #333;
+}

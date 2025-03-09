@@ -1,0 +1,384 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="../img/evolucion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="367" height="19" bgcolor="#BBDDBB">
+                                    <p class="ttunidad"><font class="txtnegro">CONTENIDOS</font> 
+                                    </p>
+                                  </td>
+                                  <td width="367" height="19" bgcolor="#BBDDBB">
+                                    <p align="right" class="txtnegrolink"> <a class="txtnegrolink" href="1origen_de_la_vida.htm"> 
+                                      anterior</a> - (2/16) - <a href="3evolucion_de_los_seres_vivos.htm" class="txtnegrolink">siguiente</a> 
+                                  </td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="ttunidad">EL ORIGEN QUÍMICO DE LA VIDA </p>
+                                   
+                                    
+                                    
+                                    <p class="txt">Hoy en d&iacute;a la teor&iacute;a 
+                                      aceptada para explicar el origen de la vida 
+                                      es la que se basa en la hip&oacute;tesis 
+                                      qu&iacute;mica expuesta por el ruso A. Oparin 
+                                      y el ingl&eacute;s Haldane en 1923. </p>
+                                    <p class="txt"> <img src="image/sopa.jpg" width="381" height="350" alt="Seg&uacute;n Oparin, la superficie terrestre estaba ocupada por un mar caliente, rico en materias qu&iacute;micas y sometido a una gran carga energ&eacute;tica" align="left">Cuando 
+                                      la Tierra se form&oacute; hace unos 4.500 
+                                      millones de a&ntilde;os, era una inmensa 
+                                      bola incandescente en la que los distintos 
+                                      elementos se colocaron seg&uacute;n su densidad, 
+                                      de forma que los m&aacute;s densos se hundieron 
+                                      hacia el interior de la Tierra y formaron 
+                                      el n&uacute;cleo, y los m&aacute;s ligeros 
+                                      salieron hacia el exterior formando una 
+                                      capa gaseosa alrededor de la parte s&oacute;lida, 
+                                      la protoatm&oacute;sfera, en la que hab&iacute;a 
+                                      gases como el metano, el amon&iacute;aco 
+                                      y el vapor de agua.</p>
+                                    <p class="txt">Estos gases estaban sometidos 
+                                      a intensas radiaciones ultravioletas (UV) 
+                                      provenientes del Sol y a fuertes descargas 
+                                      el&eacute;ctricas que se daban en la propia 
+                                      atm&oacute;sfera, como si fueran gigantescos 
+                                      rel&aacute;mpagos; por efecto de estas energ&iacute;as 
+                                      esos gases sencillos empezaron a reaccionar 
+                                      entre s&iacute; dando lugar a mol&eacute;culas 
+                                      cada vez m&aacute;s complejas; al mismo 
+                                      tiempo la Tierra empez&oacute; a enfriarse, 
+                                      y comenz&oacute; a llover de forma torrencial 
+                                      y estas lluvias arrastraron las mol&eacute;culas 
+                                      de la atm&oacute;sfera hacia los primitivos 
+                                      mares que se iban formando. </p>
+                                    <p class="txt"><br>
+                                      Esos mares primitivos estaban muy calientes 
+                                      y este calor hizo que las mol&eacute;culas 
+                                      siguieran reaccionando entre s&iacute;, 
+                                      apareciendo nuevas mol&eacute;culas cada 
+                                      vez m&aacute;s complejas; Oparin llam&oacute; 
+                                      a estos mares cargados de mol&eacute;culas 
+                                      el CALDO NUTRITIVO o SOPA PRIMORDIAL. Algunas 
+                                      de esas mol&eacute;culas se unieron constituyendo 
+                                      unas asociaciones con forma de peque&ntilde;as 
+                                      esferas llamadas COACERVADOS, que todav&iacute;a 
+                                      no eran c&eacute;lulas. </p>
+                                    <p class="txt"><br>
+                                      Este proceso continu&oacute; hasta que apareci&oacute; 
+                                      una mol&eacute;cula que fue capaz de dejar 
+                                      copias de s&iacute; misma, es decir, algo 
+                                      parecido a reproducirse; esta mol&eacute;cula 
+                                      ser&iacute;a algo similar a un &Aacute;CIDO 
+                                      NUCLEICO. Los coacervados que ten&iacute;an 
+                                      el &aacute;cido nucleico empezaron a mantenerse 
+                                      en el medio aisl&aacute;ndose para no reaccionar 
+                                      con otras mol&eacute;culas, y finalmente 
+                                      empezar&iacute;an a intercambiar materia 
+                                      y energ&iacute;a con el medio, dando lugar 
+                                      a primitivas c&eacute;lulas.</p>
+                                    <p class="txt"><br>
+                                      Estas primeras c&eacute;lulas se extender&iacute;an 
+                                      por los mares, dando comienzo un proceso 
+                                      que a&uacute;n sigue funcionando hoy en 
+                                      d&iacute;a, el proceso de EVOLUCI&Oacute;N 
+                                      BIOL&Oacute;GICA, responsable de que a partir de seres vivos m&aacute;s sencillos 
+                                      vayan surgiendo seres vivos cada vez m&aacute;s 
+                                      complejos, y que es la causa de la gran 
+                                      diversidad de seres vivos que han poblado 
+                                      y pueblan actualmente la Tierra, lo que 
+                                      hoy llamamos la BIODIVERSIDAD.</p>
+                                    <p class="txt"><br>
+                                      Hoy en d&iacute;a existe una variante de 
+                                      la teor&iacute;a Qu&iacute;mica del origen 
+                                      de la vida que es la teor&iacute;a del 
+									<a class="txtnegrolink" target="_blank" href="http://www.biocab.org/Panspermia_esp.html">Origen 
+                                      Extraterrestre</a> de la vida, que asume 
+                                      los principios de la teor&iacute;a de Oparin 
+                                      con la diferencia de proponer que la mol&eacute;cula 
+                                      replicante, ese &aacute;cido nucleico primitivo 
+                                      capaz de autocopiarse, no surgi&oacute; 
+                                      en los mares primordiales terrestres, sino 
+                                      que se origin&oacute; en alguna nebulosa 
+                                      pr&oacute;xima a la Tierra o en la propia 
+                                      nebulosa que origin&oacute; el Sistema Solar, 
+                                      y lleg&oacute; a la Tierra en alg&uacute;n 
+                                      meteorito, integr&aacute;ndose en el proceso 
+                                      de evoluci&oacute;n qu&iacute;mica que ya 
+                                      se daba en la Tierra. Esta teor&iacute;a 
+                                      sustentada por cient&iacute;ficos de la 
+                                      talla de
+									<a class="txtnegrolink" target="_blank" href="http://www.planetary.org/spanish/eSagan_index.html">Carl 
+                                      Sagan</a> se basa en el descubrimiento extraterrestre 
+                                      de numerosas mol&eacute;culas bioqu&iacute;micas, 
+                                      tales como agua y amino&aacute;cidos, en 
+                                      las nubes gaseosas de algunas nebulosas.</p>
+                                    <p class="txt">Los seres vivos que han existido 
+                                      y existen en la actualidad son muy diferentes 
+                                      en cuanto a complejidad, aspecto, modo de 
+                                      vida, etc., independientemente de cu&aacute;l 
+                                      haya sido el origen de la vida; sin embargo 
+                                      hay una serie de rasgos que son comunes 
+                                      a TODOS los seres vivos, extinguidos o vivientes, 
+                                      aunque sean de diferentes ESPECIES; estos 
+                                      rasgos son: </p>
+                                    <p class="txt"><br>
+                                      <img src="image/bolo.gif" width="9" height="13"> 
+                                      todos los seres vivos est&aacute;n formados 
+                                      por la misma materia, a la que llamamos MATERIA 
+                                      ORG&Aacute;NICA <br>
+                                      <img src="image/bolo.gif" width="9" height="13"> 
+                                      todos los seres vivos realizan las mismas 
+                                      funciones, la nutrici&oacute;n, la relaci&oacute;n 
+                                      y la reproducci&oacute;n, m&aacute;s o menos 
+                                      igual <br>
+                                      <img src="image/bolo.gif" width="9" height="13"> 
+                                      todos los seres vivos est&aacute;n formados 
+                                      por una (SERES UNICELULARES) o varias c&eacute;lulas 
+                                      (SERES PLURICELULARES). <br>
+                                    </p>
+									<div align="center">
+										<table border="0" width="70%" id="table1">
+											<tr>
+												<td align="center" valign="top">
+                                    <div align="center">
+                                    <table width="130" border="0" cellspacing="0" cellpadding="3" height="98" id="table2">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <font class="txtnegrolink"> 
+                                            Actividad 2<a href="actividad2.htm" target="_blank"><img src="image/activ2.gif" width="120" height="67" border="0" align="right"></a></font></td>
+                                      </tr>
+                                    </table>
+                                    
+                                    </div></td>
+												<td align="center" valign="top">
+                                    <div align="center">
+                                    <table width="130" border="0" cellspacing="0" cellpadding="3" height="98" id="table3">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <font class="txtnegrolink"> 
+                                            Actividad 2b<a target="_blank" href="actividad2b.htm"><img src="origen_vida_t.jpg" width="120" height="68" border="0" align="right"></a></font></td>
+                                      </tr>
+                                    </table>
+                                    
+                                    <p class="txt" style="text-align: center">
+									<b>(Contiene vídeo)
+									<img border="0" src="../../../img/wmv.gif" width="16" height="16"></b><br>
+&nbsp;</div></td>
+											</tr>
+										</table>
+									</div>
+                                    
+                                    <p class="txt"><br>
+                                      El conjunto de todos los seres vivos que 
+                                      existen hoy en d&iacute;a junto con el medio 
+                                      donde viven forman lo que llamamos la BIOSFERA, 
+                                      que abarca desde el suelo y parte de los 
+                                      oc&eacute;anos, hasta la zona m&aacute;s 
+                                      baja de la atm&oacute;sfera, aunque no es 
+                                      una capa continua, ya que en algunos lugares 
+                                      la densidad de seres vivos es muy alta, 
+                                      y en otros apenas existe vida.<br>
+                                    </p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                          <p align="right" class="txtnegrolink"> 
+                                            <a class="txtnegrolink" href="1origen_de_la_vida.htm"> 
+                                            anterior</a> - (2/16) - <a href="3evolucion_de_los_seres_vivos.htm" class="txtnegrolink">siguiente</a> 
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

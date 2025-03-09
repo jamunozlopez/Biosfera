@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Suelo&lt;center&gt;&lt;img src=&quot;../img/suelojov.jpg&quot; alt=&quot;suelojov.jpg&quot; width=&quot;109&quot; height=&quot;170&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Un suelo se produce por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Erosión y meteorización</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sedimentación y meteorización</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Transporte y meteorización</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sedimentación y erosión</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El horizonte A es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El que tiene más contenido en humus</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>El que tiene más contenido en sales</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El que tiene menos contenido en humus</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El que tiene menos contenido en sales</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El horizonte B es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El que tiene más contenido en humus</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El que tiene más contenido en sales</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Es la roca madre sin alterar</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es la roca madre alterada</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El horizonte C está influido por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El horizonte A</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El clima</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El horizonte B</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El horizonte D</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un suelo evolucionado es el que tiene de superficie hacia el interior</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Horizonte A, B, C y D</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Horizonte A, C, D y E</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Horizonte D, C, B y A</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Horizonte A y C</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url>tptecrs.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption></back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../autoevaluacion.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

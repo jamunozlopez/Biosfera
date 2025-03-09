@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad del Reino Plantas I&lt;center&gt;&lt;img src=&quot;../imagenes/juglans.jpg&quot; alt=&quot;juglans.jpg&quot; width=&quot;300&quot; height=&quot;223&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad del Reino Plantas I&lt;center&gt;&lt;img src=&quot;../imagenes/juglans.jpg&quot; alt=&quot;juglans.jpg&quot; width=&quot;300&quot; height=&quot;223&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Las plantas colonizan el medio terrestre porque</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Desarrollan raíces</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Desarrollan hojas y flores</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Desarrollan flores, hojas y raíces</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Desarrollar epidermis</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las plantas desarrollan un ciclo evolutivo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Diploide</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Haploide</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Diploide con meiosis</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Diplohaploide</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En el ciclo de las plantas aparece</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un esporofito haploide y un gametofito diploide</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un esporofito 2n y un gametofito diploide</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un esporofito n y un gametofito haploide</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un esporofito diploide y un gametofito haploide</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Evolutivamente, las plantas presentan</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una reducción del gametofito y un desarrollo del esporofito</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una reducción del esporofito y un desarrollo del gametofito</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un desarrollo de gametofito y esporofito</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una reducción del gametofito y el esporofito</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las plantas son organimos que se caracterizan porque</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son pluricelulares, procariotas y fotosintéticos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son eucariotas unicelulares fotosintéticos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son eucariotas, pluricelulares y autótrofos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son eucariotas, pluricelulares y heterótrofos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>cierre.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Cerrar</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

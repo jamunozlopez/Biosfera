@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Glaciares III&lt;center&gt;&lt;img src=&quot;../img/valgal3.jpg&quot; alt=&quot;valgal3.jpg&quot; width=&quot;180&quot; height=&quot;120&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El valle en U se produce por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La acción erosiva de un torrente</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>La acción erosiva de la lengua del glaciar</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>La acción erosiva del circo del glaciar</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>La acción erosiva de las morrenas</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El glaciar transporta materiales</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Produciendo una granoselección</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Independientemente del tamaño del material</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Sólo en la zona central de la lengua glaciar</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>En la zona de ablación</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El transporte de materiales que hace un glaciar se realiza</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>De forma constante a lo largo de la lengua</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Con la misma velocidad a lo largo de la lengua</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Más rápido en la zona central de la lengua</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Más rápido en la zona lateral de la lengua</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los materiales transportados por el glaciar se denominan</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Morrenas centrales, si están en el interior del hielo</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Morrenas laterales, si están en los laterales del circo glaciar</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Morrenas frontales, si se encuentran en la zona de ablación</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Morrenas finales, si se encuentran en el fondo del glaciar</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los bloques erráticos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fragmentos pequeños de rocas pulidas</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Tillitas</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sedimentos estriados</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sedimentos muy grandes</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>=Siguiente&gt;</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../autoevaluacion.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

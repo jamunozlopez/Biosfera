@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad de inicio</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad de inicio</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Las funciones de los animales son:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Nacer, crecer y morir.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Nacer, nutrirse, reproducirse y morir.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Nutrirse, relacionarse y reproducirse.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Nutrirse, reproducirse y morir.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La nutrición es un proceso complejo realizado por:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El aparato digestivo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>El aparato digestivo y excretor.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>El aparato excretor, circulatorio, digestivo y respiratorio.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>El aparato digestivo, nervioso y reproductor.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El aparato digestivo no realiza:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La captura de alimentos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La digestión.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La absorción de nutrientes.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La formación de orina.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las sustancias nitrogenadas NO se excretan en forma de:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ácido úrico.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Amoniaco.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Urea.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Aminoácidos.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La función del aparato respiratorio en todos los animales sirve para:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Realizar el intercambio gaseoso.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Coger y expulsar aire.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Trasportar oxígeno desde el aire al interior del cuerpo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Ceder dióxido de carbono al agua, desde el interior del cuerpo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Escoge la frase verdadera:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Todos los animales tienen aparato circulatorio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Todos los animales utilizan el aparato circulatorio para transportar gases por el interior del organismo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Los animales que poseen aparato circulatorio lo utilizan para transportar oxígeno y nutrientes.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Los animales que poseen aparato circulatorio lo utilizan para transportar nutrientes.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los animales tienen el sistema nervioso:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>En la zona dorsal del cuerpo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>En la cabeza.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Formado por neuronas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Recubierto por el cráneo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las hormonas:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Producen respuestas rápidas frente a los estímulos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son producidas por el sistema nervioso.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son producidas por el aparato digestivo y vertidas a la sangre.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son producidas por glándulas endocrinas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La mayor parte de los animales utiliza el sistema de reproducción:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Asexual.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por mitosis.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por unión de gametos.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Por meiosis.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La clonación  consiste en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Formar humanos en serie.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Sólo se puede realizar en el laboratorio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Obtener copias idénticas a un original.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un procedimiento originado por unos payasos (clown) para aliviar enfermedades.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Página de contenidos</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../contenidos.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

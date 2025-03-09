@@ -1,0 +1,1375 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/organizacion_vida.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2">
+                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/bacteria.jpg" width="105" height="88"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celula%20_animal_letreros.jpg" width="105" height="83"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/electronico.jpg" width="105" height="116"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/epitelio_ciliado.jpg" width="105" height="89"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/Mitosismeristemos.jpg" width="105" height="104"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/tejido_muscular.jpg" width="105" height="85"></td>
+                        </tr>
+                      </table>
+                      </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+                          <tr bgcolor="#BBDDBB"> 
+                            <td valign="top" height="31" colspan="3"><font class="txtnegro"><span class="txtnegro"><i><a name="enlaces"></a></i></span>ENLACES</font><span class="txtnegro"> 
+                              DE INTER&Eacute;S</span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1"></td>
+                            <td width="522" valign="top"> 
+                              <table width="509" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="66">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" class="txt" colspan="2"><i>Hemos 
+                                    reunido algunas de las p&aacute;ginas m&aacute;s 
+                                    interesantes que hemos encontrado en la red 
+                                    y las hemos agrupado por bloques de contenidos:</i></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="333">&nbsp;</td>
+                                  <td colspan="2"> 
+                                    <ul>
+                                      <li><font class="txt"><a href="#citologia" class="txtnegrolink">Citolog&iacute;a, 
+                                        org&aacute;nulos celulares.</a></font></li>
+                                      <li><font class="txt"><a href="#histologia" class="txtnegrolink">Histolog&iacute;a.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#reproduccion_celular" class="txtnegrolink">La 
+                                        reproducci&oacute;n celular.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#mas" class="txtnegrolink">M&aacute;s 
+                                        p&aacute;ginas sobre citolog&iacute;a 
+                                        y organograf&iacute;a microsc&oacute;pica 
+                                        en castellano e ingl&eacute;s.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#celulas_procariotas" class="txtnegrolink">C&eacute;lulas 
+                                        procariotas.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#virus" class="txtnegrolink">Los 
+                                        virus.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#teoria_celular" class="txtnegrolink">La 
+                                        teor&iacute;a celular.</a></font></li>
+                                      <li><font class="txt"><a href="#personajes" class="txtnegrolink">Sobre 
+                                        Robert Hooke, Leeuwenhoek, Virchow, Schleiden, 
+                                        Schwann, Ramon y Cajal.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#metabolismo" class="txtnegrolink">Metabolismo 
+                                        y Fisiolog&iacute;a celular.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#transporte" class="txtnegrolink">Transporte 
+                                        a trav&eacute;s de membrana.</a><br>
+                                        </font></li>
+                                      <li><font class="txt"><a href="#homeostasis" class="txtnegrolink">Home&oacute;stasis.</a></font></li>
+                                    </ul>
+                                    <font class="txt"><a name="citologia"></a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Citolog&iacute;a, 
+                                    org&aacute;nulos celulares:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.salonhogar.com/ciencias/biologia/citologia/Organuloscelulares.htm" target="_blank" class="txtnegrolink">Citolog&iacute;a</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;gina 
+                                    con informaci&oacute;n de texto exclusivamente, 
+                                    breve y esquem&aacute;tica. Sin im&aacute;genes 
+                                    ni fotos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://edicion-micro.usal.es/web/educativo/micro2/tema04.html" target="_blank" class="txtnegrolink">C&eacute;lula 
+                                    eucariota</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td class="txt" colspan="2"> P&aacute;gina de 
+                                    la Universidad de Salamanca. Muy buenos textos, 
+                                    sin im&aacute;genes.</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><a href="http://www.monografias.com/trabajos6/ecoya/ecoya.shtml%20" target="_blank" class="txtnegrolink"><img src="../img/bolo.gif" width="9" height="13" border="0"></a></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.memo.com.co/fenonino/aprenda/biologia/biolog2.html" target="_blank" class="txtnegrolink"><font class="txtnegrolink">Biolog&iacute;a</font></a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt"> P&aacute;gina 
+                                    extremadamente sencilla sobre la c&eacute;lula 
+                                    y sus org&aacute;nulos. Sin im&aacute;genes, 
+                                    solo texto.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.monografias.com/trabajos/citologia/citologia.shtml" target="_blank" class="txtnegrolink"> 
+                                    TODO SOBRE CITOLOG&Iacute;A</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;gina 
+                                    de formato dificultoso, pero con informaci&oacute;n 
+                                    precisa sobre citolog&iacute;a y org&aacute;nulos 
+                                    celulares. Sin dibujos ni im&aacute;genes. 
+                                    S&oacute;lo sirve para b&uacute;squeda de 
+                                    informaci&oacute;n escrita.</font> </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.arrakis.es/%7Elluengo/celula.html" target="_blank" class="txtnegrolink">LA 
+                                    C&Eacute;LULA ANIMADA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;gina 
+                                    magn&iacute;fica en la que se muestran animaciones, 
+                                    ejercicios y muchas actividades sobre la c&eacute;lula, 
+                                    sus funciones y su estructura. M&iacute;rala 
+                                    y divi&eacute;rtete.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.kidlink.org/spanish/kidproj-spanish/celula" class="txtnegrolink" target="_blank">AULA 
+                                    VIRTUAL SOBRE LA C&Eacute;LULA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todo sobre 
+                                    la c&eacute;lula: esquemas, dibujos, procariotas, 
+                                    eucariotas, unicelulares, animales vegetales, 
+                                    etc. Informaci&oacute;n breve pero precisa 
+                                    y con muchas im&aacute;genes. Con un aula 
+                                    virtual sobre la c&eacute;lula.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://personal.tmlp.com/Jimr57/indexsp.htm" target="_blank" class="txtnegrolink">VIAJE 
+                                    VIRTUAL POR LA C&Eacute;LULA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"> 
+                                    <p><font class="txt">Viaje virtual a trav&eacute;s 
+                                      de la célula. Todos los org&aacute;nulos 
+                                      en movimiento. Explicaciones de fisiolog&iacute;a 
+                                      celular. Muy entretenida. Aprender&aacute;s 
+                                      jugando.</font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"> 
+                                    <p><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/componentes.html" class="txtnegrolink" target="_blank">Componentes 
+                                      celulares</a></font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"> 
+                                    <p><font class="txt">Breve y esquem&aacute;tico 
+                                      cuadro sobre org&aacute;nulos celulares, 
+                                      composici&oacute;n, estructura y funci&oacute;n.</font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://members.tripod.com/%7EFarmaSil/lisosoma.htm" class="txtnegrolink" target="_blank">LISOSOMAS</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Informaci&oacute;n 
+                                    espec&iacute;fica sobre la estructura y funci&oacute;n 
+                                    de los lisosomas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.botanical-online.com/lasplantasmovimientosvegetales.htm" class="txtnegrolink" target="_blank">Ciencia 
+                                    al D&iacute;a Internacional</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt"> Fant&aacute;stica 
+                                    p&aacute;gina con interesante informaci&oacute;n 
+                                    sobre mitosis, meiosis y ciclo celular. Ofrece 
+                                    una excelente lista de p&aacute;ginas web 
+                                    relacionadas con el tema. Y otras p&aacute;ginas 
+                                    espec&iacute;ficas sobre el genoma de Sacharomices 
+                                    cerevisiae.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://perso.wanadoo.es/sancayetano2000/biologia/pags/tema2/" class="txtnegrolink" target="_blank">Colegio 
+                                    San Cayetano Departamento de Biolog&iacute;a 
+                                    </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Interesante 
+                                    p&aacute;gina en la que se recogen distintas 
+                                    preguntas de ex&aacute;menes de selectividad 
+                                    relacionados con el tema de la c&eacute;lula 
+                                    y los org&aacute;nulos celulares, el ciclo 
+                                    celular, etc. Tiene respuestas correctas, 
+                                    detalladas y desarrolladas al m&aacute;ximo.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://scriptusnaturae.8m.com/Articulos/bac/arbol.htm" class="txtnegrolink" target="_blank">Interpretaci&oacute;n 
+                                    &aacute;rbol molecular vida</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Evoluci&oacute;n 
+                                    celular a trav&eacute;s del estudio del genoma. 
+                                    Interesante, novedosa y actual..</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.unavarra.es/genmic/curso%20microbiologia%20general/08-expresion%20de%20la%20informacion%20genetica.htm" class="txtnegrolink" target="_blank">EXPRESI&Oacute;N 
+                                    DE LA INFORMACI&Oacute;N GEN&Eacute;TICA</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt"> P&aacute;gina 
+                                    de formato y dise&ntilde;o deficiente, pero 
+                                    con exhaustiva informaci&oacute;n textual 
+                                    sobre la expresi&oacute;n de la informaci&oacute;n 
+                                    gen&eacute;tica y su regulaci&oacute;n. Muy 
+                                    interesante para imprimir y extraer documentaci&oacute;n.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.monografias.com/trabajos/citologia/citologia.shtml" class="txtnegrolink" target="_blank">Monograf&iacute;as 
+                                    de Citolog&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="14">&nbsp;</td>
+                                  <td colspan="2" height="14"> 
+                                    <p><font class="txt">Descripci&oacute;n: Informaci&oacute;n 
+                                      sobre la estructura, constituci&oacute;n 
+                                      de las c&eacute;lula y procedimientos tecnol&oacute;gicos 
+                                      para su estudio. Informaci&oacute;n de texto 
+                                      sobre org&aacute;nulos celulares eucariotas.</font><br>
+                                      <a name="histologia"></a> </p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Histología</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.usal.es/histologia" class="txtnegrolink" target="_blank">HISTOLOG&Iacute;A 
+                                    HUMANA</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt"> Fant&aacute;stica 
+                                    informaci&oacute;n e ilustrativa galer&iacute;a 
+                                    de im&aacute;genes y dibujos sobre histolog&iacute;a 
+                                    humana. Gr&aacute;fica y did&aacute;ctica.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ufrj.br/dhe" class="txtnegrolink" target="_blank">ATLAS 
+                                    DE ANATOM&Iacute;A COMPARADA</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Excelente 
+                                    informaci&oacute;n y magnifico atlas de histolog&iacute;a 
+                                    comparada. P&aacute;gina en portugu&eacute;s. 
+                                    No ofrece dificultad en la traducci&oacute;n.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://usuarios.lycos.es/webquestions2/tejidos.htm" class="txtnegrolink" target="_blank">TEJIDOS 
+                                    ANIMALES</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todo sobre 
+                                    tejidos animales y vegetales. Equilibrio entre 
+                                    texto e im&aacute;genes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.unav.es/farmacia/estudios/biol_anat.htm" class="txtnegrolink" target="_blank">BIOLOG&Iacute;A 
+                                    CELULAR Y ANATOM&Iacute;A</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Resumen de 
+                                    la c&eacute;lula y los tejidos. Presenta texto 
+                                    e im&aacute;genes. Tambi&eacute;n contiene 
+                                    informaci&oacute;n sobre org&aacute;nulos 
+                                    celulares y fisiolog&iacute;a celular.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://apuntes.rincondelvago.com/apuntes_universidad/biologia/citologia_histologia_vegetal_animal/" class="txtnegrolink" target="_blank">LOS 
+                                    TEJIDOS VEGETALES Y ANIMALES</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="64">&nbsp;</td>
+                                  <td colspan="2"><font class="txt"> Compendio 
+                                    sobre tejidos. P&aacute;gina completa con 
+                                    buen texto. Bien esquematizada. En castellano.<br>
+                                    <a name="reproduccion_celular"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Reproducción celular</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.biology.arizona.edu/cell_bio/tutorials/cell_cycle/main.html" class="txtnegrolink" target="_blank">LA 
+                                    MITOSIS Y EL CICLO CELULAR</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todo sobre 
+                                    la mitosis, fotos y animaci&oacute;n. Explicaci&oacute;n 
+                                    en ingl&eacute;s..</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.cellsalive.com/mitosis.htm" class="txtnegrolink" target="_blank">LA 
+                                    MITOSIS EN CÉLULAS ANIMALES</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="74">&nbsp;</td>
+                                  <td colspan="2" height="74"><font class="txt">La 
+                                    mitosis con todas sus fases. Cada fase con 
+                                    animaci&oacute;n e identificaci&oacute;n. 
+                                    Movimiento de los cromosomas. P&aacute;gina 
+                                    en Ingl&eacute;s.<br>
+                                    <a name="mas"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    M&aacute;s p&aacute;ginas sobre citolog&iacute;a 
+                                    y organograf&iacute;a microsc&oacute;pica 
+                                    en castellano e ingl&eacute;s:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ilustrados.com/publicaciones/EpZyVkypkEhybwpBZW.php" class="txtnegrolink" target="_blank">MEMBRANE 
+                                    STRUCTURE AND FUNCTION </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.niles-hs.k12.il.us/rutgle/ch5.pdf" class="txtnegrolink" target="_blank">THE 
+                                    STRUCTURE AND FUNCTION OF MACROMOLECULES</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.accessexcellence.com/AB/GG/" class="txtnegrolink" target="_blank">Graphics 
+                                    Gallery</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Graphics Gallery 
+                                    is a series of labeled diagrams with explanations 
+                                    representing the important processes of biotechnology. 
+                                    Each diagram is followed by a summary of information, 
+                                    providing a context for the process illustrated.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://homepages.gac.edu/%7Ecellab/index-1.html" class="txtnegrolink" target="_blank">Cell 
+                                    Biology Lab Manual</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Lab protocols 
+                                    and links pertaining to cell biology; A nice 
+                                    place to look for new things to do in labs.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.sagan-gea.org/hojared_AGUA/paginas/4agua.html" class="txtnegrolink" target="_blank">MIT 
+                                    Hypertextbook Chapter on Cell Biology</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Excellent 
+                                    site with illustrations and additional details 
+                                    to complement the above material.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.monografias.com/trabajos5/hiscla/hiscla2.shtml" class="txtnegrolink" target="_blank">Virtual 
+                                    Plant Cell </a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Zoom in on 
+                                    a virtual plant cell. An excellent first step.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://biocity.iespana.es/biocity/Fisveg/FV8.HTM" class="txtnegrolink" target="_blank">WWW 
+                                    Cell Biology Course </a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">An excellent 
+                                    site employing image maps and details about 
+                                    cell biology.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.cellsalive.com/toc.htm" class="txtnegrolink" target="_blank">Cells 
+                                    Alive! </a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Very interesting 
+                                    site with new features each month; </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.gananda.k12.ny.us/Mslinks/lifesci.htm" class="txtnegrolink" target="_blank">Charlie 
+                                    and Bobby Jo's Excellent Adventure* </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="64">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Look out, 
+                                    honey, I shrunk the lab! Humorous journey 
+                                    through a cell. (Dr. Sata, University of Texas).<br>
+                                    <a name="celulas_procariotas"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Células Procariotas</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/celula.html" class="txtnegrolink" target="_blank">C&eacute;lula 
+                                    procariota</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Excelentes 
+                                    p&aacute;ginas ambas, sobre c&eacute;lulas 
+                                    procariotas y metabolismo. Estructura y fisiolog&iacute;a 
+                                    celular de procariotas. Ejemplos en bacterias.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://edicion-micro.usal.es/web/educativo/micro2/tema03.html" class="txtnegrolink" target="_blank">La 
+                                    célula procariot</a>a</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;gina 
+                                    excelente sobre la estructura de las bacterias.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ugr.es" class="txtnegrolink" target="_blank"> 
+                                    Aspectos generales de la c&eacute;lula procariota</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Bien estructurada 
+                                    y densa. Abundante informaci&oacute;n sobre 
+                                    la composici&oacute;n, estructura y funci&oacute;n 
+                                    de los org&aacute;nulos bacterianos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://danival.org/notasbio/clas/procariota_eukariota_2.html" class="txtnegrolink" target="_blank"> 
+                                    C&eacute;lulas eucariotas y procariotas</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Conjunto de 
+                                    p&aacute;ginas sobre c&eacute;lulas procariotas 
+                                    y eucariotas y sus estructuras semejantes 
+                                    y diferentes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://host04.ipowerweb.com/%7Enatureno/notes/dbiologia/biologia_eucariota_procariota.htm" class="txtnegrolink" target="_blank">Apuntes 
+                                    de Historia Natural</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="64">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Cuadro de 
+                                    diferencias y semejanzas entre c&eacute;lulas 
+                                    procariotas y eucariotas. Muy did&aacute;ctica 
+                                    y gr&aacute;fica.<br>
+                                    <a name="virus"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Los Virus</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://es.wikipedia.org/wiki/Virus" class="txtnegrolink" target="_blank"> 
+                                    &iquest;Es el VIRUS un ser vivo?</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Una p&aacute;gina 
+                                    muy de inter&eacute;s, con enlaces sobre virus 
+                                    y su categor&iacute;a dentro de la Biología. 
+                                    Tema de debate y estudio.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.encyclopedie-es.snyke.com/articles/ser_vivo.html" class="txtnegrolink" target="_blank">Virus</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Aunque est&aacute; 
+                                    en italiano, se traduce con facilidad y muestra 
+                                    datos de gran utilidad sobre el ciclo vital 
+                                    de los virus y sus caracter&iacute;sticas. 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://ar.dir.yahoo.com/ciencia_y_tecnologia/biologia/microbiologia/Virus/" class="txtnegrolink" target="_blank">Ciencia 
+                                    y tecnolog&iacute;a&gt;Biolog&iacute;a&gt;Microbiolog&iacute;a&gt;Virus</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="64">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;ginas 
+                                    enlazadas sobre virus concretos, las fases 
+                                    del ciclo biol&oacute;gico y la naturaleza 
+                                    de los mismos. Interesante para consulta.<br>
+                                    <a name="teoria_celular"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    La Teoría celular</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enciclopedia.us.es/index.php/Biolog%EDa_celular" class="txtnegrolink" target="_blank">La 
+                                    C&eacute;lula - Teor&iacute;a celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Muy adecuada 
+                                    y sencilla. Postulados.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.biologia.arizona.edu/cell/tutor/cells/02q.html" class="txtnegrolink" target="_blank"> 
+                                    Gu&iacute;a del estudio celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Gu&iacute;a 
+                                    con examen y textos sobre la teor&iacute;a 
+                                    celular y sus cient&iacute;ficos m&aacute;s 
+                                    relevantes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.cognoscere.hpg.ig.com.br/biologia/teoria_celular.html" class="txtnegrolink" target="_blank"> 
+                                    Teor&iacute;a Celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Informaci&oacute;n 
+                                    completa sobre los cient&iacute;ficos y descubrimientos 
+                                    que colaboraron a lo largo de los siglos en 
+                                    la enunciaci&oacute;n de los postulados de 
+                                    la teor&iacute;a celular. Completa y extensa.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enciclopedia.us.es" class="txtnegrolink" target="_blank"> 
+                                    Teor&iacute;a celular: art&iacute;culo de 
+                                    la enciclopedia libre</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">El descubrimiento 
+                                    de la c&eacute;lula animal se debe a los alemanes 
+                                    Schleiden y Schwann. Se profundiza en el conocimiento 
+                                    de la c&eacute;lula y muestra la contribuci&oacute;n 
+                                    del alem&aacute;n Rudolf Virchow al desarrollo 
+                                    de su teor&iacute;a celular. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://ciencias.ucv.cl/biologia/mod1/b1m2a001.htm" class="txtnegrolink" target="_blank">Conozcamos 
+                                    algo de la teor&iacute;a celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">M&aacute;s 
+                                    informaci&oacute;n sobre teor&iacute;a celular.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.geocities.com/edug2406/celula_introduccion.htm" class="txtnegrolink" target="_blank">C&eacute;lula 
+                                    2</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="102">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Las investigaciones 
+                                    realizadas por los cient&iacute;ficos a trav&eacute;s 
+                                    de los siglos permitieron desarrollar una 
+                                    &quot;teor&iacute;a celular&quot;. Esta p&aacute;gina 
+                                    detalla los pasos e investigaciones realizadas 
+                                    hasta el desarrollo de sus postulados. <br>
+                                    <a name="personajes"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Sobre 
+                                    Robert Hooke, Leeuwenhoek, Virchow, Schleiden, 
+                                    Schwann, Ramon y Cajal</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ucmp.berkeley.edu/history/hooke.html" class="txtnegrolink" target="_blank"> 
+                                    Robert Hooke </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Hook y la 
+                                    c&eacute;lula, espl&eacute;ndida pero en ingl&eacute;s.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.iespana.es/natureduca/biog_leeuwenhoek.htm" class="txtnegrolink" target="_blank">Biograf&iacute;a. 
+                                    Anton Van Leeuwenhoek</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">M&aacute;s 
+                                    sobre Leeuwenhoek.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.isciii.es/museo/crono/ed/edc2171.html" class="txtnegrolink" target="_blank"> 
+                                    EL MICROSCOPIO DE LEEUWENHOEK</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Leeuwenhoek 
+                                    y la &oacute;ptica. Muy buena. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.isciii.es/museo/crono/ed/edc2170.html" class="txtnegrolink" target="_blank">LEEUWENHOEK</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Antonie van 
+                                    Leewenhoek (1632-1723) holand&eacute;s de 
+                                    varios oficios descubri&oacute; el microscopio, 
+                                    traspasando as&iacute; la frontera de la visi&oacute;n 
+                                    humana. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enciclopedia.us.es/index.php/Anton_van_Leeuwenhoek" class="txtnegrolink" target="_blank">Anton 
+                                    van Leeuwenhoek </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Antoni van 
+                                    Leeuwenhoek (1632-1723), fabricante holand&eacute;s 
+                                    de microscopios y pionero en descubrimientos 
+                                    sobre los protozoos, los gl&oacute;bulos rojos, 
+                                    gl&oacute;bulos blancos, etc. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.cienciafacil.com/microsesfera.html" class="txtnegrolink" target="_blank">Microscopio 
+                                    con materiales caseros</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Descripci&oacute;n 
+                                    de la construcci&oacute;n de microscopios 
+                                    con materiales caseros.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www3.usal.es/%7Ehistologia/aplicacion/english/museum/microsco/museo.htm" class="txtnegrolink" target="_blank">MUSEO</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Visi&oacute;n 
+                                    de los principales y primitivos instrumentos 
+                                    &oacute;pticos dise&ntilde;ados por diversos 
+                                    cient&iacute;ficos para la visualizaci&oacute;n 
+                                    de la vida microsc&oacute;pica.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enciclopedia.us.es/wiki.phtml?title=Mattias%2BSchleiden" class="txtnegrolink" target="_blank"> 
+                                    Mattias Schleiden </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Informaci&oacute;n 
+                                    biogr&aacute;fica sobre la vida y trabajos 
+                                    de este científico. Buena y did&aacute;ctica.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.danival.org/_defgal.php?pr=9500personajes_-schleide.html" class="txtnegrolink" target="_blank">Matthias 
+                                    Jakob Schleiden</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Abundante 
+                                    informaci&oacute;n sobre este cient&iacute;fico.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.mailxmail.com/curso/excelencia/historia_biologia/capitulo4.htm" class="txtnegrolink" target="_blank"> 
+                                    Teor&iacute;a celular</a>*</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">La Teor&iacute;a 
+                                    celular gracias a Robert Hooke, Ren&eacute; 
+                                    Dutrochet, Theodor Schwann, Mathias Schleiden, 
+                                    Rudolph Virchow y otros. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.cognoscere.hpg.ig.com.br/biologia/teoria_celular.html" class="txtnegrolink" target="_blank">Scheliden 
+                                    y Schwann</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Nacimiento 
+                                    de la biolog&iacute;a celular o citolog&iacute;a, 
+                                    rama de la biolog&iacute;a encargada del estudio 
+                                    de las c&eacute;lulas. TEOR&Iacute;A CELULAR 
+                                    DE SCHLEIDEN Y SCHWANN. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.universalia.es/cas/2003/libro/personaje.php?id=3" class="txtnegrolink" target="_blank">Rudolf 
+                                    Virchow. Biograf&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Vida y trabajos 
+                                    de Rudolf Virchow. Su contribuci&oacute;n 
+                                    a la teor&iacute;a celular.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.historiadelamedicina.org/virchow.html" class="txtnegrolink" target="_blank">Rudof 
+                                    Virchow</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Trabajos y 
+                                    vida del cient&iacute;fico referido. Correcta 
+                                    y completa.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.reinodelosmallos.com" class="txtnegrolink" target="_blank"> 
+                                    Ram&oacute;n y Cajal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Datos biogr&aacute;ficos 
+                                    y cient&iacute;ficos sobre este eminente autor 
+                                    espa&ntilde;ol que colabor&oacute; profundamente 
+                                    en el estudio de las c&eacute;lulas nerviosas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://cajal.unizar.es/sp/bio/biograf.html" class="txtnegrolink" target="_blank">Biograf&iacute;a 
+                                    de Santiago Ramon y Cajal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">P&aacute;gina 
+                                    de gran inter&eacute;s sobre este cient&iacute;fico 
+                                    espa&ntilde;ol.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.redaragon.com/cultura/ramonycajal/biografia.asp" class="txtnegrolink" target="_blank">Biograf&iacute;a 
+                                    de Santiago Ramon y Cajal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="83">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todos los 
+                                    trabajos e investigaciones en el campo de 
+                                    la citolog&iacute;a y la medicina. Interesante 
+                                    para extracci&oacute;n de datos y comprensi&oacute;n 
+                                    de la vida de este cient&iacute;fico ilustre.<br>
+                                    <a name="metabolismo"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Metabolismo y Fisiología celular</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/atp.html" class="txtnegrolink" target="_blank">El 
+                                    ATP</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Excelente 
+                                    p&aacute;gina sobre la qu&iacute;mica y estructura 
+                                    de este nucle&oacute;tido energ&eacute;tico.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://chimera.javeriana.edu.co/bo302pdf2002/bo30212_p33d.pdf" class="txtnegrolink" target="_blank">METABOLISMO 
+                                    INTERMEDIARIO Y FERMENTACI&Oacute;N </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Muy buena. 
+                                    Describe el papel central del ATP en el metabolismo 
+                                    intermediario. Todas las reacciones metab&oacute;licas 
+                                    de los microorganismos implicadas en la generaci&oacute;n 
+                                    y uso del ATP. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.essentialfats.com/spintmet.htm" class="txtnegrolink" target="_blank"> 
+                                    Introducci&oacute;n Al Metabolismo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todo sobre 
+                                    el metabolismo y el papel del ATP en estos 
+                                    procesos energ&eacute;ticos. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.efn.uncor.edu/dep/biologia/intrbiol/metabolismo/met1.htm" class="txtnegrolink" target="_blank"> 
+                                    Metabolismo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Abundante 
+                                    informaci&oacute;n sobre catabolismo, ATP 
+                                    y fosforilaci&oacute;n oxidativa.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enzimas.gq.nu/Panmet.htm" class="txtnegrolink" target="_blank">Panorama 
+                                    del metabolismo y de su control </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="82">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Metabolismo 
+                                    es el conjunto de todas las reacciones que 
+                                    ocurren en la c&eacute;lula o en el organismo. 
+                                    Estos conceptos se detallan y explican, con 
+                                    todo detalle en esta p&aacute;gina muy completa. 
+                                    Tambi&eacute;n se describen formas de control 
+                                    del metabolismo celular.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/microgeneral/micro-ianez/15_micro.htm" class="txtnegrolink" target="_blank"> 
+                                    Metabolismo energ&eacute;tico bacteriano</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Detalla el 
+                                    metabolismo en las c&eacute;lulas procariotas. 
+                                    Su forma de obtener y transformar los nutrientes 
+                                    en energ&iacute;a. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ondasalud.com/edicion/noticia/0,2458,20999,00.html" class="txtnegrolink" target="_blank">Metabolismo 
+                                    Intermediario y su Regulaci&oacute;n</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="64">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Todo sobre 
+                                    el metabolismo celular y su control. Mol&eacute;culas 
+                                    energ&eacute;ticas y enzim&aacute;ticas. <br>
+                                    <a name="transporte"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Transporte 
+                                    a trav&eacute;s de membrana</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.uam.es/angeluis.villalon/cyta/fisiologiacyta3.pdf" class="txtnegrolink" target="_blank">TRANSPORTE 
+                                    DE MEMBRANA</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Las formas 
+                                    de transporte conocidas que se realizan a 
+                                    trav&eacute;s de la membrana plasm&aacute;tica. 
+                                    Excelente. Mucha informaci&oacute;n y con 
+                                    dibujos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.angelfire.com/bc2/biologia/celula3.htm" class="txtnegrolink" target="_blank">Im&aacute;genes 
+                                    de transporte de membrana</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Im&aacute;genes 
+                                    de transporte de membrana. Muy buena para 
+                                    trabajos y obtenci&oacute;n de informaci&oacute;n. 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.angelfire.com/bc2/biologia/celula2.htm" class="txtnegrolink" target="_blank"> 
+                                    Transporte de Mol&eacute;culas a trav&eacute;s 
+                                    de la Membrana Celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Valiosa p&aacute;gina 
+                                    con informaci&oacute;n en textos e im&aacute;genes 
+                                    sobre transporte a trav&eacute;s de membrana. 
+                                    Todas las formas de transporte con y sin energ&iacute;a.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://edicion-micro.usal.es/web/educativo/micro2/tema04.html" class="txtnegrolink" target="_blank">Membrana 
+                                    citopl&aacute;smica. Transporte de nutrientes</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">La membrana 
+                                    citopl&aacute;smica y el transporte de nutrientes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/transporte.html" class="txtnegrolink" target="_blank">Mecanismos 
+                                    de transportes</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Esquemas y 
+                                    gr&aacute;ficos sobre la membrana y c&oacute;mo 
+                                    &eacute;sta presenta una permeabilidad selectiva. 
+                                    Los mecanismos de transporte pueden verse 
+                                    en diversos esquemas. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.angelfire.com/bc2/biologia/celula3.htm" class="txtnegrolink" target="_blank">Transporte</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="83">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Interesant&iacute;sima 
+                                    y muy did&aacute;ctica. Todo sobre la c&eacute;lula. 
+                                    Muchos contenidos sobre citolog&iacute;a y 
+                                    fisiolog&iacute;a celular. Transporte a trav&eacute;s 
+                                    de membrana con gr&aacute;ficos e ilustraciones.<br>
+                                    <a name="teoria_endosimbionte"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Teor&iacute;a 
+                                    Endosimbionte</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://danival.org/notasmicro/micro_endosimb.html" class="txtnegrolink" target="_blank">Microbiolog&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">La Teor&iacute;a 
+                                    del Endosimbionte. Se piensa pues que la vida 
+                                    se origin&oacute; hace unos tres-cuatro mil 
+                                    millones de a&ntilde;os en forma de microbios. 
+                                    Muy completa y did&aacute;ctica. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/origencelula.html" class="txtnegrolink" target="_blank"> 
+                                    Evoluci&oacute;n celular</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="63">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Lynn Margulis, 
+                                    en su teor&iacute;a endosimbi&oacute;tica 
+                                    propone que se originaron otras c&eacute;lulas 
+                                    procari&oacute;ticas, estableci&eacute;ndose 
+                                    entre ambos una relaci&oacute;n endosimbionte. 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="44"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.uned.es/psico-1-fundamentos-biologicos-conducta-I/tablon/articulos/margulis.htm" class="txtnegrolink" target="_blank">No 
+                                    somos importantes para la vida&quot;. Entrevista 
+                                    a LYNN MARGULIS </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Entrevista 
+                                    a Lynn Margulis.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.uv.es/metode/anuario2001/31_2001.html" class="txtnegrolink" target="_blank">Entrevista 
+                                    a Lynn Margulis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">En la Universidad 
+                                    de Valencia Lynn Margulis realiza una interesante 
+                                    entrevista sobre evoluci&oacute;n.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.imim.es/quark/26/026062.htm" class="txtnegrolink" target="_blank"> 
+                                    Margulis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">M&aacute;s 
+                                    notas biogr&aacute;ficas. Desarrollo de sus 
+                                    tareas de investigaci&oacute;n y enunciado 
+                                    de sus teor&iacute;as y vivencias.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://platea.pntic.mec.es/%7Eiali/CN/webcn.htm" class="txtnegrolink" target="_blank">P&aacute;ginas 
+                                    interesantes para Ciencias</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Esta p&aacute;gina 
+                                    contiene un apartado sobre Lynn Margulis en 
+                                    ingl&eacute;s, de gran inter&eacute;s..</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.elpais.es/suplementos/futuro/20010314/32salto.html" class="txtnegrolink" target="_blank">FUTURO-ELPAIS.ES. 
+                                    Un salto evolutivo en el darwinismo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="45">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Amplia divulgaci&oacute;n 
+                                    cient&iacute;fica sobre las teor&iacute;as 
+                                    de la evoluci&oacute;n.<br>
+                                    <a name="homeostasis"></a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Home&oacute;stasis</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://tarwi.lamolina.edu.pe/%7Eacg/homeostasis.htm" class="txtnegrolink" target="_blank"> 
+                                    HOME&Oacute;STASIS</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Desarrollo 
+                                    de la idea de equilibrio interno en seres 
+                                    vivos concretos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://espanol.geocities.com/gelatinas_multigenocel/homeostasis.htm" class="txtnegrolink" target="_blank"> 
+                                    La home&oacute;stasis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">Estudio y 
+                                    desarrollo del concepto biol&oacute;gico. 
+                                    Interesante en texto y ejemplos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.canal-h.net/webs/sgonzalez002/Fisiologia/MEDINTER.htm" class="txtnegrolink" target="_blank"> 
+                                    MEDIO INTERNO Y HOME&Oacute;STASIS</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="44">&nbsp;</td>
+                                  <td colspan="2"><font class="txt">M&aacute;s 
+                                    informaci&oacute;n sobre la constancia o tendencia 
+                                    a la constancia en el medio interno. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="1"></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2">
+                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/algas_unicelulares.jpg" width="105" height="84"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celula_vegetal_letreros.jpg" width="105" height="84"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/opticos.jpg" width="107" height="145"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/histologia_animal_%20y_vegetal.jpg" width="105" height="75"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/seta.jpg" width="105" height="81"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/virus.jpg" width="105" height="108"></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                    </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

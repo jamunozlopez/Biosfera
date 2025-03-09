@@ -1,0 +1,427 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2b.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituanim.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con los sistemas de respiración" href="contenidos7.htm">anterior - (8/23) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con los sistemas de transporte" href="contenidos9.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    RESPIRACIÓN EN HUMANOS</b></font></font></p>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="100%">
+                                    <p class="txt">El aparato respiratorio en 
+                                    humanos comienza en las <b>fosas nasales</b>. En 
+                                    ellas se aloja la <b>pituitaria roja</b>, muy 
+                                    irrigada, que calienta el aire y lo 
+                                    humedece. La <b>pituitaria amarilla </b>detecta la 
+                                    presencia en el aire de distintos tipos de 
+                                    moléculas y transmite esta información a los 
+                                    lóbulos olfatorios, que informarán de ello 
+                                    al cerebro. </p>
+                                    <p class="txt">El aire humedecido y limpio 
+                                    pasa por la <b>faringe</b>, que es una zona 
+                                    compartida con el aparato digestivo. En esta 
+                                    zona se encuentran las <b>amígdalas</b>, que 
+                                    son ganglios linfáticos con función 
+                                    defensiva, captando microorganismos para 
+                                    poner en marcha una respuesta inmune 
+                                    (defensiva) si fuera necesario.</p>
+                                    <p class="txt">El aire entra en la <b>
+                                    laringe </b>a través de la <b>glotis</b>. La
+                                    <b>epíglotis </b>es la estructura que tapa 
+                                    la glotis, con la finalidad de que no entre 
+                                    el alimento hacia el aparato respiratorio. 
+                                    En la laringe aparecen las <b>cuerdas 
+                                    vocales</b>, que son repliegues conjuntivos 
+                                    que vibran, emitiendo un tono.</p>
+                                    <p class="txt">&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/respira/respi.gif" width="640" height="441"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%">
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">El siguiente tramo es la <b>
+                                    tráquea</b>, que es un tubo largo, de unos 
+                                    12 cm, y ancho, de unos 2 cm. La tráquea 
+                                    debe permanecer abierta para asegurar el 
+                                    paso del aire. Para ello, unos <b>cartílagos 
+                                    semicirculares </b>le dan la resistencia 
+                                    suficiente como para evitar su cierre, 
+                                    debido a la presión que ejercen los tejidos 
+                                    adyacentes. La tráquea está bañada por una 
+                                    capa mucosa que capta partículas de polvo y 
+                                    tapizada por un epitelio ciliado que 
+                                    moviliza esta mucosidad hacia la faringe.</p>
+                                    <p class="txt">La tráquea se divide en <b>
+                                    bronquios</b>. Son dos tubos que envían el 
+                                    aire a los pulmones. Están reforzados por <b>
+                                    cartílagos circulares</b>. Los bronquios, ya 
+                                    dentro de los pulmones, se ramifican en 
+                                    bronquiolos.</p>
+                                        <p class="txt">Los <b>pulmones </b>son 
+                                        estructuras esponjosas, de color rosado. 
+                                        El <b>pulmón derecho </b>está 
+                                        constituido por <b>tres lóbulos </b>
+                                        pulmonares. El <b>pulmón izquierdo </b>
+                                        es más estrecho y tiene <b>dos lóbulos</b>. 
+                                        Por ello, el bronquio derecho se 
+                                        ramifica en tres <b>bronquiolos 
+                                        primarios </b>y el bronquio izquierdo se 
+                                        ramifica en dos bronquiolos primarios. 
+                                        Los bronquiolos primarios, a su vez, se ramifican 
+                                        en tubos secundarios y terciarios, que 
+                                        dirigen el aire hacia los <b>sacos 
+                                        alveolares</b>, compuestos de <b>
+                                        alveolos</b>, que son las zonas donde se 
+                                        produce el <b>intercambio gaseoso </b>
+                                        con la sangre.</p>
+                                        <p>&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="69%">
+                                    <p class="txt"><b>Fisiología de la 
+                                    respiración</b></p>
+                                    <p class="txt">La ventilación pulmonar, o 
+                                    respiración fisiológica, se produce por dos 
+                                    movimientos, llamados inspiración y 
+                                    espiración. La inspiración consiste en la 
+                                    entrada de aire en los pulmones. La 
+                                    espiración es la expulsión del aire al 
+                                    exterior.</p>
+                                    <p class="txt">La respiración puede ser 
+                                    relajada o forzada.</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt">La <b>respiración relajada
+                                    </b>se realiza cuando el individuo lleva a 
+                                    cabo actividades de poco gasto 
+                                    energético o en reposo. El <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#diafragma">
+                                    diafragma</a></font></b> 
+                                    se contrae, bajando hacia el abdomen. 
+                                    Aumenta el volumen de la cavidad torácica, 
+                                    con lo que los pulmones se expanden y 
+                                    succionan aire del exterior. En este momento 
+                                    ya se ha producido 
+                                    la inspiración. <br>
+                                    Cuando el diafragma se 
+                                    relaja, los pulmones son presionados y 
+                                    expulsan el aire que contienen, desde abajo. 
+                                    Entonces se produce la espiración.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">La <b>respiración forzada</b> 
+                                    se realiza cuando el individuo lleva a cabo una 
+                                    actividad energética fuerte. Los <b>músculos 
+                                    torácicos</b> elevan las costillas hacia 
+                                    delante. Con ello, <b>aumenta el volumen de 
+                                    la cavidad torácica </b>mucho más que en la 
+                                    respiración relajada. Se produce la 
+                                    inspiración. <br>
+                                    La espiración puede consistir, 
+                                    simplemente en relajar los músculos 
+                                    intercostales, con lo que el peso de las 
+                                    costillas vacía los pulmones. Puede ayudar 
+                                    la presión de músculos torácicos internos 
+                                    que presionan las costillas hacia los 
+                                    pulmones y la fuerza de los músculos 
+                                    abdominales, que presionan el abdomen hacia 
+                                    dentro, con lo que los pulmones se vacían 
+                                    desde abajo. Esta espiración se realiza al 
+                                    inflar un globo o tocar la trompeta.</p>
+                                        </li>
+                                    </ul>
+                                        </td>
+                                        <td width="2%">&nbsp;</td>
+                                        <td width="29%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/respira/animares.gif" alt="El levantamiento de las costillas aumenta el tamaño de la caja torácica" width="154" height="368"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">El <b>control de la 
+                                    respiración </b>se efectúa en el <b>
+                                    bulbo raquídeo</b>, activando o relajando 
+                                    los músculos que intervienen en la 
+                                    respiración. La variación de concentraciones 
+                                    de oxígeno y dióxido de carbono en la sangre 
+                                    son los estímulos químicos que necesita el 
+                                    bulbo raquídeo para controlar la velocidad e 
+                                    intensidad de la respiración.</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber3">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="¡Oxígeno para todos!" href="actividades/act3a.htm">Actividad
+                                          8</a></font></b><a title="¡Oxígeno para todos!" target="_blank" href="actividades/act3a.htm"><img border="2" src="imagenes/cuadritos/act3small.gif" xthumbnail-orig-image="imagenes/cuadritos/act3.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="¡Más oxígeno para todos!" href="actividades/act3b.htm">Actividad
+                                          9</a></font></b><a target="_blank" title="¡Más oxígeno para todos!" href="actividades/act3b.htm"><img border="2" src="miniaturas/cuad9nuevasmall.gif" xthumbnail-orig-image="miniaturas/cuad9nueva.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con los sistemas de respiración" href="contenidos7.htm">anterior- (8/23) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con los sistemas de transporte" href="contenidos9.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

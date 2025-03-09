@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Autoevaluación</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Los insectos holometábolos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Sufren mudas sencillas.
+</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>No tienen metamorfosis.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>No sufren mudas.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Presentan metamorfosis.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los cuerpos alados son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Glándulas hormonales.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Glándulas sudoríparas.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Células neurosecretoras.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Propias de los artrópodos.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las glándulas ecdisiales producen</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ecdisotropina.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Ecdisona.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Neotenina.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Neurohormonas.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un saltamontes </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es holometábolo.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>sufre una muda compleja.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>sufre una muda simple.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>sufre varias mudas simples.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La ecdisotropina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Activa la glándula ecdisial y los cuerpos alaldos.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Inhibe las glándulas ecdisiales.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Activa los cuerpos alados.</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Activa las glándulas ecdisiales.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas.</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta.</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

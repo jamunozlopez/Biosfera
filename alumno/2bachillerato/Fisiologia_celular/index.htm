@@ -1,0 +1,475 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<script LANGUAGE="JavaScript">
+<!--
+
+imgLoaded = 0;
+CountAffichImg = new Array;
+PathImg = new Array;
+PassVerif = 0;
+ImgRecord = new Array;
+a1 = new Image;
+a2 = new Image;
+a2.src = 'imagenes/memory/couple_cache.gif';
+function loadImg()
+	{
+	a1.src = "imagenes/memory/serpiente.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/rana.gif";
+	CountImg();
+	a1.src = "imagenes/memory/coyote.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/erizo.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/ardilla.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/caracol.gif";
+	CountImg();
+	a1.src = "imagenes/memory/mirlo.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/lombriz.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/mosquito.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/pino.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/raton.jpg";
+	CountImg();
+	a1.src = "imagenes/memory/treboles.jpg";
+	CountImg();
+	RandomMem('i11',11);
+	RandomMem('i12',12);
+	RandomMem('i13',13);
+	RandomMem('i14',14);
+	RandomMem('i15',15);
+	RandomMem('i16',16);
+	RandomMem('i21',21);
+	RandomMem('i22',22);
+	RandomMem('i23',23);
+	RandomMem('i24',24);
+	RandomMem('i25',25);
+	RandomMem('i26',26);
+	RandomMem('i31',31);
+	RandomMem('i32',32);
+	RandomMem('i33',33);
+	RandomMem('i34',34);
+	RandomMem('i35',35);
+	RandomMem('i36',36);
+	RandomMem('i41',41);
+	RandomMem('i42',42);
+	RandomMem('i43',43);
+	RandomMem('i44',44);
+	RandomMem('i45',45);
+	RandomMem('i46',46);
+	document.messMem.mess.value = "Ahora, encuentra las parejas...";
+	}
+function CountImg()
+{
+PathImg[imgLoaded] = a1.src;
+CountAffichImg[imgLoaded] = 0;
+CountAffichImg[imgLoaded+12] = 0;
+imgLoaded++;
+return(true)
+}
+function RandomMem(imgName,ImgNb)
+	{
+	ImgTemp = Math.round(Math.random() * 11);
+	while (CountAffichImg[ImgTemp]>=2)
+		{
+		ImgTemp = Math.round(Math.random() * 11);
+		}
+	ImgRecord[ImgNb] = PathImg[ImgTemp];
+	CountAffichImg[ImgTemp]++;
+	return(true);
+	}
+count = 0;
+gagne=0;
+function AddClic(ImgNb,ImgName)
+{
+if (PassVerif == 0)
+	{
+	if (ImgName.src != a2.src)
+		{
+		alert('¡Ya estas viendo la imagen!');
+		}
+	else
+		{
+		ImgName.src = ImgRecord[ImgNb];
+		count++;
+		ImgNamey = ImgName;
+		if (count == 1)
+			{
+			ImgNb1=ImgNb;
+			ImgNamex=ImgNamey;
+			ImgURL1=ImgRecord[ImgNb];
+			}
+		else
+			{
+			PassVerif=1;
+			if (ImgRecord[ImgNb] == ImgURL1)
+				{
+				gagne++;
+				if (gagne > 1) s="s";
+				else s="";
+				document.messMem.mess.value = gagne + ' pareja' + s + ' encontrada' + s;
+				PassVerif = 0;
+				count=0;
+					if (gagne==12)
+					{
+					document.messMem.mess.value = "¡¡¡¡Bravo, has ganado!!!!"
+					}
+				}
+			else
+				{
+				document.messMem.mess.value = "Esto no es una pareja";
+				tempoMem2 = setTimeout("ImgNamey.src='imagenes/memory/couple_cache.gif';ImgNamex.src='imagenes/memory/couple_cache.gif';document.messMem.mess.value = 'Encuentra las parejas';PassVerif = 0;", 1200);
+				count=0;
+				}
+			}
+	}
+}
+}
+ThisPage = location.href;
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/inicio2B.gif','../img/introduccion1.gif')">
+<table border="0" cellspacing="0" cellpadding="0" align="center" width="760">
+  <tr> 
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="760" height="35"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1.gif',1)"><img name="introduccion" border="0" src="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr align="center"> 
+                      <td width="723" height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" bgcolor="#006666" align="center">
+                    <tr> 
+                      <td valign="top"> 
+                        <table width="760" border="0" cellspacing="1" cellpadding="0" style="border-left-width: 0; border-right-width: 0; border-bottom-width: 0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td style="border-bottom-style: none; border-bottom-width: medium"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="464" height="19" bgcolor="#BBDDBB"><font class="txtnegro">INTRODUCCIÓN</font> 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top" width="464" bgcolor="#E6FFE6" >&nbsp;</td>
+                                </tr>
+                                <tr bgcolor="#E6FFE6"> 
+                                  <td > 
+                                    <blockquote> 
+                                      <p align="center"><span class="txtnegro">FISIOLOG&Iacute;A 
+                                        CELULAR</span><br>
+                                      </p>
+                                      <table width="90%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                        <tr> 
+                                          <td> 
+                                            <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                              <tr bgcolor="#e6ffe6"> 
+                                                <td class="txt"> 
+                                                  <p class="txt"> El ser vivo, 
+                                                    posea la complejidad estructural 
+                                                    que posea, necesita energ&iacute;a 
+                                                    para vivir y desarrollar todas 
+                                                    y cada una de sus funciones 
+                                                    vitales. Esta energ&iacute;a, 
+                                                    imprescindible para las m&uacute;ltiples 
+                                                    actividades de los diversos 
+                                                    organismos, procede de la 
+                                                    energ&iacute;a almacenada 
+                                                    en los enlaces qu&iacute;micos 
+                                                    de las biomol&eacute;culas 
+                                                    que los seres vivos poseen 
+                                                    (gl&uacute;cidos, l&iacute;pidos, 
+                                                    prote&iacute;nas, etc.). 
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <br>
+                                      <table width="90%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                        <tr> 
+                                          <td> 
+                                            <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                              <tr bgcolor="#e6ffe6"> 
+                                                <td class="txt"> 
+                                                  <p class="txt"> De esta manera 
+                                                    estas biomol&eacute;culas 
+                                                    energ&eacute;ticas, que sirven 
+                                                    de combustible a la c&eacute;lula, 
+                                                    son utilizadas en los diversos 
+                                                    compartimentos celulares y 
+                                                    de ellas es extra&iacute;da 
+                                                    la energ&iacute;a necesaria 
+                                                    para todos los procesos vitales 
+                                                    celulares. El aporte de energ&iacute;a 
+                                                    debe ser continuo para 
+                                                    mantener el orden biol&oacute;gico. 
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <br>
+                                      <table width="90%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                        <tr> 
+                                          <td> 
+                                            <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                              <tr bgcolor="#e6ffe6"> 
+                                                <td class="txt"> 
+                                                  <p class="txt"> Si los seres 
+                                                    vivos s&oacute;lo tomaran 
+                                                    energ&iacute;a de sus propias 
+                                                    estructuras se ir&iacute;an 
+                                                    poco a poco consumiendo a 
+                                                    s&iacute; mismos lo cual no 
+                                                    mantendr&iacute;a el orden 
+                                                    biol&oacute;gico. Por esta 
+                                                    raz&oacute;n, frente a las 
+                                                    v&iacute;as de destrucci&oacute;n 
+                                                    molecular (catabolismo energ&eacute;tico) 
+                                                    deben existir otras v&iacute;as 
+                                                    de construcci&oacute;n molecular 
+                                                    (anabolismo energ&eacute;tico). 
+                                                    Estas v&iacute;as son 
+                                                  construidas 
+                                                    unas veces a partir de mol&eacute;culas 
+                                                    capturadas y consumidas de 
+                                                    otros seres vivos y otras 
+                                                    (en algas y vegetales) son 
+                                                    construidas por procesos 
+                                                    complejos como la fotos&iacute;ntesis. 
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <p class="txt">&nbsp;</p>
+                                    </blockquote>
+                                    <div align="center">a)<img src="imagenes/cadenarespiratoria.gif" width="400" height="400" hspace="5" alt="&quot;Mitocondria&quot;" align="texttop" vspace="10"> 
+                                      b)<img src="imagenes/cloroplasto.gif" width="451" height="330" alt="&quot;Cloroplasto&quot;" hspace="5" align="texttop" vspace="10"><br>
+                                      <br>
+                                    </div>
+                                    <blockquote> 
+                                      <p class="txt"><i>Intenta responder las 
+                                        siguientes preguntas. Con ellas conocer&aacute;s 
+                                        el estado actual de tus conocimientos 
+                                        en metabolismo celular:</i></p>
+                                      <p class="txt">a.- &iquest;Qu&eacute; diferencia 
+                                        existe entre anabolismo y catabolismo? 
+                                        <br>
+                                        <input type="text" name="textfield" size="60">
+                                        <br>
+                                        b.- &iquest;Existen formas de catabolismo 
+                                        anaer&oacute;bico?, &iquest;cu&aacute;l, 
+                                        por ejemplo?<br>
+                                        <input type="text" name="textfield2" size="32">
+                                        <br>
+                                        c.- &iquest;C&oacute;mo se llama la ruta 
+                                        que degrada en el citoplasma, sin presencia 
+                                        de ox&iacute;geno, una mol&eacute;cula 
+                                        de glucosa en dos de &aacute;cido pir&uacute;vico? 
+                                        <input type="text" name="textfield3" size="10">
+                                        <br>
+                                        d.- &iquest;Cu&aacute;l es la mol&eacute;cula 
+                                        energ&eacute;tica por excelencia en las 
+                                        c&eacute;lulas? 
+                                        <input type="text" name="textfield4" size="10">
+                                        <br>
+                                        e.- &iquest;Puedes definir y poner un 
+                                        ejemplo de fermentaci&oacute;n?<br>
+                                        <textarea name="textfield5" cols="55" rows="2"></textarea>
+                                        <br>
+                                        <br>
+                                        f.- &iquest;D&oacute;nde se produce, dentro 
+                                        de la c&eacute;lula, la respiraci&oacute;n 
+                                        celular?&iquest;Qu&eacute; se obtiene 
+                                        en ella fundamentalmente? 
+                                        <input type="text" name="textfield6" size="22">
+                                        <br>
+                                        g.- &iquest;Qu&eacute; tipo de mol&eacute;culas 
+                                        dan a la c&eacute;lula a&uacute;n mayor 
+                                        cantidad de energ&iacute;a que los gl&uacute;cidos 
+                                        en la mitocondria? 
+                                        <input type="text" name="textfield7" size="20">
+                                        <br>
+                                        h.- &iquest;D&oacute;nde se realiza la 
+                                        fase luminosa de la fotos&iacute;ntesis?<br>
+                                        <input type="text" name="textfield8" size="32">
+                                        <br>
+                                        i.- &iquest;A qu&eacute; fotosistema pertenece 
+                                        la clorofila 700? 
+                                        <input type="text" name="textfield9" size="10">
+                                        <br>
+                                        j.- &iquest;Sabr&iacute;as poner un ejemplo 
+                                        de bacteria quimiosint&eacute;tica del 
+                                        nitr&oacute;geno? 
+                                        <input type="text" name="textfield10" size="12">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                      </p>
+                                      <div id="Layer1" style="position:absolute; width:49px; height:39px; z-index:1; left: 129px; top: 1472px; visibility: hidden"> 
+                                        <input type="text" name="textfield32" size="60" value="Anabolismo es un proceso constructivo y catabolismo degradativo.">
+                                      </div>
+                                      <div id="Layer2" style="position:absolute; width:60px; height:39px; z-index:1; left: 129px; top: 1519px; visibility: hidden"> 
+                                        <input type="text" name="textfield322" size="32" value="Las fermentaciones: l&aacute;ctica y et&iacute;lica.">
+                                      </div>
+                                      <div id="Layer3" style="position:absolute; width:49px; height:39px; z-index:1; left: 475px; top: 1566px; visibility: hidden"> 
+                                        <input type="text" name="textfield323" size="10" value="Gluc&oacute;lisis">
+                                      </div>
+                                      <div id="Layer4" style="position:absolute; width:49px; height:39px; z-index:1; left: 615px; top: 1595px; visibility: hidden"> 
+                                        <input type="text" name="textfield324" size="10" value="ATP">
+                                      </div>
+                                      <div id="Layer5" style="position:absolute; width:49px; height:39px; z-index:1; left: 129px; top: 1641px; visibility: hidden"> 
+                                        <textarea name="textfield325" cols="55" rows="2">Láctica. Con lactobacilos como Lactobacillus bulgaricus o L. casei (que producen yogur y queso).</textarea>
+                                      </div>
+                                      <div id="Layer6" style="position:absolute; width:49px; height:39px; z-index:1; left: 303px; top: 1727px; visibility: hidden"> 
+                                        <input type="text" name="textfield3242" size="22" value="En la mitocondria. ATP.">
+                                      </div>
+                                      <div id="Layer7" style="position:absolute; width:49px; height:39px; z-index:1; left: 333px; top: 1774px; visibility: hidden"> 
+                                        <input type="text" name="textfield3243" size="20" value="Los l&iacute;pidos o grasas">
+                                      </div>
+                                      <div id="Layer8" style="position:absolute; width:49px; height:39px; z-index:1; left: 129px; top: 1821px; visibility: hidden"> 
+                                        <input type="text" name="textfield3244" size="32" value="En los tilacoides de los cloroplastos">
+                                      </div>
+                                      <div id="Layer9" style="position:absolute; width:49px; height:40px; z-index:1; left: 491px; top: 1848px; visibility: hidden"> 
+                                        <input type="text" name="textfield3245" size="20" value="Al Fotosistema I (PSI).">
+                                      </div>
+                                      <div id="Layer10" style="position:absolute; width:49px; height:39px; z-index:1; left: 658px; top: 1877px; visibility: hidden"> 
+                                        <input type="text" name="textfield3246" size="12" value="Nitrobacter">
+                                      </div>
+                                      <p class="txt"> 
+                                        <input type="button" name="Submit" value="Soluci&oacute;n" onClick="MM_openBrWindow('soluciones_index.htm','soluciones','width=400,height=320')">
+                                        <br>
+                                      </p>
+                                    </blockquote>
+                                    <p align="right" class="txtnegro">Autora: 
+                                      Carmen Monge Garc&iacute;a-Moreno</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+</body>
+</html>

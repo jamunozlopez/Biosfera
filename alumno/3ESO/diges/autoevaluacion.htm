@@ -1,0 +1,471 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  
+{  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;    
+  }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  
+  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 14.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r";alert(mensaje);}
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../../img/logo_biosfera.jpg" height="35"> </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm"><img name="Image10" border="0" src="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="img/digestivo.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td  valign="top" >
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2"> 
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                          <tr> 
+                            <td width="100%" align="center">&nbsp;</td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq1.gif" width="105" height="74"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq2.gif" width="105" height="74"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq3.gif" width="105" height="74"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq4.gif" width="105" height="90"></td>
+                          </tr>
+                          <tr> 
+                            <td align="center"> <img border="0" src="img/peq5.gif" width="105" height="74"> 
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB"><font class="txtnegro">AUTOEVALUACI&Oacute;N</font><span class="txtnegro"></span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1" ></td>
+                            <td width="522" valign="top"> 
+                              <table border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td rowspan="2">&nbsp;</td>
+                                  <td rowspan="2" valign="top" width="500"> 
+                                    <form name="examen" method="post" action="">
+                                      <p class="txtnegro" ><span class="txt">1.- 
+                                        Los alimentos que se ingieren (polímeros), 
+                                        mediante el proceso de la digestión, se 
+                                        convierten en:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton1" value="2">
+                                        Energía.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton1" value="3">
+                                        Detritus.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton1" value="4">
+                                        Productos de desecho.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton1" value="1">
+                                        Monómeros. </p>
+                                      <p class="txt"><br>
+                                        <span class="txtnegro">2.- Para digerir 
+                                        los alimentos existen unas moléculas especializadas 
+                                        llamadas:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton2" value="2">
+                                        Monómeros.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton2" value="3">
+                                        Polímeros.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton2" value="1">
+                                        Enzimas.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton2" value="4"> 
+                                      Clorhídrico. </p>
+                                      <p class="txtnegro">3.- Como consecuencia 
+                                        de la digestión de las proteínas, se obtiene:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton3" value="2">
+                                        Glucosa.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton3" value="1">
+                                        Aminoácidos. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton3" value="3">
+                                        Grasas.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton3" value="4">
+                                        Glicerina.</p>
+                                      <p class="txtnegro"><br>
+                                        4.- El esófago se comunica con el estómago 
+                                        por medio de:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton4" value="1">
+                                        Cardias.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton4" value="3">
+                                        Válvula ileocecal<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton4" value="2">
+                                        Ileon. <br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton4" value="4">
+                                        Píloro.</p>
+                                      <p class="txtnegro"><br>
+                                        5.- ¿Cuál de las siguientes NO ES una 
+                                        glándula digestiva?</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton5" value="2">
+                                        Pared del estómago.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton5" value="3">
+                                        Pared intestinal.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton5" value="1">
+                                        Riñón.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton5" value="4">
+                                        Páncreas. </p>
+                                      <p class="txtnegro">6.- La secreción que 
+                                        facilita la digestión de las grasas es:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton6" value="2">
+                                        Lipasa intestinal.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton6" value="3">
+                                        Lipasa pancreática.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton6" value="4">
+                                        Mucus. <br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton6" value="1">
+                                        Bilis.</p>
+                                      <p class="txtnegro">7.- Las mol&eacute;culas 
+                                        resultantes de la digestión son absorbidas 
+                                        por:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton7" value="2">
+                                        Hígado. <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton7" value="1">
+                                        Vellosidades intestinales.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton7" value="3">
+                                        Colon.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton7" value="4">
+                                        Vesícula biliar.</p>
+                                      <p class="txt"><span class="txtnegro">8.- 
+                                        El papel más importante del intestino 
+                                        grueso es</span>:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton8" value="2">
+                                        Digerir alimentos. <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton8" value="1">
+                                        Absorber agua.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton8" value="4">
+                                        Comunicar el intestino delgado con el 
+                                        ano.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton8" value="3">
+                                        Facilitar el tránsito intestinal. </p>
+                                      <p class="txtnegro">9.- Una de las siguientes 
+                                        costumbres es beneficiosa para la salud:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton9" value="2">
+                                        Consumir alcohol.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton9" value="3">
+                                        Escuchar música a muy alto volumen.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton9" value="4">
+                                        Fumar.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton9" value="1">
+                                        Tomar fruta.</p>
+                                      <p class="txtnegro">10.- Uno de los siguientes 
+                                        órganos NO ayuda al movimiento del aire:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton10" value="1">
+                                        Pulmón.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton10" value="3">
+                                        Músculos intercostales.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton10" value="2">
+                                        Diafragma.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton10" value="4">
+                                        Caja torácica.</p>
+                                      <p class="txtnegro"><br>
+                                        11.- ¿Cuál de los siguientes recorridos 
+                                        del aire es el más correcto?</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton11" value="2">
+                                        Nariz-bronquios-tráquea-alveolo.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton11" value="3">
+                                        Laringe-alveolo-bronquio.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton11" value="4">
+                                        Nariz-laringe-alveolo-bronquio.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton11" value="1">
+                                        Fosas nasales-bronquio-alveolo.</p>
+                                      <p class="txtnegro">12.- El intercambio 
+                                        de gases tiene lugar en:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton12" value="1">
+                                        Alveolo.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton12" value="2">
+                                        Mitocondria. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton12" value="3">
+                                        Laringe.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton12" value="4">
+                                        Nariz.<br>
+                                      </p>
+                                      <p class="txtnegro">13.- La principal función 
+                                        de la mitocondria es:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton13" value="2">
+                                        Producir CO<font size="1">2</font>.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton13" value="3">
+                                        Consumir O<font size="1">2</font>. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton13" value="1">
+                                        Producir energía.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton13" value="4">
+                                        Acumular energía.<br>
+                                      </p>
+                                      <p class="txtnegro">14.- Una de las siguientes 
+                                        actividades NO contribuye a la salud dental:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton14" value="1">
+                                        Comer mucho azúcar.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton14" value="2">
+                                        Cepillarse los dientes. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton14" value="3">
+                                        Visitar al dentista.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton14" value="4">
+                                        Utilizar el hilo dental.<br>
+                                      </p>
+                                      <p class="txt">&nbsp; </p>
+                                      <p class="txt"> <span class="txt"> 
+                                        <input type="reset" name="Borrar" value="Borrar">
+                                        <input type="button" name="calificacion" value="calificacion" onClick="nota(this.form)">
+                                        </span></p>
+                                    </form>
+                                    <p align="right" class="txtnegrolink"><a href="autoevaluacion1.htm" class="txtnegrolink">siguiente</a></p>
+                                  </td>
+                                  <td rowspan="2">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="1">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2"> 
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                          <tr> 
+                            <td width="100%" align="center">&nbsp;</td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq6.gif" width="105" height="74"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq7.gif" width="105" height="90"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq8.gif" width="105" height="90"></td>
+                          </tr>
+                          <tr> 
+                            <td width="100%" align="center"> <img border="0" src="img/peq9.gif" width="105" height="74"></td>
+                          </tr>
+                          <tr> 
+                            <td align="center"> <img border="0" src="img/peq10.gif" width="105" height="90"> 
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

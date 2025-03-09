@@ -1,0 +1,475 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituinmune.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con las células del sistema inmune" href="contenidos6.htm">anterior - (7/13) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con los mecanismos de defensa específicos" href="contenidos8.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    MECANISMOS DE ACCIÓN DEFENSIVA</b></font></font></p>
+                                    <p class="txt">Las barreras físicas del 
+                                    organismo impiden la entrada de cuerpos 
+                                    extraños, pero, si alguno logra saltarse 
+                                    estas barreras se dispara una serie de <b>
+                                    mecanismos inespecíficos </b>y otros <b>
+                                    específicos</b>, que tienen como fin la 
+                                    destrucción del agente extraño.  </p>
+                                    <p class="txt">Los <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#inespecifico">
+                                    mecanismos inespecíficos</a> </font></b>que se ponen en marcha son 
+                                    la <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#inflamatoria">
+                                    respuesta inflamatoria</a></font></b>, la 
+                                    activación del <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#sistcomplemento">sistema del complemento
+                                    </a></font></b>y la acción del <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#interferon">interferón</a></font></b>. Estos 
+                                    mecanismos son muy eficaces y pocos 
+                                    elementos extraños escapan a este control. 
+                                    Sin embargo, cuando alguno escapa, se 
+                                    activan los <b>mecanismos específicos</b>, 
+                                    que son la <b>respuesta inmune celular </b>y 
+                                    la <b>respuesta inmune humoral</b>.</p>
+                                    <p class="txt"><b><a name="inespecifico">
+                                    </a>Mecanismos inespecíficos</b></p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="inflamatoria">
+                                    </a>La respuesta inflamatoria</b></p>
+                                      </li>
+                                    </ul>
+                                    <p class="txt">Este mecanismo entra en 
+                                    acción cuando la piel o las mucosas sufren 
+                                    una lesión. Es fácil reconocer los síntomas 
+                                    de una inflamación. Éstos son <b>
+                                    enrojecimiento</b>, <b>hinchazón</b>, <b>
+                                    dolor </b>y <b>fiebre local</b>. ¿A qué se 
+                                    deben estos síntomas?</p>
+                                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="96%" id="AutoNumber4">
+                                        <tr>
+                                          <td width="58%">
+                                    <p class="txt">El <b>enrojecimiento</b> de 
+                                    una herida se debe a un aumento del flujo 
+                                    sanguíneo hacia la zona. Este aumento es 
+                                    consecuencia de la liberación de sustancias <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" target="_blank" title="Glosario" href="glosario.htm#piretogeno">
+                                    piretógenas</a></font></b>, como la 
+                                    histamina, por parte de las células dañadas.</p>
+                                    <p class="txt">Al aumentar el flujo de 
+                                    sangre, el volumen de la zona aumenta, 
+                                    provocando <b>hinchazón </b>en los tejidos y 
+                                    presión sobre las terminaciones nerviosas, 
+                                    con lo que aparece el <b>dolor</b>. La <b>
+                                    fiebre local</b> es también consecuencia de 
+                                    los agentes piretogénicos. La temperatura 
+                                    elevada activa el metabolismo de los 
+                                    macrófagos e inhibe la división bacteriana.</p>
+                                          <p>&nbsp;</td>
+                                          <td width="8%">&nbsp;</td>
+                                          <td width="43%">
+                                        <div style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt" style="text-align: center"><b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Observa una animación sobre la fagocitosis de patógenos" target="_blank" href="ampliainflama.htm">
+                                    PULSA AQUÍ PARA OBTENER MÁS INFORMACIÓN 
+                                    SOBRE LA RESPUESTA INFLAMATORIA</a></font></b></p>
+                                        </div>
+                                          </td>
+                                          <td width="49%">&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                    <table border="0" cellspacing="0" width="95%" id="AutoNumber1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+                                      <tr>
+                                        <td width="19%" style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4">
+                                        <a title="Pulsa sobre la imagen en miniatura para observar una animación sobre la inflamación y la fagocitosis" target="_blank" href="ampliaanimacrof.htm">
+                                        <img border="2" src="imagenes/dibujos/amacrof55a_small.jpg" xthumbnail-orig-image="imagenes/dibujos/amacrof55a.jpg" width="100" height="100"></a></td>
+                                        <td width="81%" style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4">
+                                        <p align="center"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Observa una animación sobre la fagocitosis de patógenos" target="_blank" href="ampliaanimacrof.htm">
+                                        OBSERVA UNA ANIMACIÓN DEL PROCESO DE 
+                                        FAGOCITOSIS</a></font></b></td>
+                                      </tr>
+                                      </table>
+                                    <p class="txt" style="text-align: center">&nbsp;</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="sistcomplemento">
+                                    </a>El sistema del complemento</b></p>
+                                      </li>
+                                    </ul>
+                                    <p class="txt">El sistema del complemento 
+                                    está formado por <b>21 proteínas plasmáticas
+                                    </b>sintetizadas por el <b>hígado</b> y, localmente, 
+                                    por <b>macrófagos</b>. El mecanismo de actuación se 
+                                    realiza mediante una <b>activación en cascada</b>, 
+                                    ya que en cada paso de la reacción&nbsp; se 
+                                    amplifica el proceso, porque cada enzima 
+                                    puede activar muchas moléculas, que, a su 
+                                    vez, son activadoras de otra reacción.</p>
+                                    <p class="txt">La activación supone la 
+                                    rotura (proteolisis) de la proteína inactiva 
+                                    en varios fragmentos (dos o más), que actúan 
+                                    sobre la proteína siguiente.</p>
+                                    <p class="txt">Existen dos mecanismos de 
+                                    activación del sistema del complemento, la
+                                    <b>vía alternativa </b>y la <b>vía clásica</b>.</p>
+                                    <table border="0" cellspacing="0" width="100%" id="AutoNumber2" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+                                      <tr>
+                                        <td width="20%" style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4">
+                                        <p align="center">
+                                        <a title="Pulsa sobre esta imagen para observar la vía clásica" target="_blank" href="ampliasistcompelm.htm">
+                                        <img border="2" src="imagenes/dibujos/acasc32_small.jpg" xthumbnail-orig-image="imagenes/dibujos/acasc32.jpg" width="100" height="100"></a></td>
+                                        <td width="59%" style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4">
+                                        <p align="center"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Observa una animación sobre los mecanismos de activación del sistema del complemento" target="_blank" href="ampliasistcompelm.htm">PULSA AQUÍ PARA OBTENER MÁS INFORMACIÓN 
+                                    SOBRE LA VÍA ALTERNATIVA Y LA CLÁSICA</a></font></b></td>
+                                        <td width="21%" style="border-style: solid; border-width: 2; padding-left: 4; padding-right: 4">
+                                        <p align="center">
+                                        <a title="Pulsa sobre esta imagen para observar la vía alternativa" target="_blank" href="ampliasistcompelm.htm">
+                                        <img border="2" src="imagenes/dibujos/aalter495_small.jpg" xthumbnail-orig-image="imagenes/dibujos/aalter495.jpg" width="100" height="100"></a></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">El punto central de la 
+                                    cascada es la activación de la proteína C-3, 
+                                    que forma dos subunidades, activas, C3a y 
+                                    C3b. C3a interviene en la respuesta 
+                                    inflamatoria. C3b actúa sobre la siguiente 
+                                    proteína para, al final, formar el Complejo 
+                                    de ataque a membranas. Este complejo 
+                                    proteico perfora la membrana bacteriana, 
+                                    provocando un desequilibrio osmótico y, por 
+                                    consiguiente, la <b>lisis celular</b>.</p>
+                                    <p class="txt">Parece ser que también actúa 
+                                    sobre virus con envoltura. Este sistema es 
+                                    inespecífico, porque ataca cualquier tipo de 
+                                    célula bacteriana.</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="interferon"></a>
+                                    El Interferón</b></p>
+                                      </li>
+                                    </ul>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+                                      <tr>
+                                        <td width="69%">
+                                    <p class="txt">El Interferón es una <b>
+                                    glucoproteína </b>de secreción liberada por 
+                                    cualquier tipo celular. Las moléculas 
+                                    conocidas de Interferón son IFN-<font face="Symbol">a</font>, 
+                                    IFN-<font face="Symbol">b</font> e IFN-<font face="Symbol">g</font>. 
+                                    Los IFN-<font face="Symbol">a</font> e IFN-<font face="Symbol">b
+                                    </font>son sintetizados por muchos tipos 
+                                    celulares en <b>respuesta a una infección 
+                                    vírica</b>. La síntesis de estas moléculas 
+                                    se induce por la presencia de ARN 
+                                    bicatenario. Los IFN-<font face="Symbol">a</font> 
+                                    e IFN-<font face="Symbol">b </font>
+                                    <font face="Arial">inhiben la replicación 
+                                    viral y activan proteínas degradadoras del 
+                                    ácido nucleico del virus. También  
+                                    incrementan el número de proteínas 
+                                    presentadoras del antígeno viral, de forma 
+                                    que los linfocitos TCD8 (células 
+                                    citotóxicas) y las células asesinas (<i>natural 
+                                    killers</i>) degradan rápidamente la célula 
+                                    infectada.</font></p>
+                                    <p class="txt"><font face="Arial">Los 
+                                    interferones se unen a las membranas 
+                                    celulares adyacentes, aumentando la 
+                                    resistencia a ser infectadas de las 
+                                    células vecinas; así se aísla la zona 
+                                    infectada. El </font>IFN-<font face="Symbol">g
+                                    </font><font face="Arial">es liberado por <b>
+                                    células tumorales </b>o por <b>células 
+                                    infectadas por bacterias</b>. Su presencia 
+                                    dispara la acción de los macrófagos, células 
+                                    asesinas y linfocitos TCD8.</font></p>
+                                        </td>
+                                        <td width="1%">&nbsp;</td>
+                                        <td width="30%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/interferon.gif" width="157" height="189"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6" height="275">
+                                      <tr>
+                                        <td width="33%" height="122">&nbsp;</td>
+                                        <td width="33%" colspan="3" height="122">
+                                        <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                          <p class="txt" style="text-align: center">
+                                          <b>¡Antes de realizar las actividades 
+                                          debes asegurarte de haber consultado 
+                                          todas las páginas de ampliación de 
+                                          contenidos que aparecen vinculadas a 
+                                          frases e imágenes de esta página!</b></p>
+                                          </div>
+                                        </td>
+                                        <td width="34%" height="122">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="33%" height="55">&nbsp;</td>
+                                        <td width="33%" colspan="3" height="55">&nbsp;</td>
+                                        <td width="34%" height="55">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="33%" height="98">&nbsp;</td>
+                                        <td width="11%" height="98">&nbsp;</td>
+                                        <td width="11%" height="98"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Repasa un poco los mecanismos de defensa" href="actividades/act5a.htm">Actividad
+                                          7</a></font></b><a title="Repasa un poco los mecanismos de defensa" target="_blank" href="actividades/act5a.htm"><img border="2" src="imagenes/cuadritos/cuad5small.jpg" xthumbnail-orig-image="imagenes/cuadritos/cuad5.jpg" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="11%" height="98">&nbsp;</td>
+                                        <td width="34%" height="98">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con las células del sistema inmune" href="contenidos6.htm">anterior- (7/13) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con los mecanismos de defensa específicos" href="contenidos8.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

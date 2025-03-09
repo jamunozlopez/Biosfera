@@ -1,0 +1,540 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="2732" >
+        <tr> 
+          <td height="35" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="5"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="4">
+              <tr> 
+                <td height="1" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top" height="2692"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reproduccion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB">
+                            <p align="center"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"> Para saber m&aacute;s sobre 
+                                la reproducci&oacute;n sexual en animales</p>
+                              <p class="txtnegro" align="center"><img src="imagenes/macho_hembra.jpg" width="389" height="213" alt="&quot;Macho y hembra de foca. Tomada de www.coolantarctica.com&quot;"></p>
+                              <p class="txt" align="left">En la reproducción sexual 
+                                existen dos tipos de individuos según el tipo 
+                                de gametos producidos:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li>Los que tienen un solo sexo, masculino 
+                                              o femenino, con un &uacute;nico 
+                                              tipo de g&oacute;nadas, que forman 
+                                              un tipo &uacute;nico de gametos: 
+                                              <ul>
+                                                <li> Las g&oacute;nadas de los 
+                                                  individuos de sexo masculino 
+                                                  se denominan TEST&Iacute;CULOS, 
+                                                  y los gametos, ESPERMATOZOIDES</li>
+                                                <li> Las g&oacute;nadas del sexo 
+                                                  femenino son los OVARIOS, y 
+                                                  los gametos los &Oacute;VULOS</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                             <br> 
+                               <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li>Los que poseen los dos sexos, 
+                                              individuos a los que llamamos HERMAFRODITAS, 
+                                              como los caracoles de tierra o las 
+                                              lombrices. Poseen las dos g&oacute;nadas 
+                                              y producen los dos gametos, sin 
+                                              embargo no se pueden autofecundar; 
+                                              siempre se necesitan dos individuos.</li>
+                                          </ul>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                             <br>
+							  
+							  <div align="center">
+                                <img src="imagenes/lombriz1.jpg" width="215" height="166" alt="Las lombrices son un claro ejemplo de hermafroditas con fecundación cruzada, es decir, que no se pueden autofecundar. Tomada de lombricultivos.8k.com"><br>
+                              </div>
+							  <br> 
+                               <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> <span class="txt">Una 
+                                          vez formados los gametos, deben encontrarse 
+                                          para realizar la fecundaci&oacute;n. 
+                                          En este proceso el gameto masculino 
+                                          juega un papel m&aacute;s activo a la 
+                                          hora de moverse hacia el &oacute;vulo 
+                                          que est&aacute; esperando. Por esta 
+                                          raz&oacute;n los espermatozoides tienen 
+                                          una larga cola para poder moverse, siempre 
+                                          por l&iacute;quidos.</span></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              
+                              <p><span class="txt"> Seg&uacute;n donde se encuentren 
+                                el espermatozoide y el &oacute;vulo, existen dos 
+                                tipos de fecundaci&oacute;n:</span><br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li>Fecundaci&oacute;n <span class="txtnegro">EXTERNA</span>, 
+                                              cuando tanto el macho como la hembra 
+                                              liberan sus gametos al medio externo, 
+                                              que es el agua, de manera que los 
+                                              espermatozoides nadan en el agua 
+                                              hasta encontrar a los &oacute;vulos. 
+                                              Es lo t&iacute;pico de todos los 
+                                              animales invertebrados acu&aacute;ticos, 
+                                              y en los vertebrados se da en los 
+                                              peces y en los anfibios.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                             <br>
+							   <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><img src="imagenes/fecundacion.jpg" width="107" height="107" alt="&quot;Espermatozoides y &oacute;vulos durante la fecundaci&oacute;n interna&quot;" align="right" hspace="20">Fecundaci&oacute;n 
+                                              <span class="txtnegro">INTERNA</span>, 
+                                              cuando el macho deposita sus espermatozoides 
+                                              en el interior de la hembra, y se 
+                                              mueven por el organismo de la hembra 
+                                              hasta encontrar al &oacute;vulo.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Las formas de introducir los espermatozoides 
+                                            en las hembras son:</p>
+                                          <ul>
+                                            <li>Poniendo en contacto las cloacas, 
+                                              es decir, la parte final del tubo 
+                                              digestivo que se abre al exterior 
+                                              por el ano (insectos, aves, reptiles).</li>
+                                            <li>Con &oacute;rganos especializados 
+                                              para introducir los espermatozoides, 
+                                              como pueden ser aletas (tiburones), 
+                                              tent&aacute;culos modificados (calamares 
+                                              y pulpos), palpos (ara&ntilde;as), 
+                                              etc.<br>
+                                            </li>
+                                            <li>Mediante &oacute;rganos copuladores 
+                                              (penes) en los animales superiores 
+                                              (mam&iacute;feros) y alg&uacute;n 
+                                              invertebrado (lombriz, caracol de 
+                                              tierra).</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+							   <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> <span class="txt">Tras 
+                                          la fecundaci&oacute;n se forma el </span><span class="txtnegro">ZIGOTO</span><span class="txt"> 
+                                          o c&eacute;lula huevo que origina el 
+                                          embri&oacute;n. &Eacute;ste se desarrollar&aacute; 
+                                          hasta formar un individuo nuevo.</span></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <span class="txt"> El desarrollo embrionario puede 
+                              ser muy variado, seg&uacute;n los diferentes grupos 
+                              animales:</span> <br>
+                              <br>
+							   <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><b>Desarrollo indirecto:</b> el 
+                                              zigoto origina una forma intermedia 
+                                              de vida libre, diferente al adulto, 
+                                              que se llama LARVA. Puede haber 
+                                              m&aacute;s de una fase larvaria, 
+                                              como sucede en los insectos:<img src="imagenes/orugas.jpg" width="177" height="131" alt="&quot;Uno de los ejemplos m&aacute;s conocidos de larvas de mariposa, los gusanos de seda&quot;" align="right" hspace="15"></li>
+                                          </ul>
+                                          <blockquote> 
+                                            <p> HUEVO - ORUGA - PUPA - MARIPOSA 
+                                              (adulto) </p>
+                                            <p>El paso de una fase a otra recibe 
+                                              el nombre de <b>METAMORFOSIS</b>.</p>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><b>Desarrollo directo:</b> el zigoto 
+                                              origina un individuo que s&oacute;lo 
+                                              se diferencia del adulto en el tama&ntilde;o.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p><span class="txt">Seg&uacute;n el lugar donde 
+                                se produce el desarrollo embrionario hay que diferenciar 
+                                tambi&eacute;n los distintos tipos de animales: 
+                                </span><br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><img src="imagenes/eclosion.jpg" width="150" height="111" alt="&quot;Muchas serpientes son ov&iacute;paras, como estas Elaphe de la imagen. Tomada de perso.club-internet.fr/denac&quot;" align="right" hspace="10"> 
+                                              <span class="txtnegro">OV&Iacute;PAROS</span>: 
+                                              Son aquellos en los que el desarrollo 
+                                              embrionario sucede fuera del cuerpo 
+                                              de la madre pero el embri&oacute;n 
+                                              est&aacute; en el interior de una 
+                                              estructura especial, protegido por 
+                                              una serie de cubiertas y rodeado 
+                                              por todo lo necesario para desarrollarse. 
+                                              Esta estructura recibe el nombre 
+                                              de HUEVO, y se da tanto en invertebrados 
+                                              (insectos), como en vertebrados 
+                                              (peces, anfibios, reptiles, aves), 
+                                              ya sean acu&aacute;ticos o terrestres.</li>
+                                          </ul>
+                                          <ul>
+                                            <li> <span class="txtnegro">OVOVIV&Iacute;PAROS</span>: 
+                                              Son animales en los que el desarrollo 
+                                              embrionario acontece en el interior 
+                                              de un huevo, pero el huevo no se 
+                                              pone en el exterior, sino que se 
+                                              queda en el interior de la madre, 
+                                              donde se abre (eclosiona) por lo 
+                                              que salen al exterior cr&iacute;as 
+                                              vivas. Se da en muchos peces, como 
+                                              los tiburones y en algunas serpientes.</li>
+                                          </ul>
+                                          <ul>
+                                            <li> <span class="txtnegro">VIV&Iacute;PAROS</span>: 
+                                              Son aquellos que paren al exterior 
+                                              cr&iacute;as vivas. El desarrollo 
+                                              embrionario ocurre en el interior 
+                                              de una estructura especial que tiene 
+                                              la madre, el &Uacute;TERO. Se da 
+                                              en los mam&iacute;feros. Seg&uacute;n 
+                                              c&oacute;mo es alimentado el embri&oacute;n 
+                                              hasta que nace, existen dos tipos 
+                                              de viv&iacute;paros: <img src="imagenes/kangaroo.jpg" width="81" height="121" align="right" alt="&quot;En esta imagen se ve a una cr&iacute;a de canguro metida en el marsupio de su madre. Tomada de shamus.250x.com&quot;" hspace="10"> 
+                                              <ul>
+                                                <ul>
+                                                  <li><span class="txtnegro">MARSUPIALES</span>: 
+                                                    No forman placenta. El feto 
+                                                    nace de forma prematura (antes 
+                                                    de tiempo) y se mete en una 
+                                                    bolsa especial que hay en 
+                                                    la piel de la madre, llamada 
+                                                    MARSUPIO. En ella est&aacute;n 
+                                                    las ubres que van a alimentar 
+                                                    al feto hasta que termine 
+                                                    su desarrollo. Este tipo se 
+                                                    da en los canguros, koalas, 
+                                                    uombats, etc.</li>
+                                                </ul>
+                                                <ul>
+                                                  <li><img src="imagenes/semana09.jpg" width="92" height="114" alt="&quot;Los fetos humanos, como los de otros mam&iacute;feros se alimentan a trav&eacute;s de la placenta. Tomada de webs.ono.com&quot;" align="right" hspace="10"> 
+                                                    <span class="txtnegro">PLACENTADOS</span>: 
+                                                    el embri&oacute;n primero 
+                                                    y luego el feto, son alimentados 
+                                                    por la madre a trav&eacute;s 
+                                                    de una estructura que se llama 
+                                                    PLACENTA, que pone en contacto 
+                                                    la sangre de la madre con 
+                                                    la del feto. Son la mayor&iacute;a 
+                                                    de los mam&iacute;feros.</li>
+                                                </ul>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                          <p>&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+							  <div align="center">
+								<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                      <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        9</font> <a target="_blank" href="activrepcoor9.htm"><img src="imagenes/activ9.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        10</font> <a target="_blank" href="activrepcoor10.htm"><img src="imagenes/activ10.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        11</font> <a target="_blank" href="activrepcoor11.htm"><img src="imagenes/activ11.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <p>&nbsp;</p>
+                              <p align="right"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

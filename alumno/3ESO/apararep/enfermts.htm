@@ -1,0 +1,754 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="index_act.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="../img/rephuma.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><a class="txtnegrolink" href="habitos.htm">
+                                  anterior</a> - (13/13) - <a href="contenidos.htm" class="txtnegrolink">siguiente</a></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p><font class="txtnegro"> <a name="Via_Lactea"></a>LAS
+                                    ENFERMEDADES DE TRANSMISIÓN SEXUAL</font></p>
+                                    <p class="txt"><font class="txt">Se
+                                    consideran enfermedades de transmisión
+                                    sexual (ETS) a aquellas cuyo contagio se
+                                    realiza a través de las relaciones
+                                    sexuales. Suelen afectar a los órganos
+                                    genitales, aunque en algunos casos afectan
+                                    también a otros órganos u aparatos del
+                                    cuerpo humano, la mayoría de las ETS se
+                                    pueden curar con el tratamiento adecuado.</font></p>
+                                    <p class="txt"><font class="txt">A
+                                    continuación se presentan algunas de las
+                                    ETS más comunes:</font></p>
+                                    <table width="706" bordercolor="#BBDDBB" border="1">
+                                      <tr>
+                                        <td class="menu" vAlign="top" colSpan="2" width="698">
+                                          <div align="left">
+                                            <p class="txt"><b><i>CLAMIDIASIS</i></b>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Organismo
+                                          causante</b><img border="0" src="Imagenes/chlamydia.jpg" width="150" height="102" alt="Chlamydia trachomatis, bacteria de la Clamidiasis"></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p><i>Chlamydia trachomatis</i>
+                                          (bacteria)</p>
+                                          <p>&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Síntomas:</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p>Aparecen entre 7 a 21 días después
+                                          de la infección.<br>
+                                          <i>Hombre:</i> A veces no presenta
+                                          síntoma. Ardor leve o dolor al
+                                          orinar, flujo inodoro por el pene,
+                                          dolor abdominal, nauseas, fiebre,
+                                          hinchazón de los testículos.<br>
+                                          <i>Mujer:</i> A veces no presenta
+                                          síntomas. Ardor leve o dolor al
+                                          orinar, flujo inodoro por la vagina,
+                                          sangrado no menstrual o después del
+                                          coito, dolor al tener relaciones
+                                          sexuales, dolor abdominal, nauseas,
+                                          fiebre, inflamación del recto o del
+                                          cuello uterino.</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Formas
+                                          de contagio</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p>Relaciones sexuales.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Diagnóstico</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p>Análisis de la orina y tejidos.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Tratamiento</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p>Antibióticos</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Consecuencias
+                                          si no se trata:</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p><i>Hombre:</i> Esterilidad.<br>
+                                          <i>Mujer:</i> Enfermedad inflamatoria
+                                          pélvica, esterilidad.<br>
+                                          <i>Niños:</i> Neumonía, infecciones
+                                          al ojo, ceguera.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152"><b>Formas
+                                          de protegerse</b></td>
+                                        <td class="txt" vAlign="top" width="540">
+                                          <p>Preservativos y limitar el número
+                                          de parejas sexuales.&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table width="703" bordercolor="#BBDDBB" border="1" height="354">
+                                      <tr>
+                                        <td class="txt" vAlign="top" colSpan="2" width="695" height="19">
+                                          <div align="left">
+                                            <b><i>GONORREA</i></b>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="96"><b>Organismo
+                                          causante</b><img border="0" src="Imagenes/neisseria.jpg" width="150" height="96" alt="Neisseria gonorrhoeae, bacteria de la Gonorrea"></td>
+                                        <td class="txt" vAlign="top" width="537" height="96">
+                                          <p><i>Neisseria gonorrhoeae</i>
+                                          (bacteria)</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="79"><b>Síntomas:</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="79">
+                                          <p>Aparecen entre 7 a 21 días después
+                                          de la infección.<br>
+                                          <i>Hombre:</i> A veces no presenta
+                                          síntomas. Ardor al orinar y secreción
+                                          muco-purulenta por el pene.<br>
+                                          <i>Mujer:</i> En muchos casos no
+                                          presenta síntomas. Ardor al orinar,
+                                          flujo vaginal anormal (amarillo o
+                                          verde), dolor abdominal o pélvico,
+                                          dolor al tener relaciones sexuales,
+                                          fiebre.</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="16"><b>Formas
+                                          de contagio</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="16">
+                                          <p>Relaciones sexuales.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="16"><b>Diagnóstico</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="16">
+                                          <p>Cultivos y análisis al microscopio
+                                          del flujo secretado por el pene o la
+                                          vagina.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="16"><b>Tratamiento</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="16">
+                                          <p>Antibióticos</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="48"><b>Consecuencias
+                                          si no se trata:</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="48">
+                                          <p><i>Hombre: </i>Obstrucción de la
+                                          uretra, infección de la próstata y
+                                          testículos, esterilidad.<br>
+                                          <i>Mujer: </i>Enfermedad inflamatoria
+                                          pélvica, esterilidad, peritonitis,
+                                          embarazos ectópicos, complicaciones
+                                          durante el embarazo.&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="152" height="16"><b>Formas
+                                          de protegerse</b></td>
+                                        <td class="txt" vAlign="top" width="537" height="16">
+                                          <p>Preservativos, limitar el número
+                                          de parejas sexuales.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table width="700" border="1" bordercolor="#BBDDBB">
+                                      <tbody>
+                                        <tr>
+                                          <td class="txt" vAlign="top" colSpan="2" width="698">
+                                            <div align="left">
+                                              <p align="left"><b><i>SÍFILIS</i></b>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Organismo
+                                            causante</b><img border="0" src="Imagenes/treponema.jpg" width="150" height="104" alt="Treponema pallidum, bacteria de la Sífilis"></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p><i>Treponema pallidum </i>(bacteria)</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Síntomas:</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p><i>Hombre y Mujer</i>:
+                                            <p>En una primera fase aparecen úlceras
+                                            en el lugar de la infección, generalmente
+                                            en los genitales, también en el
+                                            cuello uterino, labios, boca o ano,
+                                            inflamación de ganglios linfáticos.<br>
+                                            <br>
+                                            En una segunda fase, uno o dos meses
+                                            después de la desaparición de las
+                                            úlceras, aparecen erupciones cutáneas
+                                            en el cuerpo, en el interior de la
+                                            boca, palmas de la mano y plantas de
+                                            los pies, dolor de cabeza, fiebre,
+                                            malestar general, inflamación de
+                                            ganglios linfáticos, dolores
+                                            musculares, perdida de peso, perdida
+                                            de cabello.<br>
+                                            <br>
+                                            En una tercera fase se producen
+                                            daños en el sistema nervioso, corazón,
+                                            cerebro u otros órganos. Puede
+                                            producir&nbsp; la muerte.</td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Formas
+                                            de contagio</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p>Relaciones sexuales. Durante el
+                                            embarazo.</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Diagnóstico</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p>Análisis de sangre y del
+                                            líquido espinal.</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Tratamiento</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p>Antibióticos.</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Consecuencias
+                                            si no se trata:</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p>Demencia, parálisis, ceguera y
+                                            otros trastornos nerviosos y
+                                            circulatorios, muerte.</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="txt" vAlign="top" width="158"><b>Formas
+                                            de protegerse</b></td>
+                                          <td class="txt" vAlign="top" width="538">
+                                            <p>Limitar el número de parejas
+                                            sexuales. Uso de preservativos.</p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table width="701" bordercolor="#BBDDBB" border="1">
+                                      <tr>
+                                        <td class="txt" vAlign="top" colSpan="2" width="693">
+                                          <div align="left">
+                                            <b><i>HERPES GENITAL</i></b>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Organismo
+                                          causante</b><a href="Virus%20del%20Herpes"><img border="0" src="Imagenes/herpesvirus.gif" width="150" height="150"></a></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p><i>Herpesvirus simple 2</i> (virus)</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Síntomas:</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>Los síntomas aparecen de 2 a 20 días
+                                          después de la infección.<br>
+                                          <br>
+                                          <i>Hombre:</i> Erupciones periódicas
+                                          de ampollas dolorosas alrededor de los
+                                          órganos genitales, ano, o en otras
+                                          partes del cuerpo, picazón, ardor al
+                                          orinar, fiebre, dolor de cabeza,
+                                          malestar general, inflamación de los
+                                          ganglios en la ingle.<br>
+                                          <br>
+                                          <i>Mujer:</i> Erupciones periódicas
+                                          de ampollas dolorosas alrededor de los
+                                          órganos genitales, ano, cuello
+                                          uterino o en otras partes del cuerpo,
+                                          picazón, ardor al orinar, fiebre,
+                                          dolor de cabeza, malestar general,
+                                          inflamación de los ganglios en la
+                                          ingle.</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Formas
+                                          de contagio</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>Relaciones sexuales. Al tocar una
+                                          zona infectada, a través de besos. El
+                                          portador del virus puede infectar a
+                                          otra persona aun sin presentar los síntomas.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Diagnóstico</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>Cultivos y análisis de las
+                                          ampollas.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Tratamiento</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>No existe cura para la enfermedad.
+                                          Algunos medicamentos por vía oral
+                                          ayudan a prevenir ataques, existen
+                                          pomadas que ayudan a aliviar los síntomas.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Consecuencias
+                                          si no se trata:</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>La enfermedad es incurable. Puede
+                                          causar complicaciones durante el
+                                          embarazo e inclusive la muerte al recién
+                                          nacido.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Formas
+                                          de protegerse</b></td>
+                                        <td class="txt" vAlign="top" width="533">
+                                          <p>Uso de preservativos, aunque el
+                                          virus puede ser transmitido a través
+                                          de besos o caricias intimas. Se debe
+                                          evitar todo contacto sexual durante
+                                          las épocas que se presentan los síntomas,
+                                          en especial cuando están presentes
+                                          las ampollas. Limitar el número de
+                                          parejas sexuales.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="701" bordercolor="#BBDDBB" border="1" height="301">
+                                      <tr>
+                                        <td class="txt" vAlign="top" colSpan="2" width="693" height="19">
+                                          <div align="left">
+                                            <b><i>HEPATITIS B</i></b>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="10"><b>Organismo
+                                          causante</b><img border="0" src="Imagenes/hepatitisb.jpg" width="150" height="127" alt="Virus de la Hepatitis B"></td>
+                                        <td class="txt" vAlign="top" width="534" height="10">
+                                          <p><i>Hepatitis B </i>(virus)</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="80"><b>Síntomas:</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="80">
+                                          <p>Los síntomas aparecen 4 semanas
+                                          después del contagio.<br>
+                                          <br>
+                                          <i>Mujeres y hombres:</i> fatiga
+                                          extrema, dolor de cabeza, fiebre,
+                                          perdida del apetito, nauseas, vómitos,
+                                          oscurecimiento de la orina, la piel y
+                                          ojos se pueden tornar amarillentos,
+                                          malestar general.</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="16"><b>Formas
+                                          de contagio</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="16">
+                                          <p>Relaciones sexuales, por medio de
+                                          la leche materna, compartir
+                                          jeringuillas hipodérmicas
+                                          contaminadas.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="16"><b>Diagnóstico</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="16">
+                                          <p>Análisis de sangre.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="48"><b>Tratamiento</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="48">
+                                          <p>Difícil cura. Se trata con
+                                          Interferón y a la larga con cirugía
+                                          de transplante de hígado. Por lo general lo síntomas
+                                          desaparecen después de 4 a 8 semanas.
+                                          Se recomienda abstenerse de tomar
+                                          alcohol durante este periodo. Algunas
+                                          personas presentan síntomas durante
+                                          toda la vida.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="32"><b>Consecuencias
+                                          si no se trata:</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="32">
+                                          <p>Alteraciones del hígado, inflamación
+                                          crónica del hígado, cirrosis o cáncer
+                                          del hígado, muerte.&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="153" height="32"><b>Formas
+                                          de protegerse</b></td>
+                                        <td class="txt" vAlign="top" width="534" height="32">
+                                          <p>Uso de preservativos. Limitar el número
+                                          de parejas sexuales. El virus puede
+                                          transmitirse por los besos o caricias
+                                          íntimas. Existe una vacuna para esta
+                                          enfermedad.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="698" bordercolor="#BBDDBB" border="1">
+                                      <tr>
+                                        <td class="txt" vAlign="top" colSpan="2" width="690">
+                                          <div align="left">
+                                            <i><b>SIDA (SÍNDROME DE
+                                            INMUNODEFICIENCIA ADQUIRIDA)</b></i><br>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Organismo
+                                          causante</b><img border="0" src="Imagenes/vih.jpg" alt="Virus del SIDA" width="150" height="130"></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p><i>Virus de Inmunodeficiencia
+                                          Humano (VIH)</i></p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>síntomas:</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>De 6 a 12 meses después de la
+                                          infección. Sin embargo, puede no
+                                          haber síntomas hasta después de 10 años
+                                          o más.<br>
+                                          <br>
+                                          <i>Mujeres y hombre:</i> Inflamación
+                                          de ganglios linfáticos, fiebre
+                                          recurrente, sudoración nocturna,
+                                          perdida de peso repentina, fatiga,
+                                          diarrea, infecciones inusuales y
+                                          recurrentes.</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Formas
+                                          de contagio</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>A través de fluidos corporales:
+                                          sangre, semen, fluidos vaginales,
+                                          leche materna. Durante las relaciones
+                                          sexuales. Compartiendo jeringuillas.
+                                          En transfusiones sanguíneas. De madre
+                                          a feto.&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Diagnóstico</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>Análisis de sangre.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Tratamiento</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>No existe cura. Algunos
+                                          medicamentos pueden aliviar los síntomas.</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Consecuencias
+                                          si no se trata:</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>La enfermedad es incurable, puede
+                                          causar otras enfermedades que se han
+                                          denominado oportunistas, ya que al
+                                          estar afectado el sistema inmunitario,
+                                          pueden aparecer todo tipo de
+                                          complicaciones: neumonía, cáncer, u
+                                          otras infecciones, puede llevar a la
+                                          muerte.&nbsp;</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="txt" vAlign="top" width="154"><b>Formas
+                                          de protegerse</b></td>
+                                        <td class="txt" vAlign="top" width="530">
+                                          <p>Preservativos. Limitar el número
+                                          de parejas sexuales. No compartir
+                                          jeringuillas.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">Las Enfermedades de
+                                    Transmisión Sexual constituyen un problema
+                                    sanitario de gran magnitud, por su
+                                    incidencia en la población, por las complicaciones
+                                    que producen y por las largas cadenas de
+                                    contagio, a veces difíciles de cortar.</p>
+                                    <p class="txt">La incidencia más alta se da
+                                    en adultos entre 20 y 30 años, seguido por
+                                    los adolescentes entre 15 y 20 años.
+                                    También se dan más epidemias en países subdesarrollados
+                                    que en los países desarrollados, aunque
+                                    estos últimos también se ven
+                                    afectados.&nbsp;</p>
+                                    <p class="txt">Por todo ello, lo más
+                                    importante es la <i><b>prevención</b></i> y
+                                    para ello se ponen en marcha programas de
+                                    lucha contra las ETS, programas que tienen
+                                    dos objetivos:</p>
+                                    <ul>
+                                      <li>
+                                        <p class="txt">Interrumpir la cadena de
+                                        contagio.</li>
+                                      <li>
+                                        <p class="txt">Prevenir las complicaciones
+                                        de las diferentes enfermedades.</li>
+                                    </ul>
+                                    <div align="center">
+                                      <center> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center"><a target="_blank" href="actividades/actividad13.htm"><font class="txtnegrolink"> 
+                                            Actividad 13</font></a><a target="_blank" href="actividades/actividad13.htm"><img src="image/activ3.jpg" width="120" height="71" border="0"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                      </center>
+                                    </div>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><a class="txtnegrolink" href="habitos.htm">
+                                        anterior</a> - (13/13) - <a href="contenidos.htm" class="txtnegrolink">siguiente</a></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituinmune.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con la inmunidad humoral" href="contenidos10.htm">anterior - (11/13) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con las disfunciones y deficiencias del sistema inmunitario" href="contenidos12.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    ANTICUERPOS</b></font></font></p>
+                                    <p class="txt">Los anticuerpos constituyen glucoproteínas 
+                                    plasmáticas globulares, llamadas <b>
+                                    Inmunoglobulinas</b>. Son moléculas formadas 
+                                    por los <b>linfocitos B maduros</b>. La <b><font color="#006666" size="2" face="Arial"> 
+                                    <a class="txtnegrolink" href="#funcion">función</a></font> </b>del anticuerpo 
+                                    consiste en <b>unirse al antígeno y 
+                                    presentarlo </b>a células efectoras del 
+                                    sistema inmune. Esta función está 
+                                    relacionada con la <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#estructura">
+                                    estructura</a></font> </b>de los distintos <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#tipos">tipos</a></font></b> de inmunoglobulinas.</p>
+                                    <p class="txt"><a name="estructura"></a><b>
+                                    Estructura de las Inmunoglobulinas</b></p>
+                                    <p class="txt">Son proteínas globulares de 
+                                    gran peso molecular, formadas por 4 cadenas 
+                                    polipeptídicas, dos <b>pesadas</b>, llamadas
+                                    <b>H </b>(<i>heavy</i>), y dos <b>ligeras</b>, 
+                                    denominadas <b>L</b> (<i>light</i>). Estas 
+                                    cadenas se unen mediante puentes disulfuro, 
+                                    uno entre las cadenas L y H, y dos entre las 
+                                    cadenas H. Estas cadenas proteicas presentan
+                                    <b>radicales glucídicos</b>.</p>
+                                    <p class="txt">Existen dos tipos de cadenas 
+                                    L (<b><font face="Symbol" size="3">l</font></b> 
+                                    y <b>
+                                    <font face="Symbol" size="3">k</font></b>) y 
+                                    cinco tipos de cadenas H (<font size="3" face="Symbol"><b>a</b>,
+                                    <b>d</b>, <b>e</b>, <b>g</b></font> y <b>
+                                    <font face="Symbol" size="3">m</font></b>), 
+                                    que dan lugar a los cinco isótopos de 
+                                    inmunoglobulina existentes (<b><font color="#006666" size="2" face="Arial"><a class="txtnegrolink" href="#iga">A</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igd">D</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#ige">E</a></font></b><a class="txtnegrolink" href="#ige">,</a> <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igg">G</a></font></b> 
+                                    y <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igm">M</a></font></b>).</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt" style="text-align: center"> <b>
+                                    <font size="4" color="#006666" face="Arial">
+                                    <a class="txtnegrolink" title="Observa la estructura de una inmunoglobulina" target="_blank" href="ampliaanimaig.htm">
+                                    <font size="4">Pulsa aquí para observar una 
+                                    animación que explica la estructura de una 
+                                    inmunoglobulina</font></a></font></b></p>
+                                    </div>
+                                    <p class="txt">Las cadenas H y L presentan 
+                                    dos regiones, o dominios, diferenciados: el
+                                    <b>dominio variable</b>, V, y el <b>dominio 
+                                    constante</b>, C. El dominio variable es el 
+                                    responsable de reconocer al antígeno y 
+                                    unirse a él, ya que ahí se encuentra el <b>
+                                    paratopo</b>. El dominio constante se une a 
+                                    las células del sistema inmune para 
+                                    activarlas.</p>
+                                    <p class="txt">En las cadenas H aparece una 
+                                    zona denominada <b>región bisagra</b>. Esta 
+                                    región posee la característica de ser muy 
+                                    flexible, permitiendo adquirir distintos 
+                                    ángulos entre las regiones V y C, y entre 
+                                    los brazos de la inmunoglobulina.</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="33%">
+                                        <img border="0" src="imagenes/ig.gif" alt="Dibujo esquemático de la estructura de una inmunoglobulina" width="254" height="254"></td>
+                                        <td width="4%">&nbsp;</td>
+                                        <td width="63%">
+                                    <p class="txt">Existe una <b>gran variedad 
+                                    de anticuerpos</b>, tantos como antígenos. 
+                                    Esta gran variedad se obtiene como 
+                                    consecuencia de la <b>reordenación </b>y la
+                                    <b>mutación</b> de los genes que codifican 
+                                    la región V.</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt">La <b>reordenación</b>, o <b>
+                                    recombinación somática</b>, es un mecanismo 
+                                    que sólo ocurre en un momento temprano del 
+                                    desarrollo de los linfocitos B. Los genes 
+                                    que codifican para la región V y C, que se 
+                                    encuentran separados en todas las células, 
+                                    se reordenan para juntarse , en el caso de 
+                                    los linfocitos B. Cuando estos genes se 
+                                    juntan reciben el nombre de <b>segmentos 
+                                    génicos</b>. Los segmentos génicos pueden 
+                                    combinarse entre sí, llegando a generar, 
+                                    aproximadamente 3.400.000 regiones V 
+                                    distintas. Esta gran variedad de 
+                                    combinaciones recibe el nombre de <b>
+                                    diversidad combinatorial</b>.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">La <b>mutación</b>, o <b>
+                                    hipermutación somática</b>, que se produce 
+                                    en esta zona del material genético 
+                                    corresponde a adiciones o sustracciones de 
+                                    bases nitrogenadas en los segmentos génicos 
+                                    que codifican para la región V.</p>
+                                      </li>
+                                    </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">Todas estas variaciones 
+                                    pueden generar una inmunoglobulina no 
+                                    funcional. Cuando se producen este tipo de 
+                                    reordenaciones se habla de <b>reordenamiento 
+                                    no productivo</b>.</p>
+                                    <p class="txt">El proceso de recombinación y 
+                                    mutación está muy regulado, de forma que 
+                                    cada linfocito B <b>sólo expresa un gen 
+                                    reordenado de la cadena H y otro de la 
+                                    cadena L</b>. Así, cada linfocito produce <b>
+                                    un único tipo de anticuerpo</b>.</p>
+                                    <p class="txt" style="text-align: center">
+                                    <img border="0" src="imagenes/animaciones/animaig.gif" width="500" height="500"></p>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt"><a name="tipos"></a><b>Tipos 
+                                    de inmunoglobulinas</b></p>
+                                    <p class="txt">Los isótopos de 
+                                    inmunoglobulina que aparecen en la especie 
+                                    humana son las inmunoglobulinas  <b><font color="#006666" size="2" face="Arial"><a class="txtnegrolink" href="#iga">A</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igd">D</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#ige">E</a></font></b><a class="txtnegrolink" href="#ige">,</a> <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igg">G</a></font></b> 
+                                    y <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#igm">M</a></font></b>.</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="61%" valign="top">
+                                    <p class="txt"><b><a name="igg"></a></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">&nbsp;</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Inmunoglobulina G</b>: Es 
+                                    la más abundante (80% del total de 
+                                    inmunoglobulinas). Se une rápidamente con 
+                                    macrófagos y neutrófilos, provocando la <b>
+                                    destrucción del microorganismo</b>. Puede 
+                                    atravesar la barrera placentaria y se 
+                                    secreta en la leche materna. Por ello, es 
+                                    responsable de la inmunidad fetal y la del 
+                                    recién nacido.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/dibujos/ainmunog.jpg" width="300" height="300"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="61%" valign="top">
+                                    <p class="txt"><b><a name="iga"></a></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Inmunoglobulina A</b>: 
+                                    corresponde al 13% del total de 
+                                    inmunoglobulinas. Se encuentra 
+                                    específicamente en <b>secreciones serosas y 
+                                    mucosas</b>, como son la leche o las 
+                                    lágrimas. Actúa protegiendo la superficie 
+                                    corporal y los conductos secretores. Genera, 
+                                    junto con la inmunoglobulina G, la inmunidad 
+                                    al recién nacido, al encontrarse en la 
+                                    leche.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/dibujos/ainmunoa.jpg" width="300" height="300"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="61%" valign="top">
+                                    <p class="txt"><b><a name="igm"></a></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Inmunoglobulina M</b>: 
+                                    representa el 6% del total de 
+                                    inmunoglobulina. Aparece en los linfocitos B 
+                                    naïve unida a su membrana plasmática. 
+                                    Se manifiesta en la <b>respuesta primaria </b>
+                                    activando el <b>sistema del complemento</b>.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/dibujos/ainmunom.jpg" width="300" height="300"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="61%" valign="top">
+                                    <p class="txt"><b><a name="igd"></a></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Inmunoglobulina D</b>: 
+                                    aparece en muy baja concentración (1%). Son 
+                                    las primeras inmunoglobulinas sintetizadas 
+                                    por los linfocitos B naïve. Su función puede 
+                                    estar relacionada con la activación de estas 
+                                    células. Su estructura es similar a la 
+                                    estructura de la inmunoglobulina G, aunque 
+                                    varía en la posición de los restos 
+                                    glucosídicos de las cadenas proteicas.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/dibujos/ainmunod.jpg" width="300" height="300"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="61%" valign="top">
+                                    <p class="txt"><b><a name="ige"></a></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Inmunoglobulina E</b>: se 
+                                    encuentra en concentraciones muy bajas en el 
+                                    suero y secreciones al exterior (0'002%). 
+                                    Sin embargo, su concentración aumenta en los
+                                    <b>procesos alérgicos</b>.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/dibujos/ainmunoe.jpg" width="300" height="300"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt"><a name="funcion"></a><b>
+                                    Funciones de las inmunoglobulinas</b></p>
+                                    <p class="txt">La principal función de los 
+                                    anticuerpos consiste en <b>reconocer y 
+                                    unirse al antígeno</b>, para la destrucción 
+                                    de éste. Para conseguir este fin, el dominio 
+                                    constante de la inmunoglobulina puede 
+                                    activar los siguientes mecanismos:</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b>Activación del sistema del 
+                                    complemento</b>, que termina con la lisis 
+                                    del microorganismo.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt"><b>Opsonización de los 
+                                    microorganismos</b>. Los anticuerpos se unen 
+                                    al antígeno, presentándolo a un macrófago 
+                                    para su destrucción.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt"><b>Precipitación de toxinas
+                                    </b>disueltas en el plasma. Así, son 
+                                    fácilmente destruidas por los macrófagos.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt"><b>Aglutinación de antígenos</b> en 
+                                    una determinada zona, facilitando la acción 
+                                    de los fagocitos y los linfocitos.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt"><b>Activación de linfocitos</b>.</p>
+                                      </li>
+                                    </ul>
+                                    </div>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber3">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Repasa los anticuerpos" href="actividades/act7a.htm">Actividad
+                                          9</a></font></b><a title="Repasa los anticuerpos" target="_blank" href="actividades/act7a.htm"><img border="2" src="imagenes/cuadritos/cuad7small.gif" xthumbnail-orig-image="imagenes/cuadritos/cuad7.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act7b.htm">Actividad
+                                          10</a></font></b><a target="_blank" href="actividades/act7b.htm"><img border="2" src="miniaturas/cuad10nuevasmall.gif" xthumbnail-orig-image="miniaturas/cuad10nueva.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con la inmunidad humoral" href="contenidos10.htm">anterior- (11/13) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con las disfunciones y deficiencias del sistema inmunitario" href="contenidos12.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+	<title>Actividad4 Ingerimos mas Alcohol del que pensamos</title>
+	<style type="text/css">
+	<!--
+-->
+    </style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+	<script language="JavaScript">
+			
+			imagen1=new Image;
+			imagen1.src="dibujos/ceveza.gif";
+			imagen2=new Image;
+			imagen2.src="dibujos/graficocerveza.gif";
+			
+			var i=1;
+			
+			imagen3=new Image;
+			imagen3.src="dibujos/vino.gif";
+			imagen4=new Image;
+			imagen4.src="dibujos/graficovino.gif";
+			
+			var j=1;
+			
+			imagen5=new Image;
+			imagen5.src="dibujos/licor.gif";
+			imagen6=new Image;
+			imagen6.src="dibujos/graficolicor.gif";
+			
+			var h=1;
+			
+		function cerve() 
+		{
+			if(i==1)
+			{
+				document.images['cerveza'].src=imagen2.src;
+				i=2;
+			}
+			else
+			{
+				document.images['cerveza'].src=imagen1.src;
+				i=1;
+			}
+		}
+				
+		function vin() 
+		{
+			if(j==1)
+			{
+				document.images['vino'].src=imagen4.src;
+				j=2;
+			}
+			else
+			{
+				document.images['vino'].src=imagen3.src;
+				j=1;
+			}
+		}
+		function lico() 
+		{
+			if(h==1)
+			{
+				document.images['licor'].src=imagen6.src;
+				h=2;
+			}
+			else
+			{
+				document.images['licor'].src=imagen5.src;
+				h=1;
+			}
+		}
+		
+	</script> 
+	
+</head>
+
+<body bgcolor="#BBDDBB" background="fondo.gif">
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<p align="center"></TD>
+</p>
+</FORM>
+<center>
+	<table border="0" cellspacing="0" cellpadding="0" width="80%">
+		<tr bgcolor="#BBDDBB" align="center">
+			<td align="center" colspan="2">
+				<font class="txtnegrolink" size="2">
+					<b>ACTIVIDAD   4<br>Ingerimos más alcohol del que pensamos.
+					</b></font>
+				</td>
+			</tr><br><br>
+			<tr>
+				<td colspan="2" align="center" bgcolor="#e6ffe6">
+					<br><font class="txtnegrolink" size="2"><br>
+					<b>Si quieres saber el contenido de alcohol puro que tienen estas bebidas pulsa en los nombres.
+					<br><br></b></font>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" bgcolor="#e6ffe6">
+					<table width="82%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E6FFE6" align="center" >
+		
+		<tr>
+			<td align="center">
+				<center>
+        				<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+							codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+							ID=alcohol WIDTH=600 HEIGHT=300>
+       					 	<PARAM NAME=movie VALUE="alcohol.swf">
+							<PARAM NAME=loop VALUE=false>
+							<PARAM NAME=bgcolor VALUE=#E6FFE6>
+							<PARAM NAME=quality VALUE=high>
+								<EMBED src="alcohol.swf" quality=high loop=false
+									WIDTH=600 HEIGHT=300 TYPE="application/x-shockwave-flash" 
+									PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+								</EMBED></OBJECT>
+					</center>
+					<br><br>
+			</td>
+		</tr>
+		
+	</table>
+				</td>
+			</tr>
+		</table>
+
+	
+</center>
+</body>
+</html>

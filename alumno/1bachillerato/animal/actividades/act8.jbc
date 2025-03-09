@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>La función de relación&lt;center&gt;&lt;img src=&quot;../imagenes/nervio/chimp.jpg&quot; alt=&quot;chimp.jpg&quot; width=&quot;298&quot; height=&quot;227&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>La función de relación&lt;center&gt;&lt;img src=&quot;../imagenes/nervio/chimp.jpg&quot; alt=&quot;chimp.jpg&quot; width=&quot;298&quot; height=&quot;227&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Un estímulo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es un cambio en el medio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Provoca siempre una respuesta.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Puede provocar una respuesta o no hacer nada.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es un cambio en el individuo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los órganos de coordinación</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Reciben los estímulos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Realizan los estímulos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Realizan la respuesta.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Integran los estímulos.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las respuestas del sistema nervioso</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son respuestas lentas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se hacen utilizando hormonas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son duraderas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Son rápidas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El neurotransmisor</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es liberado por una célula de una glándula.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es una hormona.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se libera en la hendidura sináptica.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se vierte a la sangre.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El sistema endocrino funciona produciendo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Hormonas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Neurotransmisores.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Cambios de potencial de membrana.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Respuestas rápidas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las neuronas que conectan con músculos se llaman:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Motoras</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sensitivas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>De asociación.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Amielínicas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El potencial de reposo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se alcanza al llegar un estímulo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se produce cuando se abren los canales para el sodio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se produce si en el exterior hay más cargas positivas que en el interior.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se produce si ene el exterior hay más cargas negativas que en el exterior.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El potencial de acción</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Corresponde a un valor de 70 milivoltios.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Provoca los cierres de los canales para el sodio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se alcanza cuando sale sodio de la neurona y entra potasio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se alcanza cuando se despolariza la membrana de la neurona.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

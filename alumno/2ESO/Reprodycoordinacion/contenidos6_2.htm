@@ -1,0 +1,543 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="3580" >
+        <tr> 
+          <td height="35" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="4"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="4">
+              <tr> 
+                <td height="1" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top" height="3541"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reproduccion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="537" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="209" bgcolor="#BBDDBB">
+                            <p align="center"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"><span class="txtnegro">Para 
+                                saber m&aacute;s sobre la reproducci&oacute;n 
+                                sexual en vegetales</span></p>
+                              <p align="center"><img src="imagenes/fruits.jpg" width="326" height="253" alt="&quot;Semillas y frutos. Tomada de www.biology.iastate.edu&quot;"></p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt">La reproducci&oacute;n 
+                                          sexual sufre un proceso de cambios paralelos 
+                                          a la conquista del medio seco por parte 
+                                          de los vegetales. Este proceso dar&aacute; 
+                                          lugar a la aparici&oacute;n del tubo 
+                                          pol&iacute;nico como rasgo de absoluta 
+                                          independencia del agua para la fecundaci&oacute;n. 
+                                          Adem&aacute;s la formaci&oacute;n de 
+                                          la semilla ser&aacute; una caracter&iacute;stica 
+                                          de la conquista del medio terrestre 
+                                          hostil, que permitir&aacute; la supervivencia 
+                                          gen&eacute;tica de la especie, incluso 
+                                          en condiciones muy desfavorables, as&iacute; 
+                                          como la aparici&oacute;n del fruto que 
+                                          proteger&aacute; y permitir&aacute; 
+                                          la diseminaci&oacute;n de la semilla.</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p><span class="txtnegro">1. En los vegetales inferiores</span><span class="txt"> 
+                                que no poseen tejidos, es decir, en las llamadas 
+                                </span><span class="txtnegro">TALOFITAS</span><span class="txt">, 
+                                esto es las algas, los l&iacute;quenes y los musgos, 
+                                la reproducci&oacute;n sexual se da mediante gametos 
+                                m&oacute;viles por flagelos que se producen en 
+                                los gametangios:</span></p>
+                              <p><span class="txt">- En </span><span class="txtnegro">Algas</span><img src="imagenes/algas13.JPG" width="282" height="188" align="right" alt="&quot;Las algas presentan una reproducci&oacute;n muy variada&quot;" hspace="15" vspace="30"><br>
+                              </p>
+                              <table width="57%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Los gametos son flagelados 
+                                            todos o, al menos, los masculinos. 
+                                            La fecundaci&oacute;n se da siempre 
+                                            en el medio acu&aacute;tico, fuera 
+                                            de los gametangios, por lo que el 
+                                            desarrollo del zigoto es independiente 
+                                            del gametofito. En algas pluricelulares 
+                                            hay  <span class="txt">
+                                          <a class="txtnegrolink" target="_blank" href="contenidos6_3.htm">alternancia de generaciones</a></span> entre 
+                                            el gametofito y el esporofito, incluso 
+                                            con alternancia de tres generaciones. 
+                                            Es &eacute;ste un caso &uacute;nico 
+                                            en la naturaleza, que sucede en las 
+                                            algas rojas, en las que hay un gametofito 
+                                            y dos esporofitos.<br>
+                                          </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p><span class="txt"><br>
+                                - En </span><span class="txtnegro">Briofitas</span><span class="txt"> 
+                                (musgos)</span><br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La reproducci&oacute;n 
+                                            sexual la llevan a cabo los gametofitos. 
+                                            En ellos se desarrollan los &oacute;rganos 
+                                            sexuales: </p>
+                                          <p>- ANTERIDIOS, son los &oacute;rganos 
+                                            sexuales masculinos, en los que se 
+                                            formar&aacute;n los ANTEROZOIDES, 
+                                            que son los gametos masculinos.<br>
+                                            - ARQUEGONIOS, son los &oacute;rganos 
+                                            femeninos, donde se formar&aacute; 
+                                            una OOSFERA, que es el gameto femenino.<img border="0" src="imagenes/anterarque.jpg" alt="&quot;Órganos reproductores y gametos de un musgo&quot;" align="right" width="200" height="149"></p>
+                                          <p>Los anteridios se abren y los anterozoides 
+                                            nadan hasta llegar al arquegonio, 
+                                            donde se producir&aacute; la fecundaci&oacute;n. 
+                                            El zigoto se desarrolla dando un esporofito, 
+                                            cuya forma es similar a una cerilla, 
+                                            en el que se forman las esporas por 
+                                            meiosis. Al caer germinan, si las 
+                                            condiciones son aptas, y regenerar&aacute;n 
+                                            un nuevo gametofito.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><br>
+                                <span class="txtnegro">2. En las plantas que presentan 
+                                verdaderos tejidos</span>, como los helechos y 
+                                las espermatofitas (plantas con semilla), la reproducci&oacute;n 
+                                es m&aacute;s compleja.</p>
+                              <p class="txt"><br>
+                                - En <span class="txtnegro">Pteridofitas</span> 
+                                (helechos)</p>
+                              <p  align="center"> <img src="imagenes/soros.jpg" width="320" height="240" alt="&quot;Fronde de helecho con soros. Tomada de www.biology.iastate.edu&quot;"></p>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Es parecida a la de los 
+                                            musgos porque se producen los mismos 
+                                            &oacute;rganos y gametos. Sin embargo 
+                                            presentan una diferencia fundamental, 
+                                            consistente en que el esporofito es 
+                                            m&aacute;s importante, m&aacute;s 
+                                            grande y vive m&aacute;s tiempo y 
+                                            el gametofito es mucho m&aacute;s 
+                                            peque&ntilde;o y vive menos tiempo.<img src="imagenes/esporangio.jpg" width="276" height="161" alt="&quot;Esporangio de un helecho, lugar donde se forman las esporas. Tomada de www.biology.iastate.edu &quot;" align="right" hspace="10" vspace="20"></p>
+                                          <p>Los esporofitos parecen hojas (llamadas 
+                                            FRONDES) que salen del suelo. En su 
+                                            cara inferior existen unas estructuras 
+                                            llamadas SOROS que es donde se forman 
+                                            las esporas por meiosis. Las esporas 
+                                            caen al suelo, germinan y originan 
+                                            los gametofitos. En ellos se forman 
+                                            anteridios y arquegonios, anterozoides 
+                                            y oosferas y se produce la fecundaci&oacute;n, 
+                                            form&aacute;ndose un zigoto que, al 
+                                            desarrollarse, dar&aacute; lugar a 
+                                            un nuevo esporofito.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <span class="txt"><br>
+                              <br>
+                              - En </span><span class="txtnegro">Espermatofitas</span><br>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La reproducci&oacute;n 
+                                            es muy compleja. El gametofito est&aacute; 
+                                            tan reducido que &uacute;nicamente 
+                                            vemos los esporofitos. Para crear 
+                                            las esporas existen unos &oacute;rganos 
+                                            especializados que son las FLORES.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Las flores están formadas 
+                                            por hojas modificadas que se disponen 
+                                            en el extremo de una ramita. Existen 
+                                            cuatro tipos de hojas: <img src="imagenes/flor2.jpg" width="295" height="197" alt="&quot;Partes de una flor de Angiosperma. Tomada de www.escolar.com&quot;" align="right" hspace="15" vspace="20"></p>
+                                          <ul>
+                                            <li>SÉPALOS: Son verdes y muy parecidos 
+                                              a hojas. Son resistentes porque 
+                                              su función es proteger a las otras 
+                                              piezas. Todos los sépalos forman 
+                                              el CÁLIZ. </li>
+                                            <li>PÉTALOS: Suelen ser muy llamativos, 
+                                              de colores atractivos y olores penetrantes 
+                                              porque su función es atraer a los 
+                                              insectos polinizadores. El conjunto 
+                                              de pétalos de una flor se llama 
+                                              COROLA.</li>
+                                            <li>ESTAMBRES: Constituyen la parte 
+                                              masculina de la flor. Son unos filamentos 
+                                              delgados que terminan en una bolsa 
+                                              donde se producirá la meiosis y 
+                                              se formarán las esporas, que en 
+                                              las plantas superiores reciben el 
+                                              nombre de GRANOS DE POLEN. El conjunto 
+                                              de estambres de una flor forma el 
+                                              ANDROCEO. </li>
+                                            <li>CARPELOS: Son la parte femenina 
+                                              de la flor. En su interior hay unos 
+                                              órganos llamados ÓVULOS en los que 
+                                              se produce la fecundación. El conjunto 
+                                              de carpelos forma el GINECEO o PISTILO, 
+                                              que acaba en una punta alargada 
+                                              llamada ESTIGMA. </li>
+                                          </ul>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><br>
+                                <img src="imagenes/pol1.gif" width="400" height="183" alt="&quot;Esquema de la polinizaci&oacute;n. Tomado de www.snv.jussieu.fr.&quot; "><br>
+                                <br>
+                                <br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Cuando madura la flor, 
+                                            se forman los granos de polen en los 
+                                            estambres y se van liberando. Estos 
+                                            granos de polen son transportados 
+                                            (= POLINIZACI&Oacute;N) por diversos 
+                                            agentes (el viento, insectos, el agua, 
+                                            etc.) hasta que llegan al estigma 
+                                            de otra flor donde germinan produciendo 
+                                            los gametos masculinos y un tubo largo 
+                                            llamado TUBO POL&Iacute;NICO, que 
+                                            llega hasta el &oacute;vulo. Los gametos 
+                                            masculinos bajan por el tubo pol&iacute;nico 
+                                            hasta llegar a los gametos femeninos 
+                                            que est&aacute;n en los &oacute;vulos, 
+                                            origin&aacute;ndose entonces la fecundaci&oacute;n.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+								
+                              <p align="center">&nbsp;</p>
+                              <div align="center">
+                                <center>
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                  <tr>
+                                    <td width="50%">
+                                    <p align="center"><img src="imagenes/polen.gif" width="317" height="187" alt="&quot;Granos de polen de diferentes vegetales. Tomada de www.biavl.dk&quot;"></td>
+                                    <td width="50%">
+                                    <p align="center">
+                                    <img border="0" src="imagenes/polinizacion.gif" alt="Polinización" width="280" height="240"></td>
+                                  </tr>
+                                </table>
+                                </center>
+                              </div>
+                              <p><br>
+                                <img src="imagenes/fruta.jpg" width="180" height="278" alt="&quot;Los frutos carnosos suponen una fuente alimenticia muy importante para los animales. Tomada de www.aldeaeducativa.com&quot;" align="right" hspace="15" vspace="0"> 
+                              </p>
+                              <table width="70%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">El resultado de la fecundaci&oacute;n 
+                                            es un embri&oacute;n que queda rodeado 
+                                            por sustancias nutritivas y por unas 
+                                            cubiertas o c&aacute;scaras muy resistentes 
+                                            (piensa por ejemplo en una almendra 
+                                            o una avellana). Este conjunto de 
+                                            embri&oacute;n, nutrientes y c&aacute;scaras 
+                                            constituye una SEMILLA, que puede 
+                                            aguantar mucho tiempo sin germinar.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="70%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Por &uacute;ltimo, en 
+                                            las plantas m&aacute;s evolucionadas, 
+                                            los carpelos se transforman para dar 
+                                            el FRUTO, que sirve para proteger 
+                                            a las semillas y para ayudar a que 
+                                            sean transportadas a otros lugares..</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="70%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Las semillas diseminadas 
+                                            por muchos lugares pueden germinar 
+                                            si las condiciones son favorables 
+                                            y dar lugar a nuevos esporofitos.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center">&nbsp;</p>
+                              <div align="center">
+<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        15</font> <a target="_blank" href="activrepcoor15.htm"><img src="imagenes/activ15.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        16</font> <a target="_blank" href="activrepcoor16.htm"><img src="imagenes/activ16.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        17</font> <a target="_blank" href="activrepcoor17.htm"><img src="imagenes/activ17.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        18</font> <a target="_blank" href="activrepcoor18.htm"><img src="imagenes/activ18.jpg" width="120" height="68" border="0"></a> 
+                                    </td></tr>
+                                </table>
+                              </div>
+                              <br>
+                              <p align="right"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

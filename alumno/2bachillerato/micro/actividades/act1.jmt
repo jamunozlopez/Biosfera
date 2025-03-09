@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Descubrimientos y descubridores&lt;center&gt;&lt;img src=&quot;../imagenes/woese.jpg&quot; alt=&quot;woese.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Descubrimientos y descubridores&lt;center&gt;&lt;img src=&quot;../imagenes/woese.jpg&quot; alt=&quot;woese.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>Leeuwenhoek</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Desarrolla el microscopio</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Pasteur</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Establece el poder patógeno de algunos microorganismos</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Jenner</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Desarrolla la primera vacuna</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Koch</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Establece los postulados de las enfermedades infecciosas</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Fleming</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Descubre la penicilina</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de relación</exercise-subtitle>
+<instructions>Relaciona cada descubridor con su descubrimiento</instructions>
+<next-ex-url>clasifc2.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<separate-javascript-file>0</separate-javascript-file>
+<guess-correct>¡Correcto! Muy bien.</guess-correct>
+<guess-incorrect>Inténtalo de nuevo.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>=Siguiente&gt;</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

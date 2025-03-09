@@ -1,0 +1,669 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reproduccion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (7/11) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">5-. PARA SABER MÁS SOBRE REPRODUCCIÓN: 
+                                LOS CICLOS BIOLÓGICOS </p>
+							  <div align="center"><img src="imagenes/reciclo.JPG" width="364" height="253" alt="&quot;Ciclo biol&oacute;gico de la especie humana. Tomada de www.arrakis.es/~lluengo/reproduccion&quot;"><br>
+                                <br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Los Ciclos Biológicos representan el desarrollo en el tiempo de la vida de un ser vivo, desde que nace, hasta que se reproduce y origina un nuevo individuo que repetirá el mismo ciclo.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <BR>
+                              <div align="center"></div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Existen diferentes tipos de Ciclos, según las características de los seres vivos. Te ofrecemos como ejemplo aquellos que nos parecen de mayor interés para ti:
+                                          </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p><span class="txt">1. Ciclo de
+                              <a class="txtnegrolink" target="_blank" href="http://host04.ipowerweb.com/~natureno/notes/dbiologia/biologia_cnidarios.htm">medusa 
+                                y pólipo</a> (Celentéreos)</span></p>
+                              <p align="center">
+								<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj2" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="550" height="400">
+									<param name="movie" value="imagenes/Ciclo Aurelia.swf">
+									<param name="quality" value="High">
+									<embed src="imagenes/Ciclo%20Aurelia.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj2" width="550" height="400"></object>
+								</p>
+                              <table width="716" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="717"> 
+                                    <table width="716" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="704"> 
+                                          <p>Es una alternancia de generaciones. 
+                                            Las medusas son de vida libre y tienen 
+                                            gónadas, donde forman los gametos. 
+                                            Éstos se unen formando un zigoto que 
+                                            da lugar a una larva (plánula). Esta larva se 
+                                            fija al fondo marino y crece hasta 
+                                            formar un pólipo. El pólipo, por estrangulamiento 
+                                            en su parte superior, origina unas 
+                                            estructuras que se giran, se hacen 
+                                            de vida libre y se convierten en 
+                                          otra larva (ephyra) que dará lugar a 
+                                          otra nueva medusa. 
+                                            Existen, por tanto, dos generaciones, 
+                                            una de reproducción sexual, las medusas, 
+                                            y otra de reproducción asexual, los 
+                                            pólipos. </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p class="txt">2. Ciclo de un caracol (Molusco)<br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Los caracoles son hermafroditas, es decir, poseen a la vez órganos masculinos y femeninos. Cuando dos caracoles se encuentran ambos actúan a la vez como machos y como hembras: se juntan por la parte ventral, como si se deslizaran uno sobre el pie del otro, liberan sus espermatozoides en el otro individuo con la ayuda de un pene, ya que la fecundación es interna, tras la cual se formarán unos pequeños huevos de donde saldrán unas larvas con aspecto de pequeño caracol, pero sin concha; tras varios cambios saldrá una fase juvenil que desarrollará el caparazón de carbonato cálcico.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><br>
+                                3. Ciclo de una
+                              <a class="txtnegrolink" target="_blank" href="http://www.correodelmaestro.com/anteriores/1999/abril/2anteaula35.htm">mariposa</a> 
+                                (Insecto)</p>
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/bombix.jpg" width="350" height="350" alt="&quot;Ciclo de un gusano de seda&quot;" hspace="15"></p>
+                              <table width="52%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="712" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="700"> 
+                                          <p>Es un ciclo biológico de desarrollo indirecto, es decir, con metamorfosis. De los huevos salen las larvas, que son las ORUGAS (a las que vulgarmente llamamos "gusanos"). Su única actividad es comer y comer, crecer y, en un momento determinado, hacer una envoltura de seda (el "capullo") en cuyo interior se forma la PUPA. Ahí es donde se produce la transformación de oruga a adulto, es decir, de gusano a mariposa. Tras el cambio salen las mariposas y se aparean, produciéndose la fecundación. A continuación la hembra pone decenas de huevos.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><br>
+                                4. Ciclo de una gamba (<a class="txtnegrolink" target="_blank" href="http://www.iespana.es/natureduca/zoo_inverteb_crustaceos1.htm">Crust&aacute;ceo</a>)</p>
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/ciclo_gamba.jpg" width="492" height="458" alt="&quot;Ciclo de una gamba. Tomado de uvirtual.ing.ucv.edu &quot;" hspace="10"></p>
+                              <table width="52%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="711" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="699"> 
+                                          <p>Los machos y las hembras liberan 
+                                          sus gametos al agua, donde se produce 
+                                          la fecundación. Inmediatamente el 
+                                          zigoto origina una primera larva (Nauplius) 
+                                          que se convierte sucesivamente en 
+                                          otras larvas más (Protozoea, Misis), 
+                                          separadas por pequeñas metamorfosis 
+                                          seguidas de una MUDA o cambio del 
+                                          esqueleto externo para poder crecer. 
+                                          Finalmente surge un individuo juvenil 
+                                          que ya es parecido al adulto.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              
+                              <p class="txt">&nbsp;</p>
+                              
+                              <p class="txt"><br>
+                                5. Ciclo de una estrella de mar (<a class="txtnegrolink" target="_blank" href="http://marenostrum.org/vidamarina/animalia/invertebrados/equinodermos/equinodermos.htm">Equinodermo</a>)</p>
+                              
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/estrella_ciclo.jpg" width="492" height="492" alt="&quot;Ciclo de una estrella de mar. Adaptado de web.mit.edu &quot;" hspace="10" vspace="25"></p>
+                              <table width="717" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="713"> 
+                                    <table width="714" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="702"> 
+                                          <p>Macho y hembra producen sus gametos y los liberan al agua; se encuentran y se da la fecundación formándose un zigoto que se transforma en una larva de vida libre que, tras un vagabundeo, sufre metamorfosis y origina una nueva estrella de mar.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><br>
+                                <br>
+                                <br>
+                                6. Ciclo de un
+                              <a class="txtnegrolink" target="_blank" href="http://tiburones.iespana.es/tiburones/">tibur&oacute;n</a> 
+                                (Peces)</p>
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/huevo_tiburon.jpg" width="300" height="216" alt="&quot;Las llamadas &quot;bolsas de sirena&quot; son huevos de tibur&oacute;n. Tomada de seashadows.narod.ru/rus/htmlru&quot;" hspace="15"></p>
+                              <table width="52%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="711" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="699"> 
+                                          <p>El macho introduce los espermatozoides en la hembra gracias a una aleta que adopta una forma especial y actúa a modo de pene. La fecundación se da en el interior de la hembra formándose varios huevos translúcidos que permanecen dentro de la hembra. En el interior de estos huevos se desarrolla un pequeño tiburón que, al acabar su desarrollo, rompe el huevo y sale al exterior vivo, siendo por tanto una especie ovovivípara.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p class="txt">7. Ciclo de una rana (Anfibio)</p>
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/ciclo_rana.gif" width="556" height="328" alt="&quot;Ciclo de una rana. Adaptado de www.earlham.edu&quot;" hspace="10" vspace="20"></p>
+                              <table width="52%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="711" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="699"> 
+                                          <p>El macho se coloca encima de la hembra 
+                                            y a medida que la hembra libera los 
+                                            óvulos, el macho libera sus espermatozoides, 
+                                            por lo que la fecundación también 
+                                            es en el agua. Se forma un zigoto 
+                                            que origina una larva que tiene branquias 
+                                            y es acuática. Es lo que llamamos 
+                                            un "<a class="txtnegrolink" target="_blank" href="http://redescolar.ilce.edu.mx/redescolar/publicaciones/publi_biosfera/fauna/rana_esculenta/ranaescu.htm">renacuajo</a>", 
+                                            que come y crece y, en un momento 
+                                            dado, desarrolla patas y pulmones 
+                                            y pierde las branquias, originándose 
+                                            una nueva rana.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p class="txt">8. Ciclo de una cigüeña (Ave)</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>El macho se coloca sobre la hembra y pone su cloaca sobre la de su pareja, pasando los espermatozoides al interior de la hembra, donde se da la fecundación. Se forma uno o varios HUEVOS que son puestos en el exterior e incubados por los padres hasta que se completa el desarrollo embrionario y se produce la eclosión, saliendo un pollito que crecerá hasta convertirse en un adulto.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p><br>
+                                &nbsp;</p>
+                              <p class="txt">9. Ciclo de un ser humano (Mamífero 
+                                placentado)</p>
+                              <p class="txt" style="text-align: center">
+                                <img src="imagenes/3meses.gif" width="152" height="187" alt="&quot;Feto humano de tres meses. Tomada de www.bebesenlaweb.com.ar&quot;" hspace="15" vspace="5"></p>
+                              <table width="75%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="710" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="698"> 
+                                          <p>El hombre introduce los espermatozoides 
+                                            en la vagina de la mujer mediante 
+                                            el pene. Los espermatozoides se mueven 
+                                            hasta encontrar al óvulo en la trompa 
+                                            de Falopio produciéndose la fecundación. 
+                                            El embrión se sujeta en el útero y 
+                                            se desarrolla durante nueve meses 
+                                            alimentándose a través de la
+                                          <a class="txtnegrolink" target="_blank" href="http://www.gineconet.com/articulos/770.htm">PLACENTA</a>. 
+                                            Al cabo del tiempo se produce el parto, 
+                                            es decir, la salida del recién nacido 
+                                            al exterior. </p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p class="txt">10. Ciclo de un canguro (Mamífero 
+                                marsupial)</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>El canguro macho fecunda a la hembra 
+                                            igual que cualquier otro mamífero. 
+                                            El embrión se fija en el útero pero 
+                                            no se forma placenta, por lo que cuando 
+                                            se acaba el alimento que tenía el 
+                                            propio embrión, se produce un parto 
+                                            y sale al exterior un feto que no 
+                                            ha terminado su desarrollo. Desde 
+                                            la vagina el feto se mueve agarrándose 
+                                            al pelo de la madre y trepa hasta 
+                                            introducirse en el
+                                          <a class="txtnegrolink" target="_blank" href="http://www.iespana.es/natureduca/zoo_cordados_mamif4.htm">MARSUPIO</a>, 
+                                            una bolsa de piel en cuyo interior 
+                                            están las mamas. El feto se sujeta 
+                                            a una de las mamas y ahí permanecerá 
+                                            hasta completar su desarrollo, saliendo 
+                                            posteriormente al exterior.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+							  <p class="txt">11. Ciclo de un champiñón (Hongo)</p>
+							  <p class="txt" style="text-align: center">
+                              <img border="0" src="imagenes/Ciclo%20hongos.gif" width="615" height="260"></p>
+							  <p class="txt" style="text-align: center">
+                              <img src="imagenes/micelios.jpg" width="400" height="300" alt="&quot;Ciclo de un hongo. Adaptada de centros5.pntic.mec.es/ies.butarque &quot;" hspace="10" vspace="24"></p>
+                              <table width="395" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="391"> 
+                                    <table width="709" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="697"> 
+                                          <p>El hongo está formado por una serie 
+                                            de finos hilillos blancos que son 
+                                            las
+                                          <a class="txtnegrolink" target="_blank" href="http://www.iespana.es/natureduca/botan_micofitos1.htm">HIFAS</a>. 
+                                            Crecen, se ramifican, y, en un momento 
+                                            determinado, se pueden encontrar dos 
+                                            hilos diferentes que se fusionan originando 
+                                            uno sólo. Esta nueva hifa va a tener 
+                                            dos núcleos, uno de cada una de las 
+                                            hifas que se han fusionado, y sigue 
+                                            creciendo y ramificándose originando 
+                                            una estructura reproductora muy peculiar 
+                                            que es la
+                                          <a class="txtnegrolink" target="_blank" href="http://www.aragoneria.com/natural/hongos/">SETA</a>. 
+                                            En el extremo de la hifa, en las laminillas 
+                                            de la seta, se unen los dos núcleos 
+                                            formando una especie de zigoto que 
+                                            se divide por meiosis y forma unas 
+                                            esporas que caen al suelo y germinan 
+                                            formando unas nuevas hifas.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+								<p>&nbsp;</p>
+							  <p class="txt">12. Ciclo de un musgo (Briofita)</p>
+							  <p class="txt" style="text-align: center">
+                              <img src="imagenes/ciclo_musgo2.jpg" width="350" height="240" alt="&quot;Ciclo de un musgo&quot;" hspace="10" vspace="20"></p>
+                              <table width="713" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="709"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>El Ciclo es una Alternancia de Generaciones. En el gametofito, que es verde, de vida libre y vive todo el año, se desarrollan los órganos reproductores que forman gametos. El gameto masculino se mueve hasta fecundar al femenino y se origina un zigoto que crece formando el esporofito. El esporofito no es de vida libre, se alimenta a expensas del gametofito, vive poco tiempo y sólo en cierta época del año. Posee un tejido fértil en el que se da meiosis y se forman esporas que caen al suelo y al germinar forman un nuevo gametofito.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							<p>&nbsp;</p>
+                              <p class="txt">13. Ciclo de un helecho (Pteridofita)</p>
+                              <p class="txt" style="text-align: center">
+                              <img src="imagenes/ciclo_helecho4.jpg" width="350" height="217" alt="&quot;Ciclo de un helecho&quot;" vspace="22" hspace="10"></p>
+                              <table width="711" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="707"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>También en este caso el ciclo es Alternancia de Generaciones. Entre estos vegetales el que vive todo el año es el esporofito. En sus hojas, llamadas FRONDES, se encuentra el tejido fértil que se divide por meiosis y forma esporas que caen al suelo, donde germinan. De la germinación de las esporas salen los gametofitos, que, aunque son verdes y de vida libre, son muy pequeños y viven muy poco tiempo. Se desarrollan los órganos sexuales y se forman los gametos. El masculino se mueve y se da la fecundación produciéndose un zigoto que crece y da lugar a un nuevo esporofito.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							<p>&nbsp;</p>
+							  <p class="txt">14. Ciclo de un pino (Espermatofita 
+                                Gimnosperma)</p>
+							  <p class="txt" style="text-align: center">
+                              <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="440" height="220">
+                                <param name="movie" value="imagenes/ciclo_gimnospermas.swf">
+                                <param name="quality" value="High">
+                                <embed src="imagenes/ciclo_gimnospermas.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="440" height="220"></object>
+                              </p>
+                              <table width="712" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="708"> 
+                                    <table width="714" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="702"> 
+                                          <p>Es una Alternancia de Generaciones. El pino es el esporofito. En unas ramas especiales forma un conjunto de hojas especiales que son los estambres; el conjunto de todos los estambres unidos a su ramita es una PIÑA MASCULINA. En el interior de los estambres hay un tejido fértil que se divide por meiosis y forma unas esporas que son los granos de POLEN.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <br>
+							<table width="717" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td width="713"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>En ciertas ramas se forman otras hojas que están protegidas por unas escamas leñosas, resistentes, y que en conjunto constituyen la PIÑA FEMENINA. Debajo de las hojas existen unos óvulos en cuyo interior se va a formar el gametofito femenino.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <br>
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>El grano de polen llega al óvulo y germina, produciendo el gametofito masculino y los gametos. Los gametos masculinos llegan hasta los femeninos por el TUBO POLÍNICO y se da la fecundación. Se forma un embrión que queda recubierto por un tejido nutritivo y unas cubiertas resistentes formadas a partir del óvulo: este conjunto es la SEMILLA, que en este caso del pino llamamos PIÑÓN. El piñón caerá al suelo y cuando se degrade la cubierta resistente germinará la semilla y se formará un nuevo esporofito, es decir, un nuevo pino.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <p class="txt"><br>
+                                15. Ciclo de un melocotonero (Espermatofita Angiosperma)</p>
+                              <p align="center">
+                              <img border="0" src="imagenes/Ciclo_angiospermas.gif" width="350" height="350"><img src="imagenes/angio.jpg" width="350" height="368" alt="&quot;Ciclo de una planta con flores. Adaptada de Ediciones SENAE, S.A.&quot;"></p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>El Ciclo es una alternancia de Generaciones parecido al anterior. El árbol del melocotonero es el esporofito en el que se forman las flores. En los estambres, por meiosis, se originan los granos de polen, y en los óvulos, que están dentro de los carpelos, se forman los gametofitos femeninos.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							<br>
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Los granos de polen llegan al pistilo y germinan, formándose los gametofitos y los gametos masculinos. Los gametos bajan por el tubo polínico y fecundan a los gametos femeninos. Es entonces cuando se forman los embriones y las semillas a partir de los tejidos del óvulo. La semilla está dentro del hueso del melocotón. A la vez, los carpelos se hacen carnosos, crecen y quedan rodeando a las semillas: es el 
+                                          <a class="txtnegrolink" target="_blank" href="http://www.cnice.mecd.es/eos/MaterialesEducativos/mem2000/frutos/frutos/frutos.html">FRUTO</a>, en este caso, el melocotón.</p>
+                              </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							<br>
+								<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Cuando la semilla caiga al suelo y se libere del fruto podrá germinar, dando lugar a un nuevo esporofito, es decir, un nuevo melocotonero.</p>
+                              		</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <p><br>
+                              </p>
+                              <div align="CENTER">
+<table width="100" border="0" cellspacing="0" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td> 
+                                        
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        20</font> <a target="_blank" href="activrepcoor20.htm"><img src="imagenes/activ20.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    </tr>
+                                  </table>
+                                </div> <p>&nbsp;</p>
+							  <p align="right"><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (7/11) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

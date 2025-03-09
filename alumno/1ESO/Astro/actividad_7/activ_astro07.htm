@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>El Sistema Solar</title>
+</head>
+<body bgcolor ="#e6ffe6" text="#000000">
+<center>
+<applet code="puzzle.class" align="baseline" 
+width="200" height="170"> 
+<param name="Columns" value="5"> 
+<param name="Image" value="image1.jpg"> 
+<param name="Rows" value="5"> 
+</applet> 
+<br> 
+<applet code="puzzleControl.class" align="baseline" 
+width="150" height="50"> 
+<param name="bgColor" value="black"> 
+</applet> 
+<br>
+
+  <font face ="helvetica, arial" font size="+2">Resuelve el puzzle y contesta a las siguientes preguntas.</font><br>
+<font size="+1">Para ver las soluciones pulsa en los botones</font>
+
+
+
+<FONT FACE="Geneva,Arial">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var sButton
+function function1() {
+	if (sButton == "A")	{
+		 alert("Parece claro que es un TELESCOPIO")
+	}
+        if (sButton == "B")	{
+		 alert("Sirve para aumentar la luz que nos llega de fuera de la Tierra")
+	}
+        if (sButton == "C")	{
+		 alert("Pueden tener lentes o espejos")
+	}
+        if (sButton == "D")	{
+		 alert("Nada menos que 10 metros de diámetro")
+	}
+        
+}
+//-->
+</SCRIPT>
+</head>
+<br>
+
+<body>
+<FONT FACE="Geneva,Arial">
+
+
+<p><font size="-1">
+
+<form>
+¿Qué instrumento se ve en la imagen?
+<input type="button" value=" A " onclick="sButton = 'A'; function1()"> 
+<p>¿Sabes para qué se utiliza?<input type="button" value=" B " onclick="sButton = 'B'; function1()">
+<p>¿Qué es lo que tienen dentro para aumentar la imagen?<input type="button" value=" C " onclick="sButton = 'C'; function1()">
+<p>¿Sabes cuál es el diámetro del mayor telescopio que existe?<input type="button" value=" D " onclick="sButton = 'D'; function1()">
+
+</form>
+
+
+</font>
+<center><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></center>
+
+</center>
+</body>
+</html>

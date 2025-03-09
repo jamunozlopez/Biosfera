@@ -1,0 +1,735 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es-mx">
+
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')" language="Javascript1.2">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760"> 
+                  <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a onMouseOut="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln" onMouseOver="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" href="../../../profesor/2bachillerato/1.htm">
+                <img name="fpAnimswapImgFP1" border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/inicio2b.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img src="../img/introduccion.gif" border="0" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="a_inicial.htm" onMouseOut="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln" onMouseOver="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;">
+                <img name="fpAnimswapImgFP3" border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)">
+                <img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onMouseOut="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln" onMouseOver="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;">
+                <img name="fpAnimswapImgFP4" border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onMouseOut="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln" onMouseOver="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;">
+                <img name="fpAnimswapImgFP5" border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onMouseOut="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln" onMouseOver="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;">
+                <img name="fpAnimswapImgFP6" border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="autoevaluacion.htm" onMouseOut="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln" onMouseOver="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;">
+                <img name="fpAnimswapImgFP7" border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onMouseOut="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln" onMouseOver="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;">
+                <img name="fpAnimswapImgFP8" border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="atitulbiotec.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="547" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB">
+                            <p align="right"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><span class="txtnegrolink">
+                            <a class="txtnegrolink" title="Enlaza con el concepto de clonación" href="contenidos2.htm">anterior</a> 
+                              - (3/10) -
+                            <a class="txtnegrolink" title="Enlaza con la clonación acelular" href="contenidos4.htm">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <p class="txtnegro">ADN RECOMBINANTE O CLONACIÓN 
+                              CELULAR</p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">La técnica del ADN 
+                              recombinante se utiliza en estudios sobre la 
+                              regulación de la expresión génica, en la 
+                              regulación de la producción comercial de síntesis 
+                              de proteínas como la Insulina o la hormona del 
+                              crecimiento, en el desarrollo de organismos 
+                              transgénicos y en la amplificación del ADN, es 
+                              decir, en obtener un gran número de copias de un 
+                              gen determinado. En este último caso, existe una 
+                              técnica mejor, denominada con las siglas </span> <span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Enlaza con la explicación de la PCR en la página de la clonación acelular" href="contenidos4.htm#pcr">
+                              PCR</a></span><span style="font-weight: 400">.</span></p>
+                              <table border="0" cellspacing="0" width="100%" id="AutoNumber10" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+                                <tr>
+                                  <td width="45%">
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">La técnica consiste 
+                              en introducir el gen seleccionado en el interior 
+                              de un vector y éste, a su vez, dentro de una 
+                              célula, denominada </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#celulanfitriona">
+                              célula anfitriona</a></span><span style="font-weight: 400">. 
+                              Aprovechando la maquinaria celular, el gen se 
+                              expresa, sintetizándose así la proteína codificada 
+                              en el gen. Además, al dividirse la célula, las 
+                              nuevas células formadas contienen ese gen que también 
+                              sintetizan esa proteína. Se genera un grupo 
+                              celular que contiene un genoma distinto.</span></p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Las etapas en la 
+                              producción de ADN recombinante son las siguientes:</span></p>
+                              <ol style="font-family: Arial; font-size: 10pt">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#1">Preparación de 
+                              la secuencia del ADN para su clonación</a></span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#2">Preparación de 
+                              un vector de clonación</a></span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#3">Formación del 
+                              ADN recombinan<span lang="es">t</span>e</a></span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#4">Introducción del 
+                              ADN recombinante en una célula anfitriona</a></span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#5">Propagación del 
+                              cultivo</a></span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span class="txtnegrolink">
+                              <a class="txtnegrolink" href="#6">Detección y selección de clones recombinantes</a></span></p>
+                                </li>
+                              </ol>
+                                  </td>
+                                  <td width="6%">&nbsp;</td>
+                                  <td width="49%">
+                                  <img border="0" src="imagenes/animarecom.gif" alt="Resumen de las etapas para recombinar el ADN. Animación: De Mier y Leva" width="375" height="405"></td>
+                                </tr>
+                              </table>
+                              <hr width="80%">
+								<p class="txtnegro" align="left">
+                              <a name="1"></a></p>
+                              <table border="0" cellspacing="1" width="100%" id="AutoNumber7">
+                                <tr>
+                                  <td width="47%">
+                              <ol style="font-family: Arial; font-size: 10pt; font-weight:bold">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Preparación de la secuencia del ADN para su 
+                              clonación</p>
+                                </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Es la parte 
+                              esencial del proceso, ya que el ADN debe separarse 
+                              y concentrarse.</span></p>
+                              <ul>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Partimos de células 
+                              con núcleo, que deben ser lisadas (rotas).</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Las proteínas 
+                              estructurales, enzimas, ARN y restos moleculares 
+                              deben separarse del ADN.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">El ADN obtenido se 
+                              concentra y se fragmenta por acción de las </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Amplía contenidos" target="_blank" href="ampliarestrictasa.htm">
+                              enzimas de restricción</a></span><span style="font-weight: 400">.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Se aísla el ADN que 
+                              se desea clonar, por ejemplo, mediante 
+                              cromatografía líquida o por centrifugación.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Si el ADN debe 
+                              expresarse hay que añadir los segmentos 
+                              reguladores de la expresión génica.</span></p>
+                                </li>
+                              </ul>
+                                  </td>
+                                  <td width="5%">&nbsp;</td>
+                                  <td width="48%">
+                                  <img border="0" src="imagenes/animaexplicadn.gif" alt="Resumen. Animación: De Mier y Leva" width="375" height="333"></td>
+                                </tr>
+                              </table>
+                              <p class="txtnegro" align="left">
+                              <a name="2"></a></p>
+                              <table border="0" cellspacing="1" width="100%" id="AutoNumber8">
+                                <tr>
+                                  <td width="60%">
+                              <ol style="font-family: Arial; font-size: 10pt; font-weight:bold" start="2">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Preparación de un vector de clonación</p>
+                                </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">El vector es el 
+                              portador de la secuencia de ADN que se desea 
+                              clonar. Un vector debe presentar las siguientes 
+                              características:</span></p>
+                              <ul>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Una pequeña 
+                              secuencia de ADN fácil de aislar, como, por 
+                              ejemplo, un plásmido.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Contener distintos 
+                              puntos de </span>ataque a <span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" title="Amplía contenidos" href="ampliarestrictasa.htm">
+                              enzimas de restricción</a></span><span style="font-weight: 400"> 
+                              y que sean conocidos.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Poder ser incluido 
+                              en la </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#celulanfitriona">célula anfitriona</a></span><span style="font-weight: 400"> 
+                              con facilidad.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Replicarse de forma 
+                              independiente al ADN de la célula anfitriona.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Poseer un gen 
+                              marcador con el que puedan identificarse y 
+                              seleccionar las células clonadas. Un ejemplo de 
+                              marcador puede ser la resistencia a un 
+                              antibiótico.</span></p>
+                                </li>
+                              </ul>
+                                  </td>
+                                  <td width="6%">&nbsp;</td>
+                                  <td width="34%">
+                                  <span style="font-weight: 400">
+                                  <img border="0" src="imagenes/animarestricta.gif" alt="Modos de actuación de las enzimas de restricción. Animación: De Mier y Leva" width="400" height="400">.</span></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td width="58%">
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Las etapas del 
+                              proceso consisten en:</span></p>
+                              <blockquote>
+                                <blockquote>
+                                  <ol style="font-family: Arial; font-size: 10pt">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Cortar el vector 
+                              con </span> <span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" title="Amplía contenidos" href="ampliarestrictasa.htm">
+                              enzimas de restricción</a></span><span style="font-weight: 400">, 
+                              las mismas enzimas que se utilizaron&nbsp; para 
+                              cortar el ADN que se quiere insertar.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Unir el vector y el 
+                              ADN que se va a clonar mediante los llamados
+                              </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#extremocohesivo">
+                              extremos cohesivos</a></span><span style="font-weight: 400">, 
+                              o pegajosos, o escalonados.</span></p>
+                                </li>
+                                  </ol>
+                                </blockquote>
+                              </blockquote>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Una vez que el ADN 
+                              ha sido introducido en el vector se denomina
+                              </span>ADN inserto<span style="font-weight: 400">, 
+                              o simplemente, inserto.</span></p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Los tipos de 
+                              vectores que se utilizan suelen ser plásmidos, 
+                              virus como el fago <font face="Symbol">l</font>, 
+                              cromosomas creados de forma artificial y </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#quimera">
+                              quimeras</a></span><span style="font-weight: 400">.</span></p>
+                                  </td>
+                                  <td width="2%">&nbsp;</td>
+                                  <td width="40%">
+                                  <img border="0" src="imagenes/animavector.gif" alt="Inserción de ADN recombinante en un plásmido vector. Animación: De Mier y Leva" width="375" height="375"></td>
+                                </tr>
+                              </table>
+                                  <p><a name="3"></a></p>
+                                  <p>&nbsp;</p>
+                              <ol style="font-family: Arial; font-size: 10pt; font-weight:bold" start="3">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Formación del ADN recombinante</p>
+                                </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">En esta etapa se 
+                              produce la unión covalente del vector y el ADN 
+                              inserto mediante una ligasa. Así se realiza el 
+                              sellado de la llamada Mella, Muesca o Nick.</span></p>
+                              <p class="txtnegro" align="left">
+                              <a name="4"></a></p>
+                              <p class="txtnegro" align="left">
+                              &nbsp;</p>
+                              <ol style="font-family: Arial; font-size: 10pt; font-weight:bold" start="4">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Introducción del ADN recombinante en la célula 
+                              anfitriona</p>
+                                </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Para la clonación 
+                              (replicación del ADN recombinante) se necesita la 
+                              maquinaria celular. Por ello, hay que introducir 
+                              el ADN recombinante en una </span><span class="txtnegrolink">
+                              <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#celulanfitriona">célula anfitriona</a></span><span style="font-weight: 400">.</span></p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Los tipos de 
+                              células anfitrionas son:</span></p>
+                              <ul>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Células bacterianas<span style="font-weight: 400">: 
+                              son las más utilizadas, ya que tienen una alta 
+                              velocidad de replicación, un bajo coste de 
+                              mantenimiento de las colonias y son fácilmente 
+                              manipulables.</span></p>
+                                </li>
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Células eucariotas<span style="font-weight: 400">: 
+                              aunque las células eucariotas son, en general, 
+                              difíciles de mantener se usan levaduras y células 
+                              tumorales:</span></p>
+                                <ul>
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Levaduras<span style="font-weight: 400">: se 
+                              utilizan en procesos relacionados con la 
+                              investigación de la expresión y la regulación 
+                              génica y la síntesis de proteínas eucariotas.</span></p>
+                                  </li>
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Células tumorales<span style="font-weight: 400">: 
+                              apropiadas en procesos de clonación, ya que la 
+                              velocidad de replicación es muy alta y se 
+                              mantienen los caracteres sin producirse cambios, 
+                              pues son muy estables.</span></p>
+                                  </li>
+                                </ul>
+                                </li>
+                              </ul>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Los métodos para la 
+                              introducción del ADN recombinante facilitan la 
+                              entrada de grandes fragmentos de ADN, puesto que 
+                              la membrana celular es selectiva y no permitiría la 
+                              penetración de grandes moléculas.</span></p>
+								<p class="txtnegro" align="left">
+                              &nbsp;</p>
+                              <table border="0" width="100%" id="table1">
+								<tr>
+									<td>&nbsp;</td>
+									<td>
+									<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+                              <p class="txtnegro" align="center">
+                              <span style="font-weight: 400">Si deseas aprender 
+                              más sobre los métodos utilizados para la 
+                              introducción del ADN recombinate, pulsa sobre el 
+                              siguiente enlace de ampliación.</span></p>
+                              <p class="txtnegro" align="center">
+                              <span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="ampliarecombinante.htm">
+                              Ampliación sobre los métodos de introducción de 
+                              ADN recombinante</a></span></p>
+                              <p class="txtnegro" align="center">
+                              <span style="font-weight: 400">¡Cuando hayas 
+                              estudiado la página de ampliación de contenidos 
+                              puedes repasar con ayuda de la actividad 4!</span></p>
+									</div>
+									<p>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								</table>
+                              <table border="0" cellspacing="1" width="100%" id="AutoNumber11">
+                                <tr>
+                                  <td width="95%">
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber12">
+                                    <tr>
+                                      <td width="33%">&nbsp;</td>
+                                      <td width="33%">
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" title="Metiendo ADN recombinante" href="actividades/act4.htm">Actividad 
+                                    4</a></span><a title="Metiendo ADN recombinante" target="_blank" href="actividades/act4.htm"><img border="0" src="imagenes/cuadritos/cuad4small.gif" xthumbnail-orig-image="imagenes/cuadritos/cuad4.gif" width="100" height="75"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        </td>
+                                      <td width="34%">&nbsp;</td>
+                                    </tr>
+                                  </table>
+                                  </td>
+                                  <td width="5%">&nbsp;</td>
+                                </tr>
+                              </table>
+                              <p class="txtnegro" align="left">
+                              <a name="5"></a></p>
+                              <p class="txtnegro" align="left">
+                              &nbsp;</p>
+                              <ol style="font-family: Arial; font-size: 10pt; font-weight: bold" start="5">
+                                <li>
+                              <p class="txtnegro" align="left">
+                              Propagación del cultivo</p>
+                                </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Se induce la 
+                              división de células anfitrionas, de forma que se 
+                              producen también copias de ADN recombinante y, por 
+                              ello, la clonación. Primero se efectúa una siembra 
+                              en placas Petri con agar como medio de cultivo. Se 
+                              dejan crecer las colonias. Cada una de ellas será 
+                              seleccionada y transferida a distintos medios 
+                              líquidos, donde seguirá aumentando el número de 
+                              individuos de la colonia.</span></p>
+                              <p class="txtnegro" align="left">
+                              <a name="6"></a></p>
+                              <p class="txtnegro" align="left">
+                              &nbsp;</p>
+                                <ol style="font-family: Arial; font-size: 10pt; font-weight: bold" start="6">
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Detección y selección de los clones recombinantes</p>
+                                  </li>
+                              </ol>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">En los procesos de 
+                              clonación se utiliza un gran número de células. Al 
+                              final del proceso se hace necesario separar las 
+                              células que contienen ADN recombinante de las que 
+                              no lo contienen.</span></p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">La detección y la 
+                              selección de colonias se realiza en los medios de 
+                              cultivo. En los procesos de clonación se obtienen 
+                              células anfitrionas que no han incluido el vector, 
+                              células recombinantes, es decir, que han incluido 
+                              el vector con el ADN para recombinar, y células 
+                              anfitrionas con vector que no lleva el ADN 
+                              inserto. </span></p>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Los métodos para 
+                              detectar y seleccionar son:</span></p>
+                                <ul>
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Método de hibridación<span style="font-weight: 400">: 
+                              se utiliza una sonda marcada que hibrida con el 
+                              ADN recombinante o con el ARN mensajero que se 
+                              transcribe a partir de él.</span></p>
+                                  </li>
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Método inmunológico<span style="font-weight: 400">: 
+                              se detecta la proteína codificada en el ADN 
+                              recombinante mediante anticuerpos específicos.</span></p>
+                                  </li>
+                                  <li>
+                              <p class="txtnegro" align="left">
+                              Métodos genéticos<span style="font-weight: 400">: 
+                              que, a su vez, pueden ser:</span></p>
+                                  <ul>
+                                    <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Inserción del 
+                              vector y el ADN recombinante en un gen de la 
+                              célula anfitriona que queda desactivado. Por 
+                              ejemplo, si la colonia no produce enzima lactasa, 
+                              es que el ADN recombinante se encuentra dentro del 
+                              ADN bacteriano en ese gen.</span></p>
+                                    </li>
+                                    <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Vector con genes de 
+                              resistencia a un antibiótico: en el medio se 
+                              agrega el antibiótico y sólo crecerá aquella 
+                              colonia que sea resistente a él, por tanto, que 
+                              porte el ADN.</span></p>
+                                    </li>
+                                    <li>
+                              <p class="txtnegro" align="left">
+                              <span style="font-weight: 400">Colonias con 
+                              defectos nutricionales: se utilizan células 
+                              anfitrionas mutantes que no puedan sintetizar, por 
+                              ejemplo, un aminoácido. Para que la colonia 
+                              sobreviva, el aminoácido debe ser añadido al medio 
+                              de cultivo. Empleando un vector que lleve el gen 
+                              correcto para la síntesis de dicho aminoácido, 
+                              haciendo crecer las colonias celulares en medios 
+                              carentes de él sólo crecerán las bacterias que 
+                              lleven el ADN inserto.</span></p>
+                                    </li>
+                                  </ul>
+                                  </li>
+                              </ul>
+                              <p class="txtnegro" align="left">
+                              &nbsp;</p>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">&nbsp;</p>
+                                    <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%">
+                              &nbsp;</td>
+                                        <td width="20%">
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" title="ADN copia" href="actividades/act5.htm">Actividad 
+                                    5</a></span><a title="ADN copia" target="_blank" href="actividades/act5.htm"><img border="0" src="imagenes/cuadritos/cuad5small.gif" xthumbnail-orig-image="imagenes/cuadritos/cuad5.gif" width="100" height="75"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        </td>
+                                        <td width="20%">
+                              &nbsp;</td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                              <p class="txtnegro">&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr> 
+                                  <td> 
+                                    <p align="right"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Enlaza con el concepto de clonación" href="contenidos2.htm">anterior</a> 
+                                - (3/10) -
+                                    <a class="txtnegrolink" title="Enlaza con la clonación acelular" href="contenidos4.htm">siguiente</a></span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="center"> </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

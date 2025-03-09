@@ -1,0 +1,240 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Belen Sanchez."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>ACTIVIDAD   7Clasificaci&#243;n de bacterias por su forma.Las bacterias se clasifican seg&#250;n su forma en varios tipos: Relaci&#243;nalas.</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=4;
+CorrectAnswers[1]=7;
+CorrectAnswers[2]=3;
+CorrectAnswers[3]=2;
+CorrectAnswers[4]=1;
+CorrectAnswers[5]=6;
+CorrectAnswers[6]=5;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="fondo.gif" BGCOLOR="#e6ffe6" TEXT="#006666" LINK="#006666" VLINK="#0000cc">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#006666"><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr bgcolor="#BBDDBB" align="center"><td align="center" colspan="2"><font class="txt" size="2"><b>ACTIVIDAD   7<br>Clasificaci&#243;n de bacterias por su forma.</b></font></td></tr><tr></tr><tr><td colspan="2" align="center" bgcolor="#e6ffe6"><font class="txt" size="2"><br><b>Las bacterias se clasifican seg&#250;n su forma en varios tipos: Relaci&#243;nalas.<br></b></font></td></tr></table></FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#006666"><BR>&nbsp;</FONT></TD></TR>
+
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Monococos</b><br />
+<img src="dibujos/tipo bacteria coco.jpg" alt="tipo bacteria coco.jpg" width="100" height="84" border="0"></img></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Diplococos</b><br />
+<img src="dibujos/tipo bacteria diplococo.gif" alt="tipo bacteria diplococo.gif" width="150" height="41" border="0"&#x003E;&#x003C;/img></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Estreptococos</b><br />
+<img src="dibujos/tipo bacteria streptococo.gif" alt="tipo bacteria streptococo.gif" width="150" height="23" border="0"></img></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Estafilococos</b><br />
+<img src="dibujos/tipo bacteria estafilococo.jpg" alt="tipo bacteria estafilococo.jpg" width="100" height="79" border="0"></img></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Bacilos</b><br />
+<img src="dibujos/tipo bacteria bacilo.jpg" alt="tipo bacteria bacilo.jpg" width="100" height="81" border="0"></img></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Espirilos</b><br />
+<img src="dibujos/tipo bactaria espiroqueta.jpg" alt="tipo bactaria espiroqueta.jpg" width="100" height="64" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><b>Vibrios</b><br />
+<img src="dibujos/tipo bacteria vibrio.jpg" alt="tipo bacteria vibrio.jpg" width="100" height="98" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="12">
+<OPTION>??? 
+<OPTION>Forma de c&aacute;psula
+<OPTION>Esf&eacute;ricasen racimos
+<OPTION>Esf&eacute;ricas en cadena
+<OPTION>Esf&eacute;ricas y solitarias
+<OPTION>Forma de coma
+<OPTION>Forma de muelle 
+<OPTION>Esf&eacute;ricas en parejas
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="13" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="&#161;Compru&eacute;balo!" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es  <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,536 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (5/11) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <div align="center"> 
+                                <p align="left"><span class="txtnegro">2.4.- Cadena 
+                                  respiratoria: hip&oacute;tesis quimiosm&oacute;tica.</span></p>
+                              </div>
+                              <div align="center"> 
+                                <p>
+                                <img border="0" src="imagenes/Transporte.gif" width="640" height="480"></p>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La mol&eacute;cula de 
+                                            <span class="txtbold">glucosa</span> 
+                                            que inici&oacute; la gluc&oacute;lisis 
+                                            est&aacute; completamente oxidada. 
+                                            Parte de su energ&iacute;a se ha invertido 
+                                            en la s&iacute;ntesis de ATP. Sin 
+                                            embargo, la mayor parte de la energ&iacute;a 
+                                            est&aacute; en los electrones capturados 
+                                            por el NAD<sup>+</sup> y el FAD.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> Los <span class="txtbold">electrones</span> 
+                                            procedentes de la gluc&oacute;lisis, 
+                                            de la oxidaci&oacute;n del &aacute;cido 
+                                            pir&uacute;vico y del ciclo de Krebs 
+                                            se encuentran en un nivel energ&eacute;tico 
+                                            a&uacute;n muy alto. En el transporte 
+                                            de electrones &eacute;stos son conducidos 
+                                            a trav&eacute;s de una cadena con 
+                                            m&uacute;ltiples y sucesivos aceptores. 
+                                            Cada uno de los cuales es capaz de 
+                                            aceptar electrones a un nivel ligeramente 
+                                            inferior al precedente. Los transportadores 
+                                            pueden existir en dos estados de oxidaci&oacute;n 
+                                            pr&oacute;ximos, pasando del uno al 
+                                            otro seg&uacute;n acepten o desprendan 
+                                            electrones.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Cada <span class="txtbold">par 
+                                            redox</span> s&oacute;lo puede recibir 
+                                            electrones de otro par que tenga potencial 
+                                            de reducci&oacute;n m&aacute;s negativo 
+                                            y solo puede cederlos al par que lo 
+                                            tenga menos negativo. El potencial 
+                                            mas negativo de la cadena respiratoria 
+                                            es el NAD<sup>+</sup> con -0,32 voltios. En el 
+                                            otro extremo est&aacute; el agua con 
+                                            +0,82 voltios.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><br>
+                                <a href="#"><img name="Image24" border="0" src="imagenes/transporte_completo.jpg" width="450" height="575" alt="&quot;Transporte de electrones&quot;"></a><br>
+                                <br>
+                              </div>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ7.htm" class="txtnegrolink">Actividad 
+                                        7</a> </font><a href="activ7.htm"><img src="imagenes/activ7.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p align="center"> 
+                              <div align="center"> </div>
+                                	<br><table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Cuando los electrones 
+                                            se mueven por la cadena transportadora 
+                                            salen a niveles energ&eacute;ticos 
+                                            inferiores y van liberando energ&iacute;a. 
+                                            Esta energ&iacute;a se emplea para 
+                                            fabricar ATP, a partir de ADP, en 
+                                            el proceso de <span class="txtbold">fosforilaci&oacute;n 
+                                            oxidativa</span>.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Por cada dos electrones 
+                                            que pasan del NADH al ox&iacute;geno 
+                                            se forman 3 mol&eacute;culas de ATP. 
+                                            Por cada dos electrones que pasan 
+                                            desde el FADH<font size="-2">2</font> 
+                                            al ox&iacute;geno forman 2 de ATP. 
+                                            El mecanismo por el cual se produce 
+                                            ATP se explica por la teor&iacute;a 
+                                            del <span class="txtbold">acoplamiento 
+                                            quimiosm&oacute;tico</span>.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"><br>
+                                <a name="act_inves5"></a></p>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642"><i>Actividad 
+                                      de investigaci&oacute;n 5: Acoplamiento 
+                                      quimiosm&oacute;tico</i></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><i><img src="imagenes/cadenarespiratoria.gif" width="137" height="137" align="right" alt="&quot;Cadena respiratoria&quot;" hspace="10">Introducci&oacute;n: 
+                                      </i>El transporte de electrones, a trav&eacute;s 
+                                      de la membrana mitocondrial, produce una 
+                                      liberaci&oacute;n de energ&iacute;a imprescindible 
+                                      para la s&iacute;ntesis de las mol&eacute;culas 
+                                      energ&eacute;ticas como el ATP a nivel de 
+                                      unas ezimas llamadas ATPsintetasas. Este 
+                                      ATP es el que despu&eacute;s se usar&aacute; 
+                                      en las distintas reacciones bioqu&iacute;micas 
+                                      de la c&eacute;lula que requieran un aporte 
+                                      energ&eacute;tico<font size="-2">.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p><i>Tarea: </i>Busca en la red informaci&oacute;n 
+                                        sobre Peter Michell (1950) y sobre el 
+                                        mecanismo de fosforilaci&oacute;n oxidativa. 
+                                        Recopila textos, im&aacute;genes y esquemas 
+                                        y analiza la informaci&oacute;n. Intenta 
+                                        comprender, paso a paso, el complejo mecanismo 
+                                        del acoplamiento quimiosm&oacute;tico<font size="-2">.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p><i>Descripci&oacute;n: </i>Una vez analizada 
+                                        la informaci&oacute;n seleccionada para 
+                                        esta actividad en el apartado de recursos, 
+                                        realiza una presentaci&oacute;n en power 
+                                        point o un mural en cart&oacute;n pluma 
+                                        que describa de forma sint&eacute;tica 
+                                        y precisa: d&oacute;nde, c&oacute;mo, 
+                                        a través de qu&eacute; pares redox, 
+                                        y con qu&eacute; elementos qu&iacute;micos 
+                                        se produce la s&iacute;ntesis de mol&eacute;culas 
+                                        de ATP. Explica la localizaci&oacute;n 
+                                        y estructura de las ATPsintetasas y su 
+                                        importancia metab&oacute;lica. Define 
+                                        correctamente los t&eacute;rminos: gradiente 
+                                        electroqu&iacute;mico, part&iacute;culas 
+                                        F de la membrana mitocondrial y acoplamiento 
+                                        quimiosm&oacute;tico<font size="-2">. 
+                                        </font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p><i>Recursos: </i><font size="-2"><i><a href="http://www.arrakis.es/%7Elluengo/diferenciaciones.html"><br>
+                                        </a></i></font>
+										<a target="_blank" href="http://wwwbioq.unizar.es/Biofvirtual/Tema-FO/FO.htm"><font color="#FFFFCC">Quimiosm&oacute;sis</font></a><i><a href="http://wwwbioq.unizar.es/Biofvirtual/Tema-FO/FO.htm%20"><font color="#FFFFCC">.</font></a> 
+                                        <br>
+                                        </i>
+										<a target="_blank" href="http://www.agro.unlpam.edu.ar/quimica2/test%20bioenergética.html"><font color="#FFFFCC">Bioenerg&eacute;tica. 
+                                        </font></a><i><br>
+                                        </i>
+										<a target="_blank" href="http://facvet.lugo.usc.es/Planes_estudios/Plan_viejo/bioquímica.htm"><font color="#FFFFCC">Bioqu&iacute;mica. 
+                                        </font></a><i><br>
+                                        </i>
+										<a target="_blank" href="http://fai.unne.edu.ar/biologia/metabolismo/met5.htm"><font color="#FFFFCC">La 
+                                        respiraci&oacute;n.</font></a><br>
+                                        <a target="_blank" href="http://laguna.fmedic.unam.mx/~evazquez/0403/introduccion%20fosforilacion%20oxidativa.html"><font color="#FFFFCC">Fosforilaci&oacute;n 
+                                        oxidativa.</font></a><br>
+                                        <a target="_blank" href="http://wwwbioq.unizar.es/Biofvirtual/Tema-FO/FO.htm"><font color="#FFFFCC">La 
+                                        fosforilaci&oacute;n oxidativa.</font></a><br>
+                                        <a target="_blank" href="http://www.lab314.com/cadena/cadena1.htm">
+										<font color="#FFFFCC">Cadena 
+                                        transportadora de electrones.</font></a><br>
+                                        <a target="_blank" href="http://www.efn.uncor.edu/dep/biologia/intrbiol/metabolismo/met5.htm"><font color="#FFFFCC"> 
+                                        Síntesis de ATP en membrana.</font></a> 
+                                      </p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><i>Evaluaci&oacute;n: 
+                                      </i>Se valorar&aacute; la capacidad de s&iacute;ntesis 
+                                      del proceso y, sobre todo, la explicaci&oacute;n 
+                                      acerca de la finalidad biol&oacute;gica 
+                                      del proceso, su lugar exacto de desarrollo 
+                                      y su explicaci&oacute;n físico-qu&iacute;mica<font size="-2">.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">La c&eacute;lula viva 
+                                            es m&aacute;s eficaz que cualquier 
+                                            motor. Cerca del 40% de energ&iacute;a 
+                                            liberada de la combusti&oacute;n de 
+                                            la glucosa se emplea en convertir 
+                                            ADP en ATP. Resumiendo todo lo anteriormente 
+                                            explicado podemos hacer un <span class="txtbold">balance 
+                                            energ&eacute;tico</span> global de 
+                                            los procesos de catabolismo de los 
+                                            az&uacute;cares:</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li> La gluc&oacute;lisis produce 
+                                              2 mol&eacute;culas de ATP y 2 de 
+                                              NADH. <br>
+                                            </li>
+                                            <li>En la cadena transportadora de 
+                                              electrones cada mol&eacute;cula 
+                                              de NADH se convierteen 3 de ATP 
+                                              (2 NADH x 3 = <span class="txtbold"> 
+                                              6 ATP</span>).<br>
+                                            </li>
+                                            <li>La conversi&oacute;n de acido 
+                                              pir&uacute;vico en AcetilCoA en 
+                                              la matriz mitocondrial da 2 de NADH 
+                                              por cada mol&eacute;cula de glucosa. 
+                                              (2 NADH x 3 ATP= <span class="txtbold">6 
+                                              ATP</span>).<br>
+                                            </li>
+                                            <li>En el ciclo de Krebs entran 2 
+                                              mol&eacute;culas de acetil-CoA y 
+                                              dan dos de GTP y 6 de NADH y 2 de 
+                                              FADH2: 
+                                              <blockquote> 
+                                                <blockquote> 
+                                                  <blockquote> 
+                                                    <blockquote>
+                                                      <p>2 GTP= 2 ATP<br>
+                                                        6 NADH X 3 ATP= 18 ATP<br>
+                                                        2 FADH X 2 ATP= 4 ATP</p>
+                                                    </blockquote>
+                                                  </blockquote>
+                                                </blockquote>
+                                              </blockquote>
+                                            </li>
+                                          </ul>
+                                          <p> Total de mol&eacute;culas de ATP 
+                                            en ciclo de Krebs: <span class="txtbold">24 
+                                            ATP</span>.<br>
+                                            <br>
+                                            La suma de todas las mol&eacute;culas 
+                                            de ATP, formadas en el mecanismo de 
+                                            oxidaci&oacute;n completa de una mol&eacute;cula 
+                                            de glucosa, arroja un balance de <span class="txtbold">36 
+                                            mol&eacute;culas de ATP</span> sintetizadas.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"></p>
+                              <p align="center"></p>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ8.htm" class="txtnegrolink">Actividad 
+                                        8 </a></font> <a href="activ8.htm"><img src="imagenes/activ8.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p>&nbsp;
+                              <p align="right"><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (5/11) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

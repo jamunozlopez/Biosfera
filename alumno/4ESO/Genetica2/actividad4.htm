@@ -1,0 +1,187 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>Mutaciones</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=3;
+CorrectAnswers[1]=1;
+CorrectAnswers[2]=2;
+CorrectAnswers[3]=1;
+CorrectAnswers[4]=3;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000">Mutaciones</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000"><BR>&nbsp;</FONT></TD></TR>
+
+
+<TR><TD ALIGN="LEFT"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">Relaciona las siguientes enfermedades o alteraciones con los tipos de mutaciones:</FONT><BR>&nbsp;</TD></TR>
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Fenilcetonuria: un gen defectuoso del cromosoma 12 </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>GEN&Oacute;MICA
+<OPTION>CROMOS&Oacute;MICA
+<OPTION>G&Eacute;NICA
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Mongolismo: un cromosoma de m&aacute;s</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>GEN&Oacute;MICA
+<OPTION>CROMOS&Oacute;MICA
+<OPTION>G&Eacute;NICA
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">"Cri de chat": falta un trozo de un cromosoma</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>GEN&Oacute;MICA
+<OPTION>CROMOS&Oacute;MICA
+<OPTION>G&Eacute;NICA
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">S&iacute;ndrome de Kleinefelter: un cromosoma sexual de m&aacute;s</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>GEN&Oacute;MICA
+<OPTION>CROMOS&Oacute;MICA
+<OPTION>G&Eacute;NICA
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Anemia falciforme: un gen defectuoso del cromosoma 11</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>GEN&Oacute;MICA
+<OPTION>CROMOS&Oacute;MICA
+<OPTION>G&Eacute;NICA
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

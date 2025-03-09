@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>La respiración II</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>La respiración II</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>Tipo de respiración en la que la piel juega un papel muy importante</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Cutánea</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Hueso que protege las branquias de los peces</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Opérculo</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Conducto respiratorio que aparece en insectos y que conduce el aire hasta las células</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Tráquea</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Repliegue tegumentario que aparece en animales acuáticos</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Branquia</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Animal que presenta tres sistemas respiratorios distintos</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Anfibio</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Estructura que impide la asfixia en la deglución</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Epíglotis</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Zona que comparte el aparato digestivo y el respiratorio</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Faringe</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Saco pulmonar donde se produce el intercambio gaseoso</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Alveolo</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Órgano nervioso que controla el ritmo respiratorio</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Bulbo raquídeo</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Se produce al relajarse el diafragma y los músculos intercostales</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Espiración</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de hacer correspondencias</exercise-subtitle>
+<instructions>Relaciona cada frase con la palabra correspondiente</instructions>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<separate-javascript-file>0</separate-javascript-file>
+<guess-correct>Correcto.</guess-correct>
+<guess-incorrect>Intenta otra vez. Las correspondencias incorrectas han sido borradas.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

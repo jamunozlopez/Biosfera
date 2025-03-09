@@ -1,0 +1,1339 @@
+<HTML><HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Belen Sanchez."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>
+Actividad 20: Crucigrama
+</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+}
+
+is = new BrowserCheck()
+
+var TopNextExButton = '<FORM><INPUT TYPE="button" VALUE="=>" onClick="parent.location=\'nextpage.htm\'"></FORM>';
+
+var Feedback = '';
+var Correct = '&#161;Correcto! Bien hecho';
+var Incorrect = 'Algunas de tus respuestas no son correctas. ';
+var GiveHint = 'Se ha a&ntilde;adido una letra correcta';
+var CurrentBox = -1;
+
+WinLetters = new Array()
+
+WinLetters[0] = 'C';
+WinLetters[1] = 'O';
+WinLetters[2] = 'N';
+WinLetters[3] = 'S';
+WinLetters[4] = 'U';
+WinLetters[5] = 'M';
+WinLetters[6] = 'I';
+WinLetters[7] = 'D';
+WinLetters[8] = 'O';
+WinLetters[9] = 'R';
+WinLetters[10] = 'C';
+WinLetters[11] = 'I';
+WinLetters[12] = 'C';
+WinLetters[13] = 'L';
+WinLetters[14] = 'O';
+WinLetters[15] = 'O';
+WinLetters[16] = 'R';
+WinLetters[17] = 'I';
+WinLetters[18] = 'N';
+WinLetters[19] = 'A';
+WinLetters[20] = 'L';
+WinLetters[21] = 'E';
+WinLetters[22] = 'E';
+WinLetters[23] = 'N';
+WinLetters[24] = 'R';
+WinLetters[25] = 'O';
+WinLetters[26] = 'L';
+WinLetters[27] = 'A';
+WinLetters[28] = 'R';
+WinLetters[29] = 'N';
+WinLetters[30] = 'V';
+WinLetters[31] = 'A';
+WinLetters[32] = 'T';
+WinLetters[33] = 'S';
+WinLetters[34] = 'E';
+WinLetters[35] = 'D';
+WinLetters[36] = 'O';
+WinLetters[37] = 'N';
+WinLetters[38] = 'A';
+WinLetters[39] = 'G';
+WinLetters[40] = 'T';
+WinLetters[41] = 'U';
+WinLetters[42] = 'E';
+WinLetters[43] = 'S';
+WinLetters[44] = 'T';
+WinLetters[45] = 'E';
+WinLetters[46] = 'C';
+WinLetters[47] = 'A';
+WinLetters[48] = 'T';
+WinLetters[49] = 'N';
+WinLetters[50] = 'E';
+WinLetters[51] = 'G';
+WinLetters[52] = 'R';
+WinLetters[53] = 'A';
+WinLetters[54] = 'A';
+WinLetters[55] = 'L';
+WinLetters[56] = 'O';
+WinLetters[57] = 'R';
+WinLetters[58] = 'I';
+WinLetters[59] = 'O';
+WinLetters[60] = 'R';
+WinLetters[61] = 'O';
+WinLetters[62] = 'S';
+WinLetters[63] = 'O';
+WinLetters[64] = 'N';
+WinLetters[65] = 'M';
+WinLetters[66] = 'A';
+WinLetters[67] = 'T';
+WinLetters[68] = 'E';
+WinLetters[69] = 'I';
+WinLetters[70] = 'M';
+WinLetters[71] = 'O';
+WinLetters[72] = 'I';
+WinLetters[73] = 'S';
+WinLetters[74] = 'L';
+WinLetters[75] = 'E';
+WinLetters[76] = 'I';
+WinLetters[77] = 'I';
+WinLetters[78] = 'R';
+WinLetters[79] = 'O';
+WinLetters[80] = 'A';
+WinLetters[81] = 'P';
+WinLetters[82] = 'U';
+WinLetters[83] = 'F';
+WinLetters[84] = 'O';
+WinLetters[85] = 'P';
+WinLetters[86] = 'C';
+WinLetters[87] = 'C';
+WinLetters[88] = 'N';
+WinLetters[89] = 'A';
+WinLetters[90] = 'O';
+WinLetters[91] = 'S';
+WinLetters[92] = 'S';
+WinLetters[93] = 'O';
+WinLetters[94] = 'N';
+WinLetters[95] = 'I';
+WinLetters[96] = 'P';
+WinLetters[97] = 'I';
+WinLetters[98] = 'O';
+WinLetters[99] = 'A';
+WinLetters[100] = 'A';
+WinLetters[101] = 'F';
+WinLetters[102] = 'P';
+WinLetters[103] = 'U';
+WinLetters[104] = 'N';
+WinLetters[105] = 'I';
+WinLetters[106] = 'C';
+WinLetters[107] = 'A';
+WinLetters[108] = 'R';
+WinLetters[109] = 'A';
+WinLetters[110] = 'S';
+WinLetters[111] = 'R';
+WinLetters[112] = 'A';
+WinLetters[113] = 'I';
+WinLetters[114] = 'D';
+WinLetters[115] = 'A';
+WinLetters[116] = 'S';
+WinLetters[117] = 'E';
+WinLetters[118] = 'D';
+WinLetters[119] = 'A';
+WinLetters[120] = 'S';
+WinLetters[121] = 'A';
+WinLetters[122] = 'D';
+WinLetters[123] = 'I';
+WinLetters[124] = 'V';
+WinLetters[125] = 'T';
+WinLetters[126] = 'C';
+WinLetters[127] = 'S';
+WinLetters[128] = 'O';
+WinLetters[129] = 'D';
+WinLetters[130] = 'O';
+WinLetters[131] = 'C';
+WinLetters[132] = 'A';
+WinLetters[133] = 'M';
+WinLetters[134] = 'A';
+WinLetters[135] = 'S';
+WinLetters[136] = 'P';
+WinLetters[137] = 'R';
+WinLetters[138] = 'O';
+WinLetters[139] = 'D';
+WinLetters[140] = 'U';
+WinLetters[141] = 'C';
+WinLetters[142] = 'T';
+WinLetters[143] = 'O';
+WinLetters[144] = 'R';
+WinLetters[145] = 'E';
+WinLetters[146] = 'S';
+WinLetters[147] = 'I';
+WinLetters[148] = 'N';
+WinLetters[149] = 'T';
+WinLetters[150] = 'A';
+WinLetters[151] = 'R';
+WinLetters[152] = 'A';
+WinLetters[153] = 'U';
+WinLetters[154] = 'M';
+WinLetters[155] = 'R';
+WinLetters[156] = 'R';
+WinLetters[157] = 'N';
+WinLetters[158] = 'E';
+WinLetters[159] = 'D';
+WinLetters[160] = 'E';
+WinLetters[161] = 'M';
+WinLetters[162] = 'O';
+WinLetters[163] = 'C';
+WinLetters[164] = 'A';
+WinLetters[165] = 'R';
+WinLetters[166] = 'I';
+WinLetters[167] = 'N';
+WinLetters[168] = 'A';
+WinLetters[169] = 'V';
+WinLetters[170] = 'P';
+WinLetters[171] = 'E';
+WinLetters[172] = 'X';
+WinLetters[173] = 'M';
+WinLetters[174] = 'O';
+WinLetters[175] = 'F';
+WinLetters[176] = 'O';
+WinLetters[177] = 'T';
+WinLetters[178] = 'O';
+WinLetters[179] = 'S';
+WinLetters[180] = 'I';
+WinLetters[181] = 'N';
+WinLetters[182] = 'T';
+WinLetters[183] = 'E';
+WinLetters[184] = 'S';
+WinLetters[185] = 'I';
+WinLetters[186] = 'S';
+WinLetters[187] = 'A';
+WinLetters[188] = 'I';
+WinLetters[189] = 'E';
+WinLetters[190] = 'S';
+WinLetters[191] = 'A';
+WinLetters[192] = 'S';
+WinLetters[193] = 'F';
+WinLetters[194] = 'E';
+WinLetters[195] = 'S';
+WinLetters[196] = 'P';
+WinLetters[197] = 'E';
+WinLetters[198] = 'C';
+WinLetters[199] = 'I';
+WinLetters[200] = 'E';
+WinLetters[201] = 'B';
+
+
+Letters = new Array()
+
+AClues = new Array();
+
+AClues[1]='Ser vivo que se alimenta de los productores. ';
+AClues[9]='El recorrido que realiza la materia en un ecosistema';
+AClues[14]='Sustancia de excreci&oacute;n animal. ';
+AClues[15]='Cerveza inglesa. ';
+AClues[16]='Alistarse en el ejercito.';
+AClues[17]='Siglas de Asistente T&eacute;cnico. ';
+AClues[18]='Sensaci&oacute;n de falta de agua. ';
+AClues[20]='Sobre en ingl&eacute;s. ';
+AClues[21]='Plata, s&iacute;mbolo qu&iacute;mico. ';
+AClues[22]='Ase.';
+AClues[23]=' Gato en ingl&eacute;s. ';
+AClues[24]='Color oscuro en femenino.';
+AClues[26]='Playa de Guip&uacute;zcoa. ';
+AClues[27]='Plant&iacute;grado mam&iacute;fero. ';
+AClues[28]='Asesine.';
+AClues[29]='Escuch&aacute;is. ';
+AClues[31]='Interpret&eacute; un escrito';
+AClues[33]=' Dos vocales juntas.';
+AClues[34]='Pitufo sin la s&iacute;laba del medio';
+AClues[37]='Doscientos en n&uacute;meros romanos';
+AClues[38]='Barco. ';
+AClues[39]='Casa discogr&aacute;fica importante.';
+AClues[40]='N&uacute;mero griego 3,1416';
+AClues[41]='Dos vocales como antes.';
+AClues[42]=' Guerra de los cartaginenses. ';
+AClues[43]='Nivel.';
+AClues[45]='Deteriorada, ajada. ';
+AClues[48]='Lo fabrican los gusanos. ';
+AClues[49]='Siete tiene el gato, al rev&eacute;s. ';
+AClues[50]='Tecnecio. ';
+AClues[51]='Parar a las caballer&iacute;as. ';
+AClues[53]='Nota musical. ';
+AClues[54]='Para dormir.';
+AClues[55]='Seres vivos fotosint&eacute;ticos, base de las pir&aacute;mides tr&oacute;ficas.';
+AClues[59]=' Instituto Nacional de Tecnolog&iacute;a Aeroespacial. ';
+AClues[61]='Dios egipcio. ';
+AClues[62]='Universidad Madrile&ntilde;a, siglas. ';
+AClues[63]='Dos consonantes iguales. ';
+AClues[64]='Entregue, al rev&eacute;s. ';
+AClues[65]='Empresa Municipal, siglas.';
+AClues[66]='Instrumento musical.';
+AClues[71]='Abreviatura de Excelent&iacute;simo.';
+AClues[72]='Funci&oacute;n clorof&iacute;lica. ';
+AClues[76]='Dos vocales diferentes.';
+AClues[77]='Demostrativo femenino plural. ';
+AClues[78]='&Uacute;nico en su ....';
+
+
+DClues = new Array();
+
+DClues[1]='Introducir en el medio ambiente sustancias no naturales. ';
+DClues[2]='Matr&iacute;cula de Orense';
+DClues[3]='Eslab&oacute;n de la cadena tr&oacute;fica.';
+DClues[4]='Sin nombre, abreviaturas.';
+DClues[5]='inorg&aacute;nica y org&aacute;nica.';
+DClues[6]='Vocal y consonante. ';
+DClues[7]='Transforma los restos de seres vivos y excrementos en minerales del suelo.';
+DClues[8]='Uni&oacute;n de cadenas tr&oacute;ficas entrelazadas.';
+DClues[9]='Dios del tiempo.';
+DClues[10]='Part&iacute;culas cargadas el&eacute;ctricamente';
+DClues[11]='Cloro.';
+DClues[12]='No pienses m&aacute;s, escribe laar. ';
+DClues[13]='Tipo de materia viva.';
+DClues[17]='L&iacute;o. ';
+DClues[19]='Interjecci&oacute;n andaluza. ';
+DClues[25]='Tanto futbol&iacute;stico';
+DClues[30]='Dos vocales juntas.';
+DClues[32]='Uni&oacute;n de biotopo y biocenosis.';
+DClues[33]='Osmio. ';
+DClues[35]='Liador. ';
+DClues[36]='Representaci&oacute;n gr&aacute;fica de la cantidad de biomasa de un ecosistema. ';
+DClues[39]='Posesivo plural.';
+DClues[44]='Novio de Eva';
+DClues[46]=' Robos a mano armada. ';
+DClues[47]='Os hac&eacute;is cargo. ';
+DClues[49]='Matr&iacute;cula de Salamanca. ';
+DClues[52]='Lengua occitana.';
+DClues[54]='Cesio.';
+DClues[55]='Abreviatura coloquial de profesor. ';
+DClues[56]='Antigua moneda anterior al Euro, nombre coloquial. ';
+DClues[57]='La primera s&iacute;laba de tranquilo.';
+DClues[58]='Dentro.';
+DClues[60]='Ecosistemas del mundo, en singular';
+DClues[67]=' L&iacute;a. ';
+DClues[68]='N&uacute;mero de Identificaci&oacute;n Fiscal.';
+DClues[69]='Observas.';
+DClues[70]='Extremidad inferior.';
+DClues[73]='Infusi&oacute;n';
+DClues[74]='Abreviatura de especie.';
+DClues[75]='Cesio al rev&eacute;s.';
+
+
+var LowerString='abcdefghijklmnopqrstuvwxyz%9A%9C%E0%E1%E2%E3%E4%E5%E6%E7%E8%E9%EA%EB%EC%ED%EE%EF%F0%F1%F2%F3%F4%F5%F6%F8%F9%FA%FB%FC%FD%FE%FF';
+LowerString = unescape(LowerString);
+var UpperString='ABCDEFGHIJKLMNOPQRSTUVWXYZ%8A%8C%C0%C1%C2%C3%C4%C5%C6%C7%C8%C9%CA%CB%CC%CD%CE%CF%D0%D1%D2%D3%D4%D5%D6%D8%D9%DA%DB%DC%DD%DE%9F';
+UpperString = unescape(UpperString);	
+
+
+function ShowClue(ClueNum){
+	var OutString = '';
+	if (AClues[ClueNum] != null){
+		OutString = OutString + 'Horizontal: ' + ClueNum + '. ' + AClues[ClueNum];
+	}
+	if (DClues[ClueNum] != null){
+		if (OutString.length > 0){
+			OutString += '<BR>';
+		}
+		OutString = OutString + 'Vertical: ' + ClueNum + '. ' + DClues[ClueNum];
+	}
+	WriteFeedback(OutString); 
+}
+
+function StartUp(){
+	var i = 0;
+	for (i = 0; i < WinLetters.length; i++){
+		Letters[i] = unescape(WinLetters[i]);
+	}
+}
+
+function ConvertCase(InString, Direction){
+
+	var FromString = '';
+	var ToString = '';
+
+	if (Direction == 0){
+		FromString = UpperString;
+		ToString = LowerString;
+	}
+	else{
+		FromString = LowerString;
+		ToString = UpperString;
+	}
+
+	var i = 0;
+	j = 0;
+	var OutString = '';
+	for (i=0; i<InString.length; i++){
+		if (FromString.indexOf(InString.charAt(i)) > -1){
+			j = FromString.indexOf(InString.charAt(i));			
+			OutString += ToString.charAt(j);
+		}
+		else{	
+			OutString += InString.charAt(i);
+		}
+	}
+	return OutString;
+}
+
+
+function CheckAnswer(){
+
+	var x = 0;
+	var ISWrong = 0;
+	var ThisLetter = '';
+
+	for (x=0; x<(document.Crossword.elements.length); x++){
+		ThisLetter = document.Crossword.elements[x].value;
+
+		if (is.mac){
+			ThisLetter = unescape(MacStringToWin(ThisLetter));
+		}
+		ThisLetter = ConvertCase(ThisLetter, 1);
+
+		if (ThisLetter == Letters[x]){
+		}
+		else {
+			ISWrong = 1;
+			document.Crossword.elements[x].value = ''
+		}
+	}
+	if (ISWrong == 1) {
+		Feedback = Incorrect;
+	}
+	else{
+		Feedback = Correct;
+		Feedback += '<BR>' + TopNextExButton;
+	}
+	WriteFeedback(Feedback);
+}
+
+function WriteFeedback(Feedback) {
+	parent.FeedbackFrame.document.clear();
+	parent.FeedbackFrame.document.open();
+	parent.FeedbackFrame.document.writeln ('<HTML>');
+	parent.FeedbackFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.FeedbackFrame.document.writeln ('<CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">');
+	parent.FeedbackFrame.document.writeln ('<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.FeedbackFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.FeedbackFrame.document.writeln (Feedback);
+	parent.FeedbackFrame.document.writeln ('</FONT></TD></TR></TABLE></CENTER></BODY></HTML>');
+	parent.FeedbackFrame.document.close();
+}
+
+function Cheat(){
+
+	var Done = 0;
+	var OldLetter = '';
+	var ThisLetter = '';
+
+	if ((CurrentBox>-1)&&(CurrentBox<WinLetters.length)){
+		OldLetter = GetBoxValue(CurrentBox);
+		OldLetter = ConvertCase(OldLetter, 1);
+		if ((OldLetter.length < 1)||(OldLetter != WinLetters[CurrentBox])){
+			ThisLetter = WinLetters[CurrentBox];
+			if ((is.mac)&&(!is.ie)){
+				ThisLetter = unescape(WinStringToMac(ThisLetter));
+			}
+			SetBoxValue(CurrentBox, ThisLetter);
+			Done = 1;				
+		}
+	}
+
+	if (Done == 0){
+		var x = 0;
+		for (x=0; x<WinLetters.length; x++){
+			if (Done != 1) {
+				OldLetter = GetBoxValue(x);
+				OldLetter = ConvertCase(OldLetter, 1);
+				if ((OldLetter.length < 1)||(OldLetter != WinLetters[x])){
+				ThisLetter = WinLetters[x];
+					if ((is.mac)&&(!is.ie)){
+						ThisLetter = unescape(WinStringToMac(ThisLetter));
+					}
+					SetBoxValue(x, ThisLetter);
+					Done = 1;
+				}
+			}
+		}
+	}
+	if (Done == 0){
+		WriteFeedback(Correct);
+	}
+	else{
+		WriteFeedback(GiveHint);
+	}
+}
+
+
+function TrackFocus(BoxNumber){
+	CurrentBox = BoxNumber;
+}
+
+function GetBoxValue(BNum){
+	var RetVal = eval('document.Crossword.Box' + BNum).value;
+	if ((is.mac)&&(!is.ie)){RetVal = MacStringToWin(RetVal);}
+	return RetVal;
+}
+
+function SetBoxValue(BNum, Val){
+	if ((BNum<0)||(BNum>=WinLetters.length)){return;}
+	if ((is.mac)&&(!is.ie)){Val = WinStringToMac(Val);}
+	eval('document.Crossword.Box' + BNum).value = Val;
+}
+
+function DoNothing(){}
+
+var MacChars = '%80%81%82%83%84%85%86%87%88%89%8A%8B%8C%8D%8E%8F%90%91%92%93%94%95%96%97%98%99%9A';
+MacChars += '%9B%9C%9D%9E%9F%A0%A1%A4%A5%A6%A7%A8%AA%AB%AC%AE%AF%B4%B6%BB%BC%BE%BF%C0%C1%C2%C4%C7%C8';
+MacChars += '%C9%CA%CB%CC%CD%CE%CF%D0%D1%D2%D3%D4%D5%D6%D8%D9%DA%DB%DC%DD%E0%E1%E2%E3%E4%E5%E6%E7%E8%E9';
+MacChars += '%EA%EB%EC%ED%EE%EF%F1%F2%F3%F4%F5%F6%F7%F8%FB%FD';
+
+var WinChars = '%C4%C5%C7%C9%D1%D6%DC%E1%E0%E2%E4%E3%E5%E7%E9%E8%EA%EB%ED%EC%EE%EF%F1%F3%F2%F4';
+WinChars += '%F6%F5%FA%F9%FB%FC%86%BA%A7%95%B6%DF%AE%99%92%A8%C6%D8%A5%F0%AA%BA%E6%F8%BF%A1%AC%83%AB%BB';
+WinChars += '%85%82%C0%C3%D5%8C%9C%96%97%93%94%91%92%F7%FFY/%A4%8B%9B%87%B7%82%84%89%C2%CA%C1%CB';
+WinChars += '%C8%CD%CE%CF%CC%D3%D4%D2%DA%DB%D9%B9%88%98%AF%B0%94';
+
+WinChars = unescape(WinChars);
+MacChars = unescape(MacChars);
+
+function MacStringToWin(InString){
+
+	var OutString = '';
+	for (i=0; i<InString.length; i++){
+		if ( (InString.charAt(i) > '~') && (MacChars.indexOf(InString.charAt(i)) > -1) ){
+			OutString += WinChars.charAt(MacChars.indexOf(InString.charAt(i)));
+		}
+		else {
+			OutString += InString.charAt(i);
+		}
+	}
+	return escape(OutString);
+}
+
+function WinStringToMac(InString){
+
+	var OutString = '';
+	for (i=0; i<InString.length; i++){
+		if ( (InString.charAt(i) > '~') && (WinChars.indexOf(InString.charAt(i)) > -1) ){
+			OutString += MacChars.charAt(WinChars.indexOf(InString.charAt(i)));
+		}
+		else {
+			OutString += InString.charAt(i);
+		}
+	}
+	return escape(OutString);
+}
+
+
+</SCRIPT></HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc" onLoad="StartUp()">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#006666">Actividad 20: Crucigrama</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#006666"><br />
+Realiza el siguiente crucigrama. En &eacute;l encontrar&aacute;s algunos t&eacute;rminos y conceptos que has aprendido en esta unidad did&aacute;ctica. Encu&eacute;ntralos.<BR>&nbsp;</FONT></TD></TR>
+
+<TR>
+<FORM NAME="CheckForm">
+<TD BGCOLOR="#d1e9d1" ALIGN="CENTER"><FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="&#161;Compruebalo!" onClick="CheckAnswer()"><INPUT TYPE="button" VALUE="Pista"  onClick="Cheat()"></FONT></TD>
+</FORM></TR>
+
+<TR>
+
+<TD BGCOLOR="#d1e9d1" VALIGN="TOP">
+<FORM NAME="Crossword">
+<CENTER>
+<TABLE BORDER="0">
+
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(1)" onMouseOver="window.status='1'; return true">1</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box0" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(0)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(2)" onMouseOver="window.status='2'; return true">2</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box1" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(1)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(3)" onMouseOver="window.status='3'; return true">3</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box2" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(2)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(4)" onMouseOver="window.status='4'; return true">4</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box3" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(3)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box4" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(4)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(5)" onMouseOver="window.status='5'; return true">5</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box5" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(5)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(6)" onMouseOver="window.status='6'; return true">6</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box6" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(6)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(7)" onMouseOver="window.status='7'; return true">7</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box7" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(7)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box8" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(8)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(8)" onMouseOver="window.status='8'; return true">8</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box9" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(9)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(9)" onMouseOver="window.status='9'; return true">9</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box10" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(10)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(10)" onMouseOver="window.status='10'; return true">10</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box11" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(11)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(11)" onMouseOver="window.status='11'; return true">11</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box12" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(12)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(12)" onMouseOver="window.status='12'; return true">12</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box13" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(13)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(13)" onMouseOver="window.status='13'; return true">13</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box14" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(14)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(14)" onMouseOver="window.status='14'; return true">14</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box15" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(15)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box16" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(16)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box17" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(17)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box18" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(18)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(15)" onMouseOver="window.status='15'; return true">15</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box19" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(19)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box20" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(20)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box21" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(21)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(16)" onMouseOver="window.status='16'; return true">16</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box22" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(22)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box23" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(23)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box24" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(24)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box25" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(25)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box26" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(26)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box27" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(27)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box28" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(28)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box29" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(29)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box30" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(30)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(17)" onMouseOver="window.status='17'; return true">17</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box31" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(31)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box32" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(32)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(18)" onMouseOver="window.status='18'; return true">18</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box33" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(33)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(19)" onMouseOver="window.status='19'; return true">19</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box34" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(34)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box35" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(35)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(20)" onMouseOver="window.status='20'; return true">20</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box36" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(36)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box37" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(37)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(21)" onMouseOver="window.status='21'; return true">21</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box38" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(38)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box39" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(39)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(22)" onMouseOver="window.status='22'; return true">22</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box40" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(40)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box41" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(41)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box42" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(42)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box43" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(43)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box44" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(44)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box45" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(45)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(23)" onMouseOver="window.status='23'; return true">23</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box46" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(46)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box47" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(47)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box48" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(48)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(24)" onMouseOver="window.status='24'; return true">24</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box49" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(49)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box50" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(50)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(25)" onMouseOver="window.status='25'; return true">25</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box51" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(51)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box52" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(52)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box53" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(53)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box54" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(54)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box55" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(55)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(26)" onMouseOver="window.status='26'; return true">26</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box56" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(56)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box57" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(57)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box58" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(58)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box59" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(59)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box60" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(60)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(27)" onMouseOver="window.status='27'; return true">27</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box61" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(61)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box62" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(62)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box63" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(63)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box64" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(64)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(28)" onMouseOver="window.status='28'; return true">28</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box65" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(65)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box66" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(66)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box67" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(67)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box68" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(68)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box69" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(69)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box70" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(70)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(29)" onMouseOver="window.status='29'; return true">29</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box71" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(71)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(30)" onMouseOver="window.status='30'; return true">30</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box72" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(72)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box73" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(73)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(31)" onMouseOver="window.status='31'; return true">31</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box74" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(74)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(32)" onMouseOver="window.status='32'; return true">32</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box75" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(75)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box76" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(76)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box77" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(77)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box78" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(78)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(33)" onMouseOver="window.status='33'; return true">33</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box79" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(79)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box80" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(80)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(34)" onMouseOver="window.status='34'; return true">34</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box81" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(81)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(35)" onMouseOver="window.status='35'; return true">35</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box82" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(82)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box83" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(83)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box84" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(84)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(36)" onMouseOver="window.status='36'; return true">36</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box85" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(85)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(37)" onMouseOver="window.status='37'; return true">37</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box86" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(86)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box87" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(87)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(38)" onMouseOver="window.status='38'; return true">38</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box88" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(88)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box89" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(89)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box90" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(90)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box91" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(91)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(39)" onMouseOver="window.status='39'; return true">39</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box92" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(92)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box93" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(93)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box94" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(94)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box95" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(95)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(40)" onMouseOver="window.status='40'; return true">40</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box96" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(96)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box97" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(97)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(41)" onMouseOver="window.status='41'; return true">41</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box98" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(98)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box99" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(99)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box100" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(100)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box101" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(101)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(42)" onMouseOver="window.status='42'; return true">42</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box102" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(102)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box103" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(103)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box104" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(104)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box105" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(105)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box106" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(106)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box107" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(107)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(43)" onMouseOver="window.status='43'; return true">43</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box108" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(108)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(44)" onMouseOver="window.status='44'; return true">44</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box109" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(109)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box110" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(110)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(45)" onMouseOver="window.status='45'; return true">45</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box111" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(111)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(46)" onMouseOver="window.status='46'; return true">46</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box112" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(112)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box113" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(113)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box114" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(114)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(47)" onMouseOver="window.status='47'; return true">47</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box115" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(115)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(48)" onMouseOver="window.status='48'; return true">48</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box116" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(116)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box117" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(117)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box118" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(118)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box119" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(119)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(49)" onMouseOver="window.status='49'; return true">49</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box120" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(120)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box121" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(121)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box122" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(122)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box123" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(123)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box124" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(124)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(50)" onMouseOver="window.status='50'; return true">50</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box125" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(125)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box126" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(126)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(51)" onMouseOver="window.status='51'; return true">51</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box127" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(127)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(52)" onMouseOver="window.status='52'; return true">52</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box128" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(128)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(53)" onMouseOver="window.status='53'; return true">53</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box129" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(129)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box130" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(130)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(54)" onMouseOver="window.status='54'; return true">54</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box131" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(131)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box132" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(132)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box133" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(133)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box134" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(134)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box135" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(135)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(55)" onMouseOver="window.status='55'; return true">55</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box136" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(136)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box137" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(137)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box138" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(138)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(56)" onMouseOver="window.status='56'; return true">56</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box139" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(139)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box140" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(140)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box141" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(141)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(57)" onMouseOver="window.status='57'; return true">57</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box142" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(142)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box143" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(143)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box144" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(144)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(58)" onMouseOver="window.status='58'; return true">58</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box145" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(145)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box146" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(146)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(59)" onMouseOver="window.status='59'; return true">59</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box147" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(147)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box148" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(148)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box149" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(149)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(60)" onMouseOver="window.status='60'; return true">60</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box150" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(150)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(61)" onMouseOver="window.status='61'; return true">61</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box151" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(151)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box152" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(152)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(62)" onMouseOver="window.status='62'; return true">62</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box153" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(153)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box154" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(154)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(63)" onMouseOver="window.status='63'; return true">63</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box155" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(155)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box156" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(156)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box157" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(157)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(64)" onMouseOver="window.status='64'; return true">64</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box158" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(158)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box159" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(159)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(65)" onMouseOver="window.status='65'; return true">65</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box160" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(160)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box161" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(161)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(66)" onMouseOver="window.status='66'; return true">66</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box162" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(162)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box163" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(163)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(67)" onMouseOver="window.status='67'; return true">67</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box164" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(164)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box165" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(165)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box166" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(166)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(68)" onMouseOver="window.status='68'; return true">68</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box167" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(167)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box168" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(168)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(69)" onMouseOver="window.status='69'; return true">69</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box169" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(169)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(70)" onMouseOver="window.status='70'; return true">70</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box170" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(170)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(71)" onMouseOver="window.status='71'; return true">71</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box171" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(171)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box172" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(172)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box173" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(173)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box174" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(174)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(72)" onMouseOver="window.status='72'; return true">72</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box175" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(175)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box176" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(176)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box177" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(177)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box178" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(178)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box179" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(179)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box180" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(180)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box181" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(181)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(73)" onMouseOver="window.status='73'; return true">73</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box182" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(182)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box183" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(183)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(74)" onMouseOver="window.status='74'; return true">74</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box184" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(184)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box185" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(185)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(75)" onMouseOver="window.status='75'; return true">75</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box186" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(186)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(76)" onMouseOver="window.status='76'; return true">76</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box187" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(187)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box188" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(188)"></FONT></TD>
+</TR>
+<TR ALIGN=RIGHT>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(77)" onMouseOver="window.status='77'; return true">77</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box189" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(189)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box190" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(190)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box191" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(191)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box192" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(192)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box193" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(193)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"><A HREF="javascript:DoNothing()" onClick="ShowClue(78)" onMouseOver="window.status='78'; return true">78</A></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box194" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(194)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box195" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(195)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box196" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(196)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box197" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(197)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box198" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(198)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box199" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(199)"></FONT></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box200" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(200)"></FONT></TD>
+<TD></TD>
+<TD></TD>
+
+<TD VALIGN="TOP"><FONT FACE="Geneva,Arial" SIZE="-2"></FONT></TD>
+<TD><FONT FACE="Courier" SIZE="+1"><INPUT TYPE="TEXT" NAME="Box201" SIZE="1" MAXLENGTH="1" onFocus="TrackFocus(201)"></FONT></TD>
+</TR>
+
+
+</TABLE></CENTER>
+
+</TD>
+</TR>
+
+
+
+
+</FORM>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#bbddbb" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"><INPUT TYPE="button" VALUE="siguiente" onClick="parent.location='nextpage.htm'"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+
+</BODY></HTML>

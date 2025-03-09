@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Biodiversidad II</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Biodiversidad II</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/cachalote.jpg&quot; alt=&quot;cachalote.jpg&quot; width=&quot;204&quot; height=&quot;133&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Acuático</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/Caballomar.jpg&quot; alt=&quot;Caballomar.jpg&quot; width=&quot;203&quot; height=&quot;227&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Acuático</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/elefante.jpg&quot; alt=&quot;elefante.jpg&quot; width=&quot;200&quot; height=&quot;173&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Terrestre</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/bisonte.jpg&quot; alt=&quot;bisonte.jpg&quot; width=&quot;200&quot; height=&quot;132&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Terrestre</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/boletusdiablo.jpg&quot; alt=&quot;boletusdiablo.jpg&quot; width=&quot;200&quot; height=&quot;139&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Terrestre</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/flor2.jpg&quot; alt=&quot;flor2.jpg&quot; width=&quot;200&quot; height=&quot;305&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Terrestre</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de hacer correspondencias</exercise-subtitle>
+<instructions>Utilizando el criterio artificial de hábitat, clasifica los siguientes seres vivos</instructions>
+<next-ex-url>act3c.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<separate-javascript-file>0</separate-javascript-file>
+<guess-correct>Correcto.</guess-correct>
+<guess-incorrect>Intenta otra vez. Las correspondencias incorrectas han sido borradas.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>1</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

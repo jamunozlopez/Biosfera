@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:creator>UNREGISTERED</dc:creator>
+    <dc:title>&amp;#x00BF;Qu&amp;#x00E9; ocurre con la radiaci&amp;#x00F3;n que llega a La Tierra?                 &amp;#x003C;object classid=&quot;CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6&quot; width=&quot;250&quot; height=&quot;250&quot;&amp;#x003E; &amp;#x003C;param name=&quot;url&quot; value=&quot;abs_luz_solar.wmv&quot; /&amp;#x003E; &amp;#x003C;param name=&quot;autostart&quot; value=&quot;false&quot; /&amp;#x003E; &amp;#x003C;param name=&quot;showcontrols&quot; value=&quot;true&quot; /&amp;#x003E;&amp;#x003C;/object&amp;#x003E;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>&amp;#x00BF;Qu&amp;#x00E9; ocurre con la radiaci&amp;#x00F3;n que llega a La Tierra?                 &amp;#x003C;object classid=&quot;CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6&quot; width=&quot;250&quot; height=&quot;250&quot;&amp;#x003E; &amp;#x003C;param name=&quot;url&quot; value=&quot;abs_luz_solar.wmv&quot; /&amp;#x003E; &amp;#x003C;param name=&quot;autostart&quot; value=&quot;false&quot; /&amp;#x003E; &amp;#x003C;param name=&quot;showcontrols&quot; value=&quot;true&quot; /&amp;#x003E;&amp;#x003C;/object&amp;#x003E;  </title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???</default-right-item>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por las plantas.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>0,2%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n reflejada por la Atm&amp;#x00F3;sfera.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>28%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por part&amp;#x00ED;culas.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>5%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por el agua de los oc&amp;#x00E9;anos.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>25,8%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por ozono.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>3%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por el suelo.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>21%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n absorbida por la troposfera.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>17%</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Radiaci&amp;#x00F3;n que llega a la corteza terrestre.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>47%</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Relaciona cada estructura con su porcentaje de absorci&amp;#x00F3;n de energ&amp;#x00ED;a.
+
+Para contestar esta actividad debes observar detenidamente el v&amp;#x00ED;deo que se encuentra a la derecha. Para ello pulsa sobre el reproductor multimedia. Puedes ver el v&amp;#x00ED;deo tantas veces como lo necesites.</instructions>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<shuffle-questions>0</shuffle-questions>
+<separate-javascript-file>0</separate-javascript-file>
+<next-caption>Siguiente</next-caption>
+<delete-caption>Borrar</delete-caption>
+<guess-correct>Correcto.</guess-correct>
+<guess-incorrect>Intenta otra vez. Las correspondencias incorrectas han sido borradas.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuaci&amp;#x00F3;n es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<process-for-rtl>0</process-for-rtl>
+<times-up>&amp;#x00A1;El tiempo ha terminado!</times-up>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<font-size>small</font-size>
+<page-bg-color>#e1ffe1</page-bg-color>
+<title-color>#408080</title-color>
+<ex-bg-color>#e1ffe1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#e1ffe1</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code></header-code>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

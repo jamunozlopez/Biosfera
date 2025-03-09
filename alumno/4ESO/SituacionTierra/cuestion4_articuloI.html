@@ -1,0 +1,37 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=x-user-defined">
+   <meta name="GENERATOR" content="Mozilla/4.5 [es] (Win98; I) [Netscape]">
+   <title>EXAMENES</title>
+<script LANGUAGE="JavaScript">var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  {  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;      }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  }error=contestadas-calificacion;mensaje=contestadas+" pregunta contestada.\r"+calificacion+" pregunta acertada.\r"+error+" pregunta no acertada:\r"+incorrectas;alert(mensaje);}</script>
+</head>
+<body bgcolor="#FFFFFF">
+<font class="txt">Cuestión 4</font><form NAME="examen">
+<h3>
+<font class="txt">4) ¿Qué tipos de radiaciones recibimos del
+Sol?</font></h3>
+
+<ol>
+<li>
+<input TYPE="radio" NAME="est 94/ 4" VALUE="1"><font class="txt">La
+luz, el calor, los ultravioletas, ondas de radio, microondas y rayos X</font></li>
+
+<li>
+<input TYPE="radio" NAME="est 94/ 4" VALUE="2"><font class="txt">Sólo
+la luz que nos ilumina</font></li>
+
+<li>
+<input TYPE="radio" NAME="est 94/ 4" VALUE="3"><font class="txt">Sólo
+los rayos ultravioletas</font></li>
+
+<li>
+<input TYPE="radio" NAME="est 94/ 4" VALUE="4"><font class="txt">Sólo
+el calor que notamos</font></li>
+</ol>
+<img SRC="Bullet1.gif" height=13 width=13><font class="txt"><a href="estrellas.html#radiaciones">Ir
+a los contenidos</a></font>
+<p><input TYPE="reset" VALUE="borrar"><input TYPE="submit" NAME="calificacion" VALUE="calificación" onClick="nota(this.form)"></form>
+<p><font class="txt"><a href="articulo_I.html#cuestion4">Volver</a></font>
+</body>
+</html>

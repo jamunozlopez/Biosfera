@@ -1,0 +1,101 @@
+
+body{
+	width: 970px; 
+	margin: 0px auto;
+	font-size: 11px;
+	color: #333;
+	background:#87a6c3 url("../profesor/templates/img/fon-home.jpg") top center no-repeat; font-family: arial, helvetica, sans-serif; color: #000;
+	background:#e6f1d2 url("../profesor/templates/img/fon-home.png") top center no-repeat; font-family: arial, helvetica, sans-serif; color: #000;
+	background:#9ca788 url(../templates/img/fon-home2.png) top center no-repeat; font-family: arial, helvetica, sans-serif; color: #000;
+
+		
+}
+
+
+a {
+    color: #7D3E03;text-decoration:none;
+}
+
+a:hover{
+	color:#000;
+}
+
+#menu_principal
+{width:970px;margin:auto;height:30px;font-size:0.9em;}
+
+#menu_principal ul
+{float:left;margin:0px;padding:0px;padding-top:10px;padding-bottom:10px;}
+
+#menu_principal ul li
+{display:inline;list-style-type:none;float:left;margin:0px;padding:5px;margin-right:10px;background-color:#7fa5a5;}
+
+#menu_principal ul li:hover
+{background-color:#99cc99;}
+
+#menu_secundario
+{width:970px;margin:auto;height:30px;font-size:0.9em;}
+
+#menu_secundario ul
+{float:left;margin:0px;padding:0px;padding-top:10px;padding-bottom:10px;}
+
+#menu_secundario ul li
+{display:inline;list-style-type:none;float:left;}
+
+.primero_eso,
+.segundo_eso,
+.tercero_eso,
+.cuarto_eso,
+.primero_bachi,
+.segundo_bachi
+
+{display:block;padding:5px;}
+
+.primero_eso
+{background-color:#d8ae85}
+
+.segundo_eso
+{background-color:#ececbc}
+
+.tercero_eso
+{background-color:#95c895}
+
+.cuarto_eso
+{background-color:#9fd2d2}
+
+.primero_bachi
+{background-color:#b0b0dd}
+
+.segundo_bachi
+{background-color:#d3aaaa}
+
+
+.unnamed1 {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: bold; text-decoration: none; filter:revealtrans(duration=2,transition=transitionshape); color: #000000}
+#color { color: #6699cc}
+#color2 { color:#ffffff}
+.ttBIOSFERA {  font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #FFFFFF; text-decoration: none}
+.ttunidad { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000; text-decoration: none }
+.ventanas { font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; font-weight: bold; text-decoration: none;}
+.txt {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000000; text-decoration: none; text-align: justify}
+.txtbold { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000000; text-decoration: none ; font-weight: bold}
+.GRANDE { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000 ; font-weight: bold; text-decoration: none}
+.txtnegro { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: none; color: #000000}
+.txtnegrolink { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: none; color: #006666}
+#color4 { color:#006699}
+.txtblanco { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-decoration: none; color: #FFFFFF}
+.subttunidad { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000; text-decoration: none }
+.txtsub { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; text-decoration: underline; color: #000000 }
+.txtblanco { font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; text-decoration: none }
+.txtb { font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; text-decoration: none }
+.txtpeque {  font-family: Arial, Helvetica, sans-serif; font-size: 8px; color: #000000; text-decoration: none; text-align: justify}
+.txt_actividad { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #FFFF66; text-decoration: none; text-align: justify }
+.txtnegrolink_actividad { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: none; color: #CCFFFF}
+
+
+.clearfix
+{font-size:0.6em;line-height:1.0em;}
+
+table.tabla_cuerpo
+{border:4px solid #ff0000;background-color:#eeeeee;}
+
+td.verde_fondo_claro
+{color:#ff0000;}

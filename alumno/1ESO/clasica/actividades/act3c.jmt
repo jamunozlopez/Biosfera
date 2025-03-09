@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Biodiversidad III</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Biodiversidad III</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/salmon.jpg&quot; alt=&quot;salmon.jpg&quot; width=&quot;200&quot; height=&quot;70&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Con esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/ameba.jpg&quot; alt=&quot;ameba.jpg&quot; width=&quot;200&quot; height=&quot;171&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sin esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/jilguero1.jpg&quot; alt=&quot;jilguero1.jpg&quot; width=&quot;200&quot; height=&quot;207&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Con esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/estrellamar.jpg&quot; alt=&quot;estrellamar.jpg&quot; width=&quot;200&quot; height=&quot;302&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sin esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/cabra.jpg&quot; alt=&quot;cabra.jpg&quot; width=&quot;200&quot; height=&quot;185&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Con esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/ctenoforo.gif&quot; alt=&quot;ctenoforo.gif&quot; width=&quot;200&quot; height=&quot;265&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sin esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;../imagenes/flor1.jpg&quot; alt=&quot;flor1.jpg&quot; width=&quot;200&quot; height=&quot;121&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sin esqueleto</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de hacer correspondencias</exercise-subtitle>
+<instructions>Utilizando el criterio natural de presencia o ausencia de esqueleto, clasifica los siguientes seres vivos</instructions>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<separate-javascript-file>0</separate-javascript-file>
+<guess-correct>Correcto.</guess-correct>
+<guess-incorrect>Intenta otra vez. Las correspondencias incorrectas han sido borradas.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>1</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

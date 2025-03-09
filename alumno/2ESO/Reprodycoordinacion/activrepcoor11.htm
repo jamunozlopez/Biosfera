@@ -1,0 +1,251 @@
+<HTML>
+<!--This file created 10:45  08/09/02 by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>Fecundación y desarrollo embrionario</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+   <X-CLARIS-WINDOW TOP=0 BOTTOM=435 LEFT=0 RIGHT=782>
+   <X-CLARIS-TAGVIEW MODE=minimal>
+<META NAME="author" CONTENT="Regine B-D"><META NAME="copyright" CONTENT="perso.wanadoo.fr/jeux.lulu"><META NAME="reply-to" CONTENT="regine.bd@wanadoo.fr"><SCRIPT LANGUAGE="JavaScript" SRC="imagenes/mem.js"></SCRIPT><STYLE type="text/CSS">.bouton {  font-size:3em; font-family:Verdana,Arial,sans-serif;color:#000000; border-top-width:2;  border-bottom-width:2;  border-left-width:2px;  border-right-width:2;width:168px;height:98px; background:#FFFFFF url(../../img/memoryi/invisibl.gif) no-repeat center;}
+.essai {  font-size:1em; font-family:Verdana,Arial,sans-serif;color:#000000;  background:#e6ffe6;border-top-width:0;  border-bottom-width:0;  border-left-width:0px;  border-right-width:0}
+#boutonImage0 { background-image:url(imagenes/image1.gif);}
+#boutonImage1 { background-image:url(imagenes/image2.gif); }
+#boutonImage2 { background-image:url(imagenes/image3.gif); }
+#boutonImage3 { background-image:url(imagenes/image4.gif); }
+#boutonImage4 { background-image:url(imagenes/image5.gif); }
+#boutonImage5 { background-image:url(imagenes/image6.gif); }
+#boutonImage6 { background-image:url(imagenes/image7.gif); }
+#boutonImage7 { background-image:url(imagenes/image8.gif); }
+#boutonCarte { background-image:url(imagenes/invisibl.gif); }</STYLE><BGSOUND ID="fondSon"><SCRIPT><!--
+
+//Régine B-D ; 30/08/02 
+//http://perso.wanadoo.fr/jeux.lulu/
+//regine.bd@wanadoo.fr
+//Tous droits réservés
+
+
+var nbCartes=16;
+//test=0 joueur a la main; =1 non
+var test=1;
+//etat=0 pas de carte reournée; =1 1 carte ; =2 2 cartes
+var etat=0;
+//numero des cartes sélectionnées
+var retournees=new Array (-1,-1);
+//numero des boutons sélectionnés
+var selectiones=new Array (-1,-1);
+var cartes = new Array(nbCartes);
+var lesImages = new Array(nbCartes/2);
+for (i=0; i<nbCartes/2; i++) {
+	lesImages[i]= new Image;
+	lesImages[i].src="image"+i+".gif";
+}
+var bons=0;
+var essais=0;
+var nbFois=0;
+
+function depart0() {
+	t1=setTimeout("rien()",1);
+	t2=setTimeout("rien()",1);
+	for (i=0; i<nbCartes; i++) {
+		if (i<nbCartes/2) {
+			cartes[i]=i;
+		} else {
+			cartes[i]=i-nbCartes/2+100;
+		}
+	}
+	depart();
+}
+
+function rien() {
+}
+
+function depart() {
+	test=1;
+	clearTimeout(t1);
+	clearTimeout(t2);
+	document.Formu.Message.value="";
+	for (i=0; i<nbCartes; i++) {
+		boutonDepart(i);
+	}
+	melange();
+	for (i=0; i<2; i++) {
+		retournees[i]=-1;
+		selectiones[i]=-1;
+	}
+	test=0;
+	etat=0;
+	bons=0;
+	document.Formu.elements["nbEssais"].value="Número de intentos : 0";
+	essais=0;
+}
+
+function boutonDepart(x) {
+		document.Formu.elements["base"+x].value="";
+		document.Formu.elements["base"+x].style.color=couleurEcritC;
+		document.Formu.elements["base"+x].style.visibility="visible";
+		document.Formu.elements["base"+x].style.fontSize=tailleE;
+		document.Formu.elements["base"+x].id="boutonCarte";
+		document.Formu.elements["base"+x].style.backgroundColor=couleurBoutonD;
+}
+
+function boutonCache(x) {
+		document.Formu.elements["base"+x].value="";
+		document.Formu.elements["base"+x].id="boutonCarte";
+		document.Formu.elements["base"+x].style.backgroundColor=couleurBoutonD;
+}
+
+function boutonMontre(x) {
+		test=1;
+		if (retournees[0]!=retournees[1]) {
+			document.Formu.elements["base"+x].style.backgroundColor=couleurBoutonE;
+		}
+		if (cartes[x]<100) {
+			document.Formu.elements["base"+x].id="boutonImage"+cartes[x];
+			test=0
+		} else {
+			document.Formu.elements["base"+x].value=mots[(cartes[x]-100)];
+			test=0;
+		}
+}
+
+function boutonMontreBons(x) {
+		document.Formu.elements["base"+x].style.backgroundColor="#FFFF66";
+}
+
+function boutonDisparait(x) {
+	document.Formu.elements["base"+x].style.visibility="hidden";	
+}
+
+function choix(x) {
+	if (test==0 && x!=selectiones[0] && x!=selectiones[1]) {
+		if (etat<2) {
+			retournees[etat]=cartes[x]%100;
+			selectiones[etat]=x;
+			etat+=1;
+			boutonMontre(x);
+			if (etat==1) {			
+				essais+=1;
+				document.Formu.elements["nbEssais"].value="Número de intentos : "+essais;
+			}
+			if (retournees[0]==retournees[1]) {
+				test=1;
+				boutonMontreBons(selectiones[0]);
+				boutonMontreBons(selectiones[1]);
+				bons+=1;
+				if (bons==nbCartes/2) {
+					t1=setTimeout ("suite()",2000);
+				} else {
+					test=0;
+				}
+			}
+		} else {
+			etat=0;
+			for (i=0; i<2; i++) {
+				if (retournees[0]==retournees[1]) {
+					boutonDisparait(selectiones[i]);
+				} else {
+					boutonCache(selectiones[i])
+				}
+			}
+			for (i=0; i<2; i++) {
+				retournees[i]=-1;
+				selectiones[i]=-1;
+			}
+			choix(x);
+		}
+	} else {
+		if (test==0 && (x==selectiones[0] || x==selectiones[1]) ) {
+			boutonMontre(x);
+		}
+	}
+}
+
+function suite() {
+		nbFois+=1;
+		document.Formu.Message.value="   ¡ HAS GANADO !";
+		boutonDisparait(selectiones[0]);
+		boutonDisparait(selectiones[1]);
+}
+
+function melange() {
+	for (i=0; i<nbCartes; i++) {
+		n1=Math.floor(Math.random()*nbCartes);
+		n2=Math.floor(Math.random()*nbCartes);
+		while (n2==n1) {n2=Math.floor(Math.random()*nbCartes);}
+		n=cartes[n1];
+		cartes[n1]=cartes[n2];
+		cartes[n2]=n;
+	}
+}
+
+//--></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#E6FFE6" onload="depart0();">
+<center><font size="+1">Fecundación y desarrollo embrionario</font><br>
+Relaciona cada especie con su tipo de fecundación</center>
+<P><FORM ACTION="" METHOD=POST name=Formu>
+   <CENTER><A NAME=jeu></A><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=4>
+      <TR>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base0 VALUE="" class=bouton onmousedown="choix(0);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base1 VALUE="" class=bouton onmousedown="choix(1);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base2 VALUE="" class=bouton onmousedown="choix(2);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base3 VALUE="" class=bouton onmousedown="choix(3);"></CENTER>
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base4 VALUE="" class=bouton onmousedown="choix(4);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base5 VALUE="" class=bouton onmousedown="choix(5);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base6 VALUE="" class=bouton onmousedown="choix(6);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base7 VALUE="" class=bouton onmousedown="choix(7);"></CENTER>
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base8 VALUE="" class=bouton onmousedown="choix(8);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base9 VALUE="" class=bouton onmousedown="choix(9);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base10 VALUE="" class=bouton onmousedown="choix(10);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base11 VALUE="" class=bouton onmousedown="choix(11);"></CENTER>
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base12 VALUE="" class=bouton onmousedown="choix(12);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base13 VALUE="" class=bouton onmousedown="choix(13);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base14 VALUE="" class=bouton onmousedown="choix(14);"></CENTER>
+         </TD>
+         <TD>
+            <CENTER><INPUT TYPE=button NAME=base15 VALUE="" class=bouton onmousedown="choix(15);"></CENTER>
+         </TD>
+      </TR>
+   </TABLE>
+    <INPUT TYPE=button NAME=nbEssais VALUE=" Número de intentos : 0 " class=essai><BR>
+   <INPUT TYPE=text NAME=Message VALUE="" SIZE=20><BR>
+   <INPUT TYPE=button NAME=Rejouer VALUE="Jugar de nuevo" onclick="depart()"></CENTER>
+   <CENTER><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></CENTER>
+   <P>
+</FORM></P>
+</BODY>
+</HTML>

@@ -1,0 +1,329 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=iso-8859-1">
+<META name="Author" content="Producido usando Galli's QuizFaber 2.8.3">
+<META name="generator" content="Galli's QuizFaber 2.8.3">
+<META name="keywords" content="quiz">
+<META name="description" content="El Universo, la Vía Láctea y el Sistema Solar">
+<TITLE>Quiz</TITLE>
+
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function startQuiz() {
+  var status;
+
+  window.focus();
+  parent.UnmanageAllDialogs();
+  parent.init_valid();
+  parent.AskMeName();
+  parent.oldtime=parent.StartTime();
+  parent.Timer();
+  if (parent.n_repeat==0) parent.initShortQuestion();
+  parent.end_test=0;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY  BGCOLOR='#e6ffe6' OnLoad='startQuiz()'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+if (parent.n_repeat==0) {
+  parent.keyword = "syskey";
+  parent.MakeKeyCode();
+}
+//-->
+</SCRIPT>
+<FORM NAME='domanda'><SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate1()
+{
+ this.length = 3;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio10.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio11.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio12.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[0]=parent.DecodeNumber(19,0,0,99);
+
+}
+
+function Domanda1()
+{
+ parent.allAnsReport[0] = new initValuate1();
+ parent.doValuate(0);
+ parent.PrintAnswer(0,document.domanda.out1);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<FONT  FACE='Arial' SIZE='4'>pregunta 1</FONT><P>
+<B><FONT  COLOR='#000000' FACE='Arial' SIZE='3'><BR>El Universo es:</FONT></B>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> A </FONT><INPUT TYPE='checkbox' NAME='radio10'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>materia</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> B </FONT><INPUT TYPE='checkbox' NAME='radio11'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'> materia y energía</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> C </FONT><INPUT TYPE='checkbox' NAME='radio12'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>energía</FONT></TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<INPUT TYPE='button' VALUE='OK' onClick="Domanda1()"><INPUT TYPE='TEXT' SIZE=35 NAME='out1' VALUE='Contesta la pregunta y pulsa OK'>
+</CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate3()
+{
+ this.length = 3;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio30.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,2,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio31.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,2,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio32.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,2,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[2]=parent.DecodeNumber(19,2,0,99);
+
+}
+
+function Domanda3()
+{
+ parent.allAnsReport[2] = new initValuate3();
+ parent.doValuate(2);
+ parent.PrintAnswer(2,document.domanda.out3);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<FONT  FACE='Arial' SIZE='4'>pregunta 2</FONT><P>
+<B><FONT  COLOR='#000000' FACE='Arial' SIZE='3'>La materia forma:</FONT></B>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> A </FONT><INPUT TYPE='checkbox' NAME='radio30'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>estrellas</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> B </FONT><INPUT TYPE='checkbox' NAME='radio31'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'> planetas</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> C </FONT><INPUT TYPE='checkbox' NAME='radio32'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>ambos</FONT></TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<INPUT TYPE='button' VALUE='OK' onClick="Domanda3()"><INPUT TYPE='TEXT' SIZE=35 NAME='out3' VALUE='Contesta la pregunta y pulsa OK'>
+</CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate5()
+{
+ this.length = 3;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio50.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(5,4,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio51.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(3,4,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio52.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(3,4,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[4]=parent.DecodeNumber(5,4,0,99);
+
+}
+
+function Domanda5()
+{
+ parent.allAnsReport[4] = new initValuate5();
+ parent.doValuate(4);
+ parent.PrintAnswer(4,document.domanda.out5);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<FONT  FACE='Arial' SIZE='4'>pregunta 3</FONT><P>
+<B><FONT  COLOR='#000000' FACE='Arial' SIZE='3'>El Sistema Solar es</FONT></B>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> A </FONT><INPUT TYPE='checkbox' NAME='radio50'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>El Sol y los planetas que giran a su alrededor</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> B </FONT><INPUT TYPE='checkbox' NAME='radio51'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>Un conjunto de soles</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> C </FONT><INPUT TYPE='checkbox' NAME='radio52'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>Un sistema energético en equilibrio</FONT></TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<INPUT TYPE='button' VALUE='OK' onClick="Domanda5()"><INPUT TYPE='TEXT' SIZE=35 NAME='out5' VALUE='Contesta la pregunta y pulsa OK'>
+</CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate2()
+{
+ this.length = 3;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio20.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(25,1,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio21.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,1,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio22.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,1,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[1]=parent.DecodeNumber(25,1,0,99);
+
+}
+
+function Domanda2()
+{
+ parent.allAnsReport[1] = new initValuate2();
+ parent.doValuate(1);
+ parent.PrintAnswer(1,document.domanda.out2);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<FONT  FACE='Arial' SIZE='4'>pregunta 4</FONT><P>
+<B><FONT  COLOR='#000000' FACE='Arial' SIZE='3'>La materia se distribuye en:</FONT></B>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> A </FONT><INPUT TYPE='checkbox' NAME='radio20'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>galaxias</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> B </FONT><INPUT TYPE='checkbox' NAME='radio21'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>estrellas</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> C </FONT><INPUT TYPE='checkbox' NAME='radio22'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>nebulosas</FONT></TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<INPUT TYPE='button' VALUE='OK' onClick="Domanda2()"><INPUT TYPE='TEXT' SIZE=35 NAME='out2' VALUE='Contesta la pregunta y pulsa OK'>
+</CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate4()
+{
+ this.length = 3;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio40.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(9,3,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio41.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(9,3,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio42.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(11,3,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[3]=parent.DecodeNumber(11,3,0,99);
+
+}
+
+function Domanda4()
+{
+ parent.allAnsReport[3] = new initValuate4();
+ parent.doValuate(3);
+ parent.PrintAnswer(3,document.domanda.out4);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<FONT  FACE='Arial' SIZE='4'>pregunta 5</FONT><P>
+<B><FONT  COLOR='#000000' FACE='Arial' SIZE='3'>La Vía Láctea es</FONT></B>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> A </FONT><INPUT TYPE='checkbox' NAME='radio40'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>Una parte del Universo</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> B </FONT><INPUT TYPE='checkbox' NAME='radio41'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>Nuestra galaxia</FONT></TD>
+<TR>
+<TD ALIGN='CENTER' BGCOLOR='000080' WIDTH='10%'>
+<FONT  COLOR='#FFFFFF' FACE='Arial' SIZE='3'> C </FONT><INPUT TYPE='checkbox' NAME='radio42'></TD>
+<TD ALIGN='LEFT' BGCOLOR='87CEFA' WIDTH=90%>
+<FONT  COLOR='#000000' FACE='Arial' SIZE='3'>Las dos cosas</FONT></TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<INPUT TYPE='button' VALUE='OK' onClick="Domanda4()"><INPUT TYPE='TEXT' SIZE=35 NAME='out4' VALUE='Contesta la pregunta y pulsa OK'>
+</CENTER>
+<HR WIDTH='80%'>
+</FORM>
+</BODY>
+</HTML>

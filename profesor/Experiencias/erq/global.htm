@@ -1,0 +1,1704 @@
+<html>
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Roberto Quintana Ortiz."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+EXAMEN GLOBAL DE BIOLOG&#205;A 3&#186; ESO
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie4 && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = InText.substring(sLoc,z);
+
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+
+var ExBGColor = '#FFFFCC';
+
+
+
+var PageBGColor = '#FFFFCC';
+
+
+
+var NavBarColor = '#000000';
+
+
+var TextColor = '#660066';
+var CurrQNum = 0;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = ':-)';
+var IncorrectIndicator = 'X';
+var YourScoreIs = 'Su resultado es: ';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Preguntas contestadas correctamente en primer ensayo:';var ExerciseTitle = 'EXAMEN GLOBAL DE BIOLOG&#205;A 3&#186; ESO';
+var ExerciseSubtitle = 'Elaborado por Roberto Quintana';
+var Instructions = 'Haga clic en la respuesta correcta. Recuerde: DEBE CONTESTAR TODAS LAS PREGUNTAS, Y POR CADA CUATRO PREGUNTAS MAL SE LE QUITAR&#193; UNA BIEN'; //'';
+var ShuffleQs = true;
+var ShuffleAs = true;
+var DefaultRight = '&#161;Bien hecho!';
+var DefaultWrong = 'Incorrecto, int&#233;ntelo otra vez.';
+var QsToShow = 50;
+var ShowOneByOne = false;
+var ReadingURL = '';
+var EraseFeedback = true;
+var Score = 0;
+
+var PreviousPage = history.length;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#FFFFCC">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#CC3300">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#CC3300">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var QButtonsOpener = '<table border="0" width="85%" cellpadding="10">';
+QButtonsOpener += '<tr><td align="center" valign="middle"><form>';
+QButtonsOpener += '<font size="+1"><input type="button" value="&lt;=" onclick="parent.ChangeQ(-1)"></input>';
+var QButtonsCloser = '<input type="button" value="=&gt;" onclick="parent.ChangeQ(1)"></input>';
+QButtonsCloser += '</font></form></td></tr></table>';
+
+var TableOpener = '<form name="QForm">';
+TableOpener += '<table border="0" width="85%">';
+var QRow = '<tr><td valign="top" bgcolor="#FFFFCC" align="right">';
+QRow += '<font size="+1" face="Geneva,Arial" color="#660066">[QNumber]</font></td>';
+QRow += '<td colspan="3" valign="top" bgcolor="#FFFFCC"><font size="-1" face="Geneva,Arial" color="#660066">[Question]<br />&nbsp;';
+QRow += '</font></td></tr>';
+
+var ARow = '<tr><td></td><td valign="top" bgcolor="#FFFFCC"><input type="text" value=" " size="3" name="FB_[QNum]_[ANum]"></input></td>';
+ARow += '<td valign="top" bgcolor="#FFFFCC"><input type="button" value="[ALetter]" OnClick="parent.CheckAnswer([QNum],[ANum])"></input></td>';
+ARow += '<td width="100%" bgcolor="#FFFFCC"><font size="-1" face="Geneva,Arial" color="#660066">[Ans]</font></td></tr>';
+
+var MARow = '<tr><td></td><td valign="top" bgcolor="#FFFFCC" colspan="3"><input type="checkbox" name="A_[QNum]_[ANum]" value="[Correct]"></input>';
+MARow += '<font size="-1" face="Geneva,Arial" color="#660066">[Ans]</font></td></tr>';
+
+var CheckButton = '<tr><td></td><td valign="top" bgcolor="#FFFFCC" ><input type="button" value="Check"';
+CheckButton += ' onclick="parent.CheckMulti([QNum])"></input></td></tr>';
+
+TableCloser = '</table></form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function ReduceItems(){
+	var ItemToDump=0;
+	var j=0;
+	while (I.length > QsToShow){
+		ItemToDump = Math.floor(I.length*Math.random());
+		for (j=ItemToDump; j<(I.length-1); j++){
+			I[j] = I[j+1];
+		}
+		I.length = I.length-1;
+	}
+}
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#FFFFCC" text="#660066" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#FFFFCC" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#660066">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function StartUp(){
+
+
+
+
+//Reduce array if required
+	if (QsToShow < I.length){
+		ReduceItems();
+	}
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question or all of them
+	if (ShowOneByOne == false){
+		ShowAllQs();
+	}
+	else{
+		ShowQuestion(CurrQNum);
+	}
+
+//Write the top frame
+	WriteFeedback(Instructions);
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='Las unidades estructurales de las prote&#237;nas son ___________________';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='los nucle&#243;tidos';
+I[0][1][0][1]='';
+I[0][1][0][2] = 0;
+I[0][1][1] = new Array();
+I[0][1][1][0]='los amino&#225;cidos';
+I[0][1][1][1]='';
+I[0][1][1][2] = 1;
+I[0][1][2] = new Array();
+I[0][1][2][0]='los monosac&#225;ridos';
+I[0][1][2][1]='';
+I[0][1][2][2] = 0;
+I[0][1][3] = new Array();
+I[0][1][3][0]='las biomol&#233;culad';
+I[0][1][3][1]='';
+I[0][1][3][2] = 0;
+I[0][2] = 0;
+
+I[1] = new Array();
+I[1][0]='Las erosiones en la pared interna del est&#243;mago y del duodeno son __________';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='las diarreas';
+I[1][1][0][1]='';
+I[1][1][0][2] = 0;
+I[1][1][1] = new Array();
+I[1][1][1][0]='la hepatitis';
+I[1][1][1][1]='';
+I[1][1][1][2] = 0;
+I[1][1][2] = new Array();
+I[1][1][2][0]='las &#250;lceras p&#233;pticas';
+I[1][1][2][1]='';
+I[1][1][2][2] = 1;
+I[1][1][3] = new Array();
+I[1][1][3][0]='las paperas';
+I[1][1][3][1]='';
+I[1][1][3][2] = 0;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='__________________ son org&#225;nulos membranosos que contienen enzimas digestivos';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='Los ribosomas';
+I[2][1][0][1]='';
+I[2][1][0][2] = 0;
+I[2][1][1] = new Array();
+I[2][1][1][0]='Las mitocondrias';
+I[2][1][1][1]='';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='El ret&#237;culo endoplasm&#225;tico rugoso y liso';
+I[2][1][2][1]='';
+I[2][1][2][2] = 0;
+I[2][1][3] = new Array();
+I[2][1][3][0]='Los lisosomas';
+I[2][1][3][1]='';
+I[2][1][3][2] = 1;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='Las articulaciones sinoviales son las ______________';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='inm&#243;viles';
+I[3][1][0][1]='';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='semim&#243;viles';
+I[3][1][1][1]='';
+I[3][1][1][2] = 0;
+I[3][1][2] = new Array();
+I[3][1][2][0]='m&#243;viles';
+I[3][1][2][1]='';
+I[3][1][2][2] = 1;
+I[3][1][3] = new Array();
+I[3][1][3][0]='r&#237;gidas';
+I[3][1][3][1]='';
+I[3][1][3][2] = 0;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='Se considera que hay un ser humano cuando el nuevo ser es _____________';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='una bl&#225;stula';
+I[4][1][0][1]='';
+I[4][1][0][2] = 0;
+I[4][1][1] = new Array();
+I[4][1][1][0]='un embri&#243;n';
+I[4][1][1][1]='';
+I[4][1][1][2] = 0;
+I[4][1][2] = new Array();
+I[4][1][2][0]='una m&#243;rula';
+I[4][1][2][1]='';
+I[4][1][2][2] = 0;
+I[4][1][3] = new Array();
+I[4][1][3][0]='un zigoto';
+I[4][1][3][1]='';
+I[4][1][3][2] = 1;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='El orificio de entrada de la tr&#225;quea es la ______________';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='epiglotis';
+I[5][1][0][1]='';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='laringe';
+I[5][1][1][1]='';
+I[5][1][1][2] = 0;
+I[5][1][2] = new Array();
+I[5][1][2][0]='glotis';
+I[5][1][2][1]='';
+I[5][1][2][2] = 1;
+I[5][1][3] = new Array();
+I[5][1][3][0]='faringe';
+I[5][1][3][1]='';
+I[5][1][3][2] = 0;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='La v&#225;lvula mitral _____________';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='permite el movimiento de la sangre de la aur&#237;cula izquierda al ventr&#237;culo izquierdo';
+I[6][1][0][1]='';
+I[6][1][0][2] = 1;
+I[6][1][1] = new Array();
+I[6][1][1][0]='permite el movimiento de la sangre de la vena cava a la aur&#237;cula derecha';
+I[6][1][1][1]='';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='permite el movimiento de la sangre del ventr&#237;culo izquierdo a la aorta';
+I[6][1][2][1]='';
+I[6][1][2][2] = 0;
+I[6][1][3] = new Array();
+I[6][1][3][0]='permite el movimiento de la sangre de la aur&#237;cula derecha al ventr&#237;culo derecho';
+I[6][1][3][1]='';
+I[6][1][3][2] = 0;
+I[6][2] = 0;
+
+I[7] = new Array();
+I[7][0]='La nidaci&#243;n se produce cuando el nuevo ser est&#225; en estado de _______________';
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='bl&#225;stula';
+I[7][1][0][1]='';
+I[7][1][0][2] = 1;
+I[7][1][1] = new Array();
+I[7][1][1][0]='feto';
+I[7][1][1][1]='';
+I[7][1][1][2] = 0;
+I[7][1][2] = new Array();
+I[7][1][2][0]='m&#243;rula';
+I[7][1][2][1]='';
+I[7][1][2][2] = 0;
+I[7][1][3] = new Array();
+I[7][1][3][0]='zigoto';
+I[7][1][3][1]='';
+I[7][1][3][2] = 0;
+I[7][2] = 0;
+
+I[8] = new Array();
+I[8][0]='El sentido del equilibrio se encuentra en _____________';
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='el caracol';
+I[8][1][0][1]='';
+I[8][1][0][2] = 0;
+I[8][1][1] = new Array();
+I[8][1][1][0]='el t&#237;mpano';
+I[8][1][1][1]='';
+I[8][1][1][2] = 0;
+I[8][1][2] = new Array();
+I[8][1][2][0]='la cadena de huesecillos';
+I[8][1][2][1]='';
+I[8][1][2][2] = 0;
+I[8][1][3] = new Array();
+I[8][1][3][0]='los canales semicirculares';
+I[8][1][3][1]='';
+I[8][1][3][2] = 1;
+I[8][2] = 0;
+
+I[9] = new Array();
+I[9][0]='_______________ son estructuras carentes de membrana que sintetizan prote&#237;nas';
+I[9][1] = new Array();
+I[9][1][0] = new Array();
+I[9][1][0][0]='Los lisosomas';
+I[9][1][0][1]='';
+I[9][1][0][2] = 0;
+I[9][1][1] = new Array();
+I[9][1][1][0]='Los ribosomas';
+I[9][1][1][1]='';
+I[9][1][1][2] = 1;
+I[9][1][2] = new Array();
+I[9][1][2][0]='Los centrosomas';
+I[9][1][2][1]='';
+I[9][1][2][2] = 0;
+I[9][1][3] = new Array();
+I[9][1][3][0]='Los cilios y flagelos';
+I[9][1][3][1]='';
+I[9][1][3][2] = 0;
+I[9][2] = 0;
+
+I[10] = new Array();
+I[10][0]='La mayor&#237;a de los enzimas digestivos son del tipo _____________';
+I[10][1] = new Array();
+I[10][1][0] = new Array();
+I[10][1][0][0]='amilasas';
+I[10][1][0][1]='';
+I[10][1][0][2] = 0;
+I[10][1][1] = new Array();
+I[10][1][1][0]='lipasas';
+I[10][1][1][1]='';
+I[10][1][1][2] = 0;
+I[10][1][2] = new Array();
+I[10][1][2][0]='hidrolasas';
+I[10][1][2][1]='';
+I[10][1][2][2] = 1;
+I[10][1][3] = new Array();
+I[10][1][3][0]='proteasas';
+I[10][1][3][1]='';
+I[10][1][3][2] = 0;
+I[10][2] = 0;
+
+I[11] = new Array();
+I[11][0]='Las racciones qu&#237;micas que tienen lugar dentro de los seres vivos y en las que se produce ATP se conocen como _______________';
+I[11][1] = new Array();
+I[11][1][0] = new Array();
+I[11][1][0][0]='anab&#243;licas';
+I[11][1][0][1]='';
+I[11][1][0][2] = 0;
+I[11][1][1] = new Array();
+I[11][1][1][0]='metab&#243;licas';
+I[11][1][1][1]='';
+I[11][1][1][2] = 0;
+I[11][1][2] = new Array();
+I[11][1][2][0]='energ&#233;ticas';
+I[11][1][2][1]='';
+I[11][1][2][2] = 0;
+I[11][1][3] = new Array();
+I[11][1][3][0]='catab&#243;licas';
+I[11][1][3][1]='';
+I[11][1][3][2] = 1;
+I[11][2] = 0;
+
+I[12] = new Array();
+I[12][0]='El m&#225;ximo incremento de la superficie del intestino delgado dedicada a la absorci&#243;n se consigue gracias a ______________';
+I[12][1] = new Array();
+I[12][1][0] = new Array();
+I[12][1][0][0]='las vellosidades intestinales';
+I[12][1][0][1]='';
+I[12][1][0][2] = 0;
+I[12][1][1] = new Array();
+I[12][1][1][0]='el duodeno, el yeyuno y el &#237;leon';
+I[12][1][1][1]='';
+I[12][1][1][2] = 0;
+I[12][1][2] = new Array();
+I[12][1][2][0]='las microvellosidades intestinales';
+I[12][1][2][1]='';
+I[12][1][2][2] = 1;
+I[12][1][3] = new Array();
+I[12][1][3][0]='los pliegues intestinales';
+I[12][1][3][1]='';
+I[12][1][3][2] = 0;
+I[12][2] = 0;
+
+I[13] = new Array();
+I[13][0]='Niveles altos de leucocitos inmaduros en sangre indican ____________';
+I[13][1] = new Array();
+I[13][1][0] = new Array();
+I[13][1][0][0]='anemia';
+I[13][1][0][1]='';
+I[13][1][0][2] = 0;
+I[13][1][1] = new Array();
+I[13][1][1][0]='leucemia';
+I[13][1][1][1]='';
+I[13][1][1][2] = 1;
+I[13][1][2] = new Array();
+I[13][1][2][0]='mal funcionamiento del ri&#241;&#243;n';
+I[13][1][2][1]='';
+I[13][1][2][2] = 0;
+I[13][1][3] = new Array();
+I[13][1][3][0]='diabetes';
+I[13][1][3][1]='';
+I[13][1][3][2] = 0;
+I[13][2] = 0;
+
+I[14] = new Array();
+I[14][0]='El cuerpo l&#250;teo produce ___________';
+I[14][1] = new Array();
+I[14][1][0] = new Array();
+I[14][1][0][0]='estr&#243;genos';
+I[14][1][0][1]='';
+I[14][1][0][2] = 0;
+I[14][1][1] = new Array();
+I[14][1][1][0]='FSH';
+I[14][1][1][1]='';
+I[14][1][1][2] = 0;
+I[14][1][2] = new Array();
+I[14][1][2][0]='LH';
+I[14][1][2][1]='';
+I[14][1][2][2] = 0;
+I[14][1][3] = new Array();
+I[14][1][3][0]='progesterona';
+I[14][1][3][1]='';
+I[14][1][3][2] = 1;
+I[14][2] = 0;
+
+I[15] = new Array();
+I[15][0]='En la circulaci&#243;n mayor la sangre sale del coraz&#243;n por la ______________';
+I[15][1] = new Array();
+I[15][1][0] = new Array();
+I[15][1][0][0]='vena cava';
+I[15][1][0][1]='';
+I[15][1][0][2] = 0;
+I[15][1][1] = new Array();
+I[15][1][1][0]='la car&#243;tida';
+I[15][1][1][1]='';
+I[15][1][1][2] = 0;
+I[15][1][2] = new Array();
+I[15][1][2][0]='la arteria pulmonar';
+I[15][1][2][1]='';
+I[15][1][2][2] = 0;
+I[15][1][3] = new Array();
+I[15][1][3][0]='arteria aorta';
+I[15][1][3][1]='';
+I[15][1][3][2] = 1;
+I[15][2] = 0;
+
+I[16] = new Array();
+I[16][0]='Cuando en situaciones de reposo la frecuencia card&#237;aca, en una persona adulta, es mayor de 100 latidos por segundo decimos que padece _____________';
+I[16][1] = new Array();
+I[16][1][0] = new Array();
+I[16][1][0][0]='taquicardia';
+I[16][1][0][1]='';
+I[16][1][0][2] = 1;
+I[16][1][1] = new Array();
+I[16][1][1][0]='hipertensi&#243;n';
+I[16][1][1][1]='';
+I[16][1][1][2] = 0;
+I[16][1][2] = new Array();
+I[16][1][2][0]='angina de pecho';
+I[16][1][2][1]='';
+I[16][1][2][2] = 0;
+I[16][1][3] = new Array();
+I[16][1][3][0]='infarto';
+I[16][1][3][1]='';
+I[16][1][3][2] = 0;
+I[16][2] = 0;
+
+I[17] = new Array();
+I[17][0]='El pH &#225;cido del est&#243;mago es necesario para que ____________________-';
+I[17][1] = new Array();
+I[17][1][0] = new Array();
+I[17][1][0][0]='se produzca la degluci&#243;n';
+I[17][1][0][1]='';
+I[17][1][0][2] = 0;
+I[17][1][1] = new Array();
+I[17][1][1][0]='act&#250;en enzimas digestivos';
+I[17][1][1][1]='';
+I[17][1][1][2] = 1;
+I[17][1][2] = new Array();
+I[17][1][2][0]='se produzcan los movimientos perist&#225;lticos';
+I[17][1][2][1]='';
+I[17][1][2][2] = 0;
+I[17][1][3] = new Array();
+I[17][1][3][0]='se forme el jugo g&#225;strico';
+I[17][1][3][1]='';
+I[17][1][3][2] = 0;
+I[17][2] = 0;
+
+I[18] = new Array();
+I[18][0]='La uni&#243;n funcional de dos neuronas _________________-';
+I[18][1] = new Array();
+I[18][1][0] = new Array();
+I[18][1][0][0]='son las dendritas';
+I[18][1][0][1]='';
+I[18][1][0][2] = 0;
+I[18][1][1] = new Array();
+I[18][1][1][0]='son los neurotransmisores';
+I[18][1][1][1]='';
+I[18][1][1][2] = 0;
+I[18][1][2] = new Array();
+I[18][1][2][0]='es el ax&#243;n';
+I[18][1][2][1]='';
+I[18][1][2][2] = 0;
+I[18][1][3] = new Array();
+I[18][1][3][0]='es la sinapsis';
+I[18][1][3][1]='';
+I[18][1][3][2] = 1;
+I[18][2] = 0;
+
+I[19] = new Array();
+I[19][0]='En el diente, ______________________ es una sustancia muy parecida al marfil';
+I[19][1] = new Array();
+I[19][1][0] = new Array();
+I[19][1][0][0]='el cemento';
+I[19][1][0][1]='';
+I[19][1][0][2] = 0;
+I[19][1][1] = new Array();
+I[19][1][1][0]='la dentina';
+I[19][1][1][1]='';
+I[19][1][1][2] = 1;
+I[19][1][2] = new Array();
+I[19][1][2][0]='la ra&#237;z';
+I[19][1][2][1]='';
+I[19][1][2][2] = 0;
+I[19][1][3] = new Array();
+I[19][1][3][0]='el esmalte';
+I[19][1][3][1]='';
+I[19][1][3][2] = 0;
+I[19][2] = 0;
+
+I[20] = new Array();
+I[20][0]='En los animales los tejidos se agrupan en _____________ que realizan una funci&#243;n concreta';
+I[20][1] = new Array();
+I[20][1][0] = new Array();
+I[20][1][0][0]='epitelial, conjuntivo, cartilaginoso, etc.';
+I[20][1][0][1]='';
+I[20][1][0][2] = 0;
+I[20][1][1] = new Array();
+I[20][1][1][0]='aparatos y sistemas';
+I[20][1][1][1]='';
+I[20][1][1][2] = 0;
+I[20][1][2] = new Array();
+I[20][1][2][0]='&#243;rganos';
+I[20][1][2][1]='';
+I[20][1][2][2] = 1;
+I[20][1][3] = new Array();
+I[20][1][3][0]='colonias';
+I[20][1][3][1]='';
+I[20][1][3][2] = 0;
+I[20][2] = 0;
+
+I[21] = new Array();
+I[21][0]='La capa m&#225;s externa del est&#243;mago es _____________';
+I[21][1] = new Array();
+I[21][1][0] = new Array();
+I[21][1][0][0]='la mucosa g&#225;strica';
+I[21][1][0][1]='';
+I[21][1][0][2] = 1;
+I[21][1][1] = new Array();
+I[21][1][1][0]='el p&#237;loro';
+I[21][1][1][1]='';
+I[21][1][1][2] = 0;
+I[21][1][2] = new Array();
+I[21][1][2][0]='el cardias';
+I[21][1][2][1]='';
+I[21][1][2][2] = 0;
+I[21][1][3] = new Array();
+I[21][1][3][0]='la capa muscular';
+I[21][1][3][1]='';
+I[21][1][3][2] = 0;
+I[21][2] = 0;
+
+I[22] = new Array();
+I[22][0]='Los vasos por los que retorna la sangre al coraz&#243;n son ______________';
+I[22][1] = new Array();
+I[22][1][0] = new Array();
+I[22][1][0][0]='los capilares';
+I[22][1][0][1]='';
+I[22][1][0][2] = 0;
+I[22][1][1] = new Array();
+I[22][1][1][0]='las venas';
+I[22][1][1][1]='';
+I[22][1][1][2] = 1;
+I[22][1][2] = new Array();
+I[22][1][2][0]='los vasos linf&#225;ticos';
+I[22][1][2][1]='';
+I[22][1][2][2] = 0;
+I[22][1][3] = new Array();
+I[22][1][3][0]='las arterias';
+I[22][1][3][1]='';
+I[22][1][3][2] = 0;
+I[22][2] = 0;
+
+I[23] = new Array();
+I[23][0]='_____________ son las ramificaciones que reciben impulsos nerviosos de otras neuronas';
+I[23][1] = new Array();
+I[23][1][0] = new Array();
+I[23][1][0][0]='Las c&#233;lulas de Schwann';
+I[23][1][0][1]='';
+I[23][1][0][2] = 0;
+I[23][1][1] = new Array();
+I[23][1][1][0]='Las dendritas';
+I[23][1][1][1]='';
+I[23][1][1][2] = 1;
+I[23][1][2] = new Array();
+I[23][1][2][0]='Las sinapsis';
+I[23][1][2][1]='';
+I[23][1][2][2] = 0;
+I[23][1][3] = new Array();
+I[23][1][3][0]='Los axones';
+I[23][1][3][1]='';
+I[23][1][3][2] = 0;
+I[23][2] = 0;
+
+I[24] = new Array();
+I[24][0]='________________ son las conexiones entre un m&#250;sculo y un hueso.';
+I[24][1] = new Array();
+I[24][1][0] = new Array();
+I[24][1][0][0]='Los tendones';
+I[24][1][0][1]='';
+I[24][1][0][2] = 1;
+I[24][1][1] = new Array();
+I[24][1][1][0]='Las articulaciones';
+I[24][1][1][1]='';
+I[24][1][1][2] = 0;
+I[24][1][2] = new Array();
+I[24][1][2][0]='Los ligamentos';
+I[24][1][2][1]='';
+I[24][1][2][2] = 0;
+I[24][1][3] = new Array();
+I[24][1][3][0]='Los discos intervertebrales';
+I[24][1][3][1]='';
+I[24][1][3][2] = 0;
+I[24][2] = 0;
+
+I[25] = new Array();
+I[25][0]='Las unidades funcionales del ri&#241;&#243;n son ___________________';
+I[25][1] = new Array();
+I[25][1][0] = new Array();
+I[25][1][0][0]='la pelvis renal';
+I[25][1][0][1]='';
+I[25][1][0][2] = 0;
+I[25][1][1] = new Array();
+I[25][1][1][0]='las nefronas';
+I[25][1][1][1]='';
+I[25][1][1][2] = 1;
+I[25][1][2] = new Array();
+I[25][1][2][0]='los t&#250;bulos contorneados';
+I[25][1][2][1]='';
+I[25][1][2][2] = 0;
+I[25][1][3] = new Array();
+I[25][1][3][0]='las pir&#225;mides de Malpighi';
+I[25][1][3][1]='';
+I[25][1][3][2] = 0;
+I[25][2] = 0;
+
+I[26] = new Array();
+I[26][0]='El _____________ es una mucosa que se deshace durante la menstruaci&#243;n';
+I[26][1] = new Array();
+I[26][1][0] = new Array();
+I[26][1][0][0]='&#250;tero';
+I[26][1][0][1]='';
+I[26][1][0][2] = 0;
+I[26][1][1] = new Array();
+I[26][1][1][0]='endometrio';
+I[26][1][1][1]='';
+I[26][1][1][2] = 1;
+I[26][1][2] = new Array();
+I[26][1][2][0]='miometrio';
+I[26][1][2][1]='';
+I[26][1][2][2] = 0;
+I[26][1][3] = new Array();
+I[26][1][3][0]='cuello del &#250;tero';
+I[26][1][3][1]='';
+I[26][1][3][2] = 0;
+I[26][2] = 0;
+
+I[27] = new Array();
+I[27][0]='El sistema nervioso central est&#225; formado por ________________';
+I[27][1] = new Array();
+I[27][1][0] = new Array();
+I[27][1][0][0]='el enc&#233;falo y los nervios';
+I[27][1][0][1]='';
+I[27][1][0][2] = 0;
+I[27][1][1] = new Array();
+I[27][1][1][0]='la m&#233;dula y el enc&#233;falo';
+I[27][1][1][1]='';
+I[27][1][1][2] = 1;
+I[27][1][2] = new Array();
+I[27][1][2][0]='la m&#233;dula y los nervios';
+I[27][1][2][1]='';
+I[27][1][2][2] = 0;
+I[27][1][3] = new Array();
+I[27][1][3][0]='la m&#233;dula, el enc&#233;falo y los nervios';
+I[27][1][3][1]='';
+I[27][1][3][2] = 0;
+I[27][2] = 0;
+
+I[28] = new Array();
+I[28][0]='La energ&#237;a que necesita un m&#250;sculo para contraerse es aportada por _____________';
+I[28][1] = new Array();
+I[28][1][0] = new Array();
+I[28][1][0][0]='las fibras musculares';
+I[28][1][0][1]='';
+I[28][1][0][2] = 0;
+I[28][1][1] = new Array();
+I[28][1][1][0]='el ATP';
+I[28][1][1][1]='';
+I[28][1][1][2] = 1;
+I[28][1][2] = new Array();
+I[28][1][2][0]='la actina y la miosina';
+I[28][1][2][1]='';
+I[28][1][2][2] = 0;
+I[28][1][3] = new Array();
+I[28][1][3][0]='la sangre';
+I[28][1][3][1]='';
+I[28][1][3][2] = 0;
+I[28][2] = 0;
+
+I[29] = new Array();
+I[29][0]='Las c&#233;lulas de la sangre que producen anticuerpos son _______';
+I[29][1] = new Array();
+I[29][1][0] = new Array();
+I[29][1][0][0]='las plaquetas';
+I[29][1][0][1]='';
+I[29][1][0][2] = 0;
+I[29][1][1] = new Array();
+I[29][1][1][0]='los hemat&#237;es';
+I[29][1][1][1]='';
+I[29][1][1][2] = 0;
+I[29][1][2] = new Array();
+I[29][1][2][0]='los linfocitos';
+I[29][1][2][1]='';
+I[29][1][2][2] = 1;
+I[29][1][3] = new Array();
+I[29][1][3][0]='los gl&#243;bulos rojos';
+I[29][1][3][1]='';
+I[29][1][3][2] = 0;
+I[29][2] = 0;
+
+I[30] = new Array();
+I[30][0]='_________________ lleva el control de las funciones autom&#225;ticas';
+I[30][1] = new Array();
+I[30][1][0] = new Array();
+I[30][1][0][0]='El cerebro';
+I[30][1][0][1]='';
+I[30][1][0][2] = 0;
+I[30][1][1] = new Array();
+I[30][1][1][0]='El cerebelo';
+I[30][1][1][1]='';
+I[30][1][1][2] = 0;
+I[30][1][2] = new Array();
+I[30][1][2][0]='La m&#233;dula';
+I[30][1][2][1]='';
+I[30][1][2][2] = 0;
+I[30][1][3] = new Array();
+I[30][1][3][0]='El bulbo raqu&#237;deo';
+I[30][1][3][1]='';
+I[30][1][3][2] = 1;
+I[30][2] = 0;
+
+I[31] = new Array();
+I[31][0]='La bilis realiza su funci&#243;n en ____________';
+I[31][1] = new Array();
+I[31][1][0] = new Array();
+I[31][1][0][0]='la ves&#237;cula biliar';
+I[31][1][0][1]='';
+I[31][1][0][2] = 0;
+I[31][1][1] = new Array();
+I[31][1][1][0]='el h&#237;gado';
+I[31][1][1][1]='';
+I[31][1][1][2] = 0;
+I[31][1][2] = new Array();
+I[31][1][2][0]='el est&#243;mago';
+I[31][1][2][1]='';
+I[31][1][2][2] = 0;
+I[31][1][3] = new Array();
+I[31][1][3][0]='el intestino delgado';
+I[31][1][3][1]='';
+I[31][1][3][2] = 1;
+I[31][2] = 0;
+
+I[32] = new Array();
+I[32][0]='________________ enfoca el objeto sobre la retina';
+I[32][1] = new Array();
+I[32][1][0] = new Array();
+I[32][1][0][0]='la pupila';
+I[32][1][0][1]='';
+I[32][1][0][2] = 0;
+I[32][1][1] = new Array();
+I[32][1][1][0]='el iris';
+I[32][1][1][1]='';
+I[32][1][1][2] = 0;
+I[32][1][2] = new Array();
+I[32][1][2][0]='el cristalino';
+I[32][1][2][1]='';
+I[32][1][2][2] = 1;
+I[32][1][3] = new Array();
+I[32][1][3][0]='la conjuntiva';
+I[32][1][3][1]='';
+I[32][1][3][2] = 0;
+I[32][2] = 0;
+
+I[33] = new Array();
+I[33][0]='Los restos no absorbidos del quilo pasan al intestino grueso gracias a ________';
+I[33][1] = new Array();
+I[33][1][0] = new Array();
+I[33][1][0][0]='la estimulaci&#243;n del ap&#233;ndice vermiforme';
+I[33][1][0][1]='';
+I[33][1][0][2] = 0;
+I[33][1][1] = new Array();
+I[33][1][1][0]='la relajaci&#243;n de la musculatura de la v&#225;lvula ileocecal';
+I[33][1][1][1]='';
+I[33][1][1][2] = 1;
+I[33][1][2] = new Array();
+I[33][1][2][0]='la relajaci&#243;n del ciego';
+I[33][1][2][1]='';
+I[33][1][2][2] = 0;
+I[33][1][3] = new Array();
+I[33][1][3][0]='el peristaltismo en masa del colon';
+I[33][1][3][1]='';
+I[33][1][3][2] = 0;
+I[33][2] = 0;
+
+I[34] = new Array();
+I[34][0]='La energ&#237;a que se obtiene en la respiraci&#243;n se almacena en forma de _________';
+I[34][1] = new Array();
+I[34][1][0] = new Array();
+I[34][1][0][0]='agua';
+I[34][1][0][1]='';
+I[34][1][0][2] = 0;
+I[34][1][1] = new Array();
+I[34][1][1][0]='ATP';
+I[34][1][1][1]='';
+I[34][1][1][2] = 1;
+I[34][1][2] = new Array();
+I[34][1][2][0]='di&#243;xido de carbono';
+I[34][1][2][1]='';
+I[34][1][2][2] = 0;
+I[34][1][3] = new Array();
+I[34][1][3][0]='gluc&#243;geno';
+I[34][1][3][1]='';
+I[34][1][3][2] = 0;
+I[34][2] = 0;
+
+I[35] = new Array();
+I[35][0]='______________ cubren el pulm&#243;n y evitan que estos se rocen con las costillas';
+I[35][1] = new Array();
+I[35][1][0] = new Array();
+I[35][1][0][0]='los alveolos pulmonares';
+I[35][1][0][1]='';
+I[35][1][0][2] = 0;
+I[35][1][1] = new Array();
+I[35][1][1][0]='los bronquios';
+I[35][1][1][1]='';
+I[35][1][1][2] = 0;
+I[35][1][2] = new Array();
+I[35][1][2][0]='las pleuras';
+I[35][1][2][1]='';
+I[35][1][2][2] = 1;
+I[35][1][3] = new Array();
+I[35][1][3][0]='los bronquiolos';
+I[35][1][3][1]='';
+I[35][1][3][2] = 0;
+I[35][2] = 0;
+
+I[36] = new Array();
+I[36][0]='Cuando el _____________ se llena de sangre provoca la erecci&#243;n del pene';
+I[36][1] = new Array();
+I[36][1][0] = new Array();
+I[36][1][0][0]='cuerpo esponjoso';
+I[36][1][0][1]='';
+I[36][1][0][2] = 1;
+I[36][1][1] = new Array();
+I[36][1][1][0]='conducto deferente';
+I[36][1][1][1]='';
+I[36][1][1][2] = 0;
+I[36][1][2] = new Array();
+I[36][1][2][0]='conducto eyaculador';
+I[36][1][2][1]='';
+I[36][1][2][2] = 0;
+I[36][1][3] = new Array();
+I[36][1][3][0]='test&#237;culo';
+I[36][1][3][1]='';
+I[36][1][3][2] = 0;
+I[36][2] = 0;
+
+I[37] = new Array();
+I[37][0]='La especie humana es extraordinariamente compleja. Para facilitar su estudio se distinguen varios niveles de organizaci&#243;n. Se&#241;ala cu&#225;l es el primer nivel en el que se puede decir que existe propiamente vida';
+I[37][1] = new Array();
+I[37][1][0] = new Array();
+I[37][1][0][0]='molecular';
+I[37][1][0][1]='';
+I[37][1][0][2] = 0;
+I[37][1][1] = new Array();
+I[37][1][1][0]='at&#243;mico';
+I[37][1][1][1]='';
+I[37][1][1][2] = 0;
+I[37][1][2] = new Array();
+I[37][1][2][0]='pluricelular';
+I[37][1][2][1]='';
+I[37][1][2][2] = 0;
+I[37][1][3] = new Array();
+I[37][1][3][0]='celular';
+I[37][1][3][1]='';
+I[37][1][3][2] = 1;
+I[37][2] = 0;
+
+I[38] = new Array();
+I[38][0]='Las respiraci&#243;n celular se produce en ________________';
+I[38][1] = new Array();
+I[38][1][0] = new Array();
+I[38][1][0][0]='el n&#250;cleo';
+I[38][1][0][1]='';
+I[38][1][0][2] = 0;
+I[38][1][1] = new Array();
+I[38][1][1][0]='la mitocondria';
+I[38][1][1][1]='';
+I[38][1][1][2] = 1;
+I[38][1][2] = new Array();
+I[38][1][2][0]='el cloroplasto';
+I[38][1][2][1]='';
+I[38][1][2][2] = 0;
+I[38][1][3] = new Array();
+I[38][1][3][0]='el ribosoma';
+I[38][1][3][1]='';
+I[38][1][3][2] = 0;
+I[38][2] = 0;
+
+I[39] = new Array();
+I[39][0]='El intercambio gaseoso en los pulmones se produce entre los capilares y ____________';
+I[39][1] = new Array();
+I[39][1][0] = new Array();
+I[39][1][0][0]='los alveolos pulmonares';
+I[39][1][0][1]='';
+I[39][1][0][2] = 1;
+I[39][1][1] = new Array();
+I[39][1][1][0]='los bronquiolos';
+I[39][1][1][1]='';
+I[39][1][1][2] = 0;
+I[39][1][2] = new Array();
+I[39][1][2][0]='la traquea';
+I[39][1][2][1]='';
+I[39][1][2][2] = 0;
+I[39][1][3] = new Array();
+I[39][1][3][0]='la pituitaria roja';
+I[39][1][3][1]='';
+I[39][1][3][2] = 0;
+I[39][2] = 0;
+
+I[40] = new Array();
+I[40][0]='Los miofilamentos contr&#225;ctiles de las fibras musculares son de ____________';
+I[40][1] = new Array();
+I[40][1][0] = new Array();
+I[40][1][0][0]='fibras musculares';
+I[40][1][0][1]='';
+I[40][1][0][2] = 0;
+I[40][1][1] = new Array();
+I[40][1][1][0]='actina y miosina';
+I[40][1][1][1]='';
+I[40][1][1][2] = 1;
+I[40][1][2] = new Array();
+I[40][1][2][0]='fasciculos musculares';
+I[40][1][2][1]='';
+I[40][1][2][2] = 0;
+I[40][1][3] = new Array();
+I[40][1][3][0]='miofibrillas';
+I[40][1][3][1]='';
+I[40][1][3][2] = 0;
+I[40][2] = 0;
+
+I[41] = new Array();
+I[41][0]='De los componentes del tabaco, &#191;Cu&#225;l crea dependencia?';
+I[41][1] = new Array();
+I[41][1][0] = new Array();
+I[41][1][0][0]='La nicotina';
+I[41][1][0][1]='';
+I[41][1][0][2] = 1;
+I[41][1][1] = new Array();
+I[41][1][1][0]='Ell alquitr&#225;n';
+I[41][1][1][1]='';
+I[41][1][1][2] = 0;
+I[41][1][2] = new Array();
+I[41][1][2][0]='El mon&#243;xido de carbono';
+I[41][1][2][1]='';
+I[41][1][2][2] = 0;
+I[41][1][3] = new Array();
+I[41][1][3][0]='El humo';
+I[41][1][3][1]='';
+I[41][1][3][2] = 0;
+I[41][2] = 0;
+
+I[42] = new Array();
+I[42][0]='Las c&#233;lulas de la sangre que no tienen n&#250;cleo son _____________';
+I[42][1] = new Array();
+I[42][1][0] = new Array();
+I[42][1][0][0]='las plaquetas';
+I[42][1][0][1]='';
+I[42][1][0][2] = 0;
+I[42][1][1] = new Array();
+I[42][1][1][0]='los linfocitos';
+I[42][1][1][1]='';
+I[42][1][1][2] = 0;
+I[42][1][2] = new Array();
+I[42][1][2][0]='los gl&#243;bulos blancos';
+I[42][1][2][1]='';
+I[42][1][2][2] = 0;
+I[42][1][3] = new Array();
+I[42][1][3][0]='los gl&#243;bulos rojos';
+I[42][1][3][1]='';
+I[42][1][3][2] = 1;
+I[42][2] = 0;
+
+I[43] = new Array();
+I[43][0]='Los vasos sangu&#237;neos en cuyo interior hay v&#225;lvulas que impiden el retroceso de la sangre son _______________';
+I[43][1] = new Array();
+I[43][1][0] = new Array();
+I[43][1][0][0]='los capilares';
+I[43][1][0][1]='';
+I[43][1][0][2] = 0;
+I[43][1][1] = new Array();
+I[43][1][1][0]='las arterias';
+I[43][1][1][1]='';
+I[43][1][1][2] = 0;
+I[43][1][2] = new Array();
+I[43][1][2][0]='las venas';
+I[43][1][2][1]='';
+I[43][1][2][2] = 1;
+I[43][1][3] = new Array();
+I[43][1][3][0]='las arteriolas';
+I[43][1][3][1]='';
+I[43][1][3][2] = 0;
+I[43][2] = 0;
+
+I[44] = new Array();
+I[44][0]='Las estructuras del interior de un hueso por donde van los vasos sangu&#237;neos, los nervios y los vasos linf&#225;ticos son _________________';
+I[44][1] = new Array();
+I[44][1][0] = new Array();
+I[44][1][0][0]='las lagunas';
+I[44][1][0][1]='';
+I[44][1][0][2] = 0;
+I[44][1][1] = new Array();
+I[44][1][1][0]='los canal&#237;culos';
+I[44][1][1][1]='';
+I[44][1][1][2] = 0;
+I[44][1][2] = new Array();
+I[44][1][2][0]='los canales de Havers';
+I[44][1][2][1]='';
+I[44][1][2][2] = 1;
+I[44][1][3] = new Array();
+I[44][1][3][0]='el endostio y el periostio';
+I[44][1][3][1]='';
+I[44][1][3][2] = 0;
+I[44][2] = 0;
+
+I[45] = new Array();
+I[45][0]='____________ es una infecci&#243;n bacteriana en la vejiga urinaria';
+I[45][1] = new Array();
+I[45][1][0] = new Array();
+I[45][1][0][0]='La cistitis';
+I[45][1][0][1]='';
+I[45][1][0][2] = 1;
+I[45][1][1] = new Array();
+I[45][1][1][0]='La prostatitis';
+I[45][1][1][1]='';
+I[45][1][1][2] = 0;
+I[45][1][2] = new Array();
+I[45][1][2][0]='El c&#243;lico nefr&#237;tico';
+I[45][1][2][1]='';
+I[45][1][2][2] = 0;
+I[45][1][3] = new Array();
+I[45][1][3][0]='La hemodi&#225;lisis';
+I[45][1][3][1]='';
+I[45][1][3][2] = 0;
+I[45][2] = 0;
+
+I[46] = new Array();
+I[46][0]='La s ramificaciones del ax&#243;n acaban en ___________';
+I[46][1] = new Array();
+I[46][1][0] = new Array();
+I[46][1][0][0]='las sinapsis';
+I[46][1][0][1]='';
+I[46][1][0][2] = 0;
+I[46][1][1] = new Array();
+I[46][1][1][0]='las c&#233;cluas de Schwann';
+I[46][1][1][1]='';
+I[46][1][1][2] = 0;
+I[46][1][2] = new Array();
+I[46][1][2][0]='las dendritas';
+I[46][1][2][1]='';
+I[46][1][2][2] = 0;
+I[46][1][3] = new Array();
+I[46][1][3][0]='los botones terminales';
+I[46][1][3][1]='';
+I[46][1][3][2] = 1;
+I[46][2] = 0;
+
+I[47] = new Array();
+I[47][0]='Los dos hemisferios cerebrales se conectan por _____________';
+I[47][1] = new Array();
+I[47][1][0] = new Array();
+I[47][1][0][0]='la sustancia gris';
+I[47][1][0][1]='';
+I[47][1][0][2] = 0;
+I[47][1][1] = new Array();
+I[47][1][1][0]='el cuerpo calloso';
+I[47][1][1][1]='';
+I[47][1][1][2] = 1;
+I[47][1][2] = new Array();
+I[47][1][2][0]='los ventr&#237;culos cerebrales';
+I[47][1][2][1]='';
+I[47][1][2][2] = 0;
+I[47][1][3] = new Array();
+I[47][1][3][0]='la sustancia blanca';
+I[47][1][3][1]='';
+I[47][1][3][2] = 0;
+I[47][2] = 0;
+
+I[48] = new Array();
+I[48][0]='Indica cu&#225;l es la frase incorrecta: <br />Al elevarse el diafragma _____________________';
+I[48][1] = new Array();
+I[48][1][0] = new Array();
+I[48][1][0][0]='se produce la espiraci&#243;n';
+I[48][1][0][1]='';
+I[48][1][0][2] = 0;
+I[48][1][1] = new Array();
+I[48][1][1][0]='disminuye el volumen pulmonar';
+I[48][1][1][1]='';
+I[48][1][1][2] = 0;
+I[48][1][2] = new Array();
+I[48][1][2][0]='se produce el intercambio de gases entre los alveolos y los capilares';
+I[48][1][2][1]='';
+I[48][1][2][2] = 1;
+I[48][1][3] = new Array();
+I[48][1][3][0]='la presi&#243;n dentro del pulm&#243;n es mayor que en el exterior';
+I[48][1][3][1]='';
+I[48][1][3][2] = 0;
+I[48][2] = 0;
+
+I[49] = new Array();
+I[49][0]='Los espermatozoides se almacenan en el ______________';
+I[49][1] = new Array();
+I[49][1][0] = new Array();
+I[49][1][0][0]='escroto';
+I[49][1][0][1]='';
+I[49][1][0][2] = 0;
+I[49][1][1] = new Array();
+I[49][1][1][0]='epid&#237;dimo';
+I[49][1][1][1]='';
+I[49][1][1][2] = 1;
+I[49][1][2] = new Array();
+I[49][1][2][0]='t&#250;bulos semin&#237;feros';
+I[49][1][2][1]='';
+I[49][1][2][2] = 0;
+I[49][1][3] = new Array();
+I[49][1][3][0]='ep&#233;ndimo';
+I[49][1][3][1]='';
+I[49][1][3][2] = 0;
+I[49][2] = 0;
+
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		Status[x] = new Array();
+		Status[x][0] = 0; // Question not done yet
+		Status[x][1] = new Array(); //for tracking whether answers chosen
+		for (var y=0; y<I[x][1].length; y++){
+			Status[x][1][y] = '0'; //Answers not chosen yet
+		}
+		Status[x][2] = 0; //Wrong tries at this question so far
+		Status[x][3] = 0; //For storing score out of one on this question
+	}
+}
+
+function UpdateQuestionStatus(QNum){
+	if (Status[QNum][2] >= Status[QNum][1].length-1){
+		Status[QNum][0] = 1;
+		for (var i=0; i<Status[QNum][1].length; i++){
+			if (Status[QNum][1][i] == '0'){
+				Status[QNum][1][i] = 'R';
+			}
+		}
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+	var NewNum = CurrQNum + ChangeBy;
+	if ((NewNum >= 0)&&(NewNum<I.length)){
+		CurrQNum = NewNum;
+		ShowQuestion(CurrQNum);
+	}
+	var CurrScore = '';
+	if ((ContinuousScoring == true)&&(EraseFeedback == true)){
+		CalculateScore();
+		var CurrScore = YourScoreIs + ' ' + Score + '%.';
+		WriteFeedback(CurrScore);
+	}
+}
+
+function BuildQuestion(QNum){
+	if (I[QNum][2] == 0){
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	else{
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += CheckButton;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	return Temp;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#FFFFCC" text="#660066" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#FFFFCC" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+function ShowAllQs(){
+	var Output = '';
+	for (var i=0; i<I.length-1; i++){
+		Output = Output + BuildQuestion(i);
+		Output = Output + '<tr><td colspan="4"><hr></hr></td></tr>';
+	}
+	Output = Output + BuildQuestion(I.length-1);
+	Output = TableOpener + Output + TableCloser;
+	DisplayExercise(Output);
+}
+
+function ShowQuestion(QNum){
+//First, create the Q number readout at the top
+	var Readout = (QNum+1) + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	Readout = QButtonsOpener + Readout + QButtonsCloser;
+
+	var Output = BuildQuestion(QNum);
+
+	Output = TableOpener + Output + TableCloser;
+
+	DisplayExercise(Readout + Output);
+
+//Mark the answers already done
+	for (i=0; i<Status[QNum][1].length; i++){
+		if (Status[QNum][1][i] == 'R'){
+			MarkAnswer(QNum,i,true)
+		}
+		if (Status[QNum][1][i] == 'W'){
+			MarkAnswer(QNum,i,false)
+		}
+		if (Status[QNum][1][i] == 'C'){
+			CheckCheckbox(QNum,i);
+		}
+	}
+//Eliminate feedback from previous question
+	if (EraseFeedback == true){
+		WriteFeedback('');
+	}
+}
+
+function CheckMulti(QNum){
+	var TotWrong = 0;
+	var Output = '';
+	var TotAns = I[QNum][1].length;
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		var b = eval('BottomFrame.document.QForm.A_' + QNum + '_' + i);
+
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Status[QNum][1][i] = 'C';
+			}
+			else{
+				Status[QNum][1][i] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<br />' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (Status[QNum][0] == 0){
+		if (TotWrong > 0){
+			Status[QNum][2]++;
+		}
+		if (TotWrong == 0){
+			Status[QNum][0] = 1;
+//Calculate the score for this question as a floating-point fraction of 1
+			Status[QNum][3] =  ((Status[QNum][1].length - Status[QNum][2]) - 1) / (Status[QNum][1].length - 1);
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(QNum, ANum){
+	var Output = I[QNum][1][ANum][1];
+
+	if (Output==''){
+		if (I[QNum][1][ANum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's not been previously answered correctly
+	if (Status[QNum][0] == 0){
+//If it's a correct answer
+		if (I[QNum][1][ANum][2] == 1){
+			Status[QNum][0] = 1;//Mark the Q as done
+			Status[QNum][1][ANum] = 'R';
+			MarkAnswer(QNum, ANum, true);
+//Calculate the score for this question as a floating-point fraction of 1
+			var PossibleWrongs = 0;
+			for (var i=0; i<I[QNum][1].length; i++){
+				if (I[QNum][1][i][2] == 0){
+					PossibleWrongs++;
+				}
+			}
+
+			if (PossibleWrongs == 0){PossibleWrongs = 1;}
+
+			Status[QNum][3] = 1 - (Status[QNum][2]/PossibleWrongs);
+
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+		else{
+			if (Status[QNum][1][ANum] != 'W'){
+				Status[QNum][1][ANum] = 'W';
+				MarkAnswer(QNum, ANum, false);
+				Status[QNum][2]++; //increment wrong tries for this Q
+			}
+		}
+	}
+
+	UpdateQuestionStatus(QNum);
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function CalculateScore(){
+	var TriedQs = 0;
+	var TotalScore = 0;
+	for (var i=0; i<Status.length; i++){
+		if ((Status[i][2] > 0)||(Status[i][3] == 1)){
+			TriedQs++;
+			TotalScore += Status[i][3];
+		}
+	}
+	if (TriedQs == 0){
+		Score = 0;
+	}
+	else{
+		Score = (Math.floor(100 * (TotalScore/TriedQs)));
+	}
+}
+
+function MarkAnswer(QNum, ANum, Right){
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum).value = Mark;
+	}
+}
+
+function CheckCheckbox(QNum, ANum){
+	if (eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum).checked = true;
+	}
+}
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+<frameset rows="25%,*" onload="StartUp()" framespacing="0" border="0">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+
+
+
+</html>

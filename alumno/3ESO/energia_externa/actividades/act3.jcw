@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jcross-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title></title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<crossword>
+<grid><row><cell>P</cell><cell>E</cell><cell>R</cell><cell>P</cell><cell>E</cell><cell>N</cell><cell>D</cell><cell>I</cell><cell>C</cell><cell>U</cell><cell>L</cell><cell>A</cell><cell>R</cell><cell>E</cell><cell>S</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>L</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>T</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>S</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>R</cell><cell>A</cell><cell>D</cell><cell>I</cell><cell>A</cell><cell>C</cell><cell>I</cell><cell>O</cell><cell>N</cell><cell>E</cell><cell>S</cell></row><row><cell></cell><cell></cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>L</cell><cell></cell><cell></cell><cell></cell></row><row><cell>A</cell><cell>L</cell><cell>B</cell><cell>E</cell><cell>D</cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell>V</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>L</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>I</cell><cell>N</cell><cell>F</cell><cell>R</cell><cell>A</cell><cell>R</cell><cell>R</cell><cell>O</cell><cell>J</cell><cell>O</cell><cell>S</cell></row><row><cell></cell><cell>H</cell><cell>I</cell><cell>D</cell><cell>R</cell><cell>Ó</cell><cell>G</cell><cell>E</cell><cell>N</cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>C</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>L</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>F</cell><cell>U</cell><cell>S</cell><cell>I</cell><cell>Ó</cell><cell>N</cell><cell></cell><cell></cell><cell>E</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>T</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>S</cell><cell></cell><cell></cell><cell>G</cell><cell>A</cell><cell>M</cell><cell>M</cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></grid>
+
+<clues><item><word>PERPENDICULARES</word><def>Lo son los rayos que atraviesan menor cantidad de gases al incidir sobre La Tierra</def></item><item><word>RADIACIONES</word><def>Formas de liberación de energía solar</def></item><item><word>ALBEDO</word><def>Se observa al anochecer. es la energía que llega del Sol y refleja La Tierra</def></item><item><word>INFRARROJOS</word><def>Rayos IR</def></item><item><word>HIDRÓGENO</word><def>Cuatro de estos átomos forman Helio</def></item><item><word>FUSIÓN</word><def>Reacción nuclear</def></item><item><word>GAMMA</word><def>Radiaciones con la mayor cantidad de energía</def></item><item><word>ULTRAVIOLETA</word><def>Rayos UV</def></item><item><word>SOL</word><def>Es de donde sale la energía que llega a La Tierra</def></item><item><word>OBLICUOS</word><def>Lo son aquellos rayos que atraviesan mayor cantidad de gases al incidir sobre La Tierra</def></item></clues>
+</crossword>
+</data>
+
+<hotpot-config-file>
+<jcross>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Completa el curcigrama y pulsa el botón &quot;Comprobar&quot;. En caso necesario puedes pulsar el botón &quot;Ayuda&quot; para ver una de las letras de la palabra. Pulsa sobre el numero correspondiente para ver una descripción sobre lo que se pregunta. Escribe la respuesta en mayúsculas. ¡No te olvides de los acentos!</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<clues-across></clues-across>
+<clues-down></clues-down>
+<next-correct-letter></next-correct-letter>
+<include-clue-list>0</include-clue-list>
+<enter-caption>Introducir</enter-caption>
+<include-hint>1</include-hint>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<include-key-navigation>1</include-key-navigation>
+<separate-javascript-file>0</separate-javascript-file>
+</jcross>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<hint-caption>Ayuda</hint-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jcross-file>

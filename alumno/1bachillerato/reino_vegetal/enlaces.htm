@@ -1,0 +1,724 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/reino_vegetal.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="100%" align="center">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/pino6.jpg" width="105" height="105"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/amanita.jpg" width="105" height="81"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/cardo.jpg" width="105" height="81"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/dionea1.jpg" width="105" height="84"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/cocotero.jpg" width="105" height="88"></td>
+                                </tr>
+                                <tr>
+                                      <td width="100%" align="center">
+                                      <img border="0" src="miniaturas/liquen.jpg" width="105" height="104"></td>
+                                </tr>
+                              </table>
+                      </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB"><font class="txtnegro">ENLACES</font><span class="txtnegro"> 
+                              DE INTER&Eacute;S</span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1"></td>
+                            <td width="522" valign="top"> 
+                              <table width="509" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://www.arrakis.es/%7Elluengo/fotosintesis.html" target="_blank" class="txtnegrolink">Fotos&iacute;ntesis</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    muy did&aacute;ctica e interesante. Fase luminosa 
+                                    y oscura de la fotos&iacute;ntesis con im&aacute;genes 
+                                    y esquemas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://www.forest.ula.ve/%7Erubenhg/fotosintesis/" target="_blank" class="txtnegrolink">Funciones 
+                                    de nutrici&oacute;n en vegetales</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td class="txt" width="488"> P&aacute;gina que 
+                                    nos presenta toda la informaci&oacute;n acerca 
+                                    de la naturaleza de la luz, de la clorofila 
+                                    y los pigmentos accesorios, de la estructura 
+                                    del cloroplasto y las membranas fotosint&eacute;ticas, 
+                                    de las fases de la fotos&iacute;ntesis y de 
+                                    las reacciones de la luz: fotosistemas, fotofosforilaci&oacute;n, 
+                                    transporte de fotosint&eacute;tico de electrones, 
+                                    ciclo de Calvin, fotorrespiraci&oacute;n y 
+                                    m&aacute;s conceptos de nutrici&oacute;n vegetal. 
+                                    Extensa y did&aacute;ctica.</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><a href="http://www.monografias.com/trabajos6/ecoya/ecoya.shtml%20" target="_blank" class="txtnegrolink"><img src="../img/bolo.gif" width="9" height="13" border="0"></a></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://icarito.tercera.cl/enc_virtual/c_nat/ecosistema/eco1.html" target="_blank" class="txtnegrolink"><font class="txtnegrolink">Nutrici&oacute;n 
+                                    aut&oacute;trofa: fotos&iacute;ntesis </font></a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt"> Muy breve 
+                                    y sencilla. Describe el proceso de la fotos&iacute;ntesis 
+                                    de forma esquem&aacute;tica.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"> <a href="http://web.uniovi.es/bos/Asignaturas/Botanica/1.htm" target="_blank" class="txtnegrolink"> 
+                                    Bot&aacute;nica</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="13">&nbsp;</td>
+                                  <td width="488" height="13"><font class="txt">Asignatura 
+                                    de 1 er curso Licenciatura de Biolog&iacute;a. 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://www.iespana.es/natureduca/cienc_fotosintesis.htm" target="_blank" class="txtnegrolink">Clorofila 
+                                    y fotos&iacute;ntesis</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Breve informaci&oacute;n 
+                                    sobre clorofila y fotos&iacute;ntesis.</font> 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://www.fuchsiarama.com/index.htm?http://www.fuchsiarama.com/agua.htm&1" target="_blank" class="txtnegrolink">Nutrici&oacute;n 
+                                    vegetal </a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    biling&uuml;e espa&ntilde;ol / ingl&eacute;s 
+                                    sobre nutrici&oacute;n vegetal. Muchos temas 
+                                    relacionados con la nutrici&oacute;n vegetal.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://chimera.javeriana.edu.co/bo93/Movimveg/sld013.htm" class="txtnegrolink" target="_blank">Nastias 
+                                    y movimientos vegetales </a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Presentaciones 
+                                    de Power Point sobre nastias y movimientos 
+                                    vegetales. Varias diapositivas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://www.si-educa.net/basico/sieduca.php?file=docs/cientificas/40.htm" target="_blank" class="txtnegrolink">Tropismos 
+                                    en vegetales</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td class="txt" width="488">Tropismos en vegetales. 
+                                    Las respuestas de las plantas.</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><a href="http://icarito.latercera.cl/enc_virtual/c_nat/seres/seres2.html" target="_blank" class="txtnegrolink">Movimientos 
+                                    vegetales</a> </td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="26">&nbsp;</td>
+                                  <td width="488" height="26"> 
+                                    <p><font class="txt">Otras respuestas vegetales. 
+                                      Los otros dos tipos de respuesta de los 
+                                      vegetales frentea distintos est&iacute;mulos 
+                                      son las nastias y los movimientos de turgescencia. 
+                                      .</font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"> 
+                                    <p><font class="txt"><a href="http://members.fortunecity.com/rl/fototrop.htm" class="txtnegrolink" target="_blank">Movimientos 
+                                      y hormonas vegetales </a></font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"> 
+                                    <p><font class="txt">Tambi&eacute;n en portugu&eacute;s, 
+                                      como la anterior. Se trata de una p&aacute;gina 
+                                      con los movimientos principales en vegetales 
+                                      y principales hormonas vegetales. Su funcionamiento. 
+                                      Regulaci&oacute;n hormonal.</font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.botanical-online.com/lasplantasmovimientosvegetales.htm" class="txtnegrolink" target="_blank">Relaci&oacute;n 
+                                    vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt"> Muy did&aacute;ctica, 
+                                    sobre movimientos de los vegetales.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://alipso.com/monografias/la_evolucion_de_la_reproduccion/" class="txtnegrolink" target="_blank">Evoluci&oacute;n 
+                                    de la reproducci&oacute;n vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    con mucha informaci&oacute;n. S&oacute;lo 
+                                    sirve para imprimir y leer.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.botanical-online.com/botanica2.htm" class="txtnegrolink" target="_blank">Bot&aacute;nica 
+                                    general</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt"> Animaciones 
+                                    y textos pero, sobre todo, animaciones. Ofrece 
+                                    m&uacute;ltiples secciones para b&uacute;squeda 
+                                    de informaci&oacute;n. Galer&iacute;a de fotos 
+                                    por nombres vulgares o cient&iacute;ficos 
+                                    para ilustraciones. Muy completa en tres idiomas. 
+                                    Todas las familias bot&aacute;nicas en fotos 
+                                    con sus g&eacute;neros y especies caracter&iacute;sticos. 
+                                    Buena para taxonom&iacute;a e im&aacute;genes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.monografias.com/trabajos/lasemilla/lasemilla.shtml" class="txtnegrolink" target="_blank">La 
+                                    semilla</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    muy completa, fea y con mucho texto sobre 
+                                    informaci&oacute;n general de bot&aacute;nica. 
+                                    Teor&iacute;a sin im&aacute;genes. Buenos 
+                                    textos para buscar informaci&oacute;n sobre 
+                                    la semilla y el fruto, la flor, etc.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.acad.uncor.edu/libro-cocucci.pdf" class="txtnegrolink" target="_blank">Reino 
+                                    vegetal y ciclos biol&oacute;gicos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt"> Una p&aacute;gina 
+                                    de la Universidad de C&oacute;rdoba absolutamente 
+                                    profesional, sobre el reino vegetal y sus 
+                                    ciclos biol&oacute;gicos. Se especifican todos 
+                                    los ciclos en blanco y negro en un libro de 
+                                    99 p&aacute;ginas sobre todas las alternativas 
+                                    y variabilidad de los ciclos biol&oacute;gicos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.unex.es/botanica/" class="txtnegrolink" target="_blank">Ciclos 
+                                    biol&oacute;gicos en vegetales</a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    excepcional sobre ciclos biol&oacute;gicos 
+                                    en vegetales. Toda las variaciones. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/plantas/fotosint.htm" class="txtnegrolink" target="_blank">El 
+                                    reino vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt"> Fotos&iacute;ntesis, 
+                                    Hormonas vegetales, respuestas de los vegetales 
+                                    a est&iacute;mulos externos y reproducci&oacute;n 
+                                    de las plantas con flores, evoluci&oacute;n 
+                                    floral, ciclo biol&oacute;gico de gimnospermas 
+                                    y angiospermas. Polinizaci&oacute;n y fecundaci&oacute;n 
+                                    cruzada. Reproducci&oacute;n vegetativa.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://icarito.tercera.cl/enc_virtual/c_nat/reproduccion/reproduccion4.html" class="txtnegrolink" target="_blank">Reproducci&oacute;n 
+                                    sexual: vegetales superiores</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Todo sobre 
+                                    ciclos biol&oacute;gicos y reproducci&oacute;n 
+                                    en vegetales corm&oacute;fitos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://omega.ilce.edu.mx:3000/sites/ciencia/volumen2/ciencia3/063/htm/sec_12.html" class="txtnegrolink" target="_blank">Reproducci&oacute;n 
+                                    de vegetales marinos</a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Reproducci&oacute;n 
+                                    en los vegetales marinos, ciclos de todo tipo 
+                                    en vegetales de agua de mar. Buena, con mucha 
+                                    informaci&oacute;n e im&aacute;genes de ciclos 
+                                    biol&oacute;gicos. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://platea.pntic.mec.es/%7Ejamunoz/fichas/reproveg.htm" class="txtnegrolink" target="_blank">Principales 
+                                    grupos vegetales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Los objetivos 
+                                    de la p&aacute;gina giran alrededor de las 
+                                    estructuras reproductoras, mecanismos de fecundaci&oacute;n 
+                                    de los siguientes grupos vegetales: Angiospermas, 
+                                    Gimnospermas, Helechos y Musgos. Se completa 
+                                    con un seguimiento tutorial de preguntas y 
+                                    respuestas tipo test.<br>
+                                    Con manual de preguntas y respuestas y con 
+                                    programa interactivo.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://omega.ilce.edu.mx:3000/sites/ciencia/volumen2/ciencia3/063/htm/sec_14.html" class="txtnegrolink" target="_blank">CICLOS 
+                                    REPRODUCTIVOS</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Todo sobre 
+                                    la biolog&iacute;a reproductiva en vegetales. 
+                                    Buena, mucha informaci&oacute;n e im&aacute;genes.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://centros6.pntic.mec.es/cea.pablo.guzman/cc_naturales/vegetales.htm" class="txtnegrolink" target="_blank">Vegetales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    muy interesante con toda esta informaci&oacute;n 
+                                    detallada y explicada con im&aacute;genes 
+                                    y textos: faner&oacute;gamas, clases de reproducci&oacute;n, 
+                                    cript&oacute;gamas, polinizaci&oacute;n, fecundaci&oacute;n, 
+                                    el fruto, la flor, fotos&iacute;ntesis, etc.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.iespana.es/natureduca/botan_reproducc1.htm" class="txtnegrolink" target="_blank">Taxonom&iacute;a 
+                                    bot&aacute;nica</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">De gran inter&eacute;s. 
+                                    Facilita mucha informaci&oacute;n general 
+                                    bot&aacute;nica e im&aacute;genes. Dividida 
+                                    en partes y secciones siguiendo la taxonom&iacute;a 
+                                    bot&aacute;nica.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.monografias.com/trabajos5/hiscla/hiscla2.shtml" class="txtnegrolink" target="_blank">Transporte 
+                                    en vegetales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">En portugu&eacute;s. 
+                                    Xilema y floema. Transporte vegetal..</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://host04.ipowerweb.com/%7Enatureno/notes/dbiologia/biologia_vasculares.htm" class="txtnegrolink" target="_blank">Histolog&iacute;a 
+                                    vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    fea pero con mucho texto sobre tejidos vegetales.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://members.tripod.com/bioclub/pag2001a.htm" class="txtnegrolink" target="_blank">Cortes 
+                                    histol&oacute;gicos vegetales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    muy buena sobre tejidos vegetales con im&aacute;genes 
+                                    de principales tejidos y cortes histol&oacute;gicos.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.iespana.es/natureduca/botan_tallo2.htm" class="txtnegrolink" target="_blank">Organograf&iacute;a 
+                                    vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    excelente sobre organograf&iacute;a vegetal. 
+                                    Buenos esquemas y recuadros. Bien organizada. 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/plantas/maderas.htm" class="txtnegrolink" target="_blank">Organograf&iacute;a 
+                                    vegetal comparada</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Excelente 
+                                    p&aacute;gina comparando la organograf&iacute;a 
+                                    vegetal de distintos grupos vegetales y su 
+                                    evoluci&oacute;n. Maderas y organizaci&oacute;n 
+                                    vegetal.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/plantas/planta2.htm" class="txtnegrolink" target="_blank">El 
+                                    Cormo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Todo sobre 
+                                    la ra&iacute;z, tallo y hojas: su estructura 
+                                    y fisiolog&iacute;a.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.sagan-gea.org/hojared_AGUA/paginas/4agua.html" class="txtnegrolink" target="_blank">Circulaci&oacute;n 
+                                    vegetal</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Fotograf&iacute;as 
+                                    al microscopio electr&oacute;nico de estomas 
+                                    para la transpiraci&oacute;n. Circulaci&oacute;n 
+                                    de savias por la planta. Muy buena.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.monografias.com/trabajos5/hiscla/hiscla2.shtml" class="txtnegrolink" target="_blank">Vegetales 
+                                    corm&oacute;fitos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">P&aacute;gina 
+                                    muy fea, pero con mucho texto e informaci&oacute;n 
+                                    acerca de los tejidos y estructuras de las 
+                                    plantas corm&oacute;fitas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://biocity.iespana.es/biocity/Fisveg/FV8.HTM" class="txtnegrolink" target="_blank">Hormonas 
+                                    vegetales </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Hormonas vegetales 
+                                    y su transporte por el xilema y el floema.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.portalforestal.com/noticias/verNoticia.asp?id=421" class="txtnegrolink" target="_blank">Caucho 
+                                    </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Informaci&oacute;n 
+                                    general sobre el origen, utilizaci&oacute;n 
+                                    y proceso industrial del látex o caucho. Muy 
+                                    buena.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.flissbis.com/aroma/" class="txtnegrolink" target="_blank">Aceites 
+                                    esenciales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Aqu&iacute; 
+                                    encontrar&aacute;s mucho sobre Aceites Esenciales. 
+                                    Aromas saludables y curativos. Perfumes y 
+                                    esencias. Preguntas y respuestas.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.lindisima.com/aceites.htm" class="txtnegrolink" target="_blank">Lind&iacute;sima 
+                                    aceites esenciales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Lind&iacute;sima. 
+                                    Aceites esenciales y aromaterapia, los beneficios 
+                                    de las plantas y los aceites esenciales. Aprende 
+                                    a usar los aceites esenciales. Propiedades 
+                                    de los aceites esenciales. Distinci&oacute;n 
+                                    de los aceites esenciales y su calidad.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://store.yahoo.com/catalyticgenerators/loshecdelet.html" class="txtnegrolink" target="_blank">Informaci&oacute;n 
+                                    del etileno</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Explicaci&oacute;n 
+                                    detallada del Etileno como hormona natural 
+                                    de las plantas. Afecta el crecimiento, desarrollo, 
+                                    maduraci&oacute;n y envejecimiento de todas 
+                                    las plantas. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="488"><font class="txt"><a href="http://www.atexport.com/pagesp/info/problema.htm" class="txtnegrolink" target="_blank">Etileno 
+                                    y la Conservaci&oacute;n de Frutas y Verduras</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488"><font class="txt">Explicaci&oacute;n 
+                                    detallada del uso del etileno como hormona 
+                                    que provoca la maduraci&oacute;n precoz de 
+                                    frutas y verduras y sus efectos metab&oacute;licos 
+                                    sobre los vegetales.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="488">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="1"></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/arbol.jpg" width="105" height="84"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/flor_hermafrodita.jpg" width="105" height="84"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/cianofita.jpg" width="105" height="72"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/helechoshembra.jpg" width="105" height="93"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/musgo3.jpg" width="105" height="132"></td>
+                              </tr>
+                              <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/algasverdes.jpg" width="105" height="73"></td>
+                              </tr>
+                            </table>
+                      </td>
+                    </tr>
+                    </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

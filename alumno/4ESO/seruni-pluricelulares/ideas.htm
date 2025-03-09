@@ -1,0 +1,429 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="790" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/seresunipluricel.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td height="764" valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="110" height="763" valign="top" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber1">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/bacteria-stock-bg.jpg" width="105" height="88"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celula_vegetal.jpg" width="105" height="79"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celulahumana.jpg" width="105" height="99"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/volvox.jpg" width="105" height="105"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/ovulo.jpg" width="105" height="91"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/sperm.jpg" width="105" height="85"></td>
+                        </tr>
+                      </table>
+                      </td>
+                      <td width="535" valign="top" bgcolor="#e6ffe6" align="center"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="477" height="19" bgcolor="#BBDDBB"><font class="txtnegro">IDEAS 
+                              FUNDAMENTALES </font> </td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                          <tr> 
+                            <td width="6" height="18"></td>
+                            <td width="499"></td>
+                          </tr>
+                          <tr> 
+                            <td height="707"></td>
+                            <td valign="top"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="9" height="31" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td width="477" valign="top"> 
+                                    <p><span class="txt">Todo ser vivo cumple 
+                                      tres </span><a href="contenidos1.htm#funciones"><span class="txtnegrolink">funciones</span></a><span class="txt">: 
+                                      nutrici&oacute;n, relaci&oacute;n y reproducci&oacute;n.</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top" height="31"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"> 
+                                    <p><span class="txt">Todo ser vivo est&aacute; 
+                                      formado por </span><a href="contenidos1.htm#biomoleculas"><span class="txtnegrolink">biomol&eacute;culas</span></a><span class="txt">.</span> 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td> 
+                                    <p class="txt">Las biomol&eacute;culas pueden 
+                                      ser <span class="txtnegro"><a href="contenidos2.htm#organica" class="txtnegrolink">org&aacute;nicas 
+                                      </a></span>o <span class="txtnegro"><a href="contenidos2.htm" class="txtnegrolink">inorg&aacute;nicas</a></span>.</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td> 
+                                    <p class="txt">Las <a href="contenidos2.htm"><span class="txtnegrolink">inorg&aacute;nicas</span></a> 
+                                      son el agua y las sales minerales.</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td> 
+                                    <p><span class="txt">Las </span><a href="contenidos2.htm#organica"><span class="txtnegrolink">org&aacute;nicas</span></a><span class="txt"> 
+                                      o macromol&eacute;culas tienen amplias funciones 
+                                      dentro del organismo y son los az&uacute;cares, 
+                                      vitaminas, grasas, prote&iacute;nas y &aacute;cidos 
+                                      nucleicos.</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td> 
+                                    <p><span class="txt">Todo ser vivo est&aacute; 
+                                      formado por </span><a href="contenidos3.htm"><span class="txtnegrolink">c&eacute;lulas</span></a><span class="txt">.</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td height="50" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"> 
+                                    <p> <span class="txt"> Las c&eacute;lulas 
+                                      son diferentes entre s&iacute; y est&aacute;n 
+                                      formadas por </span><span class="txtnegro"><a href="contenidos5.htm" class="txtnegrolink">org&aacute;nulos 
+                                      celulares</a></span><span class="txt">. 
+                                      Es la unidad anat&oacute;mica y fisiol&oacute;gica 
+                                      del ser vivo.</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td height="50" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"> 
+                                    <p><span class="txt">Los org&aacute;nulos 
+                                      celulares ser&aacute;n m&aacute;s o menos 
+                                      abundantes y diferentes seg&uacute;n el 
+                                      tipo de c&eacute;lula que sea: </span><a href="contenidos4.htm"><span class="txtnegrolink">procariota</span></a><span class="txt"> 
+                                      (sin n&uacute;cleo) o </span><a href="contenidos5.htm"><span class="txtnegrolink">eucariota</span></a><span class="txt"> 
+                                      (con n&uacute;cleo).</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td height="31" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">La c&eacute;lula 
+                                    eucariota es m&aacute;s evolucionada y puede 
+                                    ser <a href="contenidos5.htm#celula"><span class="txtnegrolink">animal 
+                                    o vegetal</span></a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="50" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"><span class="txt">La c&eacute;lula 
+                                    </span><a href="contenidos5.htm#celula"><span class="txtnegrolink">animal</span></a><span class="txt"> 
+                                    tiene centr&iacute;olos y nunca tiene pared 
+                                    vegetal ni cloroplastos.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td height="50" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"> 
+                                    <p><span class="txt">La c&eacute;lula </span><a href="contenidos5.htm#celula"><span class="txtnegrolink">vegetal</span></a><span class="txt"> 
+                                      nunca tiene centr&iacute;olos y siempre 
+                                      posee pared y cloroplastos.</span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td height="50" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top"> <span class="txt"> En el </span><a href="contenidos5.htm#"><span class="txtnegrolink">n&uacute;cleo</span></a><span class="txt"> 
+                                    se encuentran los cromosomas que albergan 
+                                    el mensaje gen&eacute;tico del ser vivo.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">La c&eacute;lula 
+                                    animal tiene nutrici&oacute;n <a href="contenidos6.htm#trofa"><span class="txtnegrolink">heter&oacute;trofa</span></a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">La c&eacute;lula 
+                                    vegetal tiene nutrici&oacute;n <a href="contenidos6.htm#trofa"><span class="txtnegrolink">aut&oacute;trofa</span></a> 
+                                    por fotos&iacute;ntesis.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Las c&eacute;lulas 
+                                    poseen <a href="contenidos7.htm"><span class="txtnegrolink">sensibilidad</span></a> 
+                                    y pueden reaccionar ante determinados est&iacute;mulos: 
+                                    luminosos, mec&aacute;nicos o qu&iacute;micos.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Los organismos 
+                                    m&aacute;s primitivos son <a href="contenidos9.htm"><span class="txtnegrolink">unicelulares</span></a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Si las c&eacute;lulas 
+                                    permanecen juntas tras la divisi&oacute;n 
+                                    celular se pueden formar colonias o seres 
+                                    <a href="contenidos10.htm"><span class="txtnegrolink">pluricelulares</span></a><span class="txtnegrolink">.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">El mecanismo de 
+                                    divisi&oacute;n celular de las c&eacute;lulas 
+                                    eucariotas es por <a href="contenidos8.htm#mitosis"><span class="txtnegrolink">mitosis</span></a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Existen individuos 
+                                    <a href="contenidos9.htm#colonias"><span class="txtnegrolink">coloniales</span></a> 
+                                    que son estados transicionales entre seres 
+                                    unicelulares y pluricelulares.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Los seres pluricelulares 
+                                    tienen muchas c&eacute;lulas diferentes que 
+                                    provienen de la c&eacute;lula madre o cigoto 
+                                    por <a href="contenidos10.htm"><span class="txtnegrolink">diferenciaci&oacute;n 
+                                    celular</span></a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">Las c&eacute;lulas 
+                                    se agrupan en tejidos. Estos tejidos se asocian 
+                                    para cumplir misiones espec&iacute;ficas y 
+                                    forman <a href="contenidos10.htm#organos"><span class="txtnegrolink">&oacute;rganos</span></a>. 
+                                    Los &oacute;rganos a su vez se asocian para 
+                                    ir mejorando la funci&oacute;n a la que est&aacute;n 
+                                    destinados y forman <span class="txtnegro"><a href="contenidos10.htm#aparatos" class="txtnegrolink">aparatos 
+                                    o sistemas</a></span>.</td>
+                                </tr>
+                                  <tr> 
+                                  <td height="34" valign="top"><img src="../img/bolo.gif" width="9" height="13"></td>
+                                  <td valign="top" class="txt">El conjunto de 
+                                    aparatos o sistemas forman un <a href="contenidos10.htm#organismos"><span class="txtnegrolink">organismo</span></a> 
+                                    completo y &uacute;nico.</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td width="112" valign="top" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/aguila.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/encina.jpg" width="105" height="95"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/setas.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/seudopodo.jpg" width="105" height="97"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/cromosomas.jpg" width="105" height="86"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/algas_unicel.jpg" width="105" height="84"></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+ </body>
+</html>

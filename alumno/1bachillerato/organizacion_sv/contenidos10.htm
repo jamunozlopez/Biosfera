@@ -1,0 +1,497 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/organizacion_vida.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="514" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="232" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos9.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (10/11) - <a href="contenidos11.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">8.- ORGANIZACI&Oacute;N ANIMAL. 
+                                HISTOLOG&Iacute;A ANIMAL.</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>La especializaci&oacute;n en los 
+                                            tejidos animales es fant&aacute;stica. 
+                                            Existen m&aacute;s de 200 tejidos 
+                                            animales diferentes, dentro de un 
+                                            mismo vertebrado, agrupados en unos 
+                                            cuantos tejidos generales: epitelios, 
+                                            muscular, nervioso y conectivo.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="left"><img src="imagenes/h_animal.gif" width="709" height="147" alt="&quot;Histolog&iacute;a Animal&quot;" hspace="5"></p>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p> <span class="txtnegro"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_epitelios.htm','epitelios','resizable=yes,width=360,height=335')">Tejidos 
+                                            epiteliales</a></span>: Seg&uacute;n 
+                                            su funci&oacute;n existen dos tipos: 
+                                            epitelios de revestimiento y glandulares. 
+                                          </p>
+                                          <ul>
+                                            <li><span class="txtnegro">De revestimiento</span>: 
+                                              Recubren la superficie corporal 
+                                              y los &oacute;rganos internos. Se 
+                                              unen sus c&eacute;lulas estrechamente 
+                                              formando capas. Estas c&eacute;lulas 
+                                              pueden ser <span class="txtnegro">planas</span> 
+                                              (<a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_endotelio.htm','epitelios','resizable=yes,width=360,height=335')">endotelios</a>: 
+                                              protegen pero permiten el intercambio 
+                                              de sustancias: pared de capilares 
+                                              sangu&iacute;neos) o <span class="txtnegro">poli&eacute;dricas</span> 
+                                              (epitelios: con <a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_microvellosidades.htm','epitelios','resizable=yes,width=360,height=335')">microvellosidades</a>, 
+                                              <a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_epitelio_ciliado.htm','epitelios','resizable=yes,width=360,height=335')">cilios</a>, 
+                                              o capas de c&eacute;lulas estratificadas).<br>
+                                            </li>
+                                            <li><span class="txtnegro">Glandulares</span>: 
+                                              Son c&eacute;lulas secretoras que 
+                                              se asocian en gl&aacute;ndulas. 
+                                              Gl&aacute;ndulas que pueden ser 
+                                              endocrinas (secreci&oacute;n interna) 
+                                              o exocrinas (secreci&oacute;n externa).</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table><br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txtnegro"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_muscular.htm','muscular','resizable=yes,width=360,height=335')">Tejido 
+                                            muscular:</a></span> Responsable de 
+                                            los movimientos. Con c&eacute;lulas 
+                                            alargadas contr&aacute;ctiles. </p>
+                                          <ul>
+                                            <li><span class="txtnegro">Muscular 
+                                              estriado</span>: Con prote&iacute;nas 
+                                              de actina y miosina. Existen dos 
+                                              tipos: uno estriado esquel&eacute;tico, 
+                                              que es de movimiento voluntario 
+                                              y mueve los huesos del esqueleto. 
+                                              Otro estriado cardiaco, que es de 
+                                              movimiento involuntario y mueve 
+                                              el coraz&oacute;n. <br>
+                                            </li>
+                                            <li><span class="txtnegro">Muscular 
+                                              liso</span>: Su contracci&oacute;n 
+                                              se realiza sin control consciente. 
+                                              Tapiza vasos sangu&iacute;neos y 
+                                              rodea &oacute;rganos internos (intestino 
+                                              y &uacute;tero).</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table><br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txtnegro"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_nervioso.htm','nervioso','resizable=yes,width=320,height=360')">Tejido 
+                                            nervioso:</a></span> Recibe est&iacute;mulos 
+                                            y los conduce por el resto del cuerpo. 
+                                            Tiene dos tipos celulares: <span class="txtnegro"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_neuronas.htm','nervioso','resizable=yes,width=320,height=360')">neuronas</a></span> 
+                                            (que reciben est&iacute;mulos diferentes 
+                                            y los transforma en impulsos nerviosos 
+                                            hasta un &oacute;rgano efector) y 
+                                            <span class="txtnegro">neurogl&iacute;a</span> 
+                                            (que desempe&ntilde;a funciones metab&oacute;licas, 
+                                            de soporte y protecci&oacute;n de 
+                                            las neuronas). </p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table><br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txtnegro">Tejidos conectivos</span>: 
+                                            Tejidos variados con funci&oacute;n 
+                                            de protecci&oacute;n y soporte. C&eacute;lulas 
+                                            dispersas, variadas y con una sustancia 
+                                            matriz que las une.<br>
+                                          </p>
+                                          <ul>
+                                            <li><span class="txtnegro">Tejido 
+                                              conjuntivo</span>: Laxo (que rellena 
+                                              espacios entre &oacute;rganos y 
+                                              otros tejidos: fibrocitos, macr&oacute;fagos 
+                                              y <a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_adiposo.htm','conectivo','resizable=yes,width=320,height=300')">adipocitos</a>). 
+                                              <br>
+                                            </li>
+                                            <li><span class="txtnegro">Tejido 
+                                              cartilaginoso</span>: Funci&oacute;n 
+                                              de formar las articulaciones entre 
+                                              los huesos, formar esqueletos, dar 
+                                              soporte, etc. <br>
+                                            </li>
+                                            <li><span class="txtnegro"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_oseo.htm','conectivo','resizable=yes,width=320,height=300')">Tejido 
+                                              &oacute;seo:</a></span> Mineralizado 
+                                              con gran dureza; su misi&oacute;n 
+                                              es esquel&eacute;tica. Existe un 
+                                              tejido &oacute;seo <span class="txtnegro">esponjoso</span> 
+                                              (en la ep&iacute;fisis de los huesos 
+                                              largos) y otro <span class="txtnegro">compacto</span> 
+                                              (en la di&aacute;fisis de los huesos 
+                                              largos).</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table><br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txtnegro">Tejidos vasculares</span>: 
+                                            La <span class="txtnegrolink"><a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_sangre.htm','vasculares','resizable=yes,width=320,height=300')">sangre</a></span> 
+                                            y la <span class="txtnegro">linfa</span>. 
+                                            Est&aacute;n formados por una matriz 
+                                            fundamental l&iacute;quida, el <a href="#" class="txtnegrolink" onMouseOver="MM_openBrWindow('t_liquido_intersticial.htm','vasculares','resizable=yes,width=320,height=300')">plasma</a> 
+                                            que mantiene en suspensi&oacute;n 
+                                            diversos tipos celulares.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center">
+                                <br>
+                                <div align="center"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ13.htm" class="txtnegrolink">Actividad 
+                                          13</a></font> <a href="activ13.htm"><img src="imagenes/activ13.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p align="left"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink"></span></a><i><a name="act_inves10"></a></i><br>
+                                </p>
+                                <div align="center"> 
+                                  <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                    <tr> 
+                                      <td class="ttBIOSFERA" width="642">Actividad 
+                                        de investigaci&oacute;n 10: Los tejidos 
+                                        animales</td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA">Introducci&oacute;n: 
+                                        <font size="-2">Igual que en la actividad 
+                                        de investigaci&oacute;n anterior, se trata 
+                                        de profundizar en el conocimiento de las 
+                                        caracter&iacute;sticas y funciones m&aacute;s 
+                                        importantes que realizan y poseen los 
+                                        tejidos animales.</font></td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p>Tarea: <font size="-2">Con la informaci&oacute;n 
+                                          de la web sobre tejidos animales, intenta 
+                                          confeccionar un póster completo en cart&oacute;n 
+                                          pluma que resuma esquem&aacute;tica 
+                                          y gr&aacute;ficamente los diversos tejidos 
+                                          presentes en un vertebrado cualquiera. 
+                                          Extrae de los diversos buscadores, en 
+                                          las distintas p&aacute;ginas especializadas 
+                                          en histolog&iacute;a animal, las mejores 
+                                          im&aacute;genes que ilustren la funci&oacute;n 
+                                          que realizan todos y cada uno de los 
+                                          tejidos animales explicados. Selecciona 
+                                          bien los textos y resume la informaci&oacute;n, 
+                                          de manera que de cada uno de ellos destaques: 
+                                          la estructura, el aspecto general, la 
+                                          forma de las c&eacute;lulas que lo forman, 
+                                          los componentes celulares diferenciales 
+                                          (si los presentan) y la funci&oacute;n 
+                                          espec&iacute;fica dentro del animal. 
+                                          Para la explicaci&oacute;n de los diversos 
+                                          tejidos puedes elegir un animal cualquiera 
+                                          (vertebrado) y a partir de sus estructuras 
+                                          y &oacute;rganos puedes ir diseccionando 
+                                          sus tejidos principales. <br>
+                                          Es un trabajo grupal que puede realizarse 
+                                          de dos formas: el grupo realiza el 
+                                        póster 
+                                          con todos los tejidos animales o bien, 
+                                          cada peque&ntilde;o grupo se especializa 
+                                          en un tejido, profundiza en &eacute;l 
+                                          y expone los resultados de su investigaci&oacute;n 
+                                          al resto de la clase.</font></p>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p>Recursos: <font size="-2">Te ofrecemos 
+                                          una selecci&oacute;n de las mejores 
+                                          p&aacute;ginas para la realizaci&oacute;n 
+                                          de esta tarea: <br>
+                                          <a href="http://www.ufrj.br/dhe" target="_blank"><font color="#FFFFCC">ATLAS 
+                                          DE ANATOM&Iacute;A COMPARADA.</font></a><br>
+                                          <a href="http://www.santillana.es/proyectosEnRed/secunda/htm/3biologiaYgeologia/bio03_2.htm" target="_blank"><font color="#FFFFCC">TEJIDO 
+                                          HUMANO Y TEJIDO VEGETAL.</font></a><br>
+                                          <a href="http://www.biologialmango.metropoliglobal.com/tejidos" target="_blank"><font color="#FFFFCC">LOS 
+                                          TEJIDOS VEGETALES Y ANIMALES.</font></a><br>
+                                          <a href="http://www.usal.es/histologia" target="_blank"><font color="#FFFFCC">HISTOLOG&Iacute;A 
+                                          HUMANA.</font></a><br>
+                                          <a href="http://usuarios.lycos.es/webquestions2/tejidos.htm" target="_blank"><font color="#FFFFCC">TEJIDOS 
+                                          ANIMALES.</font></a></font></p>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                        <font size="-2"> Se evaluar&aacute; la 
+                                        capacidad de s&iacute;ntesis y an&aacute;lisis 
+                                        de la informaci&oacute;n utilizada, la 
+                                        presentaci&oacute;n y la exposici&oacute;n 
+                                        did&aacute;ctica de la misma. Si el trabajo 
+                                        se ha realizado en peque&ntilde;os grupos, 
+                                        exponiendo cada uno un tejido, se tendr&aacute; 
+                                        en cuenta si se han desarrollado todos 
+                                        los aspectos del estudio del tejido por 
+                                        igual. Se podr&aacute; comparar el trabajo 
+                                        desarrollado en el an&aacute;lisis de 
+                                        los textos y en la presentaci&oacute;n 
+                                        de la misma. </font></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p></p>
+                                <p><br>
+                                </p>
+                              </div>
+                              <div align="center"></div>
+                              <p align="right"><a class="txtnegrolink" href="contenidos9.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (10/11) - <a href="contenidos11.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

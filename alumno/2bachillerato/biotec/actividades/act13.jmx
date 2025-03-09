@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmix-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Ordena los siguientes enventos en la Historia de la Biotecnología</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Ordena los siguientes enventos en la Historia de la Biotecnología</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<jumbled-order-exercise><main-order><segment>Se acuña la palabra Bioética</segment>
+<segment>Moratoria en los trabajos con ADN recombinante</segment>
+<segment>Conferencia de Asilomar</segment>
+<segment>Conferencia para la Biodiversidad</segment>
+<segment>Comité Internacional de Bioética. La Biotecnología y la Dignidad Humana</segment>
+</main-order></jumbled-order-exercise>
+</data>
+
+<hotpot-config-file>
+<jmix>
+<exercise-subtitle>Arrastra con el botón izquierdo del ratón los eventos en el orden que deseas colocarlos hasta las líneas del ejercicio. Cuando los hayas colocado, suelta el botón izquierdo del ratón.</exercise-subtitle>
+<instructions>Coloca los siguientes eventos en la Historia de la Biotecnología en orden cronológico de aparición.</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Orden incorrecto</guess-incorrect>
+<this-much-correct>Esta es la parte correcta de tu respuesta, en el orden cronológico correcto</this-much-correct>
+<next-correct-part></next-correct-part>
+<remaining-words>Eventos por colocar</remaining-words>
+<click-to-add></click-to-add>
+<also-correct></also-correct>
+<include-undo>1</include-undo>
+<include-restart>1</include-restart>
+<include-hint>0</include-hint>
+<next-ex-url>autoeva3.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<capitalize-first-letter>0</capitalize-first-letter>
+<separate-javascript-file>0</separate-javascript-file>
+</jmix>
+
+<global>
+
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<undo-caption>Deshacer</undo-caption>
+<hint-caption>Pista</hint-caption>
+<restart-caption>Comenzar</restart-caption>
+<your-score-is>Tu puntuación es</your-score-is>
+<show-also-correct>1</show-also-correct>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<contents-url>cierre.htm</contents-url>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmix-file>

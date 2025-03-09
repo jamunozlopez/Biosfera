@@ -1,0 +1,565 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=iso-8859-1">
+<META name="Author" content="Producido usando Galli's QuizFaber 2.8.3">
+<META name="generator" content="Microsoft FrontPage 6.0">
+<META name="keywords" content="quiz">
+<META name="description" content="Actividad inicial">
+<TITLE>Quiz</TITLE>
+<STYLE>
+<!--
+.cardHide  { visibility:'hidden' ; position:absolute; }
+.cardShow  { visibility:'visible'; position:absolute;  color:#000000; background:#FFFFE0; }
+.checkShow { visibility:'visible' }
+.checkHide { visibility:'hidden';  position:absolute }
+.spaceShow { visibility:'visible'; position:relative }
+.spaceHide { visibility:'hidden';  position:absolute }
+A { text-decoration:none }
+.UStyle { text-decoration : 'none'}
+.tooltipHide, .tooltipShow { font-family:Arial; font-size:8pt; color:'black'; background:'yellow'; position:absolute; }
+.tooltipHide { visibility:'hidden'  }
+.tooltipShow { visibility:'visible' }
+.okButtonClass { visibility:'visible'  }
+.okButtonHidden { visibility:'hidden'  }
+-->
+</STYLE>
+
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function startQuiz() {
+  var status;
+
+  window.focus();
+  parent.UnmanageAllDialogs();
+  parent.init_valid();
+  if (parent.n_repeat==0) parent.VerifyBrowser();
+  parent.AskMeName();
+  parent.oldtime=parent.StartTime();
+  parent.Timer();
+  if (parent.n_repeat==0) parent.initShortQuestion();
+  parent.end_test=0;
+}
+
+//-->
+</SCRIPT>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+</HEAD>
+<BODY   BGCOLOR='#e6ffe6' OnLoad='startQuiz()'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+if (parent.n_repeat==0) {
+  parent.keyword = "syskey";
+  parent.MakeKeyCode();
+}
+//-->
+</SCRIPT>
+<CENTER>
+<p class="txtbold">ACTIVIDAD INICIAL<font class="txtnegro" size="4"><BR>
+</font></p>
+</CENTER><center><img src="imagenes/vida.jpg" alt="La reproducción y la coordinación son las funciones básicas que mantienen la vida en el tiempo" width="290" height="290" border="0"></img></center>
+<HR WIDTH='80%'>
+<P><CENTER><TABLE WIDTH='80%'>
+<TD ALIGN=LEFT>
+<p class="txt">La vida, aunque es algo muy difícil de definir, es una característica muy notable que tenemos los seres vivos, por eso, a la hora de establecer una definición sobre la vida nos resulta más fácil fijarnos en las características que poseen los seres vivos, que seguramente conocerás de sobra.</TD></TABLE></CENTER>
+<P>
+<HR WIDTH='80%'>
+<FORM NAME='domanda'><SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate1()
+{
+ this.length = 9;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio10.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio11.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio12.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio13.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio14.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[4] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio15.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[5] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio16.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[6] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio17.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,0,-100,100);
+ this[7] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio18.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,0,-100,100);
+ this[8] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[0]=parent.DecodeNumber(19,0,0,99);
+
+}
+
+function Domanda1()
+{
+ parent.allAnsReport[0] = new initValuate1();
+ parent.doValuate(0);
+ parent.PrintAnswer(0,0);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 1</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'>
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+¿Serías capaz de señalar entre las siguientes características aquellas que son propias de los seres vivos?
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='checkbox' NAME='radio10' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Movimiento</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='checkbox' NAME='radio11' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Vuelo</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='checkbox' NAME='radio12' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Reproducción</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='checkbox' NAME='radio13' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Relación</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">E <INPUT TYPE='checkbox' NAME='radio14' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Crecimiento</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">F <INPUT TYPE='checkbox' NAME='radio15' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Composición química especial: glúcidos, lípidos, proteínas y ácidos nucleicos</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">G <INPUT TYPE='checkbox' NAME='radio16' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Nutrición</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">H <INPUT TYPE='checkbox' NAME='radio17' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Coordinación</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">I <INPUT TYPE='checkbox' NAME='radio18' value="ON"></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Sensibilidad</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda1()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate2()
+{
+ this.length = 4;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio20.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,1,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio21.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,1,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio22.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(25,1,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio23.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,1,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[1]=parent.DecodeNumber(25,1,0,99);
+
+}
+
+function Domanda2()
+{
+ parent.allAnsReport[1] = new initValuate2();
+ parent.doValuate(1);
+ parent.PrintAnswer(1,1);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 2</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'>
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+Entre todas esas características habrás identificado las funciones vitales de los seres vivos:
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='radio' NAME='radio20'  OnClick=" document.domanda.radio21.checked=0; document.domanda.radio22.checked=0; document.domanda.radio23.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Movimiento, coordinación y nutrición</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='radio' NAME='radio21'  OnClick=" document.domanda.radio20.checked=0; document.domanda.radio22.checked=0; document.domanda.radio23.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Coordinación, nutrición y sensibilidad</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='radio' NAME='radio22'  OnClick=" document.domanda.radio20.checked=0; document.domanda.radio21.checked=0; document.domanda.radio23.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Nutrición, relación, coordinación y reproducción</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='radio' NAME='radio23'  OnClick=" document.domanda.radio20.checked=0; document.domanda.radio21.checked=0; document.domanda.radio22.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Movimiento, composición y crecimiento</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda2()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate3()
+{
+ this.length = 4;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio30.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,2,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio31.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,2,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio32.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(19,2,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio33.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(17,2,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[2]=parent.DecodeNumber(19,2,0,99);
+
+}
+
+function Domanda3()
+{
+ parent.allAnsReport[2] = new initValuate3();
+ parent.doValuate(2);
+ parent.PrintAnswer(2,2);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 3</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'>
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+Estas cuatro funciones, junto con la composición química, nos permiten identificar a los seres vivos y diferenciarlos de los entes no vivos.<BR><BR>De las cuatro funciones, todas menos una son funciones propias y necesarias para los individuos aislados, es decir, sirven para mantener la vida individual, ¿sabrías decir cuáles son esas tres funciones que mantienen la vida?
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='radio' NAME='radio30'  OnClick=" document.domanda.radio31.checked=0; document.domanda.radio32.checked=0; document.domanda.radio33.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Movimiento, coordinación, nutrición y reproducción</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='radio' NAME='radio31'  OnClick=" document.domanda.radio30.checked=0; document.domanda.radio32.checked=0; document.domanda.radio33.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Coordinación, nutrición y sensibilidad</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='radio' NAME='radio32'  OnClick=" document.domanda.radio30.checked=0; document.domanda.radio31.checked=0; document.domanda.radio33.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Nutrición, relación y coordinación</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='radio' NAME='radio33'  OnClick=" document.domanda.radio30.checked=0; document.domanda.radio31.checked=0; document.domanda.radio32.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Movimiento, coordinación, composición y crecimiento</TD>
+<TR>
+</TABLE></CENTER>
+<P class="txt"><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda3()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate4()
+{
+ this.length = 4;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio40.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(9,3,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio41.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(11,3,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio42.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(9,3,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio43.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(9,3,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[3]=parent.DecodeNumber(11,3,0,99);
+
+}
+
+function Domanda4()
+{
+ parent.allAnsReport[3] = new initValuate4();
+ parent.doValuate(3);
+ parent.PrintAnswer(3,3);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 4</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'>
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+¿Cuál es la función diferente?
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='radio' NAME='radio40'  OnClick=" document.domanda.radio41.checked=0; document.domanda.radio42.checked=0; document.domanda.radio43.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Coordinación</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='radio' NAME='radio41'  OnClick=" document.domanda.radio40.checked=0; document.domanda.radio42.checked=0; document.domanda.radio43.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Reproducción</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='radio' NAME='radio42'  OnClick=" document.domanda.radio40.checked=0; document.domanda.radio41.checked=0; document.domanda.radio43.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Relación</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='radio' NAME='radio43'  OnClick=" document.domanda.radio40.checked=0; document.domanda.radio41.checked=0; document.domanda.radio42.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Nutrición</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda4()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate5()
+{
+ this.length = 4;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio50.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(3,4,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio51.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(3,4,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio52.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(5,4,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio53.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(3,4,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[4]=parent.DecodeNumber(5,4,0,99);
+
+}
+
+function Domanda5()
+{
+ parent.allAnsReport[4] = new initValuate5();
+ parent.doValuate(4);
+ parent.PrintAnswer(4,4);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 5</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'>
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+¿Cuál es su significado?
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='radio' NAME='radio50'  OnClick=" document.domanda.radio51.checked=0; document.domanda.radio52.checked=0; document.domanda.radio53.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Mantener la vida</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='radio' NAME='radio51'  OnClick=" document.domanda.radio50.checked=0; document.domanda.radio52.checked=0; document.domanda.radio53.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Mantener la talla</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='radio' NAME='radio52'  OnClick=" document.domanda.radio50.checked=0; document.domanda.radio51.checked=0; document.domanda.radio53.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Mantener la especie en el tiempo</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='radio' NAME='radio53'  OnClick=" document.domanda.radio50.checked=0; document.domanda.radio51.checked=0; document.domanda.radio52.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Mantener la pareja</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda5()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate6()
+{
+ this.length = 4;
+ var choice,valuation,remark,data;
+ choice = (document.domanda.radio60.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,5,-100,100);
+ this[0] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio61.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,5,-100,100);
+ this[1] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio62.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(23,5,-100,100);
+ this[2] = new parent.AnsReport(choice,valuation,remark,0);
+ choice = (document.domanda.radio63.checked==true);
+ remark = "";
+ valuation = parent.DecodeNumber(25,5,-100,100);
+ this[3] = new parent.AnsReport(choice,valuation,remark,0);
+ parent.pesi[5]=parent.DecodeNumber(25,5,0,99);
+
+}
+
+function Domanda6()
+{
+ parent.allAnsReport[5] = new initValuate6();
+ parent.doValuate(5);
+ parent.PrintAnswer(5,5);
+ return 1;
+}
+
+//-->
+  </SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<p class="txt">
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check' width="48" height="48">
+pregunta 6</p>
+<TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide' height="29">
+<TD ID='hideTxt' ALIGN='CENTER' height="23">
+<p class="txt"></TD>
+</TABLE>
+<P class="txt">
+¿Cuántos tipos de reproducción conoces?
+<P class="txt">
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">A <INPUT TYPE='radio' NAME='radio60'  OnClick=" document.domanda.radio61.checked=0; document.domanda.radio62.checked=0; document.domanda.radio63.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Dos: animal y vegetal</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">B <INPUT TYPE='radio' NAME='radio61'  OnClick=" document.domanda.radio60.checked=0; document.domanda.radio62.checked=0; document.domanda.radio63.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Tres: ovíparos, vivíparos y ovovivíparos</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">C <INPUT TYPE='radio' NAME='radio62'  OnClick=" document.domanda.radio60.checked=0; document.domanda.radio61.checked=0; document.domanda.radio63.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Dos: sexual y asexual</TD>
+<TR>
+<TD ALIGN='CENTER'  WIDTH='10%'>
+ <p class="txt">D <INPUT TYPE='radio' NAME='radio63'  OnClick=" document.domanda.radio60.checked=0; document.domanda.radio61.checked=0; document.domanda.radio62.checked=0;" ></TD>
+<TD ALIGN='LEFT'  WIDTH=90%>
+<p class="txt">Tres: sexual, asexual y alternante</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda6()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<P><CENTER><TABLE WIDTH='80%'>
+<TD ALIGN=LEFT>
+<p class="txt">Dado que la reproducción tiene un significado muy importante, todos los seres vivos, por muy diferentes que sean, van a realizar esa función, ya que es más importante que ellos mismos.<BR><BR>Sobre nutrición puedes aprender más en la Unidad Didáctica nº
+5 y siguientes, y sobre el resto de funciones, Coordinación, Relación y Reproducción, puedes seguir trabajando en esta unidad pasando al apartado de contenidos.<BR><BR>En esta unidad didáctica es muy importante que tengas una idea más o menos clara de los diferentes tipos de animales y vegetales que existen.<BR><BR>Si no recuerdas la clasificación de los seres vivos pueden repasarla en:</p>
+<ul>
+  <li>
+  <p class="txt">
+  <a class="txtnegrolink" target="_blank" href="../../1ESO/clasica/index.htm">Clasificación de los seres vivos</a> de 1º de ESO.</li>
+  <li>
+  <p class="txt">
+  <a class="txtnegrolink" target="_blank" href="../../4ESO/evolucion/11bisarbol_filogenetico_seres_vivos.htm">Evolución</a> de 4º de ESO.</li>
+</ul>
+  </TABLE></CENTER>
+<P>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,349 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio1.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="img/materiales.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="547" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (11/12) - <a href="contenidos12.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <p class="txtnegro">&nbsp;</p>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">4. UTILIDAD DE LOS MATERIALES 
+                                TERRESTRES</p>
+                              <p class="txtnegro">4.1. Yacimientos</p>
+                              <div align=""center></div>
+							  <table width="100%" border="0" cellspacing="0" cellpadding="4" align="center">
+                                <tr bgcolor="#e6ffe6"> 
+                                  <td class="txt" colspan="2"> 
+                                    <p class="txt">"Son depósitos de minerales 
+                                      o rocas con interés económico y cuya explotación 
+                                      resulte rentable".</p>
+                                    <p class="txt"> Los minerales raramente aparecen 
+                                      aislados, sino que se asocian a otro tipo 
+                                      de materiales, generalmente rocas, de modo 
+                                      que para extraer una determinada cantidad 
+                                      de mineral hace falta remover un volumen 
+                                      de roca importante. Esto da lugar a tres 
+                                      conceptos muy importantes en las explotaciones 
+                                      minerales:</p>
+                                    <p class="txt"> - <b>Mena</b>: es la parte 
+                                      del yacimiento que tiene interés económico.</p>
+                                    <p class="txt"> - <b>Ganga</b>: el material 
+                                      que acompaña al mineral de interés y que 
+                                      hay que desechar.</p>
+                                    <p class="txt"> - <b>Ley</b>: es la proporción 
+                                      entre mena y ganga de un determinado yacimiento. 
+                                    </p>
+                                    <p class="txt">Los yacimientos pueden tener 
+                                      tantos orígenes como procesos petrogenéticos 
+                                      (formadores de rocas) hay. Los yacimientos 
+                                      más importantes por su origen son: </p>
+                                  </td>
+                                </tr>
+                                <tr bgcolor="#e6ffe6"> 
+                                  <td class="txt" colspan="2"> 
+                                    <p>· Por procesos endógenos: generalmente 
+                                      asociado al magmatismo. </p>
+                                    <p>- <i>Hidrotermales</i>: el magma calienta 
+                                      las aguas subterráneas. El agua caliente 
+                                      tiene gran capacidad de disolución, por 
+                                      lo que disuelve determinados minerales. 
+                                      Según se va enfriando, la diferente solubilidad 
+                                      de cada mineral hace que se vayan depositando 
+                                      gradualmente a diferentes temperaturas. 
+                                    </p>
+                                    <p>- <i>Neumatolíticos</i>: muy similar a 
+                                      los hidrotermales. Ocurre cuando al agua 
+                                      que arrastra los minerales llega a estar 
+                                      en estado de vapor. La concentración de 
+                                      los diferentes minerales se rige por el 
+                                      mismo principio. </p>
+                                  </td>
+                                </tr>
+                                <tr bgcolor="#e6ffe6"> 
+                                  <td class="txt" colspan="2"> 
+                                    <p>· Por procesos exógenos: </p>
+                                    <p>- <i>Sedimentarios</i>: al producirse la 
+                                      sedimentación detrítica, la diferente densidad 
+                                      de los distintos minerales hace que se separen 
+                                      en niveles, produciéndose la concentración 
+                                      de ellos. </p>
+                                  </td>
+                                </tr>
+                                <tr bgcolor="#e6ffe6"> 
+                                  <td class="txt" colspan="2"> 
+                                    <div align="center"> 
+                                      <table width="500" border="1" cellspacing="0" cellpadding="4" bgcolor="#CCFFFF" bordercolor="#333333">
+                                        <tr> 
+                                          <td class="txt">
+                                            <p>Cuando un yacimiento sedimentario 
+                                              concentra un elemento nativo recibe 
+                                              el nombre de <b>placer</b>.</p>
+                                            <p>Fíjate que esta palabra castellana 
+                                              se usa, tal cual, en varios idiomas, 
+                                              incluido el inglés. Su nombre procede 
+                                              del "placer" que experimentaban 
+                                              los buscadores de oro al encontrarse 
+                                              las pepitas, </p>
+                                            </td>
+                                        </tr>
+                                      </table>
+                                    	<p>
+										<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="550" height="350">
+											<param name="movie" value="swf/placeres.swf">
+											<param name="quality" value="High">
+											<embed src="swf/placeres.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="550" height="350"></object>
+										<br>
+										<b>(Pulsa cada uno de los botones)</b></p>
+										<p>&nbsp;</div>
+                                  </td>
+                                </tr>
+                                <tr bgcolor="#e6ffe6"> 
+                                  <td class="txt" colspan="2"> - <i>Monteras de 
+                                    oxidación</i>: a veces, la alteración de los 
+                                    materiales superficiales da lugar a minerales 
+                                    de interés económico (óxidos de hierro y de 
+                                    aluminio, por ejemplo).</td>
+                                </tr>
+                                <tr bgcolor="#e6ffe6">
+                                  <td class="txt" colspan="2">
+                                    <div align="center">
+                                      <table width="100" border="0" cellspacing="0" cellpadding="3" align="center">
+                                        <tr> 
+                                          <td bgcolor="#BBDDBB" colspan="3"> 
+                                            <p><font class="txtnegrolink"> 
+                                              Actividad 13</font>
+                                            <a target="_blank" href="actividades/activi13.htm"><img src="img/activ.jpg" width="120" height="68" border="0"></a> 
+                                            <p><a href="actividad2.htm"><font class="txtnegrolink"> 
+                                              </font></a> 
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"><span class="txtnegro"> </span><br>
+                              </p>
+                                    <div align="center">
+                                      <table width="100" border="0" cellspacing="0" cellpadding="3" align="center" id="table1">
+                                        <tr> 
+                                          <td bgcolor="#BBDDBB"> 
+                                            <font class="txtnegrolink"> 
+                                              Actividad 13b</font>
+                                            <a target="_blank" href="activ_video1.htm">
+											<img src="petroleo.jpg" width="120" height="68" border="0"></a> 
+                                            <p><a href="activ_video1.htm"><font class="txtnegrolink"> 
+                                              </font></a> 
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    	<p class="txt" style="text-align: center">
+										(Contiene película flash)
+										<img border="0" src="../../../img/swf.gif" width="16" height="16"><br>
+&nbsp;</div>
+                                  	<p align="center">&nbsp;</p>
+                              <div align="right"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (11/12) - <a href="contenidos12.htm" class="txtnegrolink">siguiente</a></span></div>
+                            </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

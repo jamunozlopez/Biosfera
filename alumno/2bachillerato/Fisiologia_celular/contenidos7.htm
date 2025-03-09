@@ -1,0 +1,467 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../../1eso/img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (7/11) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="2" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">2.6.- Oxidaci&oacute;n de los 
+                                &aacute;cidos grasos: &szlig;-oxidaci&oacute;n 
+                                de los &aacute;cidos grasos.</p>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Los <span class="txtbold">&aacute;cidos 
+                                            grasos </span>son mol&eacute;culas 
+                                            que suponen importantes dep&oacute;sitos 
+                                            de energ&iacute;a para la c&eacute;lula. 
+                                            En un primer t&eacute;rmino los triglic&eacute;ridos 
+                                            deben ser hidrolizados en el citoplasma 
+                                            por la acci&oacute;n de las lipasas, 
+                                            origin&aacute;ndose glicerol y sus 
+                                            correspondientes &aacute;cidos grasos. 
+                                            Los &aacute;cidos grasos inmediatamente 
+                                            son degradados en la mitocondria en 
+                                            la <span class="txtbold">&szlig;-oxidaci&oacute;n 
+                                            </span>y el glicerol pasa a la ruta 
+                                            catab&oacute;lica glucol&iacute;tica.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"><i><img src="imagenes/mitocondria_funcionamiento.gif" width="325" height="365" alt="&quot;Funcionamiento de la mitocondria&quot;" hspace="10"></i></p>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                  <tr> 
+                                    <td> 
+                                      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Antes de ser oxidados, los &aacute;cidos 
+                                            grasos reaccionan con acetilCoA en 
+                                            la membrana de la <span class="txtbold">mitocondria</span>. 
+                                            Una vez han penetrado en la matriz 
+                                            mitocondrial, los &aacute;cidos grasos 
+                                            se degradan secuencialmente eliminando 
+                                            dos carbonos en cada vuelta del ciclo 
+                                            de la llamada <span class="txtbold">H&eacute;lice 
+                                            de Lynnen</span>.</p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                              <div align="center"> 
+                                <div align="center">
+                                  <div align="center"> <br>
+                                    <a name="act_inves7"></a><br>
+                                  </div>
+                                </div>
+                                <div align="center"> 
+                                  <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                    <tr> 
+                                      <td class="ttBIOSFERA" width="642"><i>Actividad 
+                                        de investigaci&oacute;n 7: &szlig;-oxidaci&oacute;n 
+                                        de los &aacute;cidos grasos</i></td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"><i><img src="imagenes/mitocondria_funcionamiento.gif" width="125" height="136" align="right" alt="&quot;Funcionamiento de la mitocondria&quot;" hspace="10">Introducci&oacute;n: 
+                                        </i>En los seres vivos las grasas tienen 
+                                        una gran importancia como combustibles 
+                                        org&aacute;nicos por su alto valor cal&oacute;rico: 
+                                        la degradaci&oacute;n de un gramo de grasa 
+                                        puede dar 9,5 Kcal mientras que los gl&uacute;cidos 
+                                        aportan 4,2 Kcal por gramo<font size="-2">.</font></td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p><i>Tarea: </i>El alumno debe buscar 
+                                          informaci&oacute;n sobre el trayecto 
+                                          completo de la ruta degradativa de las 
+                                          grasas desde su activaci&oacute;n en 
+                                          el citoplasma hasta su degradaci&oacute;n 
+                                          completa, perdiendo dos carbonos en 
+                                          cada vuelta de ciclo y analizando, posteriormente, 
+                                          el balance energ&eacute;tico a partir 
+                                          de los coenzimas NADH y FADH2 desprendidos 
+                                          en la ruta<font size="-2">.</font></p>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <div align="left"><i>Descripci&oacute;n: 
+                                          </i>Realiza un póster en cart&oacute;n 
+                                          pluma, con toda la informaci&oacute;n 
+                                          extra&iacute;da de la red, sobre la 
+                                          degradaci&oacute;n de las grasas. Indica 
+                                          la ruta a seguir por glicerol (desprendido 
+                                          de la separaci&oacute;n del triglic&eacute;rido) 
+                                          y por los &aacute;cidos grasos desprendidos. 
+                                          Se&ntilde;ala el lugar de la c&eacute;lula 
+                                          donde suceden estos procesos, as&iacute; 
+                                          como los metabolitos intermediarios 
+                                          y los coenzimas desprendidos en la reacci&oacute;n. 
+                                          <br>
+                                          Suma las mol&eacute;culas energ&eacute;ticas 
+                                          producidas y su equivalencia en mol&eacute;culas 
+                                          de ATP y compara el rendimiento energ&eacute;tico 
+                                          del catabolismo de las grasas con el 
+                                          de los az&uacute;cares.</div>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p><i>Recursos: </i><i><font size="-2"><br>
+                                          <br>
+                                          </font></i>
+										<a target="_blank" href="http://www.biopsicologia.net/fichas/page_721.html"><font color="#FFFFCC">&Aacute;cidos 
+                                          grasos.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://www.biopsicologia.net/fichas/fic-15-4.html"><font color="#FFFFCC">Oxidaci&oacute;n 
+                                          de los &aacute;cidos grasos.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://www3.usal.es/dbbm/clasmed/clasmed.html"><font color="#FFFFCC">BIOQU&Iacute;MICA 
+                                          Y BIOLOG&Iacute;A MOLECULAR.</font></a><i> 
+                                          <br>
+                                          </i>
+										<a target="_blank" href="http://www.chasque.net/gamolnar/ciencias%20del%20deporte/ciencias.01.html"><font color="#FFFFCC">Ciencias 
+                                          del Deporte.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://laguna.fmedic.unam.mx/~evazquez/0403/oxidacion%20acidos%20grasos.html"><font color="#FFFFCC">Beta 
+                                          oxidaci&oacute;n de &aacute;cidos grasos.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://www.consumer.es/web/es/nutricion/salud_y_alimentacion/deporte/2001/06/21/34921.php"><font color="#FFFFCC">Carnitina.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://colombiamedica.univalle.edu.co/Vol25No2/celulas.html"><font color="#FFFFCC">C&oacute;mo 
+                                          producen energ&iacute;a las c&eacute;lulas.</font></a></p>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"><i>Evaluaci&oacute;n: 
+                                        </i>Se evaluar&aacute; la claridad en 
+                                        la explicaci&oacute;n del proceso y la 
+                                        importancia de su significado biol&oacute;gico, 
+                                        as&iacute; como las partes de la c&eacute;lula 
+                                        implicadas en el proceso y la relaci&oacute;n 
+                                        de esta ruta metab&oacute;lica con otras 
+                                        rutas degradativas (catabolismo de az&uacute;cares 
+                                        con el glicerol).</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <br><div align="center"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ10.htm" class="txtnegrolink">Actividad 
+                                          10</a></font> <a href="activ10.htm"><img src="imagenes/activ10.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                <br></div>
+                                    </div>
+                                <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                  <tr> 
+                                    <td> 
+                                      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Para que los &aacute;cidos grasos 
+                                            activados pasen a través de 
+                                            la membrana de la mitocondria hasta 
+                                            la matriz mitocondrial interviene 
+                                            la <span class="txtbold">carnitina</span>. 
+                                            &Eacute;sta act&uacute;a como una 
+                                            lanzadera a trav&eacute;s de la membrana 
+                                            interna por la acci&oacute;n de una 
+                                            translocasa.</p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                                <div align="center"><br>
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ11.htm" class="txtnegrolink">Actividad 
+                                          11</a></font> <a href="activ11.htm"><img src="imagenes/activ11.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <a name="oxidacion_aminoacidos"></a></div>
+                                <br>
+                                <p class="txtnegro" align="left">2.7.- Oxidaci&oacute;n 
+                                  de los amino&aacute;cidos.</p>
+                                <div align="left">
+                                  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                    <tr> 
+                                      <td> 
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                          <tr bgcolor="#e6ffe6"> 
+                                            <td class="txt"> 
+                                              <p>Las prote&iacute;nas tienen fundamentalmente 
+                                                misiones biol&oacute;gicas distintas 
+                                                a las energ&eacute;ticas. Sin 
+                                                embargo, en caso de necesidad, 
+                                                los amino&aacute;cidos son oxidados 
+                                                y los derivados de las oxidaciones 
+                                                pueden entrar en el ciclo de 
+                                              Krebs 
+                                                y en la cadena respiratoria. Existen 
+                                                tres mecanismos de oxidaci&oacute;n 
+                                                de amino&aacute;cidos: <span class="txtbold">transaminaci&oacute;n</span>, 
+                                                <span class="txtbold">desminaci&oacute;n 
+                                                oxidativa</span> y <span class="txtbold">descarboxilaci&oacute;n</span>.</p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <a name="citosol"></a><br>
+                                  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                    <tr> 
+                                      <td> 
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                          <tr bgcolor="#e6ffe6"> 
+                                            <td class="txt"> 
+                                              <p>Los amino&aacute;cidos excedentes 
+                                                no pueden almacenarse y tampoco 
+                                                pueden excretarse. Por ello los 
+                                                amino&aacute;cidos excedentes 
+                                                se utilizan como combustible para 
+                                                obtener energ&iacute;a. El <span class="txtbold">grupo 
+                                                amino </span>se separa convirti&eacute;ndose 
+                                                en urea, mientras que el resultante 
+                                                de la <span class="txtbold">cadena 
+                                                carbonatada</span> da origen a 
+                                                intermediarios metab&oacute;licos, 
+                                                que se incorporan a las principales 
+                                                rutas metab&oacute;licas.</p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div align="center"> 
+                                  <div align="center"> 
+                                    <div align="center"></div>
+                                  </div>
+                                </div>
+                                
+                              <p align="center"><br>
+                                <i><img src="imagenes/catabolismo.jpg" width="550" height="405" alt="&quot;Funcionamiento de la mitocondria&quot;" hspace="10"></i></p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (7/11) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></p>
+                              </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

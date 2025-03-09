@@ -1,0 +1,593 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/reino_vegetal.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="537" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="210" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos1.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (2/15) - <a href="contenidos3.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td    valign="top"> 
+                              <p class="txtnegro">1.b.- Clasificación del Reino Vegetal:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            
+                                          <p class="txt">Para facilitar el estudio 
+                                            del reino vegetal es imprescindible 
+                                            su clasificación. La ciencia dedicada 
+                                            a la clasificación de los seres vivos 
+                                            es la <span class="txtnegro">taxonomía</span>. 
+                                            Esta ciencia subdivide el Reino Vegetal 
+                                            en diversos <i>niveles de organización</i> 
+                                            que van desde la División hasta la 
+                                            Subespecie e incluso la variedad. 
+                                            Entre estos dos niveles taxonómicos 
+                                            existe toda una jerarquía que va poco 
+                                            a poco haciendo más pequeños y definidos 
+                                            los grandes grupos: subdivisiones, 
+                                            clases, subclases, órdenes, subórdenes, 
+                                            familias, subfamilias, géneros y especies.</p>
+                                            
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center"><a name="act_inves1"></a></p>
+                              <div align="center">
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      1 de investigaci&oacute;n: Taxonom&iacute;a 
+                                      vegetal</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA" height="100"><img src="imagenes/algaparda.jpg" width="162" height="80" align="right">Introducci&oacute;n: 
+                                      <font size="-2"> La labor cient&iacute;fica 
+                                      de clasificar de forma jer&aacute;rquica 
+                                      todos los seres vivos existentes es en verdad 
+                                      una tarea ardua, compleja y laboriosa. Para 
+                                      que comprendas mejor y valores el trabajo 
+                                      de los tax&oacute;nomos te proponemos una 
+                                      serie de tareas que facilitar&aacute;n tu 
+                                      iniciaci&oacute;n al complicado y apasionante 
+                                      mundo de la bot&aacute;nica.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Descripci&oacute;n: 
+                                      <font size="-2"> Analizando la informaci&oacute;n 
+                                      seleccionada y disponible en la red, generalmente 
+                                      procedente de Centros de Investigaci&oacute;n 
+                                      o Universidades, realizaremos un actividad 
+                                      global. Para ello partiremos de trabajos 
+                                      grupales de investigaci&oacute;n. Al final, 
+                                      las presentaciones en Power Point de los 
+                                      diversos grupos facilitar&aacute;n la comprensi&oacute;n 
+                                      del reino vegetal y su diversidad.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Dividimos la 
+                                        clase en grupos con m&aacute;ximo de cuatro 
+                                        participantes en cada uno de ellos. Se 
+                                        sortea el grupo bot&aacute;nico sobre 
+                                        el que se va a realizar el an&aacute;lisis 
+                                        de la informaci&oacute;n y las presentaciones 
+                                        en Power Point. Se busca en la red todo 
+                                        tipo de im&aacute;genes que ayuden a la 
+                                        mejor comprensi&oacute;n del grupo vegetal 
+                                        y se realiza una presentaci&oacute;n que 
+                                        refleje las caracter&iacute;sticas generales 
+                                        del grupo: su clasificaci&oacute;n, su 
+                                        diversidad y formas de vida. Se organiza 
+                                        la informaci&oacute;n de forma sistem&aacute;tica 
+                                        y evolutiva. Se presenta la informaci&oacute;n 
+                                        esquematizada y con im&aacute;genes de 
+                                        cada ejemplar.</font></p>
+                                      <p></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2">Para seleccionar 
+                                        los mejores datos y descripciones de los 
+                                        principales grupos bot&aacute;nicos existen 
+                                        p&aacute;ginas muy interesantes en la 
+                                        red: la p&aacute;gina de bot&aacute;nica 
+                                        de la <a href="http://www.unex.es/botanica" target="_blank"><font color="#FFFFCC">Universidad 
+                                        de Extremadura</font></a>; de los Departamentos 
+                                        de bot&aacute;nica de la <a href="http://www.acad.uncor.edu/libro-cocucci.pdf" target="_blank"><font color="#FFFFCC">Universidad 
+                                        de C&oacute;rdoba</font></a> y de la <a href="http://web.uniovi.es/bos/Asignaturas/Botanica/1.htm" target="_blank"><font color="#FFFFCC">Universidad 
+                                        de Oviedo</font></a>; p&aacute;ginas interesantes 
+                                        con galer&iacute;as de <a href="#" target="_blank"><font color="#FFFFCC">im&aacute;genes 
+                                        y fotograf&iacute;as</font></a> de diversas 
+                                        especies vegetales con el nombre vulgar 
+                                        y cient&iacute;fico; algunas son m&aacute;s 
+                                        espec&iacute;ficas y tratan sobre todo 
+                                        de <a href="http://omega.ilce.edu.mx:3000/sites/ciencia/volumen2/ciencia3/063/htm/sec_12.html" target="_blank"><font color="#FFFFCC">vegetales 
+                                        marinos</font></a>. Existen p&aacute;ginas 
+                                        dise&ntilde;adas especialmente para su 
+                                        uso e investigaci&oacute;n para <a href="http://platea.pntic.mec.es/" target="_blank"><font color="#FFFFCC">j&oacute;venes 
+                                        investigadores</font></a> y desarrollan 
+                                        contenidos que pueden ser muy &uacute;tiles 
+                                        para este tipo de tareas. Tambi&eacute;n 
+                                        existen en la red p&aacute;ginas web con 
+                                        multitud de enlaces a otras p&aacute;ginas 
+                                        relacionadas con el <a href="http://micol.fcien.edu.uy/atlas/glos98.htm" target="_blank"><font color="#FFFFCC">mundo 
+                                        vegetal y sus funciones</font></a>.</font></p>
+                                      <p></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Orientaciones: <font size="-2">Lo 
+                                      mejor es dividir la clase en tantos grupos 
+                                      bot&aacute;nicos como quer&aacute;is trabajar 
+                                      (espermat&oacute;fitos, helechos, musgos, 
+                                      algas, hongos, etc.). Una vez conocido el 
+                                      grupo sobre el que investigar, las p&aacute;ginas 
+                                      web nos ayudan a conocer su clasificaci&oacute;n. 
+                                      Se extraen los principales ejemplares, los 
+                                      m&aacute;s conocidos, los m&aacute;s &uacute;tiles, 
+                                      los m&aacute;s frecuentes en nuestro entorno 
+                                      cercano, etc., se sintetizan y esquematizan 
+                                      sus caracter&iacute;sticas principales. 
+                                      Se busca informaci&oacute;n sobre su forma 
+                                      de vida, su distribuci&oacute;n, su relaci&oacute;n 
+                                      con otras especies o grupos desde el punto 
+                                      de vista evolutivo y su forma de reproducci&oacute;n. 
+                                      A la vez se localizan las im&aacute;genes 
+                                      o animaciones que os resulten m&aacute;s 
+                                      apropiadas con la ayuda de buscadores de 
+                                      im&aacute;genes (<a href="http://www.google.com/" target="_blank"><font color="#FFFFCC">google</font></a>).</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA" height="48"><font size="-2">Toda 
+                                      la informaci&oacute;n obtenida se sintetiza 
+                                      y esquematiza en una presentaci&oacute;n 
+                                      en Power Point y se presenta al resto de 
+                                      la clase. Se recomienda que la exposici&oacute;n 
+                                      de las presentaciones siga un orden evolutivo 
+                                      para que los j&oacute;venes bot&aacute;nicos 
+                                      puedan seguir el hilo conductor evolutivo.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se trata de evaluar el 
+                                      trabajo realizado en la b&uacute;squeda 
+                                      de informaci&oacute;n, la capacidad de s&iacute;ntesis 
+                                      y de an&aacute;lisis para seleccionar las 
+                                      caracter&iacute;sticas b&aacute;sicas del 
+                                      grupo y la elecci&oacute;n de los ejemplares 
+                                      m&aacute;s representativos de cada clase, 
+                                      orden, familia, etc. A su vez, se valorar&aacute; 
+                                      la originalidad, creatividad y dificultad 
+                                      de la propia presentaci&oacute;n en Power 
+                                      Point.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p align="center">&nbsp;</p>
+                              <span class="txt"><a name="botanica"></a>Dentro 
+                              del mundo de la </span><span class="txtnegro">Bot&aacute;nica</span><span class="txt"> 
+                              se estudian los siguientes grupos: </span><br>
+                              <br>
+                              <table width="96%" border="1" bgcolor="#BBDDBB" cellpadding="2">
+                                <tr valign="top"> 
+                                  <td class="txt" width="156"> 
+                                    <div align="left">&middot; Las <a href="#botanica" class="txtnegro">cianobacterias</a></div>
+                                  </td>
+                                  <td class="txt" width="207"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_cianobacterias.htm','Botanica','resizable=yes,width=210,height=250')"><i>Cyanophyta</i></a></div>
+                                  </td>
+                                  <td class="txt" width="271"> 
+                                    <div align="left">&middot; </div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt" rowspan="3"> 
+                                    <div align="left">&middot; Los <a href="#botanica" class="txtnegro">hongos</a></div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Gimnomycota</i> </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"> Mixomicetes</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Mastigomycota</i> </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">Omicetes</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Amastigomycota</i> </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Clase <i>Zygomycetes</i><br>
+                                      &middot; Clase <i>Ascomycetes</i><br>
+                                      &middot; <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_setas.htm','Botanica','resizable=yes,width=210,height=250')">Clase 
+                                      <i>Basidiomycetes</i> (setas)</a><br>
+                                      &middot; Clase <i>Deuteromycetes</i></div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt" rowspan="3"> 
+                                    <div align="left">&middot; Las <span class="txtnegro">algas</span></div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Chlorophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_algasverdes.htm','Botanica','resizable=yes,width=210,height=250')">algas 
+                                      verdes</a></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Chromophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_algaspardas.htm','Botanica','resizable=yes,width=215,height=250')">algas 
+                                      pardas</a> y diatomeas</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Rhodophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_algasrojas.htm','Botanica','resizable=yes,width=210,height=250')">algas 
+                                      rojas</a></div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Los <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_liquenes.htm','Botanica','resizable=yes,width=210,height=250')">l&iacute;quenes</a></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; </div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt" rowspan="3"> 
+                                    <div align="left">&middot; Los <span class="txtnegro">briofitos</span></div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Clase <i>Anthocerotopsida</i>:</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"> antoceros</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Clase <i>Bryopsida</i>: 
+                                    </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_musgos.htm','Botanica','resizable=yes,width=210,height=250')">musgos</a></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Clase <i>Marchantiopsida</i>: 
+                                    </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_hepaticas.htm','Botanica','resizable=yes,width=210,height=250')">hep&aacute;ticas</a></div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt" rowspan="4"> 
+                                    <div align="left">&middot; Los <span class="txtnegro">helechos</span>:</div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Rhyniophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">psil&oacute;fitos</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Lycopodiophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_licopodios.htm','Botanica','resizable=yes,width=210,height=250')">licopodios</a> 
+                                      y selaginellas</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Equisetophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"><a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_equisetos.htm','Botanica','resizable=yes,width=210,height=250')">equisetos</a></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; Divisi&oacute;n 
+                                      <i>Pteridophyta</i>: </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"> <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_helechos.htm','Botanica','resizable=yes,width=210,height=250')">helechos</a></div>
+                                  </td>
+                                </tr>
+                                <tr valign="top"> 
+                                  <td class="txt" rowspan="3"> 
+                                    <div align="left">&middot; Los <span class="txtnegro">espermatofitos</span></div>
+                                    <div align="left"></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left"> &middot; Las gimnospermas: 
+                                      <br>
+                                      Divisi&oacute;n <i>Pinophyta</i>. </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_gimnospermas.htm','Botanica','resizable=yes,width=210,height=250')">Clase 
+                                      coniferopsida</a></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt" rowspan="2"> 
+                                    <div align="left"> &middot; Las angiospermas:<br>
+                                      Divisi&oacute;n <i>Magnoliophyta</i></div>
+                                    <div align="left"></div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="left">&middot; <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_dicotiledoneas.htm','Botanica','resizable=yes,width=210,height=250')">Clase 
+                                      magnoliopsida: dicotiled&oacute;neas</a></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="left">&middot; <a href="#botanica" class="txtnegrolink" onMouseOver="MM_openBrWindow('g_monocotiledoneas.htm','Botanica','resizable=yes,width=210,height=250')">Clase 
+                                      Liliopsida: monocotiled&oacute;neas</a></div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ2.htm"><span class="txtnegrolink">Actividad 
+                                        2</span></a></font> <a href="activ2.htm"><img src="imagenes/activ2.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+							  <br>
+                              <p align="right"><a class="txtnegrolink" href="contenidos1.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (2/15) - <a href="contenidos3.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

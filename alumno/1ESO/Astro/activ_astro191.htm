@@ -1,0 +1,446 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=iso-8859-1">
+<META name="Author" content="Producido usando Galli's QuizFaber 2.8.3">
+<META name="generator" content="Galli's QuizFaber 2.8.3">
+<META name="keywords" content="quiz">
+<META name="description" content="Características de los planetas">
+<TITLE>Quiz</TITLE>
+<STYLE>
+<!--
+.cardHide  { visibility:'hidden' ; position:absolute; }
+.cardShow  { visibility:'visible'; position:absolute;  color:#000000; background:#FFFFE0; }
+.checkShow { visibility:'visible' }
+.checkHide { visibility:'hidden';  position:absolute }
+.spaceShow { visibility:'visible'; position:relative }
+.spaceHide { visibility:'hidden';  position:absolute }
+A { text-decoration:none }
+.UStyle { text-decoration : 'none'}
+.tooltipHide,.tooltipShow { font-family:Arial; font-size:8pt; color:'black'; background:'yellow'; position:absolute; }
+.tooltipHide { visibility:'hidden'  }
+.tooltipShow { visibility:'visible' }
+.okButtonClass { visibility:'visible'  }
+.okButtonHidden { visibility:'hidden'  }
+-->
+</STYLE>
+
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function startQuiz() {
+  var status;
+
+  window.focus();
+  parent.UnmanageAllDialogs();
+  parent.init_valid();
+  if (parent.n_repeat==0) parent.VerifyBrowser();
+  parent.AskMeName();
+  parent.oldtime=parent.StartTime();
+  parent.Timer();
+  if (parent.n_repeat==0) parent.initShortQuestion();
+  parent.end_test=0;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY  BGCOLOR='#e6ffe6' OnLoad='startQuiz()'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+if (parent.n_repeat==0) {
+  parent.keyword = "syskey";
+  parent.MakeKeyCode();
+}
+//-->
+</SCRIPT>
+<CENTER>
+<FONT style='font-family:"Arial"; font-size:17pt; color:#8B4513; '>Características de los planetas</FONT><BR>
+</CENTER>
+<HR WIDTH='80%'>
+<FORM NAME='domanda'><SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate1()
+{
+ this.length = 3;
+ var choice,valuation,remark;
+ if (document.domanda.radio10[0].checked==true) choice=1;
+ else if (document.domanda.radio10[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(19,0,-1,1);
+ this[0] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio11[0].checked==true) choice=1;
+ else if (document.domanda.radio11[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(17,0,-1,1);
+ this[1] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio12[0].checked==true) choice=1;
+ else if (document.domanda.radio12[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(17,0,-1,1);
+ this[2] = new parent.AnsReport(choice,valuation,'',0);
+ parent.pesi[0]=parent.DecodeNumber(19,0,0,99);
+
+}
+
+function Domanda1()
+{
+ var status;
+ if (!parent.checkTrueOrFalse(document.domanda.radio10)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio11)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio12)) { parent.IncompletedQuest(); return 0; }
+ parent.allAnsReport[0] = new initValuate1();
+ parent.doValuate(0);
+ parent.PrintBooleanAnswer(0,0);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check'>
+<FONT style='font-family:"Arial"; font-size:14pt; '>pregunta 1</FONT><TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'></TD>
+</TABLE>
+<P>
+<FONT style='font-family:"Times New Roman"; font-size:12pt; font-weight:bold;color:#000000; '>Sobre la situación de Mercurio </FONT>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> A </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>es el planeta más cercano al Sol</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio10'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio10'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> B </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>es el planeta más alejado del Sol</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio11'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio11'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> C </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>no es un planeta</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio12'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio12'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda1()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate2()
+{
+ this.length = 3;
+ var choice,valuation,remark;
+ if (document.domanda.radio20[0].checked==true) choice=1;
+ else if (document.domanda.radio20[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(23,1,-1,1);
+ this[0] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio21[0].checked==true) choice=1;
+ else if (document.domanda.radio21[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(23,1,-1,1);
+ this[1] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio22[0].checked==true) choice=1;
+ else if (document.domanda.radio22[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(25,1,-1,1);
+ this[2] = new parent.AnsReport(choice,valuation,'',0);
+ parent.pesi[1]=parent.DecodeNumber(25,1,0,99);
+
+}
+
+function Domanda2()
+{
+ var status;
+ if (!parent.checkTrueOrFalse(document.domanda.radio20)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio21)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio22)) { parent.IncompletedQuest(); return 0; }
+ parent.allAnsReport[1] = new initValuate2();
+ parent.doValuate(1);
+ parent.PrintBooleanAnswer(1,1);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check'>
+<FONT style='font-family:"Arial"; font-size:14pt; '>pregunta 2</FONT><TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'></TD>
+</TABLE>
+<P>
+<FONT style='font-family:"Times New Roman"; font-size:12pt; font-weight:bold;color:#000000; '>La característica más llamativa de Venus es</FONT>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> A </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>su gran tamaño</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio20'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio20'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> B </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>sus bajas temperaturas</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio21'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio21'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> C </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>la atmósfera tan densa que recubre al planeta</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio22'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio22'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda2()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate3()
+{
+ this.length = 3;
+ var choice,valuation,remark;
+ if (document.domanda.radio30[0].checked==true) choice=1;
+ else if (document.domanda.radio30[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(17,2,-1,1);
+ this[0] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio31[0].checked==true) choice=1;
+ else if (document.domanda.radio31[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(19,2,-1,1);
+ this[1] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio32[0].checked==true) choice=1;
+ else if (document.domanda.radio32[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(17,2,-1,1);
+ this[2] = new parent.AnsReport(choice,valuation,'',0);
+ parent.pesi[2]=parent.DecodeNumber(19,2,0,99);
+
+}
+
+function Domanda3()
+{
+ var status;
+ if (!parent.checkTrueOrFalse(document.domanda.radio30)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio31)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio32)) { parent.IncompletedQuest(); return 0; }
+ parent.allAnsReport[2] = new initValuate3();
+ parent.doValuate(2);
+ parent.PrintBooleanAnswer(2,2);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check'>
+<FONT style='font-family:"Arial"; font-size:14pt; '>pregunta 3</FONT><TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'></TD>
+</TABLE>
+<P>
+<FONT style='font-family:"Times New Roman"; font-size:12pt; font-weight:bold;color:#000000; '>Marte es el planeta con más posibilidades de poseer</FONT>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> A </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>atmósfera</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio30'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio30'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> B </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>agua</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio31'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio31'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> C </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>anillos</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio32'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio32'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda3()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate4()
+{
+ this.length = 3;
+ var choice,valuation,remark;
+ if (document.domanda.radio40[0].checked==true) choice=1;
+ else if (document.domanda.radio40[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(9,3,-1,1);
+ this[0] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio41[0].checked==true) choice=1;
+ else if (document.domanda.radio41[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(11,3,-1,1);
+ this[1] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio42[0].checked==true) choice=1;
+ else if (document.domanda.radio42[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(9,3,-1,1);
+ this[2] = new parent.AnsReport(choice,valuation,'',0);
+ parent.pesi[3]=parent.DecodeNumber(11,3,0,99);
+
+}
+
+function Domanda4()
+{
+ var status;
+ if (!parent.checkTrueOrFalse(document.domanda.radio40)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio41)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio42)) { parent.IncompletedQuest(); return 0; }
+ parent.allAnsReport[3] = new initValuate4();
+ parent.doValuate(3);
+ parent.PrintBooleanAnswer(3,3);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check'>
+<FONT style='font-family:"Arial"; font-size:14pt; '>pregunta 4</FONT><TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'></TD>
+</TABLE>
+<P>
+<FONT style='font-family:"Times New Roman"; font-size:12pt; font-weight:bold;color:#000000; '>Júpiter es un planeta</FONT>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> A </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>sólido</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio40'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio40'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> B </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>gaseoso</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio41'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio41'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> C </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>no es un planeta</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio42'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio42'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda4()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+<SCRIPT LANGUAGE='JavaScript'>
+<!--
+function initValuate5()
+{
+ this.length = 3;
+ var choice,valuation,remark;
+ if (document.domanda.radio50[0].checked==true) choice=1;
+ else if (document.domanda.radio50[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(5,4,-1,1);
+ this[0] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio51[0].checked==true) choice=1;
+ else if (document.domanda.radio51[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(3,4,-1,1);
+ this[1] = new parent.AnsReport(choice,valuation,'',0);
+ if (document.domanda.radio52[0].checked==true) choice=1;
+ else if (document.domanda.radio52[1].checked==true) choice=0;
+ else choice=-1;
+ valuation = parent.DecodeNumber(3,4,-1,1);
+ this[2] = new parent.AnsReport(choice,valuation,'',0);
+ parent.pesi[4]=parent.DecodeNumber(5,4,0,99);
+
+}
+
+function Domanda5()
+{
+ var status;
+ if (!parent.checkTrueOrFalse(document.domanda.radio50)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio51)) { parent.IncompletedQuest(); return 0; }
+ if (!parent.checkTrueOrFalse(document.domanda.radio52)) { parent.IncompletedQuest(); return 0; }
+ parent.allAnsReport[4] = new initValuate5();
+ parent.doValuate(4);
+ parent.PrintBooleanAnswer(4,4);
+ return 1;
+}
+
+//-->
+</SCRIPT>
+<CENTER><TABLE WIDTH=80%><TD>
+<IMG SRC='media/check.gif' CLASS='checkHide' ID='check'>
+<FONT style='font-family:"Arial"; font-size:14pt; '>pregunta 5</FONT><TABLE WIDTH=400 BORDER=3 ID='hideAns' CLASS='cardHide'>
+<TD ID='hideTxt' ALIGN='CENTER'></TD>
+</TABLE>
+<P>
+<FONT style='font-family:"Times New Roman"; font-size:12pt; font-weight:bold;color:#000000; '>La principal característica de Saturno es que posee</FONT>
+<P>
+</TABLE></CENTER>
+<CENTER><TABLE WIDTH=80%>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> A </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>anillos</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio50'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio50'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> B </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>color rojo</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio51'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio51'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+<TD WIDTH=10% ALIGN='CENTER' BGCOLOR='000080'>
+<FONT style='font-family:"Arial"; font-size:12pt; color:#FFFFFF; background:#000080; '> C </FONT></TD>
+<TD WIDTH=90% ALIGN='LEFT' BGCOLOR='87CEFA'><FONT style='font-family:"Times New Roman"; font-size:12pt; color:#000000; background:#87CEFA; '>un eje inclinado</FONT></TD>
+<TR><TD COLSPAN=2>
+<blockquote>
+<INPUT TYPE='radio' NAME='radio52'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Cierto</FONT> <INPUT TYPE='radio' NAME='radio52'> <FONT style='font-family:"Times New Roman"; font-size:12pt; '>Falso</FONT> </blockquote>
+</TD>
+<TR>
+</TABLE></CENTER>
+<P><CENTER>
+<SPAN id='okButtonId' class='okButtonClass'><INPUT TYPE='button' VALUE='OK' onClick="Domanda5()" style='font-family: verdana,helvetica,arial,san-serif; font-size: 8pt; width:50px'></SPAN></CENTER>
+<HR WIDTH='80%'>
+</FORM>
+</BODY>
+</HTML>

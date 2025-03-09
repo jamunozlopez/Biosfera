@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<version>5</version>
+
+<data>
+<title>&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;  width=&quot;100%&quot;&gt;&lt;tr bgcolor=&quot;#BBDDBB&quot; align=&quot;center&quot;&gt;&lt;td align=&quot;center&quot; colspan=&quot;2&quot;&gt;&lt;font class=&quot;txt&quot; size=&quot;3&quot;&gt;&lt;b&gt;ACTIVIDAD   13&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr  bgcolor=&quot;#e6ffe6&quot;&gt;&lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;&lt;br&gt;&lt;font class=&quot;txt&quot; size=&quot;2&quot;&gt;&lt;b&gt;Tipo de l&amp;#237;mite de placa. &lt;br&gt;&lt;br&gt;Arrastrar palabras.&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>
+</default-right-item>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/valle.gif&quot; alt=&quot;Valle de Rift&quot; width=&quot;146&quot; height=&quot;92&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Constructivo&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/hima.gif&quot; alt=&quot;Himalaya&quot; width=&quot;165&quot; height=&quot;105&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Destructivo&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/san.gif&quot; alt=&quot;Falla de San Andrés&quot; width=&quot;126&quot; height=&quot;92&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Transformante&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/ande.gif&quot; alt=&quot;Los Andes&quot; width=&quot;108&quot; height=&quot;92&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Destructivo&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/poli.gif&quot; alt=&quot;Polinesia&quot; width=&quot;133&quot; height=&quot;92&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Destructivo&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;imagenes/activi13/isla.gif&quot; alt=&quot;Islandia&quot; width=&quot;132&quot; height=&quot;92&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;b&gt;&lt;br&gt;&lt;br&gt;Constructivo&lt;br&gt;&lt;br&gt;&lt;/b&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>                 </exercise-subtitle>
+<instructions></instructions>
+<next-ex-url>activi1sigue.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<guess-correct>&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#BBDDBB&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;b&gt;¡Correcto!&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</guess-correct>
+<guess-incorrect>&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#BBDDBB&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;b&gt;Lo siento,  intentelo de nuevo.&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>&lt;b&gt;Su puntuación es: &lt;/b&gt;</your-score-is>
+<correct-indicator>Correcto!</correct-indicator>
+<incorrect-indicator>Lo siento!</incorrect-indicator>
+<remaining-time></remaining-time>
+<start-reading></start-reading>
+<show-reading-again></show-reading-again>
+<times-up></times-up>
+<click-to-show></click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>&lt;=</back-caption>
+<contents-caption>Anterior</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>actividad1.htm</contents-url>
+<graphic-url>imagenes/fondoo.gif</graphic-url>
+<font-face> Arial, Helvetica, sans-serif</font-face>
+<page-bg-color>#E6FFE6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#E6FFE6</ex-bg-color>
+<text-color>#006666</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#E6FFE6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

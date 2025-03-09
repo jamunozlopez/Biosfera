@@ -1,0 +1,539 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  
+{  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;    
+  }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  
+  }error=contestadas-calificacion;mensaje=calificacion+" respuestas acertadas de 9.\r"+error+" respuestas no acertadas:\r";alert(mensaje);}
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+//-->
+</SCRIPT>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td  width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" >
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/tierra_cambia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td  valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2">
+                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/ambar.jpg" width="105" height="76"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/ammonites2.jpg" width="105" height="96"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/carnivor.jpg" width="105" height="106"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/cretacico.jpg" width="105" height="85"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/shark_bay_estromatolitos.jpg" width="105" height="77"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/dinotrac.jpg" width="105" height="119"></td>
+                        </tr>
+                      </table>
+                      </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="522" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB" width="540"><font class="txtnegro">ACTIVIDAD 
+                              INICIAL </font><span class="txtnegro"></span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1" ></td>
+                            <td width="512" valign="top"> 
+                              <table width="505" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td rowspan="2" width="4">&nbsp;</td>
+                                  <td rowspan="2" width="489" valign="top"> <br>
+                                    <p class="txt"><img src="imagenes/carbforestsm.gif" width="350" height="200" align="left" hspace="8" alt="&quot;Paisaje paleozoico dominado por los helechos. Tomada de www.ucmp.berkeley.edu&quot;">Imagina 
+                                      que existe una m&aacute;quina del tiempo 
+                                      que nos permite retroceder al pasado; viajaste 
+                                      en ella y llegaste a otra &eacute;poca de 
+                                      la Historia de la Tierra. En este momento 
+                                      de tu viaje fant&aacute;stico al pasado 
+                                      has tenido un fallo en el sistema y no puedes 
+                                      datar cu&aacute;ntos a&ntilde;os has retrocedido.
+                                    <br>
+                                      <br>
+                                      Ahora tu primera misi&oacute;n es obtener 
+                                      informaci&oacute;n de tu entorno para saber 
+                                      en qu&eacute; momento de la historia de 
+                                    nuestro planeta te 
+                                      encuentras.</p>
+                                    <p class="txt">La m&aacute;quina se ha posado 
+                                      en una zona llana. Se halla pr&oacute;xima 
+                                      a un mar y rodeada de vegetaci&oacute;n. 
+                                      El silencio es casi absoluto. Los equipos 
+                                      de medici&oacute;n de la nave arrojan los 
+                                      siguientes datos:</p>
+                                    <ul>
+                                      <li class="txt">Composici&oacute;n atmosf&eacute;rica: 
+                                        Nitr&oacute;geno, 80.49 %; Ox&iacute;geno, 
+                                        19.01 %; otros gases (Hidr&oacute;geno, 
+                                        CO<sub>2</sub>, vapor de agua, Arg&oacute;n...), 
+                                        0.5 %.</li>
+                                      <li class="txt">La temperatura ambiental 
+                                        es de 20&ordm; C durante el d&iacute;a. 
+                                        Por la noche desciende a una media de 
+                                        4&ordm; C por influencia de una cordillera 
+                                        pr&oacute;xima en la que se aprecia la 
+                                        presencia de glaciares.</li>
+                                      <li class="txt">La temperatura del agua 
+                                        del mar es de 21&ordm; C. Su composici&oacute;n 
+                                        en cloro y sodio es un 23 % del contenido 
+                                        en el a&ntilde;o 2002.</li>
+                                      <li><span class="txt">Duraci&oacute;n del 
+                                        d&iacute;a (per&iacute;odo de rotaci&oacute;n): 
+                                        21. 55 horas.</span><br>
+                                      </li>
+                                    </ul>
+                                    <form name="examen" method="post" action="">
+                                      <p class="txtnegro" > a) &iquest;De d&oacute;nde 
+                                        viene el ox&iacute;geno de la atm&oacute;sfera?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton1" value="2">
+                                        Del agua.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton1" value="3">
+                                        De las rocas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton1" value="1">
+                                        De la fotos&iacute;ntesis. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton1" value="4">
+                                        De la nebulosa primigenia.</p>
+                                      <p class="txtnegro">b) Adem&aacute;s de 
+                                        su utilizaci&oacute;n por los seres vivos, 
+                                        &iquest;qu&eacute; otra funci&oacute;n 
+                                        fundamental crees que desempe&ntilde;&oacute; 
+                                        el ox&iacute;geno en esos tiempos?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton2" value="2">
+                                        Formar parte del agua.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton2" value="3">
+                                        Oxidar rocas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton2" value="4">
+                                        Inflamar gases en la erupciones volc&aacute;nicas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton2" value="1">
+                                        Formar la capa de ozono. </p>
+                                      <p class="txtnegro">c) &iquest;Desde cuando 
+                                        se han dado glaciaciones en la Tierra?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton3" value="2">
+                                        S&oacute;lo en el Cuaternario.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton3" value="1">
+                                        Desde el Prec&aacute;mbrico. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton3" value="3">
+                                        Desde el Mesozoico<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton3" value="4">
+                                        Nunca se han dado en la Tierra</p>
+                                      <p class="txt"><br>
+                                        En un reconocimiento por las proximidades 
+                                        recolectas algunos tipos de seres 
+                                        vivos que deber&aacute;n ser analizados 
+                                        e identificados en laboratorio. Los resultados 
+                                        obtenidos son:</p>
+                                      <ul>
+                                        <li class="txt">La vegetaci&oacute;n de 
+                                          los alrededores de la llanura est&aacute; 
+                                          formada exclusivamente por Bri&oacute;fitas 
+                                          (hep&aacute;ticas y musgos) en las zonas 
+                                          m&aacute;s frescas y h&uacute;medas. 
+                                          El resto, que constituye la vegetaci&oacute;n 
+                                          dominante, son Pterid&oacute;fitas, 
+                                          es decir, las primeras plantas vasculares 
+                                          que se han extendido por todo el territorio 
+                                          visible. Entre esas Pterid&oacute;fitas 
+                                          abundan los helechos.</li>
+                                        <li class="txt"> Ocultos en la vegetaci&oacute;n 
+                                          s&oacute;lo se encuentran Artr&oacute;podos: 
+                                          insectos voladores y algunos ar&aacute;cnidos 
+                                          primitivos. En el suelo, entre las frondas 
+                                          en descomposici&oacute;n de los helechos, 
+                                          aparecen alg&uacute;n crust&aacute;ceo 
+                                          y alg&uacute;n miri&aacute;podo. No 
+                                          existe ning&uacute;n tipo de vertebrado.</li>
+                                      </ul>
+                                      <p class="txtnegro">d) &iquest;Qu&eacute; 
+                                        significa &quot;vascular&quot;?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton4" value="1">
+                                        Que transporta sustancias. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton4" value="2">
+                                        Caerse hacia un lado.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton4" value="3">
+                                        Que respira ox&iacute;geno.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton4" value="4">
+                                        Que es vegetal.</p>
+                                      <p class="txtnegro">e) &iquest;Cu&aacute;l 
+                                        es el problema que debieron resolver las 
+                                        plantas al conquistar el medio terrestre?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton5" value="2">
+                                        El exceso de luz solar.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton5" value="3">
+                                        El exceso de ox&iacute;geno.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton5" value="4">
+                                        Las temperaturas extremas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton5" value="1">
+                                        La falta de agua. </p>
+                                      <p class="txtnegro">f) &iquest;Cu&aacute;l 
+                                        es el orden evolutivo que siguieron las 
+                                        plantas en su conquista de la tierra seca?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton6" value="1">
+                                        Algas - Briofitas - Pteridofitas. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton6" value="2">
+                                        Algas - Helechos - Angiospermas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton6" value="3">
+                                        Pteridofitas - Helechos - Gimnospermas.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton6" value="4">
+                                        Briofitas - Gimnospermas - Angiospermas.</p>
+                                      <p class="txt">En el fondo de los mares 
+                                        pr&oacute;ximos la vida es mucho m&aacute;s 
+                                        variada:</p>
+                                      <p  align="center"><img src="imagenes/ordovicsea.gif" width="398" height="246" alt="&quot;Mar Paleozoico. Tomada de www.ucmp.berkeley.edu&quot;"></p>
+                                      <ul>
+                                        <li class="txt"> Existen algas que tapizan 
+                                          algunas zonas.</li>
+                                        <li><span class="txt"> En las zonas profundas 
+                                          y m&aacute;s resguardadas proliferan 
+                                          corales rugosos alrededor de los cuales 
+                                          se mueve una variada fauna de trilobites, 
+                                          braqui&oacute;podos y algunos cefal&oacute;podos. 
+                                          Muchos de ellos sirven de alimento a 
+                                          unos extra&ntilde;os peces acorazados 
+                                          que nadan cerca de los fondos.</span><br>
+                                        </li>
+                                      </ul>
+                                      <p class="txtnegro">g) &iquest;Por qu&eacute; 
+                                        la vida surgi&oacute; primero en el agua?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton7" value="2">
+                                        Porque al principio no hab&iacute;a continentes.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton7" value="3">
+                                        Porque en la tierra seca la irradiaci&oacute;n 
+                                        solar era excesiva<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton7" value="4">
+                                        Porque las sustancias qu&iacute;micas 
+                                        de la vida aparecieron en el agua tras 
+                                        la formaci&oacute;n de la Tierra.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton7" value="1">
+                                        Todo es cierto. </p>
+                                      <p class="txtnegro">h) &iquest;Qu&eacute; 
+                                        necesitaron los animales para conquistar 
+                                        la tierra seca?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton8" value="2">
+                                        Mucha paciencia.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton8" value="3">
+                                        Un esqueleto &oacute;seo.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton8" value="1">
+                                        Pulmones para respirar y una piel m&aacute;s 
+                                        gruesa. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton8" value="4">
+                                        Patas para andar.</p>
+                                      <p class="txtnegro">i) &iquest;Cu&aacute;l 
+                                        es el orden evolutivo que debieron seguir 
+                                        los animales vertebrados en la conquista 
+                                        de la tierra seca?</p>
+                                      <p class="txt">&middot; 
+                                        <input type="radio" name="radiobutton9" value="2">
+                                        Insectos - peces - reptiles.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton9" value="1">
+                                        Peces - anfibios - reptiles. <br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton9" value="3">
+                                        Moluscos - insectos - anfibios.<br>
+                                        &middot; 
+                                        <input type="radio" name="radiobutton9" value="4">
+                                        Peces - moluscos - anfibios.</p>
+                                      <p class="txt">A la vista de los datos obtenidos, 
+                                        &iquest;a qu&eacute; momento de la historia 
+                                        de la Tierra (e&oacute;n, era y sistema) 
+                                        habr&iacute;as llegado?</p>
+                                      <p class="txt"> 
+                                        <input type="text" name="textfield" size="42">
+                                        <input type="button" name="Soluci&oacute;n" value="Soluci&oacute;n" onClick="MM_popupMsg('FANEROZOICO - PALEOZOICO - SIL&Uacute;RICO');MM_showHideLayers('Layer1','','show')">
+                                      </p>
+                                      <div id="Layer1" style="position:absolute; width:200px; height:33px; z-index:1; left: 141px; top: 3064px; visibility: hidden"> 
+                                        <input type="text" name="textfield2" size="42" value="FANEROZOICO - PALEOZOICO - SIL&Uacute;RICO">
+                                      </div>
+                                      <p class="txt">&nbsp; </p>
+                                      <p></p>
+                                      <p class="txt"> <span class="txt"> 
+                                        <input type="reset" name="Borrar" value="Borrar">
+                                        <input type="button" name="calificacion" value="Calificaci&oacute;n" onClick="nota(this.form)">
+                                        </span></p>
+                                    </form>
+                                    <p align="right" class="txtnegrolink"><a href="contenidos.htm" class="txtnegrolink">siguiente</a></p>
+                                  </td>
+								  <td rowspan="2" width="4">&nbsp;</td>
+								  </tr>
+								  </table>
+                            </td>
+                            <td width="4">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2">
+                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/graptlit.jpg" width="105" height="84"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/hominid.jpg" width="105" height="85"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/mamut_berezovka.jpg" width="105" height="85"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/marpaleo.jpg" width="105" height="85"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/precambric_sea.jpg" width="105" height="85"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/dino.jpg" width="105" height="138"></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<br>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>Un matrimonio, ambos de pelo negro y ojos pardos, tienen un hijo de pelo rubio y ojos azules.  </TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=2;
+CorrectAnswers[1]=5;
+CorrectAnswers[2]=4;
+CorrectAnswers[3]=1;
+CorrectAnswers[4]=3;
+CorrectAnswers[5]=6;
+CorrectAnswers[6]=7;
+CorrectAnswers[7]=7;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()">
+
+<input type="button" value="¿Cómo resolver problemas?" onclick="parent.location='resolver_problemas.htm'">
+
+<INPUT TYPE="button" VALUE="Repasar teor&iacute;a" onClick="parent.location='contenidos10.htm'">
+
+</FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000">Un matrimonio, ambos de pelo negro y ojos pardos, tienen un hijo de pelo rubio y ojos azules.  </FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000"><BR>&nbsp;</FONT></TD></TR>
+
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">a) &#191;Cu&aacute;ntos caracteres estudiamos?.</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">b) &#191;Cu&aacute;les son?</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">c) &#191;Qu&eacute; fenotipos tienen?</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">d) &#191;Qu&eacute; tipo de herencia es? </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">e) &#191;Cu&aacute;les son los fenotipos dominantes?</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">f) &#191;C&oacute;mo ser&aacute; el genotipo del hijo rubio de ojos azules?</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">g) &#191;C&oacute;mo ser&aacute;n los genotipos de los padres?</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="12">
+<OPTION>??? 
+<OPTION>Dominante.
+<OPTION>Dos.
+<OPTION>Pelo negro y ojos pardos.
+<OPTION>Pelo negro y rubio; ojos marrones y azules.
+<OPTION>Color del pelo y color de ojos.
+<OPTION>aabb
+<OPTION>AaBb
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="13" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

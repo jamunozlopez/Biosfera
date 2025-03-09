@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Las células del sistema inmune&lt;center&gt;&lt;img src=&quot;../imagenes/celulas/macrofago.jpg&quot; alt=&quot;macrofago.jpg&quot; width=&quot;250&quot; height=&quot;267&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Las células del sistema inmune&lt;center&gt;&lt;img src=&quot;../imagenes/celulas/macrofago.jpg&quot; alt=&quot;macrofago.jpg&quot; width=&quot;250&quot; height=&quot;267&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Las células madre hematopoyéticas son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Totipotentes</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Multipotentes</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pluripotentes</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Linfocíticas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los eritrocitos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Junto con los linfocitos, pertenecen a la estirpe mieloide</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Junto con los granulocitos son de la estirpe linfoide</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pertenecen a la estirpe leucocitaria</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son de la misma estirpe celular que los macrófagos y los basófilos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los neutrófilos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son granulocitos que se tiñen con colorantes ácidos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son fagocitos granulocíticos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son fagocitos que se tiñen con colorantes básicos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son agranulocitos esenciales para la defensa frente a infecciones</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La estirpe mieloide produce</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Eritrocitos, si hay interleuqinas en el medio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Granulocitos, si aparecen interleuquinas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Granulocitos, como los monocitos y los basófilos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Granulocitos, si aparece eritropoyetina en el medio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Basófilos y mastocitos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son células con origen en la médula ósea</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>No tienen progenitor común en la médula ósea</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Los dos son granulocitos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Aparecen los dos en el tejido conjuntivo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los monocitos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son granulocitos que dan origen a los macrófagos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Aparecen en los tejidos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Aparecen en la sangre</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son agranulocitos que dan origen a los megacariocitos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los linfocitos B</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Del tipo naïve, son linfocitos maduros, que no han sido activados por un anatígeno</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son capaces de liberar inmunoglobulinas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son células plasmáticas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son los linfocitos cooperadores</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las células plasmáticas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son linfocitos B, activados al encontrarse con un antígeno</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>No pueden formar inmunoglobulinas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se encuentran en la médula ósea</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son linfocitos naïve</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los linfocitos T</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Maduran en la médula ósea</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se originan en el timo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se activan cuando el  receptor T (TCR) es activado por los linfocitos B</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se activan cuando el linfocito B presenta el antígeno al receptor T (TCR) y al receptor CD</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los linfocitos T</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Pueden ser liberadores de inmunoglobulinas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se distinguen en dos series, TCD4 y TCD8</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúan en la respuesta inmunitaria innata</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúan en las infestaciones</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>las células asesinas (NK)</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son de la estirpe mieloide</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son un tipo de linfocito T</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son responsables de la respuesta inmunitaria natural contra el cáncer</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúan en las infestaciones</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

@@ -1,0 +1,384 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+   <title>Test</title>
+   <style type="text/css">
+<!--
+-->
+   </style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+   </script>
+
+<script LANGUAGE="JavaScript">
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++) 
+ {  if (document.examen[i].checked)  
+  {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;      } 
+   if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 10.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r"+incorrectas;alert(mensaje);}</script>
+</head>
+<body bgcolor="#E6FFE6" text="#000000" leftmargin="2" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table border="0" cellspacing="0" cellpadding="0" align="center" width="760">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="34">
+                    <tr>
+                      <td width="760" height="35" background="../img/logo_biosfera.jpg">&nbsp; </td>
+                      </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="index_act.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <img src="../img/sisendo.gif" width="742" height="25">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+  <center>
+
+<table border="0" width="743" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="243"><font class="txtnegro">AUTOEVALUACIÓN</font></td>
+    <td width="486">
+      <p align="right"><a class="txtnegrolink" href="test_hormonas.htm">(3/5) -
+                                  siguiente</a></td>
+  </tr>
+</table>
+  </center>
+</div>
+<p class="txt"><font class="txtnegro">Las glándulas del cuerpo humano</font></p>
+
+<form NAME="examen">
+<p class="txt"><font class="txtnegro">1. Esta imagen corresponde al:</font></p>
+<blockquote>
+  <p class="txt"><img border="0" src="Imagenes/pancreas_sin.gif" align="left" width="429" height="239">
+  </p>
+  <p class="txt"><input TYPE="radio" NAME="mat 26/ 1" VALUE="3">Tiroides<br>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="1">Páncreas<br>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="4">Hipófisis<br>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="2">Cápsulas suprarrenales</p>
+</blockquote>
+
+<p class="txt">
+
+<br>&nbsp; </p>
+<p class="txt">&nbsp;</p>
+<p class="txt">
+<font class="txtnegro">2. A qué glándula endocrina corresponde esta
+imagen:&nbsp;</font>
+</p>
+<p class="txt"><img border="0" src="Imagenes/capsulas_sin.gif" align="left" width="235" height="318"> 
+
+<br>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="1">Las cápsulas suprarrenales<p class="txt"><input TYPE="radio" NAME="mat 72/ 2" VALUE="4">Las
+gónadas<br>
+<br>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="3">El hipotálamo<p class="txt"><input TYPE="radio" NAME="mat 72/ 2" VALUE="2">El
+páncreas<p class="txt">&nbsp;
+
+</p>
+<p class="txt">&nbsp;
+
+</p>
+<p class="txt">&nbsp;
+
+</p>
+<p class="txt">&nbsp;
+
+</p>
+<p class="txt"><font class="txt">&nbsp; </font>
+
+
+&nbsp;
+<br>
+<font class="txtnegro">3. Y esta otra se llama</font><br>
+<img border="0" src="Imagenes/hipofisis_sin.jpg" align="left" width="291" height="270">
+
+</p>
+  <blockquote>
+    <p class="txt"><input TYPE="radio" NAME="mat 36/ 3" VALUE="3">Hipotálamo<br>
+<br><input TYPE="radio" NAME="mat 36/ 3" VALUE="2">Gónadas<br>
+<br><input TYPE="radio" NAME="mat 36/ 3" VALUE="4">Páncreas</p>
+    <p class="txt"><input TYPE="radio" NAME="mat 36/ 3" VALUE="1">Hipófisis<font class="txt"><br>
+    <br>
+    <br>
+    </font></p>
+</blockquote>
+
+<p class="txt"><font class="txtnegro"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+4. ¿A qué corresponde esta imagen?</font></p>
+<p class="txt"><img border="0" src="Imagenes/hipotalamo_sin.jpg" align="left" width="296" height="234"><br>
+</p>
+  <blockquote>
+<p class="txt">
+<input TYPE="radio" NAME="mat 78/ 4" VALUE="3">A las Gónadas<br>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="4">A los Ovarios<br>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="1">Al Hipotálamo<br>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="2">A los Testículos </p>
+</blockquote>
+
+
+
+<p class="txt">
+<font class="txtnegro"><br>
+<br>
+</font></p>
+<p class="txt"><font class="txtnegro"><br>
+<br>
+<br>
+5. ¿A qué glándula corresponde esta imagen?<br>
+<img border="0" src="Imagenes/tiroides_sin.gif" align="left" width="277" height="353"></font></p>
+<p class="txt">&nbsp;
+<input TYPE="radio" NAME="mat 32/ 5" VALUE="4">Paratiroides<br>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="1">Tiroides<br>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="3">Hipófisis<br>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="2">Hipotálamo</p>
+<p class="txt"><font class="txtnegro"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+6. &iquest;Cómo se llama esta glándula?</font></p>
+<p class="txt">
+<img border="0" src="Imagenes/ovarios_sin.gif" align="left" width="288" height="232">
+<br>
+<br>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="3">Testículo<br>
+
+<br>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="4">Hipófisis<br>
+
+<br>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="1">Ovario </p>
+<p class="txt"><input TYPE="radio" NAME="mat 32/ 6" VALUE="2">Hipotálamo</p>
+<p class="txt"><font class="txtnegro"><br>
+<br>
+<br>
+<br>
+7. ¿Cuál es el nombre de esta glándula?<br>
+<img border="0" src="Imagenes/testiculos_sin.gif" align="left" width="358" height="269"></font></p>
+<p class="txt">&nbsp; <input TYPE="radio" NAME="mat 85/ 7" VALUE="4">Ovario<br>
+
+<br>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="1">Testículo&nbsp;<br>
+
+<br>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="2">Páncreas<br>
+
+<br>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="3">Tiroides<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<font class="txtnegro">8. &iquest;Dónde se encuentra el Paratiroides?</font></p>
+
+      <p class="txt">
+
+      <input TYPE="radio" NAME="mat 38/ 8" VALUE="3">
+ Junto al Duodeno<br>
+    <br> 
+      <input TYPE="radio" NAME="mat 38/ 8" VALUE="4">
+ Encima de los Riñones</p>
+<p class="txt"> 
+      <input TYPE="radio" NAME="mat 38/ 8" VALUE="1">
+ En el cuello junto al Tiroides&nbsp;<br>
+    <br> 
+      <input TYPE="radio" NAME="mat 38/ 8" VALUE="2">
+ En la base del Encéfalo<br>
+
+
+<br><font class="txtnegro">9. ¿Cuáles son las únicas estructuras del sistema
+endocrino que se encuentra unidas anatómicamente?&nbsp;</font></p>
+<p class="txt">
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="1">El Hipotálamo y la Hipófisis<br>
+
+<br>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="2">El Páncreas y el Duodeno<br>
+
+<br>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="3">El Ovario y el Testículo<br>
+
+<br>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="4">Las Cápsulas Suprarrenales y el
+Páncreas<br>
+
+
+<br> <font class="txtnegro">10. &iquest;Qu&eacute; tipo de imagen es la que se
+muestra a continuación?&nbsp;</font> </p>
+<p class="txt"><img border="0" src="Imagenes/islotes.jpg" alt="Islotes de Langerhams del Páncreas" align="left" width="252" height="166"><input TYPE="radio" NAME="mat  5/10" VALUE="2">Una
+imagen tomada de Internet<br>
+
+<br>
+<input TYPE="radio" NAME="mat  5/10" VALUE="3">Un imagen tomada al microscopio electrónico<br>
+
+<br>
+<input TYPE="radio" NAME="mat  5/10" VALUE="4">Un dibujo realizado por ordenador<br>
+
+<br>
+<input TYPE="radio" NAME="mat  5/10" VALUE="1">Una imagen tomada al microscopio
+óptico&nbsp;<br>
+<br>
+<br>
+<br>
+
+<input TYPE="reset" VALUE="BORRAR"><input TYPE="submit" NAME="calificacion" VALUE="CALIFICACIÓN" onClick="nota(this.form)"></form>
+<table border="0" width="743">
+  <tr>
+    <td width="243"><font class="txtnegro">AUTOEVALUACIÓN</font></td>
+    <td width="486">
+      <p align="right"><a class="txtnegrolink" href="test_hormonas.htm">(3/5) -
+                                  siguiente</a></td>
+  </tr>
+</table>
+</body>
+</html>

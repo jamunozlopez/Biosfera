@@ -1,0 +1,551 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center" height="599">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="24"><img src="../img/evolucion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="761" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_1.jpg" width="105" height="91"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_2.jpg" width="105" height="91"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_3.jpg" width="105" height="82"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_4.jpg" width="105" height="92"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_5.jpg" width="105" height="80"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_6.jpg" width="105" height="84"></td>
+                              </tr>
+                            </table>
+                            </td>
+                            <td width="535" bgcolor="#e6ffe6" align="center"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td width="477" height="28" bgcolor="#BBDDBB"><p class="ttunidad">IDEAS 
+                                    FUNDAMENTALES  </td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr>
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">1.-<a class="txtnegrolink"href="1origen_de_la_vida.htm">El 
+                                            origen de la vida</a> 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Antiguamente se pensaba que la vida 
+                                            surgía de la nada por generación espontánea. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Oparin expuso la Teoría el origen 
+                                            químico de la vida, según la cual, las moléculas 
+                                            sencillas que existían en la atmósfera 
+                                            terrestre primero, y en los mares 
+                                            primigenios de la Tierra después, se combinaron 
+                                            entre sí de muchas maneras gracias 
+                                            al aporte energético del Sol, tormentas, 
+                                            calor terrestre, etc. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            De todas las combinaciones posibles 
+                                            de moléculas, una fue capaz de mantenerse 
+                                            y autocopiarse. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            La unión de moléculas autocopiativas 
+                                            con otras moléculas protectoras y 
+                                            enzimáticas originaron la primera 
+                                            célula.</p>
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p>
+                                          <font class="txt">2.- <a class="txtnegrolink"href="4teorias_evolutivas.htm">Teor&iacute;as 
+                                          evolutivas</a> 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            Antes se pensaba que los seres vivos 
+                                            eran inmutables = FIJISMO, hasta que 
+                                            Lamarck, a finales del s XVIII, 
+                                            dijo que los seres vivos cambiaban 
+                                            como respuesta a los CAMBIOS EN SU 
+                                            MEDIO, y que esos cambios que sufrían 
+                                            se transmitían a la descendencia 
+											(herencia de los caracteres 
+											adquiridos) = 
+                                            EVOLUCIONISMO LAMARCKISTA. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            A mediados del s XIX, Darwin y Wallace 
+                                            elaboraron una nueva teoría que tomaba 
+                                            algunas ideas de Lamarck, diciendo 
+                                            que los seres vivos son siempre diferentes, 
+                                            y que es el medio ambiente el que 
+                                            SELECCIONA a los que mejor viven en 
+                                            un medio determinado, a los más APTOS, 
+                                            que dejarán más descendientes a la 
+                                            siguiente generación = EVOLUCIÓN DARWINISTA. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            Según Darwin y Wallace, los seres 
+                                            vivos no cambian durante su vida, 
+                                            sino que nacen ya diferentes y por 
+                                            tanto, no existe la herencia de los 
+                                            caracteres adquiridos. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            A principios del s XX, un conjunto 
+                                            de científicos reelaboró la teoría 
+                                            darwinista explicando la variabilidad 
+                                            de los individuos por el hecho de 
+											que 
+                                            poseían diferente información genética, 
+                                            y esto hacía que unos individuos desarrollasen 
+                                            buenos caracteres para sobrevivir, 
+                                            y otros no los desarrollasen = NEODARWINISMO. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            La diferente información genética 
+                                            aparecía por mutaciones y la selección 
+                                            natural en realidad selecciona combinaciones 
+                                            genéticas más aptas para un determinado 
+                                            medio. 
+                                          </font> </td>
+                                      </tr>
+                                      
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">3.- <a class="txtnegrolink"href="5pruebas_de_la_evolucion.htm">Pruebas 
+                                            de la evoluci&oacute;n</a> 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Existen muchas pruebas de que la evolución 
+                                            existe y ha funcionado hasta nuestros 
+                                            días, como son el estudio de la distribución 
+                                            de los seres vivos, el estudio de 
+                                            los fósiles, la anatomía y morfología 
+                                            de los seres vivos, el estudio del 
+                                            desarrollo embrionario de los vertebrados 
+                                            o el estudio de proteínas y ADN de 
+                                            seres vivos. </p>
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">4.- <a class="txtnegrolink"href="6mecanismos_de_la_evolucion.htm">Mecanismos 
+                                            de la evolución </a> 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            La información genética y el ambiente 
+                                            son la base de la evolución. las MUTACIONES 
+                                            GENÉTICAS hacen que un gen cambie 
+                                            lo suficiente para seguir siendo el 
+                                            mismo gen, pero dé lugar a un carácter 
+                                            algo diferente. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Cuando un ser vivo nace, desarrolla 
+                                            una serie de caracteres para los que 
+                                            posee información genética, y esos 
+                                            caracteres son modelados por el ambiente 
+                                            en el que vive. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            La capacidad de vivir mejor o peor 
+                                            en un lugar es lo que llamamos ADAPTACIÓN 
+                                            AL MEDIO: el que está mejor adaptado 
+                                            vive mejor, es la SUPERVIVENCIA DEL 
+                                            MÁS APTO. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            Los seres mejor adaptados a su medio 
+                                            dejan más descendientes a la siguiente 
+                                            generación. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            La naturaleza selecciona los mejores 
+                                            genes para un ambiente determinado, 
+                                            es lo que llamamos la SELECCIÓN NATURAL. 
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">5.- <a class="txtnegrolink"href="7fuerzas_evolutivas.htm">Las 
+                                            fuerzas evolutivas</a> </p>
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            Las fuerzas evolutivas que modifican 
+                                            la información genética y la seleccionan 
+                                            produciendo nuevos individuos, son: 
+                                       
+                                           
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td width="3%" valign="top">&nbsp;</td>
+                                        <td width="97%"> <table border="0">
+                                      <tr>
+                                        <td><img src="image/bullet.gif" width="9" height="13"></td><td><p class="txt">Las MUTACIONES</td></tr></table>                                         
+                                        </td>
+                                      </tr>
+									  <tr> 
+                                        <td width="3%" valign="top">&nbsp;</td>
+                                        <td width="97%"><table border="0">
+                                      <tr>
+                                        <td><img src="image/bullet.gif" width="9" height="13"></td><td> <p class="txt">La REPRODUCCIÓN SEXUAL</td></tr></table>                                         
+                                       </td>
+                                      </tr>
+									 <tr> 
+                                        <td width="3%" valign="top">&nbsp;</td>
+                                        <td width="97%"><table border="0">
+                                      <tr>
+                                        <td><img src="image/bullet.gif" width="9" height="13"></td><td> <p class="txt">La SELECCIÓN NATURAL</td></tr></table>                                         
+                                        </td>
+                                      </tr>
+									  <tr> 
+                                        <td width="3%" valign="top">&nbsp;</td>
+                                        <td width="97%"><table border="0">
+                                      <tr>
+                                        <td><img src="image/bullet.gif" width="9" height="13"></td>
+                                              <td> 
+                                                <p class="txt">El NÚMERO DE INDIVIDUOS 
+                                                  DE LA POBLACIÓN 
+                                              </td></tr></table>                                         
+                                       
+                                            
+                                        </td>
+                                      </tr><tr> 
+                                        <td width="3%" valign="top">&nbsp;</td>
+                                        <td width="97%">
+                                          <table border="0">
+                                      <tr>
+                                        <td><img src="image/bullet.gif" width="9" height="13"></td><td> <p class="txt">Las MIGRACIONES</td></tr></table>                                         
+                                       
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2">  
+                                          
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> Las mutaciones y la 
+                                            selección natural pueden producir 
+                                            y favorecer cambios pequeños en los 
+                                            seres vivos, apareciendo subespecies 
+                                            o especies nuevas = MICROEVOLUCIÓN. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Otras veces se producen cambios drásticos 
+                                            que originan nuevos grupos superiores 
+                                            de seres vivos: familias, órdenes 
+                                            o, incluso, clases = MACROEVOLUCIÓN. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Lo más frecuente es la microevolución, 
+                                            pequeños cambios que originan nuevas 
+                                            especies = ESPECIACIÓN. 
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">6.- <a class="txtnegrolink"href="9clasificacion_seres_vivos.htm">Clasificación 
+                                            de los seres vivos</a> 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Los seres vivos se clasifican según 
+                                            su parentesco evolutivo = <a class="txtnegrolink"href="11bisarbol_filogenetico_seres_vivos.htm">CLASIFICACIÓN 
+                                            NATURAL</a>. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Los seres vivos se organizan en varias 
+                                            categorías jerárquicas, de las cuales, 
+                                            la categoría básica es la ESPECIE 
+                                            = conjunto de seres vivos que tienen 
+                                            caracteres anatómicos, fisiológicos 
+                                            y morfológicos comunes, y que se pueden 
+                                            reproducir entre ellos y tener descendencia 
+                                            fértil. 
+                                          <p class="txt"> <img src="image/bolo.gif" width="9" height="13"> 
+                                            Para dar nombre a las especies se 
+                                            usa el SISTEMA BINOMIAL de Linneo, 
+                                            formado por dos palabras, la primera 
+                                            con mayúscula es el género y las dos 
+                                            juntas, la segunda con minúscula, 
+                                            es la especie. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> Por encima de la especie 
+                                          están el género, la familia, el orden, 
+                                          la clase, el tipo o división y el REINO. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            Existen <a class="txtnegrolink"href="11cinco_reinos.htm">cinco 
+                                            reinos</a> que agrupan a todos los 
+                                            seres vivos: MONERAS, PROTISTAS, METAFITAS, 
+                                            HONGOS y METAZOOS. </p>
+                                        </td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="2"> 
+                                          <p class="txt">7.- <a class="txtnegrolink"href="12evolucion_humana.htm">Evolución 
+                                            humana</a> 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> A finales del Mesozoico, 
+                                          surge el grupo nuevo de los Primates, 
+                                          animales fundamentalmente arborícolas 
+                                          y de dieta vegetariana. 
+                                        <p class="txt"><img src="image/bolo.gif" width="9" height="13"> A mediados del Cenozoico, 
+                                          hace unos 35 millones de año, se va 
+                                          a producir un cambio climático en África, 
+                                          una aridificación del clima, que va 
+                                          a dar lugar a un retroceso de las selvas 
+                                          - menos árboles-, los Primates se verán 
+                                          obligados a bajar al suelo, para desplazarse 
+                                          de un árbol a otro o para buscar alimentos. 
+                                        <p class="txt"><img src="image/bolo.gif" width="9" height="13"> Al bajar al suelo se va 
+                                          a producir un cambio en la alimentación 
+                                          apareciendo, por un lado, individuos 
+                                          que se alimentarán de raíces y semillas, 
+                                          y por otro lado otros homínidos que 
+                                          comenzarán a comer carne. 
+                                        <p class="txt"><img src="image/bolo.gif" width="9" height="13"> En el suelo los Primates 
+                                          eran más vulnerables, por lo que la 
+                                          capacidad de incorporarse sobre las 
+                                          patas traseras para ver mejor su entorno, 
+                                          otorgaría una mayor supervivencia a 
+                                          los individuos que lo hicieran, surgiendo 
+                                          el bipedismo. 
+                                        <p class="txt"><img src="image/bolo.gif" width="9" height="13"> El bipedismo dio, además, 
+                                          la posibilidad de tener las "manos" 
+                                          libres para poder manipular objetos, 
+                                          palos y piedras. 
+                                        <p class="txt"><img src="image/bolo.gif" width="9" height="13"> La manipulación hace aumentar 
+                                          el tamaño cerebral, y esto permitirá 
+                                          desarrollar inteligencia, emociones 
+                                          y capacidad de hablar y comunicarse. 
+                                          <p class="txt"><img src="image/bolo.gif" width="9" height="13"> 
+                                            El posible <a class="txtnegrolink"href="arbol_hominidos.htm">árbol 
+                                            evolutivo</a> de nuestra especie puede 
+                                            ser: Aegyptopithecus -- Proconsul 
+                                            -- Ardipithecus ramidus -- Australopithecus 
+                                            afarensis -- Australopithecus africanus 
+                                            -- Homo habilis -- Homo ergaster -- 
+                                            Homo antecessor -- Homo sapiens. 
+                                        	<p class="txt">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_7.jpg" width="105" height="76"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_8.jpg" width="105" height="77"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_9.jpg" width="105" height="96"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_10.jpg" width="105" height="76"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_11.jpg" width="105" height="78"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/evolucion_12.jpg" width="107" height="79"></td>
+                              </tr>
+                            </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

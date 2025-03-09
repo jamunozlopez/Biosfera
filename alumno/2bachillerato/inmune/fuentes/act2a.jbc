@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Las barreras</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Las barreras</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Las barreras externas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se encuentran delimitando nuestro organismo. Por eso, sólo son barreras físicas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son específicas e innatas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son físicas y biológicas, ya que las barreras químicas son específicas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son inespecíficas e innatas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El sistema inmune</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se localiza en los vasos linfáticos, órganos linfáticos y tejidos linfáticos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Es difuso, porque los vasos linfáticos se distribuyen por todo el organismo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Es difuso, porque se encuentra distribuido por todo el organismo</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Está formado por las células sanguíneas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los ganglios linfáticos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son órganos primarios del sistema inmune</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Drenan la sangre captando anticuerpos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Drenan la linfa captando anticuerpos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Drenan la linfa captando antígenos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La médula ósea</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Junto con el timo, son órganos secundarios del sistema inmune</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene células madre diferenciadas y pluripotentes</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Aparece en todo tipo de huesos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene células madre indiferenciadas y pluripotentes</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El timo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se encuentra en la zona abdominal, por detrás del estómago</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene la pulpa blanca y la pulpa roja</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene células madre indifierenciadas, llamadas timocitos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene timocitos, que formarán células T</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El bazo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es un órgano que presenta dos lobulillos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene timocitos, que formarán células T</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Filtra la linfa para capturar y destruir eritrocitos viejos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contiene linfocitos T y B, a la espera de activarse</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los tejidos del sistema inmune</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son el GALT y los ganglios linfáticos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se encuentra asociado a otros aparatos o sistemas del cuerpo</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son aparatos o sistemas asociados al sisema inmune</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Contienen células indiferenciadas, formadoras de linfocitos T y B</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

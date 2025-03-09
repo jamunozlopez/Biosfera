@@ -1,0 +1,341 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/contenidos/herencia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td valign="top" width="527"  height="28" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="219" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos11.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (12/12) - s<a href="contenidos1.htm" class="txtnegrolink">iguiente 
+                              </a></span></td>
+                          </tr>
+                           </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">8.- PROBLEMAS DE GEN&Eacute;TICA</p>
+                              <blockquote>
+                                <p> <span class="txt">Para hacer los problemas 
+                                  necesitar&aacute;s papel y l&aacute;piz, y una 
+                                  vez que tengas los resultados, intr&oacute;ducelos 
+                                  donde corresponda en los problemas interactivos.</span></p>
+                                <p class="txt">*Si quieres ver c&oacute;mo se 
+                                  hace un problema de gen&eacute;tica paso a paso 
+                                  pincha aqu&iacute;: <a href="resolver_problemas.htm"><span class="txtnegrolink">resoluci&oacute;n 
+                                  de problemas de gen&eacute;tica</span></a>.</p>
+                              </blockquote>
+                              <p class="txtnegro">A. Problemas de un solo car&aacute;cter</p>
+                              <blockquote> 
+                                <p class="txt"><span class="txtnegro">1.</span> 
+                                  En las moscas, el color negro del cuerpo domina 
+                                  sobre el color blanco. Al cruzar dos moscas 
+                                  negras se obtiene una descendencia formada por 
+                                  210 moscas negras y 70 blancas. <a href="problema1.htm" class="txtnegrolink">Ir 
+                                  al problema.</a><br>
+                                  <span class="txtnegro">2.</span> Se cruzan dos 
+                                  razas puras de plantas, una con flores azules, 
+                                  y otra con flores blancas. <a href="problema2.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">3.</span> Un conejo de 
+                                  ojos rojos se aparea con una coneja de ojos 
+                                  blancos, siendo el color rojo dominante sobre 
+                                  el blanco. <a href="problema3.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">4</span>. Se cruzan dos 
+                                  plantas de Dondiego, una con flores rojas, y 
+                                  otra con flores blancas. <a href="problema4.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                </p>
+                              </blockquote>
+                              <p class="txtnegro">B. Problemas de dos caracteres</p>
+                              <blockquote> 
+                                <p class="txt"><span class="txtnegro">5.</span> 
+                                  Se cruzan entre s&iacute; un conejo negro de 
+                                  ojos pardos (AABb) con una coneja negra de ojos 
+                                  azules (Aabb). <a href="problema5.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">6.</span> Un matrimonio, 
+                                  ambos de pelo negro y ojos pardos, tienen un 
+                                  hijo de pelo rubio y ojos azules. <a href="problema6.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">7.</span> Al cruzar entre 
+                                  s&iacute; dos plantas de razas puras, una de 
+                                  frutos verdes y flores blancas con otra de frutos 
+                                  amarillos y flores rojas se obtiene una descendencia 
+                                  uniforme de frutos verdes y flores rosas. <a href="problema7.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">8.</span> &iquest;C&oacute;mo 
+                                  ser&aacute; la descendencia si cogemos dos plantas 
+                                  de frutos verdes y flores rosas del problema 
+                                  n&uacute;mero siete y las cruzamos entre s&iacute;?. 
+                                  <a href="problema8.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.</p>
+                              </blockquote>
+                              <p class="txtnegro">C. Problemas de herencia ligada 
+                                al sexo</p>
+                              <blockquote> 
+                                <p class="txt"><span class="txtnegro">9.</span> 
+                                  En una especie animal existe un alelo recesivo 
+                                  (a), que es letal (produce la muerte) y est&aacute; 
+                                  ligado al cromosoma X. Un macho normal se cruza 
+                                  con una hembra portadora. <a href="problema9.htm" class="txtnegrolink">Ir 
+                                  al problema</a>.<br>
+                                  <span class="txtnegro">10.</span> Sabiendo que 
+                                  la hemofilia se debe a un alelo recesivo &quot;a&quot; 
+                                  localizado en el cromosoma X, estudiar la descendencia 
+                                  del cruce entre un var&oacute;n no hemof&iacute;lico 
+                                  y una mujer normal cuyo padre fue hemof&iacute;lico. 
+                                  <a href="problema10.htm" class="txtnegrolink">Ir 
+                                  al problema.</a><br>
+                                  <span class="txtnegro">11.</span> Un hijo dalt&oacute;nico, 
+                                  &iquest;puede tener un padre normal para ese 
+                                  car&aacute;cter.<a href="problema11.htm" class="txtnegrolink"> 
+                                  Ir al problema.</a></p>
+                              </blockquote>
+                              <p class="txtnegro">D. Problemas de herencia polial&eacute;lica</p>
+                              <blockquote> 
+                                <p class="txt"><span class="txtnegro">12.</span> 
+                                  C&oacute;mo ser&aacute; la descendencia de un 
+                                  matrimonio en el que ambos son del grupo AB. 
+                                  <a href="problema12.htm" class="txtnegrolink">Ir 
+                                  al problema.</a><br>
+                                  <span class="txtnegro">13.</span> Un hombre 
+                                  del grupo O se casa con una mujer del grupo 
+                                  A, y el primer hijo que tienen es del grupo 
+                                  O. <a href="problema13.htm" class="txtnegrolink">Ir 
+                                  al problema.</a></p>
+                              </blockquote>
+                              <p><span class="txtnegro">E. Otros problemas</span><br>
+                              </p>
+                              <blockquote> 
+                                <p class="txt"><span class="txtnegro">14.</span> 
+                                  La aniridia (tipo de ceguera hereditaria) en 
+                                  la especie humana, se debe a un alelo dominante 
+                                  (A). La jaqueca se debe tambi&eacute;n a otro 
+                                  alelo dominante (J). Un hombre que padec&iacute;a 
+                                  de aniridia y cuya madre no era ciega, se cas&oacute; 
+                                  con una mujer que sufr&iacute;a jaqueca, pero 
+                                  cuyo padre no la sufr&iacute;a. &iquest;Qu&eacute; 
+                                  proporci&oacute;n de sus hijos sufrir&aacute;n 
+                                  ambos males?. <a href="problema14.htm" class="txtnegrolink">Ir 
+                                  al problema.</a><br>
+                                  <span class="txtnegro">15.</span> En los faraones 
+                                  los matrimonios consangu&iacute;neos (entre 
+                                  individuos de la misma familia) eran muy frecuentes. 
+                                  Se sabe que el fara&oacute;n Bar-Tolo, de la 
+                                  XV&ordf; Dinast&iacute;a era albino (enfermedad 
+                                  recesiva, que consiste en una falta de pigmentaci&oacute;n 
+                                  en el cuerpo) y muri&oacute; de hemofilia. Bar-Tolo 
+                                  se cas&oacute; con su madre, de la que no se 
+                                  sabe nada, pero el hijo que tuvieron, el fara&oacute;n 
+                                  Ka-Lamar, no era hemof&iacute;lico y tambi&eacute;n 
+                                  era albino. Sabiendo que en Egipto a las mujeres 
+                                  albinas se les imped&iacute;a tener hijos, deducir: 
+                                  a) los genotipos de Bar-Tolo y su madre b) cu&aacute;ntos 
+                                  hijos iguales que Ka-Lamar podr&iacute;a tener 
+                                  ese matrimonio (Proporci&oacute;n). <a href="problema15.htm" class="txtnegrolink">Ir 
+                                  al problema.</a><br>
+                                  <span class="txtnegro">16.</span> Si un padre 
+                                  pertenece al grupo sangu&iacute;neo B y la madre 
+                                  al grupo O y tienen un hijo del grupo O. &iquest;Cu&aacute;l 
+                                  ser&aacute; la probabilidad de que el pr&oacute;ximo 
+                                  hijo sea O, A, B o AB?. <a href="problema16.htm" class="txtnegrolink">Ir 
+                                  al problema.</a></p>
+                              </blockquote>
+                              <br>
+                              <p align="right"><a class="txtnegrolink" href="contenidos11.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (12/12) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

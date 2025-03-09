@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad de inicio</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad de inicio</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El ADN es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una biomolécula inorgánica.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un tipo de polisacárido.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Una proteína.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un ácido nucleico.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El ADN está formado por:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aminoácidos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Triglicéridos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Bases nitrogenadas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Ácidos grasos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La generación de copias de ADN se llama:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Duplicación.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Traducción.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Mitosis.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>División.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los cambios que se producen en el ADN:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son muy frecuentes.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se producen de forma natural por mutación.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Afectan únicamente a microorganismos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se originan en el caso que haya reproducción sexual.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un cambio en el ADN:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se mantiene para siempre.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Sólo puede remediarse con técnicas de laboratorio.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Siempre origina un cambio letal.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Puede provocar la evolución de una especie.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La mejora de las especies</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se produce únicamente después de siglos de evolución.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Puede alcanzarse por selección y reproducción, pero nada más que en vegetales.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La realiza la especie humana desde hace más de 8.000 años.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sólo se puede aplicar a la especie humana.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los procesos biotecnológicos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Nada más que pueden realizarse en un laboratorio.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se han conseguido en la última década del siglo XX.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se aprovechan desde hace más de 6.000 años.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son realizados sólo por los organismos transgénicos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un biorreactor es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un detergente para lavadoras.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un motor a reacción.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un fermentador.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una unidad de producción de energía nuclear.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../contenidos.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

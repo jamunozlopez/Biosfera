@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad 9</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad 9</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La Biotecnología se utiliza en Medicina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Únicamente para producir fármacos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Nada más que en investigación, pues no está permitido legalmente su uso.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Para diagnóstico de enfermedades y en tratamientos.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sólo de forma preventiva.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La cirugía génica consiste en</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Implantar un órgano genéticamente modificado.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Extraer un órgano que no funciona bien debido a una anomalía genética.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Extraer un gen defectuoso.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Implantar un cromosoma funcional.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La Humulina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es una proteína humana.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es un gen modificado.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Corrige el defecto del gen de la hormona del crecimiento en el ADN del paciente.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es producida por una bacteria y se usa como insulina.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los organismos genéticamente modificados no son utilizados en Medicina para:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La investigación.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>El desarrollo de nuevos fármacos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La producción de nuevos fármacos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La descontaminación.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En 1978</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se crearon las primeras granjas farmacéuticas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se obtuvo la Humulina.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se consiguió la síntesis de la hormona del crecimiento.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se realizó el primer xenotrasplante.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La primera &quot;terapia génica&quot; se llevó a cabo con enfermos:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Diabéticos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Con deficiencia en la hormona del crecimiento.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Con carencia en la alfa-I- antitripsina.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Inmunodeficiencia completa.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la terapia de inserción génica:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se introduce un gen normal que sustituye al gen no activo del enfermo.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se extrae el gen defectuoso o se repara.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se introduce un gen que induce a la muerte selectiva de células o genere una respuesta inmune contra ellas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se silencia un gen que produce una proteína perniciosa.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la terapia de supresión dirigida:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se introduce un gen normal que sustituye al gen no activo del enfermo.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se extrae el gen defectuoso o se repara.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se introduce un gen que induce a la muerte selectiva de células o genere una respuesta inmune contra ellas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se silencia un gen que produce una proteína perniciosa.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la terapia de inhibición dirigida:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se introduce un gen normal que sustituye al gen no activo del enfermo.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se extrae el gen defectuoso o se repara.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se introduce un gen que induce a la muerte selectiva de células o genere una respuesta inmune contra ellas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se silencia un gen que produce una proteína perniciosa.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

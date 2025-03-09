@@ -1,0 +1,484 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../2bachillerato/estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="740">
+        <tr> 
+          <td height="35" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../../2bachillerato/img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="8"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="6">
+              <tr> 
+                <td height="1" valign="top">
+				<img border="0" src="../../2bachillerato/img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="697">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituclas.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB">
+									<b>
+									<font class="txtnegro" face="Arial" size="2">
+									El microscopio y la lupa</font></b></td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                    <p><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" href="../../2bachillerato/biotec/cierre.htm">Cerrar</a></font></b></p>
+                                        </td>
+                                </tr>
+                              </table>
+                              <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                                <tr>
+                                  <td width="4%">&nbsp;</td>
+                                  <td width="92%">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="100%">
+                                  <p align="left" class="txt"><b>Introducción</b></p>
+                                  <table border="0" width="100%" id="table9">
+									<tr>
+										<td width="407">
+                                  <p class="txt">
+									<span style="font-family: Arial">
+									<font size="2">Para la observación de 
+									pequeñas estructuras que se encuentran por 
+									debajo de la capacidad de visión del ojo 
+									humano utilizamos dos instrumentos, el 
+									microscopio y la lupa.</font></span><font face="Arial">
+									</font> </p>
+										<p class="txt"><b>El microscopio</b>&nbsp;</p>
+										<p class="txt">El primer microscopio se 
+										le atribuye a Antón Von Leeuwenhoek 
+										(1632-1723). Era un microscopio muy 
+										sencillo, pues sólo lograba 300 
+										aumentos.</p>
+										<p class="txt">Actualmente existen 
+										distintos tipos de microscopios. Se 
+										clasifican como:</p>
+										<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+											<li class="MsoNormal">
+											<p class="txt">Microscopios ópticos</li>
+										</ul>
+										<blockquote>
+											<p class="txt">Presentan juegos de lentes que 
+											aumentan o amplifican el tamaño de 
+											la imagen. Tienen una capacidad 
+											hasta de 2500 aumentos. Englobados 
+											en este grupo hay distintos tipos:</p>
+									</blockquote>
+										</td>
+										<td>&nbsp;</td>
+										<td>
+										<p align="center">
+										<img border="0" src="imagenes/leeuwenhoek.jpg" width="218" height="305" alt="Microscopio de Anton Von Leeuwenhoek. Imagen tomada de http://www.isciii.es/htdocs/imagenes_museo/historia/edad_moderna/71_microscopio.jpg"></td>
+									</tr>
+									</table>
+									<table border="0" width="100%" id="table7">
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td class="txt">
+											<p style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio de luz 
+											ultravioleta</font></span></td>
+											<td class="txt">
+											<p class="txt" style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio de 
+											contraste de fase</font></span></td>
+										</tr>
+										<tr>
+											<td class="txt">
+											<img border="0" src="imagenes/ultravioleta.jpg" width="300" height="122" alt="Imagen tomada de http://www.fiocruz.br/ccs/media/transgenico_cpqrr.jpg&amp;imgrefurl=http://www.fiocruz.br/ccs/cgi/cgilua.exe/sys/start.htm%3Ffrom_info_index%3D241%26infoid%3D55%26sid%3D9&amp;h=204&amp;w=500&amp;sz=18&amp;hl=es&amp;start=4&amp;tbnid=pIDHbyJJIdxjeM:&amp;tbnh=53&amp;tbnw=130&amp;prev=/images%3Fq%3Dmicroscopio%2Bde%2Bluz%2Bultravioleta%26gbv%3D2%26svnum%3D10%26hl%3Des"></td>
+											<td class="txt">
+											<p style="text-align: center">
+											<img border="0" src="imagenes/contraste.jpg" width="338" height="122" alt="Imagen tomada de http://www.educa.aragob.es/iescarin/depart/biogeo/varios/BiologiaCurtis/Seccion%25205/31-26a.jpg&amp;imgrefurl=http://www.educa.aragob.es/iescarin/depart/biogeo/varios/BiologiaCurtis/Seccion%25205/5%2520-%2520Capitulo%252031.htm&amp;h=155&amp;w=428&amp;sz=14&amp;hl=es&amp;start=4&amp;tbnid=0AyZScJrfF71cM:&amp;tbnh=46&amp;tbnw=126&amp;prev=/images%3Fq%3Dmicroscopio%2Bde%2Bcontraste%2Bde%2Bfase%26gbv%3D2%26svnum%3D10%26hl%3Des"></td>
+										</tr>
+										<tr>
+											<td class="txt">
+											<p class="txt" style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio de campo 
+											oscuro</font></span></td>
+											<td class="txt">
+											<p style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio de 
+											polarización</font></span></td>
+										</tr>
+										<tr>
+											<td class="txt">
+											<img border="0" src="imagenes/oscuro.jpg" width="300" height="245" alt="Imagen tomada de http://www.medicinapreventiva.com.ve/articulos/imagenes/leptosp1.jpg&amp;imgrefurl=http://www.medicinapreventiva.com.ve/articulos/leptospirosis.htm&amp;h=205&amp;w=183&amp;sz=2&amp;hl=es&amp;start=3&amp;tbnid=7s3wY14WPg99lM:&amp;tbnh=105&amp;tbnw=94&amp;prev=/images%3Fq%3Dmicroscopio%2Bde%2Bcampo%2Boscuro%26gbv%3D2%26svnum%3D10%26hl%3Des"></td>
+											<td class="txt">
+											<p style="text-align: center">
+											<img border="0" src="imagenes/garrapata.jpg" width="350" height="250" alt="Imagen tomada de http://www.lmscope.com/produkt22/Zecke/zecke33.JPG&amp;imgrefurl=http://www.lmscope.com/produkt22/garrapato_es.shtml&amp;h=510&amp;w=709&amp;sz=106&amp;hl=es&amp;start=12&amp;tbnid=pqMsx64Df6hYzM:&amp;tbnh=101&amp;tbnw=140&amp;prev=/images%3Fq%3Dmicroscopio%2Bde%2Bpolarizaci%25C3%25B3n%26gbv%3D2%26svnum%3D10%26hl%3Des"></td>
+										</tr>
+										<tr>
+											<td class="txt">&nbsp;</td>
+											<td class="txt">&nbsp;</td>
+										</tr>
+										<tr>
+											<td valign="top">
+											<p style="text-align: right">
+											<font face="Arial" size="2"><b>
+											Microscopio de campo claro</b></font></td>
+											<td>
+											<p align="center">
+											<img border="0" src="imagenes/parenquima.jpg" width="320" height="240" alt="Parénquima clorofílico en empalizada visto a microscopio de fondo claro. Imagen De Mier y Leva."></td>
+										</tr>
+									</table>
+									<p class="txt">&nbsp;</p>
+									<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+										<li class="MsoNormal">
+										<p class="txt">Microscopios electrónicos</li>
+									</ul>
+									<blockquote>
+										<p class="txt">Utilizan haces de electrones 
+									que chocan contra el objeto que se desea 
+									observar. Posteriormente, los electrones 
+									impactan contra una película de fotografía 
+									que queda impresionada. Lo que se observa al 
+									microscopio electrónico no es una muestra, 
+									sino una fotografía que se saca de esa 
+									muestra. Se consiguen 500.000 aumentos, por 
+									lo que se utilizan para observar estructuras 
+									del interior celular.</p>
+										<p class="txt">Los microscopios electrónicos 
+									pueden ser:</p>
+									</blockquote>
+									<table border="0" width="100%" id="table8">
+										<tr>
+											<td class="txt" style="text-align: center">
+											<p class="txt" style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio 
+											electrónico de transmisión</font></span></td>
+											<td class="txt" style="text-align: center">
+											<p class="txt" style="text-align: center">
+											<span style="font-family: Arial; font-weight: 700">
+											<font size="2">Microscopio 
+											electrónico de barrido</font></span></td>
+										</tr>
+										<tr>
+											<td>
+											<p align="center" class="txt" style="text-align: center">
+											<img border="0" src="imagenes/met.jpg" width="192" height="300" alt="Mitocondria. Imagen tomada de http://www.med.uva.es/~biocel/Practicas/Apracticasbiolcel/p10/mitocondria.jpg"></td>
+											<td>
+											<p align="center" class="txt" style="text-align: center">
+											<img border="0" src="imagenes/meb.jpg" width="300" height="297" alt="Linfocito T. Imagen tomada de http://www.ugr.es/~inmuno/Licenciaturas/linfo.jpg&amp;imgrefurl=http://www.ugr.es/~inmuno/Licenciaturas/microfot_linfocito.htm&amp;h=645&amp;w=651&amp;sz=20&amp;hl=es&amp;start=1&amp;tbnid=DVaitXx-f_mvZM:&amp;tbnh=137&amp;tbnw=138&amp;prev=/images%3Fq%3Dmicroscopio%2Belectr%25C3%25B3nico%2Bde%2Bbarrido%26gbv%3D2%26svnum%3D10%26hl%3Des"></td>
+										</tr>
+									</table>
+									<span style="font-size: 12.0pt; font-family: Times New Roman">
+									: </span>
+									<p>&nbsp;</p>
+									<p class="txt"><b>Estudio del microscopio óptico</b>&nbsp;</p>
+									<p class="txt">Se utiliza para observar 
+									estructuras microscópicas, con un tamaño no 
+									inferior a una micra (10<sup>-6<span style="vertical-align:baseline"> 
+									m).</span></sup></p>
+									<p class="txt">Estos microscopios permiten 
+									la observación de células vivas y en 
+									movimiento, aunque es mucho más sencillo 
+									observar células si se encuentran fijas y 
+									teñidas.</p>
+									<p class="txt">Es importante conocer el 
+									número de aumentos que se utilizan para 
+									observar una muestra. Para ello, mira el 
+									ocular y verás el número de aumentos que 
+									posee, indicados mediante un signo x, 
+									seguido de un número. Por ejemplo, x5 nos 
+									indica que el ocular tiene 5 aumentos. De la 
+									misma forma, se indica el número de aumentos 
+									en los diferentes objetivos. Por ejemplo, 
+									x10 nos indica que el objetivo tiene 10 
+									aumentos.</p>
+									<p class="txt">La forma de calcular el 
+									número de aumentos que estamos utilizando 
+									consiste en multiplicar los aumentos del 
+									ocular por los del objetivo. En nuestro 
+									ejemplo estaríamos observando una muestra 
+									utilizando 50 aumentos.</p>
+									<p class="txt">&nbsp;</p>
+									<div style="padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+									<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="730" height="432">
+										<param name="movie" value="imagenes/Microscopio.swf">
+										<param name="quality" value="High">
+										<embed src="imagenes/Microscopio.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="730" height="432" quality="High"></object>
+									</div>
+									<p class="txt">&nbsp;</p>
+									<table border="0" width="100%" id="table10">
+										<tr>
+											<td>&nbsp;</td>
+											<td>
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" id="table11" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Aplicaciones médicas" target="_blank" href="actividades/microscopio/microscopio1.htm">Actividad 
+                                    10b</a></span><a target="_blank" href="actividades/microscopio/microscopio1.htm"><img border="2" src="miniaturas/microsc1.jpg" xthumbnail-orig-image="imagenes/micros2.jpg"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        	</td>
+											<td>&nbsp;</td>
+											<td>
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" id="table12" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Aplicaciones médicas" target="_blank" href="actividades/microscopio/microscopio2.htm">Actividad 
+                                    10b</a></span><a target="_blank" href="actividades/microscopio/microscopio2.htm"><img border="2" src="miniaturas/micros1.jpg" xthumbnail-orig-image="miniaturas/micros2.jpg"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        	</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+                                  <p align="left" class="txt">&nbsp;</p>
+									<p align="left" class="txt"><b>Estudio de la lupa</b></p>
+									<p class="txt">La lupa binocular es un 
+									instrumento con un juego de lentes fijo. Se 
+									denomina así por tener dos oculares que 
+									pueden adaptarse a los ojos.</p>
+									<p class="txt">El aumento que proporciona la 
+									lupa es mucho menor que el proporcionado por 
+									el microscopio, pero el campo visual de 
+									trabajo es mucho mayor. Con la lupa podemos 
+									estudiar, de forma muy detallada, 
+									estructuras macroscópicas, por ejemplo, 
+									nuestra propia mano o el moho del pan.</p>
+									<p class="txt">Las lentes, oculares y 
+									objetivo, se encuentran situadas sobre un 
+									soporte que puede desplazarse verticalmente, 
+									gracias al mando de enfoque. De esta forma 
+									podemos enfocar nuestra muestra.</p>
+									<p class="txt">Los oculares son móviles y 
+									pueden ajustarse a los ojos.</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="100%">
+									<p align="left" class="txt" style="text-align: center">&nbsp;</p>
+									<p align="left" class="txt" style="text-align: center">
+									<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj2" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="730" height="432">
+										<param name="movie" value="imagenes/Lupa.swf">
+										<param name="quality" value="High">
+										<embed src="imagenes/Lupa.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj2" width="730" height="432" quality="High"></object>
+									</p>
+									<table border="0" width="100%" id="table5">
+										<tr>
+											<td>&nbsp;</td>
+											<td>
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" id="table6" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Aplicaciones médicas" target="_blank" href="actividades/microscopio/microscopio3.htm">Autoevaluación</a></span><a target="_blank" href="actividades/microscopio/microscopio3.htm"><img border="2" src="miniaturas/micros3.jpg" xthumbnail-orig-image="miniaturas/micros4.jpg"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        	</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+									<p class="txtnegrolink" align="left">&nbsp;</td>
+                                </tr>
+                              </table>
+                                  </td>
+                                  <td width="4%">&nbsp;</td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                    <p align="center"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" href="../../2bachillerato/biotec/cierre.htm">Cerrar</a></font></b></p>
+                                        <p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

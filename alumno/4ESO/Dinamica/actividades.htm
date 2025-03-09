@@ -1,0 +1,543 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="../Dinamica/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="../Dinamica/a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="../Dinamica/contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="../Dinamica/actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="../Dinamica/ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="../Dinamica/autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="../Dinamica/enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="image/contenidos/dinamica.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top"> 
+                        <table width="761" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_1.jpg" width="92" height="66"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_2.jpg" width="92" height="72"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_3.jpg" width="92" height="73"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_4.jpg" width="92" height="68"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_5.jpg" width="92" height="75"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_6.jpg" width="92" height="64"></td>
+                              </tr>
+                            </table>
+                            </td>
+                            <td width="535" bgcolor="#e6ffe6" align="center"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td width="477" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDADES</font> 
+                                  </td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr align="center"> 
+                                  <td> 
+                                    <table width="75%" border="0" cellspacing="1" cellpadding="3">
+                                      <tr bgcolor="#006666"> 
+                                        <td colspan="3"><font class="ttBIOSFERA">&gt; 
+                                          ACTIVIDADES INTERACTIVAS</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td width="10" bgcolor="#BBDDBB"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" bgcolor="#BBDDBB"><font class="txtnegro">La 
+                                          materia, la energ&iacute;a y la vida</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">La 
+                                          materia org&aacute;nica e inorg&aacute;nica</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td width="9">&nbsp;</td>
+                                        <td width="361"><font class="txt"><a href="../Dinamica/actividad1.htm" class="txtnegrolink"> 
+                                          Actividad 1</a>: Elementos qu&iacute;micos 
+                                          &iquest;de d&oacute;nde vienen?.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"> <a href="../Dinamica/actividad2.htm" class="txtnegrolink">Actividad 
+                                          2:</a> &iquest;Org&aacute;nico o inorg&aacute;nico?</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="actividad3.htm" class="txtnegrolink"> 
+                                          Actividad 3:</a> &iquest;Qui&eacute;n 
+                                          necesita energ&iacute;a?</font></td>
+                                      </tr>
+                                     
+                                      
+                                      <tr> 
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">La 
+                                          circulaci&oacute;n de la materia: abierta 
+                                          y cerrada</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt">
+                                        <a class="txtnegrolink" href="actividad4.htm">Actividad 4</a><span class="txt">: Sistemas 
+                                          abiertos y cerrados.</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtnegro">Las 
+                                          distintas manifestaciones de la energ&iacute;a 
+                                          en la vida</font></td>
+                                      </tr>
+                                       <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><font color="#FF0000"><a href="../Dinamica/actividad5.htm" class="txtnegrolink"> 
+                                          Actividad 5</a></font><span class="txt">: 
+                                          &iquest;Usas la energ&iacute;a?</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Metabolismo: 
+                                          anabolismo y catabolismo</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><font color="#FF0000"><a href="../Dinamica/actividad6.htm" class="txtnegrolink"> 
+                                          Actividad 6</a></font><span class="txt">: 
+                                          Construir y destruir materia.</span></font></td>
+                                      </tr>
+									   <tr> 
+                                        <td bgcolor="#BBDDBB"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" bgcolor="#BBDDBB"><font class="txtnegro"> 
+                                          Din&aacute;mica de poblaciones</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Curvas 
+                                          de crecimiento de una poblaci&oacute;n</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad7.htm" class="txtnegrolink"> 
+                                          Actividad 7</a></font><span class="txt">: 
+                                          Curvas de crecimiento.</span></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Factores 
+                                          limitantes en el crecimiento de una 
+                                          poblaci&oacute;n </font></td>
+                                      </tr>
+                                     <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad8.htm" class="txtnegrolink"> 
+                                          Actividad 8</a><span class="txt">: Limitando 
+                                          el crecimiento.</span></font></td>
+                                      </tr>
+                                       <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Relaciones 
+                                          interespec&iacute;ficas que afectan 
+                                          a los cambios de una poblaci&oacute;n</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"> <a href="../Dinamica/actividad9.htm" class="txtnegrolink" > 
+                                          Actividad 9</a><span class="txt">: Relaci&oacute;n 
+                                          entre los organismos de un ecosistema.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td bgcolor="#BBDDBB"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" bgcolor="#BBDDBB"><font class="txtnegro"> 
+                                          Din&aacute;mica de los ecosistemas</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Niveles 
+                                          tr&oacute;ficos de los ecosistemas</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad10.htm" class="txtnegrolink"> 
+                                          Actividad 10</a><span class="txt">: 
+                                          Niveles tr&oacute;ficos.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Cadenas 
+                                          tr&oacute;ficas</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad11.htm" class="txtnegrolink"> 
+                                          Actividad 11</a><span class="txt">: 
+                                          Cadenas tr&oacute;ficas.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Redes 
+                                          tr&oacute;ficas </font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt">
+                                        <a class="txtnegrolink" target="_blank" href="actividad12.htm">Actividad 12</a><span class="txt">: 
+                                          La red tr&oacute;fica.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Pir&aacute;mides 
+                                          de energ&iacute;a en un ecosistema</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad13.htm" class="txtnegrolink"> 
+                                          Actividad 13</a><span class="txt">: 
+                                          Pir&aacute;mides de energ&iacute;a.</span></font></td>
+                                      </tr>
+									   <tr> 
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" bgcolor="#FFFFFF"><font class="txtbold">Cambios 
+                                          en los ecosistemas en el tiempo</font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="../Dinamica/actividad14.htm" class="txtnegrolink"> 
+                                          Actividad 14</a><span class="txt">: 
+                                          Cambios del ecosistema en el tiempo</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td bgcolor="#BBDDBB"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" bgcolor="#BBDDBB"><font class="txtnegro"> 
+                                          Ciclos biogeoqu&iacute;micos</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="contenidos4.htm#carbono" class="txtnegrolink"> 
+                                          Actividad 15</a><span class="txt">: 
+                                          Ciclo del Carbono.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="contenidos4.htm#nitrogeno" class="txtnegrolink"> 
+                                          Actividad 16</a><span class="txt">: 
+                                          Ciclo del Nitr&oacute;geno.</span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td valign="top"><font class="txt">
+										<a class="txtnegrolink" target="_blank" href="activ_video1.htm">Actividad 16b</a><span class="txt">: 
+                                          Ciclo del Nitr&oacute;geno.
+										<img border="0" src="../../../img/wmv.gif" width="16" height="16"></span></font></td>
+                                      </tr>
+									  <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="contenidos4.htm#fosforo" class="txtnegrolink"> 
+                                          Actividad 17</a><span class="txt">: 
+                                          Ciclo del F&oacute;sforo.</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td bgcolor="#BBDDBB"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" bgcolor="#BBDDBB"><font class="txtnegro"> 
+                                          Actividades de ampliaci&oacute;n y l&uacute;dicas</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="sopa_de_letras.html" class="txtnegrolink"> 
+                                          Actividad 18</a><span class="txt">: 
+                                          Sopa de letras</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"> <a class="txtnegrolink" target="_blank" href="../Dinamica/articulo_I.html"> 
+                                          </a><a href="crucigrama.htm" class="txtnegrolink">Actividad 
+                                          19</a><span class="txt">: Crucigrama.</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="3" bgcolor="#006666"><a href="../Dinamica/act_invest.htm"><font class="ttBIOSFERA" color="#CCFF00">&gt; 
+                                          ACTIVIDADES DE INVESTIGACI&Oacute;N</font></a></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="act_invest.htm" class="txtnegrolink"> 
+                                          Actividad 20</a><span class="txt">: 
+                                          Realizaci&oacute;n de informes sobre 
+                                          din&aacute;mica de los ecosistemas. 
+                                          Tarea individual.</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="act_invest.htm#investigacion2" class="txtnegrolink"> 
+                                          Actividad 21</a><span class="txt">: 
+                                          Realizaci&oacute;n de un póster con 
+                                          los principales conceptos de ecosistemas 
+                                          y su din&aacute;mica. Tarea de grupo.</span></font></td>
+                                      </tr>
+                                     
+                                      <tr> 
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><font class="txt"><a href="act_invest.htm#investigacion3" class="txtnegrolink"> 
+                                          Actividad 22</a><span class="txt">: 
+                                          Realizaci&oacute;n de una presentaci&oacute;n 
+                                          en PowerPoint para explicaci&oacute;n 
+                                          de los principales ciclos biogeoqu&iacute;micos 
+                                          y ciclo del agua. Tarea de grupo.</span></font></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_7.jpg" width="92" height="63"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_8.jpg" width="92" height="72"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_9.jpg" width="92" height="74"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_10.jpg" width="92" height="67"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_11.jpg" width="92" height="68"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="image/miniaturas/dinamica_eco_12.jpg" width="92" height="77"></td>
+                              </tr>
+                            </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

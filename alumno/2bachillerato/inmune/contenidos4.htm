@@ -1,0 +1,481 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666" language="Javascript1.2">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituinmune.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con las barreras externas" href="contenidos3.htm">anterior - (4/13) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con los antígenos" href="contenidos5.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    BARRERAS INTERNAS</b></font></font></p>
+                                    <p class="txt">Este tipo de barrera está 
+                                    constituido por el <b>Sistema Inmune</b>. El 
+                                    sistema inmune, o inmunitario, se encuentra 
+                                    diseminado por todo el organismo, por lo que 
+                                    se dice de él que es un sistema <b>difuso</b>. 
+                                    Está constituido por  <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#vasoslinfa">
+                                    vasos linfáticos</a></font></b>, 
+                                     
+                                    <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#organolinfa">
+                                    órganos linfáticos</a></font></b>,  <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#tejidolinfa">
+                                    tejidos linfáticos</a></font></b> y células y 
+                                    moléculas distribuidas por el torrente 
+                                    sanguíneo hacia otros tejidos.</p>
+                                    <p class="txt"><b><a name="vasoslinfa"></a>Vasos linfáticos</b></p>
+                                    <p class="txt">Los vasos linfáticos 
+                                    pertenecen al sistema circulatorio 
+                                    linfático. Éstos forman una <b>red de vasos 
+                                    abierta </b>por donde circula la <b>linfa</b>. 
+                                    En la linfa aparecen las células y moléculas 
+                                    del sistema inmune.</p>
+                                    <p class="txt">La linfa es drenada en los <b>
+                                    ganglios linfáticos</b>, donde se detectan 
+                                    los antígenos, que pondrán en marcha la 
+                                    respuesta del sistema inmune.</p>
+                                    <p class="txt"><b><a name="organolinfa"></a>Órganos del sistema inmune</b></p>
+                                    <p class="txt">Existen <b>órganos linfoídes
+                                    primarios</b>. Constituyen los órganos donde se 
+                                    forman las células del sistema inmune. Son 
+                                    la <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#medulaosea">
+                                    médula ósea</a></font></b> y el <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#timo">timo</a></font></b>.  </p>
+                                    <p class="txt">Los <b>órganos linfoides secundarios
+                                    </b>forman el 
+                                    lugar donde las células del sistema 
+                                    inmunitario terminan su diferenciación o 
+                                    bien se activan produciendo la respuesta 
+                                    inmune. Son el <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#bazo">bazo</a></font> </b>y los <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#ganglioslinfa">
+                                    ganglios linfáticos</a></font></b>.</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber7">
+                                      <tr>
+                                        <td width="45%">
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="medulaosea"></a>Médula ósea</b>: Es un 
+                                    órgano linfoide primario. Se encuentra en el 
+                                    interior de los huesos cortos y planos, en 
+                                    la zona esponjosa de los huesos largos. 
+                                    Tiene capacidad hemopoyética, lo que 
+                                    significa que en su interior aparecen <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#celulamadre">células madre</a></font></b>,
+									<b>
+									<font color="#006666" size="2" face="Arial">
+									<a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#indiferenciada"> 
+                                    indiferenciadas</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#pluripotente">pluripotentes</a></font></b>, capaces de 
+                                    originar las células que fluyen por la 
+                                    sangre. En la médula ósea se forman las 
+                                    células del sistema inmune, como son los 
+                                    linfocitos, los macrófagos o los monocitos.</p>
+                                      </li>
+                                    </ul>
+                                        <p>&nbsp;</td>
+                                        <td width="2%">&nbsp;</td>
+                                        <td width="53%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/organos/medula3.jpg" width="400" height="320"></td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber4">
+                                      <tr>
+                                        <td width="44%">
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="timo"></a>Timo</b>: Es un órgano 
+                                    linfoide primario. Se encuentra en la zona 
+                                    superior del tórax. Es un órgano que reduce 
+                                    mucho su tamaño después de los 7 primeros 
+                                    años de vida. Está formado por dos lóbulos 
+                                    que se subdividen en lobulilos, separados 
+                                    por un tejido conjuntivo (trabéculas). En 
+                                    cada lobulillo se diferencia una <b>corteza
+                                    </b>y una <b>médula</b>. En la corteza, las 
+                                    células que provienen de la médula ósea 
+                                    proliferan, transformándose en timocitos. 
+                                    Los timocitos maduros se alojan en la médula 
+                                    de los lobulillos del timo. Los timocitos 
+                                    maduros se denominan <b>linfocitos T </b>o 
+                                    células T, que migran hacia la sangre a 
+                                    través de los vasos linfáticos.</p>
+                                      </li>
+                                    </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="53%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/organos/timo1.jpg" width="362" height="225" alt="Timo, visto al microscopio óptico"></td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellspacing="1" width="98%" id="AutoNumber5">
+                                      <tr>
+                                        <td width="45%">
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><a name="bazo"></a>Bazo</b>: El bazo es un 
+                                    órgano linfoide secundario, situado en la 
+                                    zona abdominal, por detrás del estómago. En 
+                                    él aparecen dos tipos de tejidos, la <b>
+                                    pulpa roja </b>y la <b>pulpa blanca</b>. La 
+                                    función de la pulpa roja consiste en <b>filtrar 
+                                    la sangre </b>y capturar y destruir los 
+                                    eritrocitos viejos, que han perdido o 
+                                    mermado su función de transporte de oxígeno. 
+                                    La pulpa blanca contiene <b>tejido linfoide
+                                    </b>en 
+                                    forma de una vaina, en torno a una 
+                                    arteriola. Este tejido recibe el nombre de 
+                                    PALS (vaina arteriolar linfoide - <i>
+                                    periarteriolar lymphoid shealth</i>). En el 
+                                    PALS se encuentran los <b>linfocitos T </b>y los
+                                    <b>linfocitos B</b>, que se activan en presencia de 
+                                    antígenos.</p>
+                                      </li>
+                                    </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="28%">
+                                        <img border="0" src="imagenes/organos/bazo2.jpg" alt="Posición del bazo en el cuerpo" width="191" height="230"></td>
+                                        <td width="24%" align="center">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/organos/bazo1.jpg" width="145" height="230" align="right" alt="Bazo, visto al microscopio óptico"></td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber6">
+                                      <tr>
+                                        <td width="44%">
+                                        <ul>
+                                          <li>
+                                        <p class="txt"><b>
+                                        <a name="ganglioslinfa"></a>Ganglios linfáticos</b>: 
+                                    Son órganos linfoides secundarios. Se 
+                                    encuentran repartidos por todo el sistema 
+                                    circulatorio linfático. En un ganglio 
+                                    linfático se distingue una <b>corteza</b>, 
+                                    donde se sitúan los linfocitos B, una <b>
+                                    paracorteza </b>por debajo, en la que se 
+                                        hallan los linfocitos T, y una <b>médula
+                                    </b>en posición central. Los ganglios 
+                                    linfáticos <b>filtran la linfa</b>, 
+                                    presentando los <b>antígenos </b>a los 
+                                    linfocitos B y T, con la consiguiente 
+                                    activación de estas células.</li>
+                                        </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="53%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/organos/ganglio1.jpg" alt="Estructura de un ganglio linfático" width="354" height="235"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b><a name="tejidolinfa"></a>Tejidos del sistema inmune</b></p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="54%">
+                                    <p class="txt">Además de los órganos propios 
+                                    del sistema inmune, aparecen unos tejidos 
+                                    linfoides asociados a otros aparatos o 
+                                    sistemas. Estos tejidos son:</p>
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>GALT</b>: es el tejido 
+                                    linfoide asociado al tubo digestivo, que 
+                                    incluye amígdalas, apéndice vermiforme y 
+                                    placas de Peyer.</p>
+                                          </li>
+                                          <li>
+                                    <p class="txt"><b>BALT</b>: es el tejido 
+                                    linfoide asociado al aparato respiratorio.</p>
+                                          </li>
+                                          <li>
+                                    <p class="txt"><b>MALT</b>:es el tejido 
+                                    linfoide asociado a las mucosas</p>
+                                          </li>
+                                        </ul>
+                                    <p class="txt">En todos estos tejidos se 
+                                    encuentran <b>linfocitos T y B, </b>además de otros 
+                                    tipos celulares pertenecientes al sistema 
+                                    inmune. Las células T y B se activan cuando 
+                                    los antígenos capturados por estos tejidos 
+                                    son presentados a ellas.</p>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="41%">
+                                        <img border="0" src="imagenes/organos/peyer.jpg" width="348" height="231" alt="Placas de Peyer"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber8">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Repasa las barreras del sistema inmune" href="actividades/act2a.htm">Actividad
+                                          2</a></font></b><a title="Repasa las barreras del sistema inmune" target="_blank" href="actividades/act2a.htm"><img border="2" src="imagenes/cuadritos/cuad2small.gif" xthumbnail-orig-image="imagenes/cuadritos/cuad2.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act3nueva.htm">Actividad
+                                          3</a></font></b><a target="_blank" href="actividades/act3nueva.htm"><img border="2" src="miniaturas/act3nuevasmall.gif" xthumbnail-orig-image="miniaturas/act3nueva.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con las barreras externas" href="contenidos3.htm">anterior- (4/13) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con los antígenos" href="contenidos5.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

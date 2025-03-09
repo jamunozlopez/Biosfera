@@ -1,0 +1,316 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+   <title>Test</title>
+<style type="text/css">
+<!--
+-->
+   </style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script LANGUAGE="JavaScript">
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++) 
+ {  if (document.examen[i].checked)  
+  {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;      } 
+   if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 20.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r"+incorrectas;alert(mensaje);}</script>
+</head>
+<body bgcolor="#E6FFE6">
+<p class="ttunidad">El Sistema Solar</p>
+
+<center><font class="txtnegro">(nivel II)</font></center>
+<form NAME="examen"  METHOD="post" ENCTYPE="text/plain">
+<p>
+<font class="txtnegro">1. &iquest;Cu&aacute;l es el planeta de la
+imagen?. &iquest;De qu&eacute; est&aacute;n hechos sus anillos?.</font></p>
+  <img SRC="image/saturn2.gif" HSPACE=11 height=142 width=114 align=LEFT border="0"> 
+  <blockquote><input TYPE="radio" NAME="mat 26/ 1" VALUE="3"><font class="txt">Mercurio.
+De rocas &iacute;gneas.</font>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="1"><font class="txt">Saturno.
+De hielo.</font>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="4"><font class="txt">Tierra.
+De aire.</font>
+<br><input TYPE="radio" NAME="mat 26/1" VALUE="5"><font class="txt">Marte.
+De polvo.</font>
+<br><input TYPE="radio" NAME="mat 26/ 1" VALUE="2"><font class="txt">Plut&oacute;n.
+S&oacute;lo de rocas.</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<font class="txtnegro">2. &iquest;Qu&eacute; es lo que se ve en la
+imagen?</font></p>
+  <img SRC="image/eclips77.gif" HSPACE=11 height=150 width=150 align=LEFT border="0"> 
+  <blockquote><input TYPE="radio" NAME="mat 72/ 2" VALUE="1"><font class="txt">La
+corona solar</font>
+<br><input TYPE="radio" NAME="mat 72/2" VALUE="5"><font class="txt">Un
+asteroide</font>
+<br><input TYPE="radio" NAME="mat 72/ 2" VALUE="4"><font class="txt">Una
+estrella negra</font>
+<br><input TYPE="radio" NAME="mat 72/ 2" VALUE="3"><font class="txt">J&uacute;piter</font>
+<br><input TYPE="radio" NAME="mat 72/ 2" VALUE="2"><font class="txt">Un
+cometa</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<font class="txtnegro">3. En el planeta de la foto se superan los
+400 &ordm;C, &iquest;cu&aacute;l es?</font></p>
+  <img SRC="image/caloris2.gif" HSPACE=11 height=128 width=150 align=LEFT border="0"> 
+  <blockquote><input TYPE="radio" NAME="mat 36/ 3" VALUE="3"><font class="txt">Urano.</font>
+<br><input TYPE="radio" NAME="mat 36/ 3" VALUE="2"><font class="txt">Marte.</font>
+<br><input TYPE="radio" NAME="mat 36/ 3" VALUE="4"><font class="txt">Plut&oacute;n.</font>
+<br><input TYPE="radio" NAME="mat 36/ 3" VALUE="1"><font class="txt">Mercurio.</font>
+<br><input TYPE="radio" NAME="mat 36/3" VALUE="5"><font class="txt">Saturno.</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<font class="txtnegro">4. Lo que se ve en la imagen saliendo del
+Sol se llama</font></p>
+  <img SRC="image/sun_120.jpg" height=120 width=120 align=LEFT border="0"> 
+  <blockquote><input TYPE="radio" NAME="mat 78/4" VALUE="5"><font class="txt">fotosfera</font>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="3"><font class="txt">mancha
+solar</font>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="4"><font class="txt">corona
+solar</font>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="1"><font class="txt">protuberancia
+solar</font>
+<br><input TYPE="radio" NAME="mat 78/ 4" VALUE="2"><font class="txt">viento
+solar</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<font class="txtnegro">5. Adem&aacute;s de en la Tierrra, &iquest;en
+qu&eacute; otro planeta conocemos casquetes polares?</font></p>
+<img SRC="image/MARS060.GIF" HSPACE=11 BORDER=0 height=150 width=150 align=LEFT>
+<blockquote><input TYPE="radio" NAME="mat 32/ 5" VALUE="4"><font class="txt">Mercurio</font>
+<br><input TYPE="radio" NAME="mat 32/5" VALUE="5"><font class="txt">Plut&oacute;n</font>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="1"><font class="txt">Marte</font>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="3"><font class="txt">Venus</font>
+<br><input TYPE="radio" NAME="mat 32/ 5" VALUE="2"><font class="txt">Neptuno</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">6. &iquest;Qu&eacute; planeta falta en la imagen?</font></p><img SRC="image/sistemasolar.gif" height=150 width=120 align=LEFT border="0">
+
+<blockquote><input TYPE="radio" NAME="mat 32/ 6" VALUE="3"><font class="txt">Mercurio</font>
+<br><input TYPE="radio" NAME="mat 32/ 6" VALUE="4"><font class="txt">J&uacute;piter</font>
+<br><input TYPE="radio" NAME="mat 32/ 6" VALUE="1"><font class="txt">Plut&oacute;n</font>
+<br><input TYPE="radio" NAME="mat 32/6" VALUE="5"><font class="txt">Tierra</font>
+<br><input TYPE="radio" NAME="mat 32/ 6" VALUE="2"><font class="txt">Amaltea</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">7. &iquest;Qu&eacute; planeta del Sistema Solar presenta 
+    las masas de gases de su atm&oacute;sfera distribuidas en bandas latitudinales?</font></p>
+  <img SRC="image/jupiter.gif" height=130 width=130 align=LEFT border="0"> 
+  <blockquote><input TYPE="radio" NAME="mat 85/ 7" VALUE="4"><font class="txt">Saturno</font>
+<br><input TYPE="radio" NAME="mat 85/ 7" VALUE="1"><font class="txt">J&uacute;piter</font>
+<br><input TYPE="radio" NAME="mat 85/ 7" VALUE="2"><font class="txt">Urano</font>
+<br><input TYPE="radio" NAME="mat 85/ 7" VALUE="3"><font class="txt">Neptuno</font>
+<br><input TYPE="radio" NAME="mat 85/7" VALUE="5"><font class="txt">Plut&oacute;n</font></blockquote>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">8. &iquest;Qu&eacute; tipo de objeto del Sistema Solar se 
+    ve en la imagen?</font></p><img SRC="image/lspn_comet_halley1.jpg" height=150 width=150 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="3"><font class="txt">Un
+sat&eacute;lite</font>
+<br><input TYPE="radio" NAME="mat 38/ 8" VALUE="4"><font class="txt">Un
+agujero negro</font>
+<br><input TYPE="radio" NAME="mat 32/5" VALUE="5"><font class="txt">Una
+nebulosa</font>
+<br><input TYPE="radio" NAME="mat 38/ 8" VALUE="1"><font class="txt">Un
+cometa</font>
+<br><input TYPE="radio" NAME="mat 38/ 8" VALUE="2"><font class="txt">Un
+planeta</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">9. &iquest;Qu&eacute; planeta se ve en la fotograf&iacute;a?</font></p><img SRC="image/neptunespeq.gif" height=142 width=142 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 94/9" VALUE="5"><font class="txt">J&uacute;piter</font>
+<br><input TYPE="radio" NAME="mat 94/ 9" VALUE="1"><font class="txt">Neptuno</font>
+<br><input TYPE="radio" NAME="mat 94/ 9" VALUE="2"><font class="txt">Urano</font>
+<br><input TYPE="radio" NAME="mat 94/ 9" VALUE="3"><font class="txt">Saturno</font>
+<br><input TYPE="radio" NAME="mat 94/ 9" VALUE="4"><font class="txt">Plut&oacute;n</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">10. &iquest;Qu&eacute; planeta terrestre no nos deja ver 
+    su superficie?</font></p>
+  <img SRC="image/pvo_uv_790205.gif" height=135 width=130 align=LEFT border="0"> 
+  <input TYPE="radio" NAME="mat  5/10" VALUE="2"><font class="txt">La
+Tierra</font>
+<br><input TYPE="radio" NAME="mat  5/10" VALUE="3"><font class="txt">Marte</font>
+<br><input TYPE="radio" NAME="mat  5/10" VALUE="4"><font class="txt">Mercurio</font>
+<br><input TYPE="radio" NAME="mat 5/10" VALUE="5"><font class="txt">Plut&oacute;n</font>
+<br><input TYPE="radio" NAME="mat  5/10" VALUE="1"><font class="txt">Venus</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">11. &iquest;En qu&eacute; planeta distinto de la Tierra 
+    puede existir una formaci&oacute;n geol&oacute;gica como la de la imagen?. 
+    &iquest;Qu&eacute; agente ha podido hacer esa acci&oacute;n?.</font></p><img SRC="image/network.gif" height=120 width=150 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 18/11" VALUE="3"><font class="txt">En
+Mercurio. La lava.</font>
+<br><input TYPE="radio" NAME="mat 18/11" VALUE="1"><font class="txt">Marte.
+Agua en circulaci&oacute;n.</font>
+<br><input TYPE="radio" NAME="mat 18/11" VALUE="2"><font class="txt">En
+Venus. La lluvia.</font>
+<br><input TYPE="radio" NAME="mat 18/11" VALUE="4"><font class="txt">En
+J&uacute;piter. El viento.</font>
+<br><input TYPE="radio" NAME="mat 18/11" VALUE="5"><font class="txt">En
+Plut&oacute;n. El hielo.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">12. &iquest;Qu&eacute; es la Mancha Roja de J&uacute;piter?</font></p><img SRC="image/redspot.gif" height=150 width=157 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 75/12" VALUE="5"><font class="txt">Un
+sat&eacute;lite que se estrell&oacute; en su superficie.</font>
+<br><input TYPE="radio" NAME="mat 75/12" VALUE="2"><font class="txt">Un
+agujero en el planeta.</font>
+<br><input TYPE="radio" NAME="mat 75/12" VALUE="4"><font class="txt">El
+choque entre gases que se mueven en distintos sentidos.</font>
+<br><input TYPE="radio" NAME="mat 75/12" VALUE="1"><font class="txt">Una
+enorme borrasca en las capas exteriores de la atm&oacute;sfera de J&uacute;piter.</font>
+<br><input TYPE="radio" NAME="mat 75/12" VALUE="3"><font class="txt">El
+proceso de formaci&oacute;n de un nuevo sat&ntilde;elite.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">13. &iquest;Cu&aacute;l es el origen de Plut&oacute;n?</font></p><img SRC="image/pluto3.gif" height=150 width=200 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 109/13" VALUE="1"><font class="txt">Un
+cometa capturado por el Sol.</font>
+<br><input TYPE="radio" NAME="mat 109/13" VALUE="5"><font class="txt">Un
+asteroide capturado por el Sol.</font>
+<br><input TYPE="radio" NAME="mat 109/13" VALUE="3"><font class="txt">Un
+planeta vagabundo capturado por el Sol.</font>
+<br><input TYPE="radio" NAME="mat 109/13" VALUE="2"><font class="txt">Una
+estrella moribunda capturada por el Sol.</font>
+<br><input TYPE="radio" NAME="mat 109/13" VALUE="4"><font class="txt">Un
+fragmento rocoso err&aacute;tico.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">14. &iquest;Qu&eacute; objeto puede ser el de la imagen?</font></p><img SRC="image/ida.jpg" height=120 width=150 align=LEFT border="0">
+
+<input TYPE="radio" NAME="mat 44/14" VALUE="4"><font class="txt">Un
+planeta.</font>
+<br><input TYPE="radio" NAME="mat 44/14" VALUE="1"><font class="txt">Un
+asteroide.</font>
+<br><input TYPE="radio" NAME="mat 44/14" VALUE="5"><font class="txt">Una
+nube de gas.</font>
+<br><input TYPE="radio" NAME="mat 44/14" VALUE="2"><font class="txt">Un
+anillo.</font>
+<br><input TYPE="radio" NAME="mat 44/14" VALUE="3"><font class="txt">Un
+cr&aacute;ter.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">15. &iquest;Qu&eacute; sat&eacute;lite de nuestro Sistema 
+    posee una atm&oacute;sfera muy densa y rica en hidrocarburos?. &iquest;A qu&eacute; 
+    planeta pertenece?</font></p>
+  <img SRC="image/titan.gif" height=130 width=130 align=LEFT border="0"> 
+  <input TYPE="radio" NAME="mat 116/15" VALUE="2"><font class="txt">Deimos.
+Marte.</font>
+<br><input TYPE="radio" NAME="mat 116/15" VALUE="1"><font class="txt">Tit&aacute;n.
+Saturno.</font>
+<br><input TYPE="radio" NAME="mat 116/15" VALUE="5"><font class="txt">Luna.
+Tierra.</font>
+<br><input TYPE="radio" NAME="mat 116/15" VALUE="3"><font class="txt">Europa.
+J&uacute;piter.</font>
+<br><input TYPE="radio" NAME="mat 116/15" VALUE="4"><font class="txt">Trit&oacute;n.
+Neptuno.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">16. &iquest;Es posible fotografiar el Sol en una parte 
+    del espectro que no sea el de la luz visible?</font></p>
+  <img SRC="image/eit_sl_195.gif" height=130 width=130 align=LEFT border="0"> 
+  <input TYPE="radio" NAME="mat   8/16" VALUE="2"><font class="txt">No,
+no se puede fotografiar de ninguna manera.</font>
+<br><input TYPE="radio" NAME="mat  8/16" VALUE="4"><font class="txt">No,
+s&oacute;lo se pueden hacer fotograf&iacute;as con luz visible.</font>
+<br><input TYPE="radio" NAME="mat  8/16" VALUE="5"><font class="txt">Si,
+si se hace a trav&eacute;s de un telescopio.</font>
+<br><input TYPE="radio" NAME="mat  8/16" VALUE="1"><font class="txt">Si,
+en todo el espectro, como la fotograf&iacute;a que est&aacute; hecha en
+el UV.</font>
+<br><input TYPE="radio" NAME="mat  8/16" VALUE="3"><font class="txt">No,
+pero se pueden retocar las fotograf&iacute;as.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">17. &iquest;Qu&eacute; pasa si un asteroide es atra&iacute;do 
+    por la gravedad de un planeta o sat&eacute;lite?</font></p>
+  <img SRC="image/mimas.gif" height=130 width=105 align=LEFT border="0"> 
+  <input TYPE="radio" NAME="alg 12/17" VALUE="2"><font class="txt">Rebota
+en su superficie.</font>
+<br><input TYPE="radio" NAME="alg 12/17" VALUE="5"><font class="txt">Se
+frena.</font>
+<br><input TYPE="radio" NAME="alg 12/17" VALUE="3"><font class="txt">Se
+acelera.</font>
+<br><input TYPE="radio" NAME="alg 12/17" VALUE="4"><font class="txt">Se
+convierte en cometa</font>
+<br><input TYPE="radio" NAME="alg 12/17" VALUE="1"><font class="txt">Se
+convierte en un meteorito.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">18. &iquest;Cu&aacute;les son los sat&eacute;lites galileanos 
+    de J&uacute;piter?</font></p>
+  <img SRC="image/jupiter_family.gif" height=130 width=110 align=LEFT border="0"> 
+  <input TYPE="radio" NAME="alg 93/18" VALUE="1"><font class="txt">Gan&iacute;medes,
+Calixto, Europa e Io.</font>
+<br><input TYPE="radio" NAME="alg 93/18" VALUE="3"><font class="txt">Deimos
+y Fobos.</font>
+<br><input TYPE="radio" NAME="alg 93/18" VALUE="2"><font class="txt">Hyperion,
+Japeto, Encelado y Tit&aacute;n.</font>
+<br><input TYPE="radio" NAME="alg 93/18" VALUE="4"><font class="txt">Amaltea,
+Adrastea, Cordelia y Foebe.</font>
+<br><input TYPE="radio" NAME="alg 93/18" VALUE="5"><font class="txt">Miranda,
+Umbriel, Titania y Ober&oacute;n.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+  <p> <font class="txtnegro">19. &iquest;C&oacute;mo se form&oacute; la Luna?</font></p><img SRC="image/clem_full_moon_strtrk.gif" height=120 width=160 align=LEFT border="0">
+
+<input TYPE="radio" NAME="alg 53/19" VALUE="4"><font class="txt">A
+partir de un asteroide capturado.</font>
+<br><input TYPE="radio" NAME="alg 53/19" VALUE="3"><font class="txt">A
+partir de un cometa capturado.</font>
+<br><input TYPE="radio" NAME="alg 53/19" VALUE="2"><font class="txt">Es
+un fragmento de Marte capturado por la Tierra.</font>
+<br><input TYPE="radio" NAME="alg 53/19" VALUE="5"><font class="txt">Es
+material volc&aacute;nico arrojado por la Tierra.</font>
+<br><input TYPE="radio" NAME="alg 53/19" VALUE="1"><font class="txt">Por
+el choque entre la Tierra y un peque&ntilde;o planeta.</font>
+
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<font class="txtnegro">20. &iquest;Qu&eacute; es lo que se ve en
+la fotograf&iacute;a?</font></p><img SRC="image/halpha.gif" height=150 width=150 align=LEFT>
+
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="1"><font class="txt">Manchas
+solares.</font>
+<br><input TYPE="radio" NAME="alg 96/ 20" VALUE="3"><font class="txt">Cr&aacute;teres
+de impacto de meteoritos.</font>
+<br><input TYPE="radio" NAME="alg 96/ 20" VALUE="5"><font class="txt">Volcanes
+en erupci&oacute;n.</font>
+<br><input TYPE="radio" NAME="alg 96/ 20" VALUE="2"><font class="txt">Borrascas
+en las capas de gases.</font>
+<br><input TYPE="radio" NAME="alg 96/ 20" VALUE="3">
+  <font class="txt">Anillos planetarios.</font> <br>
+  <br>
+  <br>
+  <p>
+<font class="txt">&nbsp;</font><input TYPE="reset" VALUE="BORRAR"><input TYPE="submit" NAME="calificacion" VALUE="CALIFICACIÓN" onClick="nota(this.form)"></form>
+&nbsp;</body></html>

@@ -1,0 +1,494 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="titulorg.GIF" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con los Moluscos" href="contenidos24.htm">anterior - (25/27) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con los animales Deuteróstomos" href="contenidos26.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    LOS ARTRÓPODOS</b></font></font></p>
+                                    <p class="txt">Los Artrópodos forman un grupo 
+                                    muy heterogéneo de animales. Sus 
+                                    características comunes son presentar unas 
+                                    <b>patas articuladas </b>y un cuerpo envuelto y 
+                                    protegido por un <b>exoesqueleto </b>que <b>muda
+                                    </b>para 
+                                    crecer. Su cuerpo está dividido en regiones 
+                                    llamadas <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#tagma">tagmas</a></font></b>.</p>
+                                    <p class="txt">Los grupos principales son <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#quelicerado">quelicerados</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#crustaceo">crustáceos</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#miriapodo">miriápodos</a></font></b> e <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#insecto">insectos</a></font></b>.</p>
+                                    <p class="txt"><b><a name="quelicerado"></a>Quelicerados</b></p>
+                                    <p class="txt">Carecen de antenas y 
+                                    mandíbulas. Cuerpo dividido en dos <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#tagma">tagmas</a></font></b>, llamados <b>
+                                    cefalotorax </b>(prosoma) y <b>abdomen </b>(opistosoma). 
+                                    Poseen dos quelíceros, que son dos uñas 
+                                    delante de la boca (quelas), a 
+                                    veces con veneno.</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt">En las imágenes se recogen 
+                                    los grupos principales. <b>Pasa el cursor
+                                    </b>sobre ellas y te aparecerá información en 
+                                    pantalla. Si deseas ver la imagen con mayor 
+                                    tamaño <b>pulsa </b>sobre ella.</p>
+                                    </div>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="1" cellspacing="1" width="100%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="25%" align="center">
+                                        <a title="La Cacerola de las Molucas es un Merostomado" target="_blank" href="imagenes/cacerola.jpg">
+                                        <img border="2" src="imagenes/cacerola_small.jpg" xthumbnail-orig-image="imagenes/cacerola.jpg" width="100" height="64"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Las arañas son del orden Araneidos" target="_blank" href="imagenes/tarantula.jpg">
+                                        <img border="2" src="imagenes/tarantula_small.jpg" xthumbnail-orig-image="imagenes/tarantula.jpg" width="100" height="66"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="El escorpión pertenece al orden Escorpionidae" target="_blank" href="imagenes/escorpion.jpg">
+                                        <img border="2" src="imagenes/escorpion_small.jpg" xthumbnail-orig-image="imagenes/escorpion.jpg" width="100" height="79"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Pseudescorpión, del orden Pseudoescorpiónidos" target="_blank" href="imagenes/pseudoescorpion.jpg">
+                                        <img border="2" src="imagenes/pseudoescorpion_small.jpg" xthumbnail-orig-image="imagenes/pseudoescorpion.jpg" width="100" height="112"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="25%" align="center">
+                                        <a title="Dysdera croata es un solífugo" target="_blank" href="imagenes/dysdera.jpg">
+                                        <img border="2" src="imagenes/dysdera_small.jpg" xthumbnail-orig-image="imagenes/dysdera.jpg" width="100" height="64"></a></td>
+                                        <td width="25%" align="center">
+                                        <a target="_blank" href="imagenes/OPILION.JPG">
+                                        <img border="2" src="imagenes/OPILION_small.JPG" xthumbnail-orig-image="imagenes/OPILION.JPG" alt="Los opiliones pertenecen al orden Falángidos" width="100" height="69"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Los ácaros pertenecen al orden Acarinos" target="_blank" href="imagenes/acaro.gif">
+                                        <img border="2" src="imagenes/acaro_small.gif" xthumbnail-orig-image="imagenes/acaro.gif" width="100" height="77"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Las garrapatas perenecen al orden Acarinos" target="_blank" href="imagenes/garrapata.jpg">
+                                        <img border="2" src="imagenes/garrapata_small.jpg" xthumbnail-orig-image="imagenes/garrapata.jpg" width="100" height="99"></a></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b><a name="crustaceo"></a>Crustáceos</b></p>
+                                    <p class="txt">Poseen un cuerpo dividido en <b>
+                                    cefalotorax </b>y <b>abdomen</b>. Presentan
+                                    <b>antenas </b>y <b>mandíbulas</b>, así como
+                                    <b>maxilas</b>, que son apéndices 
+                                    modificados para manipular el alimento, y 
+                                    patas articuladas. Casi todos (excepto las 
+                                    pulgas de playa y las cochinillas de 
+                                    humedad) son <b>acuáticos</b> y la mayor 
+                                    parte son marinos. Respiran mediante 
+                                    branquias. Algunos son parásitos.</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt">En las imágenes se recogen 
+                                    los grupos principales. <b>Pasa el cursor
+                                    </b>sobre ellas y te aparecerá información en 
+                                    pantalla. Si deseas ver la imagen con mayor 
+                                    tamaño <b>pulsa </b>sobre ella.</p>
+                                    </div>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="1" cellspacing="1" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="25%" align="center">
+                                        <a title="Daphnia es la pulga de agua. Pertenece a la subclase branquiópodos" target="_blank" href="imagenes/dafnia01.jpg">
+                                        <img border="2" src="imagenes/dafnia01_small.jpg" xthumbnail-orig-image="imagenes/dafnia01.jpg" width="100" height="102"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Diminuto Ostrácodo" target="_blank" href="imagenes/ostracodo.jpg">
+                                        <img border="2" src="imagenes/ostracodo_small.jpg" xthumbnail-orig-image="imagenes/ostracodo.jpg" width="100" height="66"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Lepas antifera es un percebe. Es un Cirrípedo pedunculado" target="_blank" href="imagenes/lepasantifera.jpg">
+                                        <img border="2" src="imagenes/lepasantifera_small.jpg" xthumbnail-orig-image="imagenes/lepasantifera.jpg" width="100" height="152"></a></td>
+                                        <td width="25%" align="center">
+                                        <a target="_blank" href="imagenes/balanus.jpg">
+                                        <img border="2" src="imagenes/balanus_small.jpg" xthumbnail-orig-image="imagenes/balanus.jpg" alt="Balanus, o bellota de mar es un Cirrípedo sin pedúnculo" width="100" height="63"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="25%" align="center">
+                                        <a title="La cochinilla de humedad, Porcellio scraber, pertenece al orden Isopoda. Es un crustáceo terrestre." target="_blank" href="imagenes/Porcell.jpg">
+                                        <img border="2" src="imagenes/Porcell_small.jpg" xthumbnail-orig-image="imagenes/Porcell.jpg" width="100" height="65"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="Las pulgas de playa son Amphipodos. Son crustáceos terrestres que abundan entre la arena de las playas." target="_blank" href="imagenes/amphipodo.jpg">
+                                        <img border="2" src="imagenes/amphipodo_small.jpg" xthumbnail-orig-image="imagenes/amphipodo.jpg" width="100" height="94"></a></td>
+                                        <td width="25%" align="center">
+                                        <a title="El cangrejo de río es un Decápodo" target="_blank" href="imagenes/cangrejo.jpg">
+                                        <img border="2" src="imagenes/cangrejo_small.jpg" xthumbnail-orig-image="imagenes/cangrejo.jpg" width="100" height="76"></a></td>
+                                        <td width="25%" align="center">
+                                        <a target="_blank" href="imagenes/MASERA.JPG">
+                                        <img border="2" src="imagenes/MASERA_small1.JPG" xthumbnail-orig-image="imagenes/MASERA.JPG" alt="El buey de mar es un Decápodo que lleva el abdomen bajo el cefalotórax" width="100" height="70"></a></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b><a name="miriapodo"></a>
+                                    Miriápodos</b></p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber5">
+                                      <tr>
+                                        <td width="64%" rowspan="3">
+                                    <p class="txt">Son los ciempiés (Quilópodos) 
+                                    y los milpiés (Diplópodos), entre otros. 
+                                    Poseen <b>mandíbulas </b>y <b>uno o dos 
+                                    pares de patas </b>por segmento del cuerpo. 
+                                    El <b>corazón dorsal </b>recorre todo el 
+                                    cuerpo. Algunos ciempiés tienen veneno en 
+                                    unas uñas que poseen en la cabeza. Respiran 
+                                    por <b>tráqueas</b>. Algunos milpiés se 
+                                    caracterizan por su capacidad de enrollarse sobre sí mismos, 
+                                    formando una rueda, con las patas hacia 
+                                    dentro (formando los radios de la rueda).</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt">En las imágenes se recogen 
+                                    los grupos principales. <b>Pasa el cursor
+                                    </b>sobre ellas y te aparecerá información en 
+                                    pantalla. Si deseas ver la imagen con mayor 
+                                    tamaño <b>pulsa </b>sobre ella.</p>
+                                        </div>
+                                        <p>&nbsp;</td>
+                                        <td width="36%" align="center">
+                                        <a title="La escolopendra es un Quilópodo, un ciempiés, que pertenece al orden Escolopendromorfos." target="_blank" href="imagenes/escolopendra.jpg">
+                                        <img border="2" src="imagenes/escolopendra_small.jpg" xthumbnail-orig-image="imagenes/escolopendra.jpg" width="100" height="75"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="36%" align="center">
+                                        <a title="La escutigera es un Quilópodo, un ciempiés, que pertenece al orden de los Escutigeromorfos." target="_blank" href="imagenes/scutigera.gif">
+                                        <img border="2" src="imagenes/scutigera_small.gif" xthumbnail-orig-image="imagenes/scutigera.gif" width="100" height="75"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="36%" align="center">
+                                        <a title="Ommatoiulus rutilans es un Diplópodo, es decir, un Milpiés. Tiene la costumbre de arrollarse formando una rueda cuando se asusta." target="_blank" href="imagenes/ommatoiu.jpg">
+                                        <img border="2" src="imagenes/ommatoiu_small.jpg" xthumbnail-orig-image="imagenes/ommatoiu.jpg" width="100" height="75"></a></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b><a name="insecto"></a>
+                                    Insectos</b></p>
+                                    <p class="txt">Son los animales terrestres 
+                                    más abundantes y variados. Se distribuyen 
+                                    por todos los hábitats, bajo tierra, en el 
+                                    aire, dentro de seres vivos e incluso en agua 
+                                    dulce. Su cuerpo se divide en <b>cabeza</b>,
+                                    <b>tórax </b>y <b>abdomen</b>. Respiran por
+                                    <b>tráqueas</b>. Presentan sexos separados. 
+                                    El desarrollo puede ser bastante complejo, 
+                                    en una o varias <b>fases larvarias</b>. 
+                                    Muestran un <b>par de antenas </b>y, 
+                                    generalmente, <b>dos pares de alas</b>, 
+                                    aunque algunos no presenten ninguno. Tienen&nbsp;
+                                    <b>tres pares de patas </b>(Hexápodos), 
+                                    aunque algunos grupos pueden presentar sólo 
+                                    dos pares. Tienen <b>ojos compuestos </b>y 
+                                    sistema nervioso dorsal muy desarrollado. 
+                                    Ciertos grupos son capaces de emitir sonidos 
+                                    y recibirlos como mensaje (grillos). Algunos 
+                                    grupos son <b>insectos sociales</b>, 
+                                    organizando una sociedad con niveles 
+                                    jerárquicos, según el tipo de individuo.</p>
+                                    <table border="1" cellspacing="1" width="100%" id="AutoNumber4">
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a title="Las libélulas y los caballitos del diablo pertenecen al orden Odonata" target="_blank" href="imagenes/libelula.jpg">
+                                        <img border="2" src="imagenes/libelula_small1.jpg" xthumbnail-orig-image="imagenes/libelula.jpg" width="100" height="103"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/tettigoni.jpg">
+                                        <img border="2" src="imagenes/tettigoni_small.jpg" xthumbnail-orig-image="imagenes/tettigoni.jpg" width="97" height="66" alt="Tettigonia verdissima es un saltamontes. Pertenece al orden Orthoptera. Es de la familia Tetigonidae."></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/cucanegra.jpg">
+                                        <img border="2" src="imagenes/cucanegra_small.jpg" xthumbnail-orig-image="imagenes/cucanegra.jpg" alt="Las cucarachas pertenecen al orden Orthoptera. Son Blatoideos" width="100" height="84"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/mantis2.jpg">
+                                        <img border="2" src="imagenes/mantis2_small.jpg" xthumbnail-orig-image="imagenes/mantis2.jpg" alt="La mantis religiosa pertenece al orden Orthoptera. Es un Mántido." width="100" height="106"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/tijereta.jpg">
+                                        <img border="2" src="imagenes/tijereta_small.jpg" xthumbnail-orig-image="imagenes/tijereta.jpg" alt="Las tijeretas pertenecen al orden Dermaptera." width="100" height="61"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/piojo.gif">
+                                        <img border="2" src="imagenes/piojo_small.gif" xthumbnail-orig-image="imagenes/piojo.gif" alt="Los piojos  chupadores pertenecen al orden Anoplura" width="87" height="79"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/pentatomidae.jpg">
+                                        <img border="2" src="imagenes/pentatomidae_small.jpg" xthumbnail-orig-image="imagenes/pentatomidae.jpg" alt="Las chinches pretenecen al orden Hemiptera" width="87" height="65"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/pulgon.jpg">
+                                        <img border="2" src="imagenes/pulgon_small.jpg" xthumbnail-orig-image="imagenes/pulgon.jpg" alt="Los pulgones pertenecen al orden Homoptera." width="93" height="74"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/mariposa1.jpg">
+                                        <img border="2" src="imagenes/mariposa1_small.jpg" xthumbnail-orig-image="imagenes/mariposa1.jpg" alt="Las mariposas pertenecen al orden Lepidoptera." width="100" height="100"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/oruga.jpg">
+                                        <img border="2" src="imagenes/oruga_small.jpg" xthumbnail-orig-image="imagenes/oruga.jpg" alt="Los Lepidópteros (mariposas y polillas) presentan una fase de oruga." width="100" height="70"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/moscadomest.jpg">
+                                        <img border="2" src="imagenes/moscadomest_small.jpg" xthumbnail-orig-image="imagenes/moscadomest.jpg" alt="Las moscas presentan dos alas. Son del orden Diptera." width="100" height="73"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/MALARIA2.JPG">
+                                        <img border="2" src="imagenes/MALARIA2_small.JPG" xthumbnail-orig-image="imagenes/MALARIA2.JPG" alt="Los mosquitos presentan dos alas. Son del orden Diptera." width="87" height="72"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/pulga.jpg">
+                                        <img border="2" src="imagenes/pulga_small.jpg" xthumbnail-orig-image="imagenes/pulga.jpg" width="83" height="61" alt="Las pulgas no presentan alas. Son del orden Siphonaptera"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/mariquita.jpg">
+                                        <img border="2" src="imagenes/mariquita_small.jpg" xthumbnail-orig-image="imagenes/mariquita.jpg" alt="La mariquita pertenece al orden Coleoptera." width="99" height="77"></a></td>
+                                        <td width="20%" align="center">
+                                        <a title="Las hormigas son del orden Himenoptera" target="_blank" href="imagenes/hormiga.jpg">
+                                        <img border="2" src="imagenes/hormiga_small.jpg" xthumbnail-orig-image="imagenes/hormiga.jpg" width="100" height="68"></a></td>
+                                      </tr>
+                                      </table>
+                                    <p class="txt" style="text-align: center">&nbsp;</p>
+                                    <p class="txt" style="text-align: center"><b>
+                                    <font size="4" color="#006666" face="Arial">
+                                    <a class="txtnegrolink" title="Investiga sobre el tipo de animales más abundante de La Tierra" target="_blank" href="invesinsec.htm">
+                                    <font size="4">Actividad de investigación: 
+                                    Los órdenes de los insectos</font></a></font></b></p>
+                                    <p class="txt">&nbsp;</p>
+                                    <div align="center">
+                                      <center> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Enlaza con una actividad interactiva que trata sobre artrópodos" href="actividades/act8z25.htm">Actividad
+                                          15</a></font></b><a title="Enlaza con una actividad interactiva que trata sobre artrópodos" target="_blank" href="actividades/act8z25.htm"><img border="2" src="imagenes/cuad8sma.jpg" xthumbnail-orig-image="imagenes/cuad8.jpg" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                      </center>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con los Moluscos" href="contenidos24.htm">
+                                        anterior- (25/27) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con los animales Deuteróstomos" href="contenidos26.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

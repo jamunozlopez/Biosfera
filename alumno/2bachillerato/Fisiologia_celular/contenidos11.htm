@@ -1,0 +1,519 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 31;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 31;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif');MM_timelinePlay('Timeline1')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="523" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="223" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (11/11) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">3.4.- Factores que influyen 
+                                en la fotos&iacute;ntesis.</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>En el <span class="txtbold">rendimiento 
+                                            de la fotos&iacute;ntesis</span> influyen 
+                                            diversos factores: la temperatura, 
+                                            la concentraci&oacute;n de di&oacute;xido 
+                                            de carbono, la concentraci&oacute;n 
+                                            de ox&iacute;geno, la intensidad luminosa, 
+                                            la falta de agua, el tiempo de iluminaci&oacute;n 
+                                            y el color de la luz.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><span ><br>
+                                <img src="imagenes/graf_luz.jpg" width="502" height="256" alt="&quot;Influencia de la intensidad de luz en la fotos&iacute;ntesis&quot;" vspace="5"></span><br>
+                                <span ><img src="imagenes/graf_temperatura.jpg" width="501" height="335" alt="&quot;Influencia de la temperatura en la fotos&iacute;ntesis&quot;" vspace="5"></span> 
+                                <span ><img src="imagenes/graf_CO2.jpg" width="524" height="214" alt="&quot;Influencia del di&oacute;xido de carbono en la fotos&iacute;ntesis&quot;" vspace="5"></span> 
+                                <br>
+                                <br>
+                                <div align="center"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ16.htm" class="txtnegrolink">Actividad 
+                                          16</a></font> <a href="activ16.htm"><img src="imagenes/activ16.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p align="left"><span class="txtnegro"><a name="quimiosintesis"></a><br>
+                                  3.5.- Quimios&iacute;ntesis.<br>
+                                  </span> </p>
+                              </div>
+                              <div align="center"></div>
+                                    <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                      <tr> 
+                                        <td> 
+                                          <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                            <tr bgcolor="#e6ffe6"> 
+                                              
+                                        <td class="txt"> 
+                                          <p>La <span class="txtbold">quimios&iacute;ntesis</span> 
+                                            consiste en la s&iacute;ntesis de 
+                                            ATP a partir de la energ&iacute;a 
+                                            que se desprende de determinadas sustancias 
+                                            inorg&aacute;nicas en las reacciones 
+                                            de oxidaci&oacute;n. Los organismos 
+                                            que realizan estos procesos se denominan 
+                                            quimioaut&oacute;trofos. Todos son 
+                                            bacterias. Son microorganismos que 
+                                            cierran los ciclos biogeoqu&iacute;micos, 
+                                            posibilitando la vida en el planeta 
+                                            y devolviendo al sustrato las sustancias 
+                                            procedentes de la oxidaci&oacute;n 
+                                            de materia de descomposici&oacute;n 
+                                            de los organismos muertos. De este 
+                                            modo, los restos de los seres vivos 
+                                            se transforman en sales minerales 
+                                            de nitr&oacute;geno o azufre que pueden 
+                                            ser de nuevo absorbidas por los vegetales. 
+                                          </p>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    
+                              <div align="center">
+                                <div align="center">
+                                  <div align="center">
+                                    <div align="left"><i><a name="act_inves10"></a></i><br>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div align="center"> 
+                                  <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                    <tr> 
+                                      <td class="ttBIOSFERA" width="642"><i>Actividad 
+                                        de investigaci&oacute;n 10: La quimios&iacute;ntesis</i></td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"><i>Introducci&oacute;n: 
+                                        </i>En la quimios&iacute;ntesis, al igual 
+                                        que en la fotos&iacute;ntesis, se pueden 
+                                        distinguir dos fases: en la primera se 
+                                        obtiene ATP y NADH y en la segunda esas 
+                                        mol&eacute;culas energ&eacute;ticas y 
+                                        coenzimas se utilizan para sintetizar 
+                                        compuestos org&aacute;nicos a partir de 
+                                        sustancias inorg&aacute;nicas.</td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p><i><img src="imagenes/ciclo_del_nitrogeno.gif" width="208" height="166" alt="&quot;Ciclo del nitr&oacute;geno&quot;" hspace="5" align="right">Tarea:</i><font size="-2"> 
+                                          </font>Se pretende realizar una labor 
+                                          de investigaci&oacute;n, an&aacute;lisis 
+                                          y redacci&oacute;n individual. Analizando 
+                                          primero los recursos que en esta actividad 
+                                          te proponemos, debes extraer las ideas 
+                                          fundamentales y las im&aacute;genes 
+                                          que consideres m&aacute;s gr&aacute;ficas 
+                                          y did&aacute;cticas para exponer, en 
+                                          un trabajo escrito en procesador de 
+                                          texto, la idea global de quimios&iacute;ntesis 
+                                          y los diversos tipos de bacterias quimiosint&eacute;ticas 
+                                          que has encontrado en las web<font size="-2">.</font></p>
+                                      </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"><i>Descripci&oacute;n:<img src="imagenes/ciclo_del_azufre.gif" width="209" height="224" alt="&quot;Ciclo del azufre&quot;" hspace="5" align="right" vspace="5"> 
+                                        </i>Primero debes estudiar y analizar 
+                                        el concepto global de quimios&iacute;ntesis 
+                                        y sus fases. Una vez analizada la informaci&oacute;n 
+                                        redacta y representa gr&aacute;ficamente 
+                                        las mismas. Ahora que ya conoces el esquema 
+                                        general de la quimios&iacute;ntesis est&aacute;s 
+                                        en condiciones de describir los diversos 
+                                        tipos de bacterias quimiosint&eacute;ticas 
+                                        que conoces y de poner ejemplos concretos 
+                                        de su actividad e importancia biol&oacute;gica 
+                                        (ej. Bacterias incoloras del azufre, bacterias 
+                                        de nitr&oacute;geno, bacterias del hierro, 
+                                        del nitr&oacute;geno y organismos fijadores 
+                                        de nitr&oacute;geno atmosf&eacute;rico). 
+                                        Intenta tambi&eacute;n buscar la relaci&oacute;n 
+                                        entre estos seres vivos y su participaci&oacute;n 
+                                        en los ciclos biogeoqu&iacute;micos.</td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"> 
+                                        <p><i>Recursos: <font size="-2"><br>
+                                          <br>
+                                          </font></i><a href="http://www.surfear.com/?surf=biolog%EDa"></a> 
+                                          <a target="_blank" href="http://ciencia.nasa.gov/headlines/y2001/ast13apr_1.htm"><font color="#FFFFCC">La 
+                                          Vida Submarina.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://www.wwf.es/azores.php"><font color="#FFFFCC">MWWF/Adena.</font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://www.geocities.com/ciclidos/articulos/bacterias.htm"><font color="#FFFFCC">bacterias 
+                                          nitrificantes. </font></a><i><br>
+                                          </i>
+										<a target="_blank" href="http://biblia.com/maravillas/microbios.htm"><font color="#FFFFCC">Microbios.</font></a><br>
+                                          <a target="_blank" href="http://www.monografias.com/trabajos/bacterias/bacterias.shtml"><font color="#FFFFCC">Las 
+                                          bacterias - Monograf&iacute;as.com.</font></a> 
+                                          <i></i><br>
+                                          <a target="_blank" href="http://www.arrakis.es/~lluengo/microbio.html"><font color="#FFFFCC">Microbiolog&iacute;a.</font></a> 
+                                          <i></i><br>
+                                          <a target="_blank" href="http://omega.ilce.edu.mx:3000/sites/ciencia/volumen2/ciencia3/063/htm/sec_11.html"><font color="#FFFFCC"> 
+                                          Acci&oacute;n desintegradora de las 
+                                          bacterias marinas.</font></a> <i></i><br>
+                                          <a target="_blank" href="http://www.sagan-gea.org/hojaredsuelo/paginas/10hoja.html"><font color="#FFFFCC">microorganismos 
+                                          y suelo.</font></a> <i></i><br>
+                                          <a target="_blank" href="http://www.microbe.org/espanol/microbes/bacteria.asp"><font color="#FFFFCC">Las 
+                                          Bacterias.</font></a> <i></i> </p>
+                                        </td>
+                                    </tr>
+                                    <tr> 
+                                      <td class="ttBIOSFERA"><i>Evaluaci&oacute;n: 
+                                        </i>Para evaluar el trabajo escrito del 
+                                        alumno se tendr&aacute; en cuenta la labor 
+                                        de s&iacute;ntesis, an&aacute;lisis, claridad 
+                                        y exposici&oacute;n correcta del lenguaje 
+                                        cient&iacute;fico. Se valorar&aacute;, 
+                                        tambi&eacute;n, la aplicaci&oacute;n de 
+                                        ejemplos concretos y analizados de la 
+                                        diversidad de bacterias que realizan la 
+                                        quimios&iacute;ntesis y su relaci&oacute;n 
+                                        con los diversos ciclos biogeoqu&iacute;micos<font size="-2">. 
+                                        </font></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <br>
+                                <div align="center"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ17.htm" class="txtnegrolink">Actividad 
+                                          17</a></font> <a href="activ17.htm"><img src="imagenes/activ17.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                      <td height="115" bgcolor="#e6ffe6"> 
+                                        <p>&nbsp; 
+                                      </td>
+                                      <td height="115"> 
+                                        <p><font class="txtnegrolink"> <a href="activ18.htm" class="txtnegrolink">Actividad 
+                                          18</a></font> <a href="activ18.htm"><img src="imagenes/activ18.jpg" width="120" height="68" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <br>
+                                <p align="center"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink"></span></a><span > 
+                                  <img src="imagenes/ciclo_del_nitrogeno.gif" width="520" height="420" alt="&quot;Ciclo del nitr&oacute;geno&quot;"></span></p>
+								<p align="center">&nbsp;</p>
+                                <div align="center"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3" id="table1">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td height="115"> 
+                                        <font class="txtnegrolink"> <a target="_blank" href="activ_video1.htm" class="txtnegrolink">Actividad 
+                                          19</a></font>
+										<a target="_blank" href="activ_video1.htm">
+										<img src="nitrogeno_t.jpg" width="130" height="100" border="0"></a> 
+                                      </td>
+                                    </tr>
+                                  </table>
+                                	<p class="txt" style="text-align: center">
+									(Contiene vídeo)
+									<img border="0" src="../../../img/wmv.gif" width="16" height="16"></div>
+									<p align="center">&nbsp;</p>
+									<p align="center"><span > 
+                                  <img src="imagenes/ciclo_del_azufre.gif" width="537" height="467" alt="&quot;Ciclo del azufre&quot;"> 
+                                  <br>
+                                  <br>
+                                  <img src="imagenes/quimiosintesis.jpg" width="567" height="142" alt="&quot;Quimios&iacute;ntesis&quot;"> 
+                                  </span></p>
+                                <br>
+                                
+                              </div>
+                              <p align="right"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (11/11) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

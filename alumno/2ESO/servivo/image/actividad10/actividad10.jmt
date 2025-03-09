@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<version>5</version>
+
+<data>
+<title>Actividad 10</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/algasrojas.gif&quot; alt=&quot;algasrojas.gif&quot; width=&quot;100&quot; height=&quot;75&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sustrato marino profundo</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/Breach_title_p.gif&quot; alt=&quot;Breach_title_p.gif&quot; width=&quot;105&quot; height=&quot;57&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Agua marina</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/cobra6_p.jpg&quot; alt=&quot;cobra6_p.jpg&quot; width=&quot;80&quot; height=&quot;106&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Suelo de ambiente desértico</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/lemna_p.jpg&quot; alt=&quot;lemna_p.jpg&quot; width=&quot;110&quot; height=&quot;71&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Agua dulce (charcas)</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/liquenes_p.jpg&quot; alt=&quot;liquenes_p.jpg&quot; width=&quot;110&quot; height=&quot;73&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Rocas</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/mytilus_p.jpg&quot; alt=&quot;mytilus_p.jpg&quot; width=&quot;100&quot; height=&quot;90&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Sustrato marino</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/osopolar_p.jpg&quot; alt=&quot;osopolar_p.jpg&quot; width=&quot;90&quot; height=&quot;114&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Hielo</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/pinar_p.jpg&quot; alt=&quot;pinar_p.jpg&quot; width=&quot;90&quot; height=&quot;122&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Alta montaña</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;img src=&quot;actividad10/uva_p.jpg&quot; alt=&quot;uva_p.jpg&quot; width=&quot;90&quot; height=&quot;117&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Suelos cultivados</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Características biológicas dominantes de un bioma</exercise-subtitle>
+<instructions>De entre estas especies dominantes elige las que consideras características de cada bioma:</instructions>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<guess-correct>¡Correcto! Bien hecho.</guess-correct>
+<guess-incorrect>¡Lo siento! Inténtalo de nuevo.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Leer</start-reading>
+<show-reading-again>Mostrar el texto de nuevo</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pincha aquí para ver el texto.</click-to-show>
+<check-caption>¡Compruebalo!</check-caption>
+<ok-caption>OK</ok-caption>
+<next-ex-caption>siguiente</next-ex-caption>
+<back-caption></back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../servivo/actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#000000</title-color>
+<ex-bg-color>#e6ffe6</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

@@ -1,0 +1,402 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)" href="../../../profesor/2eso/1.htm"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/energia_ecosistemas.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="537" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="210" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos1.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (2/7) - <a href="contenidos3.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td    valign="top"> 
+                              <p class="txtnegro">2.- LOS PRODUCTORES Y LOS CONSUMIDORES 
+                                EN UN ECOSISTEMA: LOS NIVELES TR&Oacute;FICOS.<img src="imagenes/Actividades/bosque.jpg" width="370" height="225" hspace="10" align="right"></p>
+                              <table width="45%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"><span class="txt">Las 
+                                          </span><span class="txtnegro">plantas 
+                                          verdes</span><span class="txt"> utilizan 
+                                          la luz del sol, el di&oacute;xido de 
+                                          carbono y sustancias minerales del suelo 
+                                          disueltas en agua y con ello realizan 
+                                          y fabrican su propio alimento. Son seres 
+                                          </span><span class="txtnegro">aut&oacute;trofos</span><span class="txt">: 
+                                          no se comen a nadie, no necesitan comer 
+                                          a nadie para subsistir.</span></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txtnegro" align="center"></p>
+                              <p class="txtnegro" align="center"></p>
+                              <div align="CENTER"> </div>
+                              <p class="txtnegro">&nbsp;</p>
+                              <p class="txtnegro">&nbsp;</p>
+                              <table border="0" width="100%" id="table1">
+								<tr>
+									<td>
+									<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="400">
+										<param name="movie" value="imagenes/Vegetal.swf">
+										<param name="quality" value="High">
+										<embed src="imagenes/Vegetal.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="300" height="400"></object>
+									</td>
+									<td width="413">
+									<table border="1" width="100%" id="table2" cellspacing="0" bordercolor="#006666" cellpadding="2">
+										<tr>
+											<td>
+											<p align="justify"><span class="txt">
+											Toman del suelo agua y sales 
+											minerales, del aire dióxido de 
+											carbono y usando la energía del sol 
+											transforman todas las sustancias 
+											inorgánicas en materia orgánica 
+											(savia elaborada) que usan sus 
+											propias células para crecer y 
+											mantenerse con vida. Esta 
+											transformación la realizan los seres 
+											vivos </span><span class="txtnegro">
+											productores</span><span class="txt"> 
+                                          	gracias a la </span><span class="txtnegro">
+											función fotosintética</span><span class="txt"> 
+                                          	así fabrican el alimento no solo 
+											para sí mismos sino también para 
+											otros seres vivos que se alimentan 
+											de ellos.</span></td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								</table>
+                              <br>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a href="actividad6.htm"><font class="txtnegrolink"> 
+                                        Actividad 6</font></a> <a href="actividad6.htm"><img src="imagenes/contenidos/activ6.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+									<td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+									<td> 
+                                      <p><a target="_blank" href="actividad7.htm"><font class="txtnegrolink"> 
+                                        Actividad 7</font></a> <a target="_blank" href="actividad7.htm"><img src="imagenes/contenidos/activ7.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><a href="actividad8.htm"><font class="txtnegrolink"> 
+                                        Actividad 8</font></a> <a href="actividad8.htm"><img src="imagenes/contenidos/activ8.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            <br>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666" height="32">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"><span class="txt">El resto 
+                                          de los seres vivos no somos capaces 
+                                          de alimentarnos de esta forma. Necesitamos 
+                                          comer. Necesitamos sustancias org&aacute;nicas 
+                                          que est&aacute;n en los alimentos, es 
+                                          decir en otros seres vivos. Por ellos 
+                                          somos seres </span><span class="txtnegro">consumidores</span><span class="txt"> 
+                                          y </span><span class="txtnegro">heter&oacute;trofos</span><span class="txt">.</span></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><br>
+                                <img src="imagenes/Actividades/familia%20comiendo.gif" width="399" height="347" alt="Dibujo de unas huellas sobre una rizaduras; una de las huellas pisa un per&iacute;odico."><br>
+                                <br>
+                              </div>
+                              <div align="CENTER"> 
+                                  <table width="100" border="0" cellspacing="0" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td> 
+                                        
+                                      <p><a href="actividad9.htm"><font class="txtnegrolink"> 
+                                        Actividad 9</font></a> <a href="actividad9.htm"><img src="imagenes/contenidos/activ9.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    </tr>
+                                  </table>
+                                <p>&nbsp;</p>
+                              </div>
+                              <div align="center"></div>
+							   
+                              <a name="datacion"></a>
+<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666" height="32">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          
+                                        <td class="txt"> La materia que forma 
+                                          los seres vivos se llama <span class="txtnegro">materia 
+                                          org&aacute;nica</span>: az&uacute;cares, 
+                                          prote&iacute;nas, grasas y vitaminas. 
+                                          Pero dentro de los <span class="txtnegro">consumidores 
+                                          existen diversos &oacute;rdenes</span>: 
+                                          los consumidores de primer orden comen 
+                                          directamente a los vegetales, los de 
+                                          segundo orden a los herb&iacute;voros 
+                                          (animales que comen vegetales), los 
+                                          de tercer orden a los carn&iacute;voros, 
+                                          etc.</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                               
+                              <div align="CENTER"><br>
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td> 
+                                        
+                                      <p><a href="actividad10.htm"><font class="txtnegrolink"> 
+                                        Actividad 10</font></a> <a href="actividad10.htm"><img src="imagenes/contenidos/activ10.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              <br>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666" height="32">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Con toda la materia org&aacute;nica 
+                                            e inorg&aacute;nica nuestro organismo 
+                                            y el de todos los seres vivos crece 
+                                            y se desarrolla.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							   
+                              <div align="CENTER"><br>
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+                                    <tr bgcolor="#BBDDBB"> 
+                                      <td> 
+                                        
+                                      <p><a href="actividad11.htm"><font class="txtnegrolink"> 
+                                        Actividad 11</font></a> <a href="actividad11.htm"><img src="imagenes/contenidos/activ11.gif" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    </tr>
+                                  </table>
+                                
+                              <p>&nbsp;</p></div>
+                              <p class="txt" align="center">
+                              </p>
+                              <div align="center"></div>
+                              <br>
+                               <br>
+                              <p align="right"><a class="txtnegrolink" href="contenidos1.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (2/7) - <a href="contenidos3.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

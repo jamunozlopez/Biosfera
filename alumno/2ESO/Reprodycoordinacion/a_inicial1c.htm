@@ -1,0 +1,760 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Belen Sanchez."><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria">
+<TITLE>ACTIVIDAD INICIAL</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT language="JavaScript">
+
+var min
+var sec
+var ShowReadingAgain = 'Mostrar el texto de nuevo';
+
+var TopNextExButton = '<FORM><INPUT TYPE="button" VALUE="=>" onClick="parent.location=\'nextpage.htm\'"></FORM>';
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+
+macrightchar = ':-)'
+macwrongchar = 'X'
+winrightchar = ':-)'
+winwrongchar = 'X'
+
+
+DoneStatus = new Array();
+DoneStatus[1] = '0';
+DoneStatus[2] = '0';
+DoneStatus[3] = '0';
+DoneStatus[4] = '0';
+DoneStatus[5] = '0';
+DoneStatus[6] = '0';
+
+
+Responses = new Array();
+Responses[1] = new Array();
+Responses[1][1]='';
+Responses[1][2]='';
+Responses[1][3]='';
+Responses[1][4]='';
+Responses[1][5]='';
+Responses[1][6]='';
+Responses[1][7]='';
+Responses[1][8]='';
+Responses[1][9]='';
+Responses[2] = new Array();
+Responses[2][1]='';
+Responses[2][2]='';
+Responses[2][3]='';
+Responses[2][4]='';
+Responses[2][5]='';
+Responses[3] = new Array();
+Responses[3][1]='';
+Responses[3][2]='';
+Responses[3][3]='';
+Responses[3][4]='';
+Responses[4] = new Array();
+Responses[4][1]='';
+Responses[4][2]='';
+Responses[4][3]='';
+Responses[4][4]='';
+Responses[5] = new Array();
+Responses[5][1]='';
+Responses[5][2]='';
+Responses[5][3]='';
+Responses[5][4]='';
+Responses[6] = new Array();
+Responses[6][1]='';
+Responses[6][2]='';
+Responses[6][3]='';
+Responses[6][4]='';
+
+
+IndicatorName = new Array();
+
+
+TriedStatus = new Array();
+
+var Score = 0;
+var Tries = 0;
+var Percent = 0;
+var YourScore = 'Tu puntuaci&oacute;n es:';
+var DefaultRight = '&#161;Correcto!';
+var DefaultWrong = 'Lo siento! Int&eacute;ntalo de nuevo.';
+var CorrectFirstTime = 'Preguntas acertadas a la primera: ';
+var CFT = 0;
+
+function DownTime(mm,ss){
+	min = mm;
+	sec = ss;
+
+	if (sec==0) {
+		sec = 60;
+		min--;
+	}
+
+	sec--;
+	if (sec<10){
+		sec="0" + sec;
+	}
+
+	if (parent.TimerFrame.document.TimerForm.face == null){
+		return;
+	}
+
+	parent.TimerFrame.document.TimerForm.face.value= min+":"+sec;
+
+	if ((min==0) && (sec==0)){
+		TimesUp()
+	}
+	else{
+		setTimeout('DownTime(min,sec)',1000)
+	}
+}
+
+function StartUp(){
+	for (var i=1; i<DoneStatus.length; i++){
+		TriedStatus[i] = 0;
+	}
+	if (parent.TimerFrame != null) {
+		Stuff='<INPUT TYPE="Button"';
+		Stuff+=' NAME="StartIt" VALUE="Leer" onClick="parent.CodeFrame.StartReading()">';
+		WriteToReading('Pincha aqu&iacute; para ver el texto.');
+		WriteToTimer(Stuff);
+	}
+}
+
+function StartReading(){
+	Stuff='Tiempo restante:';
+	Stuff+=' <INPUT TYPE="text" NAME="face" SIZE="6" VALUE="1:00">';
+	WriteToTimer(Stuff);
+	parent.ReadingFrame.location.href='a_inicial1r.htm';
+	timeoutID=setTimeout('DownTime(1,0)',1000);
+}
+
+function TimesUp() {
+	if (ShowReadingAgain.length > 0) {
+		Stuff='<INPUT TYPE="Hidden" NAME="ThisAvoidsNavigator3Bug">';
+		Stuff+='<INPUT TYPE="Button" NAME="StartIt" VALUE="Mostrar el texto de nuevo" onClick="parent.CodeFrame.StartReading()">';
+		WriteToTimer(Stuff);
+	}
+	WriteToReading('&#161;El tiempo ha terminado!');
+}
+
+function WriteToReading(Stuff) {
+	parent.ReadingFrame.document.clear();
+	parent.ReadingFrame.document.open();
+	parent.ReadingFrame.document.writeln ('<HTML>');
+	parent.ReadingFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.ReadingFrame.document.writeln ('<CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">');
+	parent.ReadingFrame.document.writeln ('<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.ReadingFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.ReadingFrame.document.writeln (Stuff);
+	parent.ReadingFrame.document.writeln ('</FONT></TD></TR></TABLE></CENTER></BODY></HTML>');
+	parent.ReadingFrame.document.close();
+}
+
+function WriteToTimer(Stuff){
+	parent.TimerFrame.document.clear();
+	parent.TimerFrame.document.open();
+	parent.TimerFrame.document.writeln ('<HTML>');
+	parent.TimerFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.TimerFrame.document.writeln ('<CENTER><TABLE BORDER=\"0\" CELLPADDING=\"5\" CELLSPACING=\"1\" WIDTH="85%">');
+	parent.TimerFrame.document.writeln ('<FORM NAME="TimerForm"><TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.TimerFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.TimerFrame.document.writeln (Stuff);
+	parent.TimerFrame.document.writeln ('</FONT></TD></TR></FORM></TABLE></CENTER></BODY></HTML>');
+	parent.TimerFrame.document.close();
+}
+
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckMulti(QNum, TotAns){
+	var TotWrong = 0;
+
+	for (var i=TotAns; i>=1; i--){
+//Find any incorrect choices
+		var b = eval('document.QuizForm.Q' + QNum + '_' + i);
+		if (b != null){
+//if it's wrong, count it
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+//if right, show default correct feedback
+	if (TotWrong == 0){
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			DoneStatus[QNum] = '1';
+			Score = Score + 1;
+			if (TriedStatus[QNum] == 0){
+				CFT++;
+			}
+		}
+
+		Feedback = DefaultRight;
+		Percent = Math.floor(Score*100/Tries) + '%';
+		Feedback = Feedback + '<BR>' + YourScore + ' ' + Percent + '.';
+
+		i = 0;
+		var AllDone = true;
+		for (i=1; i<DoneStatus.length; i++){
+			if (DoneStatus[i] == '0'){
+				AllDone = false;
+			}
+		}
+		if (AllDone == true){
+			Feedback += '<BR>' + CorrectFirstTime + CFT + '/' + (DoneStatus.length - 1);
+			Feedback += '<BR>[TopNextExButton]';;
+		}
+	}
+	else{
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+		}
+		Feedback = DefaultWrong + '<BR>' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+	TriedStatus[QNum] = 1;
+	WriteFeedback(Feedback);
+	
+}
+
+
+function CheckAnswer(QNum, AnsNum, Correct) {
+
+	if (Correct == 1) {
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			DoneStatus[QNum] = '1';
+			Score = Score + 1;
+			if (TriedStatus[QNum] == 0){
+				CFT++;
+			}
+			var b = eval('document.QuizForm.Q' + QNum + '_' + AnsNum);
+			if (b != null){
+				b.value = rightchar;
+			}
+		}
+
+	Feedback = Responses[QNum][AnsNum];
+	if (Feedback == '') {Feedback = DefaultRight}
+	Percent = Math.floor(Score*100/Tries) + '%';
+	Feedback = Feedback + '<BR>' + YourScore + ' ' + Percent + '.';
+
+
+
+		var i = 0;
+		var AllDone = true;
+		for (i=1; i<DoneStatus.length; i++){
+			if (DoneStatus[i] == '0'){
+				AllDone = false;
+			}
+		}
+		if (AllDone == true){
+			Feedback += '<BR>' + CorrectFirstTime + CFT + '/' + (DoneStatus.length - 1);
+			Feedback += '<BR>[TopNextExButton]';
+		}
+
+	WriteFeedback(Feedback);
+	}
+
+ 	else {
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			var b = eval('document.QuizForm.Q' + QNum + '_' + AnsNum);
+			if (b != null){
+				b.value = wrongchar;
+			}
+		}
+
+		Feedback = Responses[QNum][AnsNum];
+		if (Feedback == '') {Feedback = DefaultWrong}
+		WriteFeedback(Feedback);
+	}
+	TriedStatus[QNum] = 1;
+}
+
+function WriteFeedback(Feedback) {
+	parent.FeedbackFrame.document.clear();
+	parent.FeedbackFrame.document.open();
+	parent.FeedbackFrame.document.writeln ('<HTML>');
+	parent.FeedbackFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.FeedbackFrame.document.writeln ('<CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">');
+	parent.FeedbackFrame.document.writeln ('<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.FeedbackFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.FeedbackFrame.document.writeln (Feedback);
+	parent.FeedbackFrame.document.writeln ('</FONT></TD></TR></TABLE></CENTER></BODY></HTML>');
+	parent.FeedbackFrame.document.close();
+}
+
+</SCRIPT>
+
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc" onLoad="StartUp()">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#006666">ACTIVIDAD INICIAL</FONT></TD></TR>
+<TR>
+      <TD ALIGN="CENTER"> 
+        <p><img src="imagenes/vida.jpg" width="360" height="288" alt="&quot;La reproducci&oacute;n y la coordinaci&oacute;n son las funciones b&aacute;sicas que mantienen la vida en el tiempo&quot;"></p>
+        <p><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#006666">La vida, aunque 
+          es algo muy dif&iacute;cil de definir, es una caracter&iacute;stica 
+          muy notable que tenemos los seres vivos, por eso, a la hora de establecer 
+          una definici&oacute;n sobre la vida nos resulta m&aacute;s f&aacute;cil 
+          fijarnos en las caracter&iacute;sticas que poseen los seres vivos, que 
+          seguramente conocer&aacute;s de sobra.<BR>
+          &nbsp;</FONT></p>
+      </TD></TR>
+
+<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">
+
+<FORM NAME="QuizForm">
+          <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="2" WIDTH="95%">
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">1</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Ser&iacute;as 
+                capaz de se&ntilde;alar entre las siguientes caracter&iacute;sticas 
+                aquellas que son propias de los seres vivos?</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" width="31"> 
+                <input type="text" value=" " size="3" name="Q1_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" width="42"> 
+                <input type="button" value=" A " onclick="CheckAnswer(1,1,0)">
+              </TD>
+              <TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> 
+                Movimiento</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(1,2,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Vuelo</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(1,3,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Reproducci&oacute;n 
+                </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(1,4,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Relaci&oacute;n 
+                </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_5">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" E " onclick="CheckAnswer(1,5,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Crecimiento</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_6">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" F " onclick="CheckAnswer(1,6,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Composici&oacute;n 
+                qu&iacute;mica especial: gl&uacute;cidos, l&iacute;pidos, prote&iacute;nas 
+                y &aacute;cidos nucleicos </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_7">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" G " onclick="CheckAnswer(1,7,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Nutrici&oacute;n 
+                </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_8">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" H " onclick="CheckAnswer(1,8,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Coordinaci&oacute;n 
+                </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q1_9">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" I " onclick="CheckAnswer(1,9,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Sensibilidad</FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">2</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">Entre 
+                todas esas caracter&iacute;sticas habr&aacute;s identificado las 
+                tres funciones vitales de los seres vivos:</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q2_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" A " onclick="CheckAnswer(2,1,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Movimiento, 
+                coordinaci&oacute;n y nutrici&oacute;n</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q2_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(2,2,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Coordinaci&oacute;n, 
+                nutrici&oacute;n y sensibilidad</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q2_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(2,3,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Nutrici&oacute;n, 
+                relaci&oacute;n, coordinaci&oacute;n y reproducci&oacute;n </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q2_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(2,4,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Movimiento, 
+                composici&oacute;n y crecimiento</FONT></TD>
+            </TR>
+            <TR> 
+              <TD height="59"></TD>
+              <TD colspan="3" VALIGN="top" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"><br>
+                Estas cuatro funciones, junto con la composici&oacute;n qu&iacute;mica, 
+                nos permiten identificar a los seres vivos y diferenciarlos de 
+                los entes no vivos.</FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">3</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">De 
+                las cuatro funciones, todas menos una son funciones propias y 
+                necesarias para los individuos aislados, es decir, sirven para 
+                mantener la vida individual, &#191;sabr&iacute;as decir cu&aacute;les 
+                son esas tres funciones que mantienen la vida?</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q3_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" A " onclick="CheckAnswer(3,1,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Movimiento, 
+                coordinaci&oacute;n, nutrici&oacute;n y reproducci&oacute;n</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q3_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(3,2,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Coordinaci&oacute;n, 
+                nutrici&oacute;n y sensibilidad</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q3_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(3,3,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Nutrici&oacute;n, 
+                relaci&oacute;n y coordinaci&oacute;n </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q3_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(3,4,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Movimiento, 
+                coordinaci&oacute;n, composici&oacute;n y crecimiento</FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">4</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Cu&aacute;l 
+                es la funci&oacute;n diferente?</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q4_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" A " onclick="CheckAnswer(4,1,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Coordinaci&oacute;n</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q4_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(4,2,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Reproducci&oacute;n 
+                </FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q4_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(4,3,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Relaci&oacute;n</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q4_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(4,4,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Nutrici&oacute;n</FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">5</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Cu&aacute;l 
+                es su significado?</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q5_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" A " onclick="CheckAnswer(5,1,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Mantener 
+                la vida</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q5_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(5,2,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Mantener 
+                la talla</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q5_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(5,3,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Mantener 
+                la especie en el tiempo</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q5_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(5,4,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Mantener 
+                la pareja</FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">6</FONT></TD>
+              <TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Cu&aacute;ntos 
+                tipos de reproducci&oacute;n cocnoces?</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q6_1">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" A " onclick="CheckAnswer(6,1,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Dos: 
+                animal y vegetal</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q6_2">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" B " onclick="CheckAnswer(6,2,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Tres: 
+                ov&iacute;paros, viv&iacute;paros y ovoviv&iacute;paros</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q6_3">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" C " onclick="CheckAnswer(6,3,0)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Dos: 
+                sexual y asexual</FONT></TD>
+            </TR>
+            <TR> 
+              <TD></TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="text" value=" " size="3" name="Q6_4">
+              </TD>
+              <TD VALIGN="TOP" BGCOLOR="#d1e9d1"> 
+                <input type="button" value=" D " onclick="CheckAnswer(6,4,1)">
+              </TD>
+              <TD BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial"> Tres: 
+                sexual, asexual y alternante </FONT></TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"> 
+                <HR WIDTH="100%" HEIGHT="5">
+              </TD>
+            </TR>
+            <TR> 
+              <TD COLSPAN="4"><font face="Geneva, Arial, Helvetica, san-serif" size="-1">Dado 
+                que la reproducci&oacute;n tiene un significado muy importante, 
+                todos los seres vivos, por muy diferentes que sean, van a realizar 
+                esa funci&oacute;n, ya que es m&aacute;s importante que ellos 
+                mismos. </font> 
+                <p><font face="Geneva, Arial, Helvetica, san-serif" size="-1">Sobre 
+                  nutrici&oacute;n puedes aprender m&aacute;s en la Unidad Did&aacute;ctica 
+                  n&ordm; 5, y sobre el resto de funciones, Coordinaci&oacute;n, 
+                  Relaci&oacute;n y Reproducci&oacute;n, puedes seguir trabajando 
+                  en esta unidad pasando al apartado de contenidos.</font></p>
+                <p><font face="Geneva, Arial, Helvetica, san-serif" size="-1">En 
+                  esta unidad did&aacute;ctica es muy importante que tengas una 
+                  idea m&aacute;s o menos clara de los diferentes tipos de animales 
+                  y vegetales que existen.</font></p>
+                <p><font face="Geneva, Arial, Helvetica, san-serif" size="-1">Si 
+                  no recuerdas la clasificaci&oacute;n de los seres vivos pueden 
+                  repasarla en la unidad did&aacute;ctica n&ordm; 6 de 1&ordm; 
+                  de ESO, o en la
+                <a class="txtnegrolink" target="_blank" href="../../4ESO/evolucion/11bisarbol_filogenetico_seres_vivos.htm">unidad 
+                  did&aacute;ctica n&ordm; 9 de 4&ordm; de ESO</a>.</font><font size="-1"><br>
+                  </font> </p>
+              </TD>
+            </TR>
+            <tr> 
+              <td height="3"><img height="1" width="13" src="/spacer.gif"></td>
+              <td><img height="1" width="31" src="/spacer.gif"></td>
+              <td><img height="1" width="42" src="/spacer.gif"></td>
+              <td></td>
+            </tr>
+          </TABLE>
+</FORM>
+</TD></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#bbddbb" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,636 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reino_vegetal.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="527" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="219" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos14.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (15/15) - s<a href="contenidos1.htm" class="txtnegrolink">iguiente</a></span></td>
+                          </tr>
+                          </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"> 4.e.- La reproducción en las espermafitas: </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> <img src="imagenes/semilla.jpg" width="128" height="128" alt="&quot;Semilla&quot;" hspace="5" align="right">Las 
+                                            plantas con <span class="txtnegro">semilla</span> 
+                                            o espermafitas presentan &oacute;rganos 
+                                            reproductores que se localizan en 
+                                            una parte concreta de la planta, en 
+                                            la flor. Es en ella donde despu&eacute;s 
+                                            de la fecundaci&oacute;n se produce 
+                                            la semilla. Esta estructura diploide 
+                                            ha sido la responsable del gran &eacute;xito 
+                                            evolutivo de los vegetales que la 
+                                            poseen: <span class="txtnegro">espermat&oacute;fitos</span>. 
+                                          </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                                
+                              <div align="center"><img src="imagenes/flor_hermafrodita.jpg" width="239" height="178" alt="&quot;Flor&quot;" hspace="10" vspace="20"><img src="imagenes/flor_gimnosperma_tuja.jpg" width="150" height="178" alt="&quot;Flor de Tuja (Gimnosperma)&quot;" hspace="10" vspace="20"><br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>En <span class="txtnegro">Angiospermas</span> 
+                                            la estructura de reproducci&oacute;n 
+                                            de estos vegetales espermat&oacute;fitos 
+                                            verdaderos es la <span class="txtnegro">flor</span> 
+                                            (foto de flor amarilla) . Est&aacute; 
+                                            formada por un conjunto de hojas muy 
+                                            modificadas y agrupadas en capas conc&eacute;ntricas 
+                                            llamadas <span class="txtnegro">verticilos 
+                                            florales</span>. Una flor puede tener, 
+                                            si es completa, los siguientes verticilos 
+                                            florales:<img src="imagenes/floramarilla.jpg" width="140" height="145" align="right" vspace="45"></p>
+                                          <ul>
+                                            <li><span class="txtnegro">Ped&uacute;nculo 
+                                              floral</span>: une la flor al tallo. 
+                                              En el extremo se ensancha dando 
+                                              el <span class="txtnegro">recept&aacute;culo</span> 
+                                              donde se insertan las piezas de 
+                                              la flor y los <span class="txtnegro">nectarios</span> 
+                                              (gl&aacute;ndulas que producen n&eacute;ctar).<br>
+                                            </li>
+                                            <li><span class="txtnegro">Periantio</span>: 
+                                              que es la envoltura de la flor. 
+                                              Formado por los <span class="txtnegro">s&eacute;palos</span> 
+                                              (que forman el c&aacute;liz) y los 
+                                              <span class="txtnegro">p&eacute;talos</span> 
+                                              (que forman la corola). Esta &uacute;ltima 
+                                              sirve para atraer a los insectos 
+                                              y facilitar la polinizaci&oacute;n.<br>
+                                            </li>
+                                            <li><span class="txtnegro">&Oacute;rganos 
+                                              sexuales</span>: protegidos por 
+                                              el periantio. Presenta los &oacute;rganos 
+                                              sexuales masculinos o <span class="txtnegro">estambres</span> 
+                                              (formados por el filamento y la 
+                                              antera) y cuyo conjunto forma el 
+                                              androceo y los &oacute;rganos sexuales 
+                                              femeninos o <span class="txtnegro">carpelos</span> 
+                                              (formados por el ovario, el estilo 
+                                              y el estigma) y cuyo conjunto forma 
+                                              el gineceo.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                               <br>
+                              <div align="center"><img src="imagenes/Florconnombres.jpg" width="372" height="327" alt="&quot;Flor hermafrodita&quot;"><img src="imagenes/asphodelus.jpg" width="339" height="327" alt="&quot;Flor Asphodelus&quot;"><br>
+                                <BR>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> Para que se produzca 
+                                            la <a href="ciclo_angiospermas.htm" target="_blank"><span class="txtnegrolink">fecundaci&oacute;n</span></a> 
+                                            se deben unir los granos de polen 
+                                            fabricados en las anteras de los estambres 
+                                            con los &oacute;vulos u oosferas contenidos 
+                                            en los ovarios de los carpelos femeninos. 
+                                            El grano de polen (foto polen) contiene 
+                                            dos n&uacute;cleos esperm&aacute;ticos. 
+                                            Este grano de polen llegar&aacute; 
+                                            al estigma del carpelo y atravesar&aacute; 
+                                            el estilo hasta llegar al &oacute;vulo 
+                                            (foto &oacute;vulo angiosperma). Seg&uacute;n 
+                                            la procedencia del polen podr&aacute; 
+                                            darse la <span class="txtnegro">autopolinizaci&oacute;n</span> 
+                                            (procedente de la misma planta) aunque 
+                                            este suceso no es frecuente y la <span class="txtnegro">polinizaci&oacute;n 
+                                            cruzada</span> (el polen y el &oacute;vulo 
+                                            est&aacute;n en distinto pie de planta). 
+                                          </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                                
+                              <div align="center"><br>
+                                <img src="imagenes/ovulo_angiosperma.jpg" width="179" height="250" alt="&quot;&Oacute;vulo de angiosperma&quot;"> 
+                                <img src="imagenes/polen.jpg" width="245" height="250" alt="&quot;Grano de polen&quot;"><br>
+                                <BR>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> C&oacute;mo llega el 
+                                            grano de polen hasta el estigma de 
+                                            la parte femenina de la planta depende 
+                                            del tipo de <span class="txtnegro">polinizaci&oacute;n</span> 
+                                            y de las caracter&iacute;sticas del 
+                                            propio grano de polen: por el aire 
+                                            (anem&oacute;fila) y por los insectos 
+                                            (entom&oacute;fila). </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                                
+                              <img src="imagenes/germinacion_semilla.jpg" width="145" height="315" align="right" alt="&quot;Germinaci&oacute;n de la semilla&quot;" hspace="15" vspace="20"><BR>
+                              <table width="75%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> Tras la fecundaci&oacute;n 
+                                            aparece una semilla que encierra en 
+                                            su interior al embri&oacute;n. Esta 
+                                            semilla, en angiospermas, queda encerrada 
+                                            en su fruto que se produce por la 
+                                            transformaci&oacute;n del ovario del 
+                                            carpelo. Al germinar (foto de germinaci&oacute;n) 
+                                            de la semilla saldr&aacute; un peque&ntilde;o 
+                                            vegetal con un eje verde del que podr&aacute;n 
+                                            salir una (<span class="txtnegro">monocotiled&oacute;neas</span>) 
+                                            o dos (<span class="txtnegro">dicotiled&oacute;neas</span>) 
+                                            hojitas verdes (cotiledones) que empiezan 
+                                            a realizar la fotos&iacute;ntesis. 
+                                          </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                                
+                              <p align="center"><img src="imagenes/madro%F1o.jpg" width="198" height="147" alt="&quot;Madro&ntilde;o&quot;"> 
+                                <img src="imagenes/frutos4.jpg" width="158" height="147" alt="&quot;Frutos varios&quot;" hspace="10"> 
+                                <img src="imagenes/frutos.jpg" width="138" height="147" alt="&quot;Diversos frutos&quot;"> 
+                              </p>
+                              <p align="center"><a name="act_inves9"></a> </p>
+                              <p align="center">&nbsp;</p>
+                              <div align="center">
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      de investigaci&oacute;n 9: Angiospermas: 
+                                      La flor, la polinizaci&oacute;n y la semilla. </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><img src="imagenes/semilla.jpg" width="79" height="79" align="right" hspace="5">Introducci&oacute;n: 
+                                      <font size="-2">Las estructuras de reproducci&oacute;n 
+                                      de las plantas espermat&oacute;fitas son 
+                                      el mayor &eacute;xito evolutivo del reino 
+                                      vegetal. Por ello, vamos a profundizar en 
+                                      estas estructuras que generan los gametos 
+                                      sexuales y en los pasos siguientes a su 
+                                      formaci&oacute;n: la polinizaci&oacute;n, 
+                                      la fecundaci&oacute;n y la formaci&oacute;n 
+                                      de la semilla.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Descripci&oacute;n: 
+                                      <font size="-2"> En la tarea anterior (actividad 
+                                      de investigaci&oacute;n 8) ya se ha explicado 
+                                      a grandes rasgos la forma y el ciclo reproductor 
+                                      de los espermat&oacute;fitos como final 
+                                      de un largo proceso evolutivo. Es en esta 
+                                      tarea donde podemos profundizar m&aacute;s 
+                                      en cada una de las fases de ese complejo 
+                                      ciclo. Para ello se analizar&aacute; la 
+                                      informaci&oacute;n de las p&aacute;ginas 
+                                      web indicadas y se desgranar&aacute; la 
+                                      informaci&oacute;n concreta sobre la flor, 
+                                      la polinizaci&oacute;n y la fecundaci&oacute;n 
+                                      y formaci&oacute;n de la semilla. <br>
+                                      Una vez elegida y seleccionada la informaci&oacute;n 
+                                      se realizar&aacute; un trabajo escrito (con 
+                                      texto e im&aacute;genes) que recoja toda 
+                                      la informaci&oacute;n destacable. Se puede 
+                                      terminar el trabajo con la confecci&oacute;n 
+                                      de un póster en cart&oacute;n pluma donde 
+                                      aparezcan las distintas anatom&iacute;as 
+                                      de las flores, las hermafroditas y las unisexuales, 
+                                      las distintas formas de las piezas de la 
+                                      flor, los diversos tipos de polinizaci&oacute;n, 
+                                      las diversas formas del grano de polen, 
+                                      y por &uacute;ltimo el proceso de la fecundaci&oacute;n 
+                                      y la formaci&oacute;n de la semilla. <br>
+                                      Tras la formaci&oacute;n de la semilla se 
+                                      destacar&aacute; el proceso de germinaci&oacute;n 
+                                      y la aparici&oacute;n de estructuras que 
+                                      facilitan la vida del vegetal en su estado 
+                                      inicial, diferenciando entre los dos grandes 
+                                      subgrupos: mono y dicotiled&oacute;neas.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Con toda la 
+                                        informaci&oacute;n disponible en la web 
+                                        y en todas las p&aacute;ginas seleccionadas 
+                                        para esta unidad debes realizar un informe 
+                                        escrito en procesador de texto (individual) 
+                                        donde se analicen las estructuras de la 
+                                        flor (y su variabilidad dentro de cada 
+                                        grupo taxon&oacute;mico), los diversos 
+                                        tipos de polinizaci&oacute;n (las estructuras 
+                                        del grano de polen y los agentes transportadores 
+                                        de los mismos) y la formaci&oacute;n y 
+                                        germinaci&oacute;n de la semilla. <br>
+                                        Poniendo especial hincapi&eacute; en el 
+                                        &eacute;xito evolutivo que suponen cada 
+                                        una de estas estructuras y procesos. Este 
+                                        informe puede ir acompa&ntilde;ado de 
+                                        un póster que facilite su exposici&oacute;n 
+                                        al resto de la clase y que sirva como 
+                                        s&iacute;ntesis de la informaci&oacute;n 
+                                        recopilada y elegida.</font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2">Los mismos 
+                                        que para la actividad n&ordm; 8.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se evaluar&aacute; la calidad 
+                                      de la redacci&oacute;n, el lenguaje cient&iacute;fico, 
+                                      la elecci&oacute;n de las im&aacute;genes 
+                                      para ilustrar los diversos tipos y anatom&iacute;as 
+                                      de la flor y el polen, la capacidad de s&iacute;ntesis 
+                                      y de an&aacute;lisis y por &uacute;ltimo 
+                                      la creatividad en la exposici&oacute;n del 
+                                      trabajo y el poster final.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br>
+                              </p>
+                              <BR><table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt"> <img src="imagenes/flor_gimnosperma_tuja.jpg" width="150" height="178" align="right" alt="&quot;Flor de Tuja (Gimnosperma)&quot;" hspace="10" vspace="10">En 
+                                            las espermat&oacute;fitas, o plantas 
+                                            con semillas, adem&aacute;s de las 
+                                            angiospermas existe otro gran grupo: 
+                                            las <a href="ciclo_gimnospermas.htm" target="_blank"><span class="txtnegrolink">gimnospermas</span></a>. 
+                                            Son plantas superiores, con flores 
+                                            primitivas le&ntilde;osas o carnosas 
+                                            sin ovario que proteja el &oacute;vulo. 
+                                            El &oacute;vulo aparece desnudo sobre 
+                                            una escama o br&aacute;ctea y el conjunto 
+                                            de br&aacute;cteas dispuestas de forma 
+                                            generalmente helicoidal sobre un eje 
+                                            forma una inflorescencia que popularmente 
+                                            llamamos pi&ntilde;a. . Su polinizaci&oacute;n 
+                                            es anem&oacute;fila, el grano de polen 
+                                            posee sacos llenos de aire que facilitan 
+                                            su dispersi&oacute;n por el viento 
+                                            y tras la polinizaci&oacute;n se forma 
+                                            una semilla (pi&ntilde;&oacute;n) 
+                                            que queda sobre la br&aacute;ctea 
+                                            hasta que la pi&ntilde;a madura abre 
+                                            todas ellas y deja salir los pi&ntilde;ones 
+                                            que caen al suelo dando lugar a un 
+                                            nuevo individuo. </p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                               
+                              <p align="center"><img src="imagenes/ovulo_gimnosperma.jpg" width="143" height="200" alt="&quot;&Oacute;vulo de gimnosperma&quot;"> 
+                                <img src="imagenes/grano_polen.gif" width="194" height="200" alt="&quot;Grano de polen de gimnosperma&quot;"> 
+                                <br>
+                                <img src="imagenes/pino2.jpg" width="201" height="150" alt="&quot;Pi&ntilde;as de pino&quot;"> 
+                                <img src="imagenes/pino3.gif" width="240" height="150" alt="&quot;Inflorescencia de Gimnosperma&quot;"> 
+                                <img src="imagenes/pino4.jpg" width="108" height="151" alt="&quot;Pi&ntilde;as de pino&quot;"> 
+                              </p>
+                              <div align="center">
+<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td height="115"> 
+                                      <p><font class="txtnegrolink"> <a href="activ15.htm" class="txtnegrolink">Actividad 
+                                        15</a></font> <a href="activ15.htm"><img src="imagenes/activ15.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    </tr>
+                                </table>
+                              </div>
+                               
+                              <p><a name="act_inves10"></a></p>
+                              <div align="center">
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      de investigaci&oacute;n 10: El ciclo biol&oacute;gico 
+                                      de espermatofitos: diferencia entre gimnospermas 
+                                      y angiospermas.</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><img src="imagenes/pino3.gif" width="151" height="94" alt="&quot;Inflorescencia de Gimnosperma&quot;" align="right">Introducci&oacute;n: 
+                                      <font size="-2">En el texto ha quedado claro 
+                                      que en el gran mundo de las plantas espermatofitas 
+                                      existen dos grandes grupos: las gimnospermas 
+                                      y las angiospermas. Estas presentan grandes 
+                                      diferencias en su ciclo biol&oacute;gico 
+                                      y en sus estructuras de reproducci&oacute;n. 
+                                      Si bien, las dos tienen semillas, en el 
+                                      caso de las gimnospermas esta semilla es 
+                                      desnuda y en las angiospermas est&aacute; 
+                                      encerrada dentro del ovario transformado 
+                                      en un fruto.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Descripci&oacute;n: 
+                                      <font size="-2"> Se trata de un trabajo 
+                                      por parejas en el que se busque la informaci&oacute;n 
+                                      sobre reproducci&oacute;n y estructuras 
+                                      reproductoras en gimnospermas y angiospermas 
+                                      (con su diversidad). Intentamos conocer 
+                                      a fondo el ciclo biol&oacute;gico de ambas 
+                                      y establecer diferencias entre ellas. Las 
+                                      diferencias en la estructura de la flor, 
+                                      la polinizaci&oacute;n, la formaci&oacute;n 
+                                      y distribuci&oacute;n de las semillas, la 
+                                      ausencia o presencia de fruto, los tipos 
+                                      de frutos y la distribuci&oacute;n de las 
+                                      especies se debe sintetizar en varias presentaciones 
+                                      ilustradas con im&aacute;genes que muestren 
+                                      la gran diversidad dentro de cada grupo.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Se trata de 
+                                        realizar unas presentaciones que ilustren 
+                                        de forma detallada el ciclo biol&oacute;gico 
+                                        espec&iacute;fico de gimnospermas y angiospermas 
+                                        y establecer entre ellas y otros vegetales 
+                                        corm&oacute;fitos relaciones evolutivas. 
+                                        Para ello debe realizarse una labor de 
+                                        b&uacute;squeda de informaci&oacute;n 
+                                        y an&aacute;lisis de la misma y extraer 
+                                        las diferencias fundamentales entre ambos 
+                                        ciclos y estructuras que poseen o no para 
+                                        la reproducci&oacute;n y forma de vida.</font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2">Sirven todos 
+                                        los que hemos detallado en las dos &uacute;ltimas 
+                                        actividades de investigaci&oacute;n y 
+                                        se pueden a&ntilde;adir algunas que ampliar&aacute;n 
+                                        informaci&oacute;n sobre el tema de la 
+                                        reproducci&oacute;n vegetal. Tambi&eacute;n 
+                                        existen p&aacute;ginas de informaci&oacute;n 
+                                        general bot&aacute;nica interesantes. 
+                                        En algunas p&aacute;ginas que siguen una 
+                                        clasificaci&oacute;n taxon&oacute;mica 
+                                        podemos encontrar tambi&eacute;n informaci&oacute;n 
+                                        sobre reproducci&oacute;n en espermat&oacute;fitos. 
+                                        Adem&aacute;s sirven todas las p&aacute;ginas 
+                                        que se detallan en el apartado de enlaces 
+                                        interesantes de esta unidad did&aacute;ctica.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se tendr&aacute; en cuenta 
+                                      a la hora de evaluar la s&iacute;ntesis 
+                                      y presentaci&oacute;n de la informaci&oacute;n, 
+                                      de manera que en unas cuantas presentaciones 
+                                      quede completamente clara la diferencia 
+                                      entre el ciclo biol&oacute;gico de una gimnosperma 
+                                      y una angiosperma. Tambi&eacute;n se deber&aacute;n 
+                                      analizar las similitudes entre ambas formas 
+                                      de reproducci&oacute;n y establecer una 
+                                      relaci&oacute;n entre &eacute;xito evolutivo 
+                                      y formaci&oacute;n de semillas.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br>
+                              </p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos14.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (15/15) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

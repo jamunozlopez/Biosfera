@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Virus&lt;center&gt;&lt;img src=&quot;../imagenes/bacteriofago.jpg&quot; alt=&quot;bacteriofago.jpg&quot; width=&quot;206&quot; height=&quot;166&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Virus&lt;center&gt;&lt;img src=&quot;../imagenes/bacteriofago.jpg&quot; alt=&quot;bacteriofago.jpg&quot; width=&quot;206&quot; height=&quot;166&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Los virus</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son retenidos por filtros para bacterias</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son procariotas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pueden ser parásitos o comensales</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>No son seres vivos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un virión es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un virus en el interior de una célula</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>El ácido nucleico viral</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La cápsida del virus</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La forma extracelular del virus</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los ácidos nucleicos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Componen la cápsida del virus</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Del virión son del tipo ADN</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pueden ser ADN o ARN</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Del virus son destruidos por la bacteria</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La transcriptasa inversa</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es una proteína bacteriana</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúa sobre el ADN para producir ARN</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúa sobre el ARN para producir ADN</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Actúa sobre el ARNpara producir ARNm</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un virus icosaédrico es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un virus que infecta bacterias</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Alargado</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Poligonal e infecta células vegetales</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Poligonal e infecta células animales</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El ciclo lítico de un virus</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Provoca la muerte celular al liberarse los virus</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se produce si el ácido nucleico viral recombina con el bacteriano</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>No destruye la célula hospedadora, pero el virus se divide</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Es igual al ciclo lisogénico</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los trasposones son </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Virus poco evoluciomnados</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Secuencias pertenecientes al ADN de la célula</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Sevcuencias del ADN celular que pueden cambiar de lugar dentro del ADN</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Secuencias extracelulares que pueden interferir con el ADN celular</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los viroides son </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un tipo de virus poco evolucionado</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>ADN extracelular que ataca células vegetales</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>ARN extracelular que ataca células vegetales</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>ARN extracelular que ataca células animales</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los priones son </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un tipo de virus</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una secuencia de ADN extracelular que ataca a una célula</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una secuencia de ARN anómalo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una proteína anómala que induce un cambio en otra proteína</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>=Siguiente&gt;</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

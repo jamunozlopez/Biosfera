@@ -1,0 +1,297 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm">
+                <img border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm">
+                <img border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="index_act.htm">
+                <img border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm">
+                <img border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm">
+                <img border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm">
+                <img border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="Autoevaluacion.htm">
+                <img border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm">
+                <img border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="titulorg.GIF" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">ACTIVIDADES
+                                    DE INVESTIGACIÓN</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">&nbsp;
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="left" class="txt"><b>Introducción</b></p>
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="62%">
+                                  <p align="left" class="txt">E</p>
+                                  <p align="left" class="txt">a.</p>
+                                  <p align="left" class="txt"><b>Descripción de 
+                                  la tarea</b></p>
+                                  <p align="left" class="txt">Te proponemos una 
+                                  tarea de investigación utilizando como 
+                                  herramienta la información que se puede 
+                                  obtener a través de Internet. Debes descubrir:</p>
+                                  <ul>
+                                    <li>
+                                    <p align="left" class="txt">C</li>
+                                    <li>
+                                    <p align="left" class="txt">d</li>
+                                  </ul>
+                                  </td>
+                                  <td width="4%">&nbsp;</td>
+                                  <td width="34%">
+                                  <img border="0" src="imagenes/MALARIA2.JPG" width="300" height="276"></td>
+                                </tr>
+                              </table>
+                              <p align="left" class="txt"><b>Procedimiento</b></p>
+                              <p align="left" class="txt">Busca en las 
+                              direcciones que te recomendamos la información 
+                              requerida. Realiza una presentación digital en tu 
+                              clase, utilizando un programa como PowerPoint o 
+                              similar. Podéis imprimir las diapositivas y 
+                              exponerlas en los pasillos del Instituto. Con 
+                              ello, llamareis la atención de los demás alumnos y 
+                              podréis informarlos sobre esta enfermedad.</p>
+                              <p align="left" class="txt"><b>Recursos</b></p>
+                              <p align="left" class="txt">Te recomendamos las 
+                              siguientes direcciones para recoger información 
+                              sobre el tema:</p>
+                                    <ul>
+                                      <li>
+                                        <p class="txtnegrolink" align="left"><b><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><font face="Arial" size="3"><a href="http://vulcan.wr.usgs.gov/Volcanoes/framework.html"><span lang="ES-TRAD" style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; mso-ansi-language: ES-TRAD; mso-fareast-language: ES; mso-bidi-language: AR-SA">http://vulcan.wr.usgs.gov/Volcanoes/framework.html</span><o:p>
+                                    </o:p>
+                                        </a>
+                                        </font></span></b></li>
+                                      <li>
+                                        <p class="txtnegrolink" align="left"><b><a href="http://condor.stcloudstate.edu/~physcrse/astr106/images/subduction.jpg"><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><font face="Arial" size="3"><span lang="ES-TRAD" style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; mso-ansi-language: ES-TRAD; mso-fareast-language: ES; mso-bidi-language: AR-SA">http://condor.stcloudstate.edu/~physcrse/astr106/images/subduction.jpg</span></font></span></a><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><font face="Arial" size="3"><o:p>
+                                    </o:p>
+                                        </font></span>
+                                    </b></li>
+                                      <li>
+                                        <p class="txtnegrolink" align="left"><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><b><span style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; mso-ansi-language: ES-TRAD; mso-fareast-language: ES; mso-bidi-language: AR-SA" lang="ES-TRAD"><a href="http://www.billiken.com.ar/revista/billiken/images/brb_t4291_n04_f01.jpg"><font face="Arial" size="2">http://www.billiken.com.ar/revista/billiken/images/brb_t4291_n04_f01.jpg</font></a></span></b></span></li>
+                                    </ul>
+                                    <p class="txt" align="left">
+                                    <font face="Arial">Recuerda que las 
+                                    direcciones que recomendamos pueden haber 
+                                    cambiado, por lo que es posible que 
+                                    necesites utilizar un buscador para 
+                                    encontrar la información que deseas. Utiliza 
+                                    palabras clave, como paludismo, malaria, 
+                                    fiebre terciana</font></p>
+                                    <ul>
+                                      <li>
+                                        <p class="txtnegrolink" align="left"><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><font face="Arial" size="2"><b>
+                                        <a target="_blank" href="http://www.google.com">http://www.google.com</a>
+                                    </b></font></span></li>
+                                      <li>
+                                        <p class="txtnegrolink" align="left"><span lang="ES-TRAD" style="mso-ansi-language:ES-TRAD"><font face="Arial" size="2"><b>
+                                        <a target="_blank" href="http://es-es.altavista.com/">http://www.altavista.com</a>
+                                    </b></font></span></li>
+                                    </ul>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

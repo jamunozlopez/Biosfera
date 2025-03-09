@@ -1,0 +1,1104 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td colspan="3" height="35"> </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="../img/Tieruniver.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center" nowrap> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="239" height="19" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                                  </td>
+                                  <td height="19" bgcolor="#BBDDBB">
+                                  <p align="right" class="txtnegrolink">
+                                  <a class="txtnegrolink" href="sol.html">anterior</a> 
+                                  - (12/14) - <font class="txt">
+
+                                    <a href="curiosidades.html" class="txtnegrolink">siguiente</a></font></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p><a name="_Toc527038286"></a><font class="txtnegro">
+                                    CARACTERÍSTICAS 
+                                      DE LOS PLANETAS</font></p>
+                                    <p><a name="Tabla"></a> 
+                                    <table border="0" cellspacing="0" width="100%" cellpadding="1">
+                                      <tr bgcolor="#006666"> 
+                                        <td> 
+                                          <table BORDER cellpadding="2" cellspacing="1" width="100%" >
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" height="28" width="15%">&nbsp;</td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Sol 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Mercurio 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Venus 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Tierra 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Marte 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  J&uacute;piter 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Saturno 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Urano 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" height="28" width="6%"> 
+                                                <center>
+                                                  Neptuno 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Distancia Sol (<a href="sistemasolar.htm#U.A.">U.A.</a>) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  --- 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.38 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.76 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.58 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  5.2 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  9.5 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  19.2 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  30.6 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Translaci&oacute;n&nbsp; <br>
+                                                  en a&ntilde;os 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  --- 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  87.9 (d&iacute;as) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  224.7&nbsp; <br>
+                                                  (d&iacute;as) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.9 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  11.8 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  29.4 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  84 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  164.8 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Rotaci&oacute;n 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  25-36 d&iacute;as 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  58.6 d&iacute;as 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  243.1 d&iacute;as 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 d&iacute;a 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.03 d&iacute;as 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  9.8 horas 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  10.5 horas 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  16.8 horas 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  16.1 horas 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Inclinaci&oacute;n del eje 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  --- 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  2 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  3 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  23 27' 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  23 59' 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  3 05' 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  26 44' 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  82 5' 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  28 48' 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Radio (km) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  695000 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  2439.7 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  6051.8 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  6378 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  3397 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  71492 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  60268 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  25559 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  24746 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Masa comparativa 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  3*10<sup>5</sup> 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.05 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.8 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  318.1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  95.1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  14.6 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  17.2 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  T media de d&iacute;a&nbsp; 
+                                                  (&ordm;C) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  6.000 (en superficie) 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  350 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  480 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  22 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  -23 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  -150 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  -180 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  -210 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  -220 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  Gravedad comparativa 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  4*10<sup>18</sup> 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.37 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.88 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0.38 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  2.64 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.15 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.17 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1.18 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                            <tr bgcolor="#FFFFFF" align="center"> 
+                                              <td valign=TOP class="txt" width="15%"> 
+                                                <center>
+                                                  N&ordm; de sat&eacute;lites 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  --- 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  0 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  1 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  2 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  16 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  18 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  15 
+                                                </center>
+                                              </td>
+                                              <td valign=TOP class="txt" width="6%"> 
+                                                <center>
+                                                  8 
+                                                </center>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p><a name="Planetas interiores"></a><font class="txtbold">I. 
+                                      Planetas terrestres</font></p>
+                                    <p class="txt">Son los planetas interiores 
+                                      (cuyas órbitas están por dentro del cinturón 
+                                      de asteroides). Reciben este nombre debido 
+                                      a que su estructura y composición son similares 
+                                      a las de la Tierra. Son cuatro.</p> 
+                                    <p></p>
+                                    <p class="txt"><a href="Mercurioimagen.html"><img src="image/mercuryglobe1.gif" alt="Pulsa aqui para verla ampliada" hspace=6 height=80 width=47 align=LEFT border="0"></a><a name="Mecurio"></a><b>MERCURIO</b>: 
+                                      Es un planeta pequeño, de aspecto muy parecido 
+                                      a la Luna, ya que al no poseer atmósfera 
+                                      (por su baja gravedad y proximidad del Sol) 
+                                      su superficie está salpicada de infinidad 
+                                      de cráteres meteóricos y cuencas similares 
+                                      a los mares de la Luna; Esta carencia de 
+                                      atmósfera hace que las variaciones térmicas 
+                                      entre el día y la noche mercuriana sean 
+                                      enormes, es decir, entre 400 ºC durante 
+                                      el día y -170 ºC durante la noche. Su constitución 
+                                      interna es similar a la de la Tierra, aunque 
+                                      el núcleo ocupa un radio mayor que el de 
+                                      la Tierra, en comparación.</p> 
+                                    <p class="txt"><a href="venusimagen.html"><img src="image/pvo_uv_790205.gif" alt="Pulsa aqui para verla ampliada" hspace=6 height=80 width=74 align=LEFT border="0"></a><a name="Venus"></a><b>VENUS</b>: 
+                                      Es de tamaño parecido a la Tierra. Se caracteriza 
+                                      por la presencia de una atmósfera muy densa, 
+                                      lo que determina una presión en la superficie 
+                                      90 veces superior a la terrestre, y una 
+                                    temperatura muy alta, de unos 460 &ordm;C, por el efecto 
+                                      invernadero. La atmósfera está constituida en un 96% 
+                                      por CO<font size="1">2</font>, con N<font size="1">2</font>, 
+                                      vapor de agua y SO<font size="1">2</font>, 
+                                      sustancia ésta última responsable de la 
+                                      formación de ácido sulfúrico, lo que hace 
+                                      que ciertas zonas de la atmósfera sean muy 
+                                      corrosivas</p>
+                                    <p class="txt">La superficie de Venus ha sido 
+                                      apenas vista gracias a algunas sondas soviéticas 
+                                      que fueron capaces de resistir las condiciones 
+                                      atmosféricas y se posaron en ella, enviando 
+                                      algunas fotografías que muestran un paisaje 
+                                      pedregoso y árido. También su superficie 
+                                      ha sido cartografiada utilizando ondas de 
+                                      radar enviadas desde la Tierra y desde la 
+                                    sonda Magallanes que orbitó el planeta, lo que ha 
+                                      permitido descubrir la existencia de dos 
+                                      grandes altiplanicies similares a lo que 
+                                      serían los continentes terrestres si no 
+                                      existieran los océanos, algunas cordilleras, 
+                                      así como dos elevaciones que parecen ser 
+                                      volcanes activos (Theia Mons y Rhea Mons).</p>
+                                    <p class="txt">Su estructura interna es de 
+                                      tipo terrestre y llama la atención su movimiento 
+                                      de rotación, que aparte de ser muy lento 
+                                      (243 días) es retrógrado, es decir, al revés 
+                                      que el de la Tierra. </p>
+                                    <p class="txt"><a href="tierraimagen.html"><img src="image/tierra.gif" hspace=6 height=142 width=142 align=RIGHT border="0" alt="Pulsa aqui para verla ampliada"></a><a name="Tierra"></a><span class="txtbold">TIERRA</span>: 
+                                      Inconfundible desde el espacio por el color 
+                                      azul que le dan sus extensos oc&eacute;anos 
+                                      de agua l&iacute;quida, salpicado del blanco 
+                                      de las masas nubosas; posee un &uacute;nico 
+                                      sat&eacute;lite, la LUNA, planetoide rocoso 
+                                      de unos 3470 km de di&aacute;metro que no 
+                                      presenta atm&oacute;sfera, por lo que su 
+                                      superficie est&aacute; tachonada de cr&aacute;teres 
+                                      mete&oacute;ricos, algunos de gran tama&ntilde;o. 
+                                      Los sism&oacute;grafos dejados en su superficie 
+                                      por los astronautas estadounidenses han 
+                                      detectado infinidad de terremotos de intensidad 
+                                      variable. El origen de la Luna parece estar 
+                                      en el choque de un peque&ntilde;o planeta 
+                                      err&aacute;tico con la Tierra en los primeros 
+                                      tiempos del Sistema Solar. </p>
+                                    <p class="txt"><a href="marteimagen.html"><img src="image/marte.gif" hspace=6 height=142 width=142 align=LEFT border="0" vspace="3" alt="Pulsa aqui para verla ampliada"></a><a name="Marte"></a><b>MARTE</b>: 
+                                      Es más pequeño que la Tierra pero presenta 
+                                      muchas similitudes con nuestro planeta, 
+                                      hasta tal punto que se especuló con la posibilidad 
+                                      de que existiera algún tipo de vida en Marte. 
+                                      Para despejar esta incógnita se diseñó el 
+                                      proyecto Viking que permitió depositar dos 
+                                      sondas automáticas en la superficie marciana 
+                                      y que realizaron una serie de experimentos 
+                                      cuyo objeto era descubrir la presencia de 
+                                      microorganismos, aunque los resultados radiados 
+                                      a la Tierra no fueron muy concluyentes.</p>
+                                    <font class="txt"> 
+                                    <p class="txt">Presenta una atmósfera más 
+                                      tenue que la terrestre con un 95% de CO<font size="1">2</font> 
+                                      mezclado con cantidades menores de nitrógeno, 
+                                      monóxido de carbono, oxígeno y vapor de 
+                                      agua. La temperatura en la superficie de 
+                                      la zona ecuatorial oscila entre +22 C y 
+                                      -73 C, aunque en el invierno marciano las 
+                                      temperaturas pueden bajar de -120 C. Existen 
+                                      dos casquetes polares formados por CO<font size="1">2</font> 
+                                      helado y hielo que disminuyen en el verano 
+                                      marciano y aumentan en el invierno. Los 
+                                    vehículos exploradores de la
+                                    </font>
+                                    <a target="_blank" href="http://marsrovers.jpl.nasa.gov/home/index.html">
+                                    <font class="txtnegrolink">misión MER</font></a><font class="txt">, 
+                                    el Opportunity y el Spirit, han demostrado 
+                                    la existencia de rocas formadas en presencia 
+                                    de agua líquida, agua que se sospecha que 
+                                    puede encontrarse en el subsuelo marciano, 
+                                    donde podría protegerse alguna forma de vida 
+                                    bacteriana similar a algunas bacterias 
+                                    quimiosintéticas terrestres, como las 
+                                    estudiadas en el Río Tinto de Huelva por el
+                                    </font>
+                                    <a target="_blank" href="http://amesnews.arc.nasa.gov/spanish/2003/03_74AR_span.html">
+                                    <font class="txtnegrolink">Proyecto MARTE</font></a><font class="txt"> llevado a cabo por la 
+                                    NASA y el Centro de Astrobiología.</font></p>
+									<p class="txt">&nbsp;</p><font class="txt">  
+                                    <table width="100" border="0" cellspacing="0" cellpadding="3" align="center" id="table1">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <a target="_blank" href="activ13b_martetierra.htm"><font class="txtnegrolink"> 
+                                            Actividad 13b 
+											<img src="marte_tierra.jpg" width="100" height="75" border="0"></font></a></td>
+                                      </tr>
+                                    </table>
+                                    <p style="text-align: center">(Contiene 
+									película flash) 
+									<img border="0" src="../../../img/swf.gif" width="16" height="16"><br>
+&nbsp;</p>
+                                    </font>
+									<p class="txt"><font class="txt"> </p>
+                                    <p class="txt"><a name="Asteroides"></a><span class="txtbold">ASTEROIDES</span>: 
+                                      Son <a href="asteroides1.html"><font class="txtnegrolink">fragmentos 
+                                      rocosos</font></a> de tama&ntilde;o muy 
+                                      variable, desde granos de<a href="asteroide_ida.html"><img src="image/ida.gif" alt="Pulsa aqui para verla ampliada" height=50 width=80 align=RIGHT border="0" vspace="3" hspace="6"></a> 
+                                      arena, hasta bloques de cientos de toneladas 
+                                      de peso, que se encuentran orbitando entre 
+                                      Marte y J&uacute;piter, aunque algunos tienen 
+                                      una &oacute;rbita muy alargada y llegan 
+                                      a cruzar las &oacute;rbitas de Marte y la 
+                                      Tierra, por un lado, y las de J&uacute;piter 
+                                      y Saturno por el otro. Se han registrado 
+                                      unos 2500, aunque se supone que debe haber 
+                                      centenares de miles de ellos; los m&aacute;s 
+                                      grandes son Ceres (1000 km de di&aacute;metro 
+                                    y considerado un planeta enano), 
+                                      Palas (610 km), Vesta (540 km), Hig&iacute;a 
+                                      (450 km), Cibeles (310 km), etc. Se supon&iacute;a 
+                                      que eran los restos de un planeta de tipo 
+                                      terrestre que estall&oacute;, pero en la 
+                                      actualidad ha cobrado m&aacute;s fuerza 
+                                      la idea de que son restos de la nube de 
+                                      materia que form&oacute; el Sistema Solar. 
+                                      Muchos son atra&iacute;dos por la fuerza 
+                                      gravitatoria de los planetas y chocan contra 
+                                      su superficie, convirti&eacute;ndose en 
+                                      METEORITOS.</p>
+                                    <p class="txt"><a name="Meteoritos"></a>Los 
+                                      asteroides que siguen una trayectoria que 
+                                      los lleva a chocar con la Tierra reciben 
+                                      el nombre de meteoroides. Cuando un meteoroide 
+                                      choca con nuestra atm&oacute;sfera a gran 
+                                      velocidad, la fricci&oacute;n hace que este 
+                                      trozo de material espacial se incinere produciendo 
+                                      un chorro de luz conocido como meteoro. 
+                                      Si el meteoroide no se consume por completo, 
+                                      lo que queda choca con la superfice de la 
+                                      Tierra y se denomina meteorito. Se han recogido 
+                                      miles de fragmentos de meteoritos por toda 
+                                      la superficie terrestre, met&aacute;licos 
+                                      y rocosos, y existen enormes cr&aacute;teres, 
+                                      muy antiguos, producidos por el choque de 
+                                      gigantescos meteoroides. Se supone que fue 
+                                      uno de estos impactos el que ocasion&oacute; 
+                                      la desaparici&oacute;n de los dinosaurios 
+                                      al final del Mesozoico.</p>
+                                    <p><a name="Planetas gaseosos"></a><font class="txtbold">II. 
+                                      Planetas gaseosos</font></p>
+                                    <p class="txt">Son los planetas exteriores 
+                                    (situados más allá del cinturón de 
+                                    asteroides). Se llaman así por estar 
+                                    constituidos fundamentalmente por gases, 
+                                    aunque puedan estar congelados. También se 
+                                    les da el nombre de &quot;planetas jovianos&quot;, por 
+                                    ser Júpiter el más característico de los 
+                                    cuatro. </p>
+                                    <p class="txt"><a href="jupiter.html"><img src="image/jupiter4.gif" hspace=6 height=142 width=142 align=RIGHT border="0" vspace="3" alt="Pulsa aqui para verla ampliada"></a><a name="Jupiter"></a><b>JÚPITER</b>: 
+                                      Es el planeta más grande de nuestro sistema, 
+                                      hasta el punto de que con algunos millones 
+                                      más de toneladas de masa habría entrado 
+                                      en fusión convirtiéndose en una estrella. 
+                                      Emite 2.5 veces más energía de la que recibe 
+                                      del Sol.</p>
+                                    <p class="txt"> Presenta un núcleo sólido 
+                                      de silicatos rodeado de una capa envuelta 
+                                      de hidrógeno, helio, metano y amoníaco que 
+                                      constituyen una atmósfera muy densa y turbulenta. 
+                                      En esta atmósfera se registran enormes ciclones, 
+                                      como la famosa <a href="mancha_roja.html"><font class="txtnegrolink">Mancha 
+                                      Roja</font></a>, descomunal borrasca donde 
+                                      cabría la Tierra entera.</p>
+                                    <p class="txt" style="text-align: center"> 
+                                    <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="205" height="175">
+                                      <param name="movie" value="swf/Jupiter2.swf">
+                                      <param name="quality" value="High">
+                                      <embed src="swf/Jupiter2.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="205" height="175"></object>
+                                    </p>
+                                    <p class="txt">Cerca de su ecuador se observa 
+                                      un sistema de anillos formados por fragmentos 
+                                      rocosos, oscuros. Actualmente Júpiter posee 
+                                      16 satélites, entre los que destacan los 
+                                      llamados <a href="lunas_de_jupiter.html" class="txtnegrolink">sat&eacute;lites 
+                                      galileanos</a>, descubiertos en el siglo 
+                                      XVI por este pensador, y que han sido recientemente 
+                                      estudiados por la sonda Galileo. Estos satélites 
+                                      son: Ganímedes (5280 km de diámetro), el 
+                                      mayor del Sistema Solar (más grande incluso 
+                                      que Mercurio), Calisto (4820 km), 
+                                      que tiene la superficie más antigua de nuestro 
+                                      Sistema, Europa que presumiblemente posee 
+                                      agua líquida bajo una corteza de hielo (3130 
+                                      km) o Io 3630 km). En éste último el Voyager 
+                                      2 y la sonda Galileo han fotografiado erupciones, 
+                                      que suponen hasta el momento las únicas 
+                                      muestras de actividad volcánica constatada 
+                                      fuera de la Tierra. </p>
+                                    <a href="saturno.html"><img src="image/saturn2.gif" hspace=6 height=142 width=114 align=RIGHT border="0" alt="Pulsa aqui para verla ampliada"></a> 
+                                    <p class="txt"><a name="Saturno"></a><span class="txtbold">SATURNO</span>: 
+                                      Para muchos es el planeta m&aacute;s bello 
+                                      de nuestro sistema, por su conjunto de <a href="anillos_saturno.html"><font class="txtnegrolink">anillos</font></a> 
+                                      m&uacute;ltiples de fragmentos de hielo, 
+                                      que son los &uacute;nicos visibles desde 
+                                      la Tierra. Su estructura es similar a la 
+                                      de J&uacute;piter, aunque es algo m&aacute;s 
+                                      peque&ntilde;o, y tambi&eacute;n emite m&aacute;s 
+                                      energ&iacute;a que la que recibe del Sol. 
+                                      Su densidad es tan baja que flotar&iacute;a 
+                                      en el agua. Presenta unos 18 sat&eacute;lites, 
+                                      de los que los mayores son <a href="titan.html"><font class="txtnegrolink">Tit&aacute;n</font></a> 
+                                      (5150 km de di&aacute;metro), que presenta 
+                                      una atm&oacute;sfera muy densa y rica en 
+                                      hidrocarburos, Rea (1530 km), Japetus (1460 
+                                      km), Dione (1120 km), Tetis (1050 km), etc. 
+                                      Algunos de estos sat&eacute;lites (los llamados 
+                                      "sat&eacute;lites pastores") desempe&ntilde;an 
+                                      un papel muy importante en el mantenimiento 
+                                      de los anillos, evitando con su atracci&oacute;n 
+                                      gravitatoria que los fragmentos de los anillos 
+                                      caigan sobre el planeta. </p>
+                                    <a href="urano.html"><img src="image/uranus3.gif" alt="Pulsa aqu&iacute; para verla ampliada" hspace=6 height=142 width=142 align=LEFT border="0"></a> 
+                                    <p class="txt"><a name="Urano"></a><b>URANO</b>: 
+                                      Visible desde la Tierra sólo como un punto 
+                                      de color azulado. Su estudio ha avanzado 
+                                      en gran manera gracias a las sondas Voyager 
+                                      que enviaron una considerable cantidad de 
+                                      información en la década de los ochenta; 
+                                      estas sondas descubrieron, entre otras cosas, 
+                                      un sistema de anillos que no se conocía 
+                                      anteriormente.</p>
+                                    <p class="txt">Está formado por un núcleo 
+                                      rocoso alrededor del cual se dispone un 
+                                      manto compuesto de metano y amoníaco helados 
+                                      y por una atmósfera de hidrógeno, helio, 
+                                      metano y amoníaco gaseosos. Su característica 
+                                      más importante es que su eje está inclinado 
+                                      más de 90º; con respecto al plano orbital, 
+                                      por lo que los anillos se disponen de forma 
+                                      vertical. Este hecho hace que cada hemisferio 
+                                      de Urano sólo tenga dos estaciones de 42 
+                                      años de duración, así como un día de 42 
+                                      años y una noche también de 42 años.</p>
+                                    <p class="txt">Posee 15 satélites, de los 
+                                      que los mayores son Titania (1600 km de 
+                                      diámetro), Oberón (1600 km), Ariel (1300 
+                                      km), Umbriel (1100 km) y Miranda (300 km), 
+                                      uno de los objetos de aspecto más extraño 
+                                      del Sistema Solar. </p>
+                                    <a href="neptuno.html"><img src="image/neptunespeq.gif" alt="Pulsa aqu&iacute; para verla ampliada" hspace=6 height=142 width=142 align=RIGHT border="0"></a> 
+                                    <p class="txt"><a name="Neptuno"></a><b>NEPTUNO</b>: 
+                                      Gracias a los Voyager disponemos hoy de 
+                                      un conocimiento amplio sobre este planeta. 
+                                      Es muy parecido a Urano, aunque su eje presenta 
+                                      una inclinación similar al de otros planetas. 
+                                      También presenta anillos, que son bastante 
+                                      oscuros. Posee ocho satélites, entre ellos 
+                                      algunos de los objetos más fríos del Sistema 
+                                      Solar, como Tritón (3200 km de diámetro), 
+                                      de movimiento retrógrado, y Nereida (300 
+                                      km) que se supone que es un cometa capturado.<br>
+                                    </p>
+                                    <p class="txtbold">III. Otros cuerpos celestes.<br>
+                                    </p>
+                                    <a href="pluton.html"><img src="image/pluto3.gif" alt="Pulsa aqu&iacute; para verla ampliada" hspace=6 height=104 width=142 align=LEFT border="0"></a> 
+                                    <p class="txt"><a name="Pluton"></a><span class="txtbold">
+                                    <b>PLANETAS ENANOS</b></span>: Son cuerpos celestes 
+                                    que orbitan alrededor del Sol, esféricos, que no son satélites de 
+                                    otros planetas y que no han limpiado su 
+                                    órbita de otros cuerpos.celestes. Plutón es el m&aacute;s  conocido 
+                                    (hasta 2006 fue considerado planeta 
+                                      del Sistema Solar) y posee un satélite casi tan grande como &eacute;l, Caronte, de unos 3000 km de di&aacute;metro. 
+                                    Otros planetas enanos son Ceres (en el 
+                                    Cinturón de Asteroides) y Eris (también 
+                                    conocido como Xena)</p>
+                                    <p class="txt"><a name="Cometas"></a><b>COMETAS</b>: 
+                                      Son fragmentos rocosos rodeados de una capa 
+                                      de gases helados que se mueven en órbitas 
+                                      muy elípticas, lo que les lleva a alejarse 
+                                      enormemente del Sol. Serían los restos de 
+                                      la nebulosa primigenia que sirvieron para 
+                                      formar el Sistema Solar, al igual que los 
+                                      asteroides. Cuando un cuerpo se le acerca 
+                                      su temperatura aumenta, por lo que los gases 
+                                      se descongelan, apareciendo la cola o cabellera 
+                                      que puede tener centenares de miles de km. 
+                                      de longitud.</p>
+                                    <p class="txt"> Algunos son muy conocidos, 
+                                      como el <a href="halley.html"><font class="txtnegrolink">Halley</font></a>, 
+                                      que ha sido el más observado a lo largo 
+                                      de la historia. Los más recientes, aparte 
+                                      de éste, son el Kohoutek, el Ikeya-Seki, 
+                                      el Hale-Bopp, uno de los más espectaculares 
+                                      de los últimos años, o el West, que se fragmentó 
+                                      antes de llegar al Sol y se estrelló contra 
+                                      Júpiter.</p>
+                                    <p class="txt">El origen de la mayoría de 
+                                      los cometas se encuentra en el llamado cinturón 
+                                      de Kuiper, situado más allá de la órbita 
+                                      de Plutón; no obstante existe un grupo de 
+                                      cometas que poseen ciclos muy largos y su 
+                                      origen se encuentra en la nube de Oort, 
+                                      un lugar situado a más de un billón de kilómetros 
+                                      del Sol, donde éste ya casi no llega. </p>
+                                    <p> 
+                                    <table width="100" border="0" cellspacing="0" cellpadding="3" align="center">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <p><a target="_blank" href="ejercicio_1_de_sistema_solar.htm"><font class="txtnegrolink"> 
+                                            Actividad 14 <img src="image/activ14.jpg" width="120" height="70" border="0"></font></a></p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p> 
+                                    <table width="100" border="0" cellspacing="0" cellpadding="3" align="center">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <p><a target="_blank" href="sopa_de_letras.html" class="txtnegrolink"> 
+                                            Actividad 15 </a>
+                                          <a target="_blank" class="txtnegrolink" href="sopa_de_letras.htm"> <img src="image/activ15.jpg" width="120" height="71" border="0"></a></p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p><font class="txt"> <a class="txtnegrolink" target="_blank" href="pesos.html">&iquest;Quieres 
+                                      saber cu&aacute;nto pesas en otros planetas?</a></font> 
+                                      <a name="ejercicio15"></a> </p>
+                                    <p> 
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td> 
+                                          <p class="txtnegrolink"> <a class="txtnegrolink" href="file:///D:/Documents%20and%20Settings/Juan%20Antonio/Mis%20documentos/Proyecto%20Biosfera/Biosfera_Febrero_02/alumno/4ESO/Situtier/sol.html"> 
+                                            </a><a class="txtnegrolink" href="sol.html">anterior</a> 
+                                            - (12/14) - <font class="txt"> <a href="curiosidades.html" class="txtnegrolink">siguiente</a></font> 
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    </font></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<span class="txtpeque"></span><span class="ventanas"></span> 
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

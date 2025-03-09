@@ -1,0 +1,456 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  
+{  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;    
+  }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  
+  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 15.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r";alert(mensaje);}
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/seresunipluricel.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td  valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="110" valign="top" rowspan="2" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber1">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/bacteria-stock-bg.jpg" width="105" height="88"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celula_vegetal.jpg" width="105" height="79"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celulahumana.jpg" width="105" height="99"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/volvox.jpg" width="105" height="105"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/ovulo.jpg" width="105" height="91"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/sperm.jpg" width="105" height="85"></td>
+                        </tr>
+                      </table>
+                      </td>
+                      <td width="544" valign="top" rowspan="2"> 
+                        <table width="492" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB" width="550"><font class="txtnegro">AUTOEVALUACI&Oacute;N</font></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1" ></td>
+                            <td width="522" valign="top"> 
+                              <table width="500" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td rowspan="2" width="4">&nbsp;</td>
+                                  <td rowspan="2" width="468" valign="top"> 
+                                    <br><form name="examen" method="post" action="">
+                                      <p class="txtnegro">1.- El agua es una:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton1" value="2">
+                                        Biomol&eacute;cula org&aacute;nica.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton1" value="1">
+                                        Biomol&eacute;cula inorg&aacute;nica. 
+                                        <br>
+                                        c.-
+                                        <input type="radio" name="radiobutton1" value="3">
+                                        No es una biomol&eacute;cula.</p>
+                                      <p class="txtnegro">2.- Las vitaminas:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton2" value="1">
+                                        Tienen misi&oacute;n reguladora. <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton2" value="2">
+                                        No tienen una funci&oacute;n espec&iacute;fica.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton2" value="3">
+                                        Tienen misi&oacute;n energ&eacute;tica.</p>
+                                      <p class="txt"><span class="txtnegro">3.- 
+                                        El material gen&eacute;tico est&aacute; 
+                                        formado por:</span><br>
+                                        <br>
+                                        a.- 
+                                        <input type="radio" name="radiobutton3" value="2">
+                                        Prote&iacute;nas.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton3" value="3">
+                                        Az&uacute;cares.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton3" value="1">
+                                        ADN. </p>
+                                      <p class="txtnegro">4.- Existen componentes 
+                                        esenciales de todas las c&eacute;lulas:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton4" value="2">
+                                        El citoplasma.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton4" value="3">
+                                        La membrana plasm&aacute;tica.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton4" value="4">
+                                        El n&uacute;cleo.<br>
+                                        d.- 
+                                        <input type="radio" name="radiobutton4" value="1">
+                                        El citoplasma, la membrana plasm&aacute;tica 
+                                        y el material gen&eacute;tico.</p>
+                                      <p class="txtnegro">5.- La c&eacute;lula 
+                                        eucariota tiene:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton5" value="1">
+                                        N&uacute;cleo y muchos y variados org&aacute;nulos. 
+                                        <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton5" value="2">
+                                        N&uacute;cleo.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton5" value="3">
+                                        Variados org&aacute;nulos.</p>
+                                      <p class="txtnegro">6.- La mitocondria:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton6" value="2">
+                                        Realiza la respiraci&oacute;n celular 
+                                        en animales<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton6" value="3">
+                                        Realiza la respiraci&oacute;n celular 
+                                        en vegetales.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton6" value="1">
+                                        Realiza la respiraci&oacute;n celular 
+                                        en ambos. </p>
+                                      <p class="txtnegro">7.- El ret&iacute;culo 
+                                        endoplasm&aacute;tico:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton7" value="2">
+                                        Fabrica prote&iacute;nas.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton7" value="3">
+                                        Fabrica la membrana nuclear.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton7" value="1">
+                                        Ambas funciones. </p>
+                                      <p><span class="txtnegro">8.- El movimiento 
+                                        ameboide se produce por:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton8" value="1">
+                                        Falsos pies o pseud&oacute;podos. <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton8" value="2">
+                                        Cilios.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton8" value="3">
+                                        Flagelos.</p>
+                                      <p class="txtnegro">9.- Las c&eacute;lulas 
+                                        eucariotas vegetales tienen nutrici&oacute;n:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton9" value="2">
+                                        Heter&oacute;trofa.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton9" value="1">
+                                        Aut&oacute;trofa. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton9" value="3">
+                                        Mixta.</p>
+                                      <p class="txtnegro">10.- La gemaci&oacute;n 
+                                        es un proceso de:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton10" value="2">
+                                        Relaci&oacute;n.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton10" value="3">
+                                        Nutrici&oacute;n. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton10" value="1">
+                                        Divisi&oacute;n celular. </p>
+                                      <p class="txtnegro"><span class="txt">11.- 
+                                        En la mitosis se forman:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton11" value="2">
+                                        Dos c&eacute;lulas hijas pero diferentes 
+                                        a la madre.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton11" value="1">
+                                        Dos c&eacute;lulas hijas iguales a la 
+                                        madre. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton11" value="3">
+                                        Dos c&eacute;lulas hijas: Una mayor y 
+                                        una menor.</p>
+                                      <p class="txtnegro">12.- Los organismos 
+                                        unicelulares:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton12" value="2">
+                                        Son todos procariotas.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton12" value="3">
+                                        Son eucariotas.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton12" value="1">
+                                        Pueden ser procariotas o eucariotas. </p>
+                                      <p class="txtnegro">13.- La diferenciaci&oacute;n 
+                                        celular:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton13" value="1">
+                                        Se produce en los primeros estad&iacute;os 
+                                        del desarrollo embrionario. <br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton13" value="2">
+                                        Se produce cuando el individuo ya ha nacido.<br>
+                                        c.-
+                                        <input type="radio" name="radiobutton13" value="3">
+                                        No existe.</p>
+                                      <p class="txtnegro">14.- Los diferentes 
+                                        tejidos de un ser vivo:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton14" value="2">
+                                        Forman &oacute;rganos con ese tejido exclusivamente.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton14" value="1">
+                                        Se asocian y forman &oacute;rganos. <br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton14" value="3">
+                                        No se asocian nunca.</p>
+                                      <p class="txtnegro">15.- Todos los seres 
+                                        vivos u organismos deben ser:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="radiobutton15" value="2">
+                                        Pluricelulares.<br>
+                                        b.- 
+                                        <input type="radio" name="radiobutton15" value="3">
+                                        Unicelulares.<br>
+                                        c.- 
+                                        <input type="radio" name="radiobutton15" value="1">
+                                        Pluricelulares o unicelulares, seg&uacute;n 
+                                        el reino y grupo biol&oacute;gico al que 
+                                        pertenezcan. </p>
+                                      <p class="txt"> <span class="txt"> 
+                                        <input type="reset" name="Borrar" value="Borrar">
+                                        <input type="button" name="calificacion" value="Calificaci&oacute;n" onClick="nota(this.form)">
+                                        </span></p>
+                                    </form>
+                                    <p align="right" class="txtnegrolink">&nbsp;</p>
+                                  </td>
+								  <td rowspan="2" width="10">&nbsp;</td>
+								  </tr>
+								  </table>
+                            </td>
+                            <td width="4">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2" width="124" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/aguila.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/encina.jpg" width="105" height="95"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/setas.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/seudopodo.jpg" width="105" height="97"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/cromosomas.jpg" width="105" height="86"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/algas_unicel.jpg" width="105" height="84"></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,2270 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2b.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="6"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="6">
+              <tr> 
+                <td height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="imagenes/titubiomol.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  &nbsp;</td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="500"> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    GLOSARIO DE TÉRMINOS</b></font></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="angstrom"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">Å:
+                                    <span style="font-weight: 400">angström es 
+                                    una medida de longitud, equivalente a 10 
+                                    nanometros</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="acelomado"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Acelomado: <span style="font-weight: 400">
+                                    animal que carece de celoma.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="albumina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Albúmina:
+                                    <span style="font-weight: 400">&nbsp;proteína 
+                                    globular soluble en agua, de peso molecular 
+                                    entre 30.000 y 100.000 Daltons. Ejemplos son 
+                                    la lactoalbúmina de la leche, la ovoalbúmina 
+                                    del huevo, la seroalbúmina de la sangre o 
+                                    las globinas de la hemoglobina.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="antozoo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Antozoos: <span style="font-weight: 400">
+                                    Grupo de Cnidarios, todos con forma de 
+                                    pólipo, que son sésiles. Algunos coloniales, 
+                                    como los corales. Otros solitarios, como las 
+                                    anémonas de mar.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="ascon"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Ascon:
+                                    <span style="font-weight: 400">Modelo de 
+                                    esponja con forma de saco simple</span></font></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="atp"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">ATP:<span style="font-weight: 400"> 
+                                    Adenosin Trifosfato. Es un nucleótido 
+                                    formado por tres grupos fosfato. Cada enlace 
+                                    entre los grupos fosfato contiene altas 
+                                    cantidades de energía, por lo que su 
+                                    formación acumula energía en la molécula y 
+                                    la rotura de los enlaces libera mucha 
+                                    energía. Por ello, esta molécula es 
+                                    utilizada, en todos los seres vivos, como 
+                                    fuente energética para reacciones químicas. 
+                                    La rotura de un enlace forma un ADP (Adenosin 
+                                    Monofosfato) y libera un grupo fosfato.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="atrio"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Atrio:
+                                    <span style="font-weight: 400">Cavidad 
+                                    interior de las esponjas.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="bilis"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Bilis<span style="font-weight: 400">: 
+                                    sustancia producida en el hígado a partir de 
+                                    sales y ácidos y que son acumulados en la 
+                                    vesícula biliar. Tiene una acción emulgente 
+                                    hacia las grasas, con lo que éstas son más 
+                                    fácilmente atacadas por enzimas lipasas.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="calcarea"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Calcáreas:
+                                    <span style="font-weight: 400">Tipo de 
+                                    esponjas con espículas de carbonato cálcico.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="carbonoasimetrico"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Carbono asimétrico:
+                                    <span style="font-weight: 400">&nbsp;es 
+                                    aquél que tiene los cuatro radicales con los 
+                                    que se enlaza 
+                                    diferentes.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="celomado"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Celomado: <span style="font-weight: 400">
+                                    Animal con celoma. El celoma es una cavidad 
+                                    de origen mesodérmico. La existencia de esta 
+                                    cavidad 
+                                    facilita el transporte de alimentos y la 
+                                    recogida de residuos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="centrifugacion"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Centrifugación:
+                                    <span style="font-weight: 400">técnica 
+                                    destinada a separar de una masa líquida las 
+                                    partículas sólidas que tenga en suspensión. 
+                                    Se realiza en un aparato, la centrifugadora, 
+                                    que hace girar a gran velocidad unos tubos 
+                                    de ensayo que contiene la muestra que se 
+                                    desea tratar. La fuerza centrífuga actúa 
+                                    sobre las partículas sólidas, haciéndolas 
+                                    precipitar en el fondo del tubo, con lo que 
+                                    es posible separarlas.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="cestodo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cestodos: <span style="font-weight: 400">
+                                    Gusanos planos parásitos, que carecen de 
+                                    aparato digestivo. Son las tenias, como la 
+                                    solitaria, <i>Taenia solium</i>.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="cloaca"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cloaca<span style="font-weight: 400">: 
+                                    cámara donde confluyen el final de aparato 
+                                    digestivo, excretor y reproductor. Aparece 
+                                    en aves, reptiles, anfibios, peces e 
+                                    insectos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="cnidoblasto">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cnidoblastos:
+                                    <span style="font-weight: 400">células 
+                                    urticantes de medusas y pólipos que usan 
+                                    como defensa y para capturar sus presas</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="colesterol">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Colesterol:
+                                    <span style="font-weight: 400">componente 
+                                    imprescindible de las membranas plasmáticas 
+                                    de células animales. Se localiza entre las 
+                                    colas de los fosfolípidos, impidiendo la 
+                                    unión entre éstas. Así, la membrana 
+                                    plasmática es más fluida. El </span>
+                                    estigmasterol<span style="font-weight: 400"> 
+                                    es un componente de las membranas de células 
+                                    vegetales. Realiza la misma función que el 
+                                    colesterol.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="conjugacion"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Conjugación:
+                                    <span style="font-weight: 400">forma de 
+                                    reproducción en Protozoos.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="coanociot"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Coanocitos: <span style="font-weight: 400">
+                                    células flageladas&nbsp; de las esponjas, 
+                                    que poseen un collarete y que capturan el 
+                                    alimento del agua.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="colageno"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Colágenos:<span style="font-weight: 400"> 
+                                    proteínas filamentosas, de peso molecular 
+                                    70.000 Daltons, ricas en aminoácidos de 
+                                    Prolina e Hidroxiprolina. Se encuentran en 
+                                    tejidos conectivos, otorgándoles 
+                                    resistencia. De su cocción se obtiene 
+                                    gelatina.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="coloblasto"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Coloblastos:<span style="font-weight: 400"> 
+                                    células de Ctenóforos, que poseen una 
+                                    sustancia pegajosa y que utilizan para cazar 
+                                    a sus presas.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="cristalizacion"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cristalización:
+                                    <span style="font-weight: 400">Adquisición 
+                                    de la forma cristalina de sustancias 
+                                    disueltas en un líquido, del que se separan, 
+                                    mediante concentración de soluto respecto al 
+                                    disolvente.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="cormatografia">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cromatografía:
+                                    <span style="font-weight: 400">Técnica 
+                                    empleada para separar sustancias presentes 
+                                    en una disolución. Se utiliza para aislar 
+                                    componentes moleculares de los seres vivos.
+                                    </span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="cromoproteina">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Cromoproteínas:
+                                    <span style="FONT-WEIGHT: 400">o 
+                                    cromoproteidos. Son moléculas con color, 
+                                    formadas por una parte proteica y otra no 
+                                    proteica, llamada grupo prostético, que se 
+                                    une a la parte proteica mediante enlace 
+                                    covalente.</span></p>
+                                    <p class="txtnegro">
+                                    <span style="FONT-WEIGHT: 400">Se clasifican 
+                                    en </span>porfirínicas
+                                    <span style="FONT-WEIGHT: 400">o </span>no 
+                                    porfirínicas<span style="FONT-WEIGHT: 400">.
+                                    </span></p>
+                                    <ul>
+                                      <li>
+                                      <p class="txtnegro">
+                                      <span style="FONT-WEIGHT: 400">Las 
+                                      porfirínicas están formadas por un </span>
+                                      anillo de porfirina<span style="FONT-WEIGHT: 400">, 
+                                      o tetrapirrólico, que lleva un ión. La
+                                      </span>hemoglobina
+                                      <span style="FONT-WEIGHT: 400">lleva un 
+                                      ión Fe<sup>++</sup>, y sirve para 
+                                      transportar oxígeno por la sangre.</span></li>
+                                      <li>
+                                      <p class="txtnegro">
+                                      <span style="FONT-WEIGHT: 400">Las no 
+                                      porfirínicas no llevan grupo porfirínico, 
+                                      pero también tienen color.</span></li>
+                                    </ul>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="demosponja"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Demosponjas:<span style="font-weight: 400"> 
+                                    Tipo de esponjas que tienen una proteína 
+                                    estructural llamada espongina.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="deuterostomo">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Deuteróstomo:
+                                    <span style="font-weight: 400">animal que en 
+                                    su desarrollo embrionario origina el ano 
+                                    (zona cercana a él) a partir del blastoporo 
+                                    de la gástula.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="diafragma"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Diafragma:
+                                    <span style="font-weight: 400">músculo liso 
+                                    que separa el tórax del abdomen. Cuando se 
+                                    contrae desciende hacia el abdomen. Cuando 
+                                    se relaja, las vísceras del abdomen no 
+                                    tienen presión y empujan hacia arriba al 
+                                    diafragma, desinflando los pulmones.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="dialisis"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Diálisis:
+                                    <span style="font-weight: 400">&nbsp;proceso 
+                                    de difusión selectiva a través de una 
+                                    membrana. Se utiliza para separar moléculas 
+                                    de bajo peso molecular.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="difusionsimple"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Difusión simple:
+                                    <span style="font-weight: 400">Transporte a 
+                                    través de la membrana plasmática sin gasto 
+                                    de energía, debido que las sustancias 
+                                    transportadas circulan del medio más diluido 
+                                    al más concentrado. La sustancia circulante 
+                                    puede atravesar la membrana por cualquier 
+                                    punto.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="difusionfacilitada"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Difusión facilitada<span style="font-weight: 400">: 
+                                    Transporte a través de la membrana 
+                                    plasmática sin gasto de energía, debido que 
+                                    las sustancias transportadas circulan del 
+                                    medio más diluido al más concentrado. La 
+                                    sustancia circulante necesita de una 
+                                    proteína transportadora para atravesar la 
+                                    membrana plasmática.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="diplohaplonte">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Diplohaplonte:<span style="font-weight: 400"> 
+                                    o haplodiplonte. 
+                                    Ciclo vital en el que aparece una fase 
+                                    haploide, representada por el gametofito, 
+                                    que produce gametos, y una fase diploide, 
+                                    representada por el esporofito que surge del 
+                                    cigoto y que forma esporas por meiosis.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="diplonte"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Diplonte:<span style="font-weight: 400"> 
+                                    Ciclo vital en el que la fase predominante 
+                                    es diploide. El individuo diploide forma 
+                                    gametos haploides que se pueden fecundar 
+                                    formando un nuevo individuo diploide.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="dispersioncoloidal"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Dispersión coloidal:
+                                    <span style="font-weight: 400">&nbsp;es una 
+                                    mezcla en la que el disolvente es líquido y 
+                                    el soluto es de gran tamaño. Debido al gran 
+                                    tamaño del soluto, este tipo de dispersiones 
+                                    son inestables y el soluto precipita en el 
+                                    fondo del recipiente que contiene la mezcla. 
+                                    Las sales minerales contribuyen a 
+                                    estabilizar la dispersión, pues los iones de 
+                                    la sal, disuelta en agua, rodean al soluto y 
+                                    las cargas de los iones interactúan con las 
+                                    diferencias de carga de las moléculas de 
+                                    agua, uniendo el soluto a un polímero de 
+                                    moléculas de agua que le rodean.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="ectodermo"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Ectodermo:<span style="font-weight: 400"> 
+                                    capa embrionaria formada por las células 
+                                    exteriores de la gástrula.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="efectotampon">
+                                    </a></p>
+                                    <p class="txtnegro">Efecto tampón:<span style="font-weight: 400"> 
+                                    proceso por el que se mantiene constante el 
+                                    valor del pH de una disolución. Algunos 
+                                    iones son capaces de capturar el excedente 
+                                    de protones (H<sup>+</sup>) cuando el pH es 
+                                    ácido en la disolución. Además son capaces 
+                                    de soltar protones a la disolución cuando el 
+                                    pH es básico.</span></p>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">El ión CO<sub>3</sub><sup>2-</sup> 
+                                    captura el excedente de protones de una 
+                                    disolución y se transforma en HCO<sub>3</sub><sup>-</sup>. 
+                                    Incluso, puede adquirir más protones, 
+                                    formándose H<sub>2</sub>CO<sub>3</sub>. 
+                                    Cuando el pH se hace más básico el ión HCO<sub>3</sub><sup>-</sup> 
+                                    suelta los protones al medio, con lo que 
+                                    vuelve a transformarse en CO<sub>3</sub><sup>2-</sup>.</span></p>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">El tampón HPO<sub>4</sub><sup>2-</sup> 
+                                    / H<sub>2</sub>PO<sub>4</sub><sup>-</sup> 
+                                    realiza la misma función.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="elastina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Elastina:<span style="font-weight: 400"> 
+                                    proteína filamentosa que aparece en los 
+                                    tendones y cartílago elástico. Otorga 
+                                    elasticidad al tejido que la posee.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="electroforesis"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Electroforesis:
+                                    <span style="font-weight: 400">&nbsp;procedimiento 
+                                    empleado para separar moléculas con carga, 
+                                    utilizando unos electrodos en la disolución. 
+                                    El cátodo, electrodo positivo, atrae a las 
+                                    moléculas con carga negativa. El ánodo, 
+                                    electrodo con carga negativa, atrae a las 
+                                    moléculas con carga positiva.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="endodermo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Endodermo: <span style="font-weight: 400">
+                                    capa embrionaria formada por las células 
+                                    interiores de la gástrula, que envuelven el 
+                                    arquénteron.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="espermatoforo">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Espermatóforo<span style="font-weight: 400">: 
+                                    cápsula que envuelve y protege a los 
+                                    espermatozoides. Los producen muchos 
+                                    artrópodos machos, que introducen el 
+                                    espermatóforo en la hembra o los entrega a 
+                                    la hembra y ella los introduce en su 
+                                    oviducto. </span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="escifozoo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Escifozoos: <span style="font-weight: 400">
+                                    Cnidarios de forma de medusa, con natación 
+                                    libre. Todos son seres marinos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="espiraculo">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Espiráculo<span style="font-weight: 400">: 
+                                    orificio que comunican las tráqueas de los 
+                                    insectos con el exterior, por donde entran y 
+                                    salen los gases que intervienen en la 
+                                    respiración. Estos espiráculos se pueden 
+                                    abrir o cerrar, en función de las 
+                                    necesidades del animal mediante los </span>
+                                    opérculos<span style="font-weight: 400">. Cuando los 
+                                    espiráculos están abiertos entran y salen 
+                                    los gases, pero también se pierde agua, que 
+                                    fluye al medio más seco, que es el exterior. 
+                                    Por ello, a veces es necesario mantener 
+                                    cerrados los espiráculos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    <a name="estatocisto"></a></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><font face="Arial">
+                                    Estatocistos:<span style="font-weight: 400"> 
+                                    Sencillos órganos del equilibrio.</span></font></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="fecruzada"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Fecundación: cruzada:<span style="font-weight: 400"> 
+                                    se da entre individuos que generan gametos 
+                                    masculinos y femeninos. Aunque exista la 
+                                    posibilidad de autofecundación, es decir, la 
+                                    unión de gametos masculinos y femeninos del 
+                                    mismo individuo, se favorece que los gametos 
+                                    masculinos fecunden a los femeninos de otro 
+                                    individuo, y los gametos femeninos sean 
+                                    fecundados por gametos masculinos de otro 
+                                    individuo. Con ello se favorece la 
+                                    variabilidad genética en la descendencia.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="fibroina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Fibroína:
+                                    <span style="font-weight: 400">proteína 
+                                    filamentosa de gran resistencia que aparece 
+                                    en la seda.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="filtracion">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Filtración:
+                                    <span style="font-weight: 400">acción de 
+                                    filtrar. Procedimiento por el que se&nbsp; 
+                                    separan partículas de un tamaño determinado, 
+                                    que están presentes en una disolución. La 
+                                    disolución se hace pasar a través de un 
+                                    filtro que retiene las partículas que sean 
+                                    mayores que el tamaño de sus poros.</span> </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="fosoproteina">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Fosfoproteínas:
+                                    <span style="FONT-WEIGHT: 400">o 
+                                    fosfoproteidos. Son moléculas formadas por 
+                                    una parte proteica y otra, un grupo fosfato. 
+                                    Son proteínas energéticas, como la caseína 
+                                    de la leche o la vitelina del huevo.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="gameto"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Gameto:
+                                    <span style="font-weight: 400">es una célula 
+                                    con capacidad para generar un individuo 
+                                    nuevo. Los gametos masculinos se denominan 
+                                    espermatozoides y los femeninos, óvulos. 
+                                    Generalmente, los gametos se producen a 
+                                    partir de una célula madre que es diploide, 
+                                    llamada espermatogonia, si genera 
+                                    espermatozoides,&nbsp; u ovogonia, si genera 
+                                    óvulos. Esta célula sufre una maduración, 
+                                    produciendo una célula de mayor tamaño, 
+                                    diploide, y que empieza a dividirse por 
+                                    meiosis. El resultado de la meiosis origina 
+                                    los gametos, que son células haploides y 
+                                    que, muchas veces realizan fecundación. 
+                                    Elresultado de la fecundación conduce a la 
+                                    formación de una célula nueva, diploide, 
+                                    denominada cigoto, que por mitosis sucesivas 
+                                    originará un nuevo ser con distinta 
+                                    información genética que la que tenían 
+                                    progenitores.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="genotipo"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Genotipo:
+                                    <span style="font-weight: 400">&nbsp;conjunto 
+                                    de genes de un organismo determinado.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="glandula"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Glándulas:<span style="font-weight: 400"> 
+                                    Son órganos que producen sustancias que 
+                                    pueden verter al exterior del cuerpo, a un 
+                                    tubo o a la sangre.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="globulina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Globulina:
+                                    <span style="font-weight: 400">proteína 
+                                    globular de peso molecular entre 100.000 y 
+                                    1.000.000 de Daltons. Ejemplos son la 
+                                    ovoglobulina (huevo), seroglobulina 
+                                    (sangre), lactoglobulina (leche),
+                                    <font face="Symbol">a</font>-globulinas de 
+                                    la hemoglobina o <font face="Symbol">g</font>-globulina 
+                                    (anticuerpos).</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="glucagón"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Glucagón:
+                                    <span style="font-weight: 400">Hormona que 
+                                    regula la cantidad de glucosa en sangre, 
+                                    induciendo a la ruptura del glucógeno en el 
+                                    hígado, con 
+                                    la consiguiente producción de glucosas. El 
+                                    glucagón inhibe la degradación de glucosas 
+                                    dentro de la célula. Las glucosas 
+                                    son liberadas a la sangre, debido a la alta 
+                                    concentración que se produce en el interior 
+                                    celular.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="glucoproteina">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Glucoproteínas:
+                                    <span style="FONT-WEIGHT: 400">o 
+                                    glucoproteidos. Son moléculas formadas por 
+                                    una parte proteica y otra glucídica. 
+                                    Ejemplos pueden ser las glucoproteínas del 
+                                    glucocálix, en células animales, o las </span>
+                                    inmunoglobulinas<span style="FONT-WEIGHT: 400">.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="glutenina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Glutenina:
+                                    <span style="font-weight: 400">&nbsp;proteína 
+                                    globular insoluble en agua, aunque sí en 
+                                    ácidos y bases diluidas. Se encuentran en 
+                                    cereales como el trigo o el arroz. El gluten 
+                                    es el conjunto de estas proteínas, que 
+                                    pueden producir reacción de rechazo. Los 
+                                    celiacos son alérgicos al gluten.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="gradosalinidad"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Grado de salinidad:
+                                    <span style="font-weight: 400">proporción 
+                                    entre las sales y el agua de una disolución.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="haplonte"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Haplonte:<span style="font-weight: 400"> 
+                                    Ciclo vital en el que la fase predominante 
+                                    es haploide. El individuo es haploide hasta 
+                                    que algunas de sus células se pueden 
+                                    fusionar con otras células de otro individuo 
+                                    haploide. Forman células diploides que 
+                                    sufren meiosis que origina esporas haploides. 
+                                    Estas esporas se reproducen por mitosis 
+                                    formando el nuevo individuo haploide.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="heteroproteina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Heteroproteínas:
+                                    <span style="font-weight: 400">&nbsp;también 
+                                    llamadas Heteroproteidos, son biomoléculas 
+                                    orgánicas, formadas por aminoácidos unidos 
+                                    por enlace peptídico y otras moléculas que 
+                                    no son Prótidos, como Glúcidos, Lípidos o 
+                                    nucleótidos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="hidrozoo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Hidrozoos: <span style="font-weight: 400">&nbsp;Cnidarios 
+                                    generalmente de forma pólipo. Algunos 
+                                    presentan forma medusa.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="hexactinelida">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Hexactinélidas:
+                                    <span style="font-weight: 400">Tipo de 
+                                    esponjas con espículas silíceas</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="hirudieo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Hirudíneos: <span style="font-weight: 400">
+                                    gusanos anélidos, ectoparásitos. Son las 
+                                    sanguijuelas.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="histona"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Histona:
+                                    <span style="font-weight: 400">&nbsp;proteína 
+                                    globular, de peso molecular entre 10.000 y 
+                                    20.000 Daltons. Se asocia al ADN formando la 
+                                    cromatina.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="holoproteina">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Holoproteína:<span style="font-weight: 400"> 
+                                    también llamada Holoproteido, es una 
+                                    biomolécula orgánica formada exclusivamente 
+                                    por aminoácidos, cuyo peso molecular es 
+                                    mayor de 5.000 Daltons.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="hormona"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Hormona:
+                                    <span style="font-weight: 400">es una 
+                                    sustancia que se produce en una célula o 
+                                    grupos de células (glándulas endocrinas) y 
+                                    son vertidas al torrente circulatorio. 
+                                    Cuando son detectadas en células con 
+                                    receptores para esas hormonas, se produce un 
+                                    cambio metabólico en la célula que ha 
+                                    recogido la hormona. </span></p>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">Los tipos de 
+                                    hormonas son:</span></p>
+                                    <ul>
+                                      <li>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">Derivadas de 
+                                    aminoácidos, como la tiroxina del tiroides o 
+                                    la adrenalina de las glándulas 
+                                    suprarrenales.</span></p>
+                                      </li>
+                                      <li>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">Proteicas, 
+                                    formadas por unión de varios aminoácidos, 
+                                    formando péptidos o proteínas. Un ejemplo es 
+                                    la insulina.</span></p>
+                                      </li>
+                                      <li>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">Hormonas 
+                                    esteroideas, como la testosterona.</span></p>
+                                      </li>
+                                      <li>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">Hormonas 
+                                    derivadas de ácidos grasos, como la ecdisona 
+                                    de artrópodos.</span></p>
+                                      </li>
+                                    </ul>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="insulina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Insulina:
+                                    <span style="font-weight: 400">&nbsp;hormona 
+                                    que regula la concentración de glucosa en 
+                                    sangre, introduciendo la glucosa de la 
+                                    sangre en las células.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="jugointestinal"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Jugos intestinales<span style="font-weight: 400">: 
+                                    formados por las sustancias que aparecen en 
+                                    el siguiente cuadro:</span></p>
+                                    <table border="1" cellspacing="1" width="100%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="24%" class="txt" style="text-align: center">
+                                        <b>Sustancia</b></td>
+                                        <td width="23%" class="txt" style="text-align: center">
+                                        <b>Lugar donde se produce en el 
+                                        intestino delgado</b></td>
+                                        <td width="53%" class="txt" style="text-align: center">
+                                        <b>Acción</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Enzima 
+                                        Maltasa</td>
+                                        <td width="23%" class="txt">Criptas de 
+                                        Lieberkühn</td>
+                                        <td width="53%" class="txt">Rompe la 
+                                        maltosa liberando glucosas</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Enzima 
+                                        sacarasa</td>
+                                        <td width="23%" class="txt">Criptas de 
+                                        Lieberkühn</td>
+                                        <td width="53%" class="txt">Rompe la 
+                                        sacarosa liberando glucosa y fructosa</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Enzima 
+                                        lactasa</td>
+                                        <td width="23%" class="txt">Criptas de 
+                                        Lieberkühn</td>
+                                        <td width="53%" class="txt">Rompe 
+                                        lactosa liberando galactosa y glucosa</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Enzima 
+                                        peptidasa intestinal</td>
+                                        <td width="23%" class="txt">Criptas de 
+                                        Lieberkühn</td>
+                                        <td width="53%" class="txt">Rompe 
+                                        péptidos liberando aminoácidos</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Enzima 
+                                        lipasa intestinal</td>
+                                        <td width="23%" class="txt">Criptas de 
+                                        Lieberkühn</td>
+                                        <td width="53%" class="txt">Rompe 
+                                        acilglicéridos liberando ácidos grasos y 
+                                        glicerina</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="24%" class="txt">Mucus</td>
+                                        <td width="23%" class="txt">Glándulas de Bruner</td>
+                                        <td width="53%" class="txt">Protege la 
+                                        pared intestinal</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="jugopancreatico"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Jugos pancreáticos<span style="font-weight: 400">: 
+                                    formados por las sustancias que aparecen en 
+                                    el siguiente cuadro:</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <table border="1" cellspacing="1" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="17%" align="center" class="txt" style="text-align: center">
+                                        <b>Enzima</b></td>
+                                        <td width="24%" align="center" class="txt" style="text-align: center">
+                                        <b>Lugar de producción</b></td>
+                                        <td width="59%" align="center" class="txt" style="text-align: center">
+                                        <b>Acción</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="17%" class="txt">Amilasa</td>
+                                        <td width="24%" class="txt">Páncreas</td>
+                                        <td width="59%" class="txt">Rompe el 
+                                        almidón en maltosas</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="17%" class="txt">Lipasa 
+                                        pancreática</td>
+                                        <td width="24%" class="txt">Páncreas</td>
+                                        <td width="59%" class="txt">Rompe 
+                                        acilglicéridos liberando ácidos grasos y 
+                                        glicerina</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="17%" class="txt">Tripsina</td>
+                                        <td width="24%" class="txt">Páncreas</td>
+                                        <td width="59%" class="txt">Rompe 
+                                        proteínas y libera péptidos</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="17%" class="txt">
+                                        Quimotripsina</td>
+                                        <td width="24%" class="txt">Páncreas</td>
+                                        <td width="59%" class="txt">Rompe 
+                                        proteínas y libera péptidos</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="leucon"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Leucon: <span style="font-weight: 400">
+                                    Modelo de esponja con forma de saco de tipo 
+                                    complejo, con pequeñas cavidades conectadas 
+                                    entre sí.</span></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="lipoproteina">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Lipoproteínas:<span style="font-weight: 400"> 
+                                    son moléculas formadas por una parte 
+                                    proteica y una lipídica. </span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="luzpolarizada">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Luz polarizada:
+                                    <span style="font-weight: 400">&nbsp;la luz 
+                                    polarizada es aquella que sólo se transmite 
+                                    en una dirección del espacio. Habitualmente, 
+                                    la luz se expande en todas direcciones. Sin 
+                                    embargo, se puede conseguir que sólo avance 
+                                    en un sentido si se hace pasar la luz de un 
+                                    foco a través de un polarizador.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="medsa"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Medusa:<span style="font-weight: 400"> forma 
+                                    nadadora de reproducción sexual, que 
+                                    presentan los Cnidarios.</span></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="mesodermo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Mesodermo: <span style="font-weight: 400">
+                                    capa embrionaria que aparece en animales 
+                                    triblásticos, formada entre el ectodermo y 
+                                    el endodermo.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="metameria"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Metamería: <span style="font-weight: 400">
+                                    cuerpo de un animal formado por estructuras 
+                                    repetitivas muy semejantes entre sí.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="monomero"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Monómero:
+                                    <span style="font-weight: 400">&nbsp;moléculas 
+                                    pequeñas, <b>unidades moleculares </b>que 
+                                    forman parte de una molécula mayor, llamada 
+                                    polímero.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="monosacarido">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Monosacárido:<span style="font-weight: 400"> 
+                                    también llamado </span>osa<span style="font-weight: 400">. 
+                                    es una molécula sencilla formada por 3, 4, 
+                                    5, 6 ó 7 carbonos en una cadena. </span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="nucleoproteina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Nucleoproteínas:
+                                    <span style="font-weight: 400">&nbsp;son 
+                                    moléculas formadas por proteínas y ADN.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="nudicteneos">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Nudicténeos:
+                                    <span style="font-weight: 400">&nbsp;Tipo de 
+                                    Ctenóforos sin tentáculos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="oligoqueto">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Oligoquetos:
+                                    <span style="font-weight: 400">Gusanos 
+                                    anélidos, que viven perforando el terreno. 
+                                    Ejemplo, lombriz de tierra.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="osculo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Ósculo: <span style="font-weight: 400">
+                                    Orificio superior del cuerpo de las esponjas 
+                                    por donde sale el agua de filtración que ha 
+                                    entrado por los poros.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="osido"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Ósido:<span style="font-weight: 400"> 
+                                    glúcido formado por la unión de dos o más 
+                                    monosacáridos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="oxitocina"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Oxitocina: <span style="font-weight: 400">
+                                    Hormona producida por la neurohipófisis. 
+                                    Produce la contracción del miometrio 
+                                    (musculatura del útero).</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="polimero"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Polímero:
+                                    <span style="font-weight: 400">molécula 
+                                    formada por varias unidades moleculares, 
+                                    llamadas monómeros, que son repetitivas.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="ph"></a></p>
+                                    <p class="txtnegro">pH:
+                                    <span style="font-weight: 400">El concepto 
+                                    de ph fue establecido por&nbsp; Söerensen, 
+                                    en 1909. El pH es un valor cuantitativo de 
+                                    la concentración de protones [H<sup>+</sup>] 
+                                    en una disolución. Se define como el 
+                                    logaritmo decimal, cambiado de signo, de la 
+                                    concentración de iones hidronio [H<sub>3</sub>O<sup>+</sup>].&nbsp; 
+                                    [H<sup>+</sup>] = [H<sub>3</sub>O<sup>+</sup>].</span></p>
+                                    <blockquote>
+                                      <blockquote>
+                                    <p class="txtnegro">pH= - log [H<sup>+</sup>] </p>
+                                      </blockquote>
+                                    </blockquote>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">El pH toma 
+                                    valores entre 1 y 14. Si el valor oscila 
+                                    entre 1 y 7, se dice que la disolución es 
+                                    ácida; hay una alta concentración de 
+                                    protones. Si el valor es 7, la disolución 
+                                    es neutra. Si el valor está por encima de 7, hasta 
+                                    14, se dice que la disolución es básica; hay 
+                                    baja concentración de protones.</span></p>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">El pH&nbsp; 
+                                    se mide con el pHmetro o con tiras medidoras 
+                                    de pH.</span></p>
+                                    <p class="txtnegro">
+                                    <span style="font-weight: 400">El pH indica 
+                                    la cantidad de [OH<sup>-</sup>] que hay en 
+                                    la disolución;&nbsp; pH + pOH = 14</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="polipo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Pólipo: <span style="font-weight: 400">Forma 
+                                    sésil de reproducción asexual, que presentan 
+                                    los Cnidarios.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="poliqueto"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Poliquetos: <span style="font-weight: 400">
+                                    gusanos anélidos que viven errantes, con 
+                                    desplazamiento, o de forma tubícola.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="prolina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Prolaminas:
+                                    <span style="font-weight: 400">&nbsp;proteínas 
+                                    globulares ricas en aminoácido Prolina. Son 
+                                    insolubles en agua. Se encuentran en 
+                                    semillas, como maíz trigo o cebada.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="protamina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Protaminas:
+                                    <span style="font-weight: 400">&nbsp;proteínas 
+                                    de carácter básico, de peso molecular entre 
+                                    5.000 y 10.000 Daltons, que se unen al ADN 
+                                    en los espermatozoides, generando la 
+                                    estructura cristalina del ADN.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="proteolitica">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Proteolítica<span style="font-weight: 400">: 
+                                    enzima con capacidad para romper las 
+                                    proteínas a partir de un enlace peptídico 
+                                    concreto.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="protóstomo">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Protóstomo:
+                                    <span style="font-weight: 400">animal que en 
+                                    su desarrollo embrionario origina la boca 
+                                    (zona cercana a ella) a partir del 
+                                    blastoporo de la gástula.</span></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="pseudocelomado"></a></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">
+                                    Pseudocelomados:
+                                    <span style="font-weight: 400">presentan 
+                                    cavidades en el interior del cuerpo adulto, 
+                                    que no derivan del celoma embrionario.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="queratina"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Queratinas:
+                                    <span style="font-weight: 400">proteínas 
+                                    filamentosas, ricas en el aminoácido 
+                                    cisteína, con función estructural. Se 
+                                    encuentra en la epidermis de la piel, en las 
+                                    uñas, el pelo, las plumas...</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="quilo"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Quilo:
+                                    <span style="font-weight: 400">producto&nbsp;de pH básico, resultante de la mezcla del 
+                                    quimo con los jugos intestinales. Es líquido 
+                                    y poco viscoso.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="quimo"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Quimo:<span style="font-weight: 400"> 
+                                    producto de pH ácido, formado por la mezcla 
+                                    del alimento con los jugos digestivos del 
+                                    estómago. Tiene una consistencia viscosa.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="sesil"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Sésiles: <span style="font-weight: 400">
+                                    individuos fijos a un sustrato. Sin 
+                                    movimiento.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="sicon"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Sicon: <span style="font-weight: 400">
+                                    Modelo de esponja con forma de saco de tipo 
+                                    complejo.</span></p>
+                                    <p class="txtnegro">
+                                    &nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="tagma"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Tagmatización:
+                                    <span style="font-weight: 400">formación del 
+                                    cuerpo en tagmas o regiones bien 
+                                    diferenciadas, presentes en Artrópodos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="tentaculado">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Tentaculados:
+                                    <span style="font-weight: 400">Tipo de 
+                                    Ctenóforos con tentáculos.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="totipotencia">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Totipotencia:
+                                    <span style="font-weight: 400">&nbsp;característica 
+                                    que tienen las células poco diferenciadas y 
+                                    que consiste en que se pueden diferenciar en 
+                                    distintas estirpes celulares.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">
+                                    <a name="transporteactivo"></a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Transporte activo<span style="font-weight: 400">: 
+                                    Transporte a través de la membrana 
+                                    plasmática con gasto de energía, debido que 
+                                    las sustancias transportadas circulan del 
+                                    medio más concentrado al más diluido. La 
+                                    sustancia circulante necesita atravesar la 
+                                    membrana por las proteínas transportadoras 
+                                    que sirven como bombas de estas sustancias, 
+                                    gastando energía.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="trematodo"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Trematodos: <span style="font-weight: 400">
+                                    Gusanos planos, parásitos de vertebrados. Se 
+                                    llaman duelas. Un ejemplo es la duela del 
+                                    hígado, <i>Fasciola hepática</i></span>.</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="tubicola"></a>
+                                    </p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Tubícola: <span style="font-weight: 400">&nbsp;animal 
+                                    que vive en un tubo, a veces formado por él 
+                                    mismo.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="turbelario">
+                                    </a></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">Turbelarios:
+                                    <span style="font-weight: 400">Gusanos 
+                                    planos de vida libre. Son las planarias.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro"><a name="vasopresina">
+                                    </a>Vasopresina:
+                                    <span style="font-weight: 400">Hormona 
+                                    producida por la neurohipófisis. Regula el 
+                                    calibre de los vasos sanguíneos, regulando 
+                                    la tensión arterial.</span></p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p class="txtnegro">&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        &nbsp;</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p>&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad 11</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad 11</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>En la actualidad, el medio ambiente dañado</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Puede ser totalmente recuperado, utilizando organismos descomponedores.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>No puede ser recuperado por organismos descomponedores todavía, aunque se está investigando en ello. Para recuperarlo se usan agentes químicos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es descontaminado por aplicación de la Biotecnología.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es descontaminado totalmente por organismos genéticamente modificados.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las aguas residuales de las grandes ciudades:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son vertidas directamente a cursos naturales.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son descontaminadas en depuradoras y reutilizadas posteriormente.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son descontaminadas en depuradoras y vertidas después a los cursos naturales.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sufren un tratamiento para decantar los sólidos y luego son vertidas a los cursos naturales.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las aguas residuales sufren un tratamiento que consiste en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tratamiento primario por filtración y secundario, en tanque con microorganismos aerobios.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Tratamiento primario con microorganismos aerobios y secundario, por decantación.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Tratamiento primario por decantación y secundario en tanque con microorganismos anaerobios.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Tratamiento primario con microorganismos anaerobios y secundario, por decantación.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los lodos generados en la depuración de aguas residuales:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son tratados en digestores anaerobios, donde se produce la fermentación.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son tratados en digestores aerobios, donde se produce biogas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son tratados en digestores anaerobios, donde producen hidrocarburos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son utilizados como abono agrícola.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La bioremediación consiste en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Crear microorganismos que produzcan moléculas para remediar enfermedades.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Eliminar problemas de contaminación con biotecnología.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Descontaminar un suelo únicamente por plantas medicinales.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Usar plantas genéticamente modificadas para erradicar una enfermedad.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El vertido de hidrocarburos al mar puede ser resuelto por:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fitorremediación.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Levaduras Saccharomyces.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Baterias Lactoabacillus</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Organismos genéticamente modificados para adaptarse a ese medio.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

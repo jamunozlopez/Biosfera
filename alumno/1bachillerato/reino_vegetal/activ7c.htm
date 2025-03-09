@@ -1,0 +1,527 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Belen Sanchez."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>Actividad 7: Factores que influyen en la fotos&iacute;ntesis</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT language="JavaScript">
+
+var min
+var sec
+var ShowReadingAgain = 'Mostrar el texto de nuevo';
+
+var TopNextExButton = '<FORM><INPUT TYPE="button" VALUE="=>" onClick="parent.location=\'nextpage.htm\'"></FORM>';
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+
+macrightchar = ':-)'
+macwrongchar = 'X'
+winrightchar = ':-)'
+winwrongchar = 'X'
+
+
+DoneStatus = new Array();
+DoneStatus[1] = '0';
+DoneStatus[2] = '0';
+DoneStatus[3] = '0';
+DoneStatus[4] = '0';
+
+
+Responses = new Array();
+Responses[1] = new Array();
+Responses[1][1]='';
+Responses[1][2]='';
+Responses[1][3]='';
+Responses[1][4]='';
+Responses[2] = new Array();
+Responses[2][1]='';
+Responses[2][2]='';
+Responses[2][3]='';
+Responses[3] = new Array();
+Responses[3][1]='';
+Responses[3][2]='';
+Responses[3][3]='';
+Responses[4] = new Array();
+Responses[4][1]='';
+Responses[4][2]='';
+Responses[4][3]='';
+
+
+IndicatorName = new Array();
+
+
+TriedStatus = new Array();
+
+var Score = 0;
+var Tries = 0;
+var Percent = 0;
+var YourScore = 'Tu puntuaci&oacute;n es:';
+var DefaultRight = '&#161;Correcto!';
+var DefaultWrong = 'Lo siento! Int&eacute;ntalo de nuevo.';
+var CorrectFirstTime = 'Preguntas acertadas a la primera: ';
+var CFT = 0;
+
+function DownTime(mm,ss){
+	min = mm;
+	sec = ss;
+
+	if (sec==0) {
+		sec = 60;
+		min--;
+	}
+
+	sec--;
+	if (sec<10){
+		sec="0" + sec;
+	}
+
+	if (parent.TimerFrame.document.TimerForm.face == null){
+		return;
+	}
+
+	parent.TimerFrame.document.TimerForm.face.value= min+":"+sec;
+
+	if ((min==0) && (sec==0)){
+		TimesUp()
+	}
+	else{
+		setTimeout('DownTime(min,sec)',1000)
+	}
+}
+
+function StartUp(){
+	for (var i=1; i<DoneStatus.length; i++){
+		TriedStatus[i] = 0;
+	}
+	if (parent.TimerFrame != null) {
+		Stuff='<INPUT TYPE="Button"';
+		Stuff+=' NAME="StartIt" VALUE="Leer" onClick="parent.CodeFrame.StartReading()">';
+		WriteToReading('Pincha aqu&iacute; para ver el texto.');
+		WriteToTimer(Stuff);
+	}
+}
+
+function StartReading(){
+	Stuff='Tiempo restante:';
+	Stuff+=' <INPUT TYPE="text" NAME="face" SIZE="6" VALUE="1:00">';
+	WriteToTimer(Stuff);
+	parent.ReadingFrame.location.href='activ7r.htm';
+	timeoutID=setTimeout('DownTime(1,0)',1000);
+}
+
+function TimesUp() {
+	if (ShowReadingAgain.length > 0) {
+		Stuff='<INPUT TYPE="Hidden" NAME="ThisAvoidsNavigator3Bug">';
+		Stuff+='<INPUT TYPE="Button" NAME="StartIt" VALUE="Mostrar el texto de nuevo" onClick="parent.CodeFrame.StartReading()">';
+		WriteToTimer(Stuff);
+	}
+	WriteToReading('&#161;El tiempo ha terminado!');
+}
+
+function WriteToReading(Stuff) {
+	parent.ReadingFrame.document.clear();
+	parent.ReadingFrame.document.open();
+	parent.ReadingFrame.document.writeln ('<HTML>');
+	parent.ReadingFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.ReadingFrame.document.writeln ('<CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">');
+	parent.ReadingFrame.document.writeln ('<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.ReadingFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.ReadingFrame.document.writeln (Stuff);
+	parent.ReadingFrame.document.writeln ('</FONT></TD></TR></TABLE></CENTER></BODY></HTML>');
+	parent.ReadingFrame.document.close();
+}
+
+function WriteToTimer(Stuff){
+	parent.TimerFrame.document.clear();
+	parent.TimerFrame.document.open();
+	parent.TimerFrame.document.writeln ('<HTML>');
+	parent.TimerFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.TimerFrame.document.writeln ('<CENTER><TABLE BORDER=\"0\" CELLPADDING=\"5\" CELLSPACING=\"1\" WIDTH="85%">');
+	parent.TimerFrame.document.writeln ('<FORM NAME="TimerForm"><TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.TimerFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.TimerFrame.document.writeln (Stuff);
+	parent.TimerFrame.document.writeln ('</FONT></TD></TR></FORM></TABLE></CENTER></BODY></HTML>');
+	parent.TimerFrame.document.close();
+}
+
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckMulti(QNum, TotAns){
+	var TotWrong = 0;
+
+	for (var i=TotAns; i>=1; i--){
+//Find any incorrect choices
+		var b = eval('document.QuizForm.Q' + QNum + '_' + i);
+		if (b != null){
+//if it's wrong, count it
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+//if right, show default correct feedback
+	if (TotWrong == 0){
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			DoneStatus[QNum] = '1';
+			Score = Score + 1;
+			if (TriedStatus[QNum] == 0){
+				CFT++;
+			}
+		}
+
+		Feedback = DefaultRight;
+		Percent = Math.floor(Score*100/Tries) + '%';
+		Feedback = Feedback + '<BR>' + YourScore + ' ' + Percent + '.';
+
+		i = 0;
+		var AllDone = true;
+		for (i=1; i<DoneStatus.length; i++){
+			if (DoneStatus[i] == '0'){
+				AllDone = false;
+			}
+		}
+		if (AllDone == true){
+			Feedback += '<BR>' + CorrectFirstTime + CFT + '/' + (DoneStatus.length - 1);
+			Feedback += '<BR>[TopNextExButton]';;
+		}
+	}
+	else{
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+		}
+		Feedback = DefaultWrong + '<BR>' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+	TriedStatus[QNum] = 1;
+	WriteFeedback(Feedback);
+	
+}
+
+
+function CheckAnswer(QNum, AnsNum, Correct) {
+
+	if (Correct == 1) {
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			DoneStatus[QNum] = '1';
+			Score = Score + 1;
+			if (TriedStatus[QNum] == 0){
+				CFT++;
+			}
+			var b = eval('document.QuizForm.Q' + QNum + '_' + AnsNum);
+			if (b != null){
+				b.value = rightchar;
+			}
+		}
+
+	Feedback = Responses[QNum][AnsNum];
+	if (Feedback == '') {Feedback = DefaultRight}
+	Percent = Math.floor(Score*100/Tries) + '%';
+	Feedback = Feedback + '<BR>' + YourScore + ' ' + Percent + '.';
+
+
+
+		var i = 0;
+		var AllDone = true;
+		for (i=1; i<DoneStatus.length; i++){
+			if (DoneStatus[i] == '0'){
+				AllDone = false;
+			}
+		}
+		if (AllDone == true){
+			Feedback += '<BR>' + CorrectFirstTime + CFT + '/' + (DoneStatus.length - 1);
+			Feedback += '<BR>[TopNextExButton]';
+		}
+
+	WriteFeedback(Feedback);
+	}
+
+ 	else {
+		if (DoneStatus[QNum] != '1'){
+			Tries = Tries + 1;
+			var b = eval('document.QuizForm.Q' + QNum + '_' + AnsNum);
+			if (b != null){
+				b.value = wrongchar;
+			}
+		}
+
+		Feedback = Responses[QNum][AnsNum];
+		if (Feedback == '') {Feedback = DefaultWrong}
+		WriteFeedback(Feedback);
+	}
+	TriedStatus[QNum] = 1;
+}
+
+function WriteFeedback(Feedback) {
+	parent.FeedbackFrame.document.clear();
+	parent.FeedbackFrame.document.open();
+	parent.FeedbackFrame.document.writeln ('<HTML>');
+	parent.FeedbackFrame.document.writeln ('<BODY  BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc">');
+	parent.FeedbackFrame.document.writeln ('<CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">');
+	parent.FeedbackFrame.document.writeln ('<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">') 
+	parent.FeedbackFrame.document.writeln ('<FONT FACE="Geneva,Arial" SIZE="-1">');
+	parent.FeedbackFrame.document.writeln (Feedback);
+	parent.FeedbackFrame.document.writeln ('</FONT></TD></TR></TABLE></CENTER></BODY></HTML>');
+	parent.FeedbackFrame.document.close();
+}
+
+</SCRIPT>
+
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000ff" VLINK="#0000cc" onLoad="StartUp()">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#006666">Actividad 7: Factores que influyen en la fotos&iacute;ntesis</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#006666"><br />
+Observa la tabla siguiente de datos y contesta:<br />
+<br />
+<table border="1" cellpadding="2" cellspacing="2" width="60%" align="center"><br />
+<tr><br />
+<td>Temperatura &#186;C</td><br />
+<td>mm3 de ox&iacute;geno/hora</td><br />
+</tr><br />
+<tr><br />
+<td>5</td><br />
+<td>50</td><br />
+</tr><br />
+<tr><br />
+<td>10</td><br />
+<td>55</td><br />
+</tr><br />
+<tr><br />
+<td>15</td><br />
+<td>76</td><br />
+</tr><br />
+<tr><br />
+<td>20</td><br />
+<td>130</td><br />
+</tr><br />
+<tr><br />
+<td>25</td><br />
+<td>175</td><br />
+</tr><br />
+<tr><br />
+<td>30</td><br />
+<td>150</td><br />
+</tr><br />
+<tr><br />
+<td>35</td><br />
+<td>125</td><br />
+</tr><br />
+<tr><br />
+<td>40</td><br />
+<td>50</td><br />
+</tr><br />
+</table><BR>&nbsp;</FONT></TD></TR>
+
+<TR><TD BGCOLOR="#d1e9d1" ALIGN="CENTER">
+
+<FORM NAME="QuizForm">
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="2" WIDTH="95%">
+
+
+
+<TR>
+<TD COLSPAN="4"><HR WIDTH="100%" HEIGHT="5">
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">1</FONT></TD><TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;A qu&eacute; temperatura se produce el nivel &oacute;ptimo de actividad fotosint&eacute;tica? </FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q1_1"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" A " onclick="CheckAnswer(1,1,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">a 15&#186;C.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q1_2"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" B " onclick="CheckAnswer(1,2,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">a 20&#186;C.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q1_3"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" C " onclick="CheckAnswer(1,3,1)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">a 25&#186;C. </FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q1_4"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" D " onclick="CheckAnswer(1,4,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">a 40&#186;C</FONT></TD>
+</TR>
+
+
+
+
+
+<TR>
+<TD COLSPAN="4"><HR WIDTH="100%" HEIGHT="5">
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">2</FONT></TD><TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Por qu&eacute; los valores a 5&#186;C y a 40&#186;C son iguales?</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q2_1"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" A " onclick="CheckAnswer(2,1,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">Porque son los extremos.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q2_2"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" B " onclick="CheckAnswer(2,2,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">Porque a las plantas no les gusta ni el fr&iacute;o ni el calor.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q2_3"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" C " onclick="CheckAnswer(2,3,1)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">A 5&#186;C la eficiencia fotosint&eacute;tica es baja porque la temperatura no permite realizar la fotos&iacute;ntesis con pleno rendimiento. Por otra parte, el calor hace cerrar los estomas para evitar la p&eacute;rdida de agua y tampoco deja realizar la fotos&iacute;ntesis en condiciones adecuadas. </FONT></TD>
+</TR>
+
+
+
+
+
+<TR>
+<TD COLSPAN="4"><HR WIDTH="100%" HEIGHT="5">
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">3</FONT></TD><TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;En qu&eacute; te has basado para saber cu&aacute;l es el nivel &oacute;ptimo de rendimiento fotosint&eacute;tico?</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q3_1"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" A " onclick="CheckAnswer(3,1,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">En los valores de la temperatura.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q3_2"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" B " onclick="CheckAnswer(3,2,1)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">En la cantidad de ox&iacute;geno desprendido.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q3_3"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" C " onclick="CheckAnswer(3,3,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">En el dibujo de la gr&aacute;fica.</FONT></TD>
+</TR>
+
+
+
+
+
+<TR>
+<TD COLSPAN="4"><HR WIDTH="100%" HEIGHT="5">
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1" ALIGN="RIGHT"><FONT SIZE="+1" FACE="Geneva,Arial">4</FONT></TD><TD COLSPAN="3" VALIGN="TOP" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">&#191;Qu&eacute; relaci&oacute;n existe entre la cantidad de ox&iacute;geno/hora y la fotos&iacute;ntesis?</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q4_1"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" A " onclick="CheckAnswer(4,1,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">Ninguna</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q4_2"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" B " onclick="CheckAnswer(4,2,0)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">A m&aacute;s ox&iacute;geno menos fotos&iacute;ntesis. Por ello cuando hay mucho ox&iacute;geno no se hace la fotos&iacute;ntesis.</FONT></TD>
+</TR>
+
+
+
+<TR>
+<TD></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="text" value=" " size="3" name="Q4_3"></TD>
+<TD VALIGN="TOP" BGCOLOR="#d1e9d1"><input type="button" value=" C " onclick="CheckAnswer(4,3,1)"></TD>
+<TD WIDTH="100%" BGCOLOR="#d1e9d1"><FONT SIZE="-1" FACE="Geneva,Arial">La cantidad de ox&iacute;geno desprendido en la fotos&iacute;ntesis es un valor que puede mostrar el rendimiento de ese proceso, puesto que es uno de sus productos finales. </FONT></TD>
+</TR>
+
+
+
+
+
+
+
+
+<TR>
+<TD COLSPAN="4"><HR WIDTH="100%" HEIGHT="5">
+</TD>
+</TR>
+
+</TABLE>
+</FORM>
+</TD></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#bbddbb" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

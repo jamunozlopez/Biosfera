@@ -1,0 +1,405 @@
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif','imagenes/cloroplasto.jpg')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/citologia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="523" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="223" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos12.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (13/15) - <a href="contenidos14.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">7.h.- Cloroplastos.</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Los <span class="txtnegro">cloroplastos</span> 
+                                            son org&aacute;nulos t&iacute;picos 
+                                            y exclusivos de las c&eacute;lulas 
+                                            vegetales que poseen clorofila. Por 
+                                            ellos las plantas son capaces de realizar 
+                                            el proceso de fotos&iacute;ntesis, 
+                                            proceso que transforma la energ&iacute;a 
+                                            luminosa en energ&iacute;a qu&iacute;mica 
+                                            contenida en las mol&eacute;culas 
+                                            de ATP. Como las mitocondrias, tambi&eacute;n 
+                                            producen energ&iacute;a.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><span ><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','imagenes/cloroplasto.jpg',1)"><img src="imagenes/cloroplasto_letreros.jpg" width="550" height="361" hspace="10" vspace="23" alt="&quot;Cloroplasto&quot;" border="0" name="Image1"></a></span><br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txtnegro">Estructura</span>: 
+                                            son polimorfos y de color verde por 
+                                            la acumulaci&oacute;n de clorofila. 
+                                            Su forma m&aacute;s frecuente es lenticular, 
+                                            ovoide o esf&eacute;rico. Tambi&eacute;n 
+                                            presenta una doble membrana (externa 
+                                            e interna) y entre ellas un espacio 
+                                            intermembranoso. El interior se rellena 
+                                            por un gel llamado estroma. Presenta 
+                                            un ADN independiente del n&uacute;cleo 
+                                            y plastorribosomas. Inmersos en el 
+                                            estroma existen unos sacos aplanados 
+                                            llamados tilacoides o lamelas cuyo 
+                                            interior se llama l&uacute;men. Los 
+                                            tilacoides pueden extenderse por todo 
+                                            el estroma o apilarse formando paquetes 
+                                            llamados grana. En la membrana de 
+                                            los grana o tilacoides se ubican los 
+                                            sistemas enzim&aacute;ticos que captan 
+                                            la energ&iacute;a del sol y efect&uacute;an 
+                                            el transporte de electrones para formar 
+                                            ATP. </p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="left">
+<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                  <tr> 
+                                    <td> 
+                                      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p><span class="txtnegro">Funci&oacute;n</span>: 
+                                              la m&aacute;s importante es la realizaci&oacute;n 
+                                              de la fotos&iacute;ntesis en la 
+                                              que, aparte de la transformaci&oacute;n 
+                                              energ&eacute;tica, existe una transformaci&oacute;n 
+                                              de materia inorg&aacute;nica a org&aacute;nica, 
+                                              utilizando el ATP sintetizado a 
+                                              partir de la luz solar. En el cloroplasto 
+                                              se produce la fase luminosa y oscura 
+                                              de la fotos&iacute;ntesis adem&aacute;s 
+                                              de la bios&iacute;ntesis de prote&iacute;nas 
+                                              y la duplicaci&oacute;n de su propio 
+                                              ADN. </p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <br>
+                              </div>
+                              <div align="center"></div>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td height="115"> 
+                                      <p><font class="txtnegrolink"> <a href="activ14.htm" class="txtnegrolink">Actividad 
+                                        14</a></font> <a href="activ14.htm"><img src="imagenes/activ14.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                                <br>
+                                <a name="act_inves11"></a> <br>
+                              </div>
+                              <div align="center"> 
+                                <div align="center"></div>
+                              </div>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      de investigaci&oacute;n 11: Los tilacoides</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><img src="imagenes/cloroplasto.jpg" width="133" height="84" alt="&quot;Cloroplasto&quot;" align="right">Introducci&oacute;n: 
+                                      <font size="-2">El cloroplasto presenta 
+                                      en su interior una serie de sacos aplanados 
+                                      que flotan sobre el estroma y que pueden 
+                                      encontrarse apilados, llamados tilacoides. 
+                                      En las membranas de los tilacoides existe 
+                                      un conjunto de aparato enzim&aacute;tico 
+                                      que transforma la luz en ATP en la fase 
+                                      luminosa de la fotos&iacute;ntesis.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Al igual que 
+                                        en la actividad de investigaci&oacute;n 
+                                        10, se trata de profundizar en el contenido 
+                                        enzim&aacute;tico espec&iacute;fico que 
+                                        poseen las membranas de los tilacoides 
+                                        para realizar el transporte de electrones 
+                                        y la s&iacute;ntesis de ATP a partir de 
+                                        los fotones de luz. Debes especificar 
+                                        en un poster o mural explicativo todas 
+                                        y cada una de las enzimas y prote&iacute;nas 
+                                        de membrana que intervienen en el proceso 
+                                        de la fotos&iacute;ntesis (fase luminosa). 
+                                        Se debe detallar la estructura, el lugar 
+                                        concreto, las enzimas y los sustratos 
+                                        y los productos que se forman en esta 
+                                        ruta metab&oacute;lica energ&eacute;tica. 
+                                        Para ello lo mejor es realizar el detalle 
+                                        sobre un gr&aacute;fico o dibujo que ilustre 
+                                        el proceso. Si eliges la presentaci&oacute;n 
+                                        en ordenador puedes presentarla con una 
+                                        animaci&oacute;n en la que se observe 
+                                        todo el proceso de forma din&aacute;mica.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2"><br>
+                                        <a href="http://enciclopedia.us.es/index.php/Cianobacterias_y_cloroplastos"><font color="#FFFFCC">Cloroplastos</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://www.terravista.pt/bilene/5547/biologia/Celula/Plastos15.htm"><font color="#FFFFCC">Plastos 
+                                        (Cloroplastos) y Fotos&iacute;ntesis.</font></a><br>
+                                        <a href="http://web.educastur.princast.es/proyectos/biogeo_ov/2BCH/INDICES/index_celula.htm"><font color="#FFFFCC">Los 
+                                        cloroplastos.</font></a><br>
+                                        <a href="http://www.arrakis.es/%7Elluengo/importancia.html"><font color="#FFFFCC">Fotos&iacute;ntesis</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://enciclopedia.us.es/wiki.phtml?title=Cianobacterias%2By%2Bcloroplastos"><font color="#FFFFCC">Cianobacterias 
+                                        y cloroplastos: art&iacute;culo de la 
+                                        enciclopedia libre.</font></a><br>
+                                        <a href="http://soko.com.ar/Biologia/celula/Cloroplastos.htm"><font color="#FFFFCC">Las 
+                                        clorofilas.</font></a> <br>
+                                        <a href="http://www.euita.upv.es/varios/biologia/Temas/tema_5.htm"><font color="#FFFFCC">Mitocondrias 
+                                        y Plastidios.</font></a></font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se valorar&aacute; la presentaci&oacute;n 
+                                      y la calidad de la informaci&oacute;n, as&iacute; 
+                                      como la capacidad de s&iacute;ntesis y el 
+                                      detalle en las explicaciones orales. Debe 
+                                      evaluarse, tambi&eacute;n, el grado de comprensi&oacute;n 
+                                      del proceso global y su implicaci&oacute;n 
+                                      en la vida celular vegetal. </font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td height="115"> 
+                                      <p><font class="txtnegrolink"> <a href="activ15.htm" class="txtnegrolink">Actividad 
+                                        15</a></font> <a href="activ15.htm"><img src="imagenes/activ15.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td height="115" bgcolor="#e6ffe6"> 
+                                      <p>&nbsp; 
+                                    </td><td height="115"> 
+                                      <p><font class="txtnegrolink"> 
+                                      <a class="txtnegrolink" target="_blank" href="activ16.htm">Actividad 
+                                        16</a></font>
+                                      <a target="_blank" href="activ16.htm"><img src="imagenes/activ16.jpg" width="120" height="68" border="0"></a> 
+                                    </td></tr>
+                                </table>
+                              </div>
+                              <p align="left"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink"></span></a></p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos12.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (13/15) - <a href="contenidos14.htm" class="txtnegrolink">siguiente</a></span></p>
+                                    </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

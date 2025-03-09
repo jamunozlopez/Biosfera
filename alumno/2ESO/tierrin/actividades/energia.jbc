@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Energía interna del Planeta</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El gradiente geotérmico es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un tipo de industria térmica</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una relación entre la temperatura y la profundidad terrestre</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Una relación entre la temperatura y la energía de la Tierra</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una forma de medir de la profundidad de la Tierra</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El gradiente geotérmico indica que:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La temperatura aumenta 1 ºC cada 33 metros de profundidad</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La temperatura aumenta 33 ºC por metro de profundidad</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La temperatura aumenta en el interior de la Tierra</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La profundidad aumenta en el interior de la Tierra</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Si el gradiente geotérmico es una relación que indica 1 ºC cada 33 metros de profundidad:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El centro de la Tierra debe tener una temperatura de unos 200.000 ºC, ya que el radio terrestre es de 6.370 km</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es menos de 200.000 ºC porque la Tierra se está enfrando</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Es menos de 200.000 ºC porque esa relación sólo es correcta en la corteza del planeta</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es mayor de 200.000 ºC porque en el interior de la Tiera existen átomos radiactivos</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La energía interna de la Tierra se disipa:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>A través de las grietas del planeta</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por la noche, cuando se enfría la corteza terrestre</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Gracias a las corrientes de convección que llevan materiales muy calientes hacia la capa más externa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Porque calienta las capas fluidas del planeta (agua y aire)</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La energía interna de la Tierra:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es la responsable de la acción de los agentes geológicos externos</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Provoca la formación de rocas sedimentarias</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Permite la formación de montañas</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es infinita</text>
+<correct>0</correct>
+<feedback>intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

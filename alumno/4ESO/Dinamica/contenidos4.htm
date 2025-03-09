@@ -1,0 +1,313 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio1.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="../Dinamica/index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="../Dinamica/a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="../Dinamica/contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="../Dinamica/actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="../Dinamica/mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="../Dinamica/ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="../Dinamica/autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="../Dinamica/enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="image/contenidos/dinamica.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="../Dinamica/contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="../Dinamica/contenidos3.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (4/4) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">4.- Ciclos biogeoqu&iacute;micos:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt">Los <span class="txtnegro">ciclos 
+                                          biogeoqu&iacute;micos</span> representan 
+                                          los cambios que experimentan los elementos 
+                                          qu&iacute;micos que constituyen los 
+                                          seres vivos en su recorrido c&iacute;clico 
+                                          por la biosfera. En ellos participan 
+                                          todos los organismos presentes en los 
+                                          distintos niveles tr&oacute;ficos. Los 
+                                          m&aacute;s importantes son el ciclo 
+                                          del carbono, nitr&oacute;geno y 
+										fósforo.</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp;</p>
+                              <p class="txtnegro">Actividad 15<a name="carbono"></a>:</p>
+                              <p class="txt">A continuaci&oacute;n te presentamos 
+                                un diagrama del ciclo del Carbono. Al pasar sobre 
+                                los n&uacute;meros veras lo que ocurre en cada 
+                                fase.</p>
+                              <p ><img src="image/contenidos/ciclo_carbono.gif" usemap="#carbono" border="0">&nbsp;</p>
+                              <p class="txtnegro">&nbsp;</p>
+                              <p class="txtnegro">Actividad 16<a name="nitrogeno"></a>:</p>
+                              <p class="txt">La actividad que te proponemos tiene 
+                                el mismo enfoque y din&aacute;mica que la n&ordm; 
+                                15. Pasa el rat&oacute;n sobre cada fase, para 
+                                ver la descripción de los procesos m&aacute;s 
+                                importantes del ciclo del nitr&oacute;geno:</p>
+                              <p class="txt"><img src="image/contenidos/ciclo_nitrogeno.gif" width="737" height="425" usemap="#Map" border="0"></p>
+                              <p class="txt">&nbsp;</p>
+                              <div align="center">
+								<table width="100" border="0" cellspacing="0" cellpadding="3" id="table1">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                        
+                                      <a target="_blank" href="activ_video1.htm"><font class="txtnegrolink"> 
+                                        Actividad 16b</font></a> 
+										<a target="_blank" href="activ_video1.htm">
+										<img src="nitrogeno_t.jpg" width="120" height="100" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              	<p class="txt" style="text-align: center">
+								Contiene vídeo 
+								<img border="0" src="../../../img/wmv.gif" width="16" height="16"></div>
+                              <p class="txt"> <br>
+                                <span class="txtnegro"><a name="fosforo"></a>Actividad 
+                                17:</span></p>
+                              <p class="txt">Como en las actividades anteriores 
+                                lee atentamente que ocurre en cada fase del ciclo 
+                                del f&oacute;sforo.</p>
+                              <p class="txt"><img src="image/contenidos/ciclo_fosforo.gif" width="737" height="425" usemap="#Map2" border="0"></p>
+                              <br>
+							  <p align="right"><a class="txtnegrolink" href="../Dinamica/contenidos3.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (4/4) - <a href="contenidos1.htm" class="txtnegrolink">siguiente</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+<map name="carbono"> 
+  <area shape="rect" coords="173,52,217,86" href="#" target="_blank" onMouseOver="MM_openBrWindow('ciclocarbono2.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="280,83,316,110" href="#" onMouseOver="MM_openBrWindow('ciclocarbono2.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="345,83,380,105" href="#" onMouseOver="MM_openBrWindow('ciclocarbono1a.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="392,85,432,108" href="#" onMouseOver="MM_openBrWindow('ciclocarbono2.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="445,47,480,76" href="#" onMouseOver="MM_openBrWindow('ciclocarbono4.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="330,164,354,194" href="#" onMouseOver="MM_openBrWindow('ciclocarbono1b.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="145,247,192,278" href="#" onMouseOver="MM_openBrWindow('ciclocarbono1c.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="153,291,204,317" href="#" onMouseOver="MM_openBrWindow('ciclocarbono1c.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="312,311,354,329" href="#" onMouseOver="MM_openBrWindow('ciclocarbono3.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="490,301,526,333" href="#" onMouseOver="MM_openBrWindow('ciclocarbono3.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="575,177,624,205" href="#" onMouseOver="MM_openBrWindow('ciclocarbono4.htm','ciclodelcarbono','scrollbars=yes,width=306,height=150')">
+</map>
+<map name="Map"> 
+  <area shape="rect" coords="240,292,296,324" href="ciclonitrogeno4.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno4.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="362,164,397,195" href="ciclonitrogeno3.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno3.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="551,173,616,204" href="ciclonitrogeno1b.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno1b.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="125,347,196,393" href="ciclonitrogeno5.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno5.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="487,290,543,335" href="ciclonitrogeno2.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno2.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="626,265,675,290" href="ciclonitrogeno1b.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno1b.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="210,96,276,131" href="ciclonitrogeno5.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno5.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="356,80,390,135" href="ciclonitrogeno1a.htm" target="_parent" onMouseOver="MM_openBrWindow('ciclonitrogeno1a.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="696,250,726,293" href="ciclonitrogeno1c.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno1c.htm','ciclos','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="688,381,728,413" href="ciclonitrogeno1c.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclonitrogeno1c.htm','ciclos','scrollbars=yes,width=306,height=150')">
+</map>
+<map name="Map2"> 
+  <area shape="rect" coords="183,52,228,88" href="ciclofosforo11.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo11.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="165,117,204,140" href="ciclofosforo3.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo3.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="345,115,384,141" href="ciclofosforo2.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo2.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="419,320,467,347" href="ciclofosforo8.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo8.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="420,363,465,389" href="ciclofosforo9.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo9.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="140,228,188,247" href="ciclofosforo4.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo4.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="487,62,545,92" href="ciclofosforo11.htm" onMouseOver="MM_openBrWindow('ciclofosforo11.htm','ciclofosforo','scrollbars=yes,width=306,height=150')" target="_blank">
+  <area shape="rect" coords="631,168,675,188" href="ciclofosforo5.htm" onMouseOver="MM_openBrWindow('ciclofosforo5.htm','ciclofosforo','scrollbars=yes,width=306,height=150')" target="_blank">
+  <area shape="rect" coords="651,311,707,351" href="ciclofosforo10.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo10.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="367,288,416,310" href="ciclofosforo7.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo7.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="194,292,237,325" href="ciclofosforo6.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo6.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+  <area shape="rect" coords="417,83,466,113" href="ciclofosforo1.htm" target="_blank" onMouseOver="MM_openBrWindow('ciclofosforo1.htm','ciclofosforo','scrollbars=yes,width=306,height=150')">
+</map>
+</body>
+</html>

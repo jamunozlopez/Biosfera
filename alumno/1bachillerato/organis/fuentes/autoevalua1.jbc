@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>AUTOEVALUACIÓN&lt;center&gt;&lt;img src=&quot;../imagenes/LINNEO1.JPG&quot; alt=&quot;LINNEO1.JPG&quot; width=&quot;126&quot; height=&quot;157&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>AUTOEVALUACIÓN&lt;center&gt;&lt;img src=&quot;../imagenes/LINNEO1.JPG&quot; alt=&quot;LINNEO1.JPG&quot; width=&quot;126&quot; height=&quot;157&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Los seres vivos se agrupan en taxones. Los taxones inferiores se engloban en los taxones superiores. El orden jerárquico de los taxones es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Reino, clase, orden, filum, familia, género, especie</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Reino, orden, clase, filum, familia, género, especie</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Reino, orden, clase, género, familia, filum, especie</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Reino, filum, clase, orden, familia, género, especie</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las clasificaciones actuales de los seres vivos intentan reflejar su relación de</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Filogenia</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Anatomía</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Genética</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Embriología</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué característica NO presenta un individuo del Reino Moneras?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>ADN circular</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Citoplasma compartimentado</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pared protectora</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Ribosomas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El Reino Moneras está formado por individuos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Procariotas, unicelulares, con ADN circular</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Procariotas, pluricelulares, con ADN lineal</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Eucariotas, unicelulares, con ADN lineal</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Eucariotas, unicelulares, con ADN circular</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las algas cianofíceas pertenecen al Reino</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Moneras</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Protoctistas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Plantas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Hongos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los protozoos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Pluricelulares</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Heterótrofos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Simbiontes</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Quimiolitotrofos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las algas eucariotas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>No presentan pared celular</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Tienen células organizadas en tejidos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Tienen un ciclo de reproducción haplonte</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Tienen reproducción sexual</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las algas verdes son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Clorofitas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Diatomeas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Rodofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Feofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los hongos generalmente asocian sus células formando</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tejidos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Hifas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Ascas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Basidios</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los hongos saprófitos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Causan un perjucio a otro ser vivo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se alimentan de materia orgánica en descomposición</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Tienen una relación con otro ser vivo al que producen beneficio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son los hongos fotosintéticos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las plantas han logrado colonizar el medio terrestre gracias a</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La aparición de hojas, que captan mejor la luz</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La formación de la raíz, que capta agua y sales del suelo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La organización en raíz, tallo y hojas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La aparición de un tejido epidérmico</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las plantas se caracterizan por tener un ciclo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Haplobionte, donde el adulto es 2n</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Diplonte, donde el gametofito es el adulto</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Haplobionte, donde el adulto es haploide</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Haplodiplonte, con gametofito y esporofito</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los musgos perteecen a</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Briofitas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pteridofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Algas verdes</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Espermafitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los pinos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Briofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pteridofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Gimnospermas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Angiospermas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El fruto es caracterísico de</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Briofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pteridofitas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Gimnospermas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Angiospermas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los animales son seres</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Eucariotas, pluricelulares o unicelulares, heterótrofos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Eucariotas, plricelulares, heterótrofos, sin pared celular</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Procariotas, heterótrofos, pluricelulares</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Eucariotas, heterótrofos, pluricelulares, diblásticos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las esponjas son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Diblásticos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Nematodos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Platelmintos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Procordados</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los calamares son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Cefalópodos</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Bivalvos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Gasterópodos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Artrópodos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un escorpión es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un quelicerado</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un insecto</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un equinodermo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un crustáceo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una ballena es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un condrictio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un osteictio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un mamífero</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un anfibio</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>../autoevalua/clasi11.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

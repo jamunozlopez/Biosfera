@@ -1,0 +1,1174 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="100%" align="center">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/catabolismo.jpg" width="105" height="83"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/esquema_global_completo.jpg" width="105" height="79"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/ciclo_de_krebs.jpg" width="107" height="125"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/oxidacion_completo.jpg" width="105" height="80"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/energia_completo.jpg" width="105" height="125"></td>
+                                </tr>
+                                <tr>
+                                      <td width="100%" align="center">
+                                      <img border="0" src="miniaturas/glucolisis_completo.jpg" width="105" height="135"></td>
+                                </tr>
+                              </table>
+                      </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+                          <tr bgcolor="#BBDDBB"> 
+                            <td valign="top" height="31" colspan="3"><font class="txtnegro"><span class="txtnegro"></span>ENLACES</font><span class="txtnegro"> 
+                              DE INTER&Eacute;S</span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1"></td>
+                            <td width="522" valign="top"> 
+                              <table width="509" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="66">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" class="txt"><i>Las p&aacute;ginas 
+                                    web, que indicamos a continuaci&oacute;n, 
+                                    son enlaces que pueden servir de consulta 
+                                    para la realizaci&oacute;n de las actividades 
+                                    de investigaci&oacute;n propuestas en el apartado 
+                                    de contenidos. Tambi&eacute;n resultan de 
+                                    utilidad para profundizar en algunos conceptos 
+                                    que, por problemas de espacio, no hemos podido 
+                                    desarrollar en el referido apartado.</i> 
+                                    <p><i>La mayor parte de las p&aacute;ginas 
+                                      son procedentes de Centros Institucionales 
+                                      P&uacute;blicos de Investigaci&oacute;n, 
+                                      de Institutos privados de investigaci&oacute;n, 
+                                      de Universidades p&uacute;blicas y privadas 
+                                      y en algunos casos de revistas especializadas 
+                                      en citolog&iacute;a.</i></p>
+                                    <p><i>Casi todas son p&aacute;ginas en castellano, 
+                                      si bien existen algunas en portugu&eacute;s, 
+                                      italiano e ingl&eacute;s. Se consultan f&aacute;cilmente 
+                                      por estar desarrolladas en un lenguaje cient&iacute;fico 
+                                      que es accesible a la mayor parte de alumnos 
+                                      de 2&ordm; curso de Bachillerato.</i></p>
+                                    <p><i>Algunas p&aacute;ginas son extractos 
+                                      de publicaciones cient&iacute;ficas. Las 
+                                      indicamos como de inter&eacute;s por contener 
+                                      im&aacute;genes de microscop&iacute;a electr&oacute;nica 
+                                      u &oacute;ptica o esquemas y animaciones 
+                                      que pueden facilitar la consulta y extraer 
+                                      de ellas informaci&oacute;n gr&aacute;fica 
+                                      necesaria para la realizaci&oacute;n de 
+                                      las tareas propuestas.</i></p>
+                                    <p><i>Hemos clasificado la informaci&oacute;n 
+                                      de la web en funci&oacute;n de la tem&aacute;tica 
+                                      tratada: </i></p>
+                                    <p>Hacer la descripci&oacute;n de cada p&aacute;gina 
+                                      resultar&iacute;a tedioso y repetitivo por 
+                                      lo que simplemente mostramos el t&iacute;tulo 
+                                      con su hiperv&iacute;nculo: <font class="txtnegro"><span class="txtnegro"><i><a name="enlaces"></a></i></span></font></p>
+                                  </td>
+                                  <td bgcolor="#D1E9D1" class="txt">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="190">&nbsp;</td>
+                                  <td colspan="2" height="190"> 
+                                    <p>&nbsp;</p>
+                                    <ul>
+                                      <li><font class="txt"><a href="#citologia" class="txtnegrolink">Reacciones 
+                                        Redox.</a></font></li>
+                                      <li><font class="txt"><a href="#microscopia" class="txtnegrolink">Gluc&oacute;lisis.</a></font></li>
+                                      <li><font class="txt"><a href="#membrana" class="txtnegrolink">El 
+                                        ciclo de Krebs.</a></font></li>
+                                      <li><font class="txt"><a href="#virus" class="txtnegrolink">Acoplamiento 
+                                        quimiosm&oacute;tico. </a></font></li>
+                                      <li><font class="txt"><a href="#celula" class="txtnegrolink">Fermentaciones.</a></font></li>
+                                      <li><font class="txt"><a href="#mas" class="txtnegrolink">&szlig;-oxidaci&oacute;n 
+                                        de los &aacute;cidos grasos</a></font><font class="txt"><a href="#homeostasis" class="txtnegrolink">.</a></font></li>
+                                      <li><font class="txt"><a href="#fotosistemas" class="txtnegrolink">Los 
+                                        fotosistemas.</a></font></li>
+                                      <li><font class="txt"><a href="#ciclo_calvin" class="txtnegrolink">El 
+                                        ciclo de Calvin.</a></font></li>
+                                      <li><font class="txt"><a href="#quimiosintesis" class="txtnegrolink">Quimios&iacute;ntesis.</a></font></li>
+                                    </ul>
+                                    <font class="txt"><a name="citologia"></a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i>Reacciones 
+                                    Redox:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"> 
+                                  <a class="txtnegrolink" target="_blank" href="http://www.teletel.com.ar/quimica/reacciones_quimicas.htm">Reacciones 
+                                    químicas.</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="3">&nbsp;</td>
+                                  <td colspan="2" height="3">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"> 
+                                    <p class=MsoNormal><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'>
+                                    <a class="txtnegrolink" target="_blank" href="http://www.visionlearning.com/biblioteca_espanol/ciencia/quimica-1/CHE1.6s-reacciones.htm">Cambios 
+                                      de energ&iacute;a y Reacciones Qu&iacute;micas.</a></span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="10">&nbsp;</td>
+                                  <td class="txt" colspan="2" height="10">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><a href="http://www.monografias.com/trabajos6/ecoya/ecoya.shtml" target="_blank" class="txtnegrolink"><img src="../img/bolo.gif" width="9" height="13" border="0"></a></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www1.ceit.es/Asignaturas/quimica/Curso0/estequiometr%C3%ADa.htm" target="_blank" class="txtnegrolink"><span class="txtnegrolink">Estequiometr&iacute;a</span></a><span class="txtnegrolink">.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="2">&nbsp;</td>
+                                  <td colspan="2" height="2"><font class="txt"> 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"> <a href="http://www.fisicanet.com.ar/quimica/q1ap02/apq1_09b_Materia_en_Reacciones_Quimicas.php" target="_blank" class="txtnegrolink"> 
+                                    <span class="txtnegrolink">LA MATERIA EN LAS 
+                                    REACCIONES QU&Iacute;MICAS.</span></a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="23">&nbsp;</td>
+                                  <td colspan="2" height="23">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://ptro1.tripod.com/chemistry/id5.html" target="_blank" class="txtnegrolink"> 
+                                    <span class="txtnegrolink">Las reacciones 
+                                    qu&iacute;micas</span></a><span class="txtnegrolink">.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="25">&nbsp;</td>
+                                  <td colspan="2" height="25">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.lafacu.com/apuntes/quimica/ener_reac/default.htm" target="_blank" class="txtnegrolink"><span class="txtnegrolink">La 
+                                    energía y las reacciones químicas</span></a><span class="txtnegrolink">.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="24">&nbsp;</td>
+                                  <td colspan="2" height="24">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.aula21.net/primera/paginaspersonales.htm" class="txtnegrolink" target="_blank"><span class="txtnegrolink">Todo 
+                                    sobre reacciones qu&iacute;micas</span></a><span class="txtnegrolink">.<o:p></o:p></span></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="2">&nbsp;</td>
+                                  <td colspan="2" height="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"> 
+                                    <p class=g style='margin:0cm;margin-bottom:.0001pt'>
+                                    <a href="http://www.puc.cl/quimica/agua/composicion.htm" class="txtnegrolink" target="_blank"><span class="txtnegrolink">Composici&oacute;n 
+                                      y reacciones qu&iacute;micas</span></a><span class="txtnegrolink"><span style='font-family:
+Arial;mso-bidi-font-family:"Times New Roman";color:black'>.</span></span></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="2">&nbsp;</td>
+                                  <td colspan="2" height="2"> 
+                                    <p>&nbsp;</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://www.arrakis.es/~lluengo/enzimas.html" target="_blank" class="txtnegrolink"><span class="txtnegrolink">ENZIMAS</span></a><span class="txtnegrolink">.</span></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="24">&nbsp;</td>
+                                  <td class="txt" colspan="2" height="24">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><a href="http://fresno.cnice.mecd.es/~fgutie6/quimica2/Presentaciones/05Redox.ppt" target="_blank" class="txtnegrolink">Reacciones 
+                                    de transferencia de electrones</a>.</td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="23">&nbsp;</td>
+                                  <td colspan="2" height="23"> 
+                                    <p><a name="microscopia"></a> </p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Gluc&oacute;lisis</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.institutferran.org/inmunotoxicologia.htm" class="txtnegrolink" target="_blank">Reacciones 
+                                    de oxidorreducci&oacute;n.</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="17">&nbsp;</td>
+                                  <td colspan="2" height="17"><font class="txt"> 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/glucolisis.html" class="txtnegrolink" target="_blank">Glucolisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enzimas.gq.nu/Glucolisis.htm" class="txtnegrolink" target="_blank">La 
+                                    glucolisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="7">&nbsp;</td>
+                                  <td colspan="2" height="7">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://web.usal.es/%7Eevillar/glucolisis.htm" class="txtnegrolink" target="_blank">Degradaci&oacute;n 
+                                    de la glucosa</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://web.usal.es/%7Eevillar/regulaci.htm" class="txtnegrolink" target="_blank">Regulaci&oacute;n 
+                                    gluc&oacute;lisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="2">&nbsp;</td>
+                                  <td colspan="2" height="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ilustrados.com/publicaciones/EpypllypAyijnEOzGp.php" class="txtnegrolink" target="_blank">Primera 
+                                    fase del catabolismo de los az&uacute;cares: 
+                                    la GLUCOLISIS</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="6">&nbsp;</td>
+                                  <td colspan="2" height="6"><font class="txt"> 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://cfv.uv.es/debon/MATERIA%20VIVA%5CM-viva-II.doc" class="txtnegrolink" target="_blank">El 
+                                    citoplama celular: la glucolisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="14">&nbsp;</td>
+                                  <td colspan="2" height="14"> 
+                                    <p>&nbsp;</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.canal-h.net/webs/sgonzalez002/Bioquimic/GLUCOL.htm" class="txtnegrolink" target="_blank">Transformaci&oacute;n 
+                                    de la glucosa en piruvato</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="7">&nbsp;</td>
+                                  <td colspan="2" height="7"> 
+                                    <p><font class="txt"> </font></p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.monografias.com/trabajos15/carbohidratos/carbohidratos.shtml" class="txtnegrolink" target="_blank">Qu&eacute; 
+                                    proporci&oacute;n de la energ&iacute;a que 
+                                    genera la gluc&oacute;lisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="10">&nbsp;</td>
+                                  <td colspan="2" height="10"><font class="txt"> 
+                                    </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2" class="txt"><font class="txt"><a href="http://www.aula21.net/Nutriweb/glucidos.htm" class="txtnegrolink" target="_blank">Los 
+                                    az&uacute;cares y la gluc&oacute;lisis</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="27">&nbsp;</td>
+                                  <td colspan="2" height="27"> 
+                                    <p>&nbsp;</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2" class="txt"><font class="txt"><a href="http://es.wikipedia.org/wiki/Respiraci%C3%B3n_anaerobia" class="txtnegrolink" target="_blank">Respiraci&oacute;n 
+                                    anaerobia</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="26">&nbsp;</td>
+                                  <td colspan="2" height="26">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2" class="txt"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/metabolismo/met3glicolisis.htm" class="txtnegrolink" target="_blank">Glucolisis 
+                                    y citoplasma celular</a>.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2" height="28"><font class="txt"> 
+                                    <a name="membrana"></a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    El ciclo de Krebs:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="26">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2" height="26" class="txt"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/ciclokrebs.html" class="txtnegrolink" target="_blank">Ciclo 
+                                    de Krebs</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25">&nbsp;</td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://laguna.fmedic.unam.mx/~evazquez/0403/generalidades%20krebs.html" class="txtnegrolink" target="_blank">Glicolisis 
+                                    y ciclo de Krebs</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="2">&nbsp;</td>
+                                  <td colspan="2" height="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.biopsicologia.net/fichas/fic-8-4.html" class="txtnegrolink" target="_blank">Ciclo 
+                                    de Krebs - ciclos metab&oacute;licos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="3">&nbsp;</td>
+                                  <td colspan="2" height="3">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://enzimas.gq.nu/Cickrebs.htm" class="txtnegrolink" target="_blank">El 
+                                    ciclo de Krebs</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="24"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2" height="24"><font class="txt"><a href="http://boards2.melodysoft.com/app?ID=mitic&msg=241" class="txtnegrolink" target="_blank"> 
+                                    </a><a href="http://superfund.pharmacy.arizona.edu/toxamb/c1-1-1-4.html" class="txtnegrolink" target="_blank">Glicolisis 
+                                    y ciclo de Krebs: metabolismo de los az&uacute;cares</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://members.xoom.virgilio.it/DottorVirus/biologia.htm" class="txtnegrolink" target="_blank"> 
+                                    </a><a href="http://www.historiadelamedicina.org/krebs.html" class="txtnegrolink" target="_blank">Catabolismo 
+                                    en la mitocondria</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="16">&nbsp;</td>
+                                  <td colspan="2" height="16">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/biologia1.html" class="txtnegrolink" target="_blank">Biolog&iacute;a 
+                                    y metabolismo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.monografias.com/trabajos/celula/celula.shtml" class="txtnegrolink" target="_blank">La 
+                                    C&eacute;lula Viva</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://edicion-micro.usal.es/web/educativo/micro2/tema03.html" class="txtnegrolink" target="_blank"> 
+                                    </a><a href="http://www.arrakis.es/~lluengo/cadena.html" class="txtnegrolink" target="_blank">Cadena 
+                                    respiratoria</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="5">&nbsp;</td>
+                                  <td colspan="2" height="5">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.ugr.es/%7Eeianez/Microbiologia/03_Micro.html" class="txtnegrolink" target="_blank"> 
+                                    </a><a href="http://www.galeon.com/scienceducation/CAPITULOII.htm" class="txtnegrolink" target="_blank">La 
+                                    s&iacute;ntesis de ATP en la cadena respiratoria 
+                                    </a> </font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="33">&nbsp;</td>
+                                  <td colspan="2" height="33"><font class="txt"><a name="virus"></a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Acoplamiento quimiosm&oacute;tico:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://wwwbioq.unizar.es/Biofvirtual/Tema-FO/FO.htm" class="txtnegrolink" target="_blank"> 
+                                    Quimiosm&oacute;sis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.agro.unlpam.edu.ar/quimica2/test%20bioenerg%E9tica.html" class="txtnegrolink" target="_blank">
+                                  Bioenerg&eacute;tica</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/~rfluengo/bioquimica.html" class="txtnegrolink" target="_blank">Bioqu&iacute;mica</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="26">&nbsp;</td>
+                                  <td colspan="2" height="26">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.fc.uaem.mx/LICENCIATURA/plan98/tronco/biol1/bp-biol1.html" class="txtnegrolink" target="_blank"> 
+                                    Gradiente quimiosm&oacute;tico</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/metabolismo/met5.htm" class="txtnegrolink" target="_blank">La 
+                                    respiraci&oacute;n</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://laguna.fmedic.unam.mx/~evazquez/0403/introduccion%20fosforilacion%20oxidativa.html" class="txtnegrolink" target="_blank"> 
+                                    Fosforilaci&oacute;n oxidativa</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.bioq.unizar.es/Biofvirtual/Tema-FO/FO.htm" class="txtnegrolink" target="_blank">La 
+                                    fosforilaci&oacute;n oxidativa</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.lab314.com/cadena/cadena1.htm" class="txtnegrolink" target="_blank">Cadena 
+                                    transportadora de electrones</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.efn.uncor.edu/dep/biologia/intrbiol/metabolismo/met5.htm" class="txtnegrolink" target="_blank">
+                                  Síntesis 
+                                    de ATP en membrana</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i><font class="txt"><a name="celula"></a></font></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="28">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro"><i> 
+                                    Fermentaciones:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.zonadiet.com/bebidas/fermentacion.htm" class="txtnegrolink" target="_blank"> 
+                                    Proceso de Fermentaci&oacute;n</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="17">&nbsp;</td>
+                                  <td colspan="2" height="17">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.verema.com/opinamos/tribuna/articulos/levaduras02.htm" class="txtnegrolink" target="_blank">
+                                  Levaduras 
+                                    y la fermentación alcohólica (II)</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="19">&nbsp;</td>
+                                  <td colspan="2" height="19">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.monografias.com/trabajos11/ferme/ferme.shtml" class="txtnegrolink" target="_blank">Monografias.com 
+                                    - Elaboraci&oacute;n de pan </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://es.geocities.com/clapellini/pasteur.htm" class="txtnegrolink" target="_blank">Pasteur</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.geocities.com/fcastrocha/pasteur1.htm" class="txtnegrolink" target="_blank">Luis 
+                                    Pasteur</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://ar.dir.yahoo.com/Ciencia_y_tecnologia/Biologia/Biologos/Pasteur__Louis__1822_1895_/" class="txtnegrolink" target="_blank">Microbiolog&iacute;a 
+                                    y Pasteur </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://escuela.med.puc.cl/publ/HistoriaMedicina/PositivismoBacteriologia.html" class="txtnegrolink" target="_blank">La 
+                                    Medicina en la historia: Pasteur y la bacteriolog&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.iespana.es/natureduca/biog_pasteur.htm" class="txtnegrolink" target="_blank">BIOGRAF&Iacute;AS: 
+                                    Pasteur, Louis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.webfrancia.com/es/rubricas/huellas-francia/2002/01/28.htm" class="txtnegrolink" target="_blank">Huellas 
+                                    de Francia </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i><font class="txt"><a name="mas"></a></font></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="27">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro" height="27"><i>&szlig;-oxidaci&oacute;n 
+                                    de los &aacute;cidos grasos:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro" height="27"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.biopsicologia.net/fichas/page_721.html" class="txtnegrolink" target="_blank">&Aacute;cidos 
+                                    grasos </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.biopsicologia.net/fichas/fic-15-4.html" class="txtnegrolink" target="_blank">Oxidaci&oacute;n 
+                                    de los &aacute;cidos grasos </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www2.uah.es/biomodel/" class="txtnegrolink" target="_blank">BIOQU&Iacute;MICA 
+                                    Y BIOLOG&Iacute;A MOLECULAR</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.chasque.net/gamolnar/ciencias%20del%20deporte/ciencias.01.html" class="txtnegrolink" target="_blank">Ciencias 
+                                    del Deporte</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://docencia.udea.edu.co/lms/moodle/mod/resource/view.php?id=3967" class="txtnegrolink" target="_blank">Beta 
+                                    oxidaci&oacute;n de &aacute;cidos grasos I 
+                                    </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://escuela.med.puc.cl/paginas/publicaciones/MedicinaIntensiva/Soporte.html" class="txtnegrolink" target="_blank">Beta 
+                                    oxidaci&oacute;n de &aacute;cidos grasos</a><a href="http://www.webfrancia.com/es/rubricas/huellas-francia/2002/01/28.htm" class="txtnegrolink" target="_blank"> 
+                                    Il</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.zonadiet.com/nutricion/carnitina.htm" class="txtnegrolink" target="_blank">Carnitina 
+                                    </a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://colombiamedica.univalle.edu.co/Vol25No2/celulas.html" class="txtnegrolink" target="_blank">C&oacute;mo 
+                                    producen energ&iacute;a las c&eacute;lulas</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i><font class="txt"><a name="fotosistemas"></a></font></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="27">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro" height="27"><i>Los 
+                                    fotosistemas:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro" height="27"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://bio-cl.iespana.es/bio-cl/foto4.htm" class="txtnegrolink" target="_blank">FOTOS&Iacute;NTESIS</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/faseluminosa.html" class="txtnegrolink" target="_blank">Fase 
+                                    luminosa</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/~lluengo/fotosintesis.html" class="txtnegrolink" target="_blank">Fase 
+                                    luminosa de la fotosíntesis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.lafacu.com/apuntes/biologia/cloroplastos/default.htm" class="txtnegrolink" target="_blank">Cloroplastos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.forest.ula.ve/~rubenhg/fotosintesis/" class="txtnegrolink" target="_blank">
+                                  FOTOSÍNTESIS 
+                                    y fotosistemas</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://web.usal.es/%7Eevillar/fosffot.htm" class="txtnegrolink" target="_blank">Pigmentos 
+                                    fotosint&eacute;ticos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/introduccion/3intro.htm" class="txtnegrolink" target="_blank">Energ&iacute;a 
+                                    en seres vivos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.uam.es/personal_pdi/ciencias/bolarios/BiologiaCCAA/resumenes/tema8b.rtf" class="txtnegrolink" target="_blank">Prote&iacute;nas 
+                                    tilacoidales</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://chimera.javeriana.edu.co/bo303pdf2002/bo30312_p38p.pdf" class="txtnegrolink" target="_blank">Metabolismo 
+                                    de Carbohidratos</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i><font class="txt"><a name="ciclo_calvin"></a></font></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="27">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro" height="27"><i>El 
+                                    ciclo de Calvin:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro" height="27"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://library.thinkquest.org/C006669/data/Biol/espanol/photo_3.htm" class="txtnegrolink" target="_blank">
+                                  Ciclo de Calvin</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://library.thinkquest.org/C006669/data/Biol/espanol/photo_4.htm" class="txtnegrolink" target="_blank">
+                                  Plantas 
+                                    c4</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://ecociencia.fateback.com/articulos/fotosintesis.htm" class="txtnegrolink" target="_blank">Fase 
+                                    oscura de la fotos&iacute;ntesis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://bio-cl.iespana.es/bio-cl/foto6.htm" class="txtnegrolink" target="_blank">Fase 
+                                    oscura</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.botanical-online.com/botanical6.htm" class="txtnegrolink" target="_blank">
+                                  Índice 
+                                    de Plantas</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/~lluengo/acticelu.html" class="txtnegrolink" target="_blank">
+                                  Bacterias 
+                                    y ciclo de Calvin</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.sagan-gea.org/hojared/AutoEvTemD.htm" class="txtnegrolink" target="_blank">
+                                  Test 
+                                    de autoevaluaci&oacute;n</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://es.geocities.com/fisicas/cientificos/quimicos/melvin_calvin.htm" class="txtnegrolink" target="_blank">Melvin 
+                                    Calvin</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://fai.unne.edu.ar/biologia/planta/fotosint.htm" class="txtnegrolink" target="_blank">Fotos&iacute;ntesis</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i><font class="txt"><a name="quimiosintesis"></a></font></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="9" height="27">&nbsp;</td>
+                                  <td valign="top" width="467" bgcolor="#BBDDBB" class="txtnegro" height="27"><i>Quimios&iacute;ntesis:</i></td>
+                                  <td width="10" valign="middle" bgcolor="#BBDDBB" class="txtnegro" height="27"><i><a href="#enlaces"><img src="../img/flechasubir.gif" width="10" height="5" border="0"></a></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.surfear.com/?surf=biolog%EDa" class="txtnegrolink" target="_blank">
+                                  Biolog&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="20">&nbsp;</td>
+                                  <td colspan="2" height="20">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://ciencia.nasa.gov/headlines/y2001/ast13apr_1.htm" class="txtnegrolink" target="_blank">La 
+                                    Vida Submarina</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.wwf.es/azores.php" class="txtnegrolink" target="_blank">WWF/Adena</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.geocities.com/ciclidos/articulos/bacterias.htm" class="txtnegrolink" target="_blank">
+                                  Bacterias 
+                                    nitrificantes I</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.la-atlantida.com/5artic/acuarismo/bacterias.htm" class="txtnegrolink" target="_blank">ATLAS 
+                                    DE PECES LA ATLÁNTIDA - Artículos sobre acuarismo 
+                                    general</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22"><i></i></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.arrakis.es/%7Elluengo/microbio.html" class="txtnegrolink" target="_blank">Microbiolog&iacute;a</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://pci204.cindoc.csic.es/tesauros/Biol_Ani/html/BIO_M2.HTM" class="txtnegrolink" target="_blank">
+                                  Microbiología 
+                                    marina</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="25"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2"><font class="txt"><a href="http://www.sagan-gea.org/hojaredsuelo/paginas/10hoja.html" class="txtnegrolink" target="_blank">microorganismos 
+                                    y suelo</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="22">&nbsp;</td>
+                                  <td colspan="2" height="22">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9" height="13"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" colspan="2" height="13"><font class="txt"><a href="http://www.microbe.org/espanol/microbes/bacteria.asp" class="txtnegrolink" target="_blank">Las 
+                                    Bacterias</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9" height="28">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="1"></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/fase_no_ciclica.jpg" width="105" height="77"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/fase_luminosa_las_dos.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/mitocondria_funcionamiento.jpg" width="105" height="115"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/ciclo_de_calvin.jpg" width="105" height="109"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/pag189_catabolismo_con.jpg" width="105" height="125"></td>
+                              </tr>
+                              <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/transporte_completo.jpg" width="105" height="129"></td>
+                              </tr>
+                            </table>
+                      </td>
+                    </tr>
+                    </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

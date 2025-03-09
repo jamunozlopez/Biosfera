@@ -1,0 +1,370 @@
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif','imagenes/estratos.jpg')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/citologia.gif" width="742" height="25" name="Image1"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="538" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="209" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos2.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (3/15) - <a href="contenidos4.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td    valign="top"> 
+                              <p><span class="txtnegro">3.- M&Eacute;TODO DE ESTUDIO 
+                                DE LA C&Eacute;LULA:</span></p>
+                              <p align="center"><img src="imagenes/electronico.gif" width="237" height="270" alt="&quot;Microscopio Electr&oacute;nico&quot;"> 
+                                <br>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          
+                                        <td class="txt"> 
+                                          <p class="txt">Para la visualizaci&oacute;n 
+                                            de las c&eacute;lulas y sus estructuras, 
+                                            por lo general no visibles a simple 
+                                            vista, se requiere la utilizaci&oacute;n 
+                                            de aparatos &oacute;pticos espec&iacute;ficos, 
+                                            llamados <span class="txtnegro">microscopios</span>. 
+                                            Hoy en d&iacute;a se clasifican en 
+                                            &oacute;pticos y electr&oacute;nicos.</p>
+                                           </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <div align="center"><br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          
+                                          
+                                        <td class="txt"> 
+                                          <p class="txt">Para obtener preparaciones 
+                                            duraderas el proceso es m&aacute;s 
+                                            largo y complejo. Se requieren t&eacute;cnicas 
+                                            de <span class="txtnegro">fijaci&oacute;n</span>, 
+                                            <span class="txtnegro">inclusi&oacute;n</span>, 
+                                            <span class="txtnegro">corte</span> 
+                                            y <span class="txtnegro">coloraci&oacute;n</span>. 
+                                            Estos procesos son diferentes seg&uacute;n 
+                                            estemos trabajando con microscopio 
+                                            &oacute;ptico o electr&oacute;nico. 
+                                            Este &uacute;ltimo puede facilitar 
+                                            la visi&oacute;n de una imagen biol&oacute;gica 
+                                            con un mill&oacute;n de aumentos, 
+                                            mil veces m&aacute;s que el &oacute;ptico..</p>
+                                           </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <br>
+                              <div align="center">
+<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ4.htm" class="txtnegrolink">Actividad 
+                                        4</a> </font> <a href="activ4.htm"><img src="imagenes/activ4.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <div align="center"></div>
+                              <p align="center"><a name="act_inves4"></a> </p>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      de investigaci&oacute;n 4: M&eacute;todos 
+                                      de estudio de las c&eacute;lulas</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"><img src="imagenes/electronico.gif" width="133" height="151" align="right" hspace="20" alt="&quot;Microscopio Electr&oacute;nico&quot;">Introducci&oacute;n: 
+                                      <font size="-2">Para el avance en citolog&iacute;a 
+                                      y el conocimiento de la arquitectura y fisiolog&iacute;a 
+                                      celular son imprescindibles el uso del microscopio 
+                                      &oacute;ptico y el microscopio electr&oacute;nico. 
+                                      Sin embargo la t&eacute;cnica de preparaci&oacute;n 
+                                      de muestras para observaci&oacute;n en ambos 
+                                      instrumentos no es igual, debido a que el 
+                                      fundamento f&iacute;sico y t&eacute;cnico 
+                                      de ambos es diferente. Mientras que el &oacute;ptico 
+                                      debe su funcionamiento a un conjunto de 
+                                      lentes superpuestas que dejan pasar la luz 
+                                      visible, el electr&oacute;nico se basa en 
+                                      un haz de electrones que por diversos campos 
+                                      magn&eacute;ticos, generados en bobinas 
+                                      electromagn&eacute;ticas, generan el aumento 
+                                      de la imagen debido a continuas ampliaciones 
+                                      del campo de dispersi&oacute;n, agrandando 
+                                      la imagen.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Se trata de 
+                                        buscar informaci&oacute;n precisa y concreta 
+                                        sobre el funcionamiento de los microscopios 
+                                        &oacute;ptico y electr&oacute;nico. Una 
+                                        vez conocido este funcionamiento, qu&eacute; 
+                                        t&eacute;cnicas espec&iacute;ficas de 
+                                        preparaciones microsc&oacute;picas se 
+                                        necesitan para visualizar las muestras 
+                                        en ambos instrumentos.</font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Descripci&oacute;n<font size="-2">: En las p&aacute;ginas 
+                                      web seleccionadas para este fin se explican 
+                                      los procesos de fijaci&oacute;n, inclusi&oacute;n, 
+                                      corte, coloraci&oacute;n y contrastado, 
+                                      as&iacute; como el funcionamiento del microscopio 
+                                      &oacute;ptico y el electr&oacute;nico de 
+                                      contraste de fases o de barrido. Una vez 
+                                      que obtengas la informaci&oacute;n debes 
+                                      seleccionarla y realizar un peque&ntilde;o 
+                                      trabajo en word. En &eacute;l debes confeccionar 
+                                      un manual ordenado y preciso de t&eacute;cnicas 
+                                      b&aacute;sicas de preparaciones microsc&oacute;picas. 
+                                      En el primer apartado de ese manual redactar&aacute;s 
+                                      una explicaci&oacute;n f&iacute;sica del 
+                                      funcionamiento de los diversos tipos de 
+                                      microscopios.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Recursos<font size="-2">: <br>
+                                      <a href="http://www.joseacortes.com/practicas/microscopio.htm"><font color="#FFFFCC">El 
+                                      Microscopio &oacute;ptico compuesto.</font></a> <br>
+                                      <a href="http://www.angelfire.com/bc2/biologia/microscopia.htm"><font color="#FFFFCC">El 
+                                      Microscopio &oacute;ptico. </font></a><br>
+                                      <a href="http://www.um.es/sace/servicios/microscopia.php"><font color="#FFFFCC">Microscop&iacute;a 
+                                      &oacute;ptica y electr&oacute;nica. </font></a><br>
+                                      <a href="http://enciclopedia.us.es/index.php/Microscopio"><font color="#FFFFCC">Todo 
+                                      sobre diversos tipos de microscopios. </font></a><br>
+                                      <a href="http://edicion-micro.usal.es/web/educativo/micro2/tema02.html"><font color="#FFFFCC">Observaci&oacute;n 
+                                      de los microorganismos.</font></a></font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Se tendr&aacute; en cuenta 
+                                      la descripci&oacute;n exhaustiva y pormenorizada 
+                                      de las diversas t&eacute;cnicas y m&eacute;todos 
+                                      de confecci&oacute;n de preparaciones de 
+                                      microscop&iacute;a &oacute;ptica y electr&oacute;nica. 
+                                      Tambi&eacute;n se valorar&aacute; el orden 
+                                      y la presentaci&oacute;n del manual de preparaciones. 
+                                      El alumno debe realizar, de forma muy met&oacute;dica, 
+                                      un protocolo para realizaci&oacute;n de 
+                                      preparaciones microsc&oacute;picas diferentes 
+                                      seg&uacute;n sea para microscop&iacute;a 
+                                      &oacute;ptica en tejidos animales o vegetales 
+                                      o para microscop&iacute;a electr&oacute;nica 
+                                      de contraste de fases o de barrido.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <p align="right"> <a class="txtnegrolink" href="contenidos2.htm"><span class="txtnegrolink"> 
+                                anterior</span></a><span class="txtnegrolink"> 
+                                - (3/15) - <a href="contenidos4.htm" class="txtnegrolink"> 
+                                siguiente</a></span> 
+                            </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

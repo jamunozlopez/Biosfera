@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Clasificación de seres vivos I</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Clasificación de seres vivos I</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/bacteria.gif&quot; alt=&quot;bacteria.gif&quot; width=&quot;250&quot; height=&quot;177&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Moneras</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/Ganoderma.jpg&quot; alt=&quot;Ganoderma.jpg&quot; width=&quot;250&quot; height=&quot;157&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Hongos</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/mantis2.jpg&quot; alt=&quot;mantis2.jpg&quot; width=&quot;250&quot; height=&quot;266&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Animales</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/musgo2.jpg&quot; alt=&quot;musgo2.jpg&quot; width=&quot;250&quot; height=&quot;172&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Plantas</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/PARAME2.JPG&quot; alt=&quot;PARAME2.JPG&quot; width=&quot;250&quot; height=&quot;223&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Protoctistas</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/Penicillium1.jpg&quot; alt=&quot;Penicillium1.jpg&quot; width=&quot;250&quot; height=&quot;343&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Hongos</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/phylloriza.jpg&quot; alt=&quot;phylloriza.jpg&quot; width=&quot;250&quot; height=&quot;196&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Animales</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/sepia.jpg&quot; alt=&quot;sepia.jpg&quot; width=&quot;250&quot; height=&quot;167&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Animales</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/stentorCiliado.jpg&quot; alt=&quot;stentorCiliado.jpg&quot; width=&quot;250&quot; height=&quot;167&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Protoctistas</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>&lt;center&gt;&lt;img src=&quot;../imagenes/tubicola.jpg&quot; alt=&quot;tubicola.jpg&quot; width=&quot;250&quot; height=&quot;372&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Animales</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de hacer correspondencias</exercise-subtitle>
+<instructions>Clasifica los siguientes seres vivos dentro de su grupo correspondiente.</instructions>
+<next-ex-url>clasi12.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<separate-javascript-file>0</separate-javascript-file>
+<guess-correct>Correcto.</guess-correct>
+<guess-incorrect>Intenta otra vez. Las correspondencias incorrectas han sido borradas.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Índice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>1</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

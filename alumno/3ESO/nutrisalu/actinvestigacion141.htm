@@ -1,0 +1,1253 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to UNREGISTERED."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>INVESTIGACI&#211;N   14De el Tocino de cerdo, coloca ordenadamente los &#243;rganos que trabajan de una forma m&#225;s activa y definitiva en su digesti&#243;n.</TITLE>
+
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+}
+
+is = new BrowserCheck()
+
+var CanShow = true;
+if ((is.v<4)||(is.ns5)){CanShow=false;}
+if ((is.mac==true)&&((is.ie4==true)||(is.ie5==true))){CanShow=false;}
+if (CanShow==false){
+	alert('WARNING: Your browser version cannot show this page.');
+	history.back();
+}
+
+var Punctuation = unescape(')}]!;:?,.%85%92%94%9B%A8%B4%B7%BB');
+var Openers = unescape('"({[%82%84%8B%91%93%A1%AB%BF');
+var HighZ = 0;
+
+var LowerString=unescape('abcdefghijklmnopqrstuvwxyz%9A%9C%E0%E1%E2%E3%E4%E5%E6%E7%E8%E9%EA%EB%EC%ED%EE%EF%F0%F1%F2%F3%F4%F5%F6%F8%F9%FA%FB%FC%FD%FE%FF');
+var UpperString=unescape('ABCDEFGHIJKLMNOPQRSTUVWXYZ%8A%8C%C0%C1%C2%C3%C4%C5%C6%C7%C8%C9%CA%CB%CC%CD%CE%CF%D0%D1%D2%D3%D4%D5%D6%D8%D9%DA%DB%DC%DD%DE%9F');
+
+function ConvertCase(InString, Direction){
+
+	var FromString = '';
+	var ToString = '';
+
+	if (Direction == 0){
+		FromString = UpperString;
+		ToString = LowerString;
+	}
+	else{
+		FromString = LowerString;
+		ToString = UpperString;
+	}
+
+	var i = 0;
+	j = 0;
+	var OutString = '';
+	for (i=0; i<InString.length; i++){
+		if (FromString.indexOf(InString.charAt(i)) > -1){
+			j = FromString.indexOf(InString.charAt(i));			
+			OutString += ToString.charAt(j);
+		}
+		else{	
+			OutString += InString.charAt(i);
+		}
+	}
+	return OutString;
+}
+
+
+var ExerciseTitle = '<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr bgcolor="#BBDDBB" align="center"><td align="center" colspan="2"><font class="txt" size="3"><b>INVESTIGACI&#211;N   14<br></b></font></td></tr><tr></tr><tr><td colspan="2" align="center" bgcolor="#e6ffe6"><br><font class="txt" size="2"><b>De el Tocino de cerdo, coloca ordenadamente los &#243;rganos que trabajan de una forma m&#225;s activa y definitiva en su digesti&#243;n.<br><br><center><img src="dibujos/investigacion3/tocino.gif" alt="tocino.gif" width="175" height="90" border="1"></img></center></b></font></td></tr></table>'; 
+var ExerciseSubtitle = '';
+var Instructions = '';
+var CorrectResponse = '<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB"><tr><td align="center"><b>&#161;Correcto!</b></td></tr></table>';
+var IncorrectResponse = '<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB"><tr><td align="center"><b>Lo siento,  intentelo de nuevo.</b></td></tr></table>';
+var ThisMuchCorrect = '';
+var TheseAnswersToo = '';
+var YourScoreIs = '<b>Su puntuaci&oacute;n es: </b>';
+var NextCorrect = '';
+var CheckCaption = 'Comprobar ';
+var HintCaption = 'Hint';
+var RestartCaption = 'Reiniciar';
+var DivWidth = 400; //default value
+var FeedbackWidth = 200; //default
+var OKCaption = 'Aceptar'; //'OK';
+var PopupBGColor = '#FFFFFF';
+var ExBGColor = '#E6FFE6'; //'#DDDDDD';
+var PageBGColor = '#E6FFE6'; //'#FFFFFF';
+var NavBarColor = '#E6FFE6'; //'#000000';
+var TextColor = '#006666';
+var DropTotal = 3; // number of lines that will be available for dropping on
+var Gap = 4; //Gap between two segments when they're next to each other on a line
+var PageIndent = 0;
+var CapitalizeFirst = false;
+var Output = '';
+var TempSegment = '';
+var FirstSegment = -1;
+var FirstDiv = -1;
+var Penalties = 0;
+
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	if (is.ns) this.W = window.innerWidth;
+	if (is.ie) this.W = document.body.clientWidth;
+	if (is.ns) this.H = window.innerHeight;
+	if (is.ie) this.H = document.body.clientHeight;
+}
+
+var NavBarCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="2">';
+NavBarCode += '<FORM NAME="NavButtons"><TR><TD ALIGN="CENTER" VALIGN="MIDDLE">';
+NavBarCode += '<FONT FACE=" Arial, Helvetica, sans-serif" SIZE="-1">';
+
+
+
+NavBarCode += '<INPUT TYPE="button" VALUE="Siguiente" onClick="location=\'actinvestigacion142.htm\'">';
+
+
+
+NavBarCode += '</FONT></TD></TR></FORM></TABLE>';
+
+var TitleCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="10">';
+TitleCode += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE" BGCOLOR="#E6FFE6">';
+TitleCode += '<FONT SIZE="+1" FACE=" Arial, Helvetica, sans-serif" COLOR="#006666">' + ExerciseTitle + '</FONT><BR>';
+TitleCode += '<FONT SIZE="-1" FACE=" Arial, Helvetica, sans-serif" COLOR="#006666">' + ExerciseSubtitle + '<BR>';
+if (Instructions != ''){
+	TitleCode += Instructions + '<BR>';
+}
+
+TitleCode += '<FORM NAME="ExCheck">'
+TitleCode += '<INPUT TYPE="BUTTON" VALUE="Comprobar " NAME="CheckButton" ';
+TitleCode += 'onClick="javascript:CheckResults(0);return false;">';
+
+
+TitleCode += '<INPUT TYPE="BUTTON" VALUE="Reiniciar" NAME="RestartButton" ';
+TitleCode += 'onClick="javascript:Restart();return false;">';
+
+TitleCode += '</FORM>';
+TitleCode += '</FONT></TD></TR></TABLE>';
+
+var DropLineCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="2">';
+DropLineCode += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE">';
+DropLineCode += '&nbsp;<BR><HR></TD></TR></TABLE>';
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+// Dynamic Layer Object
+
+// sophisticated layer/element targeting and animation object which provides the core functionality needed in most DHTML applications
+// 19990604
+
+// Copyright (C) 1999 Dan Steinman
+// Distributed under the terms of the GNU Library General Public License
+// Available at http://www.dansteinman.com/dynduo/
+
+
+function DynLayer(id,nestref,frame) {
+	if (!DynLayer.set && !frame) DynLayerInit()
+	this.frame = frame || self
+	if (is.ns) {
+		if (is.ns4) {
+			if (!frame) {
+				if (!nestref) var nestref = DynLayer.nestRefArray[id]
+				if (!DynLayerTest(id,nestref)) return
+				this.css = (nestref)? eval("document."+nestref+".document."+id) : document.layers[id]
+			}
+			else this.css = (nestref)? eval("frame.document."+nestref+".document."+id) : frame.document.layers[id]
+			this.elm = this.event = this.css
+			this.doc = this.css.document
+		}
+
+		if (is.ns5) {
+			this.elm = document.getElementById(id)
+			this.css = this.elm.style
+			this.doc = document
+		}
+
+		this.x = this.css.left
+		this.y = this.css.top
+		this.w = this.css.clip.width
+		this.h = this.css.clip.height
+	}
+
+	else if (is.ie) {
+		this.elm = this.event = this.frame.document.all[id]
+		this.css = this.frame.document.all[id].style
+		this.doc = document
+		this.x = this.elm.offsetLeft
+		this.y = this.elm.offsetTop
+		this.w = (is.ie4)? this.css.pixelWidth : this.elm.offsetWidth
+		this.h = (is.ie4)? this.css.pixelHeight : this.elm.offsetHeight
+	}
+
+//HBS extra properties
+	this.showing = true;
+	this.key = -1;
+	this.tag = 0;
+	this.index = -1;
+
+	this.id = id
+	this.nestref = nestref
+	this.obj = id + "DynLayer"
+	eval(this.obj + "=this")
+}
+
+function DynLayerMoveTo(x,y) {
+
+	if (x!=null) {
+		this.x = x
+		if (is.ns) this.css.left = this.x
+		else this.css.pixelLeft = this.x
+	}
+
+	if (y!=null) {
+		this.y = y
+		if (is.ns) this.css.top = this.y
+		else this.css.pixelTop = this.y
+	}
+}
+
+function DynLayerMoveBy(x,y) {
+	this.moveTo(this.x+x,this.y+y)
+}
+
+function DynLayerShow() {
+	this.css.visibility = (is.ns)? "show" : "visible"
+//HBS extension
+	this.showing = true;
+}
+
+function DynLayerHide() {
+	this.css.visibility = (is.ns)? "hide" : "hidden"
+//HBS extension
+	this.showing = false;
+}
+
+DynLayer.prototype.moveTo = DynLayerMoveTo
+DynLayer.prototype.moveBy = DynLayerMoveBy
+DynLayer.prototype.show = DynLayerShow
+DynLayer.prototype.hide = DynLayerHide
+DynLayerTest = new Function('return true')
+
+//Dimension-setting extensions to DynLayer by S & M
+
+function DynLayerSetTop(NewTop){ 
+	this.y = NewTop;
+	this.css.top = NewTop;
+}
+
+DynLayer.prototype.setTop = DynLayerSetTop;
+
+
+function DynLayerSetLeft(NewLeft) {
+	this.x = NewLeft;
+	this.css.left = NewLeft;
+}
+
+DynLayer.prototype.setLeft = DynLayerSetLeft;
+
+function DynLayerSetWidth(NewWidth) {
+	this.w = NewWidth;
+	if (is.ie){this.css.width = NewWidth;}
+	else{this.css.clip.width = NewWidth;}
+}
+
+DynLayer.prototype.setWidth = DynLayerSetWidth;
+
+// DynLayer GetContent Width/Height Methods
+// retrieves the total width/height of the contents of the layer when they are not known
+function DynLayerGetContentWidth() {
+	return (is.ns)? this.doc.width : this.elm.scrollWidth
+}
+function DynLayerGetContentHeight() {
+	return (is.ns)? this.doc.height : this.elm.scrollHeight
+}
+
+DynLayer.prototype.getContentWidth = DynLayerGetContentWidth
+DynLayer.prototype.getContentHeight = DynLayerGetContentHeight
+
+function DynLayerNormalizeHeight() {
+	this.h = this.getContentHeight();
+	if (is.ie4){this.css.height = this.h;}
+	else{this.css.clip.height = this.h;}
+//alert(this.id + ' height:' + this.h)
+}
+
+function DynLayerNormalizeWidth() {
+	this.w = this.getContentWidth();
+	if (is.ie4){this.css.width = this.w;}
+	else{this.css.clip.width = this.w;}
+}
+
+DynLayer.prototype.normalizeWidth = DynLayerNormalizeWidth;
+
+DynLayer.prototype.normalizeHeight = DynLayerNormalizeHeight;
+
+function DynLayerCenter(H,V){
+	var VScrollPos = 0;
+	var HScrollPos = 0;
+
+//Get the scrollbar position
+	if (is.ie){
+		VScrollPos = document.body.scrollTop;
+		HScrollPos = document.body.scrollLeft;
+	}
+	else {
+		VScrollPos = window.pageYOffset;
+		HScrollPos = window.pageXOffset;
+	}
+
+	var NewL = this.x;
+	if (H == true){
+		NewL = Math.floor((pg.W/2) + HScrollPos - (this.w/2));
+	}
+
+	var NewT = this.y;
+	if (V == true){
+		NewT = Math.floor((pg.H/2) + VScrollPos - (this.h/2));
+	}
+	this.moveTo(NewL, NewT);
+}
+
+DynLayer.prototype.center = DynLayerCenter;
+
+// DynLayer Set Background Method
+// changes the background (the layer must be clipped)
+function DynLayerSetbg(color) {
+	if (is.ns) this.doc.bgColor = color
+	else this.css.backgroundColor = color
+}
+DynLayer.prototype.setbg = DynLayerSetbg
+
+
+// DynLayerInit Function
+
+function DynLayerInit(nestref) {
+
+	if (!DynLayer.set) DynLayer.set = true
+	if (is.ns) {
+		if (nestref) ref = eval('document.'+nestref+'.document')
+		else {nestref = ''; ref = document;}
+		for (var i=0; i<ref.layers.length; i++) {
+			var divname = ref.layers[i].name
+			DynLayer.nestRefArray[divname] = nestref
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'","'+nestref+'")')
+			}
+
+			if (ref.layers[i].document.layers.length > 0){
+				DynLayer.refArray[DynLayer.refArray.length] = (nestref=='')? ref.layers[i].name : nestref+'.document.'+ref.layers[i].name
+			}
+		}
+
+		if (DynLayer.refArray.i < DynLayer.refArray.length) {
+			DynLayerInit(DynLayer.refArray[DynLayer.refArray.i++])
+		}
+	}
+
+	else if (is.ie) {
+		for (var i=0; i<document.all.tags("DIV").length; i++) {
+			var divname = document.all.tags("DIV")[i].id
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'")')
+			}
+		}
+	}
+	return true
+}
+
+DynLayer.nestRefArray = new Array()
+DynLayer.refArray = new Array()
+DynLayer.refArray.i = 0
+DynLayer.set = false
+
+
+// Write Method
+
+function DynLayerWrite(html) {
+	if (is.ns) {
+		this.doc.open()
+		this.doc.write(html)
+		this.doc.close()
+	}
+
+	else if (is.ie) {
+		this.event.innerHTML = html
+	}
+}
+
+DynLayer.prototype.write = DynLayerWrite
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+CharList = new Array();
+CharList[0]='%ED';
+CharList[1]='%CD';
+
+for (var i=0; i<CharList.length; i++){CharList[i] = unescape(CharList[i])}
+EscapeList = new Array();
+EscapeList[0]='&iacute;';
+EscapeList[1]='&Iacute;';
+
+
+function Webble(InString){
+	var OutString = '';
+	var NextChar = '';
+	var FoundCode = '';
+	var j = 0;
+	var i = 0;
+	for (i=0; i<InString.length; i++){
+		FoundCode = '';
+		NextChar = InString.charAt(i);
+		for (j=0; j<CharList.length; j++){
+			if (NextChar == CharList[j]){
+				FoundCode = EscapeList[j];
+			}
+		}
+		if (FoundCode.length > 0){
+			OutString += FoundCode;
+		}
+		else{
+			OutString += NextChar;
+		}
+	}
+	return OutString;
+}
+
+
+function WriteFeedback(Stuff){
+	Stuff = Webble(Stuff);
+	var Content = '<TABLE BORDER="1" CELLPADDING="5">';
+	Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE=" Arial, Helvetica, sans-serif">';
+	Content += Stuff;
+	Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+	Content += OKCaption + '" onClick="Feedback.hide()"></FORM>'; 
+	Content += '</FONT></TD></TR></TABLE>';
+	Feedback.write(Content);
+	Feedback.normalizeWidth();
+	Feedback.normalizeHeight();
+	if (Feedback.w > FeedbackWidth){
+		Content = '<TABLE BORDER="1" CELLPADDING="5" WIDTH="' + FeedbackWidth + '">';
+		Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE=" Arial, Helvetica, sans-serif">';
+		Content += Stuff;
+		Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+		Content += OKCaption + '" onClick="Feedback.hide()"></FORM>'; 
+		Content += '</FONT></TD></TR></TABLE>';
+		Feedback.write(Content);
+		Feedback.normalizeWidth();
+		Feedback.normalizeHeight();
+	}
+	Feedback.center(true,true);
+	if (Feedback.y < (Title.y + Title.h)){
+		Feedback.setTop(Title.y + Title.h);
+	}
+	Feedback.show();
+
+	Feedback.css.zIndex = HighZ + 1;
+
+	if (is.ie){document.OKForm.CloseMe.focus();}
+	else{Feedback.doc.OKForm.CloseMe.focus();}
+}
+
+// Drag Object
+// an object that makes an unlimited number of DynLayers draggable
+// 19990326
+
+// Copyright (C) 1999 Dan Steinman
+// Distributed under the terms of the GNU Library General Public License
+// Available at http://www.dansteinman.com/dynduo/
+
+
+function Drag(dynlayer) {
+	this.element = dynlayer
+	this.obj = null
+	this.array = new Array()
+	this.active = false
+	this.offsetX = 0
+	this.offsetY = 0
+	this.zIndex = 0
+	this.resort = true
+	this.add = DragAdd
+	this.remove = DragRemove
+	this.setGrab = DragSetGrab
+	this.mouseDown = DragMouseDown
+	this.mouseMove = DragMouseMove
+	this.mouseUp = DragMouseUp
+}
+
+function DragAdd() {
+	for (var i=0; i<arguments.length; i++) {
+		var l = this.array.length
+		this.array[l] = arguments[i]
+		this.array[l].dragGrab = new Array(0,this.array[l].w,this.array[l].h,0)
+		this.zIndex += 1
+	}
+}
+
+function DragSetGrab(dynlayer,top,right,bottom,left) { 
+	dynlayer.dragGrab = new Array(top,right,bottom,left)
+}
+
+function DragRemove() {
+	for (var i=0; i<arguments.length; i++) {
+		for (var j=0; j<this.array.length; j++) {
+			if (this.array[j]==arguments[i]) {
+				for (var k=j;k<=this.array.length-2;k++) this.array[k] = this.array[k+1]
+				this.array[this.array.length-1] = null
+				this.array.length -= 1
+				break
+			}
+		}
+	}
+}
+
+
+function DragMouseDown(x,y) {
+	for (var i=this.array.length-1;i>=0;i--) {
+		var lyr = this.array[i]
+
+		if (this.element) {x+=this.element.x; y+=this.element.y}
+
+		if (checkWithin(x,y,lyr.x+lyr.dragGrab[3],lyr.x+lyr.dragGrab[1],lyr.y+lyr.dragGrab[0],lyr.y+lyr.dragGrab[2])) {
+			this.obj = this.array[i]
+			this.offsetX = x-this.obj.x
+			this.offsetY = y-this.obj.y
+			this.active = true
+			break
+		}
+	}
+
+	if (this.active && this.resort) {
+		this.obj.css.zIndex = this.zIndex++
+//Track the zIndex
+		HighZ = this.obj.css.zIndex;
+		for (var j=i;j<=this.array.length-2;j++) this.array[j] = this.array[j+1]
+		this.array[this.array.length-1] = this.obj
+	}
+
+	if (!this.active) return false
+	else return true
+}
+
+function DragMouseMove(x,y) {
+
+	if (!this.active) return false
+	else {
+		if (this.element) {x+=this.element.x; y+=this.element.y}
+		this.obj.moveTo(x-this.offsetX,y-this.offsetY)
+		return true
+	}
+}
+
+function DragMouseUp() {
+	if (!this.active) return false
+	else {
+		this.active = false
+		return true
+	}
+}
+
+
+// automatically define the "drag" object
+
+drag = new Drag()
+
+
+// checkWithin() function is required
+
+function checkWithin(x,y,left,right,top,bottom) {
+	if (x>=left && x<right && y>=top && y<bottom) return true
+	else return false
+}
+
+function mouseDown(e) {
+	if ((is.ns && e.which!=1) || (is.ie && event.button!=1)) return true
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+//Check to see if the feedback box is showing; if so, hide it and quit
+	if (((is.ns)&&(Feedback.css.visibility == "show")) || ((is.ie)&&(Feedback.css.visibility == "visible"))){
+		Feedback.hide();
+		return true;
+	}
+
+	if (drag.mouseDown(x,y)) {
+// put more code here to do something else when starting a drag
+
+		draggableSelected(x,y);
+		return false;
+	}
+	else return true
+}
+
+function mouseMove(e) {
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+	if (drag.mouseMove(x,y)) {
+// put more code here to do something else while dragging
+
+		return false
+	}
+	else return true
+}
+
+function mouseUp(e) {
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+	if (drag.mouseUp()) {
+
+// put more code here to do something else when finished a drag
+		draggableDropped(x,y)
+		return false
+	}
+	else {return true}
+}
+
+
+var DragLen = 0;
+DragStuff = new Array();
+Draggables = new Array();
+Drops = new Array();
+var activeDrag = 0;
+
+function draggableSelected (x,y) {
+
+	var temp = 0;
+
+//on mousedown, determine which draggable object is currently being dragged
+
+	if (checkWithin(x,y,Draggables[activeDrag].x,Draggables[activeDrag].x + Draggables[activeDrag].w,Draggables[activeDrag].y,Draggables[activeDrag].y + Draggables[activeDrag].h)) {
+
+//click is on same draggable as was clicked on before, so ignore any others that may be stacked
+
+	}
+
+	else {
+		for (var i=0;i<DragLen;i++){
+			if (checkWithin(x,y,Draggables[i].x,Draggables[i].x + Draggables[i].w,Draggables[i].y,Draggables[i].y + Draggables[i].h)) {
+				if (Draggables[i].css.zIndex >= Draggables[temp].css.zIndex) {
+					activeDrag = i;
+				}
+			}
+		}		
+	}
+}
+
+
+function draggableDropped (x,y) {
+
+//Snap to lines
+	var i = 0;
+	var SnapLine = y;
+	if (y < (Drops[0].y + Drops[0].h)){
+		SnapLine = Drops[0].y;
+	}
+	for (i=1; i<DropTotal; i++){
+		if ((y>Drops[i].y)&&(Draggables[activeDrag].y < Drops[2].y + Drops[2].h)){
+			SnapLine = Drops[i].y;
+		}
+	}
+	Draggables[activeDrag].setTop(SnapLine);
+	SetXs();
+	CheckOver(-1);
+	var FD = GetGuessSequence();
+	if ((FD == -1)&&(FirstDiv > -1)){
+		WriteDiv('Drag' + FirstDiv, Segments[FirstDiv][0]);
+	}
+	if (((FD != FirstDiv)&&(CapitalizeFirst == true))&&(FD > -1)){
+		if (FirstDiv > -1){
+			WriteDiv('Drag' + FirstDiv, Segments[FirstDiv][0]);
+		}
+	}
+	if ((FD > -1)&&(CapitalizeFirst == true)){
+		var Temp = CapFirst(Segments[FD][0]);
+		WriteDiv('Drag' + FD, Temp);
+		FirstDiv = FD;
+	}
+}
+
+function CapFirst(InString){
+	var i = 0;
+	if ((Openers.indexOf(InString.charAt(i))>-1)||(InString.charAt(i) == ' ')){
+		i++;
+	}
+	if ((Openers.indexOf(InString.charAt(i))>-1)||(InString.charAt(i) == ' ')){
+		i++;
+	}
+	var Temp = InString.charAt(i);
+	Temp = ConvertCase(Temp, 1);
+	InString = InString.substring(0, i) + Temp + InString.substring(i+1, InString.length);
+	return InString;
+}
+
+function CheckResults(ChkType){
+
+//Check to see if the feedback box is showing; if so, hide it and quit
+	if (Feedback.showing == true){
+		Feedback.hide();
+		return;
+	}
+//Get sequence student has chosen
+	GetGuessSequence();
+
+//Compile the answer
+	Output = CompileString(GuessSequence);
+
+//Check the answer
+	CheckAnswer(ChkType);
+}
+
+function GetGuessSequence(){
+//Put pointers to draggables in 3 arrays based on the lines they're sitting on
+	var i = 0;
+	Line1 = new Array();
+	Line2 = new Array();
+	Line3 = new Array();
+	for (i=0; i<DragLen; i++){
+		if (Draggables[i].y == Drops[0].y){
+			Line1[Line1.length] = Draggables[i];
+		}
+		if (Draggables[i].y == Drops[1].y){
+			Line2[Line2.length] = Draggables[i];
+		}
+		if (Draggables[i].y == Drops[2].y){
+			Line3[Line3.length] = Draggables[i];
+		}
+	}
+
+//Sort the 3 arrays based on the Left of each div
+	Line1.sort(CompDrags);
+	Line2.sort(CompDrags);
+	Line3.sort(CompDrags);
+
+//Put the tags into the GuessSequence array
+	GuessSequence.length = 0;
+	var Counter = 0;
+	for (i=0; i<Line1.length; i++){
+		GuessSequence[Counter] = Line1[i].tag;
+		Counter++;
+	}
+	for (i=0; i<Line2.length; i++){
+		GuessSequence[Counter] = Line2[i].tag;
+		Counter++;
+	}
+	for (i=0; i<Line3.length; i++){
+		GuessSequence[Counter] = Line3[i].tag;
+		Counter++;
+	}
+//Set the variable recording which div is first
+	var NewFirstDiv = -1;
+
+	if (Line1.length > 0){
+		NewFirstDiv = Line1[0].index;
+	}
+	else{
+		if (Line2.length > 0){
+			NewFirstDiv = Line2[0].index;
+		}
+		else{
+			if (Line3.length > 0){
+				NewFirstDiv = Line3[0].index;
+			}
+			else{
+				NewFirstDiv = -1;
+			}
+		}		
+	}
+	return NewFirstDiv;
+}
+
+function CompDrags(a,b){
+	return a.x - b.x; 
+}
+
+function FindSegment(SegID){
+	var Seg = '';
+	for (var i=0; i<Segments.length; i++){
+		if (Segments[i][1] == SegID){
+			Seg = Segments[i][0];
+			break;
+		}
+	}
+	return Seg;
+}
+
+function CompileString(InArray){
+	var OutString = '';
+	var i = 0;
+	OutArray = new Array();
+
+	for (i=0; i<InArray.length; i++){
+		OutArray[OutArray.length] = FindSegment(InArray[i]);
+	}
+
+	if (OutArray.length > 0){
+		OutString = OutArray[0];
+	}
+	else{
+		OutString = '';
+	}
+	var Spacer = '';
+
+	for (i=1; i<OutArray.length; i++){
+		Spacer = ' ';
+		if ((Openers.indexOf(OutString.charAt(OutString.length-1)) > -1)||(Punctuation.indexOf(OutArray[i].charAt(0)) > -1)){
+			Spacer = '';
+		}
+		OutString = OutString + Spacer + OutArray[i];		
+	}
+
+//Capitalize the first letter if necessary
+	if (CapitalizeFirst == true){
+		i = 0;
+		if ((Openers.indexOf(OutString.charAt(i))>-1)||(OutString.charAt(i) == ' ')){
+			i++;
+		}
+		if ((Openers.indexOf(OutString.charAt(i))>-1)||(OutString.charAt(i) == ' ')){
+			i++;
+		}
+		var Temp = OutString.charAt(i);
+		Temp = ConvertCase(Temp, 1);
+		OutString = OutString.substring(0, i) + Temp + OutString.substring(i+1, OutString.length);
+	}
+	return OutString;
+}
+
+function CheckAnswer(CheckType){
+
+	if (GuessSequence.length < 1){
+		if (CheckType == 1){
+			Penalties++;
+			WriteFeedback(NextCorrect + '<BR><BR><I>' + FindSegment(Answers[0][0]) + '</I>');
+		}
+		return;
+	}
+
+	var i = 0;
+	var j = 0;
+	var k = 0;
+	var WellDone = '';
+	var WhichCorrect = -1;
+	var TryAgain = '';
+	var LongestCorrectBit = '';
+	TempCorrect = new Array();
+	LongestCorrect = new Array();
+	var TempHint = '';
+	var HintToReturn = 1;
+	var OtherAnswers = '';
+
+	for (i=0; i<Answers.length; i++){
+		TempCorrect.length = 0;
+		for (j=0; j<Answers[i].length; j++){
+			if (Answers[i][j] == GuessSequence[j]){
+				TempCorrect[j] = GuessSequence[j];
+			}
+			else{
+				TempHint = Answers[i][j];
+				break;
+			}
+		}
+		if ((TempCorrect.length == GuessSequence.length)&&(TempCorrect.length == Answers[i].length)){
+			WhichCorrect = i;
+			break;
+		}
+		else{
+			if (TempCorrect.length > LongestCorrect.length){
+				LongestCorrect.length = 0;
+				for (k=0; k<TempCorrect.length; k++){
+					LongestCorrect[k] = TempCorrect[k];
+				}
+				HintToReturn = TempHint;
+			} 
+		}	
+	}
+	if (WhichCorrect > -1){
+		for (i=0; i<Answers.length; i++){
+			if (i!=WhichCorrect){
+				OtherAnswers += '<BR>' + CompileString(Answers[i]);
+			}
+		}
+		WellDone = '<I>' + Output + '</I><BR><BR>' + CorrectResponse + '<BR>';
+
+//Do score calculation here
+		var Score = Math.floor(((Segments.length-Penalties) * 100)/Segments.length);
+		WellDone += YourScoreIs + ' ' + Score + '%.<BR>';
+
+		if (OtherAnswers.length > 0){
+			WellDone += TheseAnswersToo + '<I>' + OtherAnswers + '</I>';
+		}
+		WriteFeedback(WellDone);
+		return;
+	}
+
+	else{
+		TryAgain = '<I>' + CompileString(GuessSequence) + '</I><BR><BR>';
+		Penalties++;
+
+		if ((CheckType == 0)||(LongestCorrect.length==0)){
+			TryAgain += IncorrectResponse + '<BR>';
+		}
+
+		if (LongestCorrect.length > 0){
+			LongestCorrectBit = CompileString(LongestCorrect);
+			GuessSequence.length = LongestCorrect.length;
+			TryAgain += '<BR>' + ThisMuchCorrect + '<BR><I>' + LongestCorrectBit + '</I><BR>';
+		}
+
+		if (CheckType == 1){
+			TryAgain += '<BR>' + NextCorrect + '<BR>' + FindSegment(HintToReturn);
+		}
+
+		WriteFeedback(TryAgain);
+	}
+}
+
+
+var Segments = new Array();
+Segments[0] = new Array();
+Segments[0][0] = unescape('Intestino Delgado');
+Segments[0][1] = 2;
+Segments[0][2] = 0;
+Segments[1] = new Array();
+Segments[1][0] = unescape('H%EDgado');
+Segments[1][1] = 1;
+Segments[1][2] = 0;
+
+
+var GuessSequence = new Array();
+
+var Answers = new Array();
+Answers[0] = new Array(1,2);
+
+
+function StartUp(){
+
+	pg = new PageDim();
+	var i = 0;
+
+	DivWidth = Math.floor((pg.W*4)/5);
+	PageIndent = Math.floor((pg.W - DivWidth)/2);
+	FeedbackWidth = Math.floor(DivWidth/2);
+
+//Insert this in all the variables
+	NavBarCode = ReplaceStuff('[DivWidth]', DivWidth, NavBarCode);
+	TitleCode = ReplaceStuff('[DivWidth]', DivWidth, TitleCode);
+	DropLineCode = ReplaceStuff('[DivWidth]', DivWidth, DropLineCode);
+
+	DynLayerInit();
+
+//Hide the feedback div
+	Feedback.hide();
+
+//Write the navigation bar
+	NavBar.write(NavBarCode);
+	NavBar.normalizeHeight();
+	NavBar.setWidth(DivWidth);
+	NavBar.center(true,false);
+	NavBar.setTop(10);
+
+//Write the title stuff
+	Title.write(TitleCode);
+	Title.normalizeHeight();
+	Title.setWidth(DivWidth);
+	Title.center(true,false);
+	Title.setTop(NavBar.y + NavBar.h);
+
+//Write the drop divs
+	for (i=0; i<DropTotal; i++){
+		eval('Drop' + i).write(DropLineCode);
+		Drops[i] = eval('Drop' + i);
+		Drops[i].setWidth(DivWidth);
+		Drops[i].center(true,false);
+	}
+
+//Position the drop divs
+	Drops[0].setTop(Title.y + Title.h + 4);
+	if (DropTotal>1){
+		for (i=1; i<DropTotal; i++){
+			Drops[i].setTop(Drops[i-1].y + Drops[i-1].h)
+		}
+	} 
+
+//Set up mouse event capturing
+	document.onmousedown = mouseDown;
+	document.onmousemove = mouseMove;
+	document.onmouseup = mouseUp;
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP) 
+
+//Write the content into each of the draggable divs, and adjust their sizes
+	DragLen = Segments.length;
+	var temp = 0;
+	for (i=0; i<DragLen; i++){
+		WriteDiv('Drag' + i, '&nbsp;' + Segments[i][0] + '&nbsp;');
+
+//Add draggables to an array, define properties for draggables and set default values
+		Draggables[i] = eval('Drag' + i);
+		Draggables[i].tag = Segments[i][1];
+		Draggables[i].index = i;
+		Draggables[i].normalizeHeight();
+		Draggables[i].normalizeWidth();
+	}
+
+//jumble the order in which the draggables are presented each time the page is run
+	Draggables = Shuffle(Draggables);
+
+//Position the draggable divs, based on their height and width
+	var DivTop = Drops[DropTotal-1].y + Drops[DropTotal-1].h + 4;
+	var DivHeight = Draggables[0].h;
+	var RowWidth = 0;
+	TempRow = new Array();
+	i = -1;
+	var j = 0;
+	var OldRowWidth = 0;
+	while (i<DragLen-1){
+		i++;
+		TempRow[TempRow.length] = i;
+		OldRowWidth = RowWidth;
+		RowWidth += Draggables[i].w + 4;
+		if (RowWidth > DivWidth){
+			RowWidth = OldRowWidth;
+			if (i > 0){i--;}
+			TempRow.length = TempRow.length - 1;
+			Draggables[TempRow[0]].moveTo(Math.floor((pg.W-RowWidth)/2), DivTop);
+			if (TempRow.length > 1){
+				for (j=1; j<TempRow.length; j++){
+					Draggables[TempRow[j]].moveTo(Draggables[TempRow[j-1]].x + Draggables[TempRow[j-1]].w + 4, DivTop);
+				}
+			}
+			DivTop += DivHeight + 4;
+			RowWidth = 0;
+			TempRow.length = 0; 
+		}
+	}
+	if (TempRow.length > 0){
+		Draggables[TempRow[0]].moveTo(Math.floor((pg.W-RowWidth)/2), DivTop);
+	}
+	if (TempRow.length > 1){
+		for (j=1; j<TempRow.length; j++){
+			Draggables[TempRow[j]].moveTo(Draggables[TempRow[j-1]].x + Draggables[TempRow[j-1]].w + 4, DivTop);
+		}
+	}
+
+//	var DivLeft = PageIndent;
+//	
+	
+	for (i=0; i<DragLen; i++){
+//		if ((DivLeft + Draggables[i] + 4) > (PageIndent + DivWidth)){
+//			DivTop += DivHeight;
+//			DivLeft = PageIndent;
+//		} 
+//		Draggables[i].moveTo(DivLeft, DivTop);
+		Draggables[i].homeLeft = Draggables[i].x;
+		Draggables[i].homeTop = Draggables[i].y;
+//		DivLeft += Draggables[i].w + 4;
+		drag.add(Draggables[i]);
+	}
+}
+
+function WriteDiv(divName, newDivText){
+	while (newDivText.length < 5){
+		newDivText = '&nbsp;' + newDivText + '&nbsp;';
+	}
+	newDivText = Webble(newDivText);
+	var Content = '<TABLE BORDER="0"><TR><TD BGCOLOR="#E6FFE6">';
+	Content += '<FONT FACE=" Arial, Helvetica, sans-serif" COLOR="#006666">';
+	Content += newDivText;
+	Content += '</TD></TR></TABLE>';
+	eval(divName).write(Content);
+	eval(divName).normalizeWidth();
+}
+
+function Shuffle(InArray){
+	
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function SetXs(){
+	for (var i=0; i<DragLen; i++){
+		Draggables[i].key = Draggables[i].x;
+	}
+}
+
+function CheckOver(NoMove){
+	for (var i=0; i<DragLen; i++){
+		for (var j=0; j<DragLen; j++){
+			if (i!=j){
+				var ax = Draggables[i].x;
+				var ay = Draggables[i].y;
+				var bl = Draggables[j].x;
+				var br = Draggables[j].x + Draggables[j].w + Gap;
+				var bt = Draggables[j].y
+				var bb = Draggables[j].y + Draggables[j].h;
+				if (checkWithin(ax, ay, bl, br, bt, bb)){
+					if ((i==NoMove)||(Draggables[i].key < Draggables[j].key)){
+						Draggables[j].moveTo(ax + Draggables[i].w + Gap, Draggables[j].y);
+						if ((Draggables[j].x + Draggables[j].w) > (PageIndent + DivWidth)){
+							Draggables[j].moveTo(PageIndent, Draggables[j].y + Drops[0].h);
+							Draggables[j].key = PageIndent;
+						}
+						CheckOver(j);
+					}
+					else{
+						Draggables[i].moveTo(bl + Draggables[j].w + Gap, Draggables[i].y);
+						if ((Draggables[i].x + Draggables[i].w) > (PageIndent + DivWidth)){
+							Draggables[i].moveTo(PageIndent, Draggables[i].y + Drops[0].h);
+							Draggables[i].key = PageIndent;
+						}
+						CheckOver(i);	
+					}
+				}
+			}	
+		}
+	}
+}
+
+function Restart(){
+	for (var i=0; i<DragLen; i++){
+		Draggables[i].moveTo(Draggables[i].homeLeft, Draggables[i].homeTop);
+	}
+	Penalties = 0;
+}
+
+</SCRIPT>
+
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+
+<BODY BACKGROUND="dibujos/fondoo.gif" LINK="#0000ff" VLINK="#0000cc" onLoad="StartUp()">
+	
+<SCRIPT LANGUAGE="JavaScript">
+	var OutStuff = '';
+
+	var TotDrag = Segments.length;
+
+	for (i=0; i<TotDrag; i++){
+		OutStuff = '<STYLE TYPE="text/css">#Drag'
+		OutStuff += i;
+		OutStuff += 'Div';
+		OutStuff += '{position:absolute; left:350; top:100; height: 10; background-color: #E6FFE6; layer-background-color: #E6FFE6;}';
+		OutStuff += '</STYLE>';
+		OutStuff += '<DIV ID="Drag' + i + 'Div"></DIV>';
+		document.write(OutStuff);
+	}
+
+	OutStuff = '<STYLE TYPE="text/css">#NavBarDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10;';
+	OutStuff += 'background-color:' + NavBarColor + '; layer-background-color: ' + NavBarColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="NavBarDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#TitleDiv';
+	OutStuff += '{position:absolute; left:0; top:200; height: 10; width: 10;';
+	OutStuff += 'background-color:' + PageBGColor + '; layer-background-color: ' + PageBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="TitleDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#FeedbackDiv';
+	OutStuff += '{position:absolute; left:0; top:1500; height: 10; ';
+	OutStuff += 'background-color:' + PopupBGColor + '; layer-background-color: ' + PopupBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="FeedbackDiv"></DIV>';
+	document.write(OutStuff);
+
+	for (i=0; i<DropTotal; i++){
+		OutStuff = '<STYLE TYPE="text/css">#Drop'
+		OutStuff += i;
+		OutStuff += 'Div';
+		OutStuff += '{position:absolute; left:-50; top:-50; height: 50; width: 50; ';
+		OutStuff += 'background-color:' + PageBGColor + '; layer-background-color: ' + PageBGColor + ';}';
+		OutStuff += '</STYLE>';
+		OutStuff += '<DIV ID="Drop' + i + 'Div"></DIV>';
+		document.write(OutStuff);
+	}
+
+</SCRIPT>
+
+</BODY>
+</HTML>

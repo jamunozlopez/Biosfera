@@ -1,0 +1,35 @@
+Broken Links: 
+
+
+
+External Links: 
+
+mapaweb1.htm	mailto:biosfera@cnice.mec.es
+index.htm	../biosfera/profesor/img/blog1.gif
+index.htm	../biosfera/profesor/img/unidades1.gif
+index.htm	../biosfera/profesor/img/aplicaciones1.gif
+index.htm	../biosfera/profesor/img/experiencias1.gif
+index.htm	../biosfera/profesor/img/formacion1.gif
+index.htm	../biosfera/profesor/img/mapaweb11.gif
+index.htm	../biosfera/profesor/img/foros1.gif
+index.htm	../biosfera/profesor/img/recursos1.gif
+4eso/1.htm	../../alumno/4ESO/SERVIVO/index.htm
+
+
+Orphaned Files: 
+
+presentacion.swf
+img/flechabajar.gif
+img/flechasubir.gif
+img/logoCNICE2001.gif
+img/LOGOMECD.gif
+img/pto_marron.gif
+img/pto_rosa.gif
+img/tierra.gif
+img/tierra_pq.gif
+img/triangulo.gif
+img/triangulo_rosa.gif
+
+
+Files: 70 Total,  27 HTML,  11 Orphaned
+Links: 1151 Total,  1141 OK,  0 Broken,  10 External

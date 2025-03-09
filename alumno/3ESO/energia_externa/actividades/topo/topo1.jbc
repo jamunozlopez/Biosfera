@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Las escalas</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La escala 1:500 representa</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>1 centímetro del mapa, 5 metros en la realidad.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>5 centímetros del mapa, 1 metro en la realidad.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>5 metros del mapa, 1 centímetro de la realidad.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>1 centímetro del mapa, 50 metros en la realidad.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Si un centímetro en el mapa representa 5 kilómetros, ¿cuál es la escala correspondiente?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>1:1.500.000</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>1:500</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>1:500.000</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>1:5.000</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En el mapa que representa la imagen de la página de contenidos, la distancia entre el Refugio del Charco y Casar del Soto es de 5 centímetros. ¿Cuál es la distancia en la realidad?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>1250 metros.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>125000 metros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>12&apos;5 kilómetros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>250 metros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En el mapa que representa la imagen de la página de contenidos, la distancia entre Aldeanueva del Monte y el Refugio del Charco es de 7&apos;2 centímetros. ¿Cuál es la distancia en la realidad?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>1800 metros.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>720 metros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>180000 metros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>72 kilómetros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En el mapa que representa la imagen de la página de contenidos, la distancia entre la cota 736 y la cota 742 es de 6&apos;8 centímetros. ¿Cuál es la distancia en la realidad?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>1,7 kilómetros.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>68 kilómetros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>170000 metros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>17 kilómetros.</text>
+<correct>0</correct>
+<feedback>intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas.</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta.</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

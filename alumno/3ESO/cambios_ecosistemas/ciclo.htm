@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+-->
+</style>
+<link href="../../estilos/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" onload="MM_preloadImages('../actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" alink="#006666" bgcolor="#ffffff" link="#006666" marginheight="0" marginwidth="0" text="#000000" vlink="#006666">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="760">
+  <tbody><tr>
+    <td valign="top"> 
+      <table border="0" cellpadding="0" cellspacing="0" height="740" width="760">
+        <tbody><tr> 
+          <td height="35" width="760">
+            <table border="0" cellpadding="0" cellspacing="0" height="30" width="760">
+              <tbody><tr>
+                <td width="760"> 
+                  <img src="../img/logo_biosfera.jpg" border="0" height="35" width="760"></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="8" valign="top" width="760"> 
+            <table border="0" cellpadding="0" cellspacing="0" height="6" width="760">
+              <tbody><tr> 
+                <td height="1" valign="top"><img src="../img/sombra.gif" border="0" height="6" width="760"></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="697" valign="top">
+            <table bgcolor="#e6ffe6" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr> 
+                <td align="center" height="25"> 
+                  <table border="0" cellpadding="0" cellspacing="0" width="723">
+                    <tbody><tr> 
+                      <td height="25" width="723">
+                      <img src="image/contenidos/contaminacion.gif" border="0" height="25" width="742"></td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table bgcolor="#006666" border="0" cellpadding="0" cellspacing="0" width="760">
+                    <tbody><tr align="center"> 
+                      <td valign="top">
+                        <table border="0" cellpadding="0" cellspacing="1" width="760">
+                          <tbody><tr bgcolor="#ffffff"> 
+                            <td align="center" bgcolor="#e6ffe6"> 
+                              <table style="border-collapse: collapse;" border="0" bordercolor="#111111" cellpadding="6" cellspacing="0" width="758">
+                                <tbody><tr> 
+                                  <td bgcolor="#bbddbb" height="19" width="486">
+									<p class="txtnegro">El ciclo integral del agua urbana </p></td>
+                                  <td align="right" bgcolor="#bbddbb" height="19" width="260">&nbsp;
+                                  </td>
+                                </tr>
+                              </tbody></table>
+                              <table id="AutoNumber2" border="0" cellspacing="1" width="100%">
+                                <tbody><tr>
+                                  <td width="4%">&nbsp;</td>
+                                  <td width="92%">
+                              <table width="694" height="41" border="0" cellspacing="1">
+                                <tr>
+                                  <td width="369"><blockquote>
+                                    <p class="txt"><b>Introducci&oacute;n</b></p>
+                                    <p align="left" class="txt">Todos habr&eacute;is visto o escuchado alguna campa&ntilde;a sobre el ahorro de agua. Es un bien escaso e imprescindible. Para hacer un uso racional del recurso hay una gran cantidad de empresas y entidades que se dedican a la gesti&oacute;n integral del agua. As&iacute;, se encargan de tareas como hacer llegar agua de calidad a tu grifo o que el agua est&eacute; libre de residuos procedentes de tu ciudad cuando te ba&ntilde;es en el r&iacute;o, la playa o un embalse. Esta labor, que en principio parece tan sencilla, ha supuesto y supone una gran inversi&oacute;n tecnol&oacute;gica y econ&oacute;mica que se financia parcialmente a trav&eacute;s del recibo del agua.</p>
+                                    <p class="txt"><b>Descripci&oacute;n de la tarea</b></p>
+                                    <p class="txt">Para conocer un poco m&aacute;s del ciclo integral del agua en la ciudad observa atentamente la siguiente animaci&oacute;n y resuelve las tareas que aparecen en ella. Una vez la hayas visto, intenta solucionar las actividades que te proponemos.</p>
+                                  </blockquote>                                    <p class="txt">&nbsp;</p></td>
+                                  <td width="312"><p align="right" class="txt">
+									<img src="img/bebiendo.jpg" width="309" height="437" alt="Niño bebiendo en una fuente"></p>
+                                      </td>
+                                </tr>
+                              </table>
+                              <table style="border-collapse: collapse;" id="AutoNumber1" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td valign="top" width="100%">
+                                  <p class="txt" align="left">&nbsp;</p>
+                                  <p class="txt" style="text-align: center;" align="left">
+									<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" height="500" width="705">
+										<param name="movie" value="img/explorando_agua.swf">
+										<param name="quality" value="High">
+										<embed src="img/explorando_agua.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" quality="High" height="500" width="705"></object>
+									</p>
+									<p class="txt" style="text-align: center;" align="left">&nbsp;</p>
+									<table id="table3" border="0" width="100%">
+										<tbody><tr>
+											<td width="33%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                              <tbody>
+                                                <tr bgcolor="#bbddbb">
+                                                  <td width="134"><p align="center"><span class="txtnegrolink"> 
+													<a class="txtnegrolink" target="_blank" href="actividades/actividad1.htm">Actividad 1</a></span><a target="_blank" href="actividades/actividad1.htm"><img src="img/match.jpg" border="2"></a></p></td>
+                                                </tr>
+                                              </tbody>
+											  </table></td>
+											<td width="34%">
+                              <table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                <tbody><tr bgcolor="#bbddbb"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="actividades/actividad2.htm">Actividad 
+                                    2</a></span><a target="_blank" href="actividades/actividad2.htm"><img src="img/crucigrama.jpg" border="2"></a></p>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+                                        	</td>
+											<td width="33%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                              <tbody>
+                                                <tr bgcolor="#bbddbb">
+                                                  <td width="134"><p align="center"><span class="txtnegrolink"> 
+													<a class="txtnegrolink" target="_blank" href="actividades/actividad3.htm">Actividad 3</a></span><a target="_blank" href="actividades/actividad3.htm"><img src="img/match.jpg" border="2"></a></p></td>
+                                                </tr>
+                                              </tbody>
+											  </table></td>
+										</tr>
+									</tbody></table>
+                              	<p class="txt" style="text-align: center;" align="left">&nbsp;</p>
+									<p class="txt" style="text-align: center;" align="left">
+									<b>Ampliación de contenidos por 
+									investigación</b></p>
+									<p class="txt" style="text-align: center;" align="left">&nbsp;</p>
+                                  <p class="txt" align="left"><b>Descripción de 
+                                  la tarea</b></p>
+									<p class="txt">Profundiza en las diferentes fases del ciclo integral del agua. Cualquiera de los temas de ampliaci&oacute;n tiene enlaces a otras animaciones. Una vez visitadas puedes realizar una peque&ntilde;a actividad de recapitulaci&oacute;n. Estos temas de ampliaci&oacute;n tambi&eacute;n se prestan a la realizaci&oacute;n presentaciones de diapositivas.</p>
+									<p class="txt"><strong>1.- Captaci&oacute;n</strong></p>
+									<p class="txt">En la animaci&oacute;n se menciona que las fuentes de captaci&oacute;n de aguas pueden ser superficiales o subterr&aacute;neas.</p>
+									<ul type="disc">
+									  <li class="MsoNormal"> <a href="http://w3.cnice.mec.es/eos/MaterialesEducativos/mem2000/astronomia/chicos/index.html" target="_blank" class="Estilo1"> <span class="txt">&iquest;Sab&iacute;as que existen otras alternativas?</span></a>									  </li>
+									  <li class="MsoNormal"> <a href="http://w3.cnice.mec.es/eos/MaterialesEducativos/mem/astronomia/indice.html" target="_blank" class="Estilo1"> <span class="txt">&iquest;Se puede utilizar el agua de mar como fuente de agua para el consumo humano?</span></a></li>
+									  <li class="MsoNormal"><span class="txt">&iquest;Qu&eacute; tratamiento crees que se necesitar&iacute;a realizar para utilizarla?</span></li>
+									  </ul>									
+									<p class="txt">Investiga utilizando los enlaces siguientes o bien un buscador:</p>
+									<blockquote>
+									  <p class="txtnegrolink"><a href="http://www.consumer.es/web/es/medio_ambiente/urbano/2006/05/25/152370.php" target="_blank">Revista Consumer: &Oacute;smosis inversa</a><br>
+									      <a href="http://www.elmundo.es/elmundo/2005/graficos/may/s1/desaladora.html" target="_blank">El Mundo: Funcionamiento de una planta desaladora</a></p>
+									  </blockquote>									
+									<table id="table3" border="0" width="100%">
+                                      <tbody>
+                                        <tr>
+                                          <td width="33%">&nbsp;</td>
+                                          <td width="34%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                              <tbody>
+                                                <tr bgcolor="#bbddbb">
+                                                  <td width="134"><p align="center"><span class="txtnegrolink"> 
+													<a class="txtnegrolink" target="_blank" href="actividades/actividad4.htm">Actividad 4</a></span><a target="_blank" href="actividades/actividad4.htm"><img src="img/match.jpg" width="100" height="75" border="2"></a></p></td>
+                                                </tr>
+                                              </tbody>
+                                          </table></td>
+                                          <td width="33%">&nbsp;</td>
+                                        </tr>
+                                      </tbody>
+									  </table>									
+									<p class="txt"><strong>2.- Tratamientos</strong></p>									
+									  <p class="txt">Ya hemos visto que tanto al inicio como al final del ciclo urbano el agua es sometida a tratamientos: a la entrada se somete a potabilizaci&oacute;n y a la salida a depuraci&oacute;n. Pero...</p>
+									  <ul type="disc">
+                                        <li class="MsoNormal"> <a href="http://w3.cnice.mec.es/eos/MaterialesEducativos/mem2000/astronomia/chicos/index.html" target="_blank" class="Estilo1"> <span class="txt">&iquest;Has visitado una planta potabilizadora?</span></a> </li>
+                                        <li class="MsoNormal"> <a href="http://w3.cnice.mec.es/eos/MaterialesEducativos/mem/astronomia/indice.html" target="_blank" class="Estilo1"> <span class="txt">&iquest;Y una depuradora?</span></a></li>
+                                        <li class="MsoNormal"><span class="txt">&iquest;Sabes c&oacute;mo funcionan?</span></li>
+									    <li class="MsoNormal"><span class="txt">&iquest;Quieres hacerlo sin levantarte de la silla?</span></li>
+									    </ul>
+									  <p class="txt">EMAGRASA (Empresa Municipal de Aguas de Granada) te permite visitar virtualmente sus plantas para que entiendas la complejidad e importancia de su buen funcionamiento.</p>
+									  <blockquote>
+									    <p class="txtnegrolink"><a href="http://www.emasagra.es/etap/prop_etap.swf" target="_blank">Potabilizaci&oacute;n</a><br>
+									        <a href="http://www.emasagra.es/edar/prop_edar.swf" target="_blank">Depuraci&oacute;n</a></p>
+									    </blockquote>									  
+									  <table id="table3" border="0" width="100%">
+                                        <tbody>
+                                          <tr>
+                                            <td width="33%">&nbsp;</td>
+                                            <td width="34%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                <tbody>
+                                                  <tr bgcolor="#bbddbb">
+                                                    <td width="134"><p align="center"><span class="txtnegrolink"> 
+													<a class="txtnegrolink" target="_blank" href="actividades/actividad5.htm">Actividad 5</a></span><a target="_blank" href="actividades/actividad5.htm"><img src="img/multiple.jpg" width="100" height="75" border="2"></a></p></td>
+                                                  </tr>
+                                                </tbody>
+                                            </table></td>
+                                            <td width="33%">&nbsp;</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>									  
+									  <p class="txtnegrolink"><span class="txt"><strong>3.- Consumo</strong></span></p>									  
+									  <p class="txt">El agua es un bien escaso. Por eso se ha de utilizar de la forma m&aacute;s econ&oacute;mica posible en su consumo. El despilfarro de agua no es responsabilidad de ninguna administraci&oacute;n sino de cada consumidor. Y eso eres t&uacute; en el ciclo, un consumidor. Por eso te debes plantear...</p>
+									  <ul>
+                                        <li class="txt">&iquest;C&oacute;mo podemos reducir el consumo dom&eacute;stico?</li>
+                                        <li class="txt">&iquest;Cu&aacute;nta agua podemos ahorrar con peque&ntilde;os gestos?</li>
+                                        <li class="txt">&iquest;Qu&eacute; capacidad de influencia tengo en mi entorno pr&oacute;ximo mejorar mi medio ambiente?</li>
+									    </ul>
+									  <p class="txt">Visitando los siguientes enlaces puedes encontrar informaci&oacute;n:</p>
+									  <blockquote>
+									    <p class="txtnegrolink"><a href="http://www.aqualia.es/es/club/asp/juegos/casa.htm" target="_blank">Acualia<br>
+									      </a><a href="http://www.consumer.es/web/es/medio_ambiente/urbano/2002/11/27/140012.php" target="_blank">Revista Consumer</a></p>
+									    </blockquote>									  
+									  <p class="txt">ACTIVIDAD: Elabora un informe relativo al ahorro de agua en tu casa que contenga tanto los dispositivos que ahorran agua (grifos, cisternas, aireadores, etc.) como  las acciones que se realizan (cerrar el grifo cuando nos lavamos los  dientes, nos duchamos o nos ba&ntilde;amos). Al final del informe debes incluir una reflexi&oacute;n con propuestas de mejora (sin mermar la higiene familiar). Presenta el informe a tu familia.</p>
+									  <p class="txt">&nbsp;									  </p>
+									  <p class="txtnegrolink"><span class="txt"><strong>4.- Divi&eacute;rtete aprendiendo</strong></span></p>
+									  <p class="txt">Hemos localizado diversos juegos que profundizan en el conocimiento del ciclo integral del agua:</p>
+									  <blockquote>
+									    <p class="txtnegrolink"><a href="http://www.aqualia.es/es/club/asp/hidrokid/Hidrokid.swf" target="_blank">Acualia: Hidrokid</a><br>
+									        <a href="http://www.emasagra.es/e-masakrator/index.asp" target="_blank">Aguas de Granada: E-masakrator</a><br>
+									        <a href="http://www.canaleduca.com/canal_educa/web/juego_2095.html" target="_blank">Canal de Isabel II: La casa de los grifos</a></p>
+									    <p class="txtnegrolink">&nbsp;</p>
+									  </blockquote>									  
+									  <p class="txtnegrolink"><span class="txt"><strong>									    5.- Recapitula</strong></span></p>
+									  <p class="txt">En el siguiente enlace puedes encontrar otra animaci&oacute;n que te permitir&aacute; recapitular muchos de los conceptos tratados anteriormente:</p>
+									  <blockquote>
+									    <p class="txtnegrolink"><a href="http://www.aiguesdebarcelona.es/ciclo/ciclo.asp" target="_blank">Aguas de Barcelona: El ciclo del agua</a><br>
+									          <a href="http://www.asac.es/aigua/cast/1.htm" target="_blank">Agrupaci&oacute;n de Servicios de Agua de Catalu&ntilde;a: Planeta azul</a></p>
+									    </blockquote>									  
+									  <table id="table3" border="0" width="100%">
+                                        <tbody>
+                                          <tr>
+                                            <td width="33%">&nbsp;</td>
+                                            <td width="34%"><table id="table4" align="center" border="0" cellpadding="3" cellspacing="0" width="142">
+                                                <tbody>
+                                                  <tr bgcolor="#bbddbb">
+                                                    <td width="134"><p align="center"><span class="txtnegrolink"> 
+													<a class="txtnegrolink" target="_blank" href="actividades/autoeval.htm">Autoevaluaci&oacute;n</a></span><a target="_blank" href="actividades/autoeval.htm"><img src="img/autoeval.jpg" width="100" height="75" border="2"></a></p></td>
+                                                  </tr>
+                                                </tbody>
+                                            </table></td>
+                                            <td width="33%">&nbsp;</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>									  </td>
+                                </tr>
+                                <tr>
+                                  <td width="100%">&nbsp;
+                              </td>
+                                </tr>
+                              </tbody></table>
+                                  </td>
+                                  <td width="4%">&nbsp;</td>
+                                </tr>
+                              </tbody></table>
+                              <p><b><font color="#006666" face="Arial" size="2">
+                                        <a class="txtnegrolink" title="Enlaza con los tipos de sistemas circulatorios" href="cierre.htm">
+                              Cerrar</a></font></b></p>
+                              <table border="0" cellpadding="6" cellspacing="0" width="100%">
+                                <tbody><tr> 
+                                  <td> 
+                                    <p align="center">&nbsp;</p>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tbody><tr align="right"> 
+                                        <td>
+                                        </td>
+                                      </tr>
+                                    </tbody></table>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body></html>

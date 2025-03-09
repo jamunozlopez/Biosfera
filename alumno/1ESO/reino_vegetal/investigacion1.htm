@@ -1,0 +1,527 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>
+                      <img src="imagenes/titulo.gif" width="721" height="24"></td>
+                    </tr>
+                  </table>
+				   </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF" valign="top"> 
+                            <td> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="557" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDADES DE INVESTIGACI&Oacute;N</font> 
+                                  </td>                                 
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6" bgcolor="#E6FFE6" height="413">
+                                <tr>
+								<td height="401" bgcolor="#E6FFE6"> 
+                                  </td> 
+                                  <td height="401" valign="top"> 
+                                    <p>&nbsp;</p>
+									<div align="center">
+                                      <center>
+                                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="90%" id="AutoNumber1">
+                                        <tr>
+                                          <td width="3%" valign="top">
+                                          <font class="txt"><b>1.</b> </font></td>
+                                          <td width="97%">
+                                          <p class="txtnegro">
+                                          <font class="txt" size="3">
+                                          <a name="Evolución de las estructuras vegetativas y reproductoras en los vegetales">
+                                          Evolución de las estructuras 
+                                          vegetativas y reproductoras en los 
+                                          vegetales</a></font></p>
+                                          <p class="MsoNormal" align="justify">
+                                          <font class="txt"><b>Introducción:</b><br>
+                                          <br>
+                                          Desde la colonización del ambiente 
+                                          terrestre por los vegetales han sido 
+                                          numerosas las adaptaciones y diseño de 
+                                          estructuras vegetativas y de 
+                                          reproducción que han servido a estos 
+                                          seres vivos para conseguir instalarse, 
+                                          con absoluto éxito, en todos los 
+                                          ambientes terrestres.<img border="0" src="actividad1/arbol.jpg" align="right" hspace="4" vspace="4" width="267" height="200"></font></p>
+                                          <p class="MsoNormal" align="left">
+                                          <font class="txt"><b>Tarea:</b></font></p>
+                                          <p class="MsoNormal" align="justify">
+                                          <font class="txt">Se trata de 
+                                          confeccionar sucesivas diapositivas en 
+                                          Power Point que muestren la evolución 
+                                          en todos los grupos vegetales de las 
+                                          estructuras básicas vegetativas y de 
+                                          reproducción, que han facilitado la 
+                                          colonización de ambientes muy alejados 
+                                          e independientes del agua de donde 
+                                          provienen.</font></p>
+                                          <p class="MsoNormal" align="justify">
+                                          <font class="txt"><b>Descripción:</b><br>
+                                          <br>
+                                          Se trata de formar dentro de la clase 
+                                          grupos de no más de cuatro alumnos que 
+                                          analicen la información que sugerimos 
+                                          en los recursos y sean capaces de 
+                                          sintetizar la información de las 
+                                          estructuras vegetales en una 
+                                          diapositiva por grupo vegetal: una 
+                                          para algas, para musgos, helechos, 
+                                          gimnospermas y angiospermas. Las 
+                                          presentaciones deben tener un marcado 
+                                          sentido evolutivo, comparando unas 
+                                          estructuras con otras y señalando la 
+                                          importancia de las estructuras para 
+                                          facilitar la vida y la reproducción.</font></p>
+                                          <p class="MsoNormal"><b>
+                                          <font class="txt">Recursos:<br>
+                                          <br>
+                                          </font></b>
+                                          <a href="http://www.unex.es/botanica/LHB/briofitos/bryophyt.htm" target="_blank">
+                                          <font target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Talófitos</font></font></font></a><font class="txt">: 
+                                          página interesante sobre los vegetales 
+                                          de esta estructura.<br>
+                                          </font>
+                                          <a href="http://www.natureduca.com/botan_clasif_pteridofitos.htm" target="_blank">
+                                          <font target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Cormófitos</font></font></font></a><font class="txt">: 
+                                          todo sobre los vegetales que presentan 
+                                          raíz, tallo y hojas.<br>
+                                          </font><font target="_blank">
+                                          <a href="http://www.biologie.uni-hamburg.de/b-online/ibc99/botanica/botanica/liquenes.htm" target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Líquenes</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                          <br>
+                                          </font></font></font>
+                                          <font target="_blank">
+                                          <a href="http://www.natureduca.com/botan_clasif_briofitos.htm" target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Musgos</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                          <br>
+                                          </font></font></font>
+                                          <font target="_blank">
+                                          <a href="http://www.asturnatura.com/articulos/helechos/helei.php" target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Helechos</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                          <br>
+                                          </font></font></font>
+                                          <font target="_blank">
+                                          <a href="http://www.biologia.edu.ar/diversidadv/gimnospermas.htm	" target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Gimnospermas</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                          <br>
+                                          </font></font></font>
+                                          <font target="_blank">
+                                          <a href="http://www.natureduca.com/botan_clasif_monocotiled1.htm" target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Angiospermas</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                          <br>
+                                          </font></font></font>
+                                          <a href="http://www.biologie.uni-hamburg.de/b-online/ibc99/botanica/botanica/prese-tl.htm" target="_blank">
+                                          <font target="_blank">
+                                          <font class="txtnegrolink">
+                                          <font face="Arial, Helvetica, sans-serif">
+                                          Estructuras de reproducción</font></font></font></a></p>
+                                          <p class="MsoNormal" align="justify">
+                                          <font class="txt"><b>Evaluación:</b><br>
+                                          <br>
+                                          Se evaluará la exposición oral, el 
+                                          análisis y selección de las imágenes y 
+                                          contenidos más importantes en cada 
+                                          grupo, el marcado carácter evolutivo 
+                                          de las estructuras en los grupos 
+                                          vegetales y su marcada independencia 
+                                          evolutiva del agua y la importancia de 
+                                          las estructuras reproductoras para 
+                                          lograr el éxito en la colonización de 
+                                          ambientes. Se valorará también el 
+                                          diseño final de las presentaciones.</font></p>
+                                          <hr>
+                                          <p class="MsoNormal">&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td width="3%" valign="top">
+                                            <b>
+                                            <font class="txt">2. </font></b></td>
+                                            <td width="97%">
+                                            <p class="txtbold">
+                                            <font class="txt">Estudio &#8220;in situ&#8221; 
+                                            de
+                                            <a name="representantes de diversos grupos vegetales">
+                                            representantes de diversos grupos 
+                                            vegetales</a></font></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt"><b>Introducción:</b><br>
+                                            <br>
+                                            <img border="0" src="actividad1/musgo4.jpg" align="left" hspace="4" vspace="4" width="215" height="115"></font></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt">En la actividad de 
+                                            investigación 1 hemos confeccionado 
+                                            presentaciones gráficas que 
+                                            demuestran como y de que manera han 
+                                            evolucionado las especies vegetales 
+                                            en la colonización del medio 
+                                            terrestre. Se trata ahora de 
+                                            comprobarlo &#8220;in situ&#8221;.</font></p>
+                                            <p class="MsoNormal" align="justify">&nbsp;</p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt"><b>Tarea:</b><br>
+                                            <br>
+                                            Se trata de buscar en nuestro 
+                                            ambiente más cercano (parques, 
+                                            fuentes, mercados, grandes 
+                                            almacenes, etc.) ejemplares 
+                                            vegetales que nos ayuden a conocer 
+                                            mejor los grandes grupos del reino 
+                                            vegetal y comprobar lo escrito en 
+                                            las imágenes de Power Point con la 
+                                            realidad.</font></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt"><b>Descripción:</b><br>
+                                            <br>
+                                            Primero realizaremos la actividad 1 
+                                            de investigación, bien en 
+                                            presentaciones de Power Point o en 
+                                            murales confeccionados con 
+                                            cartulinas. Una vez conocemos bien 
+                                            las estructuras vegetativas y 
+                                            reproductoras características de los 
+                                            principales grupos vegetales (algas, 
+                                            musgos, helechos, gimnospermas y 
+                                            angiospermas), los mismos 
+                                            integrantes del grupo deben 
+                                            repartirse el trabajo y conseguir 
+                                            material vivo para traer a clase y 
+                                            que ese material biológico pueda 
+                                            mostrar lo ilustrado en las imágenes 
+                                            diseñadas. En fuentes o acuarios se 
+                                            pueden encontrar algas diversas; en 
+                                            patios, parques y paredes podemos 
+                                            encontrar musgos; y en comercios 
+                                            diversos o jardines podemos 
+                                            encontrar helechos, gimnospermas y 
+                                            angiospermas.</font></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt"><b>Recursos:</b><br>
+                                            <br>
+                                            Para comparar y preparar el material 
+                                            biológico dando nombre específico a 
+                                            cada estructura vegetativa y 
+                                            reproductora, la información teórica 
+                                            básica la encontramos en las mismas 
+                                            páginas recomendadas de la actividad 
+                                            1.</font></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <a href="http://www.unex.es/botanica/LHB/briofitos/bryophyt.htm" target="_blank">
+                                            <font target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Talófitos</font></font></font></a><font class="txt">: 
+                                            página interesante sobre los 
+                                            vegetales de esta estructura.<br>
+                                            </font>
+                                            <a href="http://www.natureduca.com/botan_clasif_pteridofitos.htm" target="_blank">
+                                            <font target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Cormófitos</font></font></font></a><font class="txt">: 
+                                            todo sobre los vegetales que 
+                                            presentan raíz, tallo y hojas.<br>
+                                            </font><font target="_blank">
+                                            <a href="http://www.biologie.uni-hamburg.de/b-online/ibc99/botanica/botanica/liquenes.htm" target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Líquenes</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                            <br>
+                                            </font></font>
+                                            <a href="http://www.natureduca.com/botan_clasif_briofitos.htm" target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Musgos</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                            <br>
+                                            </font></font>
+                                            <a href="http://www.asturnatura.com/articulos/helechos/helei.php" target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Helechos</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                            <br>
+                                            </font></font>
+                                            <a href="http://www.biologia.edu.ar/diversidadv/gimnospermas.htm" target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Gimnospermas</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                            <br>
+                                            </font></font>
+                                            <a href="http://www.natureduca.com/botan_clasif_monocotiled1.htm" target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Angiospermas</font></font></a><font class="txtnegrolink"><font face="Arial, Helvetica, sans-serif">
+                                            <br>
+                                            </font></font></font>
+                                            <a href="http://www.biologie.uni-hamburg.de/b-online/ibc99/botanica/botanica/prese-tl.htm" target="_blank">
+                                            <font target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">
+                                            Estructuras de reproducción</font></font></font></a></p>
+                                            <p class="MsoNormal" align="justify">
+                                            <font class="txt"><b>Evaluación:</b><br>
+                                            <br>
+                                            Se calificará y se tendrá como 
+                                            criterio de evaluación básico de la 
+                                            actividad la riqueza y variedad de 
+                                            especies seleccionadas y mostradas 
+                                            al grupo así como su análisis 
+                                            morfológico completo: descripción y 
+                                            análisis de las principales 
+                                            estructuras de cada grupo vegetal.</font></p>
+                                            <hr>
+                                            <p>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td width="3%" valign="top">
+                                            <font class="txt"><b>3.</b> </font></td>
+                                            <td width="97%">
+                                            <p class="txtnegro"><font class="txt">
+									        <a name="Ginkgo biloba">Ginkgo biloba</a></font></p>
+                                            <p align="left"><font class="txt">
+									Realiza un trabajo monográfico sobre una gimnosperma especial: el 
+									<a href="http://www.xs4all.nl/~kwanten/espindex.htm" target="_blank">
+									<font face="Arial, Helvetica, sans-serif" class="txtnegrolink" target="_blank">Ginkgo biloba</font></a>.
+                                            </font><br>
+                                            &nbsp;</p>
+                                            <p align="center">
+                                            <img border="0" src="actividad11/hojas11.jpg" width="240" height="157"></p>
+                                            <hr>
+                                            <p>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td width="3%" valign="top">
+                                            <font class="txt"><b>4.</b> </font></td>
+                                            <td width="97%">
+                                            <p class="txtnegro">
+                                            <a name="Estructuras reproductoras sexuales y asexuales">
+                                            Estructuras reproductoras sexuales y 
+                                            asexuales</a></p>
+                                            <p><font class="txt">
+									        Recoge información y material vegetal fresco diverso (de jardinerías, 
+                                            herboristerías,
+									 del mercado o del campo) y pega sobre una cartulina las distintas
+                                            </font>
+                                            <a href="http://www.biologie.uni-hamburg.de/b-online/ibc99/botanica/botanica/prese-tl.htm" target="_blank">
+                                            <font target="_blank">
+                                            <font class="txtnegrolink">
+                                            <font face="Arial, Helvetica, sans-serif">estructuras reproductoras sexuales y asexuales</font></font></font></a><font class="txt">
+									        de los líquenes, musgos, helechos, gimnospermas y angiospermas.
+                                            <br>
+                                            &nbsp;</font></p>
+                                            <p align="center">
+                                            <img border="0" src="actividad13/flores800.jpg" width="290" height="208"></p>
+                                            <p>&nbsp;</td>
+                                          </tr>
+                                        </table>
+                                      </center>
+                                      </div>
+												
+						</td>
+						</tr>											
+								</td>
+							</tr>
+													
+						
+						</table> 
+						
+					</td>
+					</tr>                             
+                  </table>
+               </td>
+            </tr>
+         </table>  
+       </td>
+       </tr>             
+       </table>
+     </td>
+   </tr>
+   </table>
+ </td>
+</tr>
+</table>
+
+</body>
+</html>

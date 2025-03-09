@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  
+{  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;    
+  }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  
+  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 12.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r";alert(mensaje);}
+//-->
+</SCRIPT>
+</head>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<body bgcolor="#e6ffe6">
+<table width="100%" border="0" cellspacing="0" cellpadding="6" >
+  <tr> 
+    <td valign="top" colspan="3" bgcolor="#BBDDBB"> 
+      <div align="center"><font class="txtnegrolink">Actividad 8: Hábitos saludables</font></div>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="3" bgcolor="#E6FFE6" > <br>
+      <br>
+      <table border="0" cellspacing="0" cellpadding="3" align="center" width="85%">
+       
+          <td rowspan="2">&nbsp;</td>
+          <td rowspan="2" valign="top" width="650"> 
+            <form name="examen" method="post" action="">
+              <p class="txtnegro" >Para cada una de las siguientes afirmaciones 
+                indica si es verdadera o falsa:</p>
+              <p class="txtnegro" >&nbsp;</p>
+              <p class="txtnegro" ><span class="txt">1.- Es recomendable concentrar 
+                las comidas en una o dos al día.</span></p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton1" value="2">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton1" value="1">
+                Falso.<br>
+              </p>
+              <p class="txt"><br>
+                <span class="txtnegro">2.- El ejercicio físico favorece el consumo 
+                de <a class="txtnegrolink" href="#" onMouseOver="alert('Calorías: Unidad de energía. Indica la cantidad de calor necesaria para elevar la temperatura de un gramo de agua en un grado.'); 
+    return false;"><i>calorías</i>.</a></span></p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton2" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton2" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">3.- El mamtenimiento del peso se logra cuando 
+                la dieta aporta la catidad exacta de calorías que se necesitan.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton3" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton3" value="2">
+                Falso. <br>
+              </p>
+              <p class="txtnegro"><br>
+                4.- No deben consumirse muchos alimentos de los que se compran 
+                ya preparados porque contienen <a class="txtnegrolink" href="#" onMouseOver="alert('Aditivos: Substancias químicas que se añaden a los alimentos para preservarlos o para alterar sus características: Colorantes, conservantes, antioxidantes, emulsionantes, etc. Muchos son perjudiciales para la salud.'); 
+    return false;"><i>aditivos</i>.</a></p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton4" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton4" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro"><br>
+                5.- Los productos congelados alimentan menos que los frescos.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton5" value="2">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton5" value="1">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">6.- Es más importante tomar carne que pescado 
+                o huevos.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton6" value="2">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton6" value="1">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">7.- Los niños y los ancianos sólo deben comer 
+                carne y pescado.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton7" value="2">
+                Verdadero. <br>
+                b.- 
+                <input type="radio" name="radiobutton7" value="1">
+                Falso.<br>
+              </p>
+              <p class="txt"><span class="txtnegro">8.- El azúcar favorece el 
+                desarrollo de <a class="txtnegrolink" href="#" onMouseOver="alert('Caries dental: Destrucción de las partes duras del diente. Se debe generalmente a los ácidos producidospor las bacterias que habitan la boca alimentándose de restos de alimentos, preferentemente azúcares.'); 
+    return false;"><i>caries dental</i>.</a></span></p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton8" value="1">
+                Verdadero. <br>
+                b.- 
+                <input type="radio" name="radiobutton8" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">9.- Los caldos de pastilla poseen escaso valor 
+                nutritivo.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton9" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton9" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">10.- Es conveniente cepillarse los dientes después 
+                de cada comida.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton10" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton10" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro"><br>
+                11.- Los alimentos con alto contenido en grasas elevan el nivel 
+                de <a class="txtnegrolink" href="#" onMouseOver="alert('Colesterol: Lípido necesario para la vida, importnate en las membranas celulares. En exceso puede depositarse en las arterias y provocar serios problemas circulatorios.'); 
+    return false;"><i>colesterol</i> </a>en sangre.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton11" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton11" value="2">
+                Falso.<br>
+              </p>
+              <p class="txtnegro">12.- Los alimentos ricos en <a class="txtnegrolink" href="#" onMouseOver="alert('Fibra: Parte no digerible del alimento, generalmente celulosa, lignina y otros polisacáridos de las plantas. Retiene agua y ayuda a una corecta formación de las heces fecales, protegiendo de este modo la pared intestinal.'); 
+    return false;"><i>fibra</i></a> 
+                facilitan el tránsito intestinal.</p>
+              <p class="txt">a.- 
+                <input type="radio" name="radiobutton12" value="1">
+                Verdadero.<br>
+                b.- 
+                <input type="radio" name="radiobutton12" value="2">
+                Falso. <br>
+                <br>
+              </p>
+              <p class="txtnegro">&nbsp; </p>
+              <p class="txt">&nbsp; </p>
+              <p class="txt"> <span class="txt"> 
+                <input type="reset" name="Borrar" value="Borrar">
+                <input type="button" name="calificacion" value="calificacion" onClick="nota(this.form)">
+                </span></p>
+            </form>
+            <p align="center" class="txtnegrolink">
+            <a class="txtnegrolink" href="cierre.htm"><br>
+              Volver</a></p>
+          </td>
+          <td rowspan="2">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

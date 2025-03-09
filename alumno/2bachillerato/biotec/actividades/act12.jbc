@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Actividad 12</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Actividad 12</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La palabra Bioética fue utilizada por primera vez:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>En la Conferencia de Asilomar.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Para detener los trabajos con ADN recombinante.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Para referirse al control aplicable a la Biotecnología.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Para ejecutar los trabajos de biotecnología.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la Conferencia de Asiomar</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se impidió continuar con trabajos sobre ADN recombinante.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se pusieron las bases para el trabajo de la manipulación genética.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se utilizó por primera vez la palabra Bioética.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se impusieron unas normas jurídicas para la manipulación genética.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La regla básica: &quot;Sólo puede realizarse una acción (en la Naturaleza) si se ha demostrado la ausencia total de riesgos&quot; fue establecida en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La Conferencia de Asilomar.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La Conferencia sobre Biodiversidad.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>El Comité Internacional de Bioética.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La UNESCO, en 1993.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La forma de controlar la Biotecnología es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Dictar normas jurídicas punitivas.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Permitir la aparición de vances científicos que, posteriormente, sean examiaminados.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Acordar un marco &quot;a priori&quot; para el desarrollo de los trabajos biotecnológicos.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Acordar un marco &quot;a posteriori&quot; para aplicar a los trabajos biotecnológicos.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿En qué foro se establecieron normas para que la Biotecnología no atentase contra la dignidad humana?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El Comité Internacional de Bioética de la UNESCO.</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La Convención para la Biodiversidad.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La Conferencia de Asilomar.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La FAO, en la Conferencia de la Biotecnología y los países en vías de desarrollo.</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

@@ -1,0 +1,416 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="35"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/tierra_cambia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top"> 
+                        <table width="761" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/ambar.jpg" width="105" height="76"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/ammonites2.jpg" width="105" height="96"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/carnivor.jpg" width="105" height="106"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/cretacico.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/shark_bay_estromatolitos.jpg" width="105" height="77"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/dinotrac.jpg" width="105" height="119"></td>
+                              </tr>
+                            </table>
+                            </td>
+                            <td width="535" bgcolor="#e6ffe6" align="center"> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td width="477" height="19" bgcolor="#BBDDBB"><font class="txtnegro">IDEAS 
+                                    FUNDAMENTALES </font></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr align="center"> 
+                                  <td> 
+                                    <table width="95%" border="0" cellspacing="1" cellpadding="3" height="776">
+                                      <tr> 
+                                        <td width="10" valign="top" height="64"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="64"><font class="txt"> La 
+                                          Tierra es un planeta en continuo cambio. 
+                                          Desde su formaci&oacute;n hace 4.500 
+                                          millones de a&ntilde;os (ma) hasta nuestros 
+                                          d&iacute;as, han cambiado la rotaci&oacute;n 
+                                          y la traslaci&oacute;n, el aspecto, 
+                                          la distribuci&oacute;n de oc&eacute;anos 
+                                          y continentes, la atm&oacute;sfera, 
+                                          el clima y, por supuesto, los seres 
+                                          vivos que habitan en ella.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="56" valign="top"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td valign="top" colspan="2" height="56"><font class="txt"> 
+                                          Los cambios se han producido en la Tierra 
+                                          a lo largo del tiempo, esto es, de los 
+                                          4.500 ma de vida de nuestro planeta, 
+                                          per&iacute;odo de tiempo que constituye 
+                                          lo que llamamos el <a href="contenidos2.htm" class="txtnegrolink">TIEMPO 
+                                          GEOL&Oacute;GICO</a>.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="73" valign="top"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td valign="top" colspan="2" height="73"><font class="txt"> 
+                                          La Cronolog&iacute;a es la ciencia que 
+                                          nos permite situar en el tiempo los 
+                                          sucesos acaecidos en la Tierra. Cuando 
+                                          situamos unos sucesos con respecto a 
+                                          otros hablamos de CRONOLOG&Iacute;A 
+                                          RELATIVA, y cuando los localizamos en 
+                                          el tiempo con respecto a hoy d&iacute;a, 
+                                          hablamos de CRONOLOG&Iacute;A ABSOLUTA.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td width="10" valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"><font class="txt"> Existen 
+                                          muchos m&eacute;todos de dataci&oacute;n, 
+                                          tanto relativa (superposici&oacute;n 
+                                          de los estratos, dataci&oacute;n bioestratigr&aacute;fica,) 
+                                          como absoluta (dendrocronolog&iacute;a, 
+                                          radiometr&iacute;a).</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="64" valign="top"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" valign="top" height="64"><font class="txt"><span class="txt"> 
+                                          Los m&eacute;todos de dataci&oacute;n 
+                                          m&aacute;s utilizados son el BIOESTRATIGR&Aacute;FICO, 
+                                          consistente en la dataci&oacute;n de 
+                                          un estrato por los <a href="contenidos4.htm" class="txtnegrolink">F&Oacute;SILES</a> 
+                                          que contiene, y el RADIOM&Eacute;TRICO, 
+                                          basado en el per&iacute;odo de desintegraci&oacute;n 
+                                          de algunos is&oacute;topos radiactivos.</span></font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="16"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="16"><font class="txt"> Para 
+                                          estudiar los cambios acaecidos en la 
+                                          Tierra contamos con: </font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19"><font class="txt">o El estudio de 
+                                          las rocas. </font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19"><font class="txt"> o El estudio de 
+                                          los f&oacute;siles.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19">&nbsp;</td>
+                                        <td height="19"><font class="txt">o El principio del 
+                                          Actualismo en Geolog&iacute;a.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="48"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="48"> <font class="txt"> Con 
+                                          la informaci&oacute;n obtenida se reconstruye 
+                                          la Historia de la Tierra, que se divide 
+                                          en varias unidades temporales, caracterizadas 
+                                          por determinados sucesos biol&oacute;gicos 
+                                          y geol&oacute;gicos.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="48"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="48"> <font class="txt"> La 
+                                          Historia de la Tierra se divide, seg&uacute;n 
+                                          la <a href="contenidos6bis.htm" class="txtnegrolink">escala 
+                                          de los tiempos geol&oacute;gicos</a>, 
+                                          en cuatro eones: H&Aacute;DICO, ARCAICO, 
+                                          y PROTEROZOICO, que constituyen en conjunto 
+                                          el <a href="contenidos7.htm" class="txtnegrolink">tiempo 
+                                          Prec&aacute;mbrico</a>, y el <a href="contenidos11.htm" class="txtnegrolink">FANEROZOICO</a>.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"><font class="txt"> El 
+                                          e&oacute;n Fanerozoico se divide en 
+                                          tres eras: PALEOZOICO, MESOZOICO y CENOZOICO.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="16"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="16"> <font class="txt"> En 
+                                          el H&aacute;dico se formaron la Tierra 
+                                          y la Luna y aparecieron las primeras 
+                                          rocas.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td height="16"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="16"> <font class="txt"> En 
+                                          el Arcaico surge la vida y se forma 
+                                          la litosfera.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td width="10" valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"><font class="txt"> En 
+                                          el Proterozoico se manifiestan los eucariotas 
+                                          y los seres pluricelulares. Se inicia 
+                                          la Tect&oacute;nica de Placas.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"> <font class="txt"> En 
+                                          el Paleozoico los seres vivos conquistan 
+                                          la Tierra seca y aparecen los vertebrados. 
+                                          Brotan las plantas con semillas. La 
+                                          atm&oacute;sfera se hace oxidante.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"> <font class="txt"> En 
+                                          el Mesozoico los dinosaurios dominan 
+                                          la Tierra y cobran vida los mam&iacute;feros. 
+                                          Comienza la fragmentaci&oacute;n de 
+                                          Pangea II.</font></td>
+                                      </tr>
+                                      <tr> 
+                                        <td valign="top" height="32"><font class="txt"><img src="../img/bolo.gif" width="9" height="13"></font></td>
+                                        <td colspan="2" height="32"> <font class="txt"> En 
+                                          el Cenozoico se extienden los mam&iacute;feros, 
+                                          se forman las cordilleras actuales y 
+                                          los casquetes polares. Aparece la especie 
+                                          humana.</font></td>
+                                      </tr>
+                                      </table>
+                                    <br>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="110" align="center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/graptlit.jpg" width="105" height="84"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/hominid.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/mamut_berezovka.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/marpaleo.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/precambric_sea.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/dino.jpg" width="105" height="138"></td>
+                              </tr>
+                            </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

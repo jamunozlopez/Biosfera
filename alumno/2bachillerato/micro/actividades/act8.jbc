@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Reproducción de bacterias&lt;center&gt;&lt;img src=&quot;../imagenes/binaryfission.jpg&quot; alt=&quot;binaryfission.jpg&quot; width=&quot;370&quot; height=&quot;226&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Reproducción de bacterias&lt;center&gt;&lt;img src=&quot;../imagenes/binaryfission.jpg&quot; alt=&quot;binaryfission.jpg&quot; width=&quot;370&quot; height=&quot;226&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El proceso de reproducción más común en bacterias es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La conjugación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La transformación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La transducción</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La bipartición</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El proceso de reproducción por bipartición se produce</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Asociado a un mesosoma</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Gracias a la intervención de un virus</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Con la intervención de los pili</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Mediante fragmentos de AD de una célula muerta</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿En qué proceso NO se produce recombinación?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Transformación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Transducción</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Conjugación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Bipartición</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El proceso de transformación se puede realizar si</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un fragmento de ADN se introduce en el citoplasma de una bacteria</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una cápsida viral transporta ADN bacteriano</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Si una célula posee flagelo</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Una bacteria cede a otra un fragmento de ADN</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El proceso en el que en una célula, el ADN bacteriano puede recombinar con otro fragmento de ADN gracias a la intervención de una cápsida viral se denomina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Transducción</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Transformación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Conjugación</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Bipartición</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las bacterias F+</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>reciben el plásmido F</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pueden donar cualquiér gen de su ADN</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son donadoras de plásmido F</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>No tienen pili</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las bacterias Hfr</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tienen el plásmido libre en el citoplasma</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Son receptores de plásmido F</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Se pueden transformar en F-</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Pueden donar cualquier gen de su ADN</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>=Siguiente&gt;</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

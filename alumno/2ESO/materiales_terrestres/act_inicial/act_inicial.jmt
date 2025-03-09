@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<version>5</version>
+
+<data>
+<title>Actividad inicial&lt;br&gt;&lt;br&gt;&lt;font face=&quot;Arial, Helvetica, sans-serif&quot; size=&quot;2&quot; color=&quot;#000000&quot;&gt;Tenemos una caja de rocas que, por error, se han descolocado de su sitio ¿Podrías situarlas en la caja correctamente?&lt;br&gt;Te ayudaremos dando algunas características de cada una.&lt;/font&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>HALITA
+- Roca sedimentaria
+evaporítica. Compuesta por sal (cloruro de sodio)
+</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/Halita.jpg&quot; alt=&quot;Halita.jpg&quot; width=&quot;80&quot; height=&quot;80&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>CONGLOMERADO
+- Roca sedimentaria detrítica. Compuesta por cantos cementados</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/conglo.jpg&quot; alt=&quot;conglo.jpg&quot; width=&quot;80&quot; height=&quot;70&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>BASALTO
+- Roca magmática volcánica</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/basalto.jpg&quot; alt=&quot;basalto.jpg&quot; width=&quot;80&quot; height=&quot;56&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>GNEIS
+- Roca metamórfica, compuesta por cuarzo, feldespato y mica.</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/ocelar.jpg&quot; alt=&quot;ocelar.jpg&quot; width=&quot;80&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>GRANITO
+- Roca magmática plutónica</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/granito2.jpg&quot; alt=&quot;granito2.jpg&quot; width=&quot;80&quot; height=&quot;59&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>PIZARRA
+- Roca metamórfica, de variados usos por su  color e impermeabilidad</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>&lt;img src=&quot;../img/pizarra.jpg&quot; alt=&quot;pizarra.jpg&quot; width=&quot;80&quot; height=&quot;74&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<next-ex-url>clasifc2.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<guess-correct>¡Correcto! Muy bien.</guess-correct>
+<guess-incorrect>Inténtalo de nuevo.</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Bien</correct-indicator>
+<incorrect-indicator>Mal</incorrect-indicator>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../actividades.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

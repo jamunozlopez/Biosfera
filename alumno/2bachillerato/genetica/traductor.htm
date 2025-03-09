@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Convertidor entre codones y aminoácidos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META name="title" content="Convertidor entre codones y aminoácidos">
+<META name="description" content="Convertidor entre codones y aminoácidos">
+<META name="author" content="Carlos Muñoz Romero">
+<script language="JavaScript">
+<!--    
+      var correctos = new Array("a","g","c","u","A","G","C","U");
+      var estado=false;
+      var codigoTecla, cadenaTecla;  
+      function pulsada(e)
+      {
+          estado=false
+          if(document.all)
+          {
+              codigoTecla = event.keyCode
+              cadenaTecla = (String.fromCharCode(event.keyCode));
+          }
+          else if(document.layers)
+          {
+              codigoTecla = e.which
+              cadenaTecla = String.fromCharCode(e.which);
+          }
+          else if(document.getElementById)
+          {
+              codigoTecla = (window.Event) ? e.which : e.keyCode;
+              cadenaTecla=(String.fromCharCode(codigoTecla));
+          }
+          for(i=0;i<correctos.length;i++)
+          {
+              if(cadenaTecla==correctos[i])
+                  estado=true;
+          }
+          if(estado==false)
+          {
+              if(document.all)
+                  event.returnValue = false;
+              else
+                  return false;
+          }
+      }
+  
+  var codones = new Array("UUU","UUC","UUA","UUG","UCU","UCC","UCA","UCG","UAU","UAC","UAA","UAG","UGU","UGC","UGA","UGG",
+  							"CUU","CUC","CUA","CUG","CCU","CCC","CCA","CCG","CAU","CAC","CAA","CAG","CGU","CGC","CGA","CGG",
+							"AUU","AUC","AUA","AUG","ACU","ACC","ACA","ACG","AAU","AAC","AAA","AAG","AGU","AGC","AGA","AGG",
+							"GUU","GUC","GUA","GUG","GCU","GCC","GCA","GCG","GAU","GAC","GAA","GAG","GGU","GGC","GGA","GGG");
+							
+  var amino = new Array("PHE","PHE","LEU","LEU","SER","SER","SER","SER","TYR","TYR","FIN","FIN","CYS","CYS","FIN","TRP",
+  							"LEU","LEU","LEU","LEU","PRO","PRO","PRO","PRO","HIS","HIS","GLN","GLN","ARG","ARG","ARG","ARG",
+							"LLE","LLE","LLE","MET","THR","THR","THR","THR","ASN","ASN","LYS","LYS","SER","SER","ARG","ARG",
+							"VAL","VAL","VAL","VAL","ALA","ALA","ALA","ALA","ASP","ASP","GLU","GLU","GLY","GLY","GLY","GLY");
+  
+  function traducirCodon()
+  {
+  	var cad = document.form1.codon.value.toUpperCase();
+  	var i = 0;
+  	while (i<64){
+  		if (codones[i] == cad) {
+								document.form1.aminoacido.value = amino[i];
+								i=65;
+							}
+		else {
+				i+=1;
+			}
+ 	}
+	if (i==64) {
+				document.form1.aminoacido.value = "Error";
+	}
+  }
+  
+  function traducirAmino()
+  {
+  	var cad = document.form1.aminoacido.value.toUpperCase();
+	var aux = "";
+	var cont = 0;
+  	var i = 0;
+  	while (i<64){
+  		if (amino[i] == cad) {
+								if (cont > 0){
+									aux = aux + ", "
+								}
+								cont+=1;
+								aux = aux + codones[i];
+								i+=1;
+							}
+		else {
+				i+=1;
+			}
+ 	}
+	if ((i==64) && (aux == "")) {
+				document.form1.codon.value = "Error";
+	}
+	else{
+		document.form1.codon.value = aux;
+	}
+  }
+-->  
+</script>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+</head>
+
+<body bgcolor="#E6FFE6">
+<h1 align="center" class="txtbold"><font size="4">Convertidor entre codones y aminoácidos</font></h1>
+<p align="center"><font size="2" face="Arial, Helvetica, sans-serif">Introduce 
+  un cod&oacute;n o un amino&aacute;cido en el cuadro de texto correspondiente 
+  y pulsa el bot&oacute;n <em>Convertir</em>.</font></p>
+<form name="form1" action="">
+  <table width="37%" height="127" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><div align="right"><strong><font size="2" face="Arial, Helvetica, sans-serif">Cod&oacute;n</font></strong></div></td>
+      <td><div align="right"><strong></strong></div></td>
+      <td><div align="left"> 
+          <input name="codon" type="text" id="codon" size="35" maxlength="30" onKeyPress="return pulsada(event)">
+        </div></td>
+      <td><input type="button" name="tradCodon" value="Convertir" onClick="traducirCodon()"></td>
+    </tr>
+    <tr>
+      <td><div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Amino&aacute;cido 
+          </strong></font></div></td>
+      <td><div align="right"></div></td>
+      <td><input name="aminoacido" type="text" id="aminoacido3" size="15" maxlength="5"></td>
+      <td><input type="button" name="tradAmino" value="Convertir" onClick="traducirAmino()"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td height="27">&nbsp;</td>
+      <td><div align="center"> 
+          <input type="reset" name="Submit" value="Borrar">
+        </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="20%">&nbsp;</td>
+      <td width="3%" height="42"> <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"></font></div></td>
+      <td width="56%"> <div align="center"> 
+          <input type="button" name="Submit2" value="Cerrar" onClick="window.close()">
+        </div></td>
+      <td width="21%"> <div align="left"> </div></td>
+    </tr>
+  </table>
+  </form>
+  
+<p align="left"><em><font size="2">Proyecto Biosfera<br>
+© Carlos Mu&ntilde;oz Romero, 2003<br>
+  &nbsp;</font></em></p>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria">
+<TITLE>&Oacute;rganos hom&oacute;logos y an&aacute;logos</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=4;
+CorrectAnswers[1]=3;
+CorrectAnswers[2]=3;
+CorrectAnswers[3]=4;
+CorrectAnswers[4]=1;
+CorrectAnswers[5]=2;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" OnClick="parent.close(); return true"></input></FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+2" FACE="Geneva,Arial" COLOR="#000000">&Oacute;rganos hom&oacute;logos y an&aacute;logos</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000"><img src="image/insecto.gif" width="125" height="125" alt="Ala de mariposa" align="left"><img src="image/ala.gif" width="125" height="125" alt="Ala de ave" align="right">Entre el <b>ala de un insecto</b>, el <b>tent&aacute;culo de un pulpo</b>, la <b>pinza de un cangrejo</b>, la <b>aleta de un delfín</b>, el <b>ala de un ave</b>, el <b>ala de un murci&eacute;lago</b> y el <b>brazo de un hombre</b> existen semejanzas y diferencias, de forma que las semejanzas son mayores entre seres vivos m&aacute;s pr&oacute;ximos evolutivamente entre s&iacute;, y las diferencias son mayores entre seres vivos m&aacute;s alejados en la evoluci&oacute;n. <br />
+<br />
+<BR>&nbsp;</FONT></TD></TR>
+
+
+<TR><TD ALIGN="LEFT"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">a) Haz una lista de las extremidades se&ntilde;aladas m&aacute;s arriba indicando la funci&oacute;n b&aacute;sica de cada una de ellas.<br />
+</FONT><BR>&nbsp;</TD></TR>
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">ALA DE INSECTO </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">TENT&Aacute;CULO DE PULPO</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">PINZA DE CANGREJO</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">ALA DE AVE</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">ALETA DE DELF&Iacute;N</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">BRAZO DE HOMBRE</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>LOCOMOCI&Oacute;N: NADAR
+<OPTION>SUJETAR, MANIPULAR
+<OPTION>SUJETAR
+<OPTION>LOCOMOCI&Oacute;N: VOLAR
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

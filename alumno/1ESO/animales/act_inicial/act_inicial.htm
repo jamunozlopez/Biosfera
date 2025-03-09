@@ -1,0 +1,546 @@
+<!-- The Memory Script was written by Michael Rottmeier, February 2002 -->
+<!-- &#169; Copyright by Michael Rottmeier --> 
+<!-- http://www.teaching-tools.de.vu -->
+<!-- http://learning.teach-nology.com -->
+
+
+<html>
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Ismail Ali Gago."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+&#191;Los conoces, sabes a que grupo pertenencen?
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+var CorrectIndicator = '&#161;Muy bien!, llevas  ';
+var IncorrectIndicator = 'Prueba de nuevo';
+var YourScoreIs = 'Tu puntuaci&#243;n es:'; //'Your score is: ';
+var CorrectResponse = '&#161;Bien hecho!';
+var IncorrectResponse = 'Sorry! Try again.';
+var TotalUnfixedLeftItems = 0;
+var TotCorrectChoices = 0;
+var Penalties = 0;
+var ExerciseTitle = '&#191;Los conoces, sabes a que grupo pertenencen?'; //'Test exercise';
+var ExerciseSubtitle = 'A que grupo pertenece cada una de las im&#225;enes'; //'Multiple-choice';
+var Instructions = 'Pulsa sobre dos tarjetas para emparejarlas'; //'';
+var DefaultResponse = '[strDefaultResponse]';
+var ReadingURL = '';
+
+var PreviousPage = history.length;
+
+var JMemory = true;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#408080" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+
+NavBar+='<input type="button" value="Volver" onclick=\'parent.location="../index_act.htm"\'></input>';
+
+
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar = ResolveAllURLs(NavBar);}
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#e6ffe6">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000000">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000000">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+
+var MemoryOpener = '<center><form name="MemoryGrid"><br>';
+MemoryOpener += '<table border="0">';
+
+var MemoryGridOpener = '<tr>';
+var MemoryGridCloser = '</tr>';
+
+var MemoryRow = '<td id="[MemoryNum]" onMouseOver="parent.Highlight([MemoryNum])" onMouseOut="parent.Unhighlight([MemoryNum])" onClick="parent.CheckCard([MemoryNum])" valign="middle" align="center" bgcolor="#408080" height="100" width="100">';
+MemoryRow += '[Content]</td>';
+
+var MemoryCloser = '</table></form></center>';
+
+var MatchButton = '<center><input type=button value="Comprobar" onClick="parent.Solution()"></input></center>';
+
+var cardno = 0;
+var Pairs = 0;
+
+
+var Exercise = '';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function Highlight(id){
+if (M[id][1][1] == 0){
+	BottomFrame.document.getElementById(id).style.backgroundColor = '#ff0000';
+	}
+}
+
+function Unhighlight(id){
+if (M[id][1][1] == 0){
+	BottomFrame.document.getElementById(id).style.backgroundColor = '';
+	}
+	else if (M[id][1][1] == 1){
+			BottomFrame.document.getElementById(id).style.backgroundColor = '#ffffff';
+			}
+}
+
+function ShowLogo(){
+	if (JMemory == true){
+		for (var m=0; m<M.length; m++){
+			if (M[m][1][1] == 0){
+				BottomFrame.document.getElementById(m).innerHTML = '<font size="+1" face="Geneva,Arial" color="#000000"><b>Memory</b></font>';
+				}
+			}
+		}
+}
+
+
+function Solution(){
+	var Output = '';
+	var Solution = '';
+	
+	for (var s=0; s<I.length; s++){
+		Output += I[s][0] + ' <b>&minus;</b> ' + I[s][1] + '<br>';
+		}
+		
+	Solution = Output;
+	
+	DisplayExercise(Solution);
+}
+
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#e6ffe6" text="#800000" link="#ff0000" vlink="#408080">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#e6ffe6" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#800000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+
+function StartUp(){
+
+for (var i=0; i<I.length; i++){
+	if (I[i][2] == 1){
+		JMemory = false;
+		}
+	}
+
+
+
+
+//Write the top frame
+	WriteFeedback(Instructions);
+
+
+
+// Build and show the exercise
+	BuildMemory();
+// BuildExercise();
+	DisplayExercise(Exercise);
+
+	if (JMemory == false){
+		for (m=0; m<M.length; m++){
+			BottomFrame.document.getElementById(m).innerHTML = M[m][0]; 
+			}
+		}
+	
+
+}
+
+function BuildMemory(){
+	
+	var ShuffleMemory = (I.length*2);
+
+	for (var m=0; m<I.length; m++){
+		M[m] = new Array();
+		M[m][0] = I[m][0];
+		M[m][1] = new Array();
+		M[m][1][0] = m;
+		M[m][1][1] = 0;
+		}
+
+	for (var m=0; m<I.length; m++){
+		M[I.length+m] = new Array();
+		M[I.length+m][0] = I[m][1];
+		M[I.length+m][1] = new Array();
+		M[I.length+m][1][0] = m;
+		M[I.length+m][1][1] = 0;
+		}
+	
+	M = Shuffle(M);
+		
+	var Words = 0;
+	var Memory = '';
+	Exercise = '';
+	var QuadratZahl = '';
+
+	if (Math.sqrt(M.length) == Math.round(Math.sqrt(M.length))){
+		QuadratZahl = true;
+		}
+		else{
+			QuadratZahl = false;
+			}
+
+
+	Memory += MemoryGridOpener;
+
+	for (var m=0; m<M.length; m++){
+		Memory += MemoryRow;
+		Words++;
+		if (QuadratZahl==true){
+			if (Words == Math.sqrt(M.length)){
+				Memory += MemoryGridOpener;
+				Words = 0;
+				}
+		}
+		else if (QuadratZahl==false){
+			if (Words == (Math.round(Math.sqrt(M.length)))+1){
+				Memory += MemoryGridOpener;
+				Words = 0;
+				}
+		}
+
+		Memory = ReplaceStuff('[Content]', '<font size="+1" face="Geneva,Arial" color="#000000"><b>Memory</b></font>', Memory);
+		Memory = ReplaceStuff('[MemoryNum]', m, Memory);
+		}
+	
+	Exercise += Memory;
+	
+	Exercise = MemoryOpener + Exercise + MemoryCloser + MatchButton;
+}
+
+
+function CheckCard(id){
+
+	BottomFrame.document.getElementById(id).innerHTML = M[id][0]; 
+
+var Output = '';
+
+if(cardno==0){
+	cardno++;
+	clickarray[0][0]=M[id][1][0];
+	clickarray[0][1]=id;
+	}else{
+		clickarray[1][0]=M[id][1][0];
+		clickarray[1][1]=id;
+		cardno=0;
+
+
+		
+		if (clickarray[0][1] == clickarray[1][1]){
+			clickarray[0][0] = 0;
+			clickarray[1][0] = 0;
+			clickarray[0][1] = 0;
+			clickarray[1][1] = 0;
+			setTimeout('ShowLogo()', 1000);
+			}
+		else{
+			
+			if (clickarray[0][0]==clickarray[1][0]){
+				clickarray[0][0] = 0;
+				clickarray[1][0] = 0;
+				if ((M[(clickarray[0][1])][1][1] == 0)||(M[(clickarray[1][1])][1][1] == 0)){
+					Pairs++;
+					M[(clickarray[0][1])][1][1] = 1;
+					M[(clickarray[1][1])][1][1] = 1;
+					}
+
+				BottomFrame.document.getElementById(clickarray[0][1]).style.backgroundColor='#ffffff';
+				BottomFrame.document.getElementById(clickarray[1][1]).style.backgroundColor='#ffffff';
+				clickarray[0][1] = 0;
+				clickarray[1][1] = 0;
+								
+				Output += CorrectIndicator + Pairs;
+				}
+				else{
+					if ((M[(clickarray[0][1])][1][1] == 1)||(M[(clickarray[1][1])][1][1] == 1)){}
+					else{
+						clickarray[0][0] = 0;
+						clickarray[1][0] = 0;
+						
+						setTimeout('ShowLogo()', 1000); 
+						
+						clickarray[0][1] = 0;
+						clickarray[1][1] = 0;
+				
+						Output += IncorrectIndicator;
+						Output += '<br>' + CorrectIndicator + Pairs;
+						}
+					}	
+				}
+			}
+		
+
+	if (Output != ''){
+		WriteFeedback(Output);
+		}
+		else{
+			Output += CorrectIndicator + Pairs;
+			WriteFeedback(Output);
+			}
+	
+<!--	-->
+
+}
+
+clickarray = new Array();
+clickarray[0] = new Array();
+clickarray[0][0] = 0;
+clickarray[0][1] = 0;
+clickarray[1] = new Array();	
+clickarray[1][0] = 0;
+clickarray[1][1] = 0;
+
+
+M = new Array();
+
+I = new Array();
+I[0] = new Array();
+I[0][0] = '<center><img src="peces.jpg" alt="viven en medio acu&#225;tico" width="105" height="83" border="0"></img></center>';
+I[0][1] = 'Peces';
+I[0][2] = 1;
+I[1] = new Array();
+I[1][0] = '<img src="anfibios.jpg" alt="Respiran por la piel" width="105" height="83" align="left" border="0"></img>';
+I[1][1] = 'Anfibios';
+I[1][2] = 0;
+I[2] = new Array();
+I[2][0] = '<img src="reptiles.jpg" alt="algunos son venenosos" width="105" height="83" align="left" border="0"></img>';
+I[2][1] = 'Reptiles';
+I[2][2] = 0;
+I[3] = new Array();
+I[3][0] = '<img src="aves.jpg" alt="Vuelan y algunas cantan" width="105" height="83" align="left" border="0"></img>';
+I[3][1] = 'Aves';
+I[3][2] = 0;
+I[4] = new Array();
+I[4][0] = '<img src="mamiferos.jpg" alt="son viv&#237;paros" width="105" height="83" align="left" border="0"></img>';
+I[4][1] = 'Mam&#237;feros';
+I[4][2] = 0;
+I[5] = new Array();
+I[5][0] = '<img src="esponjas.jpg" alt="se utilizaban en el ba&#241;o" width="105" height="83" align="left" border="0"></img>';
+I[5][1] = 'Por&#237;feros';
+I[5][2] = 0;
+I[6] = new Array();
+I[6][0] = '<img src="cnidarios.jpg" alt="pueden picarte en la playa" width="105" height="83" align="left" border="0"></img>';
+I[6][1] = 'Cnidarios';
+I[6][2] = 0;
+I[7] = new Array();
+I[7][0] = '<img src="anelidos.jpg" alt="con anillos" width="105" height="83" align="left" border="0"></img>';
+I[7][1] = 'An&#233;lidos';
+I[7][2] = 0;
+I[8] = new Array();
+I[8][0] = '<img src="moluscos.jpg" alt="muchos se comen, bueno se com&#237;an" width="105" height="83" align="left" border="0"></img>';
+I[8][1] = 'Moluscos';
+I[8][2] = 0;
+I[9] = new Array();
+I[9][0] = '<img src="artropodos.gif" alt="los m&#225;s numerosos" width="105" height="83" align="left" border="0"></img>';
+I[9][1] = 'Artr&#243;podos';
+I[9][2] = 0;
+I[10] = new Array();
+I[10][0] = '<img src="equinodermo.gif" alt="algunos tienen puas que pinchan" width="105" height="83" align="left" border="0"></img>';
+I[10][1] = 'Equinodermos';
+I[10][2] = 0;
+
+
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#e6ffe6" text="#800000" link="#ff0000" vlink="#408080">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#e6ffe6" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&#169;Half-Baked Software. Loading...<br>&#169; Copyright Michael Rottmeier</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+<frameset rows="25%,*" framespacing="0" border="0" onload="StartUp()">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+
+
+
+</html>

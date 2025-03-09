@@ -1,0 +1,394 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript">
+	
+	function actinicial() 
+	{ 
+		open('a_inicial.htm', '_blank', "width=790,height=525,top=0,left=0,scrollbars=yes") 
+	}
+		
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="#" onclick="actinicial()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img src="imagenes/medionatura.gif" width="721" height="24"></td>
+                    </tr>
+                  </table>
+				   </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF" valign="top"> 
+                            <td> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="557" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDADES DE INVESTIGACI&Oacute;N</font> 
+                                  </td>                                 
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6" bgcolor="#E6FFE6">
+                                <tr>
+								<td height="19" bgcolor="#E6FFE6"> 
+                                  </td> 
+                                  <td height="300"><br>
+                                  <font class="txtnegro"><b>Actividad de 
+                                  investigación 1</b>:
+                                  <a name="Los niños del volcán">Los niños del 
+                                  volcán</a></font><font class="txt"><p class="MsoNormal">
+                                  <img border="0" src="imagenes/teneguia1.jpg" align="right" hspace="6" width="339" height="190">Como&nbsp;sabrás, la ciudad de México es una de las más 
+                                  pobladas del planeta. En esta ciudad se vive 
+                                  en continuo estado de alerta sísmica y 
+                                  volcánica puesto que se encuentra próxima a 
+                                  una zona de subducción y el volcán Popocatépelt se encuentra activo.</p>
+                                  <ul>
+                                    <li>
+                                    <p class="MsoNormal">Accede a la páginas 
+                                    propuestas y contesta a las 
+                                    siguientes preguntas:</li>
+                                  </ul>
+                                    <p class="MsoNormal">&nbsp;<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <a href="http://www.cenapred.unam.mx/mvolcan.html" class="txtnegrolink" target="_blank">
+                                  http://www.cenapred.unam.mx/mvolcan.html</a></p>
+                                  <p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp <a href="http://es.wikipedia.org/wiki/Popocat%C3%A9petl" class="txtnegrolink" target="_blank">http://es.wikipedia.org/wiki/Popocat%C3%A9petl</a>&nbsp;&nbsp;</p>
+                                  <p class="MsoNormal">&nbsp;</p>
+                                  <blockquote>
+                                    <ul>
+                                      <li>
+                                      <p class="MsoNormal">¿Cuándo entró por 
+                                      ultima vez en erupción?</li>
+                                      <li>
+                                      <p class="MsoNormal">¿De dónde procede su 
+                                      nombre?</li>
+                                      <li>
+                                      <p class="MsoNormal">¿Disponen de alguna 
+                                      herramienta para explicarle a las personas 
+                                      cómo actuar?¿En qué consiste?</li>
+                                      <li>
+                                      <p class="MsoNormal">¿Qué precauciones se 
+                                      deben tomar? </li>
+                                      <li>
+                                      <p class="MsoNormal">¿En caso de 
+                                      erupciones, cómo se debe actuar?</li>
+                                      <li>
+                                      <p class="MsoNormal">¿Piensas que en 
+                                      España estamos libres de riesgo volcánico?</li>
+                                    </ul>
+                                  </blockquote>
+                                  <ul>
+                                    <li>
+                                    <p class="MsoNormal">Introduce en algún 
+                                    buscador los términos: Teneguía, erupciones 
+                                    históricas, Canarias. Para facilitarte la 
+                                    tarea puedes consultar:&nbsp; </li>
+                                  </ul>
+                                  <blockquote>
+                                    <p class="MsoNormal">&nbsp;<a href="http://www.espacioblog.com/forestman/post/2007/10/26/teneguaaa-diario-un-volcaan" class="txtnegrolink" target="_blank">Diario 
+                                    de un volcán</a></p>
+                                  </blockquote>
+                                  <ul>
+                                    <li>
+                                    <p class="MsoNormal">Los niños necesitan 
+                                    explicaciones más sencillas que los adultos. 
+                                    Para esta labor las autoridades elaboran 
+                                    manuales en forma de cuento. En el siguiente 
+                                    enlace puedes encontrar varios manuales 
+                                    realizados por la Estrategia Internacional 
+                                    para la Reducción de Desastres de la ONU 
+                                    para reducir la incidencia de los desastres 
+                                    en la población infantil. 
+                                  <blockquote>
+                                    <p class="MsoNormal">
+                                    <a href="http://www.eird.org/esp/educacion/materialeird.html" class="txtnegrolink" target="_blank">
+                                    Material educativo EIRD</a></p>
+                                    <p class="MsoNormal">
+                                    <a href="http://www.eird.org/fulltext/ABCDesastres/index.htm" class="txtnegrolink" target="_blank">
+                                    ABC desastres EIRD</a></p>
+                                  </blockquote>
+                                    </li>
+                                    <li>
+                                    <p class="MsoNormal">Busca información sobre 
+                                    cómo actuar en caso de erupción de alguno de 
+                                    los volcanes Canarios. Intenta contestar a 
+                                    las mismas preguntas que en el caso de 
+                                    México. <br>
+&nbsp;</li>
+                                    <li>Evaluación: Emite un informe comparando 
+                                    el nivel de preparación, sensibilización e información 
+                                    ante los riesgos volcánicos en uno y otro 
+                                    país.</li>
+                                  </ul>
+                                  <p>&nbsp;</p>
+                                  </font>
+                                  <p><br> 
+                                    <font class="txtnegro"><b>Actividad de 
+                                  investigación 2</b>:
+                                  <a name="Nuestras construcciones">Nuestras construcciones</a>  están sometidas a&nbsp;actividad tectónica terrestre.</font></p>
+                                  <p align="center"> 
+                                    <font class="txtnegro"> <br>
+                                  <img border="0" src="imagenes/sismo-resistencia.gif" width="288" height="223"></font></p>
+									<dir>
+                                    <p class="MsoNormal"><font class="txt">
+									Si piensas que nuestras construcciones no 
+									están sometidas a actividad tectónica 
+									terrestre te invitamos a visitar la 
+									siguiente página web. En ella se explica que 
+									condiciones debe tener una construcción para 
+									ser sismorresistente. Además aprenderás que 
+                                    este tipo de construcciones no son 
+                                    exclusivas de los grandes edificios de los 
+                                    paises ricos.<br><br>	
+										<a class="txtnegrolink" href="ManualMinkeSpan.pdf" target="_blank">
+                                    Manual de construcción antisísmica</a></font></p>								
+                                    <p><font class="txt">
+										<a class="txtnegrolink" href="http://www.arquitectuba.com.ar/curso-construccion-sismo-resistente-cana-bambu/" target="_blank">
+                                    Curso de construcción antisísmica</a></font></p>								
+                                    <p><font class="txt">
+										<a href="http://www.cite-sciences.fr/francais/ala_cite/science_actualites/sitesactu/dossier.php?langue=es&preview=&id_article=5343&id_theme=&noPage=&textRecherche=&radioSur=&dateDocu=&id_dossier=281&tc=QACTU&prov=" class="txtnegrolink" target="_blank">
+                                    Science Actualités: Riesgos sísmicos. Protección de poblaciones.</a></font></p>								
+                                    <p><font class="txt">
+									Evaluación:
+									Ya puedes explicar alguno de los daños de 
+                                    los terremotos recientes (<a class="txtnegrolink" href="http://dsr.nii.ac.jp/bam/before-after.html.en">Bam</a> 
+                                    y <a class="txtnegrolink" href="http://www.uwec.edu/jolhm/EH2/Ofori-Amoah/Kobe%20Earthquke/Overview.htm">
+                                    Kobe</a>) y proponer medidas para su 
+                                    reconstrucción ilustrando tus conclusiones 
+                                    con las imágenes encontradas. Elabora una 
+                                    presentación de 6 diapositivas con el 
+                                    material recopilado.</p>								
+									<br>
+									
+									
+									
+									<p>&nbsp;</p>
+									
+									
+									
+									</dir>		
+										
+									</font>
+									<p><font class="txtnegro"><b>Actividad de 
+                                    investigación 3</b>:
+                                    <a name="Relación entre daños">Relación 
+                                    entre daños</a> ocasionados por&nbsp;terremotos y 
+                                    el estatus económico de los países con 
+                                    influencia sísmica.</font><font class="txt"><font class="txtnegro"><br> 
+									</font></p>
+									<dir>  
+                                    <p><font class="txt">
+									Visita la página web:
+									<br><br>
+									<a href="http://www.eird.org/esp/revista/No3_2001/pagina4.htm" class="txtnegrolink" target="_blank">
+									 http://www.eird.org/esp/revista/No3_2001/pagina4.htm									</a><br><br>
+									Sitúa en un mapamundi las ciudades de  Izmit (1999), Managua (1972), 
+									México (1985), Tangshan (1976) y Tokio (1923). En el paréntesis 
+									encontrarás el año en que se produjo un terremoto de gran 
+									intensidad en esa ciudad.<br></font>  
+                                    <p>Evaluación: Redacta un informe en el que 
+                                    contestes a las siguientes cuestiones:
+									<p><br>
+									<dir>
+										¿Encuentras alguna relación entre el número de muertes y los costes materiales producidos en una 
+										u otra ciudad?<br>
+										¿A qué crees que se debe?<br>
+										¿Podemos artificialmente disminuir las consecuencias 
+										catastróficas de los terremotos?<br>
+										¿Piensas que todos los países del mundo tienen 
+										iguales posibilidades de reducir esos daños?<br>
+										¿Desde 1923 no se han vuelto a producir terremotos en Tokio?<br>
+										
+									</dir>
+									
+									</dir>
+												
+						          <p>&nbsp;</td>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+						</tr>											
+								</td>
+							</tr>
+													
+						
+						</table> 
+						
+					</td>
+					</tr>                             
+                  </table>
+               </td>
+            </tr>
+         </table>  
+       </td>
+       </tr>             
+       </table>
+     </td>
+   </tr>
+   </table>
+ </td>
+</tr>
+</table>
+
+<br>
+</body>
+</html>

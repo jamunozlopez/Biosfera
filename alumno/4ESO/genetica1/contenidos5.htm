@@ -1,0 +1,626 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/contenidos/herencia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (5/12) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">3.- LA DIVISI&Oacute;N CELULAR:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>La divisi&oacute;n celular es, en 
+                                            realidad, un proceso doble. Estos 
+                                            dos procesos son:</p>
+                                          <blockquote> 
+                                            <blockquote>
+                                              <p>- la divisi&oacute;n nuclear, 
+                                                o CARIOCINESIS<br>
+                                                - la divisi&oacute;n citopl&aacute;smica, 
+                                                o CITOCINESIS</p>
+                                            </blockquote>
+                                          </blockquote>
+                                          <p>Ambos procesos pueden darse asociados, 
+                                            uno detr&aacute;s del otro, o de forma 
+                                            independiente, primero uno, y alg&uacute;n 
+                                            tiempo despu&eacute;s el otro.</p>
+                                          <p>Para que pueda darse la divisi&oacute;n 
+                                            nuclear es necesario que se de previamente 
+                                            otro proceso, que es la replicaci&oacute;n 
+                                            del ADN.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p><a name="replicacion"></a></p>
+                              <p class="txtnegro">Replicaci&oacute;n del ADN</p>
+                              <p class="txtnegro" align="center">
+                              <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="313" height="311">
+                                <param name="movie" value="imagenes/Ciclo_celular.swf">
+                                <param name="quality" value="High">
+                                <param name="wmode" value="transparent">
+                                <embed src="imagenes/Ciclo_celular.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="313" height="311" quality="High" wmode="transparent"></object>
+                              </p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p> El primer proceso clave para que 
+                                            se de la divisi&oacute;n nuclear es 
+                                            que todas<span class="txtnegro"> las 
+                                          cadenas de ADN se dupliquen (</span><font class="txt"><a class="txtnegrolink" href="#" onClick="MM_openBrWindow('replicacion.htm','replicacion','scrollbars=yes,width=400,height=100')">REPLICACIÓN 
+                                          del ADN</a></font><span class="txtnegro">)</span>; esto se da 
+                                            inmediatamente antes de que comience 
+                                            la divisi&oacute;n, en un per&iacute;odo 
+                                            del <b>ciclo 
+                                            celular</b> llamado INTERFASE, que 
+                                            es aquel momento de la vida celular 
+                                            en que &eacute;sta no se est&aacute; 
+                                            dividiendo.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <br>
+                              <div align="center"> 
+                                <img border="0" src="imagenes/interfase1.gif" width="320" height="258" alt="La Interfase es el momento del ciclo celular en el que la célula no se divide."><img border="0" src="imagenes/interfase_dupli1.gif" width="320" height="258" alt="Al final de la Interfase se produce la duplicación de las cadenas de ADN."><br>
+                              </div>
+							  <p>&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p> Tras la replicaci&oacute;n tendremos 
+                                            dos juegos de cadenas de ADN, por 
+                                            lo que la mitosis consistir&aacute; 
+                                            en separar esas cadenas y llevarlas 
+                                            a las c&eacute;lulas hijas. Para conseguir 
+                                            esto se da otro proceso crucial 
+                                            que es la conversi&oacute;n de la 
+                                            CROMATINA en CROMOSOMAS.</p>
+                                          </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+							  <p class="txtnegrolink" align="center">
+                              <img border="0" src="imagenes/replicacion.gif" width="280" height="240"></p>
+							  <p class="txtnegro" align="center">Animaci&oacute;n de la replicaci&oacute;n</p>
+                              <table width="90%" border="1" align="center" bgcolor="#d1e9d1">
+                                <tr> 
+                                  <td class="txtnegro">C&eacute;lula madre en 
+                                    Interfase</td>
+                                  <td class="txtnegro">C&eacute;lula madre al 
+                                    final de la Interfase</td>
+                                  <td class="txtnegro">C&eacute;lula madre en 
+                                    divisi&oacute;n</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">Material hereditario en forma 
+                                    de cadenas aisladas que constituyen la CROMATINA. 
+                                    <p class="txt">En la especie humana:<br>
+                                      2n = 46 cadenas<br>
+                                    </p>
+                                  </td>
+                                  <td class="txt">Material hereditario se duplica 
+                                    por la REPLICACI&Oacute;N, cada cadena est&aacute; 
+                                    dos veces; la cromatina est&aacute; formada 
+                                    por pares de cadenas ID&Eacute;NTICAS. 
+                                    <p>En la especie humana:<br>
+                                      2n = 92 cadenas (iguales dos a dos)<br>
+                                    </p>
+                                  </td>
+                                  <td class="txt">Las dos cadenas de ADN id&eacute;nticas 
+                                    se espiralizan y se convierten en CROMOSOMAS. 
+                                    <p>En la especie humana<br>
+                                      2n = 46 cromosomas (formados por dos cadenas 
+                                      id&eacute;nticas cada uno)<br>
+                                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp;</p>
+                              <p class="txt"><a name="cariocinesis"></a></p>
+                              <p class="txtnegro">DIVISI&Oacute;N NUCLEAR (CARIOCINESIS)</p>
+                              <p class="txt"><span class="txtnegro">Mitosis</span> 
+                              </p>
+                              <div align="center">
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">La mitosis no es una 
+                                              reproducci&oacute;n en s&iacute; 
+                                              misma, sino que es un proceso de 
+                                              divisi&oacute;n nuclear que sirve 
+                                              para repartir las cadenas de ADN 
+                                              de forma que todas las c&eacute;lulas 
+                                              hijas que se originan tengan la 
+                                              MISMA INFORMACI&Oacute;N GEN&Eacute;TICA 
+                                              que su madre y entre ellas. La mitosis 
+                                              es continua, sin interrupciones, 
+                                              relativamente r&aacute;pida, que 
+                                              para ser estudiada se suele dividir 
+                                              en varias fases, que son la PROFASE, 
+                                              la METAFASE, la ANAFASE y la TELOFASE.</p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              </div>
+							  <p><br></p>
+                              <p class="txt">PROFASE</p>
+							  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/profase_temp.gif" width="360" height="258" alt="Profase temprana"></td>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/prof_tard.gif" width="360" height="258" alt="Profase avanzada"></td>
+                                </tr>
+                              </table>
+							  <p align="left" > 
+                                &nbsp; 
+                              </p>
+                              <div align="center"> 
+                                <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                  <tr> 
+                                    <td> 
+                                      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <ul>
+                                              <li>
+                                              <p class="txt">Comienza con la conversi&oacute;n 
+                                              de la CROMATINA en CROMOSOMAS (1) 
+                                              por un proceso de espiralizaci&oacute;n 
+                                              de las cadenas (igual que si tenemos 
+                                              un alambre largo y lo convertimos 
+                                              en un muelle), seguiremos teniendo 
+                                              lo mismo, pero de forma diferente: 
+                                              las dos cadenas que son completamente 
+                                              id&eacute;nticas (ya que una se 
+                                              ha formado por replicaci&oacute;n 
+                                              de la otra) se espiralizan juntas 
+                                              originando las crom&aacute;tidas 
+                                              del cromosoma.</p></li>
+                                              <li>
+                                              <p class="txt">Se duplican los centriolos (2).</p>
+                                              </li>
+                                              <li>
+                                              <p class="txt">La membrana nuclear desaparece 
+                                              (3).</p></li>
+                                              <li>
+                                              <p class="txt">Cuando ya ha desaparecido la membrana 
+                                              nuclear, los centriolos migran hacia 
+                                              los polos (extremos) de la c&eacute;lula 
+                                              (4), apareciendo entre los dos pares 
+                                              de centriolos una serie de fibras 
+                                              de prote&iacute;na dispuestas de 
+                                              polo a polo que reciben el nombre 
+                                              en conjunto de HUSO ACROM&Aacute;TICO 
+                                              (5).</p></li>
+                                              <li>
+                                              <p class="txt">Los cromosomas ya formados se 
+                                              mueven y se unen a una fibra del 
+                                              huso por su centr&oacute;mero (un 
+                                              s&oacute;lo cromosoma por fibra) 
+                                              (6), de manera que las crom&aacute;tidas 
+                                              miran hacia los polos de la c&eacute;lula.</p>
+                                              </li>
+                                              <li>
+                                              <p class="txt">Cuando se han unido se van moviendo 
+                                              hasta situarse en el centro de la 
+                                              c&eacute;lula. </p></li>
+                                            </ul>
+                                            <p>En la c&eacute;lula vegetal no 
+                                              existen centriolos y a veces no 
+                                              se ve el huso acrom&aacute;tico.</p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br></p> 
+                              <p class="txt">METAFASE</p>
+                              <p class="txtnegro" align="center">
+                              <img border="0" src="imagenes/metafase.gif" width="360" height="258" alt="Metafase con la placa ecuatorial"></p>
+							    <div align="center">
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Es una fase breve en 
+                                              la que todos los cromosomas se encuentran 
+                                              situados en el ecuador (parte media) 
+                                              de la c&eacute;lula, formando una 
+                                              figura muy caracter&iacute;stica 
+                                              llamada PLACA ECUATORIAL (1). Tras 
+                                              colocarse aqu&iacute; comienza la 
+                                              siguiente fase. </p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              </div>
+							  <p><br></p>
+                              <p class="txt">ANAFASE</p>
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                                <tr>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/anaftemp.gif" width="320" height="258" alt="Anafase inicial"></td>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/anaftard.gif" width="320" height="258" alt="Anafase final"></td>
+                                </tr>
+                              </table>
+                              <p align="center">&nbsp;<br>
+                              </p>
+                              <div align="center">
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Las crom&aacute;tidas 
+                                              se separan y se desplazan hacia 
+                                              los centriolos, al tiempo que van 
+                                              desapareciendo las fibras del huso. 
+                                              En este momento ya se ha repartido 
+                                              el material hereditario (las cadenas 
+                                              de ADN) de forma id&eacute;ntica 
+                                              en dos partes.</p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              </div>
+							  <p><br></p>
+                              <p class="txt">TELOFASE</p>
+                              <p>&nbsp;</p>
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
+                                <tr>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/telofase_temp.gif" width="360" height="258" alt="Telofase temprana"></td>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/telofase_tard.gif" width="320" height="258" alt="Telofase tardía"></td>
+                                </tr>
+                              </table>
+                              <p> <br>
+                              </p>
+                              <div align="center">
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Es como una profase 
+                                              al rev&eacute;s, los cromosomas 
+                                              se desespiralizan y se transforman 
+                                              en cromatina (2); aparece la membrana 
+                                              nuclear (1), quedando una c&eacute;lula 
+                                              con dos n&uacute;cleos. Aqu&iacute; 
+                                              concluye la mitosis.</p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              </div>
+							  <p><a name="citocinesis"></a></p>
+                              <p class="txtnegro">DIVISI&Oacute;N CITOPLASM&Aacute;TICA 
+                                (CITOCINESIS)</p>
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+                                <tr>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/citocinesis_ini.gif" width="320" height="258" alt="Inicio de la citocinesis"></td>
+                                  <td width="50%">
+                                  <img border="0" src="imagenes/citocinesis_fin.gif" width="320" height="258" alt="Final de la citocinesis"></td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;<br>
+                              </p>
+                              <div align="center">
+							<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt"><span class="txtnegro">No 
+                                              es una fase de la mitosis</span>. 
+                                              Es la divisi&oacute;n del citoplasma 
+                                              en dos partes, con la repartici&oacute;n 
+                                              aproximada de los org&aacute;nulos 
+                                              celulares. En las c&eacute;lulas 
+                                              animales se hace por estrangulaci&oacute;n, 
+                                              desde fuera hacia adentro, y en 
+                                              las vegetales se hace por crecimiento 
+                                              de la pared celular desde dentro 
+                                              hacia afuera. El resultado final 
+                                              es que la c&eacute;lula madre se 
+                                              ha transformado en dos c&eacute;lulas 
+                                              hijas id&eacute;nticas gen&eacute;ticamente. 
+                                            </p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              </div>
+							  <p align="center">
+                              <img border="0" src="imagenes/mitosis_animacion.gif" width="280" height="240"></p>
+                              <p class="txtnegro" align="center">Animaci&oacute;n de la mitosis</p>
+                               <div align="center"> 
+                                <div align="center">
+									<table border="0" width="60%" id="table1">
+										<tr>
+											<td align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" id="table3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                        
+                                      <a target="_blank" href="actividad4gen.htm"><font class="txtnegrolink"> 
+                                        Actividad 4</font></a> 
+                                      <a target="_blank" href="actividad4gen.htm"><img src="imagenes/contenidos/activ4.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              				</td>
+											<td align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" id="table2">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                        
+                                      <a target="_blank" href="actividad4b.htm"><font class="txtnegrolink"> 
+                                        Actividad 4b</font></a>
+										<a target="_blank" href="actividad4b.htm">
+										<img src="mitosis_t.jpg" width="120" height="100" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              				</td>
+											</tr>
+											<tr>
+												<td align="center">&nbsp;</td>
+												<td align="center">
+												<p class="txt" style="text-align: center">
+												(Contiene vídeo)
+												<img border="0" src="../../../img/wmv.gif" width="16" height="16"></td>
+											</tr>
+										</table>
+									</div>
+                              </div>
+							  <br>
+                              <p><br>
+                              </p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (5/12) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

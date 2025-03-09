@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>AUTOEVALUACIÓN</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>AUTOEVALUACIÓN</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El control de las enfermedades infecciosas se produce por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La existencia de un gran número de médicos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La educación preventiva</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La automedicación</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La disminución de agentes infecciosos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Se llama pandemia a una enfermedad infecciosa que afecte</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>A un número elevado de individuos en un tiempo corto</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>A una región determinada y en un momento concreto</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>A un número elevado de individuos, en un tiempo corto y en una región extensa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>A un número bajo de individuos en un tiempo corto</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En caso de aparición de un caso de cólera</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se habla de epidemia</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>es irrelevante</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Debe ser publicado urgentemente</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Debe pubicarse en el Anuario del Ministerio de Medio Ambiente</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un fungicida destruye</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Algas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Virus</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Bacterias</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Hongos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una exotoxina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tiene baja toxicidad</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se encuentra en la pared bacteriana</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Induce la producción de anticuerpos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es típica de bacterias Gram -</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El Carbono vuelve a la Atmósfera por el proceso de</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fotosíntesis</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Respiración celular</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Fijación anaerobia</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Reducción asimilatoria</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Nitrosomonas actúa en el proceso de</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Nitrificación</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Amonificación</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Desnitrificación</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Nitratación</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Quién interviene en la fijación del Nitrógeno?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Rhizobium</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Desulfovibrio</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Bacterias metanógenas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Pseudomonas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la biorremediación actúan microorganismos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fotosintéticos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Parásitos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Descomponedores</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Comensales</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la producción de vinagre se necesitan</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Condiciones anaerobias estrictas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Temperaturas altas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Presencia de oxígeno</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Presencia de Saccharomyces</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>la fermentación alcohólica</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es producida por algas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Termina con la obtención de vinagre</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es producida por levaduras</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Produce ácido láctico</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El ácido láctico se produce en la fermentación</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Alcohólica</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Acética</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Pirúvica</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Láctica</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los métodos químicos NO se aplican sobre</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Utensilios</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Aparatos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Alimentos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Manipuladores</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una de las cuatro respuestas NO es correcta: En un proceso industrial se debe contar con</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Nutrientes baratos y difíciles de obtener</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Asepsia en los tanques</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Cepas clones estables</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Subproductos fácilmente eliminables</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las levaduras son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Mohos que no forman hifas, ni micelio</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Hongos que no forman hifas, ni micelio</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Mohos que presentan hifas y micelio</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Hongos que presentan sincitios</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las algas unicelulares</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Presentan flagelos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>No contienen pigmentos, excepto las Clorofitas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son todas marinas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Tienen reproducción siempre de forma sexual</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los protozoos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son heterótrofos, pluricelulares y con capacidad de movimiento</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se reproducen todos por conjugación</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se desplazan por flagelos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Son eucariotas, unicelulares y heterótrofos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los pili</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son necesarios en la transducción</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Actúan en la conjuación de ciliados</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Sólo aparecen en bacterias Hfr</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Aparecen en bacterias que poseen el plásmido F</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la transformación bacteriana actúa</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Los mesosomas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Los flagelos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Las cápsidas víricas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Fragmentos de ADN de otra célula lisada</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los plásmidos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fragmentos de mesosomas</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>ADN extracelular</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>ADN extracromosómico</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>ADN que proviene de una célula muerta</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La pared celular bacteriana</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es destruida por antibióticos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Tiene la misma estructura en todas las bacterias</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>En bacterias Gram + es resistente a los antibióticos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>En bacterias Gram - está formada únicamente por peptidoglucanos</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El profago es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un virus atenuado</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un virión</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un viroide</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un prión</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>la transcriptasa inversa es típica de virus</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>ADN monocatenarios</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>ADN bicatenarios</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>ARN monocatenarios +</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>ARN monocatenarios -</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El capsómero es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una proteína de la cubierta proteica vírica</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La cubierta proteica de un virus</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Parte de la vaina</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Parte de la pared bacteriana</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Vorticella es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un virus</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un protozoo</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un hongo</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un alga</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>=Siguiente&gt;</next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

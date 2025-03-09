@@ -1,0 +1,565 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+               <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituinmune.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0" height="1928">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center" height="1927"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con las deficiencias y disfunciones del sistema inmune" href="contenidos12.htm">anterior - (13/13) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con el índice de contenidos del tema" href="contenidos.htm">
+                                  índice de contenidos</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    SUEROS Y VACUNAS. IMPORTANCIA INDUSTRIAL</b></font></font></p>
+                                    <p class="txt">La inmunidad que aparece en 
+                                    el cuerpo como consecuencia de una respuesta 
+                                    inmune no provocada se conoce con el nombre 
+                                    de <b>inmunidad natural</b>. Existe otro 
+                                    tipo de inmunidad, la <b>inmunidad 
+                                    artificial</b>, que se adquiere 
+                                    suministrando al individuo un <b>suero </b>o 
+                                    una <b>vacuna</b>. Hay dos tipos de 
+                                    inmunidad artificial, la <b><font color="#006666" size="2" face="Arial"> 
+                                    <a class="txtnegrolink" href="#pasiva">pasiva</a></font> </b>y la <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#activa">activa</a></font></b>.</p>
+                                    <table border="0" cellspacing="1" width="101%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="73%">
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><a name="pasiva"></a>La <b>inmunidad artificial 
+                                    pasiva </b>se adquiere cuando al sujeto&nbsp; 
+                                    se le administra directamente <b>anticuerpos 
+                                    específicos </b>para un patógeno 
+                                    determinado. Los anticuerpos producen 
+                                    inmunidad rápidamente (unas pocas horas), 
+                                    pero su efecto no es de larga duración (sólo 
+                                    unos meses), debido a que no se activa la 
+                                    memoria inmunológica. Estos anticuerpos 
+                                    reciben el nombre de <b>suero</b> o <b>
+                                    antídoto</b>.</p>
+                                    <p class="txt">Los anticuerpos se obtenían 
+                                    de animales domésticos. En la actualidad se 
+                                    utilizan imunoglobulinas humanas. Este tipo 
+                                    de sueros se utilizan para inmunizar contra 
+                                    el tétanos, la difteria, la hepatitis (A y 
+                                    B), etc.</p>
+                                      </li>
+                                    </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="25%">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/ratita.jpg" width="150" height="151" alt="las ratas de laboratorio producían sueros contra enfermedades infecciosas"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="73%">
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><a name="activa"></a>La <b>inmunidad artificial 
+                                    activa </b>se produce por inoculación de una
+                                    <b>vacuna</b>. La inmunidad generada por la 
+                                    vacuna es efectiva al cabo de varios días, 
+                                    pero, al crear <b>memoria inmunológica</b>, 
+                                    su capacidad de acción es duradera.</p>
+                                    <p class="txt">La vacuna contiene <b>
+                                    antígenos </b>contra los que reacciona el 
+                                    sistema inmune. Estos antígenos inducen a la 
+                                    formación de sus anticuerpos 
+                                    correspondientes, que activarán a los 
+                                    linfocitos T y B, creando las &quot;células de 
+                                    memoria&quot;. Si el antígeno vuelve a 
+                                    presentarse, el organismo está preparado 
+                                    para actuar sobre el patógeno de forma 
+                                    rápida y selectiva, impidiendo su 
+                                    propagación.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="25%">
+                                        <img border="0" src="imagenes/VACUNA5.JPG" width="170" height="136" alt="Mediante la vacuna se adquiere inmunidad artificial"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt" style="text-align: center">
+									<b>
+									<font color="#006666" size="2" face="Arial">
+                                  	<a class="txtnegrolink" target="_blank" href="suerovacuna.htm">
+									<font size="4">Ampliación de contenidos: 
+									sueros o vacunas.</font></a></font></b></p>
+									<p class="txt">&nbsp;</p>
+									<p class="txt">En la actualidad se utilizan 
+                                    varios tipos de vacunas:</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber3">
+                                      <tr>
+                                        <td width="63%">
+                                        <ul>
+                                          <li>
+                                    <p class="txt"><b>Vacunas con patógenos 
+                                    vivos atenuados</b>: el patógeno se trata en 
+                                    el laboratorio para que pierda virulencia. 
+                                    Este tratamiento se sigue con virus, 
+                                    consiguiendo esos patógenos atenuados por 
+                                    mutaciones espontáneas en algunos casos. 
+                                    Este tipo de vacunas se utiliza contra el 
+                                    sarampión, la rubeola, las paperas o la 
+                                    poliomielitis, etc. El riesgo de estas vacunas 
+                                    es que una mutación origine la aparición de 
+                                    un virus infeccioso que provoque la 
+                                    enfermedad.</p>
+                                          </li>
+                                          <li>
+                                    <p class="txt"><b>Vacunas con cepas no 
+                                    peligrosas</b>: por mutación espontánea y 
+                                    natural aparecen bacterias o virus que no 
+                                    son capaces de producir una determinada 
+                                    enfermedad, pero disparan la respuesta 
+                                    inmune. Algunas veces se utilizan patógenos 
+                                    que causan enfermedad en una especie (la 
+                                    vaca, por ejemplo) y no la produce en la 
+                                    especie humana.</p>
+                                          </li>
+                                          <li>
+                                    <p class="txt"><b>Vacunas con patógenos 
+                                    muertos (bacterias) o inactivados (virus)</b>: 
+                                    para provocar la muerte o la inactividad de 
+                                    patógeno se utilizan métodos físicos (alta 
+                                    temperatura, luz ultravioleta, radiaciones, 
+                                    etc.) Suele ser&nbsp; utilizado este 
+                                    método para la obtención de las vacunas de 
+                                    la gripe, la tos ferina, el cólera...</p>
+                                          </li>
+                                          <li>
+                                    <p class="txt"><b>Vacunas de antígenos 
+                                    purificados</b>: se utilizan técnicas de 
+                                    ingeniería genética, obteniéndose 
+                                    generalmente una proteína. Esta técnica se 
+                                    ha utilizado para la obtención de la vacuna 
+                                    contra la hepatitis B.</p>
+                                          </li>
+                                        </ul>
+                                        </td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/virus1.jpg" alt="Virus infectando una célula" width="323" height="480"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b>Líneas actuales para la 
+                                    obtención de vacunas</b></p>
+                                    <p class="txt">Hoy día se busca una 
+                                    producción eficaz y barata para la obtención 
+                                    de vacunas. Se siguen distintas líneas de 
+                                    trabajo, de las que se pueden destacar:</p>
+                                    <p class="txt"><b>La utilización de péptidos 
+                                    sintéticos</b>: mediante complejos 
+                                    enzimáticos, en laboratorio, se pueden crear 
+                                    péptidos &quot;a la carta&quot;. El problema que 
+                                    aparece en este tipo de producción es el 
+                                    difícil aislamiento y recogida del péptido 
+                                    creado. Estos péptidos pueden utilizarse 
+                                    como vacuna directamente o como un 
+                                    componente más de una vacuna que se cree 
+                                    posteriormente.</p>
+                                    <p class="txt"><b>Fabricación de vacunas 
+                                    génicas</b>: se emplea un organismo 
+                                    modificado genéticamente para que produzca 
+                                    antígenos. Estos antígenos se usarán 
+                                    posteriormente para la creación de una 
+                                    vacuna. Para ello, deben seguirse los 
+                                    siguientes pasos:</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt">Identificación y aislamiento 
+                                    del agente patógeno.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">Identificación del gen 
+                                    productor del antígeno en el agente patógeno 
+                                    (por ejemplo, el gen que produzca la 
+                                    proteína de la cápsida de un virus).</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">Introducción de ese gen&nbsp; 
+                                    en el genoma de una bacteria y reproducción 
+                                    de esa bacteria genéticamente modificada.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">Producción de las proteínas 
+                                    buscadas, por la colonia de bacterias 
+                                    genéticamente modificadas.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">Extracción y aislamiento del 
+                                    medio de cultivo, de esas proteínas.</p>
+                                      </li>
+                                      <li>
+                                    <p class="txt">Inyección de la proteína 
+                                    (vacuna) para generar la inmunidad frente a 
+                                    ese patógeno.</p>
+                                      </li>
+                                    </ul>
+                                    <p class="txt">Los pasos que se deben seguir 
+                                    para la creación de una vacuna suponen <b>
+                                    años de investigación</b>. La industria 
+                                    farmacéutica invierte gran cantidad de 
+                                    recursos en estos estudios. Así, cuando se 
+                                    obtiene un avance en la investigación o se 
+                                    consigue una vacuna eficaz, <b>se patenta
+                                    </b>con el fin de comercializarla.</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="33%">
+                                        <img border="0" src="imagenes/patarroyo.jpg" alt="Manuel Elkin Patarroyo" width="225" height="287"></td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="62%">
+                                    <p class="txt">No sólo la industria 
+                                    farmacéutica investiga en este campo. Organismos internacionales, gobiernos, 
+                                    mediante la subvención total o parcial a 
+                                    centros de investigación, universidades o 
+                                    laboratorios, también buscan la obtención de 
+                                    nuevas vacuas más eficaces, con fines más 
+                                    altruistas.</p>
+                                    <p class="txt">Consideramos que merece una 
+                                    mención especial en este tema <b>Manuel 
+                                    Elkin Patarroyo</b>, premio Príncipe de 
+                                    Asturias por sus trabajos y esfuerzos en 
+                                    beneficio de la Humanidad. Sus trabajos 
+                                    están dirigidos a la obtención de una vacuna 
+                                    total contra la malaria (paludismo). Los 
+                                    resultados obtenidos los ha patentado 
+                                    cediendo todos los derechos de la patente a 
+                                    organismos internacionales, como la ONU y la 
+                                    OMS (Organización Mundial de la Salud). De 
+                                    esta manera, 
+                                    el precio de la vacuna es muy bajo, de forma 
+                                    que los habitantes de los países en vías de 
+                                    desarrollo pueden acceder a ella.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    &nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#FFCC99"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Investiga sobre la producción de vacunas" href="invesfarma.htm">Investigación 
+                                          6</a></font></b><a title="Investiga sobre la producción de vacunas" target="_blank" href="invesfarma.htm"><img border="2" src="imagenes/laboratorio_small.jpg" xthumbnail-orig-image="imagenes/laboratorio.jpg" width="100" height="114"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%"> 
+                                    &nbsp;</td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber5" height="267">
+                                      <tr>
+                                        <td width="20%" height="98">&nbsp;</td>
+                                        <td width="20%" height="98"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Repasa las vacunas y los sueros" href="actividades/act9a.htm">Actividad
+                                          13</a></font></b><a title="Repasa las vacunas y los sueros" target="_blank" href="actividades/act9a.htm"><img border="2" src="imagenes/cuadritos/cuad9small.jpg" xthumbnail-orig-image="imagenes/cuadritos/cuad9.jpg" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%" height="98">&nbsp;</td>
+                                        <td width="20%" height="98"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act14.htm">Actividad
+                                          14</a></font></b><a target="_blank" href="actividades/act14.htm"><img border="2" src="miniaturas/cuad14small.gif" xthumbnail-orig-image="miniaturas/cuad14.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%" height="98">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" height="62">&nbsp;</td>
+                                        <td width="20%" height="62">&nbsp;</td>
+                                        <td width="20%" height="62">&nbsp;</td>
+                                        <td width="20%" height="62">&nbsp;</td>
+                                        <td width="20%" height="62">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" height="98">&nbsp;</td>
+                                        <td width="20%" height="98"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act15.htm">Actividad
+                                          15</a></font></b><a target="_blank" href="actividades/act15.htm"><img border="2" src="miniaturas/cuad15small.gif" xthumbnail-orig-image="miniaturas/cuad15.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%" height="98"> 
+                                    &nbsp;</td>
+                                        <td width="20%" height="98"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act16.htm">Actividad
+                                          16</a></font></b><a target="_blank" href="actividades/act16.htm"><img border="2" src="miniaturas/cuad16small.gif" xthumbnail-orig-image="miniaturas/cuad16.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%" height="98">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con las deficiencias y disfunciones del sistema inmune" href="contenidos12.htm">anterior- (13/13) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con el índice de contenidos del tema" href="contenidos.htm">
+                                        índice de contenidos</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

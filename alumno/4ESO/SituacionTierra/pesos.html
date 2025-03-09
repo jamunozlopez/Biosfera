@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=x-user-defined">
+   <meta name="GENERATOR" content="Mozilla/4.5 [es] (Win98; I) [Netscape]">
+   <title>Tu peso en otros mundos</title>
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="http://recursos.cnice.mec.es/biosfera/alumno/4ESO/estilos/estilo.css" type="text/css">
+<script language=LiveScript>
+
+<!-- hide this script tag's contents from old browsers
+
+function calcular_peso(form)
+{
+    var peso = form.ps.value;
+    if (peso > 0.0) {
+        form.outputmerc.value = int_zero(peso * .37 );
+        form.outputvenus.value = int_zero(peso * .88 );
+        form.outputluna.value = int_zero(peso * .16 );
+        form.outputmarte.value = int_zero(peso * .38 ) ;
+        form.outputjup.value = int_zero(peso * 2.64 );
+        form.outputsat.value = int_zero(peso * 1.15 );
+        form.outputura.value = int_zero(peso * 1.17 );
+        form.outputnept.value = int_zero(peso * 1.18 );
+        form.outputplut.value = int_zero(peso * .07 );
+	form.outputsol.value = int_zero(peso * 4E+18);
+    }
+
+}
+
+// Function to return 0 if result is <1
+function int_zero(x)
+{
+	if ( x < 1 )
+		return 0 ;
+	else
+		return parseInt( x ,10 );
+}
+
+<!-- done hiding from old browsers -->
+
+</script>
+</head>
+<body bgcolor="#E6FFE6" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<br>
+<table width="80%" border="0" cellspacing="0" cellpadding="2" align="center">
+  <tr> 
+    <td> 
+      <div align="center"><font class="txtbold">CALCULA TU PESO EN EL SISTEMA 
+        SOLAR</font><font class="txt"></font> </div>
+    </td>
+  </tr>
+  <tr> 
+    <td><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></td>
+  </tr>
+  <tr> 
+    <td> 
+      <p align="center"><font class="txt">Escribe tu peso en kilogramos en el 
+        recuadro y pulsa en el botón "CALCULAR".</font> 
+    </td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td bgcolor="#BBDDBB"> 
+      <center>
+        <form method=post>
+          <font class="txt">Si en la Tierra pesas&nbsp; 
+          <input size=5 name=ps>
+          kg,</font><font class="txt"></font> 
+          <p><font class="txt">en los planetas del Sistema Solar pesarás&nbsp;</font> 
+            <input onClick=calcular_peso(this.form) type=button value=Calcular name="button">
+            <font class="txt"></font> 
+          <p> 
+            <input size=30 name=outputsol>
+            <font class="txt">kg en el Sol!!</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputmerc>
+            <font class="txt">kg en Mercurio</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputvenus>
+            <font class="txt">kg en Venus</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputluna>
+            <font class="txt">kg en la Luna</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputmarte>
+            <font class="txt">kg en Marte</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputjup>
+            <font class="txt">kg en Júpiter</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputsat>
+            <font class="txt">kg en Saturno</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputura>
+            <font class="txt">kg en Urano</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputnept>
+            <font class="txt">kg en Neptuno</font><font class="txt"></font> 
+          <p> 
+            <input size=6 name=outputplut>
+            <font class="txt">kg en Plutón&nbsp;</font> 
+        </form>
+      </center>
+      <font class="txt"></font> 
+      <p>&nbsp; 
+    </td>
+  </tr>
+  <tr bgcolor="#BBDDBB"> 
+    <td> 
+      <div align="center"><font class="txt">Si vivieras en Júpiter tendrías que 
+        hacer un poco de ejercicio, ¿no te parece?</font><br>
+      </div>
+    </td>
+  </tr>
+  <tr> 
+    <td><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></td>
+  </tr>
+</table>
+<br>
+<p>&nbsp;
+<center>
+</center>
+</body>
+</html>

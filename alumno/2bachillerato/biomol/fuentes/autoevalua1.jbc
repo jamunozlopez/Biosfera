@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Autoevaluación</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Autoevaluación</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>De los siguientes grupos de átomos, ¿cuál contiene únicamente bioelementos secundarios?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Calcio, Sodio, Potasio, Hidrógeno, Hierro</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Calcio, Sodio, Nitrógeno, Cloro, Potasio</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Calcio, Sodio, Hierro, Cloro, Potasio</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Carbono, Potasio, Sodio, Hierro, Cloro</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los oligoelementos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Átomos abundantes en la materia viva</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Átomos que aparecen en todos los seres vivos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Átomos poco abundantes en la materia viva</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Átomos que actúan en forma ionizada</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿En qué átomo se basa la química de la Vida?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Carbono</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Hidrógeno</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Oxígeno</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Agua</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El agua es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una molécula neutra y apolar</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una molécula con carga</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Una molécula dipolar</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Una molécula con alto grado de ionización</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El agua tiene un elevado calor específico</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Porque se necesita mucha energía para romper los puente de Hidrógeno entre las moléculas</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Con lo que la energía se acumula localmente</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por lo que tiene una alta constante dieléctrica</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por lo que no es un buen amortiguador térmico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El agua puede transportar sustancias</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ya que tiene una baja constante dieléctrica</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Porque las moléculas se unen poco  y puede transportar entre ellas distintas sustancias</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por manifestar capilaridad</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Por su elevado grado de ionización</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El ión cabonato</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ayuda a controlar el pH del medio</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se expulsa por los pulmones</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Forma estructuras duras</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Controla la cantidad de agua</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué molécula es la de la imagen?&lt;img src=&quot;../imagenes/actividades/aribosa2.jpg&quot; alt=&quot;aribosa2.jpg&quot; width=&quot;120&quot; height=&quot;150&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Pentosa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Hexosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Furanosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Piranosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué molécula es la de la imagen?&lt;img src=&quot;../imagenes/actividades/aglucosa2.jpg&quot; alt=&quot;aglucosa2.jpg&quot; width=&quot;150&quot; height=&quot;150&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Pentosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Galactosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Furanosa</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Piranosa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El enlace que aparece en la imagen se denomina&lt;img src=&quot;../imagenes/actividades/amaltosa2.jpg&quot; alt=&quot;amaltosa2.jpg&quot; width=&quot;225&quot; height=&quot;120&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Éster</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Peptídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>O - glucosídico</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>N - glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El siguiente enlace es de tipo&lt;img src=&quot;../imagenes/actividades/acelobiosa2.jpg&quot; alt=&quot;acelobiosa2.jpg&quot; width=&quot;225&quot; height=&quot;120&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Alfa (1-4)</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Beta (1-4)</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Alfa (1-6)</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Beta (1-6)</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La quitina es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Una proteína que se encuentra en las uñas</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un componente del almidón</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un polisacárido del exoesqueleto de artrópodos</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un componente del glucógeno</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los ácidos grasos</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Forman la molécula del colesterol</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por enlace éster se unen al ácido fosfórico en los fosfoglicéridos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Con un monoalcohol de cadena larga forman los acil-glicéridos</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Por esterificación a una glicerina forman los aceites</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>A mayor número de átomos de carbono, en un ácido graso </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Corresponde una mayor temperatura de solidificación</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se forma menor numero de puentes de Hidrógeno </text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Se produce un mayor número de insaturaciones</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Corresponde menor temperatura de solidificación</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los elementos que forman los esfingofosfolípidos son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Dos ácidos grasos, una esfingosina y un glúcido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un ácido graso, una esfingosina y un glúcido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Dos ácidos grasos, una esfingosina y un ácido fosfórico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un ácido graso, una esfingosina y un ácido fosfórico</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La siguiente molécula es&lt;img src=&quot;../imagenes/actividades/aalanina.jpg&quot; alt=&quot;aalanina.jpg&quot; width=&quot;150&quot; height=&quot;150&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Colesterol</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Cera</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Aminoácido</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Glúcido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El siguiente enlace es&lt;img src=&quot;../imagenes/actividades/apeptidico.jpg&quot; alt=&quot;apeptidico.jpg&quot; width=&quot;225&quot; height=&quot;120&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Peptídidco</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>O - glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Éster</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>N - glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Alfa hélice es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La estructura secundaria de una proteína</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La estructura secundaria del ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un tipo de enlace glucosídico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>El estado nativo del ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una escleroproteína es una proteína</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Fibrosa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Globular</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Con color</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Heteroproteína</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La siguiente molécula es&lt;center&gt;&lt;img src=&quot;../imagenes/actividades/anucleotido.jpg&quot; alt=&quot;anucleotido.jpg&quot; width=&quot;345&quot; height=&quot;255&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un nucleótido</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un fosfolípido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un nucleósido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Un tripéptido</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En el ADN NO aparece</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ribosa</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Adenina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La pareja de bases nitrogenadas complementarias que establece en el ADN dos puentes de Hidrógeno entre sí es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Adenina y Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Citosina y Guanina</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Adenina y Uracilo</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Timina y Adenina</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El nucleosoma es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La unión de una pentosa, una base nitrogenada y un ácido fosfórico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La unión de ADN con histonas</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La unión de ADN y protaminas</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>La estructura secundaria del ADN</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El codon es un triplete de nucleótidos que aparece en el ARN</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Transferente</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Ribosómico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Mensajero</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Heteronuclear</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué ARN contiene bases modificadas, que no pueden emparejarse?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Transferente</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Ribosómico</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Heteronuclear</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+<answer>
+<text>Mensajero</text>
+<correct>0</correct>
+<feedback>Intenta otra vez</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar y volver al índice de contenidos</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../contenidos.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

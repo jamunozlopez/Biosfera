@@ -1,0 +1,323 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>Los cinco reinos</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=1;
+CorrectAnswers[1]=5;
+CorrectAnswers[2]=5;
+CorrectAnswers[3]=4;
+CorrectAnswers[4]=1;
+CorrectAnswers[5]=5;
+CorrectAnswers[6]=3;
+CorrectAnswers[7]=5;
+CorrectAnswers[8]=2;
+CorrectAnswers[9]=3;
+CorrectAnswers[10]=1;
+CorrectAnswers[11]=2;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" onClick="parent.close(); return true;"></FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000">Los cinco reinos</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000"><BR>&nbsp;</FONT></TD></TR>
+
+
+<TR><TD ALIGN="LEFT"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">Encuadrar las siguientes especies en el REINO que les corresponda</FONT><BR>&nbsp;</TD></TR>
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/Pinwpin1.jpg" alt="Pino del Himalaya" width="225" height="180" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/mariposa.jpg" alt="Mariposa" width="225" height="167" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/tiburon.jpg" alt="Tibur&oacute;n" width="225" height="107" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/bacterias.jpg" alt="Bacteria" width="225" height="183" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/musgo.jpg" alt="Musgo" width="225" height="152" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/rana2.jpg" alt="Rana" width="225" height="134" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/diatomea.gif" alt="Diatomea" width="225" height="169" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="12">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="13" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/iguana.jpg" alt="Iguana" width="225" height="147" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="14">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="15" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/moho1.jpg" alt="Moho" width="225" height="184" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="16">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="17" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/ameba.gif" alt="Ameba" width="225" height="217" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="18">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="19" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/helecho.jpg" alt="Helecho" width="225" height="228" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="20">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="21" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><center><img src="image/amanita.jpg" alt="Amanita muscaria" width="108" height="225" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="22">
+<OPTION>??? 
+<OPTION>METAFITAS
+<OPTION>HONGOS
+<OPTION>PROTISTAS
+<OPTION>MONERAS
+<OPTION>METAZOOS
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="23" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" onClick="parent.close(); return true;"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

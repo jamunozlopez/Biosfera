@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Formulario de contacto</title>
+	
+	<script type="text/javascript" src="/formulario/js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="/formulario/js/jquery.form.js"></script>
+	<link rel="stylesheet" href="/formulario/css/form.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	
+</head>
+
+<body>
+<div id="wrapper">
+	<div class="message">
+		<div id="alert"></div>
+	</div>
+	<div class="contact">
+		<form action="email.php" method="post" id="contactForm" name="contactForm">
+			<ul>
+				<li>
+					<label for="name">Nombre:</label> <input type="text" name="name" value="" id="name">
+				</li>
+				<li>
+					<label for="email">Email:</label> <input type="text" name="email" value="" id="email">
+				</li>
+				<li>
+					<label for="subject">Asunto:</label> <input type="text" name="subject" value="" id="subject">
+				</li>
+				<li class="special">
+					<label for="last">Don't fill this in:</label> <input type="text" name="last" value="" id="last">
+				</li>
+				<li>
+					<label for="message">Mensaje:</label> 
+					<textarea rows="5" name="message">
+</textarea>
+				</li>
+				<li class="submitbutton">
+					<input type="submit" value="Enviar Mensaje">
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>
+	<script src="/formulario/js/contact.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

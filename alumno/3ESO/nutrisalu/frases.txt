@@ -1,0 +1,6 @@
+&a= Cuando comemos grasas,
+&b= las transformamos en azúcares mediante el metabolismo celular.
+&c= Las grasas y los azúcares dan energía,
+&d= pero la de los azúcares es de más fácil y rápida absorción por parte de las células.
+&e= El excedente de azúcar es transformado en depósitos de reserva adiposos (grasas),
+&f= que se van usando cuando se requiere un aporte extra de energía, una vez consumidos los azúcares.

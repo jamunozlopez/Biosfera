@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Las Galaxias</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<SCRIPT language=JavaScript>
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function tmt_findObj(n){
+	var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+	x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+	}else{x=document.getElementById(n)}return x;
+}
+
+function tmt_divSplitHorizOut(tl,dur,incr){
+	var nn4=(document.layers)?true:false;transNo=parseInt(16);arHidden=new Array(1,3,14,16);
+	var t=(document.getElementById)?tmt_findObj(tl):MM_findObj(tl);
+	if(document.all&&t){t.style.filter="revealTrans(duration="+dur+",transition=16)";endState="hidden";
+	for(i=0;i<arHidden.length;i++){if(arHidden[i]==transNo){endState="visible";t.style.visibility="hidden";}}
+	t.filters.revealTrans.apply();t.style.visibility=endState;t.filters.revealTrans.play();return;}
+	if(navigator.appName=='Netscape'&&t){intval=100;if(incr==0){
+    if(nn4){t.origLeft=t.clip.left;t.origTop=t.Top=t.clip.top;t.origRight=t.clip.right;
+    t.origBottom=t.Bottom=t.clip.bottom;t.Height=t.clip.height;}else{
+    t.style.overflow='hidden';t.Top=0;t.Bottom=t.Height=t.offsetHeight;}
+    mSecs=dur*1000;visits=(mSecs/intval);fullH=t.Height;halfH=fullH/2;
+    increment=halfH/visits;t.Top+=halfH;t.Bottom-=halfH;
+    if(nn4){t.clip.top=t.Top;t.clip.bottom=t.Bottom;t.visibility="show";}else{
+    t.style.clip="rect("+t.Top+"px auto "+t.Bottom+"px auto)";
+    t.style.visibility='visible';}t.Top-=increment;t.Bottom+=increment;
+    if(nn4){t.clip.top=t.Top;t.clip.bottom=t.Bottom;}else{
+    t.style.clip="rect("+t.Top+"px auto "+t.Bottom+"px auto)";}}else{
+	t.Top-=increment;t.Bottom+=increment;
+	if(nn4){t.clip.top=t.Top;t.clip.bottom=t.Bottom;}else{
+	t.style.clip="rect("+t.Top+"px auto "+t.Bottom+"px auto)";}}
+	if((t.Top-t.origTop)<=increment){
+	if(nn4){t.clip.top=t.origTop;t.clip.bottom=t.origBottom;}else{
+	t.style.clip="rect(auto)";}}else{
+	setTimeout('tmt_divSplitHorizOut("'+tl+'",'+dur+','+increment+')',intval);}}
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v3.0
+  //Copyright 1998 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,NS=(navigator.appName=='Netscape'), curLeft, curTop;
+  if (!document.all && !document.layers) return false;
+  retVal = true; if(!NS && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else for (i=0;i<all.length;i++) if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+    curDrag.MM_oldZ = (NS)?curDrag.zIndex:curDrag.style.zIndex;
+    curLeft= (NS)?curDrag.left:curDrag.style.pixelLeft; curDrag.MM_startL = curLeft;
+    curTop = (NS)?curDrag.top:curDrag.style.pixelTop; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop -cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop +cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS)?aLayer.zIndex:aLayer.style.zIndex;
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = (((NS)?aLayer.visibility:aLayer.style.visibility).indexOf('hid') == -1);
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (!NS) { parentLayer = aLayer.parentElement;
+            while (parentLayer != null && parentLayer.style.position) {
+              parentL += parentLayer.offsetLeft; parentT += parentLayer.offsetTop;
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-(((NS)?pageX:style.pixelLeft+parentL)+MM_hLeft);
+          var tmpY=mouseY-(((NS)?pageY:style.pixelTop +parentT)+MM_hTop);
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += ((NS)?clip.width :offsetWidth);
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += ((NS)?clip.height:offsetHeight);
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS)?curDrag.left:curDrag.style.pixelLeft;
+        curTop = (NS)?curDrag.top:curDrag.style.pixelTop;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          eval('curDrag.'+((NS)?'':'style.')+'zIndex=document.MM_maxZ+1');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        newLeft = mouseX-MM_oldX; newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS) {left = newLeft; top = newTop;}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS)?left:style.pixelLeft),2)+
+             Math.pow(MM_targT-((NS)?top:style.pixelTop),2))<=MM_tol) {
+          if (NS) {left = MM_targL; top = MM_targT;}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2719.2200" name=GENERATOR></HEAD>
+<BODY bgColor=#e6ffe6>
+<DIV align=center>
+<Font face="Arial, Helvetica" size ="+2">La materia en el Universo</font>
+
+<TABLE height=77 width="80%" bgColor=#999933>
+  <TBODY>
+  <TR>
+    <TD><FONT face="Arial, Helvetica, sans-serif" color=#ffff33 
+      size=2>Pon el nombre a cada tipo de objeto que se encuentra en el Universo. 
+      Después, pulsa en la solución para ver si lo has hecho 
+      correctamente.</FONT></TD></TR></TBODY></TABLE>
+
+<DIV id=Layer1 
+style="Z-INDEX: 12; LEFT: 100px; WIDTH: 222px; POSITION: absolute; TOP: 269px; HEIGHT: 243px">
+<P><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#336633 
+size=2>Andrómeda</FONT></B></P>
+<P><IMG height=150 src="imagenes/andromeda.jpg" 
+width=200></P></DIV>
+<DIV id=Layer2 
+style="Z-INDEX: 13; LEFT: 360px; WIDTH: 217px; POSITION: absolute; TOP: 263px; HEIGHT: 254px">
+<P><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#336633 
+size=2>Neptuno</FONT></B></P>
+<P><IMG height=192 src="imagenes/neptunes.gif" 
+width=200></P></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=Layer3 
+style="Z-INDEX: 14; LEFT: 102px; WIDTH: 221px; POSITION: absolute; TOP: 521px; HEIGHT: 235px">
+<P><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#336633 
+size=2>Águila</FONT></B></P>
+<P><IMG height=189 src="imagenes/hst_pillars_m16.jpg" 
+width=200></P></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=Layer6 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 21; LEFT: 182px; BORDER-LEFT: #000000 1px; WIDTH: 121px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 815px; HEIGHT: 40px; BACKGROUND-COLOR: #E6FFE6; layer-background-color: #E6FFE6"><FONT 
+color=#339966><A 
+onmouseover="MM_dragLayer('Layer6','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=23 
+src="imagenes/respgal.gif" width=122 
+border=0></A></FONT></DIV>
+<DIV id=Layer5 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 20; LEFT: 53px; BORDER-LEFT: #000000 1px; WIDTH: 121px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 813px; HEIGHT: 45px; BACKGROUND-COLOR: #E6FFE6; layer-background-color: #E6FFE6"><FONT 
+color=#339966><A 
+onmouseover="MM_dragLayer('Layer5','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=23 
+src="imagenes/respest.gif" width=122 
+border=0></A></FONT></DIV>
+<DIV id=Layer7 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 18; LEFT: 333px; BORDER-LEFT: #000000 1px; WIDTH: 121px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 817px; HEIGHT: 42px; BACKGROUND-COLOR: #E6FFE6; layer-background-color: #E6FFE6"><FONT 
+color=#339966><A 
+onmouseover="MM_dragLayer('Layer7','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=23 
+src="imagenes/respneb.gif" width=122 
+border=0></A></FONT></DIV>
+<DIV id=Layer8 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 19; LEFT: 470px; BORDER-LEFT: #000000 1px; WIDTH: 121px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 816px; HEIGHT: 42px; BACKGROUND-COLOR: #E6FFE6; layer-background-color: #E6FFE6"><FONT 
+color=#339966><A 
+onmouseover="MM_dragLayer('Layer8','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=23 
+src="imagenes/resppla.gif" width=122 
+border=0></A></FONT></DIV>
+<P>&nbsp;</P>
+<DIV id=Layer4 
+style="Z-INDEX: 15; LEFT: 346px; WIDTH: 219px; POSITION: absolute; TOP: 532px; HEIGHT: 222px">
+<P><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#336633 
+size=2>TMR1</FONT></B></P>
+<P><IMG height=150 src="imagenes/hst_tmr1.jpg" 
+width=200></P></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+
+<DIV id=Layer11 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 11; LEFT: 230px; VISIBILITY: hidden; BORDER-LEFT: #000000 1px; WIDTH: 207px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 808px; HEIGHT: 135px; BACKGROUND-COLOR: #ccffcc; layer-background-color: #CCFFCC">
+<P align=left>&nbsp;</P>
+<P align=left>SOLUCIÓN:</P>
+<P align=left><B><FONT color=#000000>- Andrómeda = Galaxia</FONT></B></P>
+<P align=left><FONT color=#000000><B>- Neptuno = Planeta</B></FONT></P>
+<P align=left><FONT color=#000000><B>- Águila = Nebulosa</B></FONT></P>
+<P align=left><FONT color=#000000><B>- TMR1 = Estrella</B></FONT> </P>
+<DIV align=left>
+<P><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#339933 
+size=2><B></B></FONT></P></DIV></DIV>
+<DIV id=Layer13 
+style="Z-INDEX: 12; LEFT: 557px; WIDTH: 180px; POSITION: absolute; TOP: 1003px; HEIGHT: 40px"><A 
+href="javascript:window.location.reload()"><FONT 
+face="Arial, Helvetica, sans-serif" size=2><B>Pulsa aquí para repetir la 
+actividad</B></FONT></A></DIV>
+<P>&nbsp;</P>
+<P align=center>&nbsp;</P>
+<P align=center>&nbsp;</P>
+<P align=center>&nbsp;</P>
+<P align=center><A onmouseover="tmt_divSplitHorizOut('Layer11','5','0')" 
+href="javascript:;"><IMG height=34 
+src="imagenes/solucion.jpg" 
+width=112 border=0></A> </P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P align=left><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input>
+</P>
+<P align=right>&nbsp;</P>
+<P align=right><A name=solucio></A></P>
+<HR>
+<BR><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#006600 
+size=1>Script tomado de Vicent Martinez www.botanical-online.com</FONT> </DIV><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code -->
+<SCRIPT language=JavaScript 
+src="imagenes/geov2.js"></SCRIPT>
+
+<SCRIPT language=javascript>geovisit();</SCRIPT>
+<NOSCRIPT><IMG height=1 src="imagenes/visit.gif" 
+width=1 border=0></NOSCRIPT> <IMG height=1 alt=1 
+src="imagenes/serv.gif" width=1> </BODY></HTML>

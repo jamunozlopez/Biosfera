@@ -1,0 +1,499 @@
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/citologia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="538" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="209" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (1/15) - <a href="contenidos2.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <p class="txtnegro">&nbsp;</p>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">1.- DESCUBRIMIENTO DE LA C&Eacute;LULA 
+                                Y LA TEOR&Iacute;A CELULAR:</p>
+                              <div align=""center>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Los primeros conocimientos 
+                                              sobre la c&eacute;lula datan de 
+                                              1665, fecha en que <span class="txtnegro">Robert 
+                                              Hooke</span> public&oacute; los 
+                                              resultados de sus observaciones 
+                                              sobre tejidos vegetales realizadas 
+                                              con un microscopio de 50 
+                                              aumentos construido por &eacute;l 
+                                              mismo. Este investigador fue el 
+                                              primero que, al ver en esos tejidos 
+                                              unidades que se repet&iacute;an 
+                                              a modo de celdillas de un panal, 
+                                              llam&oacute; a esas unidades de 
+                                              repetici&oacute;n c&eacute;lulas 
+                                              (del lat&iacute;n <i>cellulae</i>=celdillas). 
+                                              Pero Hooke s&oacute;lo pudo observar 
+                                              c&eacute;lulas muertas por lo que 
+                                              no pudo describir las estructuras 
+                                              de su interior. </p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table></div>
+							  <BR><div align=""center>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Contempor&aacute;neo 
+                                              de Hooke, <span class="txtnegro">Van 
+                                              Leeuwenhoek</span> construy&oacute; 
+                                              un microscopio de 200 aumentos. 
+                                              Con &eacute;l visualiz&oacute; peque&ntilde;os 
+                                              organismos vivos del agua de una 
+                                              charca y pudo ver por primera vez 
+                                              protozoos, levaduras, espermatozoides, 
+                                              gl&oacute;bulos rojos de la sangre, 
+                                              etc.</p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table></div>
+							  <br>
+                              <div align="center"><img src="imagenes/opticos.jpg" width="137" height="200" alt="&quot;Microscopio &Oacute;ptico&quot;"> 
+                                <img src="imagenes/electronico.gif" width="177" height="200" alt="&quot;Microscopio Electr&oacute;nico&quot;"> 
+                                <img src="imagenes/hooke.jpg" width="194" height="200" alt="&quot;Microscopio de Hooke&quot;"> 
+                                <img src="imagenes/celula_osea.jpg" width="260" height="248" alt="&quot;Microscopio primitivo&quot;"><br>
+                                <br>
+                              </div>
+                              <p><a name="act_inves1"></a></p>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      1 de investigaci&oacute;n: El descubrimiento 
+                                      de la c&eacute;lula</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Introducci&oacute;n: 
+                                      <font size="-2"> <img src="imagenes/Leeuwenhoek.jpg" width="244" height="93" alt="&quot;Microscopio de Leeuwenhoek&quot;" align="right">Resultar&iacute;a 
+                                      dif&iacute;cil, en esta unidad did&aacute;ctica, 
+                                      reconstruir desde 1665 hasta hoy los avances 
+                                      en la historia de la citolog&iacute;a, as&iacute; 
+                                      como sus cient&iacute;ficos m&aacute;s relevantes. 
+                                      Por ello te proponemos que busques el nombre 
+                                      de algunos de los autores de tratados de 
+                                      citolog&iacute;a e investigadores de este 
+                                      campo que, a lo largo de los siglos XVII, 
+                                      XVIII, XIX y XX, han aportado datos claves 
+                                      para el conocimiento que tenemos en la actualidad 
+                                      de la c&eacute;lula y sus org&aacute;nulos.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Distribu&iacute;os 
+                                        en grupos de alumnos de no m&aacute;s 
+                                        de cuatro. Buscad informaci&oacute;n en 
+                                        la web sobre hombres de ciencia relacionados 
+                                        con el estudio de la c&eacute;lula y describid 
+                                        sobre un poster los principales avances 
+                                        que aportaron en el campo de la citolog&iacute;a. 
+                                        Organizad la tarea cronol&oacute;gicamente 
+                                        y observar&eacute;is c&oacute;mo aparecen 
+                                        siglos que apenas presentan datos de inter&eacute;s 
+                                        y c&oacute;mo otros aportan la mayor parte 
+                                        del conocimiento celular. Relacionad estos 
+                                        avances biol&oacute;gicos con los avances 
+                                        tecnol&oacute;gicos de ese momento.</font></p>
+                                      <p></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Descripci&oacute;n: <font size="-2">Busca 
+                                        informaci&oacute;n sobre: Robert Hooke, 
+                                        Leeuwenhoek, Brown, Schwann, Schleiden, 
+                                        Virchow, Purkinge, Dujardin, Schultze, 
+                                        Strasburger, Flemming, Waldeyer, Ram&oacute;n 
+                                        y Cajal, Sutton, Boveri y Ruska. Una vez 
+                                        conseguida ord&eacute;nala cronol&oacute;gicamente 
+                                        y describe en el poster la aportaci&oacute;n 
+                                        concreta de cada cient&iacute;fico al 
+                                        conocimiento celular.</font></p>
+                                      <p></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <font size="-2">Pueden ser 
+                                        p&aacute;ginas interesantes para localizar 
+                                        este tipo de informaci&oacute;n sobre 
+                                        historia de la citolog&iacute;a las siguientes: 
+                                        <br>
+                                        <br>
+                                        <a href="http://www.ucmp.berkeley.edu/history/hooke.html"><font color="#FFFFCC">Robert 
+                                        Hooke</font></a><font color="#FFFFCC">.</font><br>
+                                        <a href="http://www.xtec.es/%7Ejllort1/biolegseuropa/leeuwenhoek.htm"><font color="#FFFFCC">BIOGRAF&Iacute;AS: 
+                                        Leeuwenhoek. Antoni van</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://www.mdp.edu.ar/exactas/biologia/grupos/version%201_1/Practicos/archivos/086_092_LECTURA_celular.pdf"><font color="#FFFFCC">HISTORIA 
+                                        DE LA TEOR&Iacute;A CELULAR por Mar&iacute;a 
+                                        Paula Ber&oacute;n. </font></a><br>
+                                        <a href="http://escuela.med.puc.cl/publ/HistoriaMedicina/SigloXIXTeoriaCelular.html"><font color="#FFFFCC">Apuntes 
+                                        de Historia de la Medicina. </font></a><br>
+                                        <a href="http://alpha.rec.uabc.mx/dgaa/matdidac2/biologia/historia/notasinteres/famosos/Schleiden.htm"><font color="#FFFFCC">Schleiden</font></a><font color="#FFFFCC">,</font><br>
+                                        <a href="http://www.universalia.es/cas/2003/libro/personaje.php?id=3"><font color="#FFFFCC">VIRCHOW; 
+                                        RUDOLF Biograf&iacute;a</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://cajal.unizar.es/sp/bio/biograf.html"><font color="#FFFFCC">Biograf&iacute;a 
+                                        de Santiago Ramon y Cajal.</font></a> <br>
+                                        <a href="http://www.cognoscere.hpg.ig.com.br/biologia/teoria_celular.html"><font color="#FFFFCC">Teor&iacute;a 
+                                        Celular por Shleiden y Schwann</font></a><font color="#FFFFCC">, 
+                                        </font><br>
+                                        <a href="http://www.deguate.com/infocentros/educacion/recursos/biologia/celula.htm"><font color="#FFFFCC">C&eacute;lula 
+                                        - Morfolog&iacute;a celular - Teor&iacute;a 
+                                        celular </font></a><font color="#FFFFCC">- 
+                                        . </font><br>
+                                        <a href="http://ciencias.ucv.cl/biologia/mod1/b1m2a001.htm"><font color="#FFFFCC">Conozcamos 
+                                        algo de la teor&iacute;a celular</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://enciclopedia.us.es/wiki.phtml?title=Teor%EDa%2Bcelular"><font color="#FFFFCC">Teor&iacute;a 
+                                        celular: art&iacute;culo de la enciclopedia 
+                                        libre</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://alipso.com/monografias/origenes_biologia_celymolec/"><font color="#FFFFCC">OR&Iacute;GENES 
+                                        DE LA BIOLOG&Iacute;A CELULAR Y MOLECULAR. 
+                                        UN POCO DE HISTORIA. </font></a><br>
+                                        <a href="http://escuela.med.puc.cl/publ/HistoriaMedicina/SigloXIXTeoriaCelular.html"><font color="#FFFFCC">Apuntes 
+                                        de Historia de la Medicina</font></a><font color="#FFFFCC">, 
+                                        </font><br>
+                                        <a href="http://www.historiadelamedicina.org/purkinje.html"><font color="#FFFFCC">Ep&oacute;nimos 
+                                        m&eacute;dicos: L. Courvoisier y L. Terrier.</font></a><br>
+                                        <a href="http://www.historiadelamedicina.org/"><font color="#FFFFCC">Historia 
+                                        de la Medicina / History of Medicine.</font></a> <br>
+                                        <a href="http://club.telepolis.com/ohcop/purkinje.html"><font color="#FFFFCC">Purkinje</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://espanol.geocities.com/ueb2001/Resumen/biologia/celula_vital.htm"><font color="#FFFFCC">LA 
+                                        CELULA COMO UNIDAD VITAL</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://j.orellana.free.fr/textos/teoria.htm"><font color="#FFFFCC">TEOR&Iacute;A 
+                                        CELULAR</font></a><font color="#FFFFCC">.</font><br>
+                                        <a href="http://www.euita.upv.es/varios/biologia/Temas/La%20Vacuola.htm"><font color="#FFFFCC">Strasburger 
+                                        y el sistema de Membranas</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://fai.unne.edu.ar/biologia/introduccion/intro1.htm"><font color="#FFFFCC">Naturaleza 
+                                        de la ciencia y la biolog&iacute;a I</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://fai.unne.edu.ar/biologia/genetica/genet2.htm"><font color="#FFFFCC">Interacci&oacute;n 
+                                        gen&eacute;tica</font></a><font color="#FFFFCC">, 
+                                        </font><br>
+                                        <a href="http://www.educa.rcanaria.es/usr/arengil/doc/psi_t1-1.htm"><font color="#FFFFCC">Sutton 
+                                        y Boveri. </font></a><br>
+                                        <a href="http://www.educa.rcanaria.es/usr/arengil/doc/psi_t1-1.htm"><font color="#FFFFCC">Aspectos 
+                                        biol&oacute;gicos de la herencia</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://www.efn.uncor.edu/dep/biologia/intrbiol/genet2.htm"><font color="#FFFFCC">Gen&eacute;tica 
+                                        2.</font></a> <br>
+                                        <a href="http://personales.mundivia.es/mggalvez/ruska.htm"><font color="#FFFFCC">Ernst 
+                                        Ruska</font></a><font color="#FFFFCC">. 
+                                        </font><br>
+                                        <a href="http://es.geocities.com/fisicas/cientificos/ingenieros/ruska.htm"><font color="#FFFFCC">Ernst 
+                                        August Friedrich Ruska</font></a><font color="#FFFFCC">.</font></font></p>
+                                      </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n:<font size="-2">Se 
+                                      tendr&aacute; en cuenta la visi&oacute;n 
+                                      general que aporte el trabajo sobre la historia 
+                                      de la citolog&iacute;a, el n&uacute;mero 
+                                      de autores investigados y la calidad del 
+                                      ejercicio de s&iacute;ntesis de los datos 
+                                      m&aacute;s relevantes. Por supuesto se evaluar&aacute;n 
+                                      la calidad y creatividad en la presentaci&oacute;n 
+                                      de los datos en el poster, as&iacute; como 
+                                      su exposici&oacute;n oral para su comprensi&oacute;n 
+                                      por el resto del grupo.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <div align="center">
+<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ1.htm"><span class="txtnegrolink">Actividad 
+                                        1</span></a></font> <a href="activ1.htm"><img src="imagenes/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              <BR></div>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Con las aportaciones 
+                                            de todos los cient&iacute;ficos desde 
+                                            el siglo XVII y con los postulados 
+                                            de <i>Schleiden</i> y <i>Schwann</i> 
+                                            en el siglo XIX se desarroll&oacute; 
+                                            la llamada teor&iacute;a celular. 
+                                            Esta teor&iacute;a enuncia los siguientes 
+                                            principios:</p>
+                                          <ol>
+                                            <li> <span class="txtnegro">La c&eacute;lula 
+                                              es la unidad morfol&oacute;gica 
+                                              de los seres vivos</span>.<br>
+                                            </li>
+                                            <li><span class="txtnegro"> La c&eacute;lula 
+                                              es la unidad fisiol&oacute;gica 
+                                              de los seres vivos</span>.<br>
+                                              Con la aportaci&oacute;n de Virchow 
+                                              qued&oacute; expreso el tercer principio 
+                                              de la teor&iacute;a celular:<br>
+                                            </li>
+                                            <li> <span class="txtnegro">Las c&eacute;lulas 
+                                              s&oacute;lo pueden existir a partir 
+                                              de c&eacute;lulas preexistentes</span>.<br>
+                                              Y con las aportaciones de numerosos 
+                                              cient&iacute;ficos del campo de 
+                                              la investigaci&oacute;n gen&eacute;tica 
+                                              (Sutton y Boveri) se fij&oacute; 
+                                              el llamado cuarto postulado:<br>
+                                            </li>
+                                            <li> <span class="txtnegro">La c&eacute;lula 
+                                              es la unidad gen&eacute;tica aut&oacute;noma 
+                                              de los seres vivos</span>.<br>
+                                              En resumen, la <span class="txtnegro">teor&iacute;a 
+                                              celular</span> enuncia que <span class="txtnegro">la 
+                                              c&eacute;lula es la unidad morfol&oacute;gica, 
+                                              fisiol&oacute;gica y gen&eacute;tica 
+                                              de todos los seres vivos</span>.<br>
+                                            </li>
+                                          </ol>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><BR>
+                              </div>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ2.htm"><span class="txtnegrolink">Actividad 
+                                        2</span></a></font> <a href="activ2.htm"><img src="imagenes/activ2.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+							  <p align="right"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (1/15) - <a href="contenidos2.htm" class="txtnegrolink">siguiente</a></span></p>
+                              </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

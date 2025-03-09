@@ -1,0 +1,645 @@
+<html>
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+
+
+<script LANGUAGE="JavaScript">
+		var calificacion=0;
+		function nota(form)
+		{
+			calificacion=0;incorrectas="";
+			contestadas=0;
+				for (var i=0; i<document.examen.length-2; i++) 
+ 				{  
+				if (document.examen[i].checked)  
+  				{    
+				contestadas=contestadas+1;    
+					if (document.examen[i].value=="1")      
+					{      
+					calificacion=calificacion+1;      
+					} 
+   					if (document.examen[i].value!="1")      
+					{      
+					incorrectas=incorrectas+document.examen[i].name.substring(0,2)+" ";      
+					}    
+				}  
+				}
+			error=contestadas-calificacion;
+			mensaje=contestadas+" preguntas contestadas de 35.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r incorrectas:"+incorrectas;
+			alert(mensaje);
+			}
+</script>
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+	function actinicial() 
+	{ 
+		open('a_inicial.htm', '_blank', "width=790,height=525,top=0,left=0,scrollbars=yes") 
+	}
+		
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="#" onclick="actinicial()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img src="imagenes/titulo.gif" width="721" height="24"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" bgcolor="#006666" align="center">
+                    <tr> 
+                      <td valign="top"> 
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td> 
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td height="19" bgcolor="#BBDDBB"> 
+                                  </td>
+									<td height="19" bgcolor="#BBDDBB"><font class="txtnegro">AUTOEVALUACIÓN  </font>
+                                  	</td>
+									  <td height="19" bgcolor="#BBDDBB"> 
+                                  	  </td>
+                                	</tr>
+                                	<tr bgcolor="#E6FFE6"> 
+									<td width="10">
+									</td>
+                                  	<td>									
+					<br><br>
+						<form name="examen">
+						<font class="txt"><b>1.	Los productos transgénicos:</b>			
+				<dir>
+				 <input TYPE="radio" NAME="1" VALUE="2"><font class="txt">Son productos ecológicos.</b></font>
+				 <br><input TYPE="radio" NAME="1" VALUE="2"><font class="txt">Provienen de OGM.</font> 
+				 <br><input TYPE="radio" NAME="1" VALUE="2"><font class="txt">Son resultado de la manipulación genética.</font>
+				 <br><input TYPE="radio" NAME="1" VALUE="1"><font class="txt">Son ciertas las respuestas b) y c).</font>
+				 </dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>2.	¿Mediante qué proceso pueden ser separados los genes ligados?</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="2" VALUE="2"><font class="txt">Fecundación.</font>
+				 <br><input TYPE="radio" NAME="2" VALUE="2"><font class="txt">Meiosis.</font> 
+				 <br><input TYPE="radio" NAME="2" VALUE="2"><font class="txt">Mitosis.</font>
+				 <br><input TYPE="radio" NAME="2" VALUE="1"><font class="txt">Recombinación.</font>       
+				</dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>3.	Indica cuál es la excepción a la Tercera Ley de Mendel:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="3" VALUE="2"><font class="txt">Los genes polialélicos.</font>
+				 <br><input TYPE="radio" NAME="3" VALUE="1"><font class="txt">Los genes ligados.</font>
+				 <br><input TYPE="radio" NAME="3" VALUE="2"><font class="txt">Las mutaciones.</font> 
+				 <br><input TYPE="radio" NAME="3" VALUE="2"><font class="txt">Los genes ligados al sexo.</font>      
+				</dir>
+							
+				<br>
+				
+				<p><font class="txt"><b>4.	Un hombre con visión normal se casa con una mujer con visión 
+				normal. Tienen dos hijas, Pili y Mili, ambas &nbsp;&nbsp;&nbsp;&nbsp;con visión normal. Estas 
+				dos hijas se casan con hombres con visión normal. Pili tiene 2 hijas 
+				con visión &nbsp;&nbsp;&nbsp;&nbsp;normal y Mili tiene un hijo con ceguera para los colores. 
+				De esto se deduce que:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="4" VALUE="2"><font class="txt">Los abuelos nunca podrían haber tenido hijos normales.</font>
+				 <br><input TYPE="radio" NAME="4" VALUE="2"><font class="txt">Todos los hijos de Pili tendrían ceguera para los colores.</font>
+				 <br><input TYPE="radio" NAME="4" VALUE="2"><font class="txt">Todos los hijos de Mili tendrían ceguera para los colores.</font>
+				 <br><input TYPE="radio" NAME="4" VALUE="1"><font class="txt">La abuela era portadora del alelo de la ceguera para los colores.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>5.	Dada la siguiente cadena de DNA  3´GGCCCAGTA 5´, indica cuál sería la secuencia del mensajero:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="5" VALUE="1"><font class="txt">5´CCGGGUCAU 3´.</font>
+				 <br><input TYPE="radio" NAME="5" VALUE="2"><font class="txt">5´CCGGGTCAT 3´.</font>
+				 <br><input TYPE="radio" NAME="5" VALUE="2"><font class="txt">3´GGCCCAGUA 5´.</font>
+				 <br><input TYPE="radio" NAME="5" VALUE="2"><font class="txt">3´GGCCCAGTA 5´.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>6.	Una planta de semillas verdes y flores rojas se cruza con una planta de semillas 
+				amarillas (heterocigota para &nbsp;&nbsp;&nbsp;&nbsp;ese carácter) y de flores rojas. Sabiendo 
+				que de este cruzamiento se obtuvieron plantas de flores blancas, 
+				&nbsp;&nbsp;&nbsp;&nbsp;¿cuál es la probabilidad de obtener plantas de semillas amarillas 
+				y flores rojas y de semillas verdes y flores &nbsp;&nbsp;&nbsp;&nbsp;blancas respectivamente?</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="6" VALUE="2"><font class="txt">1/8 y 3/8.</font>
+				 <br><input TYPE="radio" NAME="6" VALUE="2"><font class="txt">1/4 y ¼.</font>
+				 <br><input TYPE="radio" NAME="6" VALUE="1"><font class="txt">3/8 y 1/8.</font>
+				 <br><input TYPE="radio" NAME="6" VALUE="2"><font class="txt">1/4 y ¾.</font>
+				 </dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>7.	La bioética se encarga de:</b></p>
+								
+				<dir>
+				 <input TYPE="radio" NAME="7" VALUE="2"><font class="txt">Acelerar el estudio del Genoma Humano.</font>
+				 <br><input TYPE="radio" NAME="7" VALUE="2"><font class="txt">Controlar la calidad de los productos transgénicos.</font>
+				 <br><input TYPE="radio" NAME="7" VALUE="1"><font class="txt">Coordinar la investigación y llegar a acuerdos sobre los usos de los descubrimientos.</font>
+				 <br><input TYPE="radio" NAME="7" VALUE="2"><font class="txt">Fabricar nuevos productos.</font>
+				 </dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>8.	Se denomina operon al conjunto de genes que:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="8" VALUE="1"><font class="txt">Se transcriben controlados por un mismo promotor y forman parte de una misma ruta metabólica.</font>
+				 <br><input TYPE="radio" NAME="8" VALUE="2"><font class="txt">Se transcriben conjuntamente en un único RNA-m.</font>
+				 <br><input TYPE="radio" NAME="8" VALUE="2"><font class="txt">Intervienen en el control de la división celular mitótica.</font>
+				 <br><input TYPE="radio" NAME="8" VALUE="2"><font class="txt">Intervienen en el control del ciclo celular de las procariotas.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>9.	Se puede definir al proceso de replicación del DNA como:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="9" VALUE="2"><font class="txt">Dispersivo, bidireccional y anabólico.</font>
+				 <br><input TYPE="radio" NAME="9" VALUE="1"><font class="txt">Semiconservativo, bidireccional y anabólico. </font>
+				 <br><input TYPE="radio" NAME="9" VALUE="2"><font class="txt">Semiconservativo, unidireccional y catabólico.</font>
+				 <br><input TYPE="radio" NAME="9" VALUE="2"><font class="txt">Semiconservativo, bidireccional y catabólico.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>10.	 ___________ es el proceso que Mendel estudió al hacer sus famoso cruzamientos: </b></p>
+				<dir>
+				 <input TYPE="radio" NAME="10" VALUE="2"><font class="txt">La genética.</font>
+				 <br><input TYPE="radio" NAME="10" VALUE="1"><font class="txt">La herencia. </font>
+				 <br><input TYPE="radio" NAME="10" VALUE="2"><font class="txt">La recombinación.</font>
+				 <br><input TYPE="radio" NAME="10" VALUE="2"><font class="txt">La mitosis.</font>
+				 </dir>
+						
+				<br>
+				
+				<p><font class="txt"><b>11.  Se denomina PROMOTOR a la secuencia de:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="11" VALUE="2"><font class="txt">Ribonucleótidos que participa en la regulación de la expresión génica.</font>
+				 <br><input TYPE="radio" NAME="11" VALUE="2"><font class="txt">Ribonucleótidos que interviene en la elongación de la cadena polipeptídica.</font>
+				 <br><input TYPE="radio" NAME="11" VALUE="2"><font class="txt">Desoxirribonucleótidos que interviene en el procesamiento del RNA.</font>
+				 <br><input TYPE="radio" NAME="11" VALUE="1"><font class="txt">Desoxirribonucleótidos que participan en la regulación de la expresión génica. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>12.	 Durante la transcripción, la energía necesaria para la síntesis de la cadena de RNA es aportada por:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="12" VALUE="2"><font class="txt">El ATP y GTP únicamente.</font>
+				 <br><input TYPE="radio" NAME="12" VALUE="1"><font class="txt">Cada ribonucleótido que formara parte de una nueva cadena. </font>
+				 <br><input TYPE="radio" NAME="12" VALUE="2"><font class="txt">Cada desoxirribonucleótido que formara parte de una nueva cadena.</font>
+				 <br><input TYPE="radio" NAME="12" VALUE="2"><font class="txt">Las enzimas junto a cada ribonucleótido que formara parte de la nueva cadena.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>13.	La diferenciación celular es un proceso basado en:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="13" VALUE="2"><font class="txt">La supresión de ciertas secuencias de DNA.</font>
+				 <br><input TYPE="radio" NAME="13" VALUE="2"><font class="txt">La modificación de la secuencia de nucleótidos según los distintos tipos celulares.</font>
+				 <br><input TYPE="radio" NAME="13" VALUE="2"><font class="txt">La inactivación del código genético.</font>
+				 <br><input TYPE="radio" NAME="13" VALUE="1"><font class="txt">La expresión de distintos genes según el tipo celular, activándose unos y bloqueándose otros.</font>
+				 </dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>14.	 La inserción de un nucleótido dentro de un exón origina siempre:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="14" VALUE="2"><font class="txt">Una transformación en intrón.</font>
+				 <br><input TYPE="radio" NAME="14" VALUE="2"><font class="txt">Una mutación genómica.</font>
+				 <br><input TYPE="radio" NAME="14" VALUE="1"><font class="txt">Una mutación génica. </font>
+				 <br><input TYPE="radio" NAME="14" VALUE="2"><font class="txt">Una mutación cromosómica.</font>
+				 </dir>
+				
+				<br>
+				
+				<p><font class="txt"><b>15.	 El código genético está degenerado porque:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="15" VALUE="2"><font class="txt">Cada codón codifica para un único aminoácido.</font>
+				 <br><input TYPE="radio" NAME="15" VALUE="2"><font class="txt">Cada codón codifica para más de un aminoácido.</font>
+				 <br><input TYPE="radio" NAME="15" VALUE="1"><font class="txt">Más de un codón codifican para un mismo aminoácido. </font>
+				 <br><input TYPE="radio" NAME="15" VALUE="2"><font class="txt">Más de un codón codifican para más de un aminoácido.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>16.	 Los codones se leen desde el extremo:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="16" VALUE="1"><font class="txt">5´del ARNm a partir de un AUG. </font>
+				 <br><input TYPE="radio" NAME="16" VALUE="2"><font class="txt">3´del ARNm a partir de un AUG.</font>
+				 <br><input TYPE="radio" NAME="16" VALUE="2"><font class="txt">5´del ARNm independientemente de la presencia de un AUG.</font>
+				 <br><input TYPE="radio" NAME="16" VALUE="2"><font class="txt">3´del ARNm independientemente de la presencia de un AUG.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>17.	 ¿Cuál de los siguientes elementos involucrados en la trascripción participa tanto en células eucariotas como en procariotas? </b></p>
+				<dir>
+				 <input TYPE="radio" NAME="17" VALUE="2"><font class="txt">Ribonucleótidos trifosfato.</font>
+				 <br><input TYPE="radio" NAME="17" VALUE="2"><font class="txt">RNA-polimerasa.</font>
+				 <br><input TYPE="radio" NAME="17" VALUE="2"><font class="txt">RNA-ligasa.</font>
+				 <br><input TYPE="radio" NAME="17" VALUE="1"><font class="txt">Sólo a) y b). </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>18.	 Los anticodones son tripletes de nucleótidos presentes en el:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="18" VALUE="2"><font class="txt">RNA-m.</font>
+				 <br><input TYPE="radio" NAME="18" VALUE="2"><font class="txt">RNA-r.</font>
+				 <br><input TYPE="radio" NAME="18" VALUE="2"><font class="txt">DNA.</font>
+				 <br><input TYPE="radio" NAME="18" VALUE="1"><font class="txt">RNA-t. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>19.	 ¿Quiénes propusieron la hipótesis UN GEN = UNA ENZIMA?</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="19" VALUE="2"><font class="txt">Meselson & Stahl.</font>
+				 <br><input TYPE="radio" NAME="19" VALUE="2"><font class="txt">Watson & Crick.</font>
+				 <br><input TYPE="radio" NAME="19" VALUE="2"><font class="txt">Ochoa & Nirenberg.</font>
+				 <br><input TYPE="radio" NAME="19" VALUE="1"><font class="txt">Beadle & Tatum. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>20.	 En dos células de la misma persona pertenecientes a distintos tejidos 
+				(una neurona y una célula muscular, por ejemplo) esperaríamos encontrar:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="20" VALUE="2"><font class="txt">Diferente información genética.</font>
+				 <br><input TYPE="radio" NAME="20" VALUE="1"><font class="txt">Diferentes RNA-m. </font>
+				 <br><input TYPE="radio" NAME="20" VALUE="2"><font class="txt">Diferente código genético.</font>
+				 <br><input TYPE="radio" NAME="20" VALUE="2"><font class="txt">Diferentes RNA-polimerasas.</font>
+				 </dir>
+				
+				<br>
+				
+				
+				<p><font class="txt"><b>21.	 En la síntesis proteica, la fidelidad de la traducción descansa en dos etapas clave que son:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="21" VALUE="2"><font class="txt">Iniciación y terminación.</font>
+				 <br><input TYPE="radio" NAME="21" VALUE="2"><font class="txt">Activación e iniciación.</font>
+				 <br><input TYPE="radio" NAME="21" VALUE="1"><font class="txt">Activación de los transferentes y apareamiento codón-anticodón. </font>
+				 <br><input TYPE="radio" NAME="21" VALUE="2"><font class="txt">Elongación y terminación.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>22.	 Se sabe que el alelo que codifica para el factor sanguíneo Rh+ es 
+				dominante sobre el alelo que codifica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para el alelo Rh- y que esta 
+				característica no está ligada al sexo. Dos padres que tienen sangre 
+				de factor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sanguíneo Rh+ pueden tener un hijo de sangre Rh- si:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="22" VALUE="1"><font class="txt">Ambos padres son heterocigotos. </font>
+				 <br><input TYPE="radio" NAME="22" VALUE="2"><font class="txt">Ambos padres son homocigotos recesivos.</font>
+				 <br><input TYPE="radio" NAME="22" VALUE="2"><font class="txt">Ambos padres son homocigotos dominantes.</font>
+				 <br><input TYPE="radio" NAME="22" VALUE="2"><font class="txt">Uno de los padres es homocigoto dominante y el otro heterocigoto.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>23.	 La información genética se encuentra en forma de secuencia de:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="23" VALUE="2"><font class="txt">Aminoácidos.</font>
+				 <br><input TYPE="radio" NAME="23" VALUE="2"><font class="txt">Pentosas.</font>
+				 <br><input TYPE="radio" NAME="23" VALUE="1"><font class="txt">Bases nitrogenadas. </font>
+				 <br><input TYPE="radio" NAME="23" VALUE="2"><font class="txt">RNA.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>24.	 Señala la frase que es correcta sobre la selección natural:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="24" VALUE="1"><font class="txt">Es la base de la evolución.  </font>
+				 <br><input TYPE="radio" NAME="24" VALUE="2"><font class="txt">Elimina la variación genética.</font>
+				 <br><input TYPE="radio" NAME="24" VALUE="2"><font class="txt">Es el único proceso capaz de producir adaptaciones.</font>
+				 <br><input TYPE="radio" NAME="24" VALUE="2"><font class="txt">Son ciertas las respuestas a) y c).</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>25.	 Señala lo que es falso con respecto a la ley de Hardy-Weinberg</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="25" VALUE="2"><font class="txt">La población es prácticamente infinita.</font>
+				 <br><input TYPE="radio" NAME="25" VALUE="2"><font class="txt">El apareamiento es al azar respecto a los genes considerados.</font>
+				 <br><input TYPE="radio" NAME="25" VALUE="1"><font class="txt">No puede actuar más que un factor -mutación, migración, deriva- al mismo tiempo. </font>
+				 <br><input TYPE="radio" NAME="25" VALUE="2"><font class="txt">No hay mutaciones.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>26.	 Un RNA-m en la etapa de finalización de la transcripción:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="26" VALUE="2"><font class="txt">Contiene información para sintetizar mas de una proteína.</font>
+				 <br><input TYPE="radio" NAME="26" VALUE="1"><font class="txt">Contiene exones e intrones. </font>
+				 <br><input TYPE="radio" NAME="26" VALUE="2"><font class="txt">Participa en la formación de los ribosomas.</font>
+				 <br><input TYPE="radio" NAME="26" VALUE="2"><font class="txt">Interviene en el corte y empalme (maduración) de otro RNA.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>27.	 ¿Cuál de estos conceptos describe el aspecto de un ser vivo?:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="27" VALUE="2"><font class="txt">Híbrido.</font>
+				 <br><input TYPE="radio" NAME="27" VALUE="2"><font class="txt">Homocigoto.</font>
+				 <br><input TYPE="radio" NAME="27" VALUE="2"><font class="txt">Genotipo.</font>
+				 <br><input TYPE="radio" NAME="27" VALUE="1"><font class="txt">Fenotipo. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>28.	 ¿Cuál de estos aspetos  da a conocer el estudio del Genoma Humano?:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="28" VALUE="2"><font class="txt">El mapa genético de los cromosomas.</font>
+				 <br><input TYPE="radio" NAME="28" VALUE="2"><font class="txt">La secuencia de los genes.</font>
+				 <br><input TYPE="radio" NAME="28" VALUE="2"><font class="txt">Las alteraciones de los genes.</font>
+				 <br><input TYPE="radio" NAME="28" VALUE="1"><font class="txt">Todo es cierto. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>29.	 ____________ es un tipo de ingeniería genética donde se coloca un alelo normal en un virus para introducirlo en otra célula.</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="29" VALUE="2"><font class="txt">La herencia poligénica.</font>
+				 <br><input TYPE="radio" NAME="29" VALUE="2"><font class="txt">Una prueba para el daltonismo.</font>
+				 <br><input TYPE="radio" NAME="29" VALUE="2"><font class="txt">El síndrome de Down.</font>
+				 <br><input TYPE="radio" NAME="29" VALUE="1"><font class="txt">La terapia génica. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>30.	 ¿Cómo se llama el lugar que ocupa un gen en un cromosoma?</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="30" VALUE="1"><font class="txt">Locus. </font>
+				 <br><input TYPE="radio" NAME="30" VALUE="2"><font class="txt">Alelo.</font>
+				 <br><input TYPE="radio" NAME="30" VALUE="2"><font class="txt">Cromátida.</font>
+				 <br><input TYPE="radio" NAME="30" VALUE="2"><font class="txt">Centrómero.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>31.	 Severo Ochoa desarrolló una técnica que abrió el camino para el descubrimiento de:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="31" VALUE="2"><font class="txt">La estructura del DNA.</font>
+				 <br><input TYPE="radio" NAME="31" VALUE="2"><font class="txt">La función de los ácidos nucleicos.</font>
+				 <br><input TYPE="radio" NAME="31" VALUE="1"><font class="txt">El código genético. </font>
+				 <br><input TYPE="radio" NAME="31" VALUE="2"><font class="txt">La pcr.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>32.	 Las mutaciones son:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="32" VALUE="2"><font class="txt">Cambios en la replicación.</font>
+				 <br><input TYPE="radio" NAME="32" VALUE="2"><font class="txt">Transformaciones sufridas después de experimentos.</font>
+				 <br><input TYPE="radio" NAME="32" VALUE="2"><font class="txt">Modificaciones en el código genético.</font>
+				 <br><input TYPE="radio" NAME="32" VALUE="1"><font class="txt">Cambios en la información genética. </font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>33.	 Un ratón castaño (homocigoto recesivo) se cruza con un ratón negro heterocigoto. Si la madre tiene una camada de cuatro ratones ¿cuál es la probabilidad de que tengan crías de color castaño?.</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="33" VALUE="2"><font class="txt">0%.</font>
+				 <br><input TYPE="radio" NAME="33" VALUE="1"><font class="txt">50%. </font>
+				 <br><input TYPE="radio" NAME="33" VALUE="2"><font class="txt">25%.</font>
+				 <br><input TYPE="radio" NAME="33" VALUE="2"><font class="txt">75%.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>34.	 En un organismo procariota la información para sintetizar un polipéptido de 50 aminoácidos está contenida en:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="34" VALUE="2"><font class="txt">RNA-m maduro de 82 nucleótidos.</font>
+				 <br><input TYPE="radio" NAME="34" VALUE="2"><font class="txt">RNA-m maduro de más de 240 nucleótidos.</font>
+				 <br><input TYPE="radio" NAME="34" VALUE="1"><font class="txt">DNA de 150 nucleótidos. </font>
+				 <br><input TYPE="radio" NAME="34" VALUE="2"><font class="txt">RNA-m de 78 nucleótidos.</font>
+				 </dir>
+					
+				<br>
+				
+				<p><font class="txt"><b>35.	 Se considera a la recombinación como una fuente de variabilidad ya que permite:</b></p>
+				<dir>
+				 <input TYPE="radio" NAME="35" VALUE="1"><font class="txt">Intercambiar DNA entre cromosomas homólogos. </font>
+				 <br><input TYPE="radio" NAME="35" VALUE="2"><font class="txt">Intercambiar DNA entre cromosomas de distintos pares.</font>
+				 <br><input TYPE="radio" NAME="35" VALUE="2"><font class="txt">La separación al azar de los cromosomas homólogos.</font>
+				 <br><input TYPE="radio" NAME="35" VALUE="2"><font class="txt">Realizar translocaciones e inversiones cromosómicas.</font>
+				 </dir>
+					
+				<br>
+				
+				
+				
+				
+				
+						
+				
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td width="50%" align="center">
+				    <input TYPE="reset" VALUE="Borrar">  
+				</td>
+				<td width="50%" align="center"><br>
+					<input type="submit" name="calificacion" value="Calificación" onClick="nota(this.form)">
+					</form>
+                </td>
+				</tr>
+				</table>
+				</form>				
+				<td height="19" bgcolor="#E6FFE6"> 
+                </td>					
+                </tr>
+            </table>		
+       			
+                            </td>
+                          </tr>
+                        </table>
+						
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

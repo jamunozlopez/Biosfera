@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmix-file>
+<version>5</version>
+
+<data>
+<title>Partes de un hueso&lt;center&gt;&lt;img src=&quot;../img/esquelet/rxtorax.gif&quot; alt=&quot;rxtorax.gif&quot; width=&quot;142&quot; height=&quot;150&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<jumbled-order-exercise><main-order><segment>Periostio</segment>
+<segment>Zona cortical</segment>
+<segment>Cavidad medular</segment>
+<segment>Endostio</segment>
+<segment>Médula ósea amarilla</segment>
+</main-order></jumbled-order-exercise>
+</data>
+
+<hotpot-config-file>
+<jmix>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct>¡Correcto! Muy bien-</guess-correct>
+<guess-incorrect>Inténtalo de nuevo</guess-incorrect>
+<this-much-correct></this-much-correct>
+<next-correct-part></next-correct-part>
+<remaining-words></remaining-words>
+<click-to-add></click-to-add>
+<also-correct>Otras posibles respuestas:</also-correct>
+<include-undo>1</include-undo>
+<include-restart>1</include-restart>
+<include-hint>0</include-hint>
+<next-ex-url>articula.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<capitalize-first-letter>0</capitalize-first-letter>
+</jmix>
+
+<global>
+
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<undo-caption>Deshacer</undo-caption>
+<hint-caption>Ayuda</hint-caption>
+<restart-caption>Comenzar</restart-caption>
+<your-score-is>Tu puntuación es</your-score-is>
+<show-also-correct>1</show-also-correct>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../autoevaluacion.htm</contents-url>
+<contents-url>../autoevaluacion.htm</contents-url>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jmix-file>

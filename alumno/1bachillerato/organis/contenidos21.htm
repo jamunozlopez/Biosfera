@@ -1,0 +1,385 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="titulorg.GIF" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con las generalidades de las Angiospermas" href="contenidos20.htm">anterior - (21/27) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con el Reino Animal" href="contenidos22.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    PRINCIPALES GRUPOS DE ANGIOSPERMAS</b></font></font></p>
+                                    <p class="txt">Las Angiospermas se dividen 
+                                    en  <b><font color="#006666" size="2" face="Arial"> 
+                                    <a class="txtnegrolink" target="_blank" title="Vínculo a página exterior." href="http://www.unex.es/botanica/angiospermas/angiosp6.htm">dos grandes grupos</a></font></b>, atendiendo al número 
+                                    de cotiledones que aparecen en la semilla:</p>
+                                    <ul>
+                                      <li>
+                                    <p class="txt"><b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#dicotiledonea">Dicotiledóneas</a></font></b></p>
+                                      </li>
+                                      <li>
+                                    <p class="txt"><b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#monocotiledonea">Monocotiledóneas</a></font></b></p>
+                                      </li>
+                                    </ul>
+                                    <p class="txt"><b><a name="dicotiledonea">
+                                    </a>Dicotiledóneas</b></p>
+                                    <p class="txt">Debajo aparecen imágenes de 
+                                    los grupos más representativos de 
+                                    las Angiospermas. <b>Pasa el cursor </b>sobre ellas 
+                                    y aparecerá información en pantalla. Si 
+                                    deseas ver las imágenes con mayor tamaño, 
+                                    <b>pulsa </b>sobre ellas.</p>
+                                    <table border="1" width="100%" id="AutoNumber2" cellspacing="1">
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/corylus.jpg">
+                                        <img border="2" src="imagenes/corylus_small.jpg" xthumbnail-orig-image="imagenes/corylus.jpg" alt="Corylus avellana, es el avellano. Planta Coripétala del orden Fagales, de la familia Betulaceae." width="95" height="92"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/quercus.gif">
+                                        <img border="2" src="imagenes/quercus_small.gif" xthumbnail-orig-image="imagenes/quercus.gif" alt="Quercus coccifera es una Coripétala, del orden Fagales,  de la familia Fagacea" width="81" height="101"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/nogal.jpg">
+                                        <img border="2" src="imagenes/nogal_small.jpg" xthumbnail-orig-image="imagenes/nogal.jpg" alt="El nogal es una coripétala de la familia Juglandaceas. Imagen: De Mier y Leva." width="100" height="75"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/urtica.jpg">
+                                        <img border="2" src="imagenes/urtica_small.jpg" xthumbnail-orig-image="imagenes/urtica.jpg" alt="La ortiga es una planta Coripétala, de la familia Urticaceae" width="114" height="75"></a></td>
+                                        <td width="20%" align="center">
+                                        <a title="El muérdago es una planta parásita, Coripétala, del orden Santalales, de la familia Lorantaceae. Imagen: De Mier y Leva." target="_blank" href="imagenes/muerdago2.JPG">
+                                        <img border="2" src="imagenes/muerdago2_small.JPG" xthumbnail-orig-image="imagenes/muerdago2.JPG" width="100" height="75"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/magnolia.jpg">
+                                        <img border="2" src="imagenes/magnolia_small1.jpg" xthumbnail-orig-image="imagenes/magnolia.jpg" alt="Magnolia grandiflora es una Coripétala del orden Ranales, de la familia Magnoliaceae. Imagen: De Mier y Leva." width="100" height="75"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/ranunculus.jpg">
+                                        <img border="2" src="imagenes/ranunculus_small.jpg" xthumbnail-orig-image="imagenes/ranunculus.jpg" width="93" height="88" alt="El Botón de Oro es una planta Coripétala del orden Ranales, de la familia Ranunculaceae"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/papaver.jpg">
+                                        <img border="2" src="imagenes/papaver_small.jpg" xthumbnail-orig-image="imagenes/papaver.jpg" width="80" height="90" alt="La amapola es una planta Coripétala del orden Readales, de la familia Papaveraceae."></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/pasionaria2.jpg">
+                                        <img border="2" src="imagenes/pasionaria2_small1.jpg" xthumbnail-orig-image="imagenes/pasionaria2.jpg" alt="La flor de la Pasión es una planta Coripétala del orden Parietales, de la familia Pasifloraceae. Imagen De Mier y Leva." width="100" height="75"></a></td>
+                                        <td width="20%" align="center">
+                                        <a title="Capsella bursa-pastoris es una planta coripétala Crucífera" target="_blank" href="imagenes/capsella.jpg">
+                                        <img border="2" src="imagenes/capsella_small.jpg" xthumbnail-orig-image="imagenes/capsella.jpg" width="100" height="94"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/Almendro.jpg">
+                                        <img border="2" src="imagenes/Almendro_small.jpg" xthumbnail-orig-image="imagenes/Almendro.jpg" width="110" height="80" alt="El almendro es una planta Coripétala, de la familia Rosaceae"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/trebol.gif">
+                                        <img border="2" src="imagenes/trebol_small.gif" xthumbnail-orig-image="imagenes/trebol.gif" alt="El trebol es una planta Coripétala del orden Rosales, de la familia de las Leguminosas." width="83" height="116"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/malva2.jpg">
+                                        <img border="2" src="imagenes/malva2_small.jpg" xthumbnail-orig-image="imagenes/malva2.jpg" alt="Malva sylvestris es una planta Coripétala de la familia Malvaceae. Imagen De Mier y Leva." width="100" height="79"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/geranium.jpg">
+                                        <img border="2" src="imagenes/geranium_small.jpg" xthumbnail-orig-image="imagenes/geranium.jpg" alt="El geranio es una planta Coripétala de la familia Geraniaceae." width="121" height="80"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/uva.jpg">
+                                        <img border="2" src="imagenes/uva_small.jpg" xthumbnail-orig-image="imagenes/uva.jpg" alt="La vides una planta Coripétala, del orden Ramnales, de la familia Vitaceae." width="83" height="114"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/carota.jpg">
+                                        <img border="2" src="imagenes/carota_small.jpg" xthumbnail-orig-image="imagenes/carota.jpg" alt="Daucus carota, la zanahoria es una planta Coripétala, umbelifloral, de la familia Umbelíferae" width="83" height="83"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/tomato.jpg">
+                                        <img border="2" src="imagenes/tomato_small.jpg" xthumbnail-orig-image="imagenes/tomato.jpg" alt="Lycopersicum sculentum, el tomate, es una planta Simpétala, tubiflora,  de la familia Solanacea." width="100" height="80"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/olea.jpg">
+                                        <img border="2" src="imagenes/olea_small.jpg" xthumbnail-orig-image="imagenes/olea.jpg" alt="El olivo es una planta Simpétala, del orden Concortas, de la familia Oleaceae" width="100" height="66"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/cucurbita.jpg">
+                                        <img border="2" src="imagenes/cucurbita_small.jpg" xthumbnail-orig-image="imagenes/cucurbita.jpg" alt="La calabaza es una planta Simpétala, de la familia cucurbitaceae" width="100" height="75"></a></td>
+                                        <td width="20%" align="center">
+                                        <a target="_blank" href="imagenes/girasol.gif">
+                                        <img border="2" src="imagenes/girasol_small.gif" xthumbnail-orig-image="imagenes/girasol.gif" width="107" height="74" alt="El girasol es una planta simpétala, del orden Campanuladas, de la familia de las Asteráceas. Aunque lo que vemos parece una flor,  es un conjunto de pequeñas flores."></a></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt"><b><a name="monocotiledonea">
+                                    </a>Monocotiledóneas</b></p>
+                                    <p class="txt">Debajo aparecen imágenes de 
+                                    los grupos más representativos de 
+                                    las Angiospermas. <b>Pasa el cursor </b>sobre ellas 
+                                    y aparecerá información en pantalla. Si 
+                                    deseas ver las imágenes con mayor tamaño, 
+                                    <b>pulsa </b>sobre ellas.</p>
+                                    <table border="1" width="100%" id="AutoNumber3" height="147" cellspacing="1">
+                                      <tr>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/pita4.jpg">
+                                        <img border="2" src="imagenes/pita4_small.jpg" xthumbnail-orig-image="imagenes/pita4.jpg" alt="La Yucca es de la una planta Liliflora de la familia Liliaceae" width="87" height="130"></a></td>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/narcissus.jpg">
+                                        <img border="2" src="imagenes/narcissus_small.jpg" xthumbnail-orig-image="imagenes/narcissus.jpg" alt="El narciso es una planta Liliflora, de la familia Amarilidaceae" width="100" height="66"></a></td>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/Avena.jpg">
+                                        <img border="2" src="imagenes/Avena_small.jpg" xthumbnail-orig-image="imagenes/Avena.jpg" width="111" height="66" alt="Avena sativa es una Glumiflora de la familia de las Gramíneas"></a></td>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/zeamais.jpg">
+                                        <img border="2" src="imagenes/zeamais_small.jpg" xthumbnail-orig-image="imagenes/zeamais.jpg" width="89" height="133" alt="El maíz es una plata Glumiflora, de la familia de las Gramíneas"></a></td>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/orquidea.jpg.jpg">
+                                        <img border="2" src="imagenes/orquidea.jpg_small.jpg" xthumbnail-orig-image="imagenes/orquidea.jpg.jpg" alt="Las orquídeas son plantas Microspermas, de la familia Orchidaceae. Imagen: De Mier y Leva." width="100" height="75"></a></td>
+                                        <td width="20%" height="143" align="center">
+                                        <a target="_blank" href="imagenes/palma.jpg">
+                                        <img border="2" src="imagenes/palma_small.jpg" xthumbnail-orig-image="imagenes/palma.jpg" width="92" height="134" alt="Las palmeras son plantas del orden Princesas, de la familia Palmaceae"></a></td>
+                                      </tr>
+                                      </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <div align="center">
+                                      <center> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" title="Enlaza con actividades interactivas de  Espermafitas y clasificación de plantas" href="actividades/act6az21.htm">Actividad
+                                          13</a></font></b><a title="Enlaza con actividades interactivas de  Espermafitas y clasificación de plantas" target="_blank" href="actividades/act6az21.htm"><img border="2" src="imagenes/cuad6sma.jpg" xthumbnail-orig-image="imagenes/cuad6.jpg" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                      </center>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con las generalidades de las Angiospermas" href="contenidos20.htm">anterior- (21/27) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con el Reino Animal" href="contenidos22.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

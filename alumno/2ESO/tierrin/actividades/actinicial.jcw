@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jcross-file>
+<version>5</version>
+
+<data>
+<title>Actividad inicial</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<crossword>
+<grid><row><cell>S</cell><cell>I</cell><cell>S</cell><cell>M</cell><cell>Ó</cell><cell>G</cell><cell>R</cell><cell>A</cell><cell>F</cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>E</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>R</cell><cell>A</cell><cell>D</cell><cell>I</cell><cell>A</cell><cell>C</cell><cell>T</cell><cell>I</cell><cell>V</cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>I</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>M</cell><cell>A</cell><cell>G</cell><cell>M</cell><cell>Á</cell><cell>T</cell><cell>I</cell><cell>C</cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>E</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>C</cell><cell>O</cell><cell>N</cell><cell>D</cell><cell>U</cell><cell>C</cell><cell>T</cell><cell>I</cell><cell>V</cell><cell>I</cell><cell>D</cell><cell>A</cell><cell>D</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>O</cell><cell></cell><cell>T</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>R</cell><cell></cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell>M</cell><cell></cell><cell>V</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>T</cell><cell>E</cell><cell>R</cell><cell>R</cell><cell>E</cell><cell>M</cell><cell>O</cell><cell>T</cell><cell>O</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>E</cell><cell></cell><cell>I</cell><cell></cell><cell></cell><cell></cell><cell>N</cell><cell></cell><cell>L</cell><cell>A</cell><cell>V</cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Z</cell><cell></cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell>T</cell><cell></cell><cell>C</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>A</cell><cell></cell><cell></cell><cell>F</cell><cell>O</cell><cell>S</cell><cell>A</cell><cell></cell><cell>Á</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Ñ</cell><cell></cell><cell>N</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>P</cell><cell>I</cell><cell>Z</cell><cell>A</cell><cell>R</cell><cell>R</cell><cell>A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></grid>
+
+<clues><item><word>SISMÓGRAFO</word><def>Aparato donde se recogen las vibraciones producidas por un terremoto</def></item><item><word>RADIACTIVA</word><def>Tipo de energía emitida por átomos o isótopos inestables</def></item><item><word>MAGMÁTICA</word><def>Roca que se forma cuando se enfría el magma</def></item><item><word>CONDUCTIVIDAD</word><def>Transmisión del calor de un cuerpo a otro</def></item><item><word>TERREMOTO</word><def>Movimiento  de tierra brusco, producido por liberación de energía</def></item><item><word>LAVA</word><def>Producto volcánico que fluye como un río</def></item><item><word>FOSA</word><def>Zona muy profunda de los fondos oceánicos</def></item><item><word>PIZARRA</word><def>Roca metamórfica, de color oscuro. También es un objeto que se encuentra en la clase.</def></item><item><word>SEDIMENTARIA</word><def>Roca que se forma después del proceso de erosión, transporte y sedimentación.</def></item><item><word>CORTEZA</word><def>Capa superior de La Tierra</def></item><item><word>MONTAÑA</word><def>Estructura del relieve terrestre coronada por una cima</def></item><item><word>VOLCÁN</word><def>Montaña de fuego</def></item></clues>
+</crossword>
+</data>
+
+<hotpot-config-file>
+<jcross>
+<exercise-subtitle>Crucigrama</exercise-subtitle>
+<instructions>Completa el crucigrama, pulsa &quot;Comprobar&quot; para verificar tu respuesta. Si estás atasado, puedes pulsar  el botón &quot;Pista&quot; para saber una letra de la respuesta. Pulsa un número para saber la pista o pistas para ese número.</instructions>
+<guess-correct>Correctas:</guess-correct>
+<guess-incorrect>Algunas de las respuestas son incorrectas. Estas respuestas han sido borradas de nuevo.</guess-incorrect>
+<clues-across>Pistas en horizontal:</clues-across>
+<clues-down>Pistas en vertical:</clues-down>
+<next-correct-letter>Ésta es la siguiente letra correcta.</next-correct-letter>
+<include-clue-list>0</include-clue-list>
+<enter-caption>Escribir la respuesta</enter-caption>
+<include-hint>1</include-hint>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<include-key-navigation>1</include-key-navigation>
+</jcross>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<hint-caption>Pista</hint-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Contenidos</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../contenidos.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+</global>
+</hotpot-config-file>
+</hotpot-jcross-file>

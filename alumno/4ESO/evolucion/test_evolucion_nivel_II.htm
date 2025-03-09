@@ -1,0 +1,1453 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>EVOLUCI&Oacute;N - NIVEL I I</TITLE>
+
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<body bgcolor="#e6ffe6">
+<SCRIPT LANGUAGE="JavaScript">
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+}
+
+is = new BrowserCheck()
+
+var CanShow = true;
+if ((is.v<4)||(is.ns5)){CanShow=false;}
+if ((is.mac==true)&&((is.ie4==true)||(is.ie5==true))){CanShow=false;}
+if (CanShow==false){
+	alert('WARNING: Your browser version cannot show this page.');
+	history.back();
+}
+
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 800;
+	if (is.ns) this.W = window.innerWidth;
+	if (is.ie) this.W = document.body.clientWidth;
+	if (is.ns) this.H = window.innerHeight;
+	if (is.ie) this.H = document.body.clientHeight;
+}
+
+var DivWidth = 400; //default value
+var FeedbackWidth = 200; //default
+var OKCaption = 'OK'; //
+var PopupBGColor = '#e6ffe6';
+var ExBGColor = '#e6ffe6'; //'#DDDDDD';
+var PageBGColor = '#e6ffe6'; //'#FFFFFF';
+var NavBarColor = '#e6ffe6'; //'#000000';
+var TextColor = '#000000';
+var QNum = 1;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = '';
+var IncorrectIndicator = '';
+var YourScoreIs = 'Tu puntuaci&oacute;n es'; //'Your score is: ';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = false; //true;
+var CorrectFirstTime = 'Preguntas contestadas correctamente a la primera:'; //'Questions answered correctly at first try: ';
+var ExerciseTitle = 'EVOLUCI&Oacute;N - NIVEL I I'; //'Test exercise';
+var ExerciseSubtitle = ''; //'Multiple-choice';
+var Instructions = 'Elegir la respuesta correcta para cada ejercicio.'; //'';
+var ShuffleQs = true; //true;
+var ShuffleAs = false; //true;
+var DefaultRight = '&#161;Correcto!';
+var DefaultWrong = '&#161;Lo siento! Int&eacute;ntalo de nuevo.';
+
+
+macrightchar = ':-)'
+macwrongchar = 'X'
+winrightchar = ':-)'
+winwrongchar = 'X'
+
+
+var NavBarCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="2">';
+NavBarCode += '<FORM NAME="NavButtons"><TR><TD ALIGN="CENTER" VALIGN="MIDDLE">';
+NavBarCode += '<FONT FACE="Geneva,Arial" SIZE="-1">';
+
+NavBarCode += '<INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input>';
+
+
+
+NavBarCode += '</FONT></TD></TR></FORM></TABLE>';
+
+var TitleCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="10">';
+TitleCode += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE" BGCOLOR="#e6ffe6">';
+TitleCode += '<FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000033">' + ExerciseTitle + '</FONT><BR>';
+TitleCode += '<FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000033">' + ExerciseSubtitle + '<BR>';
+if (Instructions != ''){
+	TitleCode += Instructions + '<BR>';
+}
+
+
+
+TitleCode += '</FONT></TD></TR></TABLE>';
+
+var QButtonsOpener = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="10">';
+QButtonsOpener += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FORM>';
+QButtonsOpener += '<FONT SIZE="+1"><INPUT TYPE="BUTTON" VALUE="&lt;=" onClick="ChangeQ(-1)">';
+var QButtonsCloser = '<INPUT TYPE="BUTTON" VALUE="=&gt;" onClick="ChangeQ(1)">';
+QButtonsCloser += '</FONT></FORM></TD></TR></TABLE>';
+
+var TableOpener = '<FORM NAME="QForm">';
+TableOpener += '<TABLE BORDER="0" WIDTH="[DivWidth]">';
+var QRow = '<TR><TD VALIGN="TOP" BGCOLOR="';
+QRow += ExBGColor;
+QRow += '" ALIGN="RIGHT">';
+QRow += '<FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000"></FONT></TD>';
+QRow += '<TD COLSPAN="3" VALIGN="TOP" BGCOLOR="';
+QRow += ExBGColor;
+QRow += '"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">&nbsp;<BR>[Question]<BR>&nbsp;';
+QRow += '</FONT></TD></TR>';
+
+var ARow = '<TR><TD></TD><TD VALIGN="TOP" BGCOLOR="';
+ARow += ExBGColor;
+ARow += '"><INPUT TYPE="TEXT" VALUE=" " SIZE="3" NAME="FB[ANum]"></TD>';
+ARow += '<TD VALIGN="TOP" BGCOLOR="';
+ARow += ExBGColor;
+ARow += '"><INPUT TYPE="BUTTON" VALUE="[ALetter]" OnClick="CheckAnswer([ANum])"></TD>';
+ARow += '<TD WIDTH="100%" BGCOLOR="';
+ARow += ExBGColor;
+ARow += '"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">[Ans]</FONT></TD></TR>';
+
+var MARow = '<TR><TD></TD><TD VALIGN="TOP" BGCOLOR="';
+MARow += ExBGColor;
+MARow += '" COLSPAN="3"><INPUT TYPE="CHECKBOX" NAME="A[ANum]" VALUE="[Correct]">';
+MARow += '<FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">[Ans]</FONT></TD></TR>';
+
+var CheckButton = '<TR><TD VALIGN="TOP" BGCOLOR="';
+CheckButton += ExBGColor;
+CheckButton += '" COLSPAN="4"><INPUT TYPE="BUTTON" VALUE="Comprobar"';
+CheckButton += ' onClick="CheckMulti([QNumber],[TotAns])"></TD></TR>';
+
+TableCloser = '</TABLE></FORM>';
+
+
+
+// Dynamic Layer Object
+
+// sophisticated layer/element targeting and animation object which provides the core // functionality needed in most DHTML applications
+// 19990604
+
+// Copyright (C) 1999 Dan Steinman
+// Distributed under the terms of the GNU Library General Public License
+// Available at http://www.dansteinman.com/dynduo/
+
+
+function DynLayer(id,nestref,frame) {
+	if (!DynLayer.set && !frame) DynLayerInit()
+	this.frame = frame || self
+	if (is.ns) {
+		if (is.ns4) {
+			if (!frame) {
+				if (!nestref) var nestref = DynLayer.nestRefArray[id]
+				if (!DynLayerTest(id,nestref)) return
+				this.css = (nestref)? eval("document."+nestref+".document."+id) : document.layers[id]
+			}
+			else this.css = (nestref)? eval("frame.document."+nestref+".document."+id) : frame.document.layers[id]
+			this.elm = this.event = this.css
+			this.doc = this.css.document
+		}
+
+		if (is.ns5) {
+			this.elm = document.getElementById(id)
+			this.css = this.elm.style
+			this.doc = document
+		}
+
+		this.x = this.css.left
+		this.y = this.css.top
+		this.w = this.css.clip.width
+		this.h = this.css.clip.height
+	}
+
+	else if (is.ie) {
+		this.elm = this.event = this.frame.document.all[id]
+		this.css = this.frame.document.all[id].style
+		this.doc = document
+		this.x = this.elm.offsetLeft
+		this.y = this.elm.offsetTop
+		this.w = (is.ie4)? this.css.pixelWidth : this.elm.offsetWidth
+		this.h = (is.ie4)? this.css.pixelHeight : this.elm.offsetHeight
+	}
+
+//HBS extra properties
+	this.showing = true;
+	this.key = -1;
+	
+	this.id = id
+	this.nestref = nestref
+	this.obj = id + "DynLayer"
+	eval(this.obj + "=this")
+}
+
+function DynLayerMoveTo(x,y) {
+
+	if (x!=null) {
+		this.x = x
+		if (is.ns) this.css.left = this.x
+		else this.css.pixelLeft = this.x
+	}
+
+	if (y!=null) {
+		this.y = y
+		if (is.ns) this.css.top = this.y
+		else this.css.pixelTop = this.y
+	}
+}
+
+function DynLayerMoveBy(x,y) {
+	this.moveTo(this.x+x,this.y+y)
+}
+
+function DynLayerShow() {
+	this.css.visibility = (is.ns)? "show" : "visible";
+//HBS extension
+	this.showing = true;
+}
+
+function DynLayerHide() {
+	this.css.visibility = (is.ns)? "hide" : "hidden";
+//HBS extension
+	this.showing = false;
+}
+
+DynLayer.prototype.moveTo = DynLayerMoveTo
+DynLayer.prototype.moveBy = DynLayerMoveBy
+DynLayer.prototype.show = DynLayerShow
+DynLayer.prototype.hide = DynLayerHide
+DynLayerTest = new Function('return true')
+
+//Dimension-setting extensions to DynLayer by S & M
+
+function DynLayerSetTop(NewTop) {
+	this.y = NewTop;
+	this.css.top = NewTop;
+}
+
+DynLayer.prototype.setTop = DynLayerSetTop;
+
+
+function DynLayerSetLeft(NewLeft) {
+	this.x = NewLeft;
+	this.css.left = NewLeft;
+}
+
+DynLayer.prototype.setLeft = DynLayerSetLeft;
+
+function DynLayerSetWidth(NewWidth) {
+	this.w = NewWidth;
+	if (is.ie){this.css.width = NewWidth;}
+	else{this.css.clip.width = NewWidth;}
+}
+
+DynLayer.prototype.setWidth = DynLayerSetWidth;
+
+// DynLayer GetContent Width/Height Methods
+// retrieves the total width/height of the contents of the layer when they are not known
+function DynLayerGetContentWidth() {
+	return (is.ns)? this.doc.width : this.elm.scrollWidth
+}
+function DynLayerGetContentHeight() {
+	return (is.ns)? this.doc.height : this.elm.scrollHeight
+}
+
+DynLayer.prototype.getContentWidth = DynLayerGetContentWidth
+DynLayer.prototype.getContentHeight = DynLayerGetContentHeight
+
+function DynLayerNormalizeHeight() {
+	this.h = this.getContentHeight();
+	if (is.ie4){this.css.height = this.h;}
+	else{this.css.clip.height = this.h;}
+//alert(this.id + ' height:' + this.h)
+}
+
+function DynLayerNormalizeWidth() {
+	this.w = this.getContentWidth();
+	if (is.ie4){this.css.width = this.w;}
+	else{this.css.clip.width = this.w;}
+}
+
+DynLayer.prototype.normalizeWidth = DynLayerNormalizeWidth;
+
+DynLayer.prototype.normalizeHeight = DynLayerNormalizeHeight;
+
+//Dimension-setting extensions to DynLayer by S & M
+
+function DynLayerCenter(H,V){
+	var VScrollPos = 0;
+	var HScrollPos = 0;
+
+//Get the scrollbar position
+	if (is.ie){
+		VScrollPos = document.body.scrollTop;
+		HScrollPos = document.body.scrollLeft;
+	}
+	else {
+		VScrollPos = window.pageYOffset;
+		HScrollPos = window.pageXOffset;
+	}
+
+	var NewL = this.x;
+	if (H == true){
+		NewL = Math.floor((pg.W/2) + HScrollPos - (this.w/2));
+	}
+
+	var NewT = this.y;
+	if (V == true){
+		NewT = Math.floor((pg.H/2) + VScrollPos - (this.h/2));
+	}
+	this.moveTo(NewL, NewT);
+}
+
+DynLayer.prototype.center = DynLayerCenter;
+
+// DynLayer Set Background Method
+// changes the background (the layer must be clipped)
+function DynLayerSetbg(color) {
+	if (is.ns) this.doc.bgColor = color
+	else this.css.backgroundColor = color
+}
+DynLayer.prototype.setbg = DynLayerSetbg
+
+// DynLayerInit Function
+
+function DynLayerInit(nestref) {
+
+	if (!DynLayer.set) DynLayer.set = true
+	if (is.ns) {
+		if (nestref) ref = eval('document.'+nestref+'.document')
+		else {nestref = ''; ref = document;}
+		for (var i=0; i<ref.layers.length; i++) {
+			var divname = ref.layers[i].name
+			DynLayer.nestRefArray[divname] = nestref
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'","'+nestref+'")')
+			}
+
+			if (ref.layers[i].document.layers.length > 0) {
+				DynLayer.refArray[DynLayer.refArray.length] = (nestref=='')? ref.layers[i].name : nestref+'.document.'+ref.layers[i].name
+			}
+		}
+
+		if (DynLayer.refArray.i < DynLayer.refArray.length) {
+			DynLayerInit(DynLayer.refArray[DynLayer.refArray.i++])
+		}
+	}
+
+	else if (is.ie) {
+		for (var i=0; i<document.all.tags("DIV").length; i++) {
+			var divname = document.all.tags("DIV")[i].id
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'")')
+			}
+		}
+	}
+	return true
+}
+
+DynLayer.nestRefArray = new Array()
+DynLayer.refArray = new Array()
+DynLayer.refArray.i = 0
+DynLayer.set = false
+
+
+// Write Method
+
+function DynLayerWrite(html) {
+	if (is.ns) {
+		this.doc.open()
+		this.doc.write(html)
+		this.doc.close()
+	}
+
+	else if (is.ie) {
+		this.event.innerHTML = html
+	}
+}
+
+DynLayer.prototype.write = DynLayerWrite
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Stuff){
+
+	var Content = '<TABLE BORDER="1" CELLPADDING="5">';
+	Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="Geneva,Arial">';
+	Content += Stuff;
+	Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+	Content += OKCaption + '" onClick="Feedback.hide();Question.show();"></FORM>'; 
+	Content += '</FONT></TD></TR></TABLE>';
+	Feedback.write(Content);
+	Feedback.normalizeWidth();
+	Feedback.normalizeHeight();
+	if (Feedback.w > FeedbackWidth){
+		Content = '<TABLE BORDER="1" CELLPADDING="5" WIDTH="' + FeedbackWidth + '">';
+		Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="Geneva,Arial">';
+		Content += Stuff;
+		Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+		Content += OKCaption + '" onClick="Feedback.hide();Question.show()"></FORM>'; 
+		Content += '</FONT></TD></TR></TABLE>';
+		Feedback.write(Content);
+		Feedback.normalizeWidth();
+		Feedback.normalizeHeight();
+	}
+	Feedback.center(true,true);
+	if (Feedback.y < (QNumber.y + QNumber.h)){
+		Feedback.setTop(QNumber.y + QNumber.h);
+	}
+	Question.hide();
+	Feedback.show();
+	if (is.ie){document.OKForm.CloseMe.focus();}
+	else{Feedback.doc.OKForm.CloseMe.focus();}
+}
+
+function StartUp(){
+
+	if (is.mac){
+		CorrectIndicator = unescape(macrightchar);
+		IncorrectIndicator = unescape(macwrongchar);
+	}
+	else{
+		CorrectIndicator = unescape(winrightchar);
+		IncorrectIndicator = unescape(winwrongchar);
+	}
+
+	pg = new PageDim();
+
+	DivWidth = Math.floor((pg.W*4)/5);
+	FeedbackWidth = Math.floor(DivWidth/2);
+
+//Insert this in all the variables
+	NavBarCode = ReplaceStuff('[DivWidth]', DivWidth, NavBarCode);
+	TitleCode = ReplaceStuff('[DivWidth]', DivWidth, TitleCode);
+	QButtonsOpener = ReplaceStuff('[DivWidth]', DivWidth, QButtonsOpener);
+	TableOpener = ReplaceStuff('[DivWidth]', DivWidth, TableOpener);
+
+	DynLayerInit();
+
+//Hide the feedback div
+	Feedback.hide();
+
+//Write the navigation bar
+	NavBar.write(NavBarCode);
+	NavBar.normalizeHeight();
+	NavBar.setWidth(DivWidth);
+	NavBar.center(true,false);
+	NavBar.setTop(10);
+
+//Write the title stuff
+	Title.write(TitleCode);
+	Title.normalizeHeight();
+	Title.setWidth(DivWidth);
+	Title.center(true,false);
+	Title.setTop(NavBar.y + NavBar.h);
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question
+	ShowQuestion();
+
+//Resize for navigator display problem
+//	if ((is.mac) && (is.ns4)){window.resizeBy(1,1)};
+}
+
+function ShowMessage(){
+	WriteFeedback(Message);
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='&#191;Cu&aacute;les de las siguientes caracter&iacute;sticas son propias de los seres vivos?';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='Andar';
+I[0][1][0][1]='';
+I[0][1][0][2] = 0;
+I[0][1][1] = new Array();
+I[0][1][1][0]='Reproducirse';
+I[0][1][1][1]='';
+I[0][1][1][2] = 0;
+I[0][1][2] = new Array();
+I[0][1][2][0]='Intercambiar materia y energ&iacute;a con el medio';
+I[0][1][2][1]='';
+I[0][1][2][2] = 0;
+I[0][1][3] = new Array();
+I[0][1][3][0]='Comerse unos a otros';
+I[0][1][3][1]='';
+I[0][1][3][2] = 0;
+I[0][1][4] = new Array();
+I[0][1][4][0]='Las respuestas b) y c) son correctas';
+I[0][1][4][1]='';
+I[0][1][4][2] = 1;
+I[0][2] = 0;
+
+I[1] = new Array();
+I[1][0]='La idea fundamental de la Teor&iacute;a Qu&iacute;mica es que';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='Los seres vivos se forman a partir del agua';
+I[1][1][0][1]='';
+I[1][1][0][2] = 0;
+I[1][1][1] = new Array();
+I[1][1][1][0]='los seres vivos se forman a partir de las descargas el&eacute;ctricas';
+I[1][1][1][1]='';
+I[1][1][1][2] = 0;
+I[1][1][2] = new Array();
+I[1][1][2][0]='los seres vivos se forman a partir de sustancias qu&iacute;micas sencillas y energ&iacute;a';
+I[1][1][2][1]='';
+I[1][1][2][2] = 1;
+I[1][1][3] = new Array();
+I[1][1][3][0]='los seres vivos se forman a partir de materia org&aacute;nica';
+I[1][1][3][1]='';
+I[1][1][3][2] = 0;
+I[1][1][4] = new Array();
+I[1][1][4][0]='los seres vivos se forman a partir de la fotos&iacute;ntesis';
+I[1][1][4][1]='';
+I[1][1][4][2] = 0;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='Ordena de m&aacute;s antigua a m&aacute;s moderna las siguientes teor&iacute;as. ';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='Darwinismo - Catastrofismo - Neodarwinismo - Fijismo - Lamarckismo';
+I[2][1][0][1]='';
+I[2][1][0][2] = 0;
+I[2][1][1] = new Array();
+I[2][1][1][0]='Catastrofismo - Neodarwinismo - Lamarckismo - Darwinismo - Fijismo';
+I[2][1][1][1]='';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='Lamarckismo - Catastrofismo - Fijismo - Neodarwinismo - Darwinismo';
+I[2][1][2][1]='';
+I[2][1][2][2] = 0;
+I[2][1][3] = new Array();
+I[2][1][3][0]='Fijismo - Lamarckismo - Neodarwinismo - Catastrofismo - Darwinismo';
+I[2][1][3][1]='';
+I[2][1][3][2] = 0;
+I[2][1][4] = new Array();
+I[2][1][4][0]='Fijismo - Catastrofismo - Lamarckismo - Darwinismo- Neodarwinismo';
+I[2][1][4][1]='';
+I[2][1][4][2] = 1;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='Indica cu&aacute;les de los siguientes ejemplos son &oacute;rganos hom&oacute;logos:';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='Pico de ave - dientes de le&oacute;n';
+I[3][1][0][1]='';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='Aleta de pez - aleta de tibur&oacute;n';
+I[3][1][1][1]='';
+I[3][1][1][2] = 0;
+I[3][1][2] = new Array();
+I[3][1][2][0]='Ala de murci&eacute;lago - aleta de foca';
+I[3][1][2][1]='';
+I[3][1][2][2] = 1;
+I[3][1][3] = new Array();
+I[3][1][3][0]='Brazo de hombre - brazo de mujer';
+I[3][1][3][1]='';
+I[3][1][3][2] = 0;
+I[3][1][4] = new Array();
+I[3][1][4][0]='Ala de abeja - pata de oveja';
+I[3][1][4][1]='';
+I[3][1][4][2] = 0;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='Indica cu&aacute;les de los siguientes ejemplos son &oacute;rganos an&aacute;logos:';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='Lana de oveja - pelo de perro';
+I[4][1][0][1]='';
+I[4][1][0][2] = 0;
+I[4][1][1] = new Array();
+I[4][1][1][0]='Forma de pez - forma de delf&iacute;n';
+I[4][1][1][1]='';
+I[4][1][1][2] = 1;
+I[4][1][2] = new Array();
+I[4][1][2][0]='Ala de ave - ala de murci&eacute;lago';
+I[4][1][2][1]='';
+I[4][1][2][2] = 0;
+I[4][1][3] = new Array();
+I[4][1][3][0]='Pata de insecto - pata de ciempi&eacute;s';
+I[4][1][3][1]='';
+I[4][1][3][2] = 0;
+I[4][1][4] = new Array();
+I[4][1][4][0]='Brazo humano - pata de ave';
+I[4][1][4][1]='';
+I[4][1][4][2] = 0;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='Ordena de m&aacute;s primitivo a m&aacute;s evolucionado los siguientes grupos de seres vivos: ';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='Gorila - Aguila - Mariposa -Tibur&oacute;n - Rana - Esponja';
+I[5][1][0][1]='';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='Tibur&oacute;n - Gorila - Rana - Aguila - Esponja- Mariposa';
+I[5][1][1][1]='';
+I[5][1][1][2] = 0;
+I[5][1][2] = new Array();
+I[5][1][2][0]='Rana - Tibur&oacute;n - Gorila - Mariposa - Esponja- Aguila';
+I[5][1][2][1]='';
+I[5][1][2][2] = 0;
+I[5][1][3] = new Array();
+I[5][1][3][0]='Esponja - Mariposa - Tibur&oacute;n - Rana - Aguila - Gorila';
+I[5][1][3][1]='';
+I[5][1][3][2] = 1;
+I[5][1][4] = new Array();
+I[5][1][4][0]='Mariposa - Gorila - Tibur&oacute;n - Esponja - Rana - Aguila';
+I[5][1][4][1]='';
+I[5][1][4][2] = 0;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='&#191;Cu&aacute;l de los dos procesos es m&aacute;s importante desde el punto de vista de la evoluci&oacute;n, la radiaci&oacute;n, o la convergencia adaptativa?. &#191;Por qu&eacute;?.';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='La divergencia, porque as&iacute; surgen especies nuevas';
+I[6][1][0][1]='';
+I[6][1][0][2] = 1;
+I[6][1][1] = new Array();
+I[6][1][1][0]='La divergencia, porque as&iacute; los seres vivos se hacen iguales';
+I[6][1][1][1]='';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='La convergencia, porque as&iacute; los seres vivos se hacen diferentes';
+I[6][1][2][1]='';
+I[6][1][2][2] = 0;
+I[6][1][3] = new Array();
+I[6][1][3][0]='La convergencia, porque as&iacute; los seres vivos se hacen iguales';
+I[6][1][3][1]='';
+I[6][1][3][2] = 0;
+I[6][1][4] = new Array();
+I[6][1][4][0]='Todo lo anterior es falso';
+I[6][1][4][1]='';
+I[6][1][4][2] = 0;
+I[6][2] = 0;
+
+I[7] = new Array();
+I[7][0]='&#191;Por qu&eacute; se vuelven resistentes las bacterias a los antibi&oacute;ticos y los insectos a los insecticidas?. ';
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='Porque son invertebrados';
+I[7][1][0][1]='';
+I[7][1][0][2] = 0;
+I[7][1][1] = new Array();
+I[7][1][1][0]='Porque en sus poblaciones nacen individuos con mutaciones gen&eacute;ticas que les hacen resistentes';
+I[7][1][1][1]='';
+I[7][1][1][2] = 1;
+I[7][1][2] = new Array();
+I[7][1][2][0]='Porque los individuos de sus poblaciones desarrollan caracteres que no ten&iacute;an antes para hacerse resistentes';
+I[7][1][2][1]='';
+I[7][1][2][2] = 0;
+I[7][1][3] = new Array();
+I[7][1][3][0]='Porque son seres vivos muy sencillos';
+I[7][1][3][1]='';
+I[7][1][3][2] = 0;
+I[7][1][4] = new Array();
+I[7][1][4][0]='Porque, seg&uacute;n el darwinismo, s&oacute;lo se reproducen los m&aacute;s fuertes';
+I[7][1][4][1]='';
+I[7][1][4][2] = 0;
+I[7][2] = 0;
+
+I[8] = new Array();
+I[8][0]='&#191;Por qu&eacute; las bacterias se hacen resistentes a los antibi&oacute;ticos mucho antes que los insectos a los insecticidas? ';
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='Porque son m&aacute;s r&aacute;pidas';
+I[8][1][0][1]='';
+I[8][1][0][2] = 0;
+I[8][1][1] = new Array();
+I[8][1][1][0]='Porque son invertebrados';
+I[8][1][1][1]='';
+I[8][1][1][2] = 0;
+I[8][1][2] = new Array();
+I[8][1][2][0]='Porque su informaci&oacute;n gen&eacute;tica es m&aacute;s sencilla y muta con m&aacute;s facilidad';
+I[8][1][2][1]='';
+I[8][1][2][2] = 1;
+I[8][1][3] = new Array();
+I[8][1][3][0]='Porque son m&aacute;s peque&ntilde;as';
+I[8][1][3][1]='';
+I[8][1][3][2] = 0;
+I[8][1][4] = new Array();
+I[8][1][4][0]='Porque es m&aacute;s f&aacute;cil adaptarse a los antibi&oacute;ticos que a los insecticidas';
+I[8][1][4][1]='';
+I[8][1][4][2] = 0;
+I[8][2] = 0;
+
+I[9] = new Array();
+I[9][0]=' Lamarck dec&iacute;a que la evoluci&oacute;n se debe a:';
+I[9][1] = new Array();
+I[9][1][0] = new Array();
+I[9][1][0][0]='Los caracteres adquiridos';
+I[9][1][0][1]='';
+I[9][1][0][2] = 0;
+I[9][1][1] = new Array();
+I[9][1][1][0]='Las adaptaciones al medio';
+I[9][1][1][1]='';
+I[9][1][1][2] = 0;
+I[9][1][2] = new Array();
+I[9][1][2][0]='Los cambios en el medio';
+I[9][1][2][1]='';
+I[9][1][2][2] = 0;
+I[9][1][3] = new Array();
+I[9][1][3][0]='A las mutaciones';
+I[9][1][3][1]='';
+I[9][1][3][2] = 0;
+I[9][1][4] = new Array();
+I[9][1][4][0]='A todo lo dicho en a), b), c)';
+I[9][1][4][1]='';
+I[9][1][4][2] = 1;
+I[9][2] = 0;
+
+I[10] = new Array();
+I[10][0]=' El darwinismo se diferencia del lamarckismo en que:';
+I[10][1] = new Array();
+I[10][1][0] = new Array();
+I[10][1][0][0]='Darwin no aceptaba los caracteres adquiridos';
+I[10][1][0][1]='';
+I[10][1][0][2] = 1;
+I[10][1][1] = new Array();
+I[10][1][1][0]='Darwin era m&aacute;s culto que Lamarck';
+I[10][1][1][1]='';
+I[10][1][1][2] = 0;
+I[10][1][2] = new Array();
+I[10][1][2][0]='Darwin no cre&iacute;a en la evoluci&oacute;n';
+I[10][1][2][1]='';
+I[10][1][2][2] = 0;
+I[10][1][3] = new Array();
+I[10][1][3][0]='Darwin cre&iacute;a en las mutaciones';
+I[10][1][3][1]='';
+I[10][1][3][2] = 0;
+I[10][1][4] = new Array();
+I[10][1][4][0]='Darwin dijo que los seres vivos eran todos iguales';
+I[10][1][4][1]='';
+I[10][1][4][2] = 0;
+I[10][2] = 0;
+
+I[11] = new Array();
+I[11][0]=' &#191;Qu&eacute; aporta Cuvier respecto al fijismo?';
+I[11][1] = new Array();
+I[11][1][0] = new Array();
+I[11][1][0][0]='La idea de evoluci&oacute;n';
+I[11][1][0][1]='';
+I[11][1][0][2] = 0;
+I[11][1][1] = new Array();
+I[11][1][1][0]='La idea de selecci&oacute;n natural';
+I[11][1][1][1]='';
+I[11][1][1][2] = 0;
+I[11][1][2] = new Array();
+I[11][1][2][0]='La idea de las mutaciones';
+I[11][1][2][1]='';
+I[11][1][2][2] = 0;
+I[11][1][3] = new Array();
+I[11][1][3][0]='La idea de que los seres vivos son todos iguales';
+I[11][1][3][1]='';
+I[11][1][3][2] = 0;
+I[11][1][4] = new Array();
+I[11][1][4][0]='La idea de que hay seres vivos que han desaparecido';
+I[11][1][4][1]='';
+I[11][1][4][2] = 1;
+I[11][2] = 0;
+
+I[12] = new Array();
+I[12][0]=' &#191;Y qu&eacute; aporta Lamarck respecto a Cuvier?';
+I[12][1] = new Array();
+I[12][1][0] = new Array();
+I[12][1][0][0]='La idea de que se pueden desarrollar caracteres nuevos';
+I[12][1][0][1]='';
+I[12][1][0][2] = 1;
+I[12][1][1] = new Array();
+I[12][1][1][0]='La idea de que existen grandes cat&aacute;strofes';
+I[12][1][1][1]='';
+I[12][1][1][2] = 0;
+I[12][1][2] = new Array();
+I[12][1][2][0]='La idea de que la informaci&oacute;n gen&eacute;tica cambia';
+I[12][1][2][1]='';
+I[12][1][2][2] = 0;
+I[12][1][3] = new Array();
+I[12][1][3][0]='La idea de que todos los seres vivos son diferentes';
+I[12][1][3][1]='';
+I[12][1][3][2] = 0;
+I[12][1][4] = new Array();
+I[12][1][4][0]='La idea de que los seres vivos nunca cambian';
+I[12][1][4][1]='';
+I[12][1][4][2] = 0;
+I[12][2] = 0;
+
+I[13] = new Array();
+I[13][0]=' &#191;Y que aportan Darwin y Wallace respecto a Lamarck?';
+I[13][1] = new Array();
+I[13][1][0] = new Array();
+I[13][1][0][0]='La idea de que los seres vivos nunca cambian';
+I[13][1][0][1]='';
+I[13][1][0][2] = 0;
+I[13][1][1] = new Array();
+I[13][1][1][0]='La idea de las mutaciones gen&eacute;ticas';
+I[13][1][1][1]='';
+I[13][1][1][2] = 0;
+I[13][1][2] = new Array();
+I[13][1][2][0]='La idea de que todos los seres vivos son diferentes';
+I[13][1][2][1]='';
+I[13][1][2][2] = 1;
+I[13][1][3] = new Array();
+I[13][1][3][0]='La idea de que se pueden desarrollar caracteres nuevos';
+I[13][1][3][1]='';
+I[13][1][3][2] = 0;
+I[13][1][4] = new Array();
+I[13][1][4][0]='La idea de evoluci&oacute;n';
+I[13][1][4][1]='';
+I[13][1][4][2] = 0;
+I[13][2] = 0;
+
+I[14] = new Array();
+I[14][0]=' &#191;Y el neodarwinismo respecto a Darwin-Wallace?';
+I[14][1] = new Array();
+I[14][1][0] = new Array();
+I[14][1][0][0]='La idea de evoluci&oacute;n';
+I[14][1][0][1]='';
+I[14][1][0][2] = 0;
+I[14][1][1] = new Array();
+I[14][1][1][0]='La idea de que todos los seres vivos son diferentes';
+I[14][1][1][1]='';
+I[14][1][1][2] = 0;
+I[14][1][2] = new Array();
+I[14][1][2][0]='La idea de que hay seres vivos que han desaparecido ';
+I[14][1][2][1]='';
+I[14][1][2][2] = 0;
+I[14][1][3] = new Array();
+I[14][1][3][0]='La idea de que la variabilidad de los seres vivos es gen&eacute;tica';
+I[14][1][3][1]='';
+I[14][1][3][2] = 1;
+I[14][1][4] = new Array();
+I[14][1][4][0]='La idea de que todos los anteriores estaban equivocados';
+I[14][1][4][1]='';
+I[14][1][4][2] = 0;
+I[14][2] = 0;
+
+I[15] = new Array();
+I[15][0]=' El roble melojo (Quercus pyrenaica),';
+I[15][1] = new Array();
+I[15][1][0] = new Array();
+I[15][1][0][0]='Pertenece al g&eacute;nero Quercus';
+I[15][1][0][1]='';
+I[15][1][0][2] = 1;
+I[15][1][1] = new Array();
+I[15][1][1][0]='Pertenece al g&eacute;nero pyrenaica';
+I[15][1][1][1]='';
+I[15][1][1][2] = 0;
+I[15][1][2] = new Array();
+I[15][1][2][0]='Pertenece a la especie pyrenica';
+I[15][1][2][1]='';
+I[15][1][2][2] = 0;
+I[15][1][3] = new Array();
+I[15][1][3][0]='Es de la familia Quercus';
+I[15][1][3][1]='';
+I[15][1][3][2] = 0;
+I[15][1][4] = new Array();
+I[15][1][4][0]='Es del g&eacute;nero roble';
+I[15][1][4][1]='';
+I[15][1][4][2] = 0;
+I[15][2] = 0;
+
+I[16] = new Array();
+I[16][0]=' De las siguientes pruebas de la evoluci&oacute;n, &#191;cu&aacute;l ser&iacute;a de tipo biogeogr&aacute;fico?';
+I[16][1] = new Array();
+I[16][1][0] = new Array();
+I[16][1][0][0]='Huesos de una aleta';
+I[16][1][0][1]='';
+I[16][1][0][2] = 0;
+I[16][1][1] = new Array();
+I[16][1][1][0]='Huesos f&oacute;siles';
+I[16][1][1][1]='';
+I[16][1][1][2] = 0;
+I[16][1][2] = new Array();
+I[16][1][2][0]='Forma de un pez';
+I[16][1][2][1]='';
+I[16][1][2][2] = 0;
+I[16][1][3] = new Array();
+I[16][1][3][0]='F&oacute;siles de Tyranosaurio s&oacute;lo en Am&eacute;rica del Norte';
+I[16][1][3][1]='';
+I[16][1][3][2] = 0;
+I[16][1][4] = new Array();
+I[16][1][4][0]='Distribuci&oacute;n de las aves no voladoras';
+I[16][1][4][1]='';
+I[16][1][4][2] = 1;
+I[16][2] = 0;
+
+I[17] = new Array();
+I[17][0]=' Se&ntilde;ala los huesos que forman el "brazo" de un reptil.';
+I[17][1] = new Array();
+I[17][1][0] = new Array();
+I[17][1][0][0]='C&uacute;bito, radio y peron&eacute;<br />';
+I[17][1][0][1]='';
+I[17][1][0][2] = 0;
+I[17][1][1] = new Array();
+I[17][1][1][0]='Tibia, f&eacute;mur y peron&eacute;';
+I[17][1][1][1]='';
+I[17][1][1][2] = 0;
+I[17][1][2] = new Array();
+I[17][1][2][0]='H&uacute;mero, c&uacute;bito y radio';
+I[17][1][2][1]='';
+I[17][1][2][2] = 1;
+I[17][1][3] = new Array();
+I[17][1][3][0]='H&uacute;mero, radio y carpos';
+I[17][1][3][1]='';
+I[17][1][3][2] = 0;
+I[17][1][4] = new Array();
+I[17][1][4][0]='C&uacute;bito, menisco y dedos';
+I[17][1][4][1]='';
+I[17][1][4][2] = 0;
+I[17][2] = 0;
+
+I[18] = new Array();
+I[18][0]=' De los siguientes animales, &#191;cu&aacute;les no dejar&iacute;an huellas f&oacute;siles en condiciones normales?';
+I[18][1] = new Array();
+I[18][1][0] = new Array();
+I[18][1][0][0]='Insectos';
+I[18][1][0][1]='';
+I[18][1][0][2] = 0;
+I[18][1][1] = new Array();
+I[18][1][1][0]='Bacterias';
+I[18][1][1][1]='';
+I[18][1][1][2] = 0;
+I[18][1][2] = new Array();
+I[18][1][2][0]='Animales que habitan las selvas';
+I[18][1][2][1]='';
+I[18][1][2][2] = 0;
+I[18][1][3] = new Array();
+I[18][1][3][0]='Animales sin huesos';
+I[18][1][3][1]='';
+I[18][1][3][2] = 0;
+I[18][1][4] = new Array();
+I[18][1][4][0]='Ninguno de los anteriores';
+I[18][1][4][1]='';
+I[18][1][4][2] = 1;
+I[18][2] = 0;
+
+I[19] = new Array();
+I[19][0]=' &#191;C&oacute;mo podr&iacute;as investigar las relaciones evolutivas entre organismos lejanamente emparentados, tales como la mosca de las frutas y la especie humana?.';
+I[19][1] = new Array();
+I[19][1][0] = new Array();
+I[19][1][0][0]='Secuenciando prote&iacute;nas sangu&iacute;neas';
+I[19][1][0][1]='';
+I[19][1][0][2] = 1;
+I[19][1][1] = new Array();
+I[19][1][1][0]='Cruz&aacute;ndolos entre s&iacute;';
+I[19][1][1][1]='';
+I[19][1][1][2] = 0;
+I[19][1][2] = new Array();
+I[19][1][2][0]='Estudiando sus huesos';
+I[19][1][2][1]='';
+I[19][1][2][2] = 0;
+I[19][1][3] = new Array();
+I[19][1][3][0]='Analizando su comportamiento';
+I[19][1][3][1]='';
+I[19][1][3][2] = 0;
+I[19][1][4] = new Array();
+I[19][1][4][0]='Estudiando su distribuci&oacute;n actual';
+I[19][1][4][1]='';
+I[19][1][4][2] = 0;
+I[19][2] = 0;
+
+I[20] = new Array();
+I[20][0]=' La teor&iacute;a de la evoluci&oacute;n de Darwin-Wallace se basa en la supervivencia del mejor adaptado. &#191;Cu&aacute;l de las siguientes frases describe mejor a un animal que est&eacute; adaptado en t&eacute;rminos evolutivos?';
+I[20][1] = new Array();
+I[20][1][0] = new Array();
+I[20][1][0][0]='Un animal que est&aacute; muy sano durante toda su vida.';
+I[20][1][0][1]='';
+I[20][1][0][2] = 0;
+I[20][1][1] = new Array();
+I[20][1][1][0]='Un animal que produce mucha descendencia durante toda su vida.';
+I[20][1][1][1]='';
+I[20][1][1][2] = 1;
+I[20][1][2] = new Array();
+I[20][1][2][0]='Un animal que vive una larga vejez.';
+I[20][1][2][1]='';
+I[20][1][2][2] = 0;
+I[20][1][3] = new Array();
+I[20][1][3][0]='Un animal que tiene muchos compa&ntilde;eros durante su vida.';
+I[20][1][3][1]='';
+I[20][1][3][2] = 0;
+I[20][1][4] = new Array();
+I[20][1][4][0]='Un animal que gana sus peleas.';
+I[20][1][4][1]='';
+I[20][1][4][2] = 0;
+I[20][2] = 0;
+
+I[21] = new Array();
+I[21][0]=' &#191;Cu&aacute;l de las siguientes frases describe mejor la selecci&oacute;n natural?. ';
+I[21][1] = new Array();
+I[21][1][0] = new Array();
+I[21][1][0][0]='La supervivencia del mejor adaptado';
+I[21][1][0][1]='';
+I[21][1][0][2] = 0;
+I[21][1][1] = new Array();
+I[21][1][1][0]='La habilidad de un animal para escoger un compa&ntilde;ero adecuado';
+I[21][1][1][1]='';
+I[21][1][1][2] = 0;
+I[21][1][2] = new Array();
+I[21][1][2][0]='La supervivencia de animales que tienen &eacute;xito en la competencia por los recursos con otros animales';
+I[21][1][2][1]='';
+I[21][1][2][2] = 0;
+I[21][1][3] = new Array();
+I[21][1][3][0]='La supervivencia de los animales que presentan variaciones que les capacitan para sobrevivir y reproducirse con &eacute;xito';
+I[21][1][3][1]='';
+I[21][1][3][2] = 1;
+I[21][1][4] = new Array();
+I[21][1][4][0]='La derrota de los m&aacute;s d&eacute;biles';
+I[21][1][4][1]='';
+I[21][1][4][2] = 0;
+I[21][2] = 0;
+
+I[22] = new Array();
+I[22][0]=' Los periquitos dom&eacute;sticos tienen muchos colores, pero &#191;por qu&eacute; todos los periquitos salvajes son verdes?.';
+I[22][1] = new Array();
+I[22][1][0] = new Array();
+I[22][1][0][0]='Porque viven entre las hojas de los &aacute;rboles';
+I[22][1][0][1]='';
+I[22][1][0][2] = 1;
+I[22][1][1] = new Array();
+I[22][1][1][0]='Porque comen hojas';
+I[22][1][1][1]='';
+I[22][1][1][2] = 0;
+I[22][1][2] = new Array();
+I[22][1][2][0]='Porque viven en Australia';
+I[22][1][2][1]='';
+I[22][1][2][2] = 0;
+I[22][1][3] = new Array();
+I[22][1][3][0]='Porque son peque&ntilde;os';
+I[22][1][3][1]='';
+I[22][1][3][2] = 0;
+I[22][1][4] = new Array();
+I[22][1][4][0]='Porque son aves';
+I[22][1][4][1]='';
+I[22][1][4][2] = 0;
+I[22][2] = 0;
+
+I[23] = new Array();
+I[23][0]=' De entre todas las adaptaciones de los hom&iacute;nidos, las m&aacute;s importantes fueron ';
+I[23][1] = new Array();
+I[23][1][0] = new Array();
+I[23][1][0][0]='La capacidad de usar el fuego';
+I[23][1][0][1]='';
+I[23][1][0][2] = 0;
+I[23][1][1] = new Array();
+I[23][1][1][0]='La capacidad de cazar a otros animales';
+I[23][1][1][1]='';
+I[23][1][1][2] = 0;
+I[23][1][2] = new Array();
+I[23][1][2][0]='La capacidad de andar a dos patas';
+I[23][1][2][1]='';
+I[23][1][2][2] = 0;
+I[23][1][3] = new Array();
+I[23][1][3][0]='La capacidad de manipular objetos';
+I[23][1][3][1]='';
+I[23][1][3][2] = 0;
+I[23][1][4] = new Array();
+I[23][1][4][0]='Son ciertas c) y d)';
+I[23][1][4][1]='';
+I[23][1][4][2] = 1;
+I[23][2] = 0;
+
+I[24] = new Array();
+I[24][0]=' &#191;Qu&eacute; hom&iacute;nidos pudieron vivir en la misma &eacute;poca?';
+I[24][1] = new Array();
+I[24][1][0] = new Array();
+I[24][1][0][0]='Australopithecus africanus, los parantropos y Homo habilis';
+I[24][1][0][1]='';
+I[24][1][0][2] = 0;
+I[24][1][1] = new Array();
+I[24][1][1][0]='Homo habilis, Homo erectus y Homo sapiens';
+I[24][1][1][1]='';
+I[24][1][1][2] = 0;
+I[24][1][2] = new Array();
+I[24][1][2][0]='Son ciertas a) y b)';
+I[24][1][2][1]='';
+I[24][1][2][2] = 0;
+I[24][1][3] = new Array();
+I[24][1][3][0]='Homo erectus, Homo neandertalensis y Homo sapiens';
+I[24][1][3][1]='';
+I[24][1][3][2] = 0;
+I[24][1][4] = new Array();
+I[24][1][4][0]='Son ciertas a) y d)';
+I[24][1][4][1]='';
+I[24][1][4][2] = 1;
+I[24][2] = 0;
+
+
+DoneStatus = new Array();
+Answers = new Array();
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		DoneStatus[x] = 0;
+		Answers[x] = new Array();
+		Answers[x][0] = 0;
+		for (var y=1; y<I[x][1].length; y++){
+			Answers[x][y] = '0';
+		}
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+
+	var NewNum = QNum + ChangeBy;
+	if ((NewNum > 0)&&(NewNum<=I.length)){
+		QNum = NewNum;
+		ShowQuestion();
+	}
+}
+
+function ShowQNum(){
+	var Readout = QNum + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	QNumber.write(QButtonsOpener + Readout + QButtonsCloser);
+	QNumber.normalizeHeight();
+	QNumber.setWidth(DivWidth);
+	QNumber.center(true,false);
+	QNumber.setTop(Title.y + Title.h);
+}
+
+function ShowQuestion(){
+	ShowQNum();
+
+	if (I[QNum-1][2] == 0){
+		var Temp = TableOpener;
+		Temp += ReplaceStuff('[Question]', I[QNum-1][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum-1][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum-1][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += TableCloser;
+	}
+	else{
+		var Temp = TableOpener;
+		Temp += ReplaceStuff('[Question]', I[QNum-1][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum-1][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum-1][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum-1][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += ReplaceStuff('[TotAns]', I[QNum-1][1].length, CheckButton);
+		Temp = ReplaceStuff('[QNumber]', QNum, Temp);
+		Temp += TableCloser;
+	}
+	Question.write(Temp);
+	Question.normalizeHeight();
+	Question.setWidth(DivWidth);
+	Question.center(true,false);
+	Question.setTop(QNumber.y + QNumber.h);
+
+	Question.setbg(ExBGColor);
+
+//Mark the answers already done
+	for (i=1; i<Answers[QNum-1].length; i++){
+		if (Answers[QNum-1][i] == 'R'){
+			MarkAnswer(i-1, true)
+		}
+		if (Answers[QNum-1][i] == 'W'){
+			MarkAnswer(i-1, false)
+		}
+		if (Answers[QNum-1][i] == 'C'){
+			CheckCheckbox(i-1);
+		}
+	}
+}
+
+function CheckMulti(QNum, TotAns){
+//alert('Checking question ' + QNum + '. It has ' + TotAns + ' answers.');
+	var TotWrong = 0;
+	var Output = '';
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		if (is.ie){
+			var b = eval('document.QForm.A' + i);
+		}
+		else{
+			var b = eval('Question.doc.QForm.A' + i);
+		}
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Answers[QNum-1][i+1] = 'C';
+			}
+			else{
+				Answers[QNum-1][i+1] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<BR>' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (DoneStatus[QNum-1] == 0){
+		Answers[QNum-1][0]++;
+		Tries++;
+		if (TotWrong == 0){
+			DoneStatus[QNum-1] = 1;
+			CorrectChoices++;
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<DoneStatus.length; i++){
+		if (DoneStatus[i] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (DoneStatus[QNum-1] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var Score = (Math.floor(100 * (CorrectChoices/Tries))) + '%';
+			Output = Output + '<BR><BR>' + YourScoreIs + ' ' + Score + '.';
+		}
+
+		if (Finished == true){
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Answers[i][0] == 1){
+					CFT++;
+				}
+			}
+		Output += '<BR><BR>' + CorrectFirstTime + CFT + '/' + I.length;
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(AnsNum){
+	var Output = I[QNum-1][1][AnsNum][1];
+
+	if (Output==''){
+		if (I[QNum-1][1][AnsNum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's correct
+	if (DoneStatus[QNum-1] == 0){
+		Answers[QNum-1][0]++;
+		if (I[QNum-1][1][AnsNum][2] == 1){
+			DoneStatus[QNum-1] = 1;
+			Answers[QNum-1][AnsNum+1] = 'R';
+			MarkAnswer(AnsNum, true);
+			CorrectChoices++;
+		}
+		else{
+			Answers[QNum-1][AnsNum+1] = 'W';
+			MarkAnswer(AnsNum, false);
+		}
+
+		Tries++;
+	}
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<DoneStatus.length; i++){
+		if (DoneStatus[i] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (DoneStatus[QNum-1] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var Score = (Math.floor(100 * (CorrectChoices/Tries))) + '%';
+			Output = Output + '<BR><BR>' + YourScoreIs + ' ' + Score + '.';
+		}
+
+		if (Finished == true){
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Answers[i][0] == 1){
+					CFT++;
+				}
+			}
+		Output += '<BR><BR>' + CorrectFirstTime + CFT + '/' + I.length;
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function MarkAnswer(AnsNum, Right){
+
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (is.ie){
+		eval('document.QForm.FB' + AnsNum).value = Mark;
+	}
+	else{
+		eval('Question.doc.QForm.FB' + AnsNum).value = Mark;
+	}
+}
+
+function CheckCheckbox(AnsNum){
+	if (is.ie){
+		eval('document.QForm.A' + AnsNum).checked = true;
+	}
+	else{
+		eval('Question.doc.QForm.A' + AnsNum).checked = true;
+	}
+}
+
+
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+
+<BODY BACKGROUND="" LINK="#0000ff" VLINK="#0000cc" onLoad="StartUp()">
+
+<SCRIPT LANGUAGE="JavaScript">
+	var OutStuff = '';
+
+	OutStuff = '<STYLE TYPE="text/css">#NavBarDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10;';
+	OutStuff += 'background-color:' + NavBarColor + '; layer-background-color: ' + NavBarColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="NavBarDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#TitleDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10;';
+	OutStuff += 'background-color:' + PageBGColor + '; layer-background-color: ' + PageBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="TitleDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#QNumberDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10; ';
+	OutStuff += 'background-color:' + PageBGColor + '; layer-background-color: ' + PageBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="QNumberDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#QuestionDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10; ';
+	OutStuff += 'background-color:' + ExBGColor + '; layer-background-color: ' + ExBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="QuestionDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#FeedbackDiv';
+	OutStuff += '{position:absolute; left:0; top:1500; height: 10; ';
+	OutStuff += 'background-color:' + PopupBGColor + '; layer-background-color: ' + PopupBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="FeedbackDiv"></DIV>';
+	document.write(OutStuff);
+
+</SCRIPT>
+
+</BODY>
+</HTML> 

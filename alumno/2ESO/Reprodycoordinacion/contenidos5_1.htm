@@ -1,0 +1,351 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="1302" >
+        <tr> 
+          <td height="35" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="5"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="4">
+              <tr> 
+                <td height="1" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top" height="1262"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/reproduccion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="536" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="210" bgcolor="#BBDDBB">
+                            <p align="center"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">Para saber m&aacute;s sobre 
+                                la reproducci&oacute;n asexual en animales</p>
+                              <p class="txt">Entre los animales encontramos los 
+                                siguientes tipos de reproducci&oacute;n asexual:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li class="txt"><span class="txtnegro">Escisi&oacute;n 
+                                              o fragmentaci&oacute;n <img src="imagenes/seastararm.jpg" width="88" height="134" align="right" alt=": &quot;A partir de un brazo de estrella de mar como el de la imagen se puede regenerar una estrella completa. Tomada de www.mnh.si.edu&quot;" hspace="15"></span> 
+                                              <p>El animal se rompe en dos o m&aacute;s 
+                                                fragmentos. Cada uno de ellos 
+                                                se desarrollar&aacute; formando 
+                                                un animal completo. Esa ruptura 
+                                                puede ser como parte de una acci&oacute;n 
+                                                del animal, como sucede en los 
+                                                p&oacute;lipos y medusas, o puede 
+                                                ser accidental. El ejemplo m&aacute;s 
+                                                caracter&iacute;stico es el de 
+                                                las estrellas de mar, en las que 
+                                                a partir de cada uno de sus brazos 
+                                                se puede regenerar una estrella 
+                                                completa.</p>
+                                            </li>
+                                          </ul>
+										</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                             <br>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><span class="txtnegro"> Gemaci&oacute;n</span><br>
+                                              <br>
+                                              <span class="txtnegro"><img src="imagenes/hidra.jpg" width="67" height="122" align="right" alt="&quot;Hidra de agua dulce con una peque&ntilde;a hidra formada por gemaci&oacute;n. Tomada de platea.pntic.mec.es/~iali&quot;" hspace="15"></span>Se 
+                                              da tambi&eacute;n en invertebrados 
+                                              primitivos. Consiste en que en una 
+                                              zona determinada del animal un grupo 
+                                              de c&eacute;lulas se dividen formando 
+                                              una especie de quiste denominado 
+                                              YEMA. Esta yema puede separarse 
+                                              del animal madre y originar un nuevo 
+                                              individuo. Tambi&eacute;n puede 
+                                              permanecer unida a &eacute;l form&aacute;ndose 
+                                              de esta manera una agrupaci&oacute;n 
+                                              de individuos originados por reproducci&oacute;n 
+                                              asexual llamada COLONIA, como por 
+                                              ejemplo sucede en los corales.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><span class="txtnegro">Esporulaci&oacute;n</span><br>
+                                              <br>
+                                              <span class="txtnegro"><img src="imagenes/rotifero_quiste.jpg" width="219" height="130" align="right" alt="&quot;Los rot&iacute;feros se enquistan para atravesar &eacute;pocas desfavorables, saliendo un nuevo individuo al retornar las condiciones favorables. Tomada de www.saudeanimal.com.br&quot;" hspace="15"></span>Ocurre 
+                                              en alg&uacute;n invertebrado, aunque 
+                                              es mucho m&aacute;s rara que en 
+                                              vegetales, y se suele dar cuando 
+                                              el animal atraviesa alguna &eacute;poca 
+                                              desfavorable, tal es el caso de 
+                                              animalillos que viven en charcas 
+                                              que se desecan, como algunos crust&aacute;ceos 
+                                              y rot&iacute;feros. Cuando la charca 
+                                              se va desecando, estos animales 
+                                              producen unas estructuras de resistencia 
+                                              comparables a esporas o quistes 
+                                              que tienen una fuerte cubierta. 
+                                              Una vez que la charca vuelve a tener 
+                                              agua, las esporas y quistes germinan, 
+                                              se abren y se desarrolla un nuevo 
+                                              animal.<br>
+                                            </li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <ul>
+                                            <li><span class="txtnegro"> Poliembrionia<img src="imagenes/armadillo.jpg" width="129" height="112" align="right" alt="&quot;El armadillo produce varios embriones a partir de una s&oacute;la fecundaci&oacute;n. Tomada de www.geocities.com_RainForest&quot;" hspace="15"></span><br>
+                                              <br>
+                                              Es el &uacute;nico tipo que acontece 
+                                              en vertebrados, en los que tras 
+                                              la reproducci&oacute;n sexual se 
+                                              forma el embri&oacute;n normalmente. 
+                                              Despu&eacute;s el embri&oacute;n 
+                                              se fragmenta y da lugar a varios 
+                                              embriones iguales. Encontramos este 
+                                              tipo de reproducci&oacute;n en ciertos 
+                                              mam&iacute;feros peque&ntilde;os, 
+                                              como armadillos y must&eacute;lidos.<br>
+                                            </li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <br><div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td > 
+                                      <p><font class="txtnegrolink"> Actividad 
+                                        7</font> <a target="_blank" href="activrepcoor7.htm"><img src="imagenes/activ7.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <font class="txtnegrolink"> Actividad 8</font> <a target="_blank" href="activrepcoor8.htm"><img src="imagenes/activ8.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p class="txtnegrolink"><font class="txt">
+										<a href="reproduccion.htm" class="txtnegrolink" target="_blank">
+										Actividad 8bis</a></font>
+										<a href="reproduccion.htm" target="_blank">
+										<img src="../../../profesor/presentaciones/Pais/galeri22.jpg" width="100" height="75" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <p>&nbsp;</p>
+                              <p align="right"><span class="txtnegrolink">
+                            <a href="#" onclick="javascript:window.close()" class="txtnegrolink">Cerrar</a></span></p>
+                             </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

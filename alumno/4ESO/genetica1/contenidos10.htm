@@ -1,0 +1,1758 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/contenidos/herencia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="527" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="219" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos9.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (10/12) - <a href="contenidos11.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                          </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"><span class="txtnegro">6.- GEN&Eacute;TICA 
+                                MENDELIANA:<img src="imagenes/mendelgarden.jpg" width="273" height="171" alt="&quot;Los jardines donde trabaj&oacute; Mendel (Tomado de http://genmic41.uab.es/genetica/Curso/Lagenetica.htm)&quot;" align="right"></span></p>
+                              <table width="60%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt">Los genes no son todos 
+                                          iguales respecto a su comportamiento 
+                                          en la transmisi&oacute;n de una generaci&oacute;n 
+                                          a la siguiente; existen distintos tipos 
+                                          de genes de los que los mejor 
+										conocidos 
+                                          son aquellos cuyo comportamiento fue 
+                                          estudiado por Mendel, por lo que reciben 
+                                          el nombre de genes mendelianos y la 
+                                          parte de la gen&eacute;tica que se encarga 
+                                          de estudiarlos es la gen&eacute;tica 
+                                          mendeliana.</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Mendel realiz&oacute; 
+                                            una serie de experimentos sencillos 
+                                            que consistieron en cruzar entre s&iacute; 
+                                            diferentes variedades de plantas y 
+                                            estudiar la descendencia que obten&iacute;a; 
+                                            de sus experimentos, los m&aacute;s 
+                                            conocidos son los realizados con plantas 
+                                            de guisante, de los que existe una 
+                                            variedad de semilla verde y otra de 
+                                            semilla amarilla; para empezar Mendel 
+                                            obtuvo lo que el llam&oacute; &quot;razas 
+                                            puras&quot; amarillas y verdes, que 
+                                            eran aquellas que al cruzarlas entre 
+                                            s&iacute; s&oacute;lo daban plantas 
+                                            iguales que los padres.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">El segundo paso consist&iacute;a 
+                                            en cruzar una raza pura de semillas 
+                                            verdes con otra de semillas amarillas, 
+                                            obteniendo en la 1&ordf; generaci&oacute;n 
+                                            filial (F1) el 100% de plantas de 
+                                            semillas verdes.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                              <div align="center">
+								<table border="0" width="100%" id="table6">
+									<tr>
+										<td width="221"><span class="txtnegro">GENERACI&Oacute;N 
+                                PARENTAL (P)</span></td>
+										<td width="286"><img src="imagenes/ver_liso.gif" width="59" height="59" hspace="50" align="texttop"><img src="imagenes/amar_liso.gif" width="59" height="59" align="texttop"><br>
+&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="221">&nbsp;</td>
+										<td width="286">
+                              <p align="center"> <span class="txtnegro">verde 
+                                x amarillo <br>
+&nbsp;</span></td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="221">&nbsp;</td>
+										<td width="286"><img src="imagenes/ver_liso.gif" width="59" height="59" hspace="110" align="bottom"><br>
+&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="221"><span class="txtnegro">1&ordf; GENERACI&Oacute;N 
+                                FILIAL (F1) </span></td>
+										<td width="286">
+										<p align="center"> <span class="txtnegro">100% verde</span></td>
+										<td>&nbsp;</td>
+									</tr>
+								</table>
+								</div>
+                              <p align="left">&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Mendel pensaba que al 
+                                            cruzarse los padres hab&iacute;a algo 
+                                            que pasaba a los descendientes para 
+                                            que tuvieran las semillas de cierto 
+                                            color y a eso lo llamaba &quot;factores 
+                                            hereditarios&quot; y supon&iacute;a 
+                                            que los factores hereditarios deb&iacute;an 
+                                            ser dos, ya que uno ven&iacute;a de 
+                                            la planta padre y otro de la planta 
+                                            madre.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                              <div align="center">
+								<table border="0" width="100%" id="table7">
+									<tr>
+										<td width="198">
+                              <span class="txtnegro">GENERACI&Oacute;N 
+                                PARENTAL (P)</span></td>
+										<td width="275" valign="top"> 
+										<img src="imagenes/verde.gif" width="55" height="123" align="left" hspace="50"><img src="imagenes/amarillo.gif" width="55" height="123" align="absmiddle"><br>
+&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="198">&nbsp;</td>
+										<td width="275">
+                              <p align="center"> <span class="txtnegro">verde 
+                                x amarillo <br>
+                                AA aa<br>
+&nbsp;</span></p></td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="198">
+                              <span class="txtnegro">1&ordf; GENERACI&Oacute;N 
+                              FILIAL (F1)</span></td>
+										<td width="275"> 
+										<img src="imagenes/hibrido.gif" width="55" height="128" hspace="110" align="bottom"><br>
+&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td width="198">&nbsp;</td>
+										<td width="275">
+										<p align="center"> <span class="txtnegro">100% verde<br>
+                                Aa</span> 
+                              </td>
+										<td>&nbsp;</td>
+									</tr>
+								</table>
+								</div>
+                              <p align="left" class="txtnegrolink" >
+                              &nbsp;</p>
+                              <blockquote> 
+                                <p class="txt">Mendel obtuvo siempre estos resultados, 
+                                  por lo que elabor&oacute; una conclusi&oacute;n 
+                                  general que constituye la 1&ordf; Ley de Mendel 
+                                  o &quot;Ley de la uniformidad de la 1&ordf; 
+                                  generaci&oacute;n filial&quot;:</p>
+                              </blockquote>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td height="19"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" height="17"> 
+                                          <div align="left"><span class="txtnegro">1&ordf; 
+                                            Ley de Mendel </span> </div>
+                                          <p class="txt">Al cruzar entre s&iacute; 
+                                            dos razas puras se obtiene una generaci&oacute;n 
+                                            filial que es id&eacute;ntica entre 
+                                            s&iacute; e id&eacute;ntica a uno 
+                                            de los padres.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt">A continuación, Mendel cruzó entre 
+								si plantas de la F1:</p>
+								<div align="center">
+									<table border="0" width="100%" id="table8">
+										<tr>
+											<td width="189">
+                              <span class="txtnegro">1&ordf; GENERACI&Oacute;N 
+                              FILIAL (F1)</span></td>
+											<td width="323"><img src="imagenes/hibrido.gif" width="55" height="123" align="texttop" hspace="60"><img src="imagenes/hibrido.gif" width="55" height="123" align="texttop"><br>
+&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="189">&nbsp;</td>
+											<td width="323">
+											<p align="center"> <span class="txtnegro">verde 
+                                x verde<br>
+                                Aa Aa<br>
+&nbsp;</span></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="189"><span class="txtnegro">2&ordf; 
+                                GENERACI&Oacute;N FILIAL (F2)</span></td>
+											<td width="323"> <img src="imagenes/hibrido.gif" width="55" height="123" hspace="15"><img src="imagenes/verde.gif" width="55" height="123"><img src="imagenes/hibrido.gif" width="55" height="123" hspace="15"><img src="imagenes/amarillo.gif" width="55" height="123"><br>
+&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="189">&nbsp;</td>
+											<td width="323">
+											<p align="center"> <span class="txtnegro"> 75% verde 
+                                25% amarillo <br>
+                                AA (25%), Aa (50%) aa (25%)</span></td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+								</div>
+&nbsp; 
+                              <blockquote>
+                                <p class="txt">De aqu&iacute; se deduc&iacute;a 
+                                  tambi&eacute;n que las plantas de semilla verde 
+                                  eran de dos tipos:</p>
+                                <ul>
+                                  <li class="txt"> unas eran razas puras (el 25%) 
+                                    <img src="imagenes/verde.gif" width="25" height="55" align="absmiddle"> 
+                                    <br>
+                                  </li>
+                                  <li><span class="txt">y otras eran h&iacute;bridos 
+                                    (el 50%) <img src="imagenes/hibrido.gif" width="25" height="55" align="absmiddle"> 
+                                    </span> </li>
+                                </ul>
+                                <p><br>
+                                  <span class="txt">De todo esto Mendel concluy&oacute; 
+                                  lo que llam&oacute; la &quot;Ley de independencia 
+                                  (segregaci&oacute;n) de los factores hereditarios&quot;, 
+                                  o 2&ordf; Ley de Mendel:</span></p>
+                              </blockquote>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td height="59"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" height="34"> 
+                                          <div align="left" class="txtnegro">2&ordf; 
+                                            Ley de Mendel </div>
+                                          <p> Al cruzar entre s&iacute; dos h&iacute;bridos, 
+                                            los factores hereditarios de cada 
+                                            individuo se separan, ya que son independientes, 
+                                            y se combinan entre s&iacute; de todas 
+                                            las formas posibles.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><br>
+                                <span class="txtnegro">Dos caracteres</span></p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td height="59"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" height="34"> 
+                                          <div align="left" class="txtnegro"></div>
+                                          <p> Mendel obtuvo siempre estos resultados 
+                                            al repetir estos cruces con especies 
+                                            diferentes; el siguiente paso consisti&oacute; 
+                                            en ver lo que suced&iacute;a cuando 
+                                            estudiaba al mismo tiempo m&aacute;s 
+                                            de un car&aacute;cter distinto, como 
+                                            por ejemplo el color de la semilla 
+                                            (verde y amarillo) y la forma de su 
+                                            piel (lisa y rugosa); repitiendo ahora 
+                                            los mismos cruces obten&iacute;a resultados 
+                                            parecidos:</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp;</p>
+								<div align="center">
+									<table border="0" width="100%" id="table9">
+										<tr>
+											<td width="32%">
+                              <span class="txtnegro">GENERACI&Oacute;N 
+                                PARENTAL (P)</span></td>
+											<td width="37%"><img src="imagenes/ver_liso.gif" width="59" height="59" align="texttop" hspace="50"><img src="imagenes/amar_rug.gif" width="59" height="59" align="texttop"></td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%">&nbsp;</td>
+											<td width="37%">
+                              <p align="center"> <span class="txtnegro">verde 
+                                - liso x amarillo - rugoso</span></p></td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%" valign="top">
+                              <span class="txtnegro"> (F1) </span>&nbsp;</td>
+											<td width="37%">&nbsp;</td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="3" valign="top">
+											<p align="center">
+                              <span class="txtnegro"> <img src="imagenes/ver_liso.gif" width="59" height="59" hspace="300"></span></td>
+										</tr>
+										<tr>
+											<td width="32%">&nbsp;</td>
+											<td width="37%" valign="top">
+											<p align="center"> <span class="txtnegro">100% verde 
+                                - liso</span></td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%">&nbsp;</td>
+											<td width="37%">&nbsp;</td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%" valign="top">
+                              <span class="txtnegro">1&ordf; GENERACI&Oacute;N 
+                              FILIAL (F1)</span></td>
+											<td width="37%" valign="top">
+											<span class="txtnegro"> <img src="imagenes/ver_liso.gif" width="59" height="59" hspace="55"><img src="imagenes/ver_liso.gif" width="59" height="59"></span></td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%">&nbsp;</td>
+											<td width="37%" valign="top">
+											<p align="center"> <span class="txtnegro">verde 
+                                - liso x verde - liso</span></td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="32%" valign="top"><span class="txtnegro"> (F2)</span></td>
+											<td width="37%">&nbsp;</td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="98%" colspan="3" valign="top">
+											<p align="center"><span class="txtnegro"> <img src="imagenes/ver_liso.gif" width="59" height="59" hspace="90"><img src="imagenes/ver_rug.gif" width="59" height="59"></span><img src="imagenes/amar_liso.gif" width="59" height="59" hspace="90"><img src="imagenes/amar_rug.gif" width="59" height="59"></td>
+										</tr>
+										<tr>
+											<td width="32%">&nbsp;</td>
+											<td width="37%">&nbsp;</td>
+											<td width="29%">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="98%" colspan="3" valign="top"> 
+                              <table width="87%" border="0" align="center" height="26" id="table10">
+                                <tr> 
+                                  <td width="28%"> 
+                                    <div align="center" class="txtnegro">verde 
+                                      - liso</div>
+                                  </td>
+                                  <td width="24%"> 
+                                    <div align="center" class="txtnegro">verde 
+                                      - rugoso </div>
+                                  </td>
+                                  <td width="23%"> 
+                                    <div align="center" class="txtnegro">amarillo-liso</div>
+                                  </td>
+                                  <td width="25%"> 
+                                    <div align="center" class="txtnegro">amarillo 
+                                      - rugoso</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="28%" class="txtnegro"> 
+                                    <div align="center">9/16</div>
+                                  </td>
+                                  <td width="24%" class="txtnegro"> 
+                                    <div align="center">3/16</div>
+                                  </td>
+                                  <td width="23%" class="txtnegro"> 
+                                    <div align="center">3/16</div>
+                                  </td>
+                                  <td width="25%" class="txtnegro"> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              				</td>
+										</tr>
+									</table>
+								</div>
+&nbsp;<blockquote> 
+                                <p class="txt">Aqu&iacute; suced&iacute;an dos 
+                                  cosas nuevas, que no se daban cuando se estudiaba 
+                                  un s&oacute;lo car&aacute;cter y era, por un 
+                                  lado, la aparici&oacute;n de plantas nuevas 
+                                  que antes no exist&iacute;an, como las de semilla 
+                                  verde-rugosa y amarilla-lisa, y por otro lado 
+                                  las proporciones tan peculiares que obten&iacute;a; 
+                                  Mendel concluy&oacute; que la &uacute;nica explicaci&oacute;n 
+                                  para &eacute;sto era que al igual que los factores 
+                                  hereditarios son independientes, los caracteres 
+                                  tambi&eacute;n lo son, por lo que se pueden 
+                                  combinar de todas las formas posibles, apareciendo 
+                                  combinaciones que antes no exist&iacute;an.</p>
+                              </blockquote>
+                              <table width="85%" border="0">
+                                <tr> 
+                                  <td height="117" class="txtnegro" width="34%" valign="top"> 
+                                    <div align="center">GENERACI&Oacute;N PARENTAL 
+                                    </div>
+                                  </td>
+                                  <td height="117" class="txtnegro" width="22%"> 
+                                    <div align="center"><img src="imagenes/verdeliso.gif" width="123" height="123"></div>
+                                  </td>
+                                  <td height="117" class="txtnegro" width="22%">&nbsp; 
+                                  </td>
+                                  <td height="117" class="txtnegro" width="22%"> 
+                                    <div align="center"><img src="imagenes/amarrug.gif" width="123" height="123"></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%"> 
+                                    <div align="center"> <br>
+                                    </div>
+                                  </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">verde-liso</div>
+                                  </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">x</div>
+                                  </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">amarillo-rugoso</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%">&nbsp; </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">AABB </div>
+                                  </td>
+                                  <td class="txtnegro" width="22%">&nbsp; </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%" height="80">&nbsp; 
+                                  </td>
+                                  <td class="txtnegro" width="22%" height="80">&nbsp; 
+                                  </td>
+                                  <td class="txtnegro" width="22%" height="80"> 
+                                    <div align="center"><img src="imagenes/verdeliso_hibrido.gif" width="123" height="123"></div>
+                                  </td>
+                                  <td class="txtnegro" width="22%" height="80">&nbsp; 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%"> 
+                                    <div align="left">(F1) </div>
+                                  </td>
+                                  <td class="txtnegro" width="22%">&nbsp; </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">100% verde-liso</div>
+                                  </td>
+                                  <td class="txtnegro" width="22%">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%">&nbsp; </td>
+                                  <td class="txtnegro" width="22%">&nbsp; </td>
+                                  <td class="txtnegro" width="22%"> 
+                                    <div align="center">AaBb</div>
+                                  </td>
+                                  <td class="txtnegro" width="22%">&nbsp; </td>
+                                </tr>
+                              </table>
+                              <p class="txtnegro"><br>
+                              </p>
+                              <table width="99%" border="0">
+                                <tr> 
+                                  <td class="txtnegro" width="12%">(F1)</td>
+                                  <td class="txtnegro" colspan="3"> 
+                                    <div align="center"><img src="imagenes/verdeliso_hibrido.gif" width="123" height="123"></div>
+                                  </td>
+                                  <td class="txtnegro" colspan="2"> 
+                                    <div align="center"><img src="imagenes/verdeliso_hibrido.gif" width="123" height="123"></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="12%">&nbsp;</td>
+                                  <td class="txtnegro" colspan="2"> 
+                                    <div align="right">verde-liso</div>
+                                  </td>
+                                  <td class="txtnegro"> 
+                                    <div align="right">x</div>
+                                  </td>
+                                  <td class="txtnegro" colspan="2"> 
+                                    <div align="center">verde-liso</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="12%">&nbsp;</td>
+                                  <td class="txtnegro" colspan="3"> 
+                                    <div align="center"> 
+                                      <p>AaBb </p>
+                                      <br>
+                                    </div>
+                                  </td>
+                                  <td class="txtnegro" colspan="2"> 
+                                    <div align="center"> 
+                                      <p>AaBb</p>
+                                      <br>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="12%">&nbsp;</td>
+                                  <td class="txtnegro" width="21%"><img src="imagenes/verdelisof2.gif" width="148" height="148"></td>
+                                  <td class="txtnegro" width="22%" colspan="2"> 
+                                    <div align="center">
+                                      <img src="imagenes/verderugf2.gif" width="142" height="142"></div>
+                                  </td>
+                                  <td class="txtnegro" width="21%"> 
+                                    <div align="right">
+                                      <img src="imagenes/amarlisof2.gif" width="145" height="147"></div>
+                                  </td>
+                                  <td class="txtnegro" width="24%"> 
+                                    <div align="right"><img src="imagenes/amarrugf2.gif" width="148" height="148"></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="12%">(F2)</td>
+                                  <td class="txtnegro" width="21%">9/16 verde-liso</td>
+                                  <td class="txtnegro" width="22%" colspan="2">3/16 
+                                    verde-rugoso</td>
+                                  <td class="txtnegro" width="21%">3/16 amarillo-liso</td>
+                                  <td class="txtnegro" width="24%">1/16 amarillo-rugoso</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="12%">&nbsp; </td>
+                                  <td class="txtnegro" width="21%"> 
+                                    <div align="left">AABB AABb<br>
+                                      AaBB AaBb</div>
+                                  </td>
+                                  <td class="txtnegro" width="22%" colspan="2"> 
+                                    <div align="center">AAbb, Aabb </div>
+                                  </td>
+                                  <td class="txtnegro" width="21%"> 
+                                    <div align="center">aaBB, aaBb </div>
+                                  </td>
+                                  <td class="txtnegro" width="24%"> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <blockquote> 
+                                <p class="txt">Esto lo expuso en su &quot;Ley 
+                                  de la independencia (segregaci&oacute;n) de 
+                                  los caracteres hereditarios&quot; o 3&ordf; 
+                                  Ley de Mendel:</p>
+                              </blockquote>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td height="59"> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" height="34"> 
+                                          <div align="left" class="txtnegro">3&ordf; 
+                                            Ley de Mendel </div>
+                                          <p> Al cruzar entre s&iacute; dos dih&iacute;bridos 
+                                            los caracteres hereditarios se separan, 
+                                            ya que son independientes, y se combinan 
+                                            entre s&iacute; de todas las formas 
+                                            posibles.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt">Como dec&iacute;amos al principio, 
+                                  no todos los caracteres son mendelianos, ya 
+                                  que no todos cumplen las tres leyes de Mendel 
+                                  en su transmisi&oacute;n.</p>
+                              </blockquote>
+                              <p class="txtnegro">4. Explicaci&oacute;n de la 
+                                gen&eacute;tica mendeliana</p>
+                              <blockquote> 
+                                <p class="txt">Mendel no sab&iacute;a c&oacute;mo 
+                                  funcionaba la reproducci&oacute;n sexual, ni 
+                                  lo que era un gameto, ni c&oacute;mo funcionaba 
+                                  la meiosis; desde nuestros conocimientos actuales 
+                                  podemos entender un poco mejor cuáles son los 
+                                  mecanismos que explican las leyes mendelianas, 
+                                  y por tanto su herencia.</p>
+                              </blockquote>
+                              <p class="txt">1&ordf; LEY DE MENDEL</p>
+                              <blockquote> 
+                                <p class="txt">Lo que &eacute;l llamaba <span class="txtnegro">factores 
+                                  hereditarios </span>nosotros lo llamamos <span class="txtnegro">alelos 
+                                  de un gen</span>, y por lo tanto est&aacute;n 
+                                  situados en los cromosomas hom&oacute;logos; 
+                                  a las razas puras nosotros las llamamos homocigotos, 
+                                  y a los h&iacute;bridos, heterocigotos. Cuando 
+                                  cruzamos un homocigoto dominante con otro recesivo 
+                                  se obtiene siempre un heterozigoto de fenotipo 
+                                  dominante, exactamente lo que nos dice la 1&ordf; 
+                                  Ley de Mendel, y al cruzarlos lo que realmente 
+                                  sucede es que se unen gametos (fecundaci&oacute;n), 
+                                  de la siguiente forma:</p>
+                              </blockquote>
+                              <table width="92%" border="0">
+                                <tr> 
+                                  <td height="50" class="txtnegro" width="34%" valign="top"> 
+                                    <div align="center"> 
+                                      <p>GENERACI&Oacute;N PARENTAL (P) </p>
+                                    </div>
+                                  </td>
+                                  <td height="50" class="txtnegro" width="23%"> 
+                                    <div align="center">verde</div>
+                                  </td>
+                                  <td height="50" class="txtnegro" width="20%">&nbsp; 
+                                  </td>
+                                  <td height="50" class="txtnegro" width="23%"> 
+                                    <div align="center">amarillo</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%"> 
+                                    <div align="center"> <br>
+                                    </div>
+                                  </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center"><img src="imagenes/verde.gif" width="55" height="123"></div>
+                                  </td>
+                                  <td class="txtnegro" width="20%"> 
+                                    <div align="center">x</div>
+                                  </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center"><img src="imagenes/amarillo.gif" width="55" height="123"></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%">&nbsp; </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center">AA </div>
+                                  </td>
+                                  <td class="txtnegro" width="20%">&nbsp; </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center">aa</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%" height="50" valign="bottom"> 
+                                    <div align="left">GAMETOS</div>
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="50"> 
+                                    <div align="right"><img src="imagenes/gametoverde.gif" width="132" height="132"></div>
+                                  </td>
+                                  <td class="txtnegro" width="20%" height="50">&nbsp; 
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="50"> 
+                                    <div align="center"><img src="imagenes/gametoamar.gif" width="132" height="132"></div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%">&nbsp; </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center">A</div>
+                                  </td>
+                                  <td class="txtnegro" width="20%">&nbsp; </td>
+                                  <td class="txtnegro" width="23%"> 
+                                    <div align="center">a</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%" height="103" valign="baseline"> 
+                                    <div align="left"> 
+                                      <p>&nbsp;</p>
+                                      <p>1&ordf; GENERACI&Oacute;N FILIAL (F1)</p>
+                                    </div>
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="103">&nbsp; 
+                                  </td>
+                                  <td class="txtnegro" width="20%" height="103"> 
+                                    <div align="center"><img src="imagenes/hibrido.gif" width="55" height="123"></div>
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="103">&nbsp; 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%" height="18" valign="baseline">ZIGOTOS</td>
+                                  <td class="txtnegro" width="23%" height="18">&nbsp;</td>
+                                  <td class="txtnegro" width="20%" height="18"> 
+                                    <p align="center">100% verde</p>
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="18">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txtnegro" width="34%" height="2" valign="baseline">&nbsp;</td>
+                                  <td class="txtnegro" width="23%" height="2">&nbsp;</td>
+                                  <td class="txtnegro" width="20%" height="2"> 
+                                    <div align="center">Aa</div>
+                                  </td>
+                                  <td class="txtnegro" width="23%" height="2">&nbsp;</td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt">Los homocigotos dominantes tienen 
+                                  dos alelos, uno paterno y otro materno, aunque 
+                                  en este caso son iguales por lo que por meiosis 
+                                  s&oacute;lo podr&aacute;n formar un tipo de 
+                                  gametos, aquellos que tengan el alelo A; la 
+                                  planta funciona como si s&oacute;lo tuviera 
+                                  dos cromosomas, ya que los dem&aacute;s no intervienen 
+                                  en el proceso. Con los homocigotos recesivos 
+                                  sucede lo mismo y s&oacute;lo forman un &uacute;nico 
+                                  tipo de gametos, los que tienen el alelo a, 
+                                  por lo tanto s&oacute;lo se podr&aacute; obtener 
+                                  un &uacute;nico tipo de zigoto, que tendr&aacute; 
+                                  la combinaci&oacute;n de alelos Aa.</p>
+                              </blockquote>
+                              <p class="txt">2&ordf; LEY DE MENDEL</p>
+                              <blockquote> 
+                                <p class="txt">Cada alelo est&aacute; en un cromosoma 
+                                  distinto del par, por lo que tras la meiosis 
+                                  ir&aacute;n en gametos separados, lo cual explica 
+                                  la segunda ley de Mendel:</p>
+                              </blockquote>
+                              <table width="67%" border="0" class="txt" bgcolor="d1e9d1" align="center">
+                                <tr> 
+                                  <td colspan="2">INDIVIDUO DE LA F1</td>
+                                  <td>&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="center">verde</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">ALELOS</td>
+                                  <td>&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="center">Aa</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">&nbsp;</td>
+                                  <td>&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">1&ordf; DIVISI&Oacute;N MEI&Oacute;TICA 
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">(separaci&oacute;n de cromosomas)</td>
+                                  <td> 
+                                    <div align="center">A</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                  <td> 
+                                    <div align="center">a</div>
+                                  </td>
+                                  <td> (cromosomas)</td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">&nbsp;</td>
+                                  <td> 
+                                    <div align="center">I </div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="left">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">2&ordf; DIVISI&Oacute;N MEI&Oacute;TICA</td>
+                                  <td> 
+                                    <div align="center"> I </div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="left">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>(separaci&oacute;n de crom&aacute;tidas) 
+                                  </td>
+                                  <td>A</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="left">A </div>
+                                  </td>
+                                  <td> 
+                                    <div align="right">a</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="left">a (crom&aacute;tidas)</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">&nbsp;</td>
+                                  <td>&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                  <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr> 
+                                  <td colspan="2">TIPOS DE GAMETOS DISTINTOS</td>
+                                  <td> 
+                                    <div align="center">A</div>
+                                  </td>
+                                  <td colspan="2">&nbsp; </td>
+                                  <td colspan="2"> 
+                                    <div align="left">a</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt">Como el otro individuo que cruzamos 
+                                  es igual, produce los mismos tipos de gametos, 
+                                  lo cual quiere decir que tras la fecundaci&oacute;n 
+                                  podemos obtener los siguientes tipos de zigotos:</p>
+                              </blockquote>
+                              <table width="62%" border="0">
+                                <tr> 
+                                  <td class="txt">INDIVIDUOS DE LA F1</td>
+                                  <td class="txt"> 
+                                    <div align="center">verde</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">x</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">verde</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">&nbsp;</td>
+                                  <td class="txt"> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td class="txt">&nbsp; </td>
+                                  <td class="txt"> 
+                                    <div align="center">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">GAMETOS</td>
+                                  <td class="txt"> 
+                                    <div align="center">A a</div>
+                                  </td>
+                                  <td class="txt">&nbsp; </td>
+                                  <td class="txt"> 
+                                    <div align="center">A a</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt"><span class="txt">FECUNDACI&Oacute;N 
+                                </span> </p>
+                              <table width="35%" border="1" bgcolor="d1e9d1" align="center">
+                                <tr> 
+                                  <td class="txt" width="42%"> 
+                                    <div align="center" class="txtnegro">GAMETOS</div>
+                                  </td>
+                                  <td class="txt" width="30%"> 
+                                    <div align="center">A</div>
+                                  </td>
+                                  <td class="txt" width="28%"> 
+                                    <div align="center">a</div>
+                                  </td>
+                                  <td class="txt" width="28%">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt" width="42%"> 
+                                    <div align="center">A</div>
+                                  </td>
+                                  <td class="txt" width="30%" bgcolor="#FFFFFF"> 
+                                    <div align="center">AA</div>
+                                  </td>
+                                  <td class="txt" width="28%" bgcolor="#FFFFFF"> 
+                                    <div align="center">Aa</div>
+                                  </td>
+                                  <td class="txt" rowspan="2" bgcolor="#FFFFFF"> 
+                                    <div align="center"><span class="ventanas">cigotos 
+                                      de la F2</span> </div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt" width="42%"> 
+                                    <div align="center">a</div>
+                                  </td>
+                                  <td class="txt" width="30%" bgcolor="#FFFFFF"> 
+                                    <div align="center">Aa</div>
+                                  </td>
+                                  <td class="txt" width="28%" bgcolor="#FFFFFF"> 
+                                    <div align="center">aa</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt">En esta tabla vemos que al combinar 
+                                  los posibles gametos entre s&iacute; se obtienen 
+                                  4 tipos de zigotos diferentes, aunque dos de 
+                                  ellos tienen la misma combinaci&oacute;n de 
+                                  alelos; las proporciones ser&aacute;n por tanto:</p>
+                              </blockquote>
+                              <table width="79%" border="0" align="center">
+                                <tr> 
+                                  <td class="txt" width="5%">F2</td>
+                                  <td class="txt" width="27%">1/4 AA (verdes)</td>
+                                  <td class="txt" width="27%">2/4 Aa (verdes) 
+                                  </td>
+                                  <td class="txt" width="41%">1/4 aa (amarillos)</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt" colspan="3">PROPORCIONES DE 
+                                    FENOTIPOS</td>
+                                  <td class="txt" width="41%">3/4 verdes 1/4 amarillos</td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp;</p>
+                              <p class="txt">3&ordf; LEY DE MENDEL</p>
+                              <blockquote> 
+                                <p class="txt">Cuando estudiamos dos caracteres 
+                                  en vez de uno la cosa se complica, ya que en 
+                                  vez de un par de cromosomas, van a intervenir 
+                                  dos pares de cromosomas, un par con los alelos 
+                                  del color de la semilla, y otro par con los 
+                                  alelos de la forma.</p>
+                              </blockquote>
+                              <table width="66%" border="0" class="txt" bgcolor="d1e9d1" align="center">
+                                <tr> 
+                                  <td>GENERACI&Oacute;N PARENTAL (P)</td>
+                                  <td> 
+                                    <div align="center">verde-liso</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">x</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">amarillo-rugoso</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>&nbsp;</td>
+                                  <td> 
+                                    <div align="center">AABB</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>&nbsp;</td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>GAMETOS </td>
+                                  <td> 
+                                    <div align="center">AB</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">ab</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>&nbsp;</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>1&ordf; GENERACI&Oacute;N FILIAL (F1)</td>
+                                  <td colspan="3"> 
+                                    <div align="center">100% verde-liso</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>ZIGOTOS</td>
+                                  <td colspan="3"> 
+                                    <div align="center">AaBb</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt"> Los individuos de la F1 son heterocigotos 
+                                  para los dos caracteres, por lo que producir&aacute;n 
+                                  los siguientes tipos de gametos</p>
+                              </blockquote>
+                              <table width="75%" border="0" class="txt" bgcolor="d1e9d1" align="center">
+                                <tr> 
+                                  <td>INDIVIDUO DE LA F1</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">verde-liso</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>ALELOS</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">AaBb</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>&nbsp;</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>1&ordf; DIVISI&Oacute;N MEI&Oacute;TICA 
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>(separaci&oacute;n de cromosomas)</td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td>1&ordf; POSIBILIDAD</td>
+                                  <td> 
+                                    <div align="center">AB</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">ab (cromosomas)</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>2&ordf; POSIBILIDAD</td>
+                                  <td> 
+                                    <div align="center">(Ab)</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">(aB)</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>&nbsp;</td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I </div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>2&ordf; DIVISI&Oacute;N MEI&Oacute;TICA</td>
+                                  <td> 
+                                    <div align="center">I </div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>(separaci&oacute;n de crom&aacute;tidas) 
+                                  </td>
+                                  <td> 
+                                    <div align="center">I </div>
+                                  </td>
+                                  <td>&nbsp; </td>
+                                  <td> 
+                                    <div align="center">I</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>1&ordf; POSIBILIDAD</td>
+                                  <td> 
+                                    <div align="center">AB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">AB ab</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">ab (crom&aacute;tidas)</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>2&ordf; POSIBILIDAD</td>
+                                  <td> 
+                                    <div align="center">(Ab)</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center"> (Ab) (aB)</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center"> (aB)</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td>TIPOS DE GAMETOS DISTINTOS</td>
+                                  <td> 
+                                    <div align="center">AB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">ab Ab</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">aB</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp;</p>
+                              <blockquote> 
+                                <p class="txt">El otro individuo de la F1 es igual, 
+                                  por lo que formar&aacute; los mismos gametos. 
+                                  Todos estos gametos tienen la misma probabilidad 
+                                  de formarse, por lo que para obtener los tipos 
+                                  de zigotos posibles deben cruzarse todos entre 
+                                  s&iacute; de la siguiente forma:</p>
+                              </blockquote>
+                              <table width="74%" border="1" class="txt" align="center" bgcolor="d1e9d1">
+                                <tr> 
+                                  <td width="19%"> 
+                                    <div align="center" class="txtnegro">GAMETOS</div>
+                                  </td>
+                                  <td width="16%"> 
+                                    <div align="center">AB </div>
+                                  </td>
+                                  <td width="16%"> 
+                                    <div align="center">Ab </div>
+                                  </td>
+                                  <td width="16%"> 
+                                    <div align="center">aB </div>
+                                  </td>
+                                  <td width="16%"> 
+                                    <div align="center">ab</div>
+                                  </td>
+                                  <td width="16%">&nbsp; </td>
+                                </tr>
+                                <tr> 
+                                  <td width="19%"> 
+                                    <div align="center">AB </div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AABB</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AABb1</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBB1</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBb1</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" rowspan="4" width="16%"> 
+                                    <div align="center" class="txtnegro">Cigotos 
+                                      de la F2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="19%"> 
+                                    <div align="center">Ab</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AABb2</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AAbb</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBb2</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">Aabb1</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="19%"> 
+                                    <div align="center">aB</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBB2</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBb3</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">aaBB</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">aaBb1</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td width="19%"> 
+                                    <div align="center">ab </div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">AaBb4</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">Aabb2</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">aaBb2</div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" width="16%"> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt"><br>
+                                </p>
+                                <p class="txt">Existen 16 posibles zigotos diferentes, 
+                                  aunque s&oacute;lo dan lugar a 9 genotipos diferentes, 
+                                  y estos 9 genotipos s&oacute;lo dan lugar a 
+                                  4 fenotipos diferentes:</p>
+                              </blockquote>
+                              <table width="86%" border="1" class="txt" align="center" bgcolor="d1e9d1">
+                                <tr> 
+                                  <td> 
+                                    <div align="center"><span class="txtnegro">ZIGOTO</span> 
+                                      (16)</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center"><span class="txtnegro">GENOTIPO</span> 
+                                      (9)</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center"><span class="txtnegro">FENOTIPO</span> 
+                                      (4)</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center" class="txtnegro">PROPORCI&Oacute;N</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center" class="txtnegro">TOTAL</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AABB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">AABB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">verde-liso </div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                  <td rowspan="9"> 
+                                    <div align="center">9/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AABb1</div>
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">AABb</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">verde-liso </div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">2/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AABb2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AaBB1 </div>
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">AaBB</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">verde-liso </div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">2/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AaBB2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td height="19"> 
+                                    <div align="center">AaBb1</div>
+                                  </td>
+                                  <td height="19" rowspan="4"> 
+                                    <div align="center">AaBb</div>
+                                    
+                                  </td>
+                                  <td height="19" rowspan="4"> 
+                                    <div align="center">verde-liso </div>
+                                    
+                                  </td>
+                                  <td height="19" rowspan="4"> 
+                                    <div align="center">4/16 </div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AaBb2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AaBb3</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AaBb4</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">AAbb</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">AAbb</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">verde-rugoso</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                  <td rowspan="3"> 
+                                    <div align="center">3/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">Aabb1</div>
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">Aabb</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">verde-rugoso</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">2/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">Aabb2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">aaBB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">aaBB</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">amarillo-liso </div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                  <td rowspan="3"> 
+                                    <div align="center">3/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">aaBb1</div>
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">aaBb</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">amarillo-liso</div>
+                                    
+                                  </td>
+                                  <td rowspan="2"> 
+                                    <div align="center">2/16</div>
+                                    
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">aaBb2</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">aabb</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">amarillo-liso</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                  <td> 
+                                    <div align="center">1/16</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <blockquote> 
+                                <p class="txt">Es decir, como los alelos van en 
+                                  cromosomas diferentes, se separan en la meiosis 
+                                  y se combinan de todas las formas posibles, 
+                                  por lo cual aparecen fenotipos nuevos, que antes 
+                                  no exist&iacute;an.</p>
+                              </blockquote>
+                              <br>
+                              <div align="center">
+								<table border="0" width="70%" id="table2">
+									<tr>
+										<td align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" id="table3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <a target="_blank" href="actividad11bisgen.htm"><font class="txtnegrolink"> 
+                                        Actividad 12</font></a>
+                                      <a target="_blank" href="actividad11bisgen.htm">
+                                      <img border="0" src="imagenes/contenidos/activ11bis.jpg" width="120" height="68"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                                  		</td>
+										<td align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" id="table4">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <a target="_blank" href="actividad12b.htm"><font class="txtnegrolink"> 
+                                        Actividad 12b</font></a>
+										<a target="_blank" href="actividad12b.htm">
+                                      <img border="0" src="genetica_mendeliana_t.jpg" width="120" height="68"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                                  		</td>
+										<td align="center">
+                                <table width="100" border="0" cellspacing="0" cellpadding="3" id="table5">
+                                  <tr bgcolor="#BBDDBB">
+                                    <td>
+                                    <a target="_blank" href="actividad12gen.htm">
+                                    <font class="txtnegrolink">Actividad 13</font></a>
+                                    <a target="_blank" href="actividad12gen.htm">
+                                    <img src="imagenes/contenidos/activ12.jpg" width="120" height="68" border="0"></a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              			</td>
+										</tr>
+										<tr>
+											<td align="center">&nbsp;</td>
+											<td align="center">
+											<p class="txt" style="text-align: center">
+											(Contiene vídeo)
+											<img border="0" src="../../../img/wmv.gif" width="16" height="16"></td>
+											<td align="center">&nbsp;</td>
+										</tr>
+									</table>
+								</div>
+                              <div align="center"> 
+                              <div align="center"> 
+                                  <p><br>
+&nbsp;</div>
+                              </div>
+                              <br>
+                              <p align="right"><a class="txtnegrolink" href="contenidos9.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (10/12) - <a href="contenidos11.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

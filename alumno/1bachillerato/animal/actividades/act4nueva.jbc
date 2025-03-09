@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Digestión</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Digestión</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La digestión es un proceso</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Que sólo se realiza en el estómago.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Químico.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Mecánico.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Para obtener materia que puede ser absorbida.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La digestión intracelular consiste en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Secretar enzimas de los lisosomas a un tubo para degradar el alimento.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Introducir la presa en el tubo digestivo y degradarla.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Realizar la digestión mecánica yenzimática para obtener alimento.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Digerir nutrientes en el interior celular.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La digestión mixta se produce en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Esponjas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Cnidarios.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Artrópodos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Vertebrados.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La digestión mecánica:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Forma parte de la digestión mixta.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se produce después de la digestión enzimática.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se realiza en estómagos musculosos.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Se hace después de la digestión intracelular.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El bolo alimenticio se forma:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>En mamíferos, en el estómago.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Por la acción de la digestión mecánica.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Por la acción de la digestión química.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Mediante la masticación y la ensalivación.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El quimo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se forma en el estómago y es de pH ácido.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se forma en el estómago y es de pH básico.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Contiene pepsinógeno, que protege la cavidad gástrica.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es el bolo alimenticio transformado por la digestión gástrica.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Una de las siguientes características no se presenta en el quimo:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>pH ácido.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Viscoso.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Producido en el estómago.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Contiene bilis.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El pepsinógeno</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Transformado en pepsina ataca a las proteínas que aparecen en el bolo alimenticio.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Actúa directamente sobre el bolo alimenticio.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es destruido por el ácido clorhídrico.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es segregado por el páncreas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El quilo</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es igual al quimo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se produce en el intestino y tiene pH ácido.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es viscoso y de pH ácido.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se produce en el intestino y tiene pH básico.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La tripsina y la quimotripsina</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son liberadas por el páncreas y rompen las proteínas.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son liberadas por las glándulas de Lieberkühn.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se producen en el hígado.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Actúan sobre los lípidos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

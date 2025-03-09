@@ -1,0 +1,778 @@
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+Tipos de reproducci&#243;n
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = InText.substring(sLoc,z);
+
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+var Feedback = '';
+var Correct = '&#161;Correcto!. Bien hecho.';
+var Incorrect = 'Algunas de tus respuestas son incorrectas. Ahora puedes cambiarlas.'; 
+var GiveHint = '&#201;sta es la siguiente letra correcta:';
+var CaseSensitive = false;
+var YourScoreIs = 'Tu puntuaci&#243;n es:';
+var Instructions = 'Pulsa en Comenzar y observa la presentaci&#243;n para completar las siguientes frases. Marca la palabra correcta y arr&#225;strala a su lugar.';
+var BuiltCloze = '';
+var ExerciseSubtitle = '';
+var ExerciseTitle = 'Tipos de reproducci&#243;n';
+var FirstShow = true;
+var ReadingURL = '';
+
+var PreviousPage = history.length;
+
+
+
+ReadingText='<html><head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta><title>Tipos de reproducci\u00F3n</title></head><body background="" bgcolor="#e6ffe6" text="#000000" link="#0000ff" vlink="#0000cc"><center><table border="0" cellpadding="5" cellspacing="1" width="85%"><tr><td align="center" bgcolor="#e6ffe6"><font size="+1" face="Geneva,Arial" color="#000033">Tipos de reproducci\u00F3n<br></br></font></td></tr><tr><td bgcolor="#e6ffe6"><font face="Geneva,Arial" size="-1" color="#000000"><br><a href="../../../profesor/presentaciones/Pais/Tipos de reproduccion.swf">Pulsa aqu\u00ED para ver la presentaci\u00F3n</a></font></td></tr></table></center></body></html>';
+
+
+if (is.CRAPBrowser){ReadingText=ResolveAllURLs(ReadingText);}
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#e6ffe6" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+NavBar+='<input type="button" value="Cerrar" onclick="parent.close()"></input>';
+
+
+
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar=ResolveAllURLs(NavBar);}
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#e6ffe6">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+
+TitleCode += '</font></td></tr>';
+
+var WordBox = '';
+
+var ClozeOpener = '<table border="0" width="85%" cellpadding="10">';
+ClozeOpener += '<tr><td valign="top" bgcolor="#e6ffe6">';
+ClozeOpener += '<form name="Cloze" onsubmit="return false"><font face="Geneva,Arial" color="#000000">';
+
+var ClozeCloser = '</font></form></td></tr>';
+
+var Buttons = '<tr><td align="center" valign="top" bgcolor="#e6ffe6">';
+Buttons += '<form name="Buttons"><font face="Geneva,Arial" color="#000000">';
+Buttons += '<input type="button" value="Comprobar" onclick="parent.CheckAnswers()"></input>';
+
+
+
+Buttons += '</font></form></td></tr></table>';
+
+var GapCode = '<input type="text" name="[strGapName]" size="[strGapSize]" onFocus="parent.TrackFocus([strItemNum])" value="[strValue]"></input>';
+var ClueButton = '';
+
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+
+function ShowReading(){
+	if (ReadingFrame != null){
+		if (ReadingURL.length > 0){
+			ReadingFrame.location.href=ReadingURL;
+		}
+		else{
+			ReadingFrame.document.clear();
+			ReadingFrame.document.open();
+			ReadingFrame.document.write(ReadingText);
+			ReadingFrame.document.close();
+		}
+	}
+}
+
+
+//Reading text/timer code
+var min
+var sec
+var ShowReadingAgain = 'Mostrar de nuevo el comentario';
+
+function DownTime(mm,ss){
+	min = mm;
+	sec = ss;
+
+	if (sec==0) {
+		sec = 60;
+		min--;
+	}
+
+	sec--;
+	if (sec<10){
+		sec="0" + sec;
+	}
+
+	if (TimerFrame.document.TimerForm.face == null){
+		return;
+	}
+
+	TimerFrame.document.TimerForm.face.value= min+":"+sec;
+	if ((min==0) && (sec==0)){
+		TimesUp()
+	}
+	else{
+		setTimeout('DownTime(min,sec)',1000)
+	}
+}
+
+function StartReading(){
+	Stuff='Tiempo restante:';
+	Stuff+=' <input type="text" name="face" size="6" value="1:00"></input>';
+	WriteToTimer(Stuff);
+	ShowReading();
+	timeoutID=setTimeout('DownTime(1,0)',1000);
+}
+
+function TimesUp() {
+	var Stuff='';
+	if (ShowReadingAgain.length > 0) {
+		Stuff+='<input type="button" name="StartIt" value="Mostrar de nuevo el comentario" onclick="parent.StartReading()"></input>';
+		WriteToTimer(Stuff);
+	}
+	WriteToReading('&#161;El tiempo ha terminado!');
+}
+
+function WriteToReading(Stuff) {
+	if (is.CRAPBrowser){Stuff=ResolveAllURLs(Stuff);}
+	ReadingFrame.document.clear();
+	ReadingFrame.document.open();
+	ReadingFrame.document.writeln ('<html>');
+	ReadingFrame.document.writeln ('<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000ff" vlink="#0000cc">');
+	ReadingFrame.document.writeln ('<center><table border="0" cellpadding="5" cellspacing="1" width="85%">');
+	ReadingFrame.document.writeln ('<tr><td bgcolor="#e6ffe6" align="center">') 
+	ReadingFrame.document.writeln ('<font face="Geneva,Arial" size="-1">');
+	ReadingFrame.document.writeln (Stuff);
+	ReadingFrame.document.writeln ('</font></td></tr></table></center></body></html>');
+	ReadingFrame.document.close();
+}
+
+function WriteToTimer(Stuff){
+	if (is.CRAPBrowser){Stuff=ResolveAllURLs(Stuff);}
+	TimerFrame.document.clear();
+	TimerFrame.document.open();
+	TimerFrame.document.writeln ('<html>');
+	TimerFrame.document.writeln ('<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000ff" vlink="#0000cc">');
+	TimerFrame.document.writeln ('<center><table border="0" cellpadding="5" cellspacing="1" width="85%">');
+	TimerFrame.document.writeln ('<form name="TimerForm"><tr><td bgcolor="#e6ffe6" align="center">') 
+	TimerFrame.document.writeln ('<font face="Geneva,Arial" size="-1">');
+	TimerFrame.document.writeln (Stuff);
+	TimerFrame.document.writeln ('</font></td></tr></form></table></center></body></html>');
+	TimerFrame.document.close();
+}
+
+
+
+
+function BuildExercise(){
+	var OutString = '';
+	var ClozeStuff = '';
+
+	for (var i=0; i<I.length; i++){
+
+//Add the text
+		ClozeStuff += Text[i];
+
+//Create and add the gap
+//If it's already right, then add it in bold:
+		if (State[i][4] == 1){
+			ClozeStuff += '<b>' + State[i][5] + '</b>';
+		}
+		
+		else{
+			GapLen = I[i][1][0][0].length;
+			if (GapLen < 3){GapLen = 3;}
+			Gap = ReplaceStuff('[strGapSize]', GapLen, GapCode);
+			Gap = ReplaceStuff('[strGapName]', 'Gap' + i + '', Gap);
+			Gap = ReplaceStuff('[strItemNum]', i + '', Gap);
+			Gap = ReplaceStuff('[strValue]', State[i][5], Gap);
+			ClozeStuff += Gap;	
+
+//Create and add the clue button
+			if (I[i][2].length > 0){
+				Btn = ReplaceStuff('[strItemNum]', i + '', ClueButton);
+				ClozeStuff += Btn;
+			}
+		}
+	}
+
+//Add the last bit
+	if (Text.length > I.length){
+		ClozeStuff += Text[Text.length-1];
+	}
+
+//Put the final pieces together
+	OutString = ClozeOpener + ClozeStuff + ClozeCloser + Buttons;
+	BuiltCloze = OutString;
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#e6ffe6" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function DisplayExercise(){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#e6ffe6" align="center">'; 
+	if (WordBox.length > 0){
+		OutString += WordBox;
+	}
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += BuiltCloze;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+function ShowClue(ItemNum){
+//alert(ItemNum);
+	State[ItemNum][0] = 1;
+	WriteFeedback(I[ItemNum][2]);
+}
+
+function SaveCurrentAnswers(){
+	for (var i=0; i<I.length; i++){
+		State[i][5] = GetGapValue(i);
+	}
+}
+
+function RestoreCurrentAnswers(){
+	for (var i=0; i<I.length; i++){
+		SetGapValue(i, State[i][5]);
+	}
+}
+
+var CurrentWord = 0;
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+I = new Array();
+
+I[0] = new Array();
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='parte';
+I[0][1][1] = new Array();
+I[0][1][1][0]='zona';
+I[0][2]='';
+
+I[1] = new Array();
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='unicelular';
+I[1][2]='';
+
+I[2] = new Array();
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='invertebrados';
+I[2][2]='';
+
+I[3] = new Array();
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='gemaci\u00F3n';
+I[3][2]='';
+
+I[4] = new Array();
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='yema';
+I[4][2]='';
+
+I[5] = new Array();
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='fecundado';
+I[5][2]='';
+
+I[6] = new Array();
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='asexual';
+I[6][2]='';
+
+I[7] = new Array();
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='sexual';
+I[7][2]='';
+
+I[8] = new Array();
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='meiosis';
+I[8][2]='';
+
+
+Text = new Array();
+Text[0]='La divisi\u00F3n simple consiste en que de una ';
+Text[1]=' cualquiera de un individuo nace otro individuo nuevo. Si el ser es ';
+Text[2]=', la c\u00E9lula se divide en dos. Es una reproducci\u00F3n propia de ';
+Text[3]='.<br /><br />La ';
+Text[4]=' consiste en el desarrollo de un grupo de c\u00E9lulas en una parte del animal adulto que luego se separ\u00E1n originando un individuo nuevo. Ese conjunto de c\u00E9lulas se llama ';
+Text[5]='.<br /><br />La partenog\u00E9nesis consiste en el desarrollo de un nuevo individuo a partir de un huevo que no ha sido ';
+Text[6]=', por lo que es un tipo de reproducci\u00F3n ';
+Text[7]='.<br /><br />La reproducci\u00F3n ';
+Text[8]=' se da en todo tipo de seres vivos. El proceso m\u00E1s importante de esta reproducci\u00F3n es una divisi\u00F3n especial del n\u00FAcleo llamada ';
+Text[9]='.<br /><br />(Cuando hayas acabado el ejercicio puedes pulsar <a target="_blank" href="http://recursos.cnice.mec.es/biosfera/alumno/4ESO/genetica1/contenidos7.htm">aqu\u00ED</a> si quieres saber algo m\u00E1s acerca de la meiosis)';
+
+
+State = new Array();
+
+function StartUp(){
+
+	var i = 0;
+
+
+	MixWords = new Array();
+	for (i=0; i<I.length; i++){
+		MixWords[i] = I[i][1][0][0];
+	}
+	MixWords.sort();
+	var Words = '&nbsp;&nbsp;&nbsp;';
+	for (i=0; i<MixWords.length; i++){
+		Words += MixWords[i] + '&nbsp;&nbsp; &nbsp;';		
+	}
+
+	WordBox = '<center><table border="1" width="80%" cellpadding="10"><tr><td align="center">';
+	WordBox += '<font face="Geneva,Arial" size="-1" color="#000000">';
+	WordBox += Words;
+	WordBox += '</font></td></tr></table></center><br />';
+	WordBox = WordBox;
+
+
+	State.length = 0;
+	for (i=0; i<I.length; i++){
+		State[i] = new Array();
+		State[i][0] = 0; // clue asked for or not
+		State[i][1] = 0; // hints asked for, or penalties for checking a wrong answer
+		State[i][2] = 0; // length of answer matched
+		State[i][3] = 0; // score for this item
+		State[i][4] = 0; // already answered correctly 
+		State[i][5] = ''; // answer entered in text box (right or not)
+	}
+	BuildExercise();
+	WriteFeedback(Instructions);
+	DisplayExercise();
+
+
+
+
+
+
+	if (TimerFrame != null) {
+		Stuff='<input type="button"';
+		Stuff+=' name="StartIt" value="Comenzar" onclick="parent.StartReading()"></input>';
+		WriteToReading('Pulse el bot&#243;n para mostrar el comentario.');
+		WriteToTimer(Stuff);
+	}
+
+
+}
+
+function TrimString(InString){
+        var x = 0
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+
+}
+
+function CheckAnswers(){
+
+	SaveCurrentAnswers();
+	var AllCorrect = 1;
+
+//Check each answer
+	for (var i = 0; i< I.length; i++){
+
+		if (State[i][4] != 1){
+//If it's right, calculate its score
+			if (CheckAnswer(i, true) > -1){
+				var TotalChars = GetGapValue(i).length;
+				State[i][3] = (TotalChars-State[i][1])/TotalChars;
+				if (State[i][0] > 0){State[i][3] = State[i][3]/2;}
+				if (State[i][3]<0){State[i][3] = 0;}
+				State[i][4] = 1;
+			}
+			else{
+//Otherwise, add zero to the array and increment the hints for this item, as a penalty
+				State[i][1]++;
+				State[i][3] = 0;
+
+//then set the flag
+				AllCorrect = 0;
+			}
+		}
+	}
+
+//Calculate the total score
+	var TotalScore = 0;
+	for (i=0; i<State.length; i++){
+		TotalScore += State[i][3];
+	}
+	TotalScore = Math.floor((TotalScore * 100)/I.length);
+
+//Compile the output
+	Output = '';
+
+	if (AllCorrect == 1){
+		Output = Correct + '<br />';
+	}
+
+	Output += YourScoreIs + ' ' + TotalScore + '%.<br />';
+	if (AllCorrect == 0){
+		Output += '<br />' + Incorrect;
+	}
+	BuildExercise();
+	WriteFeedback(Output);
+
+
+
+	DisplayExercise();
+	RestoreCurrentAnswers();
+}
+
+
+function TrackFocus(BoxNumber){
+	CurrentWord = BoxNumber;
+}
+
+function CheckBeginning(Guess, Answer){
+	var OutString = '';
+	var i = 0;
+	var UpperGuess = '';
+	var UpperAnswer = '';
+
+	if (CaseSensitive == false) {
+		UpperGuess = Guess.toUpperCase();
+		UpperAnswer = Answer.toUpperCase();
+	}
+	else {
+		UpperGuess = Guess;
+		UpperAnswer = Answer;
+	}
+
+	while (UpperGuess.charAt(i) == UpperAnswer.charAt(i)) {
+		OutString += Guess.charAt(i);
+		i++;
+	}
+	OutString += Answer.charAt(i);
+	return OutString;
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+function GetGapValue(GNum){
+	var RetVal = '';
+	if ((GNum<0)||(GNum>=I.length)){return RetVal;}
+	if (eval('BottomFrame.document.Cloze.Gap' + GNum) != null){
+		RetVal = eval('BottomFrame.document.Cloze.Gap' + GNum).value;
+		RetVal = TrimString(RetVal);
+	}
+	else{
+		RetVal = State[GNum][5];
+	}
+	return RetVal;
+}
+
+function SetGapValue(GNum, Val){
+	if ((GNum<0)||(GNum>=I.length)){return;}
+	if (eval('BottomFrame.document.Cloze.Gap' + GNum) != null){
+		eval('BottomFrame.document.Cloze.Gap' + GNum).value = Val;
+	}
+}
+
+function FindCurrent() {
+	var x = 0;
+	FoundCurrent = -1;
+
+//Test the current word:
+//If it's state is not set to already correct, check the word.
+	if (State[CurrentWord][4] != 1){
+		if (CheckAnswer(CurrentWord, false) < 0){
+			return CurrentWord;
+		}
+	}
+	
+	x=CurrentWord + 1;
+	while (x<I.length){
+		if (State[x][4] != 1){
+			if (CheckAnswer(x, false) < 0){
+				return x;
+			}
+		}
+	x++;	
+	}
+
+	x = 0;
+	while (x<CurrentWord){
+		if (State[x][4] != 1){
+			if (CheckAnswer(x, false) < 0){
+				return x;
+			}
+		}
+	x++;	
+	}
+	return FoundCurrent;
+}
+
+function CheckAnswer(GapNum, MarkAnswer){
+	var Guess = GetGapValue(GapNum);
+	var UpperGuess = '';
+	var UpperAnswer = '';
+	if (CaseSensitive == false){
+		UpperGuess = Guess.toUpperCase();
+	}
+	else{
+		UpperGuess = Guess;
+	}
+	var Match = -1;
+	for (var i = 0; i<I[GapNum][1].length; i++){
+		if (CaseSensitive == false){
+			UpperAnswer = I[GapNum][1][i][0].toUpperCase();
+		}
+		else{
+			UpperAnswer = I[GapNum][1][i][0];
+		}
+		if (TrimString(UpperGuess) == UpperAnswer){
+			Match = i;
+			if (MarkAnswer == true){
+				State[GapNum][4] = 1;
+			}
+			State[GapNum][5] = Guess;
+		}
+	}
+	return Match;
+}
+
+function GetHint(GapNum){
+	Guess = GetGapValue(GapNum);
+
+	if (CheckAnswer(GapNum, false) > -1){return ''}
+	RightBits = new Array();
+	for (var i=0; i<I[GapNum][1].length; i++){
+		RightBits[i] = CheckBeginning(Guess, I[GapNum][1][i][0]);
+	}
+	var RightOne = FindLongest(RightBits);
+	var Result = I[GapNum][1][RightOne][0].substring(0,RightBits[RightOne].length);
+//Add another char if the last one is a space
+	if (Result.charAt(Result.length-1) == ' '){
+		Result = I[GapNum][1][RightOne][0].substring(0,RightBits[RightOne].length+1);
+	}
+	return Result;
+}
+
+function ShowHint(){
+	var CurrGap = FindCurrent();
+	if (CurrGap < 0){return;}
+
+	var HintString = GetHint(CurrGap);
+
+	if (HintString.length > 0){
+		SetGapValue(CurrGap, HintString);
+		State[CurrGap][1] = State[CurrGap][1] + 1;
+	}
+	WriteFeedback(GiveHint);
+}
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+
+
+
+
+
+<frameset cols = "40%,60%" framespacing="0" border="0">
+  <frameset rows = "25%,*" frameborder="no" framespacing="0" border="0" onload="StartUp()">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+  </frameset>
+  <frameset rows = "20%,*" framespacing="0" border="0">
+      <frame src="javascript:parent.Blank()" frameborder="0" name="TimerFrame"></frame>
+      <frame src="javascript:parent.Blank()" frameborder="0" name="ReadingFrame"></frame>
+   </frameset>
+</frameset>
+
+
+
+</html>

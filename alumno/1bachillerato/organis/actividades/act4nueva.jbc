@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Reino Moneras</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Reino Moneras</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>De las siguientes características, una no corresponde al Reino Moneras:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>No tienen núcleo definido.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Presentan mitocondrias.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>No tienen el citoplasma compartimentado.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El ADN es circular.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La vaina mucilaginosa</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Está presente en todas las bacterias.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Aparece en todos los individuos del Reino Moneras.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se encuentra por fuera de la pared bacteriana.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Se localiza entre la pared bacteriana y la membrana cdelular.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los cocos tienen forma</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Alargada.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Helicoidal.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Redondeada.</text>
+<correct>1</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>De coma ortográfica.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las bacterias que se presentan en agregados formando una lámina se denominan:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Estreptobacilos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Estafilococos.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Sarcinas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Laminarias.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta.</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

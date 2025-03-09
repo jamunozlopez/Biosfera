@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Respiración</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Respiración</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Cuál es el fin de la respiración?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Obtener oxígeno.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Expulsar dióxido de carbono.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Producir energía en forma de ATP.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Realizar el intercambio gaseoso.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La respiración fisiológica</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es lo mismo que la respiración celular.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Consiste en un intercambio gaseoso.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Es la oxidación de la materia orgánica.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Consiste en captar oxígeno y expulsar dióxido de carbono.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Qué condición no cumple una estructura corporal de un animal en la que deba realizarse el intercambio gaseoso?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Paredes delgadas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Superficie húmeda.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Zona muy irrigada.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Pared protegida por una cutícula.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El grado de complejidad del sistema respiratorio no depende de:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Las necesidades energéticas del individuo.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El medio en el que vive el animal.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El tipo de animal.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>El tipo de nutrición del animal.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En los gusanos planos el sistema respiratorio es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Inexistente.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Branquial.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Traqueal.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Pulmonar.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La respiración cutánea no la presentan:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Anfibios.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Anélidos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Moluscos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Artrópodos.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los arcos branquiales</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aparecen en peces y crustáceos acuáticos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Favorecen el intercambio gaseoso.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Son estructuras óseas que protegen a las branquias.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sirven para sujetar y extender las branquias.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las tráqueas de los artrópodos son:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tubos por los que circula la hemolinfa.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Estructuras cartilaginosas.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Tubos que llevan oxígeno a las células del cuerpo.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Parte del sistema circulatorio abierto.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El pulmón tubular se encuentra en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Anfibios.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Reptiles.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Aves.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Mamíferos.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los anfibios presentan pulmones:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Saculares, sin repliegues.</text>
+<correct>1</correct>
+<feedback>Correcto.</feedback>
+</answer>
+<answer>
+<text>Saculares, con repliegues.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Saculares, muy replegados.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Tubulares.</text>
+<correct>0</correct>
+<feedback>Intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>juan aznar</dc:creator>
+    <dc:creator>Belen Sanchez</dc:creator>
+    <dc:title>3.- Resolviendo cortes geol&amp;#x00F3;gicos</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>3.- Resolviendo cortes geol&amp;#x00F3;gicos</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions><question-record><question>Los f&amp;#x00F3;siles gu&amp;#x00ED;a nos aportan informaci&amp;#x00F3;n sobre</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>La edad de las rocas</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Su medio de formaci&amp;#x00F3;n</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>La evoluci&amp;#x00F3;n de los seres vivos</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>La discontinuidad de la ilustraci&amp;#x00F3;n es:
+
+&amp;#x003C;img src=&quot;image/corte.jpg&quot; alt=&quot;corte.jpg&quot; title=&quot;corte&quot; width=&quot;685&quot; height=&quot;485&quot; align=&quot;center&quot;&amp;#x003E;&amp;#x003C;/img&amp;#x003E;</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Una discordancia angular</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Una inconformidad</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Una disconformidad</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>La falla que aparece en la ilustraci&amp;#x00F3;n se form&amp;#x00F3;
+
+&amp;#x003C;img src=&quot;image/corte.jpg&quot; alt=&quot;corte.jpg&quot; title=&quot;corte&quot; width=&quot;685&quot; height=&quot;485&quot; align=&quot;center&quot;&amp;#x003E;&amp;#x003C;/img&amp;#x003E;</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Con anterioridad a la deposici&amp;#x00F3;n de D</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Con posterioridad a la deposici&amp;#x00F3;n de A</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Con posterioridad a la deposici&amp;#x00F3;n de B y anterioridad a la deposici&amp;#x00F3;n de A</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Antes de la deposici&amp;#x00F3;n de D y con posterioridad a la de B</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Los dinosaurios viven durante el: </question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Cret&amp;#x00E1;cico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Terciario</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Mesozoico</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Jur&amp;#x00E1;sico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Los ammonites desaparecen al final del </question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Cret&amp;#x00E1;cico</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Terciario</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Paleozoico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Jur&amp;#x00E1;sico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Los trilobites viven durante el</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Cret&amp;#x00E1;cico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Terciario</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Paleozoico</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Jur&amp;#x00E1;sico</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>A la vista del esquema indica cu&amp;#x00E1;l de las siguientes afirmaciones es falsa
+
+&amp;#x003C;img src=&quot;image/canon2.jpg&quot; alt=&quot;canon2.jpg&quot; title=&quot;canon2&quot; width=&quot;658&quot; height=&quot;360&quot;&amp;#x003E;&amp;#x003C;/img&amp;#x003E;</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>El dique es posterior al granito</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>El granito es posterior a la Formaci&amp;#x00F3;n Foster City</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>La discontinuidad bajo la Formaci&amp;#x00F3;n Larsonton es una discordancia erosiva</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Las rocas m&amp;#x00E1;s recientes pertenecen al estrato Skinner Gulch Limestone</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question></question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record></questions>
+</data>
+
+<hotpot-config-file>
+<jquiz>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Consulta las siguientes p&amp;#x00E1;ginas y resuelve en la medida de lo posible las actividades sobre cortes geol&amp;#x00F3;gicos que te proponen:
+
+&amp;#x003C;strong&amp;#x003E;&amp;#x003C;a href=&quot;http://www.educa.madrid.org/portal/c/portal/layout?p_l_id=2288.98&quot; &amp;#x003E;http://www.educa.madrid.org/portal/c/portal/layout?p_l_id=2288.98&amp;#x003C;/a&amp;#x003E;&amp;#x003C;/strong&amp;#x003E;
+&amp;#x003C;strong&amp;#x003E;&amp;#x003C;a href=&quot;http://www.uam.es/personal_pdi/ciencias/casado/GEORED/Cortes/test1.htm&quot; &amp;#x003E;	http://www.uam.es/personal_pdi/ciencias/casado/GEORED/Cortes/test1.htm&amp;#x003C;/a&amp;#x003E;&amp;#x003C;/strong&amp;#x003E;
+</instructions>
+<guess-correct>&amp;#x00A1;Correcto!</guess-correct>
+<guess-incorrect>Lo sentimos. Int&amp;#x00E9;ntalo de nuevo.</guess-incorrect>
+<partly-incorrect>Tu respuesta es parcialmente incorrecta: </partly-incorrect>
+<enter-a-guess>Por favor, introduce una respuesta.</enter-a-guess>
+<next-correct-letter>La siguiente letra correcta es:</next-correct-letter>
+<correct-answers>Respuestas correctas: </correct-answers>
+<show-answer-caption>Mostrar respuesta</show-answer-caption>
+<include-hint>1</include-hint>
+<include-show-answer>1</include-show-answer>
+<next-ex-url>jcross1.htm</next-ex-url>
+<send-email>0</send-email>
+<continuous-scoring>1</continuous-scoring>
+<show-correct-first-time>1</show-correct-first-time>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>2</questions-to-show>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<separate-javascript-file>0</separate-javascript-file>
+<case-sensitive>0</case-sensitive>
+<include-keypad>0</include-keypad>
+</jquiz>
+
+<global>
+<your-score-is>Tu puntuaci&amp;#x00F3;n es:</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Preguntas respondidas correctamente en el primer intento:</correct-first-time>
+<completed-so-far>Questions completed so far: </completed-so-far>
+<exercise-completed>You have completed the exercise.</exercise-completed>
+<keypad-characters></keypad-characters>
+<times-up>&amp;#x00A1;Tu tiempo ha terminado!</times-up>
+<next-ex-caption>=&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial,sans-serif</font-face>
+<font-size>small</font-size>
+<page-bg-color>#e0ffe0</page-bg-color>
+<title-color>#000000</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#006666</link-color>
+<vlink-color>#006666</vlink-color>
+<nav-bar-color>#d1e9d1</nav-bar-color>
+<formmail-url>http://yourserver.com/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourserver.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code></header-code>
+<correct-first-time>Preguntas respondidas correctamente en el primer intento:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<hint-caption>Pista</hint-caption>
+<show-all-questions-caption>Mostrar todas las preguntas</show-all-questions-caption>
+<show-one-by-one-caption>Mostrar preguntas de una en una</show-one-by-one-caption>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<include-scorm-12>0</include-scorm-12>
+</global>
+</hotpot-config-file>
+</hotpot-jquiz-file>

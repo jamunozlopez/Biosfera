@@ -1,0 +1,612 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="imagenes/contenidos/herencia.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" width="527" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td valign="top" width="219" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (11/12) - s<a href="contenidos12.htm" class="txtnegrolink">iguiente</a></span></td>
+                          </tr>
+                          </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro"><span class="txtnegro">7.- CASOS 
+                                ESPECIALES DE HERENCIA DE CARACTERES MENDELIANOS:<img src="imagenes/dimorfismo1.jpg" width="250" height="213" alt="&quot;Dimorfismo sexual en loros. (Tomado de http://www.animalls.net/ARTIC47.HTML)&quot;" align="right" hspace="16" vspace="16"></span></p>
+                              <p class="txtnegro">a.- Herencia del sexo:</p>
+                              <table width="60%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt">En muchos casos, el sexo 
+                                          de los seres vivos que lo poseen se 
+                                          comporta tambi&eacute;n como un car&aacute;cter 
+                                          mendeliano que cumple las leyes de la 
+                                          herencia; la primera diferencia que 
+                                          existe entre sexos son los &oacute;rganos 
+                                          sexuales, y por eso reciben el nombre 
+                                          de CARACTERES SEXUALES PRIMARIOS.</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Existen diversas formas de determinaci&oacute;n 
+                                            del sexo:</p>
+                                          <ul>
+                                            <li><span class="txtnegro">Determinaci&oacute;n 
+                                              fenot&iacute;pica:</span> Es el 
+                                              &uacute;nico caso en que el sexo 
+                                              no es determinado directamente por 
+                                              la informaci&oacute;n gen&eacute;tica, 
+                                              sino que el ambiente moldea y cambia 
+                                              esa informaci&oacute;n; existen 
+                                              casos en anfibios de hembras j&oacute;venes 
+                                              que se pueden transformar en machos 
+                                              en presencia de hembras adultas, 
+                                              o de individuos que tienen un sexo 
+                                              de j&oacute;venes y otro de adultos, 
+                                              etc.</li>
+                                            <li><span class="txtnegro">Determinaci&oacute;n 
+                                              g&eacute;nica:</span> El sexo es 
+                                              determinado por un gen mendeliano 
+                                              normal; este caso es poco frecuente.</li>
+                                            <li><span class="txtnegro">Determinaci&oacute;n 
+                                              cromos&oacute;mica:</span> Es el 
+                                              tipo m&aacute;s habitual, en el 
+                                              que el sexo viene determinado por 
+                                              la presencia de cromosomas especiales, 
+                                              denominados CROMOSOMAS SEXUALES, 
+                                              frente al resto de cromosomas o 
+                                              AUTOSOMAS; estos cromosomas suelen 
+                                              ser dos, uno grande, casi metac&eacute;ntrico 
+                                              denominado, cromosoma X, y otro 
+                                              teloc&eacute;ntrico, llamado cromosoma 
+                                              Y. Aunque este caso se da en la 
+                                              mayor&iacute;a de animales y plantas, 
+                                              existen diferentes formas: 
+                                              <blockquote> 
+                                                <p>- sexo determinado por un solo 
+                                                  cromosoma: XO<br>
+                                                  - sexo determinado por dos cromosomas: 
+                                                  puede ser XX para hembras (sexo 
+                                                  homogam&eacute;tico) y XY para 
+                                                  machos (sexo heterogam&eacute;tico), 
+                                                  como sucede en la especie humana, 
+                                                  o al rev&eacute;s, como sucede 
+                                                  en muchas aves.<br>
+                                                  - sexo determinado por un conjunto 
+                                                  de cromosomas: el sexo suele 
+                                                  depender de la relaci&oacute;n 
+                                                  entre el n&uacute;mero de cromosomas 
+                                                  X e Y.</p>
+                                              </blockquote>
+                                            </li>
+                                            <li><span class="txtnegro"> Determinaci&oacute;n 
+                                              cariot&iacute;pica:</span> el sexo 
+                                              depende de la dotaci&oacute;n cromos&oacute;mica 
+                                              del individuo, como sucede en los 
+                                              insectos sociales, abejas y hormigas, 
+                                              en que las hembras son haploides 
+                                              y los machos diploides.</li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="left"> <a name="ligada"></a><br>
+                                <p><span class="txtbold">b.- Herencia ligada al 
+                                  sexo</span> </p>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>En los cromosomas sexuales, adem&aacute;s 
+                                            de existir genes relacionados con 
+                                            el sexo, existen otros genes para 
+                                            caracteres no sexuales o caracteres 
+                                            som&aacute;ticos, cuya manifestaci&oacute;n 
+                                            depender&aacute; del sexo del individuo 
+                                            al ir en el cromosoma X o Y.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><br>
+                                <span class="txt"> <font size="6">X<sup>D</sup></font> 
+                                Esto indica que los alelos D o d est&aacute;n 
+                                en el cromosoma X. <font size="6">X<sup>d </sup></font></span> 
+                              </div>
+                              <div align="center"><br>
+                                <p align="center"><img src="imagenes/daltonismo.jpg" width="365" height="366" alt="&quot;Daltonismo&quot;"></p>
+                                <br>
+                              </div>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Es el caso de enfermedades 
+                                            como la 
+                                          <a class="txtnegrolink" target="_blank" href="http://www.hemofilia.com/">hemofilia</a> 
+                                            o el 
+                                          <a class="txtnegrolink" target="_blank" href="http://www.tarso.com/Cromatica.html">daltonismo</a>, 
+                                            cuya manifestaci&oacute;n se debe 
+                                            a la presencia de un alelo recesivo 
+                                            ligado al cromosoma X, por lo que 
+                                            en varones nunca puede aparecer en 
+                                            homocigosis, o existe el alelo dominante, 
+                                            o el recesivo, desarroll&aacute;ndose 
+                                            la enfermedad, mientras que en mujeres 
+                                            pueden existir individuos homocigotos 
+                                            dominantes, normales, heterocigotos, 
+                                            tambi&eacute;n normales pero que llevan 
+                                            el alelo de la enfermedad (mujeres 
+                                            portadoras) y se lo podr&aacute;n 
+                                            pasar a sus hijos varones, e individuos 
+                                            homocigotos recesivos, que desarrollar&aacute;n 
+                                            la enfermedad (en el caso de la hemofilia, 
+                                            el alelo recesivo en homocigosis es 
+                                            letal y provoca la muerte, por lo 
+                                            que no existen mujeres hemof&iacute;licas, 
+                                            s&oacute;lo portadoras).</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <table width="98%" border="1" bgcolor="#d1e9d1">
+                                <tr> 
+                                  <td colspan="2" class="txtnegro"> 
+                                    <div align="center">DALTONISMO</div>
+                                  </td>
+                                  <td colspan="2" class="txtnegro"> 
+                                    <div align="center">HEMOFILIA</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">MUJERES</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">VARONES</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">MUJERES</div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">VARONES</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">X<sup>D</sup>X<sup>D</sup> = 
+                                    normal</td>
+                                  <td class="txt">X<sup>D</sup>Y = normal</td>
+                                  <td class="txt">X<sup>H</sup>X<sup>H</sup> = 
+                                    normal </td>
+                                  <td class="txt">X<sup>H</sup>Y = normal</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">X<sup>D</sup>X<sup>d</sup> = 
+                                    normal portadora</td>
+                                  <td class="txt">X<sup>d</sup>Y = dalt&oacute;nico</td>
+                                  <td class="txt">X<sup>H</sup>X<sup>h</sup> = 
+                                    normal portadora</td>
+                                  <td class="txt">X<sup>h</sup>Y = hemof&iacute;lico</td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt">X<sup>d</sup>X<sup>d</sup> = 
+                                    dalt&oacute;nica</td>
+                                  <td class="txt">&nbsp;</td>
+                                  <td class="txt">X<sup>h</sup>X<sup>h</sup> = 
+                                    letal </td>
+                                  <td class="txt">&nbsp;</td>
+                                </tr>
+                              </table>
+                              <br>
+                              <p class="txt">Si quieres comprobar tu vista visita 
+                                <a target="_blank" href="http://www.webpersonal.net/unsitiomas/test_daltonismo.htm"><span class="txtnegrolink">esta 
+                                p&aacute;gina</span></a>.</p>
+                              <br>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a target="_blank" href="actividad13gen.htm"><font class="txtnegrolink"> 
+                                        Actividad 14</font></a> 
+                                      <a target="_blank" href="actividad13gen.htm"><img src="imagenes/contenidos/activ13.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <a name="polialelica"></a><br>
+                              <p class="txtnegro">c.- Herencia polial&eacute;lica</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Es el caso de caracteres 
+                                            que est&aacute;n determinados por 
+                                            un solo gen, pero que tienen m&aacute;s 
+                                            de dos alelos con diferente comportamiento, 
+                                            como sucede, por ejemplo, con la herencia 
+                                            de los grupos sangu&iacute;neos humanos.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">En el hombre existen 
+                                            cuatro grupos sangu&iacute;neos mayoritarios, 
+                                            que son el grupo A, el B, el AB y 
+                                            el O (cero); estos cuatro grupos est&aacute;n 
+                                            determinados por un gen de tres alelos, 
+                                            de los cuales dos son codominantes 
+                                            entre s&iacute;, y a su vez dominantes 
+                                            sobre el tercero:</p>
+                                          <blockquote> 
+                                            <blockquote> 
+                                              <blockquote> 
+                                                <p><span class="txtnegro">I<sup>A</sup></span> 
+                                                  codominante con <span class="txtnegro">I<sup>B</sup></span>, 
+                                                  y ambos dominantes sobre <span class="txtnegro">i</span></p>
+                                              </blockquote>
+                                            </blockquote>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <span class="txt"><br>
+                              </span> 
+                              <p class="txt"><span class="txt"> Tambi&eacute;n 
+                                se puede representar como:</span></p>
+                              <blockquote> 
+                                <blockquote> 
+                                  <blockquote>
+                                    <p><span class="txtnegro">A</span><span class="txt"> 
+                                      codominante con </span><span class="txtnegro">B</span><span class="txt">, 
+                                      y ambos dominantes sobre </span><span class="txtnegro">i</span></p>
+                                  </blockquote>
+                                </blockquote>
+                              </blockquote>
+                              <p></p>
+                              <p></p>
+                              <p class="txt"><span class="txt"><br>
+                                Seg&uacute;n esto existen varias posibilidades:</span></p>
+                              <table width="75%" border="1" align="center" bgcolor="#d1e9d1">
+                                <tr> 
+                                  <td class="txtnegro"> 
+                                    <div align="center">GENOTIPO</div>
+                                  </td>
+                                  <td class="txtnegro"> 
+                                    <div align="center">FENOTIPO</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">I<sup>A</sup>I<sup>A</sup> 
+                                      (AA)</div>
+                                  </td>
+                                  <td rowspan="2" class="txt"> 
+                                    <div align="center">Grupo A</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">I<sup>A</sup>i (Ai) </div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">I<sup>B</sup>I<sup>B</sup> 
+                                      (BB) </div>
+                                  </td>
+                                  <td rowspan="2" class="txt"> 
+                                    <div align="center">Grupo B</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">I<sup>B</sup>i (Bi) </div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">I<sup>A</sup>I<sup>B</sup> 
+                                      (AB) </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">Grupo AB</div>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td class="txt"> 
+                                    <div align="center">ii </div>
+                                  </td>
+                                  <td class="txt"> 
+                                    <div align="center">Grupo O</div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a target="_blank" href="actividad14gen.htm"><font class="txtnegrolink"> 
+                                        Actividad 15</font></a> 
+                                      <a target="_blank" href="actividad14gen.htm"><img src="imagenes/contenidos/activ14.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p class="txt"><a name="poligenica"></a><br>
+                                <span class="txtnegro">d.- Herencia polig&eacute;nica</span></p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Se da cuando alg&uacute;n 
+                                            car&aacute;cter se debe a la acci&oacute;n 
+                                            de m&aacute;s de un gen que pueden tener 
+                                            adem&aacute;s m&aacute;s de dos alelos, 
+                                            lo cual origina numerosas combinaciones 
+                                            que son la causa de que exista una 
+                                            gradaci&oacute;n en los fenotipos; 
+                                            es t&iacute;pico de caracteres cuantitativos, 
+                                            es decir, que se pueden medir con 
+                                            alguna unidad de medida (peso, altura, 
+                                            longitud de las patas, n&uacute;mero 
+                                            de granos por espiga, n&uacute;mero 
+                                            de huevos, litros de leche, etc.). 
+                                            Tambi&eacute;n se debe a este tipo 
+                                            de herencia el color de la piel en 
+                                            nuestra especie, por eso existen tantas 
+                                            posibilidades y tanta variaci&oacute;n 
+                                            del color de la piel entre blancos 
+                                            y negros.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="center"><img src="imagenes/razas.jpg" width="502" height="118" alt="&quot;Las razas humanas son un claro ejemplo de herencia polig&eacute;nica. (Tomado de http://www.genetica.com/)&quot;"><br>
+                              </div>
+                              <p><br>
+                              </p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos10.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (11/12) - <a href="contenidos12.htm" class="txtnegrolink">siguiente</a></span></p>
+                          </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

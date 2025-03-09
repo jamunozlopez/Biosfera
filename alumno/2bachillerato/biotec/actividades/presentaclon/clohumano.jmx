@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmix-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Clonaci&amp;#x00F3;n humana</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Clonaci&amp;#x00F3;n humana</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<jumbled-order-exercise><main-order><segment>Extracci&amp;#x00F3;n del &amp;#x00F3;vulo de donantes.</segment>
+<segment>Anucleaci&amp;#x00F3;n del &amp;#x00F3;vulo.</segment>
+<segment>Extracci&amp;#x00F3;n de c&amp;#x00E9;lulas para clonar.</segment>
+<segment>Fusi&amp;#x00F3;n por descarga el&amp;#x00E9;ctrica.</segment>
+<segment>Desarrollo hasta embri&amp;#x00F3;n del &amp;#x00F3;vulo modificado.</segment>
+<segment>Implantaci&amp;#x00F3;n del embri&amp;#x00F3;n en madre portadora.</segment>
+<segment>Desarrollo fetal durante 9 meses.</segment>
+<segment>Obtenci&amp;#x00F3;n del individuo clonado.</segment>
+</main-order></jumbled-order-exercise>
+</data>
+
+<hotpot-config-file>
+<jmix>
+<exercise-subtitle>Pon en orden la secuencia del proceso para poder clonar un ser humano.</exercise-subtitle>
+<instructions>Arrastra con el rat&amp;#x00F3;n la frase seleccionada entre las que aparecen en la lista de abajo, hasta la l&amp;#x00ED;nea continua.</instructions>
+<guess-correct>Correctas:</guess-correct>
+<guess-incorrect>Intenta otra vez.</guess-incorrect>
+<this-much-correct>Esta parte de tu respuesta es correcta:</this-much-correct>
+<next-correct-part>&amp;#x00C9;sta es la siguiente palabra correcta: </next-correct-part>
+<click-to-add>Haz clic para a&amp;#x00F1;adir una palabra a la frase.</click-to-add>
+<also-correct>Estas respuestas son tambi&amp;#x00E9;n correctas:</also-correct>
+<include-undo>1</include-undo>
+<include-restart>1</include-restart>
+<include-hint>0</include-hint>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<capitalize-first-letter>0</capitalize-first-letter>
+<separate-javascript-file>0</separate-javascript-file>
+</jmix>
+
+<global>
+
+<times-up>&amp;#x00A1;El tiempo ha terminado!</times-up>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+<undo-caption>Deshacer</undo-caption>
+<hint-caption>Pista</hint-caption>
+<restart-caption>Reiniciar</restart-caption>
+<your-score-is>Tu puntuaci&amp;#x00F3;n es:</your-score-is>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<font-size>small</font-size>
+<page-bg-color>#e1ffe1</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#e1ffe1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#e1ffe1</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1></user-string-1>
+<user-string-2></user-string-2>
+<user-string-3></user-string-3>
+<header-code></header-code>
+</global>
+</hotpot-config-file>
+</hotpot-jmix-file>

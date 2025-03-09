@@ -1,0 +1,1715 @@
+<html>
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alfonso De Mier."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+El funcionamiento de los animales
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie4 && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = InText.substring(sLoc,z);
+
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+
+var ExBGColor = '#ddf7e4';
+
+
+
+var PageBGColor = '#ddf7e4';
+
+
+
+var NavBarColor = '#408080';
+
+
+var TextColor = '#000033';
+var CurrQNum = 0;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = 'Correcto';
+var IncorrectIndicator = 'Incorrecto';
+var YourScoreIs = 'Tu puntuaci&#243;n es:';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Preguntas contestadas correctamente a la primera:';var ExerciseTitle = 'El funcionamiento de los animales';
+var ExerciseSubtitle = 'Ejercicio de m&#250;ltiples respuestas';
+var Instructions = 'Escoge la respuesta correcta para cada pregunta. Recuerda que es un examen largo, de 50 preguntas.'; //'';
+var ShuffleQs = true;
+var ShuffleAs = true;
+var DefaultRight = 'Correcto';
+var DefaultWrong = 'Intenta otra vez';
+var QsToShow = 50;
+var ShowOneByOne = false;
+var ReadingURL = '';
+var EraseFeedback = true;
+var Score = 0;
+
+var PreviousPage = history.length;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#408080" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+
+NavBar+='<input type="button" value="Cerrar" onclick=\'parent.location="cierre.htm"\'></input>';
+
+
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar=ResolveAllURLs(NavBar)};
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#ddf7e4">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var QButtonsOpener = '<table border="0" width="85%" cellpadding="10">';
+QButtonsOpener += '<tr><td align="center" valign="middle"><form>';
+QButtonsOpener += '<font size="+1"><input type="button" value="&lt;=" onclick="parent.ChangeQ(-1)"></input>';
+var QButtonsCloser = '<input type="button" value="=&gt;" onclick="parent.ChangeQ(1)"></input>';
+QButtonsCloser += '</font></form></td></tr></table>';
+
+var TableOpener = '<form name="QForm">';
+TableOpener += '<table border="0" width="85%">';
+var QRow = '<tr><td valign="top" bgcolor="#ddf7e4" align="right">';
+QRow += '<font size="+1" face="Geneva,Arial" color="#000033">[QNumber]</font></td>';
+QRow += '<td colspan="3" valign="top" bgcolor="#ddf7e4"><font size="-1" face="Geneva,Arial" color="#000033">[Question]<br />&nbsp;';
+QRow += '</font></td></tr>';
+
+var ARow = '<tr><td></td><td valign="top" bgcolor="#ddf7e4"><input type="text" value=" " size="3" name="FB_[QNum]_[ANum]"></input></td>';
+ARow += '<td valign="top" bgcolor="#ddf7e4"><input type="button" value="[ALetter]" OnClick="parent.CheckAnswer([QNum],[ANum])"></input></td>';
+ARow += '<td width="100%" bgcolor="#ddf7e4"><font size="-1" face="Geneva,Arial" color="#000033">[Ans]</font></td></tr>';
+
+var MARow = '<tr><td></td><td valign="top" bgcolor="#ddf7e4" colspan="3"><input type="checkbox" name="A_[QNum]_[ANum]" value="[Correct]"></input>';
+MARow += '<font size="-1" face="Geneva,Arial" color="#000033">[Ans]</font></td></tr>';
+
+var CheckButton = '<tr><td></td><td valign="top" bgcolor="#ddf7e4" ><input type="button" value="Comprobar"';
+CheckButton += ' onclick="parent.CheckMulti([QNum])"></input></td></tr>';
+
+TableCloser = '</table></form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function ReduceItems(){
+	var ItemToDump=0;
+	var j=0;
+	while (I.length > QsToShow){
+		ItemToDump = Math.floor(I.length*Math.random());
+		for (j=ItemToDump; j<(I.length-1); j++){
+			I[j] = I[j+1];
+		}
+		I.length = I.length-1;
+	}
+}
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ddf7e4" text="#000033" link="#408080" vlink="#408080">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#ddf7e4" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000033">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function StartUp(){
+
+
+
+
+//Reduce array if required
+	if (QsToShow < I.length){
+		ReduceItems();
+	}
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question or all of them
+	if (ShowOneByOne == false){
+		ShowAllQs();
+	}
+	else{
+		ShowQuestion(CurrQNum);
+	}
+
+//Write the top frame
+	WriteFeedback(Instructions);
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='La nutrici&#243;n es';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='Un proceso complejo en el se que introduce materia org&#225;nica mediante un mecanismo aut&#243;trofo.';
+I[0][1][0][1]='Intenta otra vez';
+I[0][1][0][2] = 0;
+I[0][1][1] = new Array();
+I[0][1][1][0]='Un proceso donde interviene el aparato digestivo, el excretor y el sistema nervioso.';
+I[0][1][1][1]='Intenta otra vez';
+I[0][1][1][2] = 0;
+I[0][1][2] = new Array();
+I[0][1][2][0]='Tomar del medio en que se vive, materia y expulsar al exterior lo que no se puede utilizar.';
+I[0][1][2][1]='Correcto';
+I[0][1][2][2] = 1;
+I[0][1][3] = new Array();
+I[0][1][3][0]='Absorber sustancias producidas por el propio organismo.';
+I[0][1][3][1]='Intenta otra vez';
+I[0][1][3][2] = 0;
+I[0][2] = 0;
+
+I[1] = new Array();
+I[1][0]='El aparato digestivo';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='Expulsa sustancias que provienen del metabolismo.';
+I[1][1][0][1]='Intenta otra vez';
+I[1][1][0][2] = 0;
+I[1][1][1] = new Array();
+I[1][1][1][0]='Absorbe mol&#233;culas que provienen del intercambio gaseoso.';
+I[1][1][1][1]='Intenta otra vez';
+I[1][1][1][2] = 0;
+I[1][1][2] = new Array();
+I[1][1][2][0]='Capta mol&#233;culas de la sangre.';
+I[1][1][2][1]='Intenta otra vez';
+I[1][1][2][2] = 0;
+I[1][1][3] = new Array();
+I[1][1][3][0]='Absorbe mol&#233;culas org&#225;nicas y las env&#237;a a la sangre.';
+I[1][1][3][1]='Correcto';
+I[1][1][3][2] = 1;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='El aparato digestivo';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='Puede ser una cavidad gastrointestinal asociada a gl&#225;ndulas digestivas.';
+I[2][1][0][1]='Intenta otra vez';
+I[2][1][0][2] = 0;
+I[2][1][1] = new Array();
+I[2][1][1][0]='Puede ser un tubo por donde discurren part&#237;culas alimenticias en los dos sentidos por su interior.';
+I[2][1][1][1]='Intenta otra vez';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='Puede estar constituido &#250;nicamente por boca y ano.';
+I[2][1][2][1]='Intenta otra vez';
+I[2][1][2][2] = 0;
+I[2][1][3] = new Array();
+I[2][1][3][0]='Puede no existir.';
+I[2][1][3][1]='Correcto';
+I[2][1][3][2] = 1;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='La macrofagia es';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='T&#237;pica de depredadores, carro&#241;eros y herb&#237;voros.';
+I[3][1][0][1]='Intenta otra vez';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='Un tipo de nutrici&#243;n donde no es necesaria la selecci&#243;n del alimento.';
+I[3][1][1][1]='Intenta otra vez';
+I[3][1][1][2] = 0;
+I[3][1][2] = new Array();
+I[3][1][2][0]='Alimentarse de l&#237;quidos.';
+I[3][1][2][1]='Intenta otra vez';
+I[3][1][2][2] = 0;
+I[3][1][3] = new Array();
+I[3][1][3][0]='Un tipo de alimentaci&#243;n activa, con selecci&#243;n y captura.';
+I[3][1][3][1]='Correcto';
+I[3][1][3][2] = 1;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='La digesti&#243;n mec&#225;nica';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='S&#243;lo se produce si se desarrollan dientes.';
+I[4][1][0][1]='Intenta otra vez';
+I[4][1][0][2] = 0;
+I[4][1][1] = new Array();
+I[4][1][1][0]='Es un proceso m&#225;s de la digesti&#243;n extracelular.';
+I[4][1][1][1]='Correcto';
+I[4][1][1][2] = 1;
+I[4][1][2] = new Array();
+I[4][1][2][0]='Se produce si no hay digesti&#243;n en la boca.';
+I[4][1][2][1]='Intenta otra vez';
+I[4][1][2][2] = 0;
+I[4][1][3] = new Array();
+I[4][1][3][0]='Se produce &#250;nicamente en los vertebrados.';
+I[4][1][3][1]='Intenta otra vez';
+I[4][1][3][2] = 0;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='&#191;D&#243;nde NO hay fase de digesti&#243;n en el tubo digestivo de vertebrados?';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='En la boca.';
+I[5][1][0][1]='Intenta otra vez';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='En el est&#243;mago.';
+I[5][1][1][1]='Intenta otra vez';
+I[5][1][1][2] = 0;
+I[5][1][2] = new Array();
+I[5][1][2][0]='En el intestino delgado.';
+I[5][1][2][1]='Intenta otra vez';
+I[5][1][2][2] = 0;
+I[5][1][3] = new Array();
+I[5][1][3][0]='En el intestino grueso.';
+I[5][1][3][1]='Correcto';
+I[5][1][3][2] = 1;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='En el est&#243;mago se digieren';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='Grasas.';
+I[6][1][0][1]='Intenta otra vez';
+I[6][1][0][2] = 0;
+I[6][1][1] = new Array();
+I[6][1][1][0]='Todas las mol&#233;culas org&#225;nicas.';
+I[6][1][1][1]='Intenta otra vez';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='Gl&#250;cidos';
+I[6][1][2][1]='Intenta otra vez';
+I[6][1][2][2] = 0;
+I[6][1][3] = new Array();
+I[6][1][3][0]='Prote&#237;nas.';
+I[6][1][3][1]='Correcto';
+I[6][1][3][2] = 1;
+I[6][2] = 0;
+
+I[7] = new Array();
+I[7][0]='El quimo se forma en';
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='La boca.';
+I[7][1][0][1]='Intenta otra vez';
+I[7][1][0][2] = 0;
+I[7][1][1] = new Array();
+I[7][1][1][0]='El intestino delgado.';
+I[7][1][1][1]='Intenta otra vez';
+I[7][1][1][2] = 0;
+I[7][1][2] = new Array();
+I[7][1][2][0]='El intestino grueso.';
+I[7][1][2][1]='Intenta otra vez';
+I[7][1][2][2] = 0;
+I[7][1][3] = new Array();
+I[7][1][3][0]='El est&#243;mago.';
+I[7][1][3][1]='Correcto';
+I[7][1][3][2] = 1;
+I[7][2] = 0;
+
+I[8] = new Array();
+I[8][0]='El quilo es';
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='Una sustancia pastosa formada en el est&#243;mago.';
+I[8][1][0][1]='Intenta otra vez';
+I[8][1][0][2] = 0;
+I[8][1][1] = new Array();
+I[8][1][1][0]='Una sustancia l&#237;quida que se forma por acci&#243;n de la pepsina.';
+I[8][1][1][1]='Intenta otra vez';
+I[8][1][1][2] = 0;
+I[8][1][2] = new Array();
+I[8][1][2][0]='La tansformaci&#243;n del quimo por acci&#243;n de los jugos g&#225;stricos.';
+I[8][1][2][1]='Intenta otra vez';
+I[8][1][2][2] = 0;
+I[8][1][3] = new Array();
+I[8][1][3][0]='El resultado de la acci&#243;n del jugo pancre&#225;tico, los jugos intestinales y la bilis sobre el alimento.';
+I[8][1][3][1]='Correcto';
+I[8][1][3][2] = 1;
+I[8][2] = 0;
+
+I[9] = new Array();
+I[9][0]='Para aumentar la absorci&#243;n';
+I[9][1] = new Array();
+I[9][1][0] = new Array();
+I[9][1][0][0]='El quilo debe ser compacto.';
+I[9][1][0][1]='Intenta otra vez';
+I[9][1][0][2] = 0;
+I[9][1][1] = new Array();
+I[9][1][1][0]='Debe haber mayor superficie intestinal.';
+I[9][1][1][1]='Correcto';
+I[9][1][1][2] = 1;
+I[9][1][2] = new Array();
+I[9][1][2][0]='Las mol&#233;culas deben pasar a las sangre sin gasto de energ&#237;a.';
+I[9][1][2][1]='Intenta otra vez';
+I[9][1][2][2] = 0;
+I[9][1][3] = new Array();
+I[9][1][3][0]='Debe aumentar el apetito.';
+I[9][1][3][1]='Intenta otra vez';
+I[9][1][3][2] = 0;
+I[9][2] = 0;
+
+I[10] = new Array();
+I[10][0]='&#191;Qu&#233; tipo de transporte utiliza la glucosa para atravesar la pared intestinal?';
+I[10][1] = new Array();
+I[10][1][0] = new Array();
+I[10][1][0][0]='Difusi&#243;n simple.';
+I[10][1][0][1]='Intenta otra vez';
+I[10][1][0][2] = 0;
+I[10][1][1] = new Array();
+I[10][1][1][0]='Difusi&#243;n facilitada.';
+I[10][1][1][1]='Intenta otra vez';
+I[10][1][1][2] = 0;
+I[10][1][2] = new Array();
+I[10][1][2][0]='Transporte pasivo.';
+I[10][1][2][1]='Intenta otra vez';
+I[10][1][2][2] = 0;
+I[10][1][3] = new Array();
+I[10][1][3][0]='Transporte activo.';
+I[10][1][3][1]='Correcto';
+I[10][1][3][2] = 1;
+I[10][2] = 0;
+
+I[11] = new Array();
+I[11][0]='Las egagr&#243;pilas';
+I[11][1] = new Array();
+I[11][1][0] = new Array();
+I[11][1][0][0]='Son productos de excreci&#243;n de las rapaces.';
+I[11][1][0][1]='Intenta otra vez';
+I[11][1][0][2] = 0;
+I[11][1][1] = new Array();
+I[11][1][1][0]='Son expulsadas por la boca.';
+I[11][1][1][1]='Correcto';
+I[11][1][1][2] = 1;
+I[11][1][2] = new Array();
+I[11][1][2][0]='Son expulsadas por la cloaca de algunas aves.';
+I[11][1][2][1]='Intenta otra vez';
+I[11][1][2][2] = 0;
+I[11][1][3] = new Array();
+I[11][1][3][0]='Son expulsadas por el ano.';
+I[11][1][3][1]='Intenta otra vez';
+I[11][1][3][2] = 0;
+I[11][2] = 0;
+
+I[12] = new Array();
+I[12][0]='La respiraci&#243;n en los animales es un proceso necesario para';
+I[12][1] = new Array();
+I[12][1][0] = new Array();
+I[12][1][0][0]='Coger aire.';
+I[12][1][0][1]='Intenta otra vez';
+I[12][1][0][2] = 0;
+I[12][1][1] = new Array();
+I[12][1][1][0]='Obtener energ&#237;a.';
+I[12][1][1][1]='Correcto';
+I[12][1][1][2] = 1;
+I[12][1][2] = new Array();
+I[12][1][2][0]='Producir la digesti&#243;n.';
+I[12][1][2][1]='Intenta otra vez';
+I[12][1][2][2] = 0;
+I[12][1][3] = new Array();
+I[12][1][3][0]='Conseguir una buena ventilaci&#243;n pulmonar.';
+I[12][1][3][1]='Intenta otra vez';
+I[12][1][3][2] = 0;
+I[12][2] = 0;
+
+I[13] = new Array();
+I[13][0]='La respiraci&#243;n branquial es t&#237;pica de';
+I[13][1] = new Array();
+I[13][1][0] = new Array();
+I[13][1][0][0]='Ambientes acu&#225;ticos.';
+I[13][1][0][1]='Correcto';
+I[13][1][0][2] = 1;
+I[13][1][1] = new Array();
+I[13][1][1][0]='Ambientes secos.';
+I[13][1][1][1]='Intenta otra vez';
+I[13][1][1][2] = 0;
+I[13][1][2] = new Array();
+I[13][1][2][0]='Aves.';
+I[13][1][2][1]='Intenta otra vez';
+I[13][1][2][2] = 0;
+I[13][1][3] = new Array();
+I[13][1][3][0]='Insectos.';
+I[13][1][3][1]='Intenta otra vez';
+I[13][1][3][2] = 0;
+I[13][2] = 0;
+
+I[14] = new Array();
+I[14][0]='La mayoria de los an&#233;lidos presentan';
+I[14][1] = new Array();
+I[14][1][0] = new Array();
+I[14][1][0][0]='Respiraci&#243;n cut&#225;nea.';
+I[14][1][0][1]='Correcto';
+I[14][1][0][2] = 1;
+I[14][1][1] = new Array();
+I[14][1][1][0]='Respiraci&#243;n pulmonar.';
+I[14][1][1][1]='Intenta otra vez';
+I[14][1][1][2] = 0;
+I[14][1][2] = new Array();
+I[14][1][2][0]='Respiraci&#243;n traqueal.';
+I[14][1][2][1]='Intenta otra vez';
+I[14][1][2][2] = 0;
+I[14][1][3] = new Array();
+I[14][1][3][0]='Respiraci&#243;n bucofar&#237;ngea.';
+I[14][1][3][1]='Intenta otra vez';
+I[14][1][3][2] = 0;
+I[14][2] = 0;
+
+I[15] = new Array();
+I[15][0]='La respiraci&#243;n branquial exige';
+I[15][1] = new Array();
+I[15][1][0] = new Array();
+I[15][1][0][0]='Un movimiento continuo del agua en la zona de las branquias.';
+I[15][1][0][1]='Correcto';
+I[15][1][0][2] = 1;
+I[15][1][1] = new Array();
+I[15][1][1][0]='El movimiento continuo del animal.';
+I[15][1][1][1]='Intenta otra vez';
+I[15][1][1][2] = 0;
+I[15][1][2] = new Array();
+I[15][1][2][0]='La existencia de un repliegue externo del tegumento.';
+I[15][1][2][1]='Intenta otra vez';
+I[15][1][2][2] = 0;
+I[15][1][3] = new Array();
+I[15][1][3][0]='Una estructura protectora llamada op&#233;rculo.';
+I[15][1][3][1]='Intenta otra vez';
+I[15][1][3][2] = 0;
+I[15][2] = 0;
+
+I[16] = new Array();
+I[16][0]='La respiraci&#243;n traqueal';
+I[16][1] = new Array();
+I[16][1][0] = new Array();
+I[16][1][0][0]='La lleva a cabo la tr&#225;quea, antes de llegar a los bronquios.';
+I[16][1][0][1]='Intenta otra vez';
+I[16][1][0][2] = 0;
+I[16][1][1] = new Array();
+I[16][1][1][0]='Aparece en todos los artr&#243;podos y necesita la ayuda de otro tipo de sistema respiratorio.';
+I[16][1][1][1]='Intenta otra vez';
+I[16][1][1][2] = 0;
+I[16][1][2] = new Array();
+I[16][1][2][0]='Aparece en anfibios y se ayuda de la respiraci&#243;n cut&#225;nea.';
+I[16][1][2][1]='Intenta otra vez';
+I[16][1][2][2] = 0;
+I[16][1][3] = new Array();
+I[16][1][3][0]='Es propia de insectos.';
+I[16][1][3][1]='Correcto';
+I[16][1][3][2] = 1;
+I[16][2] = 0;
+
+I[17] = new Array();
+I[17][0]='Los anfibios No presentan';
+I[17][1] = new Array();
+I[17][1][0] = new Array();
+I[17][1][0][0]='respiraci&#243;n branquial.';
+I[17][1][0][1]='Intenta otra vez';
+I[17][1][0][2] = 0;
+I[17][1][1] = new Array();
+I[17][1][1][0]='Respiraci&#243;n pulmonar.';
+I[17][1][1][1]='Intenta otra vez';
+I[17][1][1][2] = 0;
+I[17][1][2] = new Array();
+I[17][1][2][0]='Respiraci&#243;n traqueal.';
+I[17][1][2][1]='Correcto';
+I[17][1][2][2] = 1;
+I[17][1][3] = new Array();
+I[17][1][3][0]='Respiraci&#243;n cut&#225;nea.';
+I[17][1][3][1]='Intenta otra vez';
+I[17][1][3][2] = 0;
+I[17][2] = 0;
+
+I[18] = new Array();
+I[18][0]='En la inspiraci&#243;n';
+I[18][1] = new Array();
+I[18][1][0] = new Array();
+I[18][1][0][0]='Se produce la relajaci&#243;n del diafragma.';
+I[18][1][0][1]='Intenta otra vez';
+I[18][1][0][2] = 0;
+I[18][1][1] = new Array();
+I[18][1][1][0]='Los m&#250;sculos intercostales disminuyen el volumen tor&#225;cico.';
+I[18][1][1][1]='Intenta otra vez';
+I[18][1][1][2] = 0;
+I[18][1][2] = new Array();
+I[18][1][2][0]='El diafragma sube para aumentar el volumen tor&#225;cico.';
+I[18][1][2][1]='Intenta otra vez';
+I[18][1][2][2] = 0;
+I[18][1][3] = new Array();
+I[18][1][3][0]='El diafragma baja, apretando las v&#237;sceras del abdomen.';
+I[18][1][3][1]='Correcto';
+I[18][1][3][2] = 1;
+I[18][2] = 0;
+
+I[19] = new Array();
+I[19][0]='El medio interno de moluscos';
+I[19][1] = new Array();
+I[19][1][0] = new Array();
+I[19][1][0][0]='No transporta ox&#237;geno, ya que no posee pigmentos respiratorios.';
+I[19][1][0][1]='Intenta otra vez';
+I[19][1][0][2] = 0;
+I[19][1][1] = new Array();
+I[19][1][1][0]='Es similar al agua del mar, que es el lugar donde vive el animal.';
+I[19][1][1][1]='Intenta otra vez';
+I[19][1][1][2] = 0;
+I[19][1][2] = new Array();
+I[19][1][2][0]='Se denomina sangre.';
+I[19][1][2][1]='Intenta otra vez';
+I[19][1][2][2] = 0;
+I[19][1][3] = new Array();
+I[19][1][3][0]='Se denomina hemolinfa y transporta ox&#237;geno.';
+I[19][1][3][1]='Correcto';
+I[19][1][3][2] = 1;
+I[19][2] = 0;
+
+I[20] = new Array();
+I[20][0]='El medio inteno de los an&#233;lidos se denomina';
+I[20][1] = new Array();
+I[20][1][0] = new Array();
+I[20][1][0][0]='Sangre.';
+I[20][1][0][1]='Correcto';
+I[20][1][0][2] = 1;
+I[20][1][1] = new Array();
+I[20][1][1][0]='Hemolinfa.';
+I[20][1][1][1]='Intenta otra vez';
+I[20][1][1][2] = 0;
+I[20][1][2] = new Array();
+I[20][1][2][0]='Hidrolinfa.';
+I[20][1][2][1]='Intenta otra vez';
+I[20][1][2][2] = 0;
+I[20][1][3] = new Array();
+I[20][1][3][0]='Linfa.';
+I[20][1][3][1]='Intenta otra vez';
+I[20][1][3][2] = 0;
+I[20][2] = 0;
+
+I[21] = new Array();
+I[21][0]='El sistema circulatorio abierto';
+I[21][1] = new Array();
+I[21][1][0] = new Array();
+I[21][1][0][0]='Es muy efectivo para transportar el ox&#237;geno del exterior.';
+I[21][1][0][1]='Intenta otra vez';
+I[21][1][0][2] = 0;
+I[21][1][1] = new Array();
+I[21][1][1][0]='Se denomina as&#237; porque la sangre pasa una vez por el coraz&#243;n en cada circuito.';
+I[21][1][1][1]='Intenta otra vez';
+I[21][1][1][2] = 0;
+I[21][1][2] = new Array();
+I[21][1][2][0]='Se llama as&#237; porque el medio interno no circula todo el tiempo por vasos.';
+I[21][1][2][1]='Correcto';
+I[21][1][2][2] = 1;
+I[21][1][3] = new Array();
+I[21][1][3][0]='Es t&#237;pico de an&#233;lidos.';
+I[21][1][3][1]='Intenta otra vez';
+I[21][1][3][2] = 0;
+I[21][2] = 0;
+
+I[22] = new Array();
+I[22][0]='El sistema circulatorio simple ';
+I[22][1] = new Array();
+I[22][1][0] = new Array();
+I[22][1][0][0]='Es cerrado y la sangre pasa dos veces por el coraz&#243;n.';
+I[22][1][0][1]='Intenta otra vez';
+I[22][1][0][2] = 0;
+I[22][1][1] = new Array();
+I[22][1][1][0]='Es muy primitivo, por lo que es abierto.';
+I[22][1][1][1]='Intenta otra vez';
+I[22][1][1][2] = 0;
+I[22][1][2] = new Array();
+I[22][1][2][0]='Aparece en reptiles peque&#241;os.';
+I[22][1][2][1]='Intenta otra vez';
+I[22][1][2][2] = 0;
+I[22][1][3] = new Array();
+I[22][1][3][0]='La sange pasa una vez por el coraz&#243;n en cada vuelta y es cerrado.';
+I[22][1][3][1]='Correcto';
+I[22][1][3][2] = 1;
+I[22][2] = 0;
+
+I[23] = new Array();
+I[23][0]='En anfibios aparece';
+I[23][1] = new Array();
+I[23][1][0] = new Array();
+I[23][1][0][0]='Un coraz&#243;n con una aur&#237;cula y dos ventr&#237;culos.';
+I[23][1][0][1]='Intenta otra vez';
+I[23][1][0][2] = 0;
+I[23][1][1] = new Array();
+I[23][1][1][0]='Un coraz&#243;n con ventr&#237;culos parcialmente tabicados.';
+I[23][1][1][1]='Intenta otra vez';
+I[23][1][1][2] = 0;
+I[23][1][2] = new Array();
+I[23][1][2][0]='Un coraz&#243;n con una aur&#237;cula y un ventr&#237;culo.';
+I[23][1][2][1]='Intenta otra vez';
+I[23][1][2][2] = 0;
+I[23][1][3] = new Array();
+I[23][1][3][0]='Un ventr&#237;culo en el que se produce mezcla de sangre.';
+I[23][1][3][1]='Correcto';
+I[23][1][3][2] = 1;
+I[23][2] = 0;
+
+I[24] = new Array();
+I[24][0]='La s&#237;stole ventricular';
+I[24][1] = new Array();
+I[24][1][0] = new Array();
+I[24][1][0][0]='Es la relajaci&#243;n del ventr&#237;culo.';
+I[24][1][0][1]='Intenta otra vez';
+I[24][1][0][2] = 0;
+I[24][1][1] = new Array();
+I[24][1][1][0]='Supone el paso de sangre al ventr&#237;culo.';
+I[24][1][1][1]='Intenta otra vez';
+I[24][1][1][2] = 0;
+I[24][1][2] = new Array();
+I[24][1][2][0]='Implica la salida de sangre del ventr&#237;culo.';
+I[24][1][2][1]='Correcto';
+I[24][1][2][2] = 1;
+I[24][1][3] = new Array();
+I[24][1][3][0]='Ocurre a la vez que la s&#237;stole auricular.';
+I[24][1][3][1]='Intenta otra vez';
+I[24][1][3][2] = 0;
+I[24][2] = 0;
+
+I[25] = new Array();
+I[25][0]='La excreci&#243;n';
+I[25][1] = new Array();
+I[25][1][0] = new Array();
+I[25][1][0][0]='Se produce mediante el aparato digestivo.';
+I[25][1][0][1]='Intenta otra vez';
+I[25][1][0][2] = 0;
+I[25][1][1] = new Array();
+I[25][1][1][0]='Es la expulsi&#243;n de los alimentos no digeridos.';
+I[25][1][1][1]='Intenta otra vez';
+I[25][1][1][2] = 0;
+I[25][1][2] = new Array();
+I[25][1][2][0]='Es la expulsi&#243;n de sustancias no metabolizables.';
+I[25][1][2][1]='Correcto';
+I[25][1][2][2] = 1;
+I[25][1][3] = new Array();
+I[25][1][3][0]='Se realiza &#250;nicamente mediante los ri&#241;ones.';
+I[25][1][3][1]='Intenta otra vez';
+I[25][1][3][2] = 0;
+I[25][2] = 0;
+
+I[26] = new Array();
+I[26][0]='Los animales ureot&#233;licos son los que excretan los residuos nitrogenados en forma de';
+I[26][1] = new Array();
+I[26][1][0] = new Array();
+I[26][1][0][0]='Amoniaco.';
+I[26][1][0][1]='Intenta otra vez';
+I[26][1][0][2] = 0;
+I[26][1][1] = new Array();
+I[26][1][1][0]='Urea.';
+I[26][1][1][1]='Correcto';
+I[26][1][1][2] = 1;
+I[26][1][2] = new Array();
+I[26][1][2][0]='&#193;cido &#250;rico.';
+I[26][1][2][1]='Intenta otra vez';
+I[26][1][2][2] = 0;
+I[26][1][3] = new Array();
+I[26][1][3][0]='Guanina.';
+I[26][1][3][1]='Intenta otra vez';
+I[26][1][3][2] = 0;
+I[26][2] = 0;
+
+I[27] = new Array();
+I[27][0]='La nefrona es';
+I[27][1] = new Array();
+I[27][1][0] = new Array();
+I[27][1][0][0]='La parte alargada del tubo de Malpigio.';
+I[27][1][0][1]='Intenta otra vez';
+I[27][1][0][2] = 0;
+I[27][1][1] = new Array();
+I[27][1][1][0]='El tubo de un metanefridio.';
+I[27][1][1][1]='Intenta otra vez';
+I[27][1][1][2] = 0;
+I[27][1][2] = new Array();
+I[27][1][2][0]='Una c&#233;lula que lleva el impulso nervioso.';
+I[27][1][2][1]='Intenta otra vez';
+I[27][1][2][2] = 0;
+I[27][1][3] = new Array();
+I[27][1][3][0]='La unidad funcional de un ri&#241;&#243;n.';
+I[27][1][3][1]='Correcto';
+I[27][1][3][2] = 1;
+I[27][2] = 0;
+
+I[28] = new Array();
+I[28][0]='Los moluscos utilizan como &#243;rganos excretores';
+I[28][1] = new Array();
+I[28][1][0] = new Array();
+I[28][1][0][0]='Metanefridios.';
+I[28][1][0][1]='Correcto';
+I[28][1][0][2] = 1;
+I[28][1][1] = new Array();
+I[28][1][1][0]='Protonefridios.';
+I[28][1][1][1]='Intenta otra vez';
+I[28][1][1][2] = 0;
+I[28][1][2] = new Array();
+I[28][1][2][0]='Tubos de Malpigio.';
+I[28][1][2][1]='Intenta otra vez';
+I[28][1][2][2] = 0;
+I[28][1][3] = new Array();
+I[28][1][3][0]='Gl&#225;ndulas coxales.';
+I[28][1][3][1]='Intenta otra vez';
+I[28][1][3][2] = 0;
+I[28][2] = 0;
+
+I[29] = new Array();
+I[29][0]='Para producir una respuesta NO es necesario que exista';
+I[29][1] = new Array();
+I[29][1][0] = new Array();
+I[29][1][0][0]='Un est&#237;mulo externo.';
+I[29][1][0][1]='Correcto';
+I[29][1][0][2] = 1;
+I[29][1][1] = new Array();
+I[29][1][1][0]='Un &#243;rgano receptor';
+I[29][1][1][1]='Intenta otra vez';
+I[29][1][1][2] = 0;
+I[29][1][2] = new Array();
+I[29][1][2][0]='Un &#243;rgano integrador.';
+I[29][1][2][1]='Intenta otra vez';
+I[29][1][2][2] = 0;
+I[29][1][3] = new Array();
+I[29][1][3][0]='Un &#243;rgano efector.';
+I[29][1][3][1]='Intenta otra vez';
+I[29][1][3][2] = 0;
+I[29][2] = 0;
+
+I[30] = new Array();
+I[30][0]='Las respuestas';
+I[30][1] = new Array();
+I[30][1][0] = new Array();
+I[30][1][0][0]='Del sistema nervioso son lentas.';
+I[30][1][0][1]='Intenta otra vez';
+I[30][1][0][2] = 0;
+I[30][1][1] = new Array();
+I[30][1][1][0]='Del sistema endocrino son instant&#225;neas.';
+I[30][1][1][1]='Intenta otra vez';
+I[30][1][1][2] = 0;
+I[30][1][2] = new Array();
+I[30][1][2][0]='Del sistema endocrino son producidas por cambios de potencial.';
+I[30][1][2][1]='Intenta otra vez';
+I[30][1][2][2] = 0;
+I[30][1][3] = new Array();
+I[30][1][3][0]='Del sistema nervioso son r&#225;pidas.';
+I[30][1][3][1]='Correcto';
+I[30][1][3][2] = 1;
+I[30][2] = 0;
+
+I[31] = new Array();
+I[31][0]='En la neurona';
+I[31][1] = new Array();
+I[31][1][0] = new Array();
+I[31][1][0][0]='Los axones emiten la informaci&#243;n.';
+I[31][1][0][1]='Correcto';
+I[31][1][0][2] = 1;
+I[31][1][1] = new Array();
+I[31][1][1][0]='Los axones reciben la informaci&#243;n.';
+I[31][1][1][1]='Intenta otra vez';
+I[31][1][1][2] = 0;
+I[31][1][2] = new Array();
+I[31][1][2][0]='Las dendritas emiten la informaci&#243;n.';
+I[31][1][2][1]='Intenta otra vez';
+I[31][1][2][2] = 0;
+I[31][1][3] = new Array();
+I[31][1][3][0]='Las dendritas contienen el n&#250;cleo celular.';
+I[31][1][3][1]='Intenta otra vez';
+I[31][1][3][2] = 0;
+I[31][2] = 0;
+
+I[32] = new Array();
+I[32][0]='El potencial de acci&#243;n se alcanza';
+I[32][1] = new Array();
+I[32][1][0] = new Array();
+I[32][1][0][0]='Cuando se despolariza la membrana.';
+I[32][1][0][1]='Correcto';
+I[32][1][0][2] = 1;
+I[32][1][1] = new Array();
+I[32][1][1][0]='Cuando se repolariza la membrana.';
+I[32][1][1][1]='Intenta otra vez';
+I[32][1][1][2] = 0;
+I[32][1][2] = new Array();
+I[32][1][2][0]='Cuando act&#250;a la bomba de sodio/potasio.';
+I[32][1][2][1]='Intenta otra vez';
+I[32][1][2][2] = 0;
+I[32][1][3] = new Array();
+I[32][1][3][0]='Cuando se cierran los canales para sodio.';
+I[32][1][3][1]='Intenta otra vez';
+I[32][1][3][2] = 0;
+I[32][2] = 0;
+
+I[33] = new Array();
+I[33][0]='El sistema nervioso ganglionar ventral lo presentan';
+I[33][1] = new Array();
+I[33][1][0] = new Array();
+I[33][1][0][0]='Peces.';
+I[33][1][0][1]='Intenta otra vez';
+I[33][1][0][2] = 0;
+I[33][1][1] = new Array();
+I[33][1][1][0]='An&#233;lidos.';
+I[33][1][1][1]='Correcto';
+I[33][1][1][2] = 1;
+I[33][1][2] = new Array();
+I[33][1][2][0]='Cnidarios.';
+I[33][1][2][1]='Intenta otra vez';
+I[33][1][2][2] = 0;
+I[33][1][3] = new Array();
+I[33][1][3][0]='Equinodermos.';
+I[33][1][3][1]='Intenta otra vez';
+I[33][1][3][2] = 0;
+I[33][2] = 0;
+
+I[34] = new Array();
+I[34][0]='El enc&#233;falo';
+I[34][1] = new Array();
+I[34][1][0] = new Array();
+I[34][1][0][0]='Es una parte del cerebro.';
+I[34][1][0][1]='Intenta otra vez';
+I[34][1][0][2] = 0;
+I[34][1][1] = new Array();
+I[34][1][1][0]='Incluye al cerebro.';
+I[34][1][1][1]='Correcto';
+I[34][1][1][2] = 1;
+I[34][1][2] = new Array();
+I[34][1][2][0]='Es una parte del sistema nervioso perif&#233;rico.';
+I[34][1][2][1]='Intenta otra vez';
+I[34][1][2][2] = 0;
+I[34][1][3] = new Array();
+I[34][1][3][0]='Es la zona m&#225;s interna del cerebro.';
+I[34][1][3][1]='Intenta otra vez';
+I[34][1][3][2] = 0;
+I[34][2] = 0;
+
+I[35] = new Array();
+I[35][0]='La m&#233;dula espinal';
+I[35][1] = new Array();
+I[35][1][0] = new Array();
+I[35][1][0][0]='Puede decidir una respuesta sin intervenci&#243;n del enc&#233;falo.';
+I[35][1][0][1]='Correcto';
+I[35][1][0][2] = 1;
+I[35][1][1] = new Array();
+I[35][1][1][0]='Presenta sustancia blanca en el interior y gris en el exterior.';
+I[35][1][1][1]='Intenta otra vez';
+I[35][1][1][2] = 0;
+I[35][1][2] = new Array();
+I[35][1][2][0]='Es una parte del enc&#233;falo.';
+I[35][1][2][1]='Intenta otra vez';
+I[35][1][2][2] = 0;
+I[35][1][3] = new Array();
+I[35][1][3][0]='Es parte del sistema nervioso perif&#233;rico.';
+I[35][1][3][1]='Intenta otra vez';
+I[35][1][3][2] = 0;
+I[35][2] = 0;
+
+I[36] = new Array();
+I[36][0]='El sistema hormonal act&#250;a';
+I[36][1] = new Array();
+I[36][1][0] = new Array();
+I[36][1][0][0]='Uitlizando neurotransmisores.';
+I[36][1][0][1]='Intenta otra vez';
+I[36][1][0][2] = 0;
+I[36][1][1] = new Array();
+I[36][1][1][0]='Utilizando hormonas.';
+I[36][1][1][1]='Correcto';
+I[36][1][1][2] = 1;
+I[36][1][2] = new Array();
+I[36][1][2][0]='Mediante impulsos sin&#225;pticos.';
+I[36][1][2][1]='Intenta otra vez';
+I[36][1][2][2] = 0;
+I[36][1][3] = new Array();
+I[36][1][3][0]='Sin responder a est&#237;mulos.';
+I[36][1][3][1]='Intenta otra vez';
+I[36][1][3][2] = 0;
+I[36][2] = 0;
+
+I[37] = new Array();
+I[37][0]='La muda se presenta en';
+I[37][1] = new Array();
+I[37][1][0] = new Array();
+I[37][1][0][0]='Artr&#243;podos.';
+I[37][1][0][1]='Correcto';
+I[37][1][0][2] = 1;
+I[37][1][1] = new Array();
+I[37][1][1][0]='Moluscos.';
+I[37][1][1][1]='Intenta otra vez';
+I[37][1][1][2] = 0;
+I[37][1][2] = new Array();
+I[37][1][2][0]='An&#233;lidos.';
+I[37][1][2][1]='Intenta otra vez';
+I[37][1][2][2] = 0;
+I[37][1][3] = new Array();
+I[37][1][3][0]='Cnidarios.';
+I[37][1][3][1]='Intenta otra vez';
+I[37][1][3][2] = 0;
+I[37][2] = 0;
+
+I[38] = new Array();
+I[38][0]='El proceso de la muda lo controla';
+I[38][1] = new Array();
+I[38][1][0] = new Array();
+I[38][1][0][0]='El sistema endocrino.';
+I[38][1][0][1]='Correcto';
+I[38][1][0][2] = 1;
+I[38][1][1] = new Array();
+I[38][1][1][0]='El sistema nervioso.';
+I[38][1][1][1]='Intenta otra vez';
+I[38][1][1][2] = 0;
+I[38][1][2] = new Array();
+I[38][1][2][0]='El sistema nervioso y los sentidos.';
+I[38][1][2][1]='Intenta otra vez';
+I[38][1][2][2] = 0;
+I[38][1][3] = new Array();
+I[38][1][3][0]='El sistema muscular.';
+I[38][1][3][1]='Intenta otra vez';
+I[38][1][3][2] = 0;
+I[38][2] = 0;
+
+I[39] = new Array();
+I[39][0]='La retroalimentaci&#243;n negativa consiste en';
+I[39][1] = new Array();
+I[39][1][0] = new Array();
+I[39][1][0][0]='Que el impulso nervioso pase a la siguiente neurona.';
+I[39][1][0][1]='Intenta otra vez';
+I[39][1][0][2] = 0;
+I[39][1][1] = new Array();
+I[39][1][1][0]='Estimulaci&#243;n de la secreci&#243;n hormonal por los cambios que la misma hormona produce.';
+I[39][1][1][1]='Intenta otra vez';
+I[39][1][1][2] = 0;
+I[39][1][2] = new Array();
+I[39][1][2][0]='La inhibici&#243;n de la secreci&#243;n hormonal por los cambios que la misma hormona produce.';
+I[39][1][2][1]='Correcto';
+I[39][1][2][2] = 1;
+I[39][1][3] = new Array();
+I[39][1][3][0]='Que el impulso nervioso estimule la secreci&#243;n hormonal.';
+I[39][1][3][1]='Intenta otra vez';
+I[39][1][3][2] = 0;
+I[39][2] = 0;
+
+I[40] = new Array();
+I[40][0]='La reproducci&#243;n en animales';
+I[40][1] = new Array();
+I[40][1][0] = new Array();
+I[40][1][0][0]='Es una reproducci&#243;n mediada por gametos.';
+I[40][1][0][1]='Intenta otra vez';
+I[40][1][0][2] = 0;
+I[40][1][1] = new Array();
+I[40][1][1][0]='Se produce por fecundaci&#243;n.';
+I[40][1][1][1]='Intenta otra vez';
+I[40][1][1][2] = 0;
+I[40][1][2] = new Array();
+I[40][1][2][0]='Genera una descendencia id&#233;ntica a los parentales.';
+I[40][1][2][1]='Intenta otra vez';
+I[40][1][2][2] = 0;
+I[40][1][3] = new Array();
+I[40][1][3][0]='Puede ser asexual.';
+I[40][1][3][1]='Correcto';
+I[40][1][3][2] = 1;
+I[40][2] = 0;
+
+I[41] = new Array();
+I[41][0]='La reproducci&#243;n asexual';
+I[41][1] = new Array();
+I[41][1][0] = new Array();
+I[41][1][0][0]='Es llevada a cabo por los animales hermafroditas.';
+I[41][1][0][1]='Intenta otra vez';
+I[41][1][0][2] = 0;
+I[41][1][1] = new Array();
+I[41][1][1][0]='Forma individuos sin variaci&#243;n gen&#233;tica.';
+I[41][1][1][1]='Correcto';
+I[41][1][1][2] = 1;
+I[41][1][2] = new Array();
+I[41][1][2][0]='Necesita la presencia de un &#243;vulo.';
+I[41][1][2][1]='Intenta otra vez';
+I[41][1][2][2] = 0;
+I[41][1][3] = new Array();
+I[41][1][3][0]='Se produce por fecundaci&#243;n.';
+I[41][1][3][1]='Intenta otra vez';
+I[41][1][3][2] = 0;
+I[41][2] = 0;
+
+I[42] = new Array();
+I[42][0]='En el desarrollo embrionario, despu&#233;s del estado de bl&#225;stula se produce';
+I[42][1] = new Array();
+I[42][1][0] = new Array();
+I[42][1][0][0]='La g&#225;strula.';
+I[42][1][0][1]='Correcto';
+I[42][1][0][2] = 1;
+I[42][1][1] = new Array();
+I[42][1][1][0]='La m&#243;rula.';
+I[42][1][1][1]='Intenta otra vez';
+I[42][1][1][2] = 0;
+I[42][1][2] = new Array();
+I[42][1][2][0]='La pupa.';
+I[42][1][2][1]='Intenta otra vez';
+I[42][1][2][2] = 0;
+I[42][1][3] = new Array();
+I[42][1][3][0]='El cigoto.';
+I[42][1][3][1]='Intenta otra vez';
+I[42][1][3][2] = 0;
+I[42][2] = 0;
+
+I[43] = new Array();
+I[43][0]='El desarrollo directo lo podemos encontrar en';
+I[43][1] = new Array();
+I[43][1][0] = new Array();
+I[43][1][0][0]='Saltamontes.';
+I[43][1][0][1]='Intenta otra vez';
+I[43][1][0][2] = 0;
+I[43][1][1] = new Array();
+I[43][1][1][0]='Estrellas de mar.';
+I[43][1][1][1]='Intenta otra vez';
+I[43][1][1][2] = 0;
+I[43][1][2] = new Array();
+I[43][1][2][0]='An&#233;lidos.';
+I[43][1][2][1]='Intenta otra vez';
+I[43][1][2][2] = 0;
+I[43][1][3] = new Array();
+I[43][1][3][0]='Ara&#241;as.';
+I[43][1][3][1]='Correcto';
+I[43][1][3][2] = 1;
+I[43][2] = 0;
+
+I[44] = new Array();
+I[44][0]='La organog&#233;nesis es el proceso de formaci&#243;n de ';
+I[44][1] = new Array();
+I[44][1][0] = new Array();
+I[44][1][0][0]='Tejidos a partir de c&#233;lulas indiferenciadas.';
+I[44][1][0][1]='Correcto';
+I[44][1][0][2] = 1;
+I[44][1][1] = new Array();
+I[44][1][1][0]='Bl&#225;stula.';
+I[44][1][1][1]='Intenta otra vez';
+I[44][1][1][2] = 0;
+I[44][1][2] = new Array();
+I[44][1][2][0]='Mesodermo con celoma.';
+I[44][1][2][1]='Intenta otra vez';
+I[44][1][2][2] = 0;
+I[44][1][3] = new Array();
+I[44][1][3][0]='El arqu&#233;nteron.';
+I[44][1][3][1]='Intenta otra vez';
+I[44][1][3][2] = 0;
+I[44][2] = 0;
+
+I[45] = new Array();
+I[45][0]='La fecundaci&#243;n en aves';
+I[45][1] = new Array();
+I[45][1][0] = new Array();
+I[45][1][0][0]='Es externa.';
+I[45][1][0][1]='Intenta otra vez';
+I[45][1][0][2] = 0;
+I[45][1][1] = new Array();
+I[45][1][1][0]='Es interna.';
+I[45][1][1][1]='Correcto';
+I[45][1][1][2] = 1;
+I[45][1][2] = new Array();
+I[45][1][2][0]='Es mediante espermat&#243;foros.';
+I[45][1][2][1]='Intenta otra vez';
+I[45][1][2][2] = 0;
+I[45][1][3] = new Array();
+I[45][1][3][0]='No necesita producir gametos.';
+I[45][1][3][1]='Intenta otra vez';
+I[45][1][3][2] = 0;
+I[45][2] = 0;
+
+I[46] = new Array();
+I[46][0]='El desarrollo de una mariposa es ';
+I[46][1] = new Array();
+I[46][1][0] = new Array();
+I[46][1][0][0]='Directo.';
+I[46][1][0][1]='Intenta otra vez';
+I[46][1][0][2] = 0;
+I[46][1][1] = new Array();
+I[46][1][1][0]='Indirecto complejo.';
+I[46][1][1][1]='Correcto';
+I[46][1][1][2] = 1;
+I[46][1][2] = new Array();
+I[46][1][2][0]='Indirecto, sin formaci&#243;n de pupa.';
+I[46][1][2][1]='Intenta otra vez';
+I[46][1][2][2] = 0;
+I[46][1][3] = new Array();
+I[46][1][3][0]='Por bipartici&#243;n.';
+I[46][1][3][1]='Intenta otra vez';
+I[46][1][3][2] = 0;
+I[46][2] = 0;
+
+I[47] = new Array();
+I[47][0]='La clonaci&#243;n es';
+I[47][1] = new Array();
+I[47][1][0] = new Array();
+I[47][1][0][0]='Un proceso natural por el que se obtienen muchas copias de ADN.';
+I[47][1][0][1]='Intenta otra vez';
+I[47][1][0][2] = 0;
+I[47][1][1] = new Array();
+I[47][1][1][0]='Un proceso natural por el que se obtienen mutantes o transg&#233;nicos.';
+I[47][1][1][1]='Intenta otra vez';
+I[47][1][1][2] = 0;
+I[47][1][2] = new Array();
+I[47][1][2][0]='Un proceso que se realiza para obtener ADN, c&#233;lulas, &#243;rganos o individuos iguales.';
+I[47][1][2][1]='Correcto';
+I[47][1][2][2] = 1;
+I[47][1][3] = new Array();
+I[47][1][3][0]='Un proceso prohibido por la Ley.';
+I[47][1][3][1]='Intenta otra vez';
+I[47][1][3][2] = 0;
+I[47][2] = 0;
+
+I[48] = new Array();
+I[48][0]='La clonaci&#243;n terap&#233;utica persigue';
+I[48][1] = new Array();
+I[48][1][0] = new Array();
+I[48][1][0][0]='La clonaci&#243;n humana.';
+I[48][1][0][1]='Intenta otra vez';
+I[48][1][0][2] = 0;
+I[48][1][1] = new Array();
+I[48][1][1][0]='El estudio del ADN humano.';
+I[48][1][1][1]='Intenta otra vez';
+I[48][1][1][2] = 0;
+I[48][1][2] = new Array();
+I[48][1][2][0]='La creaci&#243;n de c&#233;lulas u &#243;rganos para paliar los efectos de una enfermedad.';
+I[48][1][2][1]='Correcto';
+I[48][1][2][2] = 1;
+I[48][1][3] = new Array();
+I[48][1][3][0]='La creaci&#243;n de alimentos para evitar el hambre.';
+I[48][1][3][1]='Intenta otra vez';
+I[48][1][3][2] = 0;
+I[48][2] = 0;
+
+I[49] = new Array();
+I[49][0]='&#191;Cu&#225;l de estos procesos No es una forma de reproducci&#243;n asexual?';
+I[49][1] = new Array();
+I[49][1][0] = new Array();
+I[49][1][0][0]='La fecundaci&#243;n.';
+I[49][1][0][1]='Correcto';
+I[49][1][0][2] = 1;
+I[49][1][1] = new Array();
+I[49][1][1][0]='La escisi&#243;n.';
+I[49][1][1][1]='Intenta otra vez';
+I[49][1][1][2] = 0;
+I[49][1][2] = new Array();
+I[49][1][2][0]='La gemaci&#243;n.';
+I[49][1][2][1]='Intenta otra vez';
+I[49][1][2][2] = 0;
+I[49][1][3] = new Array();
+I[49][1][3][0]='La regeneraci&#243;n.';
+I[49][1][3][1]='Intenta otra vez';
+I[49][1][3][2] = 0;
+I[49][2] = 0;
+
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		Status[x] = new Array();
+		Status[x][0] = 0; // Question not done yet
+		Status[x][1] = new Array(); //for tracking whether answers chosen
+		for (var y=0; y<I[x][1].length; y++){
+			Status[x][1][y] = '0'; //Answers not chosen yet
+		}
+		Status[x][2] = 0; //Wrong tries at this question so far
+		Status[x][3] = 0; //For storing score out of one on this question
+	}
+}
+
+function UpdateQuestionStatus(QNum){
+	if (Status[QNum][2] >= Status[QNum][1].length-1){
+		Status[QNum][0] = 1;
+		for (var i=0; i<Status[QNum][1].length; i++){
+			if (Status[QNum][1][i] == '0'){
+				Status[QNum][1][i] = 'R';
+			}
+		}
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+	var NewNum = CurrQNum + ChangeBy;
+	if ((NewNum >= 0)&&(NewNum<I.length)){
+		CurrQNum = NewNum;
+		ShowQuestion(CurrQNum);
+	}
+	var CurrScore = '';
+	if ((ContinuousScoring == true)&&(EraseFeedback == true)){
+		CalculateScore();
+		var CurrScore = YourScoreIs + ' ' + Score + '%.';
+		WriteFeedback(CurrScore);
+	}
+}
+
+function BuildQuestion(QNum){
+	if (I[QNum][2] == 0){
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	else{
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += CheckButton;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	return Temp;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ddf7e4" text="#000033" link="#408080" vlink="#408080">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#ddf7e4" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+function ShowAllQs(){
+	var Output = '';
+	for (var i=0; i<I.length-1; i++){
+		Output = Output + BuildQuestion(i);
+		Output = Output + '<tr><td colspan="4"><hr></hr></td></tr>';
+	}
+	Output = Output + BuildQuestion(I.length-1);
+	Output = TableOpener + Output + TableCloser;
+	DisplayExercise(Output);
+}
+
+function ShowQuestion(QNum){
+//First, create the Q number readout at the top
+	var Readout = (QNum+1) + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	Readout = QButtonsOpener + Readout + QButtonsCloser;
+
+	var Output = BuildQuestion(QNum);
+
+	Output = TableOpener + Output + TableCloser;
+
+	DisplayExercise(Readout + Output);
+
+//Mark the answers already done
+	for (i=0; i<Status[QNum][1].length; i++){
+		if (Status[QNum][1][i] == 'R'){
+			MarkAnswer(QNum,i,true)
+		}
+		if (Status[QNum][1][i] == 'W'){
+			MarkAnswer(QNum,i,false)
+		}
+		if (Status[QNum][1][i] == 'C'){
+			CheckCheckbox(QNum,i);
+		}
+	}
+//Eliminate feedback from previous question
+	if (EraseFeedback == true){
+		WriteFeedback('');
+	}
+}
+
+function CheckMulti(QNum){
+	var TotWrong = 0;
+	var Output = '';
+	var TotAns = I[QNum][1].length;
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		var b = eval('BottomFrame.document.QForm.A_' + QNum + '_' + i);
+
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Status[QNum][1][i] = 'C';
+			}
+			else{
+				Status[QNum][1][i] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<br />' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (Status[QNum][0] == 0){
+		if (TotWrong > 0){
+			Status[QNum][2]++;
+		}
+		if (TotWrong == 0){
+			Status[QNum][0] = 1;
+//Calculate the score for this question as a floating-point fraction of 1
+			Status[QNum][3] =  ((Status[QNum][1].length - Status[QNum][2]) - 1) / (Status[QNum][1].length - 1);
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(QNum, ANum){
+	var Output = I[QNum][1][ANum][1];
+
+	if (Output==''){
+		if (I[QNum][1][ANum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's not been previously answered correctly
+	if (Status[QNum][0] == 0){
+//If it's a correct answer
+		if (I[QNum][1][ANum][2] == 1){
+			Status[QNum][0] = 1;//Mark the Q as done
+			Status[QNum][1][ANum] = 'R';
+			MarkAnswer(QNum, ANum, true);
+//Calculate the score for this question as a floating-point fraction of 1
+			var PossibleWrongs = 0;
+			for (var i=0; i<I[QNum][1].length; i++){
+				if (I[QNum][1][i][2] == 0){
+					PossibleWrongs++;
+				}
+			}
+
+			if (PossibleWrongs == 0){PossibleWrongs = 1;}
+
+			Status[QNum][3] = 1 - (Status[QNum][2]/PossibleWrongs);
+
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+		else{
+			if (Status[QNum][1][ANum] != 'W'){
+				Status[QNum][1][ANum] = 'W';
+				MarkAnswer(QNum, ANum, false);
+				Status[QNum][2]++; //increment wrong tries for this Q
+			}
+		}
+	}
+
+	UpdateQuestionStatus(QNum);
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function CalculateScore(){
+	var TriedQs = 0;
+	var TotalScore = 0;
+	for (var i=0; i<Status.length; i++){
+		if ((Status[i][2] > 0)||(Status[i][3] == 1)){
+			TriedQs++;
+			TotalScore += Status[i][3];
+		}
+	}
+	if (TriedQs == 0){
+		Score = 0;
+	}
+	else{
+		Score = (Math.floor(100 * (TotalScore/TriedQs)));
+	}
+}
+
+function MarkAnswer(QNum, ANum, Right){
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum).value = Mark;
+	}
+}
+
+function CheckCheckbox(QNum, ANum){
+	if (eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum).checked = true;
+	}
+}
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../../estilos/estilo.css">
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+<frameset rows="25%,*" onload="StartUp()" framespacing="0" border="0">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+
+
+
+</html>

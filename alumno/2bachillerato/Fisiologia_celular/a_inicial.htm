@@ -1,0 +1,507 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++)  
+{  if (document.examen[i].checked)    {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;    
+  }    if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(0,2)+" ";      }    }  
+  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 16.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas.\r incorrectas:"+incorrectas;alert(mensaje);}
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/fisiologia_celular.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td  valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="98" valign="top" rowspan="2">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+                                <tr>
+                                  <td width="100%" align="center">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/catabolismo.jpg" width="105" height="83"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/esquema_global_completo.jpg" width="105" height="79"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/ciclo_de_krebs.jpg" width="107" height="125"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/oxidacion_completo.jpg" width="105" height="80"></td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/energia_completo.jpg" width="105" height="125"></td>
+                                </tr>
+                                <tr>
+                                      <td width="100%" align="center">
+                                      <img border="0" src="miniaturas/glucolisis_completo.jpg" width="105" height="135"></td>
+                                </tr>
+                              </table>
+                              </td>
+                      <td width="558" valign="top" rowspan="2"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDAD 
+                              INICIAL </font><span class="txtnegro"></span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1" ></td>
+                            <td width="522" valign="top"> 
+                              <table width="503" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td rowspan="2" width="4">&nbsp;</td>
+                                  <td rowspan="2" width="481" valign="top"> 
+                                    <br>
+									<form name="examen" method="post" action="">
+                                      <p class="txtnegro" ><span class="txt">1.- 
+                                        &iquest;Qu&eacute; es el metabolismo?</span></p>
+                                      <p class="txt" style="text-align: left">a.- 
+                                        <input type="radio" name="1" value="2">
+                                        La transformaci&oacute;n de materia en 
+                                        energ&iacute;a.<br>
+                                        b.- 
+                                        <input type="radio" name="1" value="1">
+                                        El conjunto de transformaciones qu&iacute;micas 
+                                        y procesos energ&eacute;ticos de un ser 
+                                        vivo.<br>
+                                        c.- 
+                                        <input type="radio" name="1" value="3">
+                                        La transformaci&oacute;n de energ&iacute;a 
+                                        en materia. </p>
+                                      <p class="txt"> <span class="txtnegro">2.- 
+                                        &iquest;Qu&eacute; es el catabolismo?</span></p>
+                                      <p align="left"><span class="txt">a.- 
+                                        <input type="radio" name="2" value="1">
+                                        El conjunto de reacciones qu&iacute;micas 
+                                        de degradaci&oacute;n oxidativa de mol&eacute;culas 
+                                        con producci&oacute;n de energ&iacute;a. 
+                                        <br>
+                                        b.- 
+                                        <input type="radio" name="2" value="2">
+                                        El conjunto de reacciones qu&iacute;micas 
+                                        de construcci&oacute;n de mol&eacute;culas 
+                                        complejas a partir de mol&eacute;culas 
+                                        simples, en las cuales se requiere energ&iacute;a 
+                                        qu&iacute;mica. <br>
+                                        c.- 
+                                        <input type="radio" name="2" value="2">
+                                        Conjunto de mol&eacute;culas que intervienen 
+                                        en el metabolismo.</span><br>
+                                      </p>
+                                      <p class="txt"><span class="txtnegro">3.- 
+                                        &iquest;Para qu&eacute; se necesitan en 
+                                        las reacciones metab&oacute;licas los 
+                                        nucle&oacute;tidos?</span></p>
+                                      <p class="txt" style="text-align: left">a.- 
+                                        <input type="radio" name="3" value="2">
+                                        Para facilitar el transporte de sustancias 
+                                        en las rutas metab&oacute;licas.<br>
+                                        b.- 
+                                        <input type="radio" name="3" value="2">
+                                        Para dar energ&iacute;a a las reacciones 
+                                        qu&iacute;micas.<br>
+                                        c.- 
+                                        <input type="radio" name="3" value="1">
+                                        Para facilitar la oxidaci&oacute;n y reducci&oacute;n 
+                                        de los metabolitos de las rutas metab&oacute;licas.</p>
+                                      <p class="txtnegro">4.- Toda oxidaci&oacute;n 
+                                        requiere una reducci&oacute;n, por lo 
+                                        que los procesos completos metab&oacute;licos 
+                                        son de tipo:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="4" value="2">
+                                        Reacciones de oxidaci&oacute;n.<br>
+                                        b.- 
+                                        <input type="radio" name="4" value="1">
+                                        Reacciones redox. <br>
+                                        c.- 
+                                        <input type="radio" name="4" value="2">
+                                        Reacciones de reducci&oacute;n.</p>
+                                      <p class="txtnegro">5.- La glucosa y los 
+                                        &aacute;cidos grasos son degradados en 
+                                        la c&eacute;lula mediante la:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="5" value="2">
+                                        Gluc&oacute;lisis. <br>
+                                        b.- 
+                                        <input type="radio" name="5" value="2">
+                                        &szlig;-oxidaci&oacute;n.<br>
+                                        c.- 
+                                        <input type="radio" name="5" value="1">
+                                        Gluc&oacute;lisis y &szlig;-oxidaci&oacute;n.</p>
+                                      <p class="txtnegro">6.- La gluc&oacute;lisis 
+                                        se realiza en:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="6" value="2">
+                                        La membrana mitocondrial.<br>
+                                        b.- 
+                                        <input type="radio" name="6" value="2">
+                                        La matriz mitocondrial.<br>
+                                        c.- 
+                                        <input type="radio" name="6" value="1">
+                                        El citoplasma de la c&eacute;lula. <br>
+                                      </p>
+                                      <p class="txtnegro">7.- Cuando los az&uacute;cares 
+                                        se degradan en condiciones anaerobias 
+                                        (en bacterias o c&eacute;lulas eucariotas) 
+                                        la reacci&oacute;n se llama:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="7" value="1">
+                                        Fermentaci&oacute;n. <br>
+                                        b.- 
+                                        <input type="radio" name="7" value="2">
+                                        Gluc&oacute;lisis. <br>
+                                        c.- 
+                                        <input type="radio" name="7" value="2">
+                                        Ciclo de Krebs.</p>
+                                      <p class="txt"><span class="txtnegro">8.- 
+                                        La oxidaci&oacute;n del &aacute;cido pir&uacute;vico 
+                                        procedente de la gluc&oacute;lisis hasta 
+                                        Acetil-CoA se produce en:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="8" value="2">
+                                        El citoplasma.<br>
+                                        b.- 
+                                        <input type="radio" name="8" value="1">
+                                        En la matriz mitocondrial.<br>
+                                        c.- 
+                                        <input type="radio" name="8" value="2">
+                                        En las crestas mitocondriales. </p>
+                                      <p class="txtnegro">9.- El metabolismo de 
+                                        los az&uacute;cares con la gluc&oacute;lisis, 
+                                        el ciclo de Krebs y la cadena respiratoria 
+                                        arroja un balance energ&eacute;tico de:</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="9" value="2">
+                                        20 mol&eacute;culas de ATP.<br>
+                                        b.- 
+                                        <input type="radio" name="9" value="2">
+                                        32 mol&eacute;culas de ATP.<br>
+                                        c.- 
+                                        <input type="radio" name="9" value="1">
+                                        36 mol&eacute;culas de ATP. </p>
+                                      <p class="txtnegro">10.- Las bacterias del 
+                                        grupo Lactobacillus son:?</p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="10" value="2">
+                                        Fermentadoras ac&eacute;ticas. <br>
+                                        b.- 
+                                        <input type="radio" name="10" value="1">
+                                        Fermentadoras l&aacute;cticas. <br>
+                                        c.- 
+                                        <input type="radio" name="10" value="2">
+                                        Fermentadoras et&iacute;licas.</p>
+                                      <p class="txt"><span class="txtnegro">11.- 
+                                        La oxidaci&oacute;n de los &aacute;cidos 
+                                        grasos para obtenci&oacute;n de energ&iacute;a 
+                                        se produce en:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="11" value="2">
+                                        El citoplasma. <br>
+                                        b.- 
+                                        <input type="radio" name="11" value="2">
+                                        Los cloroplastos.<br>
+                                        c.- 
+                                        <input type="radio" name="11" value="1">
+                                        La mitocondria. </p>
+                                      <p class="txtnegro">12.- La clorofila es:</p>
+                                      <p class="txt" style="text-align: left">a.- 
+                                        <input type="radio" name="12" value="1">
+                                        Es el pigmento b&aacute;sico en todos 
+                                        los seres fotosint&eacute;ticos eucariotas 
+                                        y procariotas. <br>
+                                        b.- 
+                                        <input type="radio" name="12" value="2">
+                                        Es el pigmento b&aacute;sico en diatomeas 
+                                        y protozoarios. <br>
+                                        c.- 
+                                        <input type="radio" name="12" value="2">
+                                        Es el pigmento b&aacute;sico en vegetales 
+                                        superiores.</p>
+                                      <p class="txt"><span class="txtnegro">13.- 
+                                        La clorofila P680 es:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="13" value="2">
+                                        Caracter&iacute;stica del Fotosistema 
+                                        I. <br>
+                                        b.- 
+                                        <input type="radio" name="13" value="1">
+                                        Caracter&iacute;stica del Fotosistema 
+                                        II. <br>
+                                        c.- 
+                                        <input type="radio" name="13" value="2">
+                                        Caracter&iacute;stica del Fotosistema 
+                                        I y II.</p>
+                                      <p class="txt"><span class="txtnegro">14.- 
+                                        La fase oscura de la fotos&iacute;ntesis 
+                                        se realiza en:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="14" value="2">
+                                        La membrana interna de los cloroplastos.<br>
+                                        b.- 
+                                        <input type="radio" name="14" value="2">
+                                        La membrana de los tilacoides. <br>
+                                        c.- 
+                                        <input type="radio" name="14" value="1">
+                                        En el estroma.</p>
+                                      <p class="txt"> <span class="txt"></span><span class="txtnegro">15.- 
+                                        Para fabricar una mol&eacute;cula de hexosa 
+                                        en la fotos&iacute;ntesis se necesita:</span></p>
+                                      <p class="txt">a.- 
+                                        <input type="radio" name="15" value="1">
+                                        6 mol&eacute;culas de CO<font size="-3">2</font> 
+                                        + 12 NADPH + 12 H<sup>+</sup> + 18 ATP. <br>
+                                        b.- 
+                                        <input type="radio" name="15" value="2">
+                                        3 mol&eacute;culas de CO<font size="-3">2</font> 
+                                        + 6 NADPH + 12 H<sup>+</sup> + 18 ATP. <br>
+                                        c.- 
+                                        <input type="radio" name="15" value="2">
+                                        6 mol&eacute;culas de CO<font size="-3">2</font> 
+                                        + 6 NADPH + 6 H<sup>+</sup> + 9 ATP.</p>
+                                      <p class="txt"><span class="txtnegro">16.- 
+                                        La quimios&iacute;ntesis:</span></p>
+                                      <p class="txt" style="text-align: left">a.- 
+                                        <input type="radio" name="16" value="2">
+                                        Es la s&iacute;ntesis de materia qu&iacute;mica.<br>
+                                        b.- 
+                                        <input type="radio" name="16" value="2">
+                                        Es la nutrici&oacute;n aut&oacute;trofa 
+                                        que no depende de la luz, sino de la energ&iacute;a 
+                                        qu&iacute;mica que se desprende en una 
+                                        reducci&oacute;n que realiza el organismo 
+                                        a partir de sustancias inorg&aacute;nicas 
+                                        complejas. <br>
+                                        c.- 
+                                        <input type="radio" name="16" value="1">
+                                        Es la nutrici&oacute;n aut&oacute;trofa 
+                                        que no depende de la luz, sino de la energ&iacute;a 
+                                        qu&iacute;mica que se desprende en una 
+                                        oxidaci&oacute;n que realiza el organismo 
+                                        a partir de sustratos como sustancias 
+                                        inorg&aacute;nicas sencillas.</p>
+                                      <p class="txt"> <span class="txt"> 
+                                        <input type="reset" name="Borrar" value="Borrar">
+                                        <input type="button" name="calificacion" value="Calificación" onClick="nota(this.form)">
+                                        </span></p>
+                                    </form>
+                                    <p align="right" class="txtnegrolink"><a href="contenidos.htm" class="txtnegrolink">siguiente</a></p>
+                                  </td>
+								  <td rowspan="2" width="4">&nbsp;</td>
+								  </tr>
+								  </table>
+                            </td>
+                            <td width="1">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                              <tr>
+                                <td width="100%" align="center">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/fase_no_ciclica.jpg" width="105" height="77"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/fase_luminosa_las_dos.jpg" width="105" height="85"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/mitocondria_funcionamiento.jpg" width="105" height="115"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/ciclo_de_calvin.jpg" width="105" height="109"></td>
+                              </tr>
+                              <tr>
+                                <td width="100%" align="center">
+                                <img border="0" src="miniaturas/pag189_catabolismo_con.jpg" width="105" height="125"></td>
+                              </tr>
+                              <tr>
+                                  <td width="100%" align="center">
+                                  <img border="0" src="miniaturas/transporte_completo.jpg" width="105" height="129"></td>
+                              </tr>
+                            </table>
+                            </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<br>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/1bachillerato/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/organizacion_vida.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="538" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="209" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (1/11) - <a href="contenidos2.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <p class="txtnegro">&nbsp;</p>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">1.- LA TEOR&Iacute;A CELULAR:</p>
+                              <div align=""center>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">La idea de que los 
+                                              seres vivos est&aacute;n 
+                                            constituidos 
+                                              por c&eacute;lulas y que cada una 
+                                              de ellas proviene de otra, que ya 
+                                              exist&iacute;a con anterioridad, 
+                                              es relativamente reciente. Es en 
+                                              la segunda mitad del siglo XIX cuando 
+                                              se enuncia por vez primera la <span class="txtnegro">teor&iacute;a 
+                                              celular</span>. </p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table></div>
+							  <BR><div align=""center>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt"> 
+                                            <p class="txt">Su formulaci&oacute;n 
+                                              se debi&oacute; fundamentalmente 
+                                              a que para la visualizaci&oacute;n 
+                                              de las c&eacute;lulas era imprescindible 
+                                              la utilizaci&oacute;n de instrumentos 
+                                              &oacute;pticos que aumentaran muchas 
+                                              veces el tama&ntilde;o de la c&eacute;lula 
+                                              (invisible a simple vista). En un 
+                                              primer momento fueron lentes simples 
+                                              superpuestas, m&aacute;s tarde surgi&oacute; 
+                                              el microscopio &oacute;ptico 
+                                              y por &uacute;ltimo el microscopio 
+                                              electr&oacute;nico. Estos fueron 
+                                              los instrumentos que posibilitaron 
+                                              a los cit&oacute;logos explicar 
+                                              y dar a conocer a la comunidad cient&iacute;fica 
+                                              sus ideas y teor&iacute;as, que 
+                                              hoy denominamos <span class="txtnegro">teor&iacute;a 
+                                              celular</span>.</p>
+                                            </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table></div>
+							  <br>
+                              <div align="center"><img src="imagenes/opticos.jpg" width="137" height="200" alt="&quot;Microscopio &Oacute;ptico&quot;"> 
+                                <img src="imagenes/electronico.gif" width="177" height="200" alt="&quot;Microscopio Electr&oacute;nico&quot;"> 
+                                <img src="imagenes/primitivo.jpg" width="134" height="200" alt="&quot;Microscopio primitivo&quot;"> 
+                                <img src="imagenes/hooke.jpg" width="194" height="200" alt="&quot;Microscopio de Hooke&quot;"> 
+                                <img src="imagenes/Leeuwenhoek.jpg" width="295" height="114" alt="&quot;Microscopio de Leeuwenhoek&quot;"><br>
+                                <br>
+                              </div>
+                              <p><a name="act_inves1"></a></p>
+                              <div align="center"> 
+                                <table width="90%" border="8" bgcolor="#397939" cellpadding="8" bordercolor="#FB9F44" align="center">
+                                  <tr> 
+                                    <td class="ttBIOSFERA" width="642">Actividad 
+                                      1 de investigaci&oacute;n: Los cient&iacute;ficos 
+                                      y la teor&iacute;a celular</td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Introducci&oacute;n: 
+                                      <font size="-2"> Antes de continuar el recorrido 
+                                      por los contenidos de este tema, conviene 
+                                      conocer la historia de los descubrimientos, 
+                                      as&iacute; como los cient&iacute;ficos m&aacute;s 
+                                      relevantes que han contribuido al 
+                                      conocimiento actual de la citolog&iacute;a. 
+                                      Gracias a ellos esta ciencia es hoy la base 
+                                      de aquellas otras ciencias que basan su 
+                                      estudio en el campo de la biolog&iacute;a.</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Tarea: <font size="-2">Busca informaci&oacute;n 
+                                        en la web sobre Rober Hooke, Anton van 
+                                        Leeuwenhoek, Schleiden, Schwann, Virchow, 
+                                        Ramon y Cajal, etc. y describe sus aportaciones 
+                                        al conocimiento de la c&eacute;lula y 
+                                        sus principios fundamentales de estructura 
+                                        y funcionamiento. Con esta informaci&oacute;n 
+                                        realiza un trabajo en word. El trabajo 
+                                        debe contener una s&iacute;ntesis de la 
+                                        labor de cada cient&iacute;fico y su aportaci&oacute;n 
+                                        al campo de la citolog&iacute;a y al establecimiento 
+                                        de la teor&iacute;a celular. El trabajo 
+                                        ser&aacute; individual y el mejor se expondr&aacute; 
+                                        en clase por su autor.</font></p>
+                                      <p></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA"> 
+                                      <p>Recursos: <span class="ttBIOSFERA"><font size="-2">A 
+                                        continuaci&oacute;n te indicamos una serie 
+                                        de p&aacute;ginas web. Han sido seleccionadas 
+                                        por su contenido ajustado a la tarea que 
+                                        te proponemos. Son de f&aacute;cil comprensi&oacute;n 
+                                        y te ofrecen recursos e ilustraciones 
+                                        que facilitar&aacute;n tu tarea. Su informaci&oacute;n 
+                                        est&aacute; clasificada en diversos contenidos: 
+                                        teor&iacute;a celular y diversos cient&iacute;ficos 
+                                        relevantes en este campo:</font></span></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        la teor&iacute;a celular:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://www.invivo.fiocruz.br/celula/teoria_02.htm" target="_blank"><font color="#FFFFCC">A 
+                                        C&eacute;lula.</font></a></font><br>
+                                        <font size="-2"><a href="http://148.216.10.83/biologiaQFB1/teoria_celular.htm" target="_blank"><font color="#FFFFCC">Teor&iacute;a 
+                                        celular</font></a><br>
+                                        <a href="http://www.biologia.arizona.edu/cell/tutor/cells/02q.html" target="_blank"><font color="#FFFFCC">Gu&iacute;a 
+                                        del estudio celular.</font></a></font><br>
+                                        <font size="-2"><a href="http://enciclopedia.us.es/index.php/Biolog%EDa_celular" target="_blank"><font color="#FFFFCC">Biolog&iacute;a 
+                                        celular - Enciclopedia Libre</font></a><br>
+                                        <a href="http://www.cognoscere.hpg.ig.com.br/biologia/teoria_celular.html" target="_blank"><font color="#FFFFCC">Teor&iacute;a 
+                                        Celular por Shleiden y Schwann</font></a></font><br>
+                                        <font size="-2"><a href="http://enciclopedia.us.es/index.php/Teor%EDa_celular" target="_blank"><font color="#FFFFCC">Teor&iacute;a 
+                                        celular - Enciclopedia Libre</font></a><br>
+                                        <a href="http://enciclopedia.us.es" target="_blank"><font color="#FFFFCC">Teor&iacute;a 
+                                        celular: art&iacute;culo de la enciclopedia 
+                                        libre.</font></a><br>
+                                        <a href="http://www.arrakis.es/%7Elluengo/celula.html" target="_blank"><font color="#FFFFCC">C&eacute;lula.</font></a></font></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        Robert Hooke:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://www.ucmp.berkeley.edu/history/hooke.html" target="_blank"><font color="#FFFFCC">Robert 
+                                        Hooke </font></a></font></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        Antoni van Leeuwenhoek:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://www.iespana.es/natureduca/biog_leeuwenhoek.htm" target="_blank"><font color="#FFFFCC">BIOGRAF&Iacute;AS: 
+                                        Leeuwenhoek, Antoni van.</font></a><br>
+                                        <a href="http://entomologia.net/anton.htm" target="_blank"><font color="#FFFFCC">Entomolog&iacute;a. 
+                                        Biograf&iacute;a. Anton Van Leeuwenhoek.</font></a><br>
+                                        <a href="http://www.isciii.es/museo/crono/ed/edc2171.html" target="_blank"><font color="#FFFFCC">EL 
+                                        MICROSCOPIO DE LEEUWENHOEK.</font></a><br>
+                                        <a href="http://www.isciii.es/museo/crono/ed/edc2170.html" target="_blank"><font color="#FFFFCC">LEEUWENHOEK.</font></a><br>
+                                        <a href="http://www.escribeyloedito.com/artista.htm" target="_blank"><font color="#FFFFCC">Biograf&iacute;a 
+                                        Leeuwenhoek, Antoni Van.</font></a><br>
+                                        <a href="http://danival.org/gente/leeuwenhoek.html" target="_blank"><font color="#FFFFCC">Antoni 
+                                        van Leeuwenhoek.</font></a></font><br>
+                                        <font size="-2"><a href="http://enciclopedia.us.es/index.php/Anton_van_Leeuwenhoek" target="_blank"><font color="#FFFFCC">Anton 
+                                        van Leeuwenhoek: art&iacute;culo de la 
+                                        enciclopedia libre</font></a><span class="ttBIOSFERA"><br>
+                                        </span><a href="http://espanol.geocities.com/ueb2001/biografias/leeuwenhoek.htm" target="_blank"><font color="#FFFFCC">Sobre 
+                                        Leeuwenhoek</font></a></font><br>
+                                        <font size="-2"><a href="http://web.usal.es/%7Ejralonso/web2001/Historiaweb.htm" target="_blank"><font color="#FFFFCC">BIOTA.</font></a><br>
+                                        <a href="http://www.uniovi.es/bos/Asignaturas/TecnicasImagen/fotonica/utilidades.htm" target="_blank"><font color="#FFFFCC">Leeuwenhock, 
+                                        cient&iacute;ficos, famosos, biograf&iacute;a, 
+                                        bibliograf&iacute;a, etc. </font></a><br>
+                                        <a href="http://www.ugr.es/%7Edptomic/enlaces.htm" target="_blank"><font color="#FFFFCC">Dr. 
+                                        Leeuwenhoek</font></a><br>
+                                        <a href="http://www.csic.es/hispano/patrimo/micro1/microevo.htm" target="_blank"><font color="#FFFFCC">MUSEO.</font></a></font></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        Shleiden:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://enciclopedia.us.es/wiki.phtml?title=Mattias%2BSchleiden" target="_blank"><font color="#FFFFCC">Mattias 
+                                        Schleiden: art&iacute;culo de la enciclopedia 
+                                        libre.</font></a><br>
+                                        <a href="http://www.danival.org/_defgal.php?pr=9500personajes_-schleide.html" target="_blank"><font color="#FFFFCC">Matthias 
+                                        Jakob Schleide.</font></a><br>
+                                        <a href="http://www.mailxmail.com/curso/excelencia/historia_biologia/capitulo4.htm" target="_blank"><font color="#FFFFCC">HISTORIA 
+                                        DE LA TEOR&Iacute;A CELULAR por Mar&iacute;a 
+                                        Paula Ber&oacute;n.</font></a><br>
+                                        <a href="http://www.unav.es/search*spi/aSchleiden,%2BMatthias%2BJakob/aschleiden%2Bmatthias%2Bjakob/-2,-1,0,B/browse" target="_blank"><font color="#FFFFCC">Schleiden</font></a><br>
+                                        <a href="http://escuela.med.puc.cl/publ/HistoriaMedicina/SigloXIXTeoriaCelular.html" target="_blank"><font color="#FFFFCC">Apuntes 
+                                        de Historia de la Medicina.</font></a></font></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        Rudolf Virchow:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://www.universalia.es/cas/2003/libro/virchow.php" target="_blank"><font color="#FFFFCC">Rudolf 
+                                        Virchow. Biograf&iacute;a.</font></a><br>
+                                        <a href="http://www.historiadelamedicina.org/virchow.html" target="_blank"><font color="#FFFFCC">Ep&oacute;nimos 
+                                        m&eacute;dicos: Rudof Virchow.</font></a><br>
+                                        <a href="http://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0212-71992002001200011&lng=en&nrm=iso&tlng=es" target="_blank"><font color="#FFFFCC">VIRCHOW, 
+                                        RUDOLF Biograf&iacute;a.</font></a></font></p>
+                                      <p class="ttBIOSFERA"><font size="-2">Sobre 
+                                        Ram&oacute;n y Cajal:</font></p>
+                                      <p class="ttBIOSFERA"><font size="-2"><a href="http://www.reinodelosmallos.com" target="_blank"><font color="#FFFFCC">Monogr&aacute;fico 
+                                        Cajal entero.</font></a><br>
+                                        <a href="http://cajal.unizar.es/sp/bio/biograf.html" target="_blank"><font color="#FFFFCC">Biograf&iacute;a 
+                                        de Santiago Ramon y Cajal.</font></a><br>
+                                        <a href="http://www.redaragon.com/cultura/ramonycajal/biografia.asp" target="_blank"><font color="#FFFFCC">RedArag&oacute;n/ 
+                                        Arte y Cultura/ Ramon y Cajal.</font></a></font></p>
+                                    </td>
+                                  </tr>
+                                  <tr> 
+                                    <td class="ttBIOSFERA">Evaluaci&oacute;n: 
+                                      <font size="-2"> Los criterios para evaluar 
+                                      este trabajo escrito se basar&aacute;n en 
+                                      la capacidad de s&iacute;ntesis, de redacci&oacute;n, 
+                                      de esquematizaci&oacute;n y clasificaci&oacute;n 
+                                      de la informaci&oacute;n. Tambi&eacute;n 
+                                      en la claridad y rigor en el lenguaje cient&iacute;fico, 
+                                      as&iacute; como en la calidad y originalidad 
+                                      de la presentaci&oacute;n del trabajo en 
+                                      word.</font></td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <br>
+                              <div align="center">
+<table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><font class="txtnegrolink"> <a href="activ1.htm"><span class="txtnegrolink">Actividad 
+                                        1</span></a></font> <a href="activ1.htm"><img src="imagenes/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              <BR></div>
+							  <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">Con la ayuda de la t&eacute;cnica 
+                                            y de los cient&iacute;ficos del siglo 
+                                            XVII, XVIII, XIX y XX se lleg&oacute; 
+                                            a establecer la teor&iacute;a celular 
+                                            con sus principios:</p>
+                                          <ol>
+                                            <li> <span class="txtnegro">La c&eacute;lula 
+                                              es la unidad estructural de los 
+                                              seres vivos</span>. Todos los seres 
+                                              vivos est&aacute;n formados por 
+                                              una o m&aacute;s de una c&eacute;lula.<br>
+                                            </li>
+                                            <li> <span class="txtnegro">La c&eacute;lula 
+                                              es la unidad funcional de los seres 
+                                              vivos</span>. Es la m&iacute;nima 
+                                              unidad de materia que puede llevar 
+                                              a cabo las funciones b&aacute;sicas 
+                                              de un ser vivo.<br>
+                                            </li>
+                                            <li> <span class="txtnegro">Toda c&eacute;lula 
+                                              proviene de otra preexistente</span>.</li>
+                                          </ol>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div align="center"><BR>
+                              </div>
+                              <p align="right"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (1/11) - <a href="contenidos2.htm" class="txtnegrolink">siguiente</a></span></p>
+                              </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

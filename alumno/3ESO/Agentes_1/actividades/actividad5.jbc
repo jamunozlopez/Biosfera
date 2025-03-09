@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Aguas salvajes&lt;center&gt;&lt;img src=&quot;../img/aguasalv.gif&quot; alt=&quot;aguasalv.gif&quot; width=&quot;160&quot; height=&quot;106&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Las aguas salvajes son</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aguas con cauce fijo y caudal intermitente</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Aguas con cauce intermitente y caudal fijo</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Cauce y caudal intermitentes</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Caudal intermitente y no encauzadas</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las aguas salvajes, sobre todo, producen</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Meteorización</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Erosión</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Transporte</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Sedimentación</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La acción geológica de las aguas salvajes es favorecida por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El viento</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>La vegetación</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Los seres vivos</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>La fuerza de la gravedad</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las chimeneas de hadas se producen en</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Terrenos blandos</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Terrenos duros</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Terrenos homogéneos</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Terrenos heterogéneos</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las cárcavas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tienen forma de V</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Se producen sobre terrenos duros</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se producen en zonas con mucha vegetación</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Se producen en terrenos heterogéneos</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las aguas salvajes son típicas de</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Santander, por tener un clima subdesértico</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Lugo, por tener un clima muy lluvioso</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Almería, por tener un clima subdesértico</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Alicante, por tener un clima muy lluvioso</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En la fotografía aparece &lt;center&gt;&lt;img src=&quot;../img/chimene1.jpg&quot; alt=&quot;chimene1.jpg&quot; width=&quot;200&quot; height=&quot;133&quot; border=&quot;0&quot;&gt;&lt;/img&gt;&lt;/center&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Chimeneas de hadas</text>
+<correct>1</correct>
+<feedback>¡Bien hecho!</feedback>
+</answer>
+<answer>
+<text>Lapiaz</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Cárcava</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+<answer>
+<text>Desierto pedregoso</text>
+<correct>0</correct>
+<feedback>Incorrecto, intenta otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Su puntuación es</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption></next-ex-caption>
+<back-caption>&lt;Anterior=</back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>../autoevaluacion.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

@@ -1,0 +1,361 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/titulo.gif"></td>
+                    </tr>
+                  </table>
+				   </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF" valign="top"> 
+                            <td> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td width="557" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDADES DE INVESTIGACI&Oacute;N</font> 
+                                  </td>                                 
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6" bgcolor="#E6FFE6">
+                                <tr>
+								<td height="19" bgcolor="#E6FFE6"> 
+                                  </td> 
+                                  <td height="300"><br> 
+                                    <p><font class="txtnegro">Actividad de Investigación 1<br><br> Detección precoz de anomalías genéticas
+                                      </font></p>
+									<dir>
+                                    <p><font class="txt">
+									La amniocentesis es una técnica que consiste en extraer 
+									células de un feto que está desarrollándose, para ser 
+									cultivadas y analizadas en laboratorio. Se extraen células 
+									que están en el líquido amniótico, atravesando los tejidos 
+									de la madre.
+									</p>	
+									<p><font class="txt">	
+										En esta dirección de la 
+										<a href="http://www.biologia.arizona.edu/human/act/karyotyping/karyotyping2.html" class="txtnegrolink" target="_blank">
+										facultad de Biología de la 
+										Universidad de Arizona</a> tienes un historial médico 
+										de un feto al que se le ha practicado una 
+										amniocentesis; es el paciente A.
+									</p>	
+									
+									<p><font class="txt">	
+										Primero debes completar el cariotipo del feto, 
+										para lo cuál debes colocar cada cromosoma aislado 
+										que te ofrecen arriba a la izquierda, en su par 
+										correspondiente (la forma de colocarlo es simplemente 
+										presionando en alguno de los cromosomas que están 
+										subrayados en azul). Si te equivocas no te preocupes 
+										porque te darán pistas para que aciertes. Tienes 
+										que colocar cinco cromosomas para completar el cariotipo.											
+									</p>
+									
+									<p><font class="txt">
+										Según los vas colocando, anota en este recuadro
+										a qué par (número) corresponden:
+										<br><input type="text" size="30">
+									</p>	
+									
+									<p><font class="txt">
+										Si los has colocado bien los pares de cromosomas 
+										habrás llegado a una 
+										<a href="http://www.biologia.arizona.edu/human/act/karyotyping/patient_a/final_noform.html" class="txtnegrolink" target="_blank">
+										página</a> donde te felicitan por 
+										haber acertado; debajo de todo en esa página tienes 
+										el cariotipo completo del feto. Obsérvalo y anota lo 
+										que tiene de raro:
+										<br><input type="text" size="30">
+									</p>
+									
+									<p><font class="txt">
+										En esa misma página, hacia la mitad tienes un cuadro 
+										donde vienen recogidas algunas enfermedades humanas
+										 debidas a la variación en el número de cromosomas 
+										 (= mutaciones genómicas). ¿Cuál es la enfermedad del feto?.
+										  Anótalo en el recuadro:
+										  <br><input type="text" size="30">
+										  <br><br>
+										  En la siguiente página Web puedes leer 
+                                    más sobre esa enfermedad: </font>
+									</p>
+                                    <p class="MsoNormal">
+                                    <a class="txtnegrolink" target="_blank" href="http://www.sindromedown.net/index.php?idMenu=6&idIdioma=1">
+									Síndrome de Down</a>.</p>
+                                    <p>&nbsp;</p>
+									<br>
+										
+									
+									
+									</dir>		
+									<p><font class="txtnegro">
+                                    <a name="Actividad_de_Investigación_2">Actividad de Investigación 2</a><br> 
+									<br>CÓMO SE PUEDE DETERMINAR LA SECUENCIA 
+									DEL DNA A PARTIR DE UNA PROTEÍNA.
+                                      </font></p>
+									<dir>  
+                                    <p><font class="txt">En esta página de la 
+									<a class="txtnegrolink" target="_blank" href="http://alacima.uprrp.edu/alfa/materiales%20curriculares/Genetica_10-12/ComosepuededeterminarlasecuenciaREV.pdf">
+									Alianza para el Aprendizaje de Ciencias y 
+									Matemáticas de Puerto Rico</a> tienes una actividad de investigación muy interesante.
+									<br>
+									</dir>
+									
+									
+                                    <br>
+									
+									<p><font class="txtnegro">
+                                    <a name="Actividad_de_Investigación_3">Actividad de Investigación 3</a><br> 
+									<br>La hemofilia
+                                      </font></p>
+									<dir>  
+                                    <p><font class="txt">En la web de&nbsp;
+									<a href="http://www.ncbi.nlm.nih.gov/omim" class="txtnegrolink" target="_blank">
+									 OMIM 
+									</a>tienes un buscador de enfermedades genéticas; introduce la 
+									palabra "hemophilia", sin las comillas, que es el nombre en 
+									inglés de la hemofilia. Te devolverá una tabla en la que 
+									verás dos tipos de hemofilia, la A  y la B; en la última 
+									columna, "location", el primer carácter te indicará en 
+									cuál o cuáles cromosomas se encuentran genes relacionados 
+									con esa enfermedad, y la posición relativa del gen en el 
+									cromosoma. Anota a qué cromosoma corresponde el gen. 
+									¿Qué características tiene ese cromosoma?. ¿Tiene esto 
+									alguna relación con el hecho de que esta enfermedad 
+									afecta de forma diferente a mujeres y a varones?.
+									
+									<p><font class="txt">Busca el cromosoma donde está 
+									la hemofilia en esta otra página de la web del   
+									<a href="http://www.ornl.gov/sci/techresources/Human_Genome/posters/chromosome/" class="txtnegrolink" target="_blank">
+									 Human Genome 
+									</a>
+									pulsa sobre él y llegarás a otra página con una representación 
+									en pequeño del cromosoma; pulsando sobre él con el botón derecho 
+									del ratón podrás aumentarlo de tamaño hasta que puedas leer el 
+									nombre de la enfermedad; bajando hacia abajo llegarás a la 
+									localización aproximada de los genes responsables de la hemofilia. 
+									Según bajas verás muchas otras enfermedades que, por el hecho de 
+									estar en el cromosoma X, van a afectar de forma diferente a mujeres 
+									y hombres.
+									
+									<p><font class="txt">Entra en la web de la   
+									<a href="http://www.hemofilia.com" class="txtnegrolink" target="_blank">
+									 Federación Española de Hemofilia 
+									</a>
+									pulsa en el apartado "¿Qué es la hemofilia?" y podrás 
+									leer una explicación sobre las causas de esta enfermedad, 
+									y la diferencia entre el tipo A y el B. En esta otra
+									<a href="http://www.hemofilia.com/fedhemo/que-es-la-hemofilia/historia-de-la-enfermedad/index.html" class="txtnegrolink" target="_blank">
+									 página 
+									</a>
+									de la web puedes ver cómo se distribuye la enfermedad entre 
+									las casas reales emparentadas con la reina Victoria de Inglaterra, 
+									entre ellas la española.
+									
+									<br>
+									</dir>
+									
+									
+                                    <br>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+						</td>
+						</tr>											
+								</td>
+							</tr>
+													
+						
+						</table> 
+						
+					</td>
+					</tr>                             
+                  </table>
+               </td>
+            </tr>
+         </table>  
+       </td>
+       </tr>             
+       </table>
+     </td>
+   </tr>
+   </table>
+ </td>
+</tr>
+</table>
+
+<br>
+</body>
+</html>

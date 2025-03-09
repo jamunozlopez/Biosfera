@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Las fases de la Luna</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<SCRIPT language=JavaScript>
+<!--
+
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v3.0
+  //Copyright 1998 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,NS=(navigator.appName=='Netscape'), curLeft, curTop;
+  if (!document.all && !document.layers) return false;
+  retVal = true; if(!NS && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else for (i=0;i<all.length;i++) if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+    curDrag.MM_oldZ = (NS)?curDrag.zIndex:curDrag.style.zIndex;
+    curLeft= (NS)?curDrag.left:curDrag.style.pixelLeft; curDrag.MM_startL = curLeft;
+    curTop = (NS)?curDrag.top:curDrag.style.pixelTop; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop -cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop +cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS)?aLayer.zIndex:aLayer.style.zIndex;
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = (((NS)?aLayer.visibility:aLayer.style.visibility).indexOf('hid') == -1);
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (!NS) { parentLayer = aLayer.parentElement;
+            while (parentLayer != null && parentLayer.style.position) {
+              parentL += parentLayer.offsetLeft; parentT += parentLayer.offsetTop;
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-(((NS)?pageX:style.pixelLeft+parentL)+MM_hLeft);
+          var tmpY=mouseY-(((NS)?pageY:style.pixelTop +parentT)+MM_hTop);
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += ((NS)?clip.width :offsetWidth);
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += ((NS)?clip.height:offsetHeight);
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS)?curDrag.left:curDrag.style.pixelLeft;
+        curTop = (NS)?curDrag.top:curDrag.style.pixelTop;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          eval('curDrag.'+((NS)?'':'style.')+'zIndex=document.MM_maxZ+1');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        newLeft = mouseX-MM_oldX; newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS) {left = newLeft; top = newTop;}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS)?left:style.pixelLeft),2)+
+             Math.pow(MM_targT-((NS)?top:style.pixelTop),2))<=MM_tol) {
+          if (NS) {left = MM_targL; top = MM_targT;}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2719.2200" name=GENERATOR></HEAD>
+<BODY bgColor=#e6ffe6> 
+<center><FONT face="Arial, Helvetica, sans-serif" 
+      color=#000000 size=+2>Las fases de la Luna</font></center>
+<DIV align=center>
+
+
+<TABLE width="80%" bgColor=#999933>
+  <TBODY>
+  <TR>
+    <TD height=79><FONT face="Verdana, Arial, Helvetica, sans-serif" 
+      color=#ffff33 size=2>Arrastra cada fotografía a su cuadro correspondiente, 
+      según la fase de la Luna que sea. Después pulsa en la solución para ver si 
+      lo has hecho correctamente</FONT></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=Layer1 
+style="Z-INDEX: 12; LEFT: 100px; WIDTH: 222px; POSITION: absolute; TOP: 274px; HEIGHT: 187px">
+<P>&nbsp;</P>
+<P><A 
+onmouseover="MM_dragLayer('Layer1','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=133 
+src="imagenes/luna6sm.jpg" width=145 
+border=0></A></P></DIV>
+<DIV id=Layer2 
+style="Z-INDEX: 13; LEFT: 342px; WIDTH: 217px; POSITION: absolute; TOP: 272px; HEIGHT: 182px">
+<P>&nbsp;</P>
+<P><A 
+onmouseover="MM_dragLayer('Layer2','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=133 
+src="imagenes/luncreci.jpg" width=145 
+border=0></A></P></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=Layer3 
+style="Z-INDEX: 14; LEFT: 115px; WIDTH: 221px; POSITION: absolute; TOP: 521px; HEIGHT: 177px">
+<P>&nbsp;</P>
+<P><A 
+onmouseover="MM_dragLayer('Layer3','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=133 
+src="imagenes/creciente.jpg" width=145 
+border=0></A></P></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=Layer4 
+style="Z-INDEX: 15; LEFT: 355px; WIDTH: 219px; POSITION: absolute; TOP: 542px; HEIGHT: 168px">
+<P>&nbsp;</P>
+<p><A 
+onmouseover="MM_dragLayer('Layer4','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" 
+href="javascript:;"><IMG height=133 
+src="imagenes/lunacreciente.jpg" width=145 
+border=0></A></P></DIV>
+<TABLE height=229 width="71%" border=2>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="49%">
+      <P align=center><B><FONT color=#ff0066>LUNA NUEVA</FONT></B></P></TD>
+    <TD width="51%">
+      <DIV align=center><B><FONT color=#ff0066>CUARTO CRECIENTE</FONT></B></DIV></TD></TR>
+  <TR>
+    <TD width="49%" height=138>&nbsp;</TD>
+    <TD width="51%" height=138>&nbsp;</TD></TR>
+  <TR>
+    <TD width="49%" height=33>
+      <DIV align=center><FONT color=#ff0066><B>LUNA LLENA</B></FONT></DIV></TD>
+    <TD width="51%" height=33>
+      <DIV align=center><B><FONT color=#ff0066>CUARTO MENGUANTE</FONT></B></DIV></TD></TR>
+  <TR>
+    <TD width="49%" height=102>
+      <DIV align=center>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P></DIV></TD>
+    <TD width="51%" height=102>
+      <DIV align=center></DIV></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<DIV id=Layer11 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 11; CENTER: 0px; VISIBILITY: hidden; BORDER-LEFT: #000000 1px; WIDTH: 400px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 1100px; HEIGHT: 300px; BACKGROUND-COLOR: #ffffff; layer-background-color: #FFFFFF">
+<DIV align=left>
+<P align=CENTER><IMG height=294 
+src="imagenes/solu.jpg" 
+width=400></P></DIV></DIV>
+<P align=center><A onmouseover="MM_showHideLayers('Layer11','','show')" 
+href="javascript:;"><IMG height=34 
+src="imagenes/solucion.jpg" 
+width=112 border=0></A> </P>
+<P align=center>&nbsp;</P>
+<DIV id=Layer13 
+style="Z-INDEX: 12; LEFT: 564px; WIDTH: 180px; POSITION: absolute; TOP: 1492px; HEIGHT: 40px"><A 
+href="javascript:window.location.reload()"><FONT 
+face="Arial, Helvetica, sans-serif" size=2><B>Haz clic para repetir la 
+actividad</B></FONT></A></DIV>
+<P align=center> </P>
+
+<P align=left><A name=solucio></A></P>
+<P>&nbsp;</P></DIV><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code -->
+<SCRIPT language=JavaScript 
+src="imagenes/geov2.js"></SCRIPT>
+
+<SCRIPT language=javascript>geovisit();</SCRIPT>
+<NOSCRIPT><IMG height=1 src="imagenes/visit.gif" 
+width=1 border=0></NOSCRIPT> <IMG height=1 alt=1 
+src="imagenes/serv.gif" width=1>
+<ALIGN=RIGHT><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></center>
+Script tomado de Vicent Martínez www.botanical-online.com </BODY></HTML>

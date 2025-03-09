@@ -1,0 +1,333 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/2eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="image/2ESO.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="547" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (7/8) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+						  <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td width="711"   valign="top"> 
+                              <p class="txtnegro">7.- LOS GRANDES BIOMAS DE LA 
+                                TIERRA:</p>
+                              <div align="center"> 
+                                <p><img src="image/MAPA2B.gif" width="590" height="379" border="0" usemap="#Map"> 
+                                  <map name="Map"> 
+                                    <area shape="poly" coords="577,273,569,282,556,291,558,297,570,289,580,283" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="169,284,170,293,169,301,176,310,187,314,178,305,172,300" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="548,249,548,266,535,275,542,279,555,257" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="333,255,334,261,342,256" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="26,102,35,98,51,87,59,87,78,92,84,101,87,113,83,118,81,106,76,97,63,93,50,92" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="320,65,312,70,308,80,298,90,300,99,305,89,316,73" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="182,237,178,256,187,256,189,280,206,262,202,257,212,255,212,251,218,243,209,239,198,239,204,247,190,249,190,236" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="320,236,317,241,326,243,336,243,335,252,346,252,351,244,355,236,350,234,343,240,335,235,325,235" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="372,242,368,249,369,254,373,247" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="123,130,126,137,130,145,124,156,124,161,136,156,144,155,152,161,155,158,154,153,165,140,173,129,161,125,147,126,129,126" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="541,239,539,243,550,246" href="bos_cadu1.htm" onMouseOver="MM_openBrWindow('bos_cadu1.htm','','scrollbars=yes,width=305,height=340')" target="_blank">
+                                    <area shape="poly" coords="403,156,416,160,413,163,423,178,423,170,424,166,434,170,441,168,448,177,458,181,461,175,455,167,448,163,432,159,411,151" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="circle" coords="537,287,4" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="466,154,473,161,465,166,460,173,481,188,477,178,488,174,497,159,492,153,493,146,487,143,483,150,477,148" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="285,96,276,111,290,116,287,98" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="309,100,311,106,315,98" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="75,75,85,72,91,84,83,86,83,80" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="124,37,137,48,152,46,151,52,151,60,164,53,167,50,163,40,156,40,144,42,149,38,151,29,144,33,135,42,139,35" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="169,99,176,86,184,88,186,95,193,92,196,108,188,99,180,96" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="113,58,117,47,125,45,128,52" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="127,58,128,64,146,64,146,57,143,50,131,52" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="6,62,24,73,16,80,4,78" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="44,64,66,68,81,63,54,57" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="220,46,220,56,221,65,215,72,227,95,234,84,247,72,256,69,259,63,264,55,264,41,259,49,252,56,248,63,241,69,234,74,230,79,227,82,224,77,229,68,230,58,225,50" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="129,73,133,86,145,95,152,84,166,86,173,69,161,61,149,71" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="171,56,172,62,180,63,185,69,180,75,188,87,194,81,192,76,200,78,202,74,194,68,196,62,187,55,184,51,179,52" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="329,62,326,67,342,71,335,67" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="351,69,350,77,359,80,381,73,373,64,368,71,355,75" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="384,56,382,63,387,70,391,70" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="392,55,391,63,401,69,406,67,401,59" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="400,52,407,65,422,57,433,58,433,52,440,45,436,36,427,37,426,31,419,39,421,45,414,40" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="435,59,450,57,466,61,484,64,504,66,513,63,536,75,554,71,562,74,565,82,559,92,572,82,583,78,582,68,567,68,551,65,545,66,534,70,534,65,524,60,507,61,507,56,496,57,495,61,482,57,468,57,472,54,463,50,461,55,451,51,441,53" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="259,77,258,80,266,80,273,83,274,78,266,73" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="471,80,486,90,498,97,506,95,491,86,503,87,494,77,488,84,479,76" href="tundra.htm" target="_blank" onMouseOver="MM_openBrWindow('tundra.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="162,27,170,40,185,43,199,29,216,22,225,10,213,9,195,15,192,23,186,32,186,17,178,31,172,22" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="205,33,221,42,229,53,229,71,226,78,244,63,258,47,268,28,277,20,260,14,266,8,245,13,227,16" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="88,374,104,369,117,366,144,366,174,364,191,362,195,354,188,348,206,338,198,347,200,360,210,362,218,372,219,374" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="264,374,289,369,307,364,335,358,351,356,366,349,376,358,417,357,457,357,488,354,509,361,534,367,543,374" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="133,175,134,185,141,191,153,197,148,214,154,206,161,197,152,192,145,187,145,183,141,177" href="selv_ecu.htm" target="_blank" onMouseOver="MM_openBrWindow('selv_ecu.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="168,207,158,212,160,222,178,233,189,219,199,220,217,221,222,217,208,215,203,212,201,204,193,198,182,191,190,208,185,214,176,211" href="selv_ecu.htm" target="_blank" onMouseOver="MM_openBrWindow('selv_ecu.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="307,208,320,209,322,212,329,211,336,211,336,221,332,225,321,224,312,223,308,217" href="selv_ecu.htm" target="_blank" onMouseOver="MM_openBrWindow('selv_ecu.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="451,180,457,189,459,199,463,204,454,202,464,212,470,218,475,217,477,224,486,227,491,218,502,217,507,213,512,214,516,219,522,216,526,220,537,223,551,229,553,223,556,219,571,230,571,224,551,210,549,218,537,215,532,212,522,214,516,207,514,197,508,188,503,179,500,185,504,193,511,200,511,208,501,210,496,210,496,201,488,202,481,210,478,214,473,208,470,200,467,195,462,184,463,175" href="selv_ecu.htm" target="_blank" onMouseOver="MM_openBrWindow('selv_ecu.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="167,198,161,203,155,209,155,221,164,235,170,241,170,268,171,286,173,299,178,282,178,265,181,249,182,235,170,231,162,225,157,217,159,209,168,205,170,203" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="87,102,93,116,99,116,101,130,95,131,93,128,88,133,89,135,92,143,95,146,95,137,99,134,103,141,105,144,107,141,110,144,107,147,107,150,112,147,116,141,116,135,116,127,112,122,110,125,110,119,106,113,103,103,96,107,89,107" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="277,132,289,132,284,124,296,111,304,105,313,107,328,104,324,114,323,123,323,127,332,127,337,129,333,134,325,135,312,131,307,130,312,124,309,119,304,124,303,128,295,129,292,136" href="bos_cadu1.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_cadu1.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="277,136,276,143,284,148,293,145,295,137,305,137,315,142,319,143,319,139,325,141,326,149,328,142,333,140,337,140,334,147,342,151,344,158,351,157,355,151,357,147,347,146,343,144,348,141,343,137,330,137,319,133,308,132,301,130,293,139,283,139" href="bos_medi.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_medi.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="271,158,276,154,282,149,295,150,307,148,286,154,278,158" href="bos_medi.htm" target="_blank" onMouseOver="MM_openBrWindow('bos_medi.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="98,139,95,151,91,162,98,170,107,171,109,166,101,154,98,149" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="267,165,260,176,260,185,269,190,300,191,322,191,342,184,349,184,359,194,355,180,345,167,349,166,358,177,363,186,375,186,385,180,388,173,389,168,405,169,410,162,402,163,389,156,381,154,388,162,384,171,376,173,375,165,366,159,357,156,348,159,340,159,331,157,316,158,308,151,289,157" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="506,243,501,249,494,246,489,251,493,260,503,263,514,262,529,265,538,267,539,260,536,250,528,247,518,247" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="351,139,361,136,371,139,366,147,376,148,387,144,395,138,402,134,412,129,417,127,421,129,415,135,400,140,404,146,418,146,430,146,447,150,456,158,467,165,457,174,443,162,430,160,418,153,408,152,401,155,401,158,387,152,378,154,372,157,363,150,356,144,346,143" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="161,196,166,188,175,188,182,194,183,203,185,210,171,208,171,200,163,200" href="est_saba.htm" target="_blank"  onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="267,195,282,194,310,195,332,194,348,188,345,196,345,201,351,205,356,200,361,201,354,207,358,220,360,240,354,233,343,234,337,234,321,234,315,229,316,225,331,227,338,223,339,212,332,207,323,208,307,206,300,201,293,202,279,203" href="est_saba.htm" target="_blank" onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="428,170,426,176,424,181,418,173,413,175,427,197,429,186,438,179,441,171,432,171" href="est_saba.htm" target="_blank" onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="150,167,157,171,165,176,177,180,157,182,145,172" href="est_saba.htm" target="_blank" onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="466,181,461,188,471,192,478,189,468,183" href="est_saba.htm" target="_blank" onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="345,192,345,200,351,205,356,195,350,189" href="al_mont.htm" target="_blank" onMouseOver="MM_openBrWindow('al_mont.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="305,100,313,79,324,73,339,73,330,80,336,86,346,80,366,80,388,71,388,80,396,73,407,79,404,71,420,62,441,60,458,62,498,68,511,65,524,71,533,77,547,73,560,77,561,87,553,91,551,102,546,118,540,108,548,96,548,90,543,87,534,94,522,95,514,97,499,91,499,82,492,78,474,77,467,81,476,89,488,97,497,99,507,96,511,99,504,107,512,112,524,108,529,121,527,131,520,132,524,124,521,113,516,115,518,126,513,134,505,134,504,140,504,145,494,141,483,147,479,139,488,130,476,126,472,123,464,127,458,130,451,125,458,119,454,110,451,117,444,111,438,108,432,111,426,114,422,116,413,112,404,110,387,110,378,111,371,104,364,113,357,122,351,123,344,120,339,122,338,126,331,126,327,126,334,123,333,119,326,114,321,113,326,104,331,98,332,93,324,92,321,89,321,85,324,84,321,80,319,82,316,92,315,99" href="taiga.htm" target="_blank" onMouseOver="MM_openBrWindow('taiga.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="125,124,149,124,147,119,152,115,158,121,165,124,174,126,184,126,187,117,201,117,215,118,208,111,197,111,192,103,187,97,179,97,173,101,166,101,168,111,163,114,161,106,152,98,149,94,138,91,135,86,130,74,124,67,119,62,104,60,100,67,88,67,84,71,87,77,93,86,85,85,81,84,76,76,74,73,81,69,82,65,76,65,70,69,59,69,47,68,39,66,39,74,41,79,33,83,27,84,32,90,32,94,40,94,51,86,59,85,75,88,84,96,88,103,91,107,99,104,101,100,106,110,109,104,120,115" href="taiga.htm" target="_blank" onMouseOver="MM_openBrWindow('taiga.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="6,373,87,375,102,366,134,364,176,364,190,360,186,353,186,346,199,337,206,334,206,344,199,352,202,357,209,360,219,371,223,376,265,376,271,369,300,362,363,348,378,353,434,352,467,357,486,352,521,362,546,374,579,373,584,367,584,284,571,290,557,298,554,292,546,290,536,290,528,292,528,285,531,281,531,277,519,271,510,267,492,275,487,268,479,259,482,248,493,245,501,239,506,237,507,230,490,229,480,228,469,221,457,215,452,203,456,195,456,189,448,177,441,176,434,189,441,203,433,210,421,199,418,185,409,176,399,170,390,174,389,184,371,190,381,196,377,207,366,216,361,224,361,234,355,243,365,248,366,237,378,230,383,242,377,246,375,260,367,259,358,251,353,248,351,258,343,271,331,277,320,273,313,258,305,247,310,230,309,220,306,212,301,206,292,207,275,205,264,202,257,190,255,176,259,171,269,160,276,149,274,141,274,132,278,127,283,130,279,120,280,116,274,112,237,108,208,106,219,119,196,119,189,120,192,128,180,131,173,132,162,148,153,163,164,172,178,178,181,185,195,196,201,202,210,211,224,219,232,227,226,240,225,252,217,262,206,266,194,279,187,287,185,298,185,308,191,315,180,317,166,305,166,281,166,263,165,248,165,241,151,233,144,213,147,201,136,193,129,184,114,182,103,178,90,166,86,160,86,151,82,145,80,132,83,121,77,101,58,97,46,101,32,106,24,111,20,105,28,99,26,92,21,86,10,83,6,83" href="mar_ocea.htm" target="_blank" onMouseOver="MM_openBrWindow('mar_ocea.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="6,58,23,72,32,78,23,86,35,81,35,70,39,61,48,54,60,55,72,57,85,65,94,61,104,58,110,52,115,44,119,41,122,32,138,29,153,31,153,35,162,33,157,25,171,21,179,26,190,13,203,7,216,6,6,4" href="mar_ocea.htm" target="_blank" onMouseOver="MM_openBrWindow('mar_ocea.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="188,53,201,64,204,77,195,87,188,89,180,85,174,75,168,87,154,92,160,102,169,93,179,85,187,92,194,90,197,102,206,108,263,69,281,77,283,93,292,108,301,103,294,88,304,79,313,63,326,60,343,65,349,73,360,70,368,65,377,60,383,49,392,53,400,48,409,37,420,30,430,33,443,45,448,49,473,49,479,41,490,41,505,47,497,51,487,51,476,51,487,56,497,55,508,54,510,57,527,57,537,64,549,60,563,62,583,65,582,4,339,5,339,17,343,21,339,25,333,26,332,21,314,21,322,26,314,30,313,32,316,39,311,43,304,36,298,31,306,24,309,17,320,21,331,15,334,10,331,5,271,4,267,10,277,16,277,24,271,33,268,42,269,50,264,62,255,72,243,79,232,91,225,100,215,83,211,71,216,65,215,50,215,41,204,47,201,41,203,34,194,44,188,49" href="mar_ocea.htm" target="_blank" onMouseOver="MM_openBrWindow('mar_ocea.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="582,80,573,92,558,96,553,107,547,123,541,114,535,105,541,98,546,90,534,98,517,99,509,103,517,105,527,105,532,113,531,129,529,144,520,156,511,160,510,155,510,148,517,141,519,131,508,136,507,143,504,153,494,146,496,153,499,160,494,168,491,176,486,185,484,193,475,197,476,205,479,209,488,201,496,201,499,207,508,205,501,194,497,184,500,177,509,183,513,193,516,202,525,210,535,212,545,216,549,210,558,210,568,219,575,225,573,232,557,226,553,233,544,229,535,227,529,227,524,220,518,221,512,229,512,233,522,231,531,235,537,232,543,235,550,241,559,248,559,257,552,268,543,282,551,290,559,287,568,279,574,272,578,269,582,267" href="mar_ocea.htm" target="_blank" onMouseOver="MM_openBrWindow('mar_ocea.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="371,123,379,140,384,143,391,134,408,127,414,117,402,116" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="411,140,427,134,427,124,437,125,433,117,437,111,448,125,457,132,469,126,475,128,475,134,475,141,465,142,468,147,464,151,444,146,429,144,407,144" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="circle" coords="208,260,3" href="selv_ecu.htm" target="_blank" onMouseOver="MM_openBrWindow('selv_ecu.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="313,238,309,244,317,265,325,269,329,262,325,256,320,257,316,246" href="desiert.htm" target="_blank" onMouseOver="MM_openBrWindow('desiert.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="181,234,189,223,211,224,223,219,230,224,223,237,223,246,214,253,218,244,214,236,200,237,200,244,191,247,190,237" href="est_saba.htm" target="_blank" onMouseOver="MM_openBrWindow('est_saba.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                    <area shape="poly" coords="273,109,281,95,280,81,276,83,270,88,257,83,252,78,229,96,219,102,215,106" href="mar_ocea.htm" target="_blank" onMouseOver="MM_openBrWindow('mar_ocea.htm','Biomas','scrollbars=yes,width=306,height=340')">
+                                  </map>
+                                </p>
+                                </div>
+								<br>
+								 <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a href="actividad18.htm"><font class="txtnegrolink"> 
+                                        Actividad 18</font></a> <a href="actividad18.htm"><img src="image/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+									 <td> 
+                                      <a href="actividad19.htm"><font class="txtnegrolink"> 
+                                        Actividad 19</font></a> <a href="actividad19.htm"><img src="image/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+									 <td> 
+                                      <p> 
+                                        <a target="_blank" href="activ_video1.htm">
+										<font class="txtnegrolink">Actividad 19b</font></a>
+										<a target="_blank" href="activ_video1.htm">
+										<img src="ecosist_oceano_t.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td bgcolor="#E6FFE6"> 
+                                      &nbsp;</td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+									 <td bgcolor="#E6FFE6"> 
+                                      &nbsp;</td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+									 <td bgcolor="#E6FFE6"> 
+                                      <p align="center" class="txt" style="text-align: center">
+										Contiene vídeo
+										<img border="0" src="../../../img/wmv.gif" width="16" height="16"></td>
+                                  </tr>
+                                </table>
+                        </div>
+                        <br>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr> 
+                                  <td width="734" height="19" valign="top"> 
+                                    <div align="right"><a class="txtnegrolink" href="contenidos6.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                      - (7/8) - <a href="contenidos8.htm" class="txtnegrolink">siguiente</a></span></div>
+                                  </td>
+                                </tr>
+                              </table>
+                        </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

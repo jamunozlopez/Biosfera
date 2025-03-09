@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Ósidos</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Ósidos</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>El enlace O-glucosídico</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Une dos aminoácidos entre sí</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Une dos carbonos de cualquier molécula</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Permite ciclar la glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Libera una molécula de agua</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La maltosa se forma por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Unión de dos glucosas por enlace alfa- (1-4)</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Unión de dos glucosas por enlace beta- (1-4).</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Unión de dos glucosas por enlace peptídico</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Unión de una glucosa y una fructosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La celobiosa aparece en la Naturaleza</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Cuando se digiere la glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Cuando se digiere la maltosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Cuando se digiere la celulosa</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Cuando se digiere el almidón</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La lactosa es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un monosacárido formado por glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un disacárido formado por glucosa y fructosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un disacárido formado por fructosa y glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Un disacárido formado por galactosa y glucosa</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La maltosa se encuentra en</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La celulosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>La leche</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>El almidón</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La lactosa aparece</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Libre en la Naturaleza</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En el almidón</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En la celulosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En las frutas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El azúcar que se usa en la cocina es</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Maltosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Fructosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Sacarosa</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La sacarosa está formada por</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Glucosa y fructosa</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Glucosa y galactosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Galactosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Cuál es esta molécula?&lt;img src=&quot;../imagenes/glucido/asacarosa.jpg&quot; alt=&quot;asacarosa.jpg&quot; width=&quot;200&quot; height=&quot;150&quot; align=&quot;right&quot; border=&quot;0&quot;&gt;&lt;/img&gt;</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Glucosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Maltosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Sacarosa</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>Lactosa</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El almidón se encuentra</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>En animales y hongos</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En animales y plantas</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En plantas</text>
+<correct>1</correct>
+<feedback></feedback>
+</answer>
+<answer>
+<text>En animales</text>
+<correct>0</correct>
+<feedback></feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Ejercicio de múltiples respuestas</exercise-subtitle>
+<instructions>Escoge la respuesta correcta para cada pregunta</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+<next-ex-url>act3b.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>3</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es:</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar</start-reading>
+<show-reading-again>Mostrar de nuevo el comentario</show-reading-again>
+<times-up>¡El tiempo ha terminado!</times-up>
+<click-to-show>Pulsa el botón para mostra el comentario.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ddf7e4</page-bg-color>
+<title-color>#000033</title-color>
+<ex-bg-color>#ddf7e4</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#408080</link-color>
+<vlink-color>#408080</vlink-color>
+<nav-bar-color>#408080</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Preguntas contestadas correctamente a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Aceptar</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

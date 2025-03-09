@@ -1,0 +1,366 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0"  align="center">
+  <tr> 
+    <td  width="760" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="760"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/4eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2b.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','../img/introduccion1.gif',1)"><img src="../img/introduccion.gif" width="77" height="18" border="0" name="Image1"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" >
+              <tr> 
+                <td height="25" align="center" width="760"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="imagenes/contenidos/seresunipluricel.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td valign="top" > 
+                  <table width="760" border="0" cellspacing="1" cellpadding="0" bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="109" valign="top" rowspan="2" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber1">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/bacteria-stock-bg.jpg" width="105" height="88"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celula_vegetal.jpg" width="105" height="79"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/celulahumana.jpg" width="105" height="99"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/volvox.jpg" width="105" height="105"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/ovulo.jpg" width="105" height="91"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/sperm.jpg" width="105" height="85"></td>
+                        </tr>
+                      </table>
+                      </td>
+                      <td width="552" valign="top" rowspan="2"> 
+                        <table width="540" border="0" cellspacing="0" cellpadding="6" >
+                          <tr> 
+                            <td valign="top" height="31" colspan="3" bgcolor="#BBDDBB" width="534"><font class="txtnegro">ENLACES</font><span class="txtnegro"> 
+                              DE INTER&Eacute;S</span></td>
+                          </tr>
+                          <tr bgcolor="#E6FFE6"> 
+                            <td width="1"></td>
+                            <td width="508" valign="top"> 
+                              <table width="504" border="0" cellspacing="0" cellpadding="3">
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www.monografias.com/trabajos/citologia/citologia.shtml">
+                                  CITOLOGÍA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"><font class="txt">Pagina horrorosa de formato, 
+                                    pero con informaci&oacute;n precisa sobre 
+                                    citolog&iacute;a y org&aacute;nulos celulares. 
+                                    Sin dibujos ni im&aacute;genes. Solo sirve 
+                                    para b&uacute;squeda de informaci&oacute;n 
+                                    escrita..</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www.juntadeandalucia.es/averroes/manuales/presentacion.swf">LA 
+                                    C&Eacute;LULA ANIMADA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td class="txt" width="483">Magn&iacute;fica p&aacute;gina 
+                                    que ense&ntilde;a animaciones, ejercicios 
+                                    y muchas actividades sobre la c&eacute;lula, 
+                                    sus funciones y su estructura. Mírala y divi&eacute;rtete.</td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><a href="http://www.monografias.com/trabajos6/ecoya/ecoya.shtml%20" target="_blank" class="txtnegrolink"><img src="../img/bolo.gif" width="9" height="13" border="0"></a></td>
+                                  <td bgcolor="#D1E9D1" width="483"><font class="txtnegrolink">
+                                  <a target="_blank" class="txtnegrolink" href="http://centros6.pntic.mec.es/cea.pablo.guzman/cc_naturales/celula.htm">AULA 
+                                    VIRTUAL SOBRE LA C&Eacute;LULA</a></font></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"><font class="txt"> Todo sobre la c&eacute;lula: 
+                                    esquemas, dibujos, procariotas, eucariotas, 
+                                    unicelulares, animales vegetales.... Informaci&oacute;n 
+                                    breve pero precisa y muchas im&aacute;genes. 
+                                    Con un aula virtual sobre la c&eacute;lula..</font> 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483"> 
+                                  <a target="_blank" class="txtnegrolink" href="http://www.youtube.com/watch?v=DkcKmeiMQBM">VIAJE 
+                                    VIRTUAL POR LA C&Eacute;LULA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"><font class="txt">Vídeo que 
+									muestra un viaje virtual a trav&eacute;s 
+                                    de la célula. Todos los org&aacute;nulos en 
+                                    movimiento. </font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www.ciencia.net/VerArticulo/Microbiologia/Celulas/C%C3%A9lula---Fisiolog%C3%ADa?idArticulo=5134">CÉLULA - FISIOLOGÍA - CIENCIA.NET - NOTICIAS CIENTÍFICAS ...</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"><font class="txt">Pagina mas seria que las 
+                                    anteriores. Toda la célula sus funciones descritas 
+                                    con seriedad y rigor con buenas im&aacute;genes 
+                                    que ilustran el texto. Bien esquematizada.</font></td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www3.usal.es/~histologia/histologia.htm">HISTOLOG&Iacute;A 
+                                    HUMANA</a></td>
+                                </tr>
+                                <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"><font class="txt">Fantástica informaci&oacute;n 
+                                    y fantástica galer&iacute;a de im&aacute;genes, 
+                                    de dibujos sobre histolog&iacute;a humana. 
+                                    Gr&aacute;fica y did&aacute;ctica.</font> 
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www.biology.arizona.edu/cell_bio/tutorials/cell_cycle/main.html">LA 
+                                    MITOSIS Y EL CICLO CELULAR</a></td>
+                                </tr>
+                               <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td width="483"> 
+                                    <p class="txt">Todo sobre la mitosis, fotos 
+                                      y animación. Explicaci&oacute;n en ingl&eacute;s.</p>
+                                  </td>
+                                </tr>
+                                <tr> 
+                                  <td bgcolor="#D1E9D1" width="9"><img src="../img/bolo.gif" width="9" height="13" border="0"></td>
+                                  <td bgcolor="#D1E9D1" width="483">
+                                  <a target="_blank" class="txtnegrolink" href="http://www.cellsalive.com/mitosis.htm">LA 
+                                    MITOSIS EN CÉLULAS ANIMALES</a></td>
+                                </tr>
+                               <tr> 
+                                  <td width="9">&nbsp;</td>
+                                  <td class="txt" width="483">La mitosis con todas sus fases. 
+                                    Cada fase con animaci&oacute;n e identificaci&oacute;n. 
+                                    Movimiento de los cromosomas. P&aacute;gina 
+                                    en Ingl&eacute;s.<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<p>&nbsp;</td>
+                                </tr>
+								</table>
+                            </td>
+                            <td width="3"></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top"  rowspan="2" width="110" align="center">
+                      <table border="0" cellspacing="1" width="100%" id="AutoNumber2">
+                        <tr>
+                          <td width="100%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/aguila.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/encina.jpg" width="105" height="95"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/setas.jpg" width="105" height="101"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/seudopodo.jpg" width="105" height="97"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/cromosomas.jpg" width="105" height="86"></td>
+                        </tr>
+                        <tr>
+                          <td width="100%" align="center">
+                          <img border="0" src="miniaturas/algas_unicel.jpg" width="105" height="84"></td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                    </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

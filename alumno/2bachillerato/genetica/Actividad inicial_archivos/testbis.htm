@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Actividad inicial</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Proyecto Biosfera: Materiales curriculares en red." 
+name=description>
+<META 
+content="biologia didactica recursos test genetica imagenes Mendel ciencias medio ambiente bachillerato enseñanza secundaria instituto mutaciones gen" 
+name=Keywords>
+<STYLE type=text/css>P {
+	MARGIN-TOP: 0px; FONT-WEIGHT: normal; FONT-SIZE: 10pt; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+/*******************************************************************************
+Copyright (c) 2001 José A. Cortés (webmaster@joseacortes.com)
+
+Este script puede ser usado libremente siempre y cuando se mantenga intacto el presente mensaje de copyright.
+
+This script can be used freely as long as this copyright message is instact
+*******************************************************************************/
+
+function respuestas(n)
+	{	this.length=n;
+		for(i=0; i<n; i++) 
+		{	this[i]=0
+			return this;
+		}
+	}
+	
+function pregunta(p,r1,r2,r3,r4,rc)
+	{	this.p=p;
+		this.r=new respuestas(4);
+		this.r[0]=rc;
+		this.r[1]=r1;
+		this.r[2]=r2;
+		this.r[3]=r3;
+		this.r[4]=r4;
+		
+	}
+
+var titulo="<h2 align=center>Actividad inicial</h2>";
+	
+function basedatos()
+	{	this.length=41;
+		
+		this[0]=new pregunta("El Proyecto Genoma es una de las líneas de investigación en la que más esperanzas se han puesto para resolver algunos problemas de la humanidad, ¿sabes qué es el Proyecto Genoma?","El estudio de las proteínas humanas","La secuenciación de las proteínas humanas","La secuenciación de los genes humanos","La secuenciación de los glúcidos humanos",3)
+		this[1]=new pregunta("El Genoma es","El conjunto de todos los genes","El conjunto de todos los cromosomas","El conjunto de todas las proteínas","El conjunto de todos los orgánulos celulares",1)
+		this[2]=new pregunta("¿Cuál fue la principal aportación de MENDEL?","Trabajar con plantas","Hacer muchos cruces","Establecer generalizaciones sobre la herencia de los caracteres","Estudiar los genes",3)
+		this[3]=new pregunta("¿Cuál de las siguientes afirmaciones es falsa?","Los genes equivalen a enzimas","La información de los caracteres está en los genes","La información de los caracteres está en la secuencia de bases","Ninguna es falsa",4)
+		this[4]=new pregunta("Las terapias génicas se basan en","La manipulación de los cromosomas","La manipulación de los genes","La inyección de proteínas específicas","La curación sin fármacos",2)
+		this[5]=new pregunta(" Observa la siguiente figura y señala dónde está la información genética<p><img src=../imagenes/cromosoma.gif align=center hspace='50'></p>","En el núcleo","En las cromátidas","En los genes","Todo es cierto",4)
+		this[6]=new pregunta("Las mutaciones son","Fuente de variabilidad","Cambios en la composición química de los seres vivos","Cambios en la información genética","Son ciertas 1 y 3",4)
+		this[7]=new pregunta("La base para el estudio del Código Genético fue descubierta por Severo Ochoa, pero ¿qué es el Código Genético?","La relación entre bases nitrogenadas y aminoácidos","La relación entre DNA y RNA","La relación entre genes y cromosomas","La relación entre cromosomas y proteínas",1)
+		this[8]=new pregunta("El dogma central de la genética molecular lo constituyen","La replicación, recombinación y transcripción","La traducción, la transducción y la replicación","La replicación, la transcripción y la traducción","La duplicación, recombinación y obducción",3)
+		this[9]=new pregunta("En la traducción se pasa de","Un lenguaje en aminoácidos a un lenguaje en bases nitrogenadas","Un lenguaje en monosacáridos a un lenguaje en nucleótidos","Un lenguaje en bases nitrogenadas a un lenguaje en pentosas","Un lenguaje en bases nitrogenadas a un lenguaje en aminoácidos",4)
+		
+		
+				
+
+		return this;
+	}
+	
+	var preguntaactual=new basedatos();
+	var cantidad=0;
+	var puntuacionmax=0;
+	var contador=0;
+	var correctas=0;
+	var falladas=0;
+	var primera=1;
+	
+function cargar()
+	{	if(contador>=preguntaactual.length) {contador=0; correctas=0;}
+		else 
+			{correctas=0;
+			document.resultados.numcontestadas.value=contador;
+			document.resultados.numcorrectas.value=correctas;}
+		if(contador!=0) 
+			{document.resultados.porcent.value=100*correctas/contador;}
+		else
+			{iniciartest(contador);}
+	}
+	
+function iniciartest(n)
+	{	var ppal=window.parent.principal.document;
+		ppal.open();
+		ppal.write("<html><head></head><body bgcolor='#e6ffe6' topmargin='0' leftmargin='0'><table width='85%' border='0' cellpadding='0' cellspacing='0'><tr height='20'><td bgcolor='e6ffe6'></td><td width='1' bgcolor='e6ffe6'></td></tr><tr height='311'><td bgcolor='e6ffe6' valign='top'><br><font color='#000033'>"+titulo+"<h4 style='text-indent: 20'>"+(n+1)+". "+preguntaactual[n].p+"</h4></font><p><form><table valign=top>");
+		for (i=1; i<=4; i++)
+			if (preguntaactual[n].r[i]!="")
+				{ppal.write("<tr><td valign='top'><p style='text-indent: 30'><input type='radio' name='resp' onclick='parent.resultados.evaluacion("+i+")'></p></td><td>"+preguntaactual[n].r[i]+"</td></tr>");}
+		ppal.write("</table></td><td width='1' bgcolor='e6ffe6'></td></tr><tr height='1'><td bgcolor='#e6ffe6'></td><td width='1' bgcolor='#999999'></td></tr></table></table></form></body></html>");
+		ppal.close();
+	}	
+function evaluacion(n)
+	{	if(n==preguntaactual[contador].r[0])
+		{	contador++;
+			correctas++;
+			document.resultados.numcontestadas.value=contador;
+			document.resultados.numcorrectas.value=correctas;
+			document.resultados.numfalladas.value=contador-correctas;
+			document.resultados.porcent.value=Math.round(100*correctas/contador);
+				if(contador<preguntaactual.length) 
+					{	iniciartest(contador)}
+				else
+					{	finalizar();}
+		}
+		else 
+			{	alert("\nIncorrecto !");
+			contador++;
+			document.resultados.numcontestadas.value=contador;
+			document.resultados.numcorrectas.value=correctas;
+			document.resultados.numfalladas.value=contador-correctas;
+			document.resultados.porcent.value=Math.round(100*correctas/contador);
+				if(contador<preguntaactual.length) 
+					{	iniciartest(contador)}
+				else
+					{	finalizar();}
+		}
+	}
+	
+function finalizar()
+	{	var ppal=window.parent.principal.document;
+		var resultfinal=document.resultados.porcent.value;
+		ppal.open();
+		ppal.write("<html><head></head><body><br><br><center><hr color='#000033'><font color='#000033'><h1>Resultado final: "+resultfinal+"%</h1></font></hr></body></html>");
+		ppal.close();
+	}
+</SCRIPT>
+
+<META content="Microsoft FrontPage 6.0" name=GENERATOR>
+<link rel="stylesheet" type="text/css" href="../../estilos/estilo.css">
+</HEAD>
+<BODY text=#000000 bgColor=#e6ffe6 topMargin=0 onload=cargar() rightMargin=0>
+<TABLE height=332 cellSpacing=0 cellPadding=0 width=171 align=right border=0>
+  <TBODY>
+  <TR height=20>
+    <TD width=160 bgColor=#e6ffe6></TD>
+    <TD width=1 bgColor=#e6ffe6></TD>
+    <TD width=10 bgColor=#e6ffe6></TD></TR>
+  <TR>
+  </TD></TR>
+    <TD width=160 bgColor=#e6ffe6 height=131>
+      <P align=center class="txtnegrolink"><BR>
+      <a href="../index.htm" class="txtnegrolink">Introducción</a><BR>
+      <a href="../contenidos.htm" class="txtnegrolink">Contenidos</a><BR>
+      <a href="../a_inicial.htm" class="txtnegrolink">Volver a empezar</a><BR><A color="#6666ff" width="90%" 
+      <HR></A></P></TD>
+    <TD width=1 bgColor=#e6ffe6 height=131></TD>
+    <TD width=10 bgColor=#e6ffe6 height=131>
+    
+  <TR>
+    <TD vAlign=top width=160 bgColor=#e6ffe6>
+      <P align=center><b><font class="txt">Resultados </font></b> 
+      <FORM name=resultados>
+      <DIV align=center>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=middle><font class="txt">Preguntas:</font></TD>
+          <TD align=middle><font class="txt"><INPUT type=number size=2 
+name=numcontestadas></font></TD></TR>
+        <TR>
+          <TD align=middle><font class="txt">Falladas:</font></TD>
+          <TD align=middle><font class="txt"><INPUT type=number size=2 name=numfalladas></font></TD></TR>
+        <TR>
+          <TD align=middle><font class="txt">Correctas:</font></TD>
+          <TD align=middle><font class="txt"><INPUT type=number size=2 name=numcorrectas></font></TD></TR>
+        <TR>
+          <TD align=middle><font class="txt">Porcentaje:</font></TD>
+          <TD align=middle><font class="txt"><INPUT type=number size=2 
+        name=porcent></font></TD></TR></TBODY></TABLE></CENTER></DIV></FORM></TD>
+    <TD width=1 bgColor=#e6ffe6></TD>
+    <TD width=10 bgColor=#e6ffe6></TD></TR>
+  <TR height=1>
+    <TD width=160 bgColor=#e6ffe6></TD>
+    <TD width=1 bgColor=#e6ffe6></TD>
+    <TD width=10 bgColor=#e6ffe6></TD></TR></TBODY></TABLE></BODY></HTML>

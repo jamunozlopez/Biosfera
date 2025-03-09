@@ -1,0 +1,249 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>Tipos de f&oacute;siles</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=2;
+CorrectAnswers[1]=4;
+CorrectAnswers[2]=2;
+CorrectAnswers[3]=5;
+CorrectAnswers[4]=3;
+CorrectAnswers[5]=5;
+CorrectAnswers[6]=5;
+CorrectAnswers[7]=1;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" OnClick="parent.close(); return true"></input></FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000">Tipos de f&oacute;siles</FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">Indica a qu&eacute; tipo pertenece cada uno de los f&oacute;siles de las im&aacute;genes.<BR>&nbsp;</FONT></TD></TR>
+
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Insecto conservado en &aacute;mbar. <center><img src="imagenes/ambar2.jpg" alt="Insecto conservado en &aacute;mbar. Tomada de www.um.es" width="200" height="127" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Huesos humanos.<center><img src="imagenes/antecessor.jpg" alt="Homo antecessor" width="200" height="136" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Mamut congelado de Berezovka.<center><img src="imagenes/mamut_berezovka.jpg" alt="Mamut de Berezovka. Tomada de www.creationscience.com" width="200" height="152" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Coprolito de carn&iacute;voro.<center><img src="imagenes/coprolithe.jpg" alt="Coprolito de carn&iacute;voro. Tomada de candoni1.chez.tiscali.fr" width="200" height="106" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Molusco bivalvo.<center><img src="imagenes/jurbv.gif" alt="Molusco bivalvo. Tomada de www.ammonite.free-online.co.uk" width="200" height="147" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Huellas de dinosaurio.<center><img src="imagenes/dinotrac.jpg" alt="Huellas de dinosaurio. Tomada de www.bio.umass.edu" width="200" height="236" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Pista de reptaci&oacute;n de trilobites (cruziana).<center><img src="imagenes/cruziana.jpg" alt="Pista de reptaci&oacute;n de trilobites (cruziana). Tomada de www.aloha.net" width="200" height="194" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="12">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="13" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">Huesos de dinosaurio.<center><img src="imagenes/carnivor.gif" alt="Huesos de dinosaurio. Tomada de www.washington.edu" width="200" height="205" border="0"></img></center></FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="14">
+<OPTION>??? 
+<OPTION>RESTOS MINERALES TRANSFORMADOS DE UN SER VIVO
+<OPTION>SER VIVO COMPLETO
+<OPTION>MOLDE EXTERNO
+<OPTION>RESTOS MINERALES DE UN SER VIVO
+<OPTION>RESTOS DE LA ACTIVIDAD DE UN SER VIVO
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="15" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" OnClick="parent.close(); return true"></input></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

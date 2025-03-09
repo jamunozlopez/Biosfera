@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Autoevaluación</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>5</version>
+
+<data>
+<title>Autoevaluación</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>La Biotecnología:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Tiene por objeto aplicar al estudio de los seres vivos la tecnología más avanzada.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es una disciplina que engloba conocimientos de otras ciencias.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es un concepto muy antiguo, ya que se utiliza desde hace más de 6.000 años.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se aplica desde la Revolución Industiral.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La clonación:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es un proceso artificial.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Está encaminada a la obtención de individuos distintos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es un proceso natural.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Sólo se produce en laboratorio.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un individuo genéticamente igual a otro y un grupo de individuos genéticamente iguales:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Son un clon.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Son cosas distitntas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Corresponden a conceptos diferentes.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>No es posible.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un clon es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un individuo genéticamente igual a otro.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Un individuo que pertenece a una población.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Una población de individuos de la misma especie.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un grupo de unidividuos de la misma especie.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La clonación de células:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es la clonación celular</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se utiliza en terapia génica.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es el proceso de clonación de ADN de un individuo en una célula anfitriona.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Consiste en la clonación de un fragmento de ADN.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La técnica del ADN recombinante:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es una clonación celular.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es una PCR.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es un tipo de terapia génica.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se trata de la clonación de células.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Un vector de clonación:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Es un portador del ADN que se desea clonar.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Es la célula que transporta el ADN que se desea clonar.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es un individuo que transmite un parásito.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Es el llamado ADN inserto.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los extremos cohesivos son:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Extremos pegajosos romos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Generados por enzimas de restricción.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Extremos pegajosos, producidos por ADN polimerasas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Un tipo de ADN que contiene extremos romos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La clonación acelular contiene tres etapas en el siguiente orden:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Hibridación, desnaturalización y polimerización.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Polimerización, hibridación y síntesis.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Despolimerización, hibridación y síntesis.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Desnaturalización, hibridación y polimerización.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los organismos genéticamente modificados se consiguen por:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Mutación.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Reproducción sexual.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Clonación acelular.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Técnicas de ingeniería genética.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Para aumentar el valor nutritivo de la patata se añade:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Genes de platija del Ártico, que es un pez.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Genes de toxinas bacterianas para defenderse de larvas parásitas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Genes de amaranta, que forma proteínas ricas en aminoácidos esenciales.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Genes bacterianos que degradan herbicidas y pueden sobrevivir en campos tratados con productos químicos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El primer gen introducido en Escherichia coli para producir una proteína humana fue el gen que codifica para la síntesis de:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Insulina.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Hormona del crecimiento.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Alfa- I - antitripsina.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Factor de coagulación sanguínea.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las vacas genéticamente modificadas, pertenecientes a las granjas farmacéuticas se utilizan para la producción de:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Insulina.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Hormona del crecimiento.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Alfa - I- antitripsina.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Factor de coagulación sanguínea.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La fermentación alcohólica es producida por:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Levaduras, para obtener pan.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Bacterias, para obtener pan.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Levaduras, para obtener vinagre.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Bacterias, para obtener vino.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La fitorremediación es una técnica utilizada para:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Depuración de aguas residuales de grandes ciudades.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Recuperación de suelos contaminados.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La degradación de hidrocarburos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>La recuperación de la calidad del aire.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los controles que se aplican sobre los trabajos de manipulación genética fueron acordados en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La Conferencia de Asilomar.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>La Convención para la Biodiversidad.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>El Comité Internacional de Bioética.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>El Comité Científico de la UE.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La bioremediación consiste en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aplicar terapia génica para remediar enfermedades.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Utilizar biotecnologías para remediar problemas medioambientales.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Utilizar organismos genéticamente modificados para la producción de fármacos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Utilizar organismos genéticamente modificados para la producción de alimentos ecológicos.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La creación de animales transgénicos es un proceso más complicado que con vegetales proque:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Los animales son más caros de mantener.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Las plantas no están sujetas a una normativa legal.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Las células de las plantas son totipotentes.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Las células de los aniamles son totipotentes.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La terapia génica sólo se puede aplicar a los casos en que la enfermedad:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Sólo afecte a un gen.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>El gen afectado se exprese en función de señales celulares internas.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Afecte a varios genes de la misma célula.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Sea terminal.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los fermentadores de flujo discontinuo:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Se recargan de producto y la materia prima es retirada cada cierto tiempo.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Deben interrumpir su funcionamiento para retirar el producto y llenarse de nuevo.</text>
+<correct>1</correct>
+<feedback>Correcto</feedback>
+</answer>
+<answer>
+<text>Deben interrumpir su funcionamiento para retirar la materia prima y llenarse de nuevo.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+<answer>
+<text>Se utilizan en la producción de vinagre.</text>
+<correct>0</correct>
+<feedback>Incorrecto</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle>Una vez que hayas terminado la Autoevaluación, tú mismo decidirás si debes seguir estudiando la unidad, según el resultado conseguido.</exercise-subtitle>
+<instructions>Escoge la respuesta correcta</instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<separate-javascript-file>0</separate-javascript-file>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

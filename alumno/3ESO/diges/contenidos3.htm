@@ -1,0 +1,374 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760" background="../../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)" href="../../../profesor/3eso/1.htm"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="img/digestivo.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="547" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos2.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (3/13) - <a href="contenidos4.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <p class="txtnegro">&nbsp;</p>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">3.- LA DIGESTIÓN OCURRE PASO 
+                                A PASO.<br>
+                                <br>
+                                <a name="boca"></a>3.1.- Boca. </p>
+                              <div align=""center>
+<table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="722" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                          <td class="txt" width="548" valign="top"> 
+                                            <p class="txt">En la boca el alimento 
+                                              se mezcla con la saliva formado 
+                                              el bolo alimenticio. La saliva, 
+                                              fabricada por las glándulas salivares, 
+                                              contiene entre otras substancias 
+                                              una enzima digestiva llamada amilasa 
+                                              que inicia la digestión el almidón.</p>
+                                          </td>
+                                          <td class="txt" width="151"> 
+                                            <p style="text-align: right">
+                                            <img border="0" src="img/boca.jpg" width="150" height="165"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table></div>
+							  <br>
+                              <a name="esofago"></a><a class="txtnegro">3.2.- 
+                              Es&oacute;fago. </a><br>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="719" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt" width="547" valign="top"> 
+                                          <p class="txt">En él ocurre una acción 
+                                            mecánica. Mediante los movimientos 
+                                            peristálticos, que son contracciones 
+                                            y dilataciones de los músculos de 
+                                            la pared del esófago, que amasan, 
+                                            mezclan y hacen avanzar el bolo alimenticio 
+                                            hacia el estómago.</p>
+                                          <p class="txt" style="text-align: center">
+                                          <img border="0" src="img/esofago.jpg" width="146" height="191"></p>
+                                        </td>
+                                        <td class="txt" width="149" style="text-align: center" valign="top"> 
+                                          <p>
+                                          <img border="0" src="img/Esofago.gif" width="162" height="282"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <span class="txtnegro"><br>
+                              </span><br>
+                              <a name="estomago"></a><a class="txtnegro">3.3.- 
+                              Est&oacute;mago. </a>
+                              <p align="center">
+                              <img border="0" src="img/Digestivo4F3.jpg" width="500" height="370"></p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">En su pared interna hay 
+                                            glándulas secretoras de jugo gástrico, 
+                                            que contiene, entre otras substancias, 
+                                            proteasas (enzimas que actúan sobre 
+                                            las proteínas), HCl, es decir, ácido 
+                                            clorhídrico que tiene efecto bactericida 
+                                            y favorece la acción de las proteasas, 
+                                            mucus que actúa protegiendo la pared 
+                                            del estómago de la acción del ácido 
+                                            clorhídrico. <br>
+                                            <br>
+                                            El producto final de la digestión 
+                                            en el estómago recibe el nombre de 
+                                            quimo.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p>&nbsp;</p>
+                              <p align="center"><img src="img/estomago.gif" width="250" height="220"><br>
+                              </p>
+                              <table width="100" border="0" cellspacing="0" cellpadding="3" align="center">
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" colspan="3"> 
+                                    <p><font class="txtnegrolink"> 
+                                      Actividad 5</font>
+                                    <a target="_blank" href="actividad5.htm"><img src="img/activ.jpg" width="120" height="68" border="0"></a> 
+                                    <p><a href="actividad2.htm"><font class="txtnegrolink"> 
+                                      </font></a> 
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center">&nbsp; </p>
+                              <div align="center"> </div>
+                              <a name="idelgado"></a><a class="txtnegro">3.4.- 
+                              Intestino delgado.</a><p align="center">
+                              <img border="0" src="img/Digestivo4F4.jpg" width="500" height="370"></p>
+                              <p>&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p class="txt">El quimo se mezcla con 
+                                            la bilis y con el jugo pancreático 
+                                            (producidos por el hígado y por el 
+                                            páncreas respectivamente) en el duodeno. 
+                                            <br>
+                                            <br>
+                                            La bilis emulsiona las grasas convirtiéndolas 
+                                            en pequeñas gotitas, facilitando así 
+                                            la acción de las lipasas del jugo 
+                                            pancreático. Este jugo contiene, además 
+                                            de lipasas, amilasas y proteasas.
+                                          </p>
+                                          <p class="txt" style="text-align: center">
+                                          <img border="0" src="img/moleculas.jpg" width="414" height="284"><img border="0" src="img/Digestion.gif" width="254" height="284"></p>
+                                          <p class="txt">En las paredes del intestino 
+                                            delgado hay otras glándulas que fabrican 
+                                            el jugo intestinal en cuya composición 
+                                            entran de nuevo los tres tipos de 
+                                            enzimas. <br>
+                                            <br>
+                                            La acción conjunta de todas las enzimas 
+                                            producidas en este tramo completa 
+                                            la digestión química de todos los 
+                                            alimentos. <br>
+                                            <br>
+                                            Los movimientos peristálticos se siguen 
+                                            produciendo a lo largo de todo el 
+                                            intestino delgado. .</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p align="center">
+                              &nbsp;</p>
+                              <div align="center">&nbsp;</div>
+                              <table width="100" border="0" cellspacing="0" cellpadding="3" align="center">
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" colspan="3"> 
+                                    <p><font class="txtnegrolink"> 
+                                      Actividad 6</font>
+                                    <a target="_blank" href="actividad6.htm"><img src="img/activ.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                </tr>
+                              </table>
+                              <p class="txt">&nbsp; </p>
+                              <div align="center"> </div>
+                              <p align="right"><a class="txtnegrolink" href="contenidos2.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (3/13) - <a href="contenidos4.htm" class="txtnegrolink">siguiente</a></span></p>
+                              </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ </body>
+</html>

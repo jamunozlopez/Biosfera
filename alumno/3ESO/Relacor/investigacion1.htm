@@ -1,0 +1,526 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/inicio2B.gif','../img/introduccion1gif.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" height="419" align="center">
+  <tr>
+    <td valign="top"> 
+      <div align="center">
+        <center> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" height="420" style="border-collapse: collapse" bordercolor="#111111">
+        <tr> 
+          <td height="30" width="764">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg" height="35"> 
+                  <div align="center">
+                    <center> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30" style="border-collapse: collapse" bordercolor="#111111">
+                    <tr>
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      </tr>
+                  </table>
+                    </center>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="764" height="24"> 
+            <div align="center">
+              <center> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24" style="border-collapse: collapse" bordercolor="#111111">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+              </center>
+            </div>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="764"> 
+            <div align="center">
+              <center> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6" style="border-collapse: collapse" bordercolor="#111111">
+              <tr> 
+                <td height="25" align="center" width="764"> 
+                  <table width="718" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#111111">
+                    <tr> 
+                      <td width="721" height="25">
+                      <img src="imagenes/titulo.gif" width="721" height="24"></td>
+                    </tr>
+                  </table>
+				   </td>
+              </tr>
+              <tr> 
+                <td width="764"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666" height="340">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="757" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF" valign="top"> 
+                            <td width="764"> 
+                              <div align="center">
+                                <center> 
+                              <table width="760" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="556" height="19" bgcolor="#BBDDBB"><font class="txtnegro">ACTIVIDADES DE INVESTIGACI&Oacute;N</font> 
+                                  </td>                                 
+                                </tr>
+                              </table>
+                                </center>
+                              </div>
+                              <div align="center">
+                                <center>
+                              <table width="760" border="0" cellspacing="0" cellpadding="6" bgcolor="#E6FFE6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr>
+								<td height="19" bgcolor="#E6FFE6" width="1"> 
+                                  </td> 
+                                  <td height="300" width="706"><br> 
+                                    <p><font class="txtnegro">Actividad de investigación 1. La Miopía<br>
+                                      </font></p>
+									<dir>
+                                    <p><font class="txt">
+									Se trata de que elabores un pequeño trabajo en el procesador de textos que tengas en tu ordenador, 
+									en el que recojas lo siguiente:  
+									<br>
+									<dir>
+										A.- Definición de miopía<br>
+										B.- Esquemas y dibujos que expliquen la miopía<br>
+										C.- Corrección de la miopía<br>
+										D.- Factores que incrementan o disminuyen la miopía
+									</dir>
+									
+									<p>Para ello debes visitar estas páginas y seleccionar la información 
+									<br>
+									
+									<dir>
+									<p class="MsoNormal">
+                                    <a href="http://www.latinsalud.com/articulos/00454.asp" class="txtnegrolink" target="_blank">
+                                    http://www.latinsalud.com/articulos/00454.asp</a> y<br>
+									
+									<a href="http://www.tarso.com/Miopia.html" class="txtnegrolink" target="_blank">
+										http://www.tarso.com/Miopia.html</a> y<br>
+									
+									
+									<a href="http://www.ondasalud.com/edicion/noticia/0,2458,16605,00.html" class="txtnegrolink" target="_blank">
+										http://www.ondasalud.com/edicion/noticia/0,2458,16605,00.html</a> y<br>
+									
+									</p>
+									
+									</dir>	
+									<p>Cada vez que visites una página observa los apartados 
+									en que se organizan los textos, las imágenes que hay, 
+									de las cuales algunas son dibujos sencillos que se pueden 
+									copiar bien al portapapeles y luego los puedes copiar a 
+									tu trabajo, pero otras son animaciones que no se pueden 
+									copiar, y lee con atención lo referente a como se 
+									desarrolla la miopía y cómo se puede evitar que aumente 
+									demasiado; cuando lo hayas leído, haz un pequeño resumen 
+									como final de tu trabajo.
+									</p>								
+									
+									<p>En la última de las direcciones que tienes arriba, 
+									puedes leer, además, cómo evitar que tengas muchos 
+									problemas físicos derivados del uso del ordenador, 
+									que es lo que estás haciendo ahora, ¿tu 
+                                    postura es correcta, la iluminación 
+                                    adecuada, etc.?
+									</p>
+									
+									
+									<p>&nbsp;</p>
+									
+									
+									</dir>		
+									<p><font class="txtnegro">Actividad de Investigación 2. 
+                                    <a name="Los sentidos">Los sentidos</a><br> 
+									</font></p>
+									<dir>  
+                                    <p>Vas a realizar un póster sobre los sentidos en el 
+									que vas a poner en el centro una figura humana. 
+									Alrededor de esa figura vas a colocar un esquema o 
+									dibujo de cada uno de nuestros sentidos al final de 
+									una flecha que arranca del lugar donde se encuentran 
+									los sentidos: la cara, la nariz, los oídos, las manos, etc.
+									<br>
+									<p>Los esquemas y dibujos los puedes copiar desde alguna de estas direcciones:
+									<dir>
+									&nbsp;<p class="MsoNormal">
+                                    <span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+                                    Ojo:</span></p>
+                                    <p class="MsoNormal">
+                                    <a href="http://www.google.es/search?tbm=isch&hl=es&source=hp&biw=1024&bih=538&q=ojo&gbv=2&oq=ojo&aq=f&aqi=g10&aql=&gs_l=img.3..0l10.360.831.0.1291.3.3.0.0.0.0.130.200.1j1.2.0...0.0.-mvhNjbXNyw" class="txtnegrolink" target="_blank">
+									Imágenes del ojo en Google</a><br>
+                                    <a href="http://icarito.tercera.cl/icarito/2003/888/pag2.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/icarito/2003/888/pag2.htm</a><br>
+                                    <a href="http://www.xtec.es/~mgisbert/projecte/vista.html" class="txtnegrolink" target="_blank">
+                                    http://www.xtec.es/~mgisbert/projecte/vista.html</a><br>
+                                    &nbsp;</p>
+                                    <p class="MsoNormal">
+                                    <span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+                                    Oído:</span></p>
+                                    <p class="MsoNormal">
+                                    <a class="txtnegrolink" target="_blank" href="http://dr-ramiro-pediatra.com/temas/tema.php?tema=10">
+									http://dr-ramiro-pediatra.com/temas/tema.php?tema=10</a><br>
+                                    <a href="http://icarito.tercera.cl/infografia/chumano/sentidos03/oido.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/infografia/chumano/sentidos03/oido.htm</a><br>
+                                    <a href="http://www.nlm.nih.gov/medlineplus/spanish/ency/esp_imagepages/1092.htm" class="txtnegrolink" target="_blank">
+                                    http://www.nlm.nih.gov/medlineplus/spanish/ency/esp_imagepages/1092.htm</a></p>
+                                    <p class="MsoNormal">
+                                    <span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+                                    Olfato, gusto, tacto</span></p>
+                                    <p class="MsoNormal">
+                                    <a href="http://www.webciencia.com/11_32olfato.htm" class="txtnegrolink" target="_blank">
+                                    http://www.webciencia.com/11_32olfato.htm</a><br>
+                                    <a href="http://icarito.tercera.cl/icarito/2001/804/pag7a.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/icarito/2001/804/pag7a.htm</a><br>
+                                    <a href="http://icarito.tercera.cl/icarito/2001/804/pag8.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/icarito/2001/804/pag8.htm</a><br>
+                                    <a href="http://icarito.tercera.cl/icarito/2001/804/pag4.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/icarito/2001/804/pag4.htm</a><br>
+                                    <a href="http://www.salonhogar.com/ciencias/biologia/sentidos/olfato.htm" class="txtnegrolink" target="_blank">
+                                    http://www.salonhogar.com/ciencias/biologia/sentidos/olfato.htm</a><br>
+                                    <a href="http://icarito.tercera.cl/infografia/chumano/sentidos03/piel.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/infografia/chumano/sentidos03/piel.htm</a></p>
+                                    <p>&nbsp;</p>
+									
+									</dir>
+									Una vez que tengas los esquemas recortados y pegados, 
+									escribe en un recuadro de texto hecho con un procesador, 
+									las características más importantes de cada sentido, en 
+									pocas líneas; luego imprímelos y recorta cada recuadro 
+									pegándolo cerca de su esquema correspondiente.<br><br>
+									La información para los recuadros la puedes obtener de las siguientes direcciones:
+									<dir>
+									<p style="text-align: left">
+									<br>
+									
+									<a href="http://www.hhmi.org/senses_esp/a110.html" class="txtnegrolink" target="_blank">
+									http://www.hhmi.org/senses_esp/a110.html
+									</a><br>
+									
+									<a class="txtnegrolink" target="_blank" href="http://ntic.educacion.es/w3/eos/MaterialesEducativos/mem2007/nuestro_cuerpo_clic/interactiva/index.html">
+									Nuestro cuerpo. Los sentidos</a><br>
+                                    <a href="http://www.uam.es/personal_pdi/medicina/algvilla/somatico/somatico.html" class="txtnegrolink" target="_blank">
+                                    http://www.uam.es/personal_pdi/medicina/algvilla/somatico/somatico.html</a><br>
+                                    <a href="http://www.escolar.com/menucie.htm" class="txtnegrolink" target="_blank">
+                                    http://www.escolar.com/menucie.htm</a><br>
+                                    <a href="http://icarito.tercera.cl/icarito/2001/804/pag2.htm" class="txtnegrolink" target="_blank">
+                                    http://icarito.tercera.cl/icarito/2001/804/pag2.htm</a></p>
+									
+									</dir>
+									
+									<br>
+									<p>&nbsp;</p>
+									</dir>
+												
+						          <p><font class="txtnegro">Actividad de investigación 
+                                  3. <a name="Las funciones superiores">Las 
+                                  funciones superiores</a><br>
+                                      </font></p>
+									<dir>  
+                                    <p class="MsoNormal">
+                                    <span style="font-family:Arial"><b>Objetivo:</b> 
+                                    Realizar un informe escrito para ser 
+                                    expuesto en clase sobre las funciones 
+                                    superiores humanas: cuáles son, 
+                                    características, localización, etc.</span></p>
+                                    <p class="MsoNormal">
+                                    <span style="font-family:Arial"><b>
+                                    Metodología:</b> Debes abrir un documento en 
+                                    un procesador de textos en el que ir 
+                                    copiando la información que encuentres en 
+                                    las direcciones que te proponemos. Recuerda 
+                                    que puedes localizar más direcciones 
+                                    utilizando algún buscador.</span></p>
+                                    <p class="MsoNormal">
+                                    <span style="font-family:Arial">Según vayas 
+                                    recopilando información, debes ir copiándola 
+                                    en el documento que tienes abierto, así como 
+                                    las imágenes, esquemas e ilustraciones que 
+                                    encuentres navegando. No olvides también 
+                                    que, para hacer el informe, debes copiar las 
+                                    direcciones de las que obtengas información 
+                                    para luego ponerlas como recursos 
+                                    utilizados.</span></p>
+                                    <p class="MsoNormal">
+                                    <span style="font-family:Arial">Una vez 
+                                    hayas copiado información debes organizarla 
+                                    y utilizarla para escribir con tus propias 
+                                    palabras el informe estructurado de la 
+                                    siguiente forma:</span></p>
+                                    <blockquote>
+                                      <p class="MsoNormal">
+                                      <span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      </span></span>
+                                      <span style="font-family:Arial">Definición 
+                                      de funciones superiores<br>
+                                      </span><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      </span></span>
+                                      <span style="font-family:Arial">Cuáles 
+                                      son: Memoria, inteligencia, razonamiento, 
+                                      sentimientos, aprendizaje, lenguaje&#8230;<br>
+                                      </span><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      </span></span>
+                                      <span style="font-family:Arial">
+                                      Características<br>
+                                      </span><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      </span></span>
+                                      <span style="font-family:Arial">
+                                      Localización</span></p>
+                                    </blockquote>
+                                    <p class="MsoNormal">
+                                    <span style="font-family: Arial; font-weight: 700">
+                                    Recursos:</span></p>
+									</dir>
+												
+						          <blockquote>
+                                    <ul>
+                                      <li>
+                                      <p class="MsoNormal">
+                                      <span style="font-family:Arial">
+                                      Definición:</span></li>
+                                    </ul>
+                                  </blockquote>
+									<dir>  
+                                    <blockquote>
+                                      <p class="MsoNormal">
+                                      <a href="http://www.puc.cl/sw_educ/neurociencias/html/009.html" class="txtnegrolink" target="_blank">
+                                      http://www.puc.cl/sw_educ/neurociencias/html/009.html</a></p>
+                                    </blockquote>
+									</dir>
+												
+						          <blockquote>
+                                    <ul>
+                                      <li>
+                                      <p class="MsoNormal">
+                                      <span style="font-family:Arial">Cuáles 
+                                      son:</span></li>
+                                    </ul>
+                                  </blockquote>
+									<dir>  
+                                    <blockquote>
+                                      <p class="MsoNormal">
+                                      <a href="http://www.puc.cl/sw_educ/neurociencias/html/mapa.html" class="txtnegrolink" target="_blank">
+                                      http://www.puc.cl/sw_educ/neurociencias/html/mapa.html</a><span style="font-family:Arial"> 
+                                      (Busca el apartado de funciones 
+                                      superiores)</span></p>
+                                    </blockquote>
+									</dir>
+												
+						          <blockquote>
+                                    <ul>
+                                      <li>
+                                      <p class="MsoNormal">
+                                      <span style="font-family:Arial">
+                                      Características:</span></li>
+                                    </ul>
+                                  </blockquote>
+									<dir>  
+                                    <blockquote>
+                                      <p class="MsoNormal">
+                                      <a href="http://www.puc.cl/sw_educ/neurociencias/html/mapa.html" class="txtnegrolink" target="_blank">
+                                      http://www.puc.cl/sw_educ/neurociencias/html/mapa.html</a><span style="font-family:Arial"> 
+                                      (Busca en el apartado de funciones 
+                                      superiores)<br>
+                                      </span>
+                                      <a href="http://faculty.washington.edu/chudler/lang.html" class="txtnegrolink" target="_blank">
+                                      http://faculty.washington.edu/chudler/lang.html</a>
+                                      <span style="font-family:Arial">(Sobre el 
+                                      lenguaje; está en inglés, con 
+                                      ilustraciones)<br>
+                                      </span>
+                                      <a href="http://www.edscuola.it/archivio/lre/cerebro.html" class="txtnegrolink" target="_blank">
+                                      http://www.edscuola.it/archivio/lre/cerebro.html</a><span style="font-family:Arial"> 
+                                      (lenguaje)</span></p>
+                                    </blockquote>
+									</dir>
+												
+						          <blockquote>
+                                    <ul>
+                                      <li>
+                                      <p class="MsoNormal">
+                                      <span style="font-family:Arial">
+                                      Localización:</span></li>
+                                    </ul>
+                                  </blockquote>
+									<dir>  
+                                    <blockquote>
+                                      <p class="MsoNormal">
+                                      <a href="http://platea.pntic.mec.es/~macruz/mente/descartes/funciones.html" class="txtnegrolink" target="_blank">
+                                      http://platea.pntic.mec.es/~macruz/mente/descartes/funciones.html</a><span style="font-family:Arial"> 
+                                      (artículo de nivel alto)<br>
+                                      &nbsp;</span></p>
+                                    </blockquote>
+                                    <p class="MsoNormal">
+                                    <span style="font-family:Arial">Una vez 
+                                    elaborado el informe puedes exponerlo en 
+                                    clase, acompañando la exposición oral con un 
+                                    resumen breve, de una cara de folio, que 
+                                    puedes repartir a tus compañeros.</span></p>
+                                    <p>&nbsp;</p>
+									</dir>
+												
+						</td>
+						<td width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+						</tr>											
+								</td>
+							</tr>
+													
+						
+						</table> 
+						
+					            </center>
+                              </div>
+						
+					</td>
+					</tr>                             
+                  </table>
+               </td>
+            </tr>
+         </table>  
+       </td>
+       </tr>             
+       </table>
+              </center>
+            </div>
+     </td>
+   </tr>
+   </table>
+        </center>
+      </div>
+ </td>
+</tr>
+</table>
+
+<br>
+</body>
+</html>

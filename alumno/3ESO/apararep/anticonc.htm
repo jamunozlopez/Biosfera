@@ -1,0 +1,761 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2B.gif','../img/contenidos1.gif')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="380" height="29"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio2B.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('introduccion','','../img/introduccion1gif.gif',1)"><img name="introduccion" border="0" src="../img/introduccion.gif" width="77" height="18"></a></td>
+                <td width="98" height="18"><a href="index_act.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25"><img src="../img/rephuma.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td bgcolor="#BBDDBB" width="367"><font class="txtnegro">CONTENIDOS</font> 
+                                  </td>
+                                  <td bgcolor="#BBDDBB" width="367">
+                                  <p align="right" class="txtnegrolink"><a class="txtnegrolink" href="parto.htm">
+                                  anterior</a> - (10/13) - <a href="nuetec.htm" class="txtnegrolink">siguiente</a></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p><font class="txtnegro">MÉTODOS
+                                    ANTICONCEPTIVOS.</font></p>
+                                    <p class="txt">Como su nombre indica, son
+                                    sistemas que evitan la fecundación del
+                                    óvulo por el espermatozoide y por tanto los
+                                    embarazos. Se han ido desarrollando a lo
+                                    largo del último siglo, no sin cierta
+                                    controversia entre los partidarios y los
+                                    contrarios a su utilización. Se utilizan
+                                    generalmente:</p>
+                                    <ul>
+                                      <li>
+                                        <p class="txt">Para realizar una
+                                        planificación familiar responsable.</li>
+                                      <li>
+                                        <p class="txt">Como medio para controlar
+                                        la natalidad y la superpoblación
+                                        mundial.</li>
+                                      <li>
+                                        <p class="txt">Para evitar embarazos no deseados
+                                        en los adolescentes.</li>
+                                      <li>
+                                        <p class="txt">Como medio para evitar la
+                                        transmisión de determinadas
+                                        enfermedades infecciosas.&nbsp;&nbsp;</li>
+                                    </ul>
+                                    <p class="txt">Cada uno de los aspectos
+                                    mencionados anteriormente podría ser objeto
+                                    de análisis y discusión, revisando los
+                                    pros y los contras de la utilización en
+                                    cada uno de los casos.&nbsp;</p>
+                                    <p class="txt"><img border="0" src="Imagenes/ny.jpg" align="left" alt="Superpoblación" width="282" height="122">En
+                                    las llamadas sociedades desarrolladas hemos
+                                    pasado de una situación en el que el
+                                    control de la natalidad y la planificación
+                                    familiar era un objetivo prioritario a el
+                                    extremo contrario, ya que gracias a dichas
+                                    campañas se ha reducido tanto la natalidad
+                                    que empezamos a experimentar el problema
+                                    opuesto, la escasa tasa de nacimientos y por
+                                    tanto campañas que promueven la natalidad.</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" width="100%">
+                                      <tr>
+                                        <td width="50%">
+                                          <p align="left" class="txt">En las
+                                          sociedades en vías de desarrollo o
+                                          subdesarrolladas, el problema es la
+                                          superpoblación y la falta de medios
+                                          económicos para poner en marcha
+                                          planes de control de natalidad.</p>
+                                          <p align="left">&nbsp;</p>
+                                          <p align="left">&nbsp;</td>
+                                        <td width="50%">
+                                          <p align="center"><img border="0" src="Imagenes/uganda.jpg" width="282" height="186" alt="Superpoblación"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">Otro de los problemas de las
+                                    sociedades denominadas avanzadas o
+                                    desarrolladas es el alto índice de
+                                    embarazos no deseados entre los
+                                    adolescentes, tema que ha suscitado
+                                    campañas a favor y en contra del uso de
+                                    métodos anticonceptivos y su difusión en
+                                    las escuelas. Véase el último caso del
+                                    Reino Unido, que promueve el reparto
+                                    gratuito de métodos anticonceptivos en las
+                                    escuelas.</p>
+                                    <p class="txt"><img border="0" src="Imagenes/sida.jpg" width="120" height="104" align="left" alt="Infección por virus del SIDA"></p>
+                                    <p class="txt"><br>
+                                    Por último, y no por ello lo menos
+                                    importante, la aparición de epidemias como
+                                    el SIDA, plantea la necesidad de utilizar
+                                    barreras contra la infección, que como es
+                                    sabido se transmite, entre otras formas, por
+                                    contacto sexual.&nbsp;</p>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt">El objetivo de este apartado
+                                    es describir los principales métodos
+                                    anticonceptivos disponibles en la
+                                    actualidad. Los anticonceptivos podemos
+                                    clasificarlos, según su forma de actuar,
+                                    en:</p>
+                                    <ul>
+                                      <li>
+                                        <p class="txt">Métodos de abstinencia
+                                        periódica.</li>
+                                      <li>
+                                        <p class="txt">Métodos de barrera.</li>
+                                      <li>
+                                        <p class="txt">Métodos químicos.</li>
+                                      <li>
+                                        <p class="txt">Métodos de
+                                        esterilización.</li>
+                                    </ul>
+                                    <table border="2" width="100%" height="33" bordercolor="#BBDDBB">
+                                      <tr>
+                                        <td width="100%" height="4" colspan="5">
+                                          <blockquote>
+                                            <blockquote>
+                                              <blockquote>
+                                                <blockquote>
+                                                  <blockquote>
+                                                    <blockquote>
+                                                      <p class="txt" align="center"><b>MÉTODOS
+                                                      DE ABSTINENCIA PERIÓDICA</b></p>
+                                                    </blockquote>
+                                                  </blockquote>
+                                                </blockquote>
+                                              </blockquote>
+                                            </blockquote>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt" align="center"><b>Método</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Descripción</b></td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Eficacia</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Ventajas</b></td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Inconvenientes</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Calendario
+                                          o método Ogino.</i>
+                                          <p><i>Moco cervical.</i></p>
+                                          <p><i>Temperatura basal.</i><img border="0" src="Imagenes/ogino.jpg" width="130" height="71" alt="Medición de la temperatura basal" align="left"></td>
+                                        <td width="21%" height="21" class="txt" align="left">Consiste
+                                          en realizar el acto sexual solamente
+                                          en los periodos en los que no haya
+                                          óvulos fecundables. Se calcula
+                                          teniendo en cuenta la anterior
+                                          menstruación, la medición de la
+                                          temperatura basal o analizando el
+                                          flujo vaginal.</td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Baja</b>. Método
+                                          con alto índice de fracaso, los
+                                          periodos fértiles son muy variables y
+                                          es muy fácil cometer errores.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Sin efectos secundarios
+                                          o contraindicaciones.</p>
+                                          <p class="txt">Considerado por algunos
+                                          autores como un método natural.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Necesidad de un
+                                          seguimiento constante y de cálculos
+                                          precisos que no siempre dan
+                                          resultado.&nbsp;</p>
+                                          <p class="txt">Produce inseguridad.</p>
+                                          <p class="txt">No protege o evita las
+                                          enfermedades de transmisión sexual.</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="2" width="100%" height="33" bordercolor="#BBDDBB">
+                                      <tr>
+                                        <td width="100%" height="4" colspan="5">
+                                          <blockquote>
+                                            <blockquote>
+                                              <blockquote>
+                                                <blockquote>
+                                                  <blockquote>
+                                                    <blockquote>
+                                                      <blockquote>
+                                                        <p class="txt" align="center"><b>MÉTODOS
+                                                        DE BARRERA</b></p>
+                                                      </blockquote>
+                                                    </blockquote>
+                                                  </blockquote>
+                                                </blockquote>
+                                              </blockquote>
+                                            </blockquote>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt" align="center"><b>Método</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Descripción</b></td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Eficacia</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Ventajas</b></td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Inconvenientes</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Diafragma.</i>
+                                          <p><img border="0" src="Imagenes/diafragma.gif" alt="Diafragma" width="149" height="170"></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Capuchón o dispositivo
+                                          semiesférico de goma con anillo
+                                          elástico. Se adapta al cuello del <b><i>útero</i></b>
+                                          e impide el paso del
+                                          espermatozoide.&nbsp;</p>
+                                          <p class="txt">Su uso debe ser
+                                          prescrito por un ginecólogo para
+                                          evitar complicaciones.</p>
+                                          <p>&nbsp;</td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Media</b>.&nbsp;</p>
+                                          <p class="txt">Depende de su correcta
+                                          colocación.&nbsp;</p>
+                                          <p class="txt">La eficacia aumenta en
+                                          combinación con espermicidas.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Sin efectos secundarios
+                                          o contraindicaciones.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Imprescindible la vista
+                                          al ginecólogo.&nbsp;</p>
+                                          <p class="txt">Puede ser causa de
+                                          infecciones.</p>
+                                          <p class="txt">No protege o evita las
+                                          enfermedades de transmisión sexual.</p>
+                                          <p class="txt">Dificultad a la hora de
+                                          colocarlo.&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Preservativo
+                                          o condón.</i>
+                                          <p align="center"><img border="0" src="Imagenes/condon2.jpg" width="149" height="143" alt="Preservativo o condón"></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Funda de goma elástica
+                                          que recubre el <b><i>pene</i></b> e
+                                          impide la entrada de los&nbsp;
+                                          espermatozoides en el útero.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Alta</b>, cuando se
+                                          utiliza correctamente y en
+                                          combinación con
+                                          espermicidas.&nbsp;&nbsp;</p>
+                                          <p class="txt">Bajo número de fallos.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Sin efectos secundarios
+                                          o contraindicaciones.</p>
+                                          <p class="txt">Muy recomendable para
+                                          evitar enfermedades de transmisión
+                                          sexual.</p>
+                                          <p class="txt">Se vende en farmacias.</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Reduce la sensibilidad
+                                          durante el coito.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Dispositivo
+                                          intrauterino (DIU).</i>
+                                          <p align="center"><i>&nbsp;<img border="0" src="Imagenes/diu2.gif" alt="DIU" width="144" height="113"></i></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Dispositivo que se
+                                          coloca en el interior del <b><i>útero</i></b>,
+                                          dificulta la fecundación e impide la
+                                          anidación del embrión.&nbsp;</p>
+                                          <p class="txt">Lleva un hilo en su
+                                          extremo que sale por la vagina.</p>
+                                          <p class="txt">Debe ser colocado por
+                                          un ginecólogo.</td>
+                                        <td width="19%" height="21" class="txt" align="left"><b>Alta</b>,
+                                          aunque es más recomendable para
+                                          mujeres que ya han tenido otros
+                                          hijos.&nbsp;
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">Puede
+                                          permanecer varios años siempre que se
+                                          realicen revisiones periódicas.
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Imprescindible la vista
+                                          al ginecólogo.&nbsp;</p>
+                                          <p class="txt">Puede ser causa de
+                                          infecciones.</p>
+                                          <p>No protege o evita las enfermedades
+                                          de transmisión sexual.</p>
+                                          <p>Puede ser causa de complicaciones
+                                          en caso de embarazo.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="2" width="100%" height="33" bordercolor="#BBDDBB">
+                                      <tr>
+                                        <td width="100%" height="4" colspan="5">
+                                          <blockquote>
+                                            <blockquote>
+                                              <blockquote>
+                                                <blockquote>
+                                                  <blockquote>
+                                                    <blockquote>
+                                                      <blockquote>
+                                                        <p class="txt" align="center"><b>MÉTODOS
+                                                        QUÍMICOS</b></p>
+                                                      </blockquote>
+                                                    </blockquote>
+                                                  </blockquote>
+                                                </blockquote>
+                                              </blockquote>
+                                            </blockquote>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt" align="center"><b>Método</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Descripción</b></td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Eficacia</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Ventajas</b></td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Inconvenientes</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Píldora.</i>
+                                          <p><img border="0" src="Imagenes/pildora.gif" alt="Píldoras anticonceptivas" width="144" height="113"></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Hormonas o compuestos
+                                          sintéticos que impiden la ovulación.
+                                          Se toman por vía oral.&nbsp;<br>
+                                          <br>
+                                          Debe ser recetada por un médico.</p>
+                                          <p>&nbsp;</p>
+                                        </td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Muy alta</b>.&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Son muy seguras para
+                                          evitar embarazos.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Imprescindible la vista
+                                          al ginecólogo y controles
+                                          periódicos.</p>
+                                          <p class="txt">Efectos secundarios en
+                                          el sistema circulatorio.&nbsp;</p>
+                                          <p class="txt">No protege o evita las
+                                          enfermedades de transmisión
+                                          sexual.&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Espermicidas</i><i>.</i>
+                                          <p><img border="0" src="Imagenes/espermicida.gif" alt="Espermicidas" width="144" height="144"></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Cremas, geles...</p>
+                                          <p class="txt">Contienen productos
+                                          químicos que destruyen los
+                                          espermatozoides. Se aplican en la <b><i>vagina</i></b>
+                                          antes del coito.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Baja</b>,&nbsp;</p>
+                                          <p class="txt">Aumenta si se usa en
+                                          combinación con un preservativos o
+                                          con el diafragma.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Sin efectos secundarios
+                                          o contraindicaciones.</p>
+                                          <p class="txt">Pueden ayudar a
+                                          prevenir algunas infecciones.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Pueden ser causa de
+                                          reacciones alérgicas.&nbsp;</p>
+                                          <p>No protege o evita las enfermedades
+                                          de transmisión sexual.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="2" width="100%" height="10" bordercolor="#BBDDBB">
+                                      <tr>
+                                        <td width="100%" height="4" colspan="5">
+                                          <blockquote>
+                                            <blockquote>
+                                              <blockquote>
+                                                <blockquote>
+                                                  <blockquote>
+                                                    <blockquote>
+                                                      <p class="txt" align="center"><b>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                      MÉTODOS DE
+                                                      ESTERILIZACIÓN</b></p>
+                                                    </blockquote>
+                                                  </blockquote>
+                                                </blockquote>
+                                              </blockquote>
+                                            </blockquote>
+                                          </blockquote>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt" align="center"><b>Método</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Descripción</b></td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Eficacia</b></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Ventajas</b></td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Inconvenientes</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="21" class="txt" align="left"><i>Vasectomía</i><i>.</i>
+                                          <p><img border="0" src="Imagenes/vasec2.jpg" alt="Vasectomía" width="176" height="228"></td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">Consiste en cortar los
+                                          conductos deferentes mediante
+                                          intervención quirúrgica menor.&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="19%" height="21" class="txt" align="left">
+                                          <p class="txt"><b>Muy alta</b>.&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="21" class="txt" align="left">
+                                          <p class="txt">No afecta al equilibrio
+                                          hormonal.</p>
+                                          <p class="txt">No afecta al deseo
+                                          sexual.</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="20%" height="21" class="txt" align="left">
+                                          <p class="txt">Prácticamente
+                                          irreversible.&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" height="1" class="txt" align="left"><i>Ligadura
+                                          de trompas</i><i>.</i>
+                                          <p><img border="0" src="Imagenes/ligadura.gif" alt="Espermicidas" width="176" height="127"></td>
+                                        <td width="21%" height="1" class="txt" align="left">
+                                          <p class="txt">Consiste en cauterizar
+                                          o cerrar con grapas las Trompas de
+                                          Falopio mediante intervención
+                                          quirúrgica menor.&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="19%" height="1" class="txt" align="left">
+                                          <p class="txt"><b>Muy alta</b>.&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</p>
+                                          <p>&nbsp;</td>
+                                        <td width="21%" height="1" class="txt" align="left">
+                                          <p class="txt">No afecta al equilibrio
+                                          hormonal.</p>
+                                          <p class="txt">No afecta al deseo
+                                          sexual.</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                        <td width="20%" height="1" class="txt" align="left">
+                                          <p class="txt">Prácticamente
+                                          irreversible.&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</p>
+                                          <p class="txt">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <div align="center">
+                                      <center> 
+                                    <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                      <tr bgcolor="#BBDDBB"> 
+                                        <td> 
+                                          <p align="center"><a target="_blank" href="actividades/actividad10.htm" class="txtnegrolink"> 
+                                            Actividad 10 </a>
+                                          <a class="txtnegrolink" target="_blank" href="actividades/actividad10.htm"> <img src="image/activ7.jpg" width="120" height="85" border="0"></a></p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                      </center>
+                                    </div>
+                                    &nbsp;
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><a class="txtnegrolink" href="parto.htm">
+                                  anterior</a> - (10/13) - <a href="nuetec.htm" class="txtnegrolink">siguiente</a></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+  <span class="txtnegrolink"></span> </p>
+</body>
+</html>

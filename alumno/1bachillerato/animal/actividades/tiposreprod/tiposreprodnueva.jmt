@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Alfonso De Mier</dc:creator>
+    <dc:title>Tipos de reproducci&amp;#x00F3;n</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Tipos de reproducci&amp;#x00F3;n</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???
+</default-right-item>
+
+<pair>
+<left-item><text>Divisi&amp;#x00F3;n simple</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Organismos unicelulares.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Gemaci&amp;#x00F3;n</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Produce copias exactas.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Partenog&amp;#x00E9;nesis</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Desarrollo de huevos sin fecundaci&amp;#x00F3;n.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Sexual</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>T&amp;#x00ED;pica de animales vertebrados.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Meiosis</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Formaci&amp;#x00F3;n de cuatro gametos.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Cromosomas hom&amp;#x00F3;logos</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Tienen los mismos genes.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Recombinaci&amp;#x00F3;n</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Variabilidad gen&amp;#x00E9;tica.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Gametos</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>C&amp;#x00E9;lulas con n cromosomas.</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle></exercise-subtitle>
+<instructions>Escoge la respuesta correcta.</instructions>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<shuffle-questions>1</shuffle-questions>
+<separate-javascript-file>0</separate-javascript-file>
+<next-caption>Siguiente</next-caption>
+<delete-caption>Borrar</delete-caption>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Intenta otra vez</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Tu puntuaci&amp;#x00F3;n es</your-score-is>
+<correct-indicator>Correcto</correct-indicator>
+<incorrect-indicator>Incorrecto</incorrect-indicator>
+<process-for-rtl>0</process-for-rtl>
+<times-up>&amp;#x00A1;Se acab&amp;#x00F3; el tiempo!</times-up>
+<check-caption>Comprobar</check-caption>
+<ok-caption>Correcto</ok-caption>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Cerrar</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>cierre.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<font-size>small</font-size>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#e6ffe6</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#006666</link-color>
+<vlink-color>#006666</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code></header-code>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>

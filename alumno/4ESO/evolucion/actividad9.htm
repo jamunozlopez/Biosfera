@@ -1,0 +1,372 @@
+<HTML>
+<HEAD><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<TITLE>La evoluci&oacute;n darwinista</TITLE>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+CorrectAnswers = new Array();
+
+CorrectAnswers[0]=10;
+CorrectAnswers[1]=1;
+CorrectAnswers[2]=9;
+CorrectAnswers[3]=6;
+CorrectAnswers[4]=7;
+CorrectAnswers[5]=11;
+CorrectAnswers[6]=5;
+CorrectAnswers[7]=3;
+CorrectAnswers[8]=8;
+CorrectAnswers[9]=4;
+CorrectAnswers[10]=2;
+
+
+macrightchar=':-)';
+macwrongchar='X';
+winrightchar=':-)';
+winwrongchar='X';
+
+
+var platform = 'win'
+if (navigator.appVersion.indexOf('Mac') != -1) {platform = 'mac'}
+if (platform == 'mac') {
+	rightchar = unescape(macrightchar)
+	wrongchar = unescape(macwrongchar)
+}
+else {
+	rightchar = unescape(winrightchar)
+	wrongchar = unescape(winwrongchar)
+}
+
+function CheckAnswer(){
+
+	var i = 0;
+	var TotalCorrect = 0;
+	var x = 0;
+	var Score = 0;
+
+	for (i=0; i<CorrectAnswers.length; i++){
+		if (document.QuizForm.elements[i*2].selectedIndex == CorrectAnswers[i]){
+			document.QuizForm.elements[(i*2)+1].value = rightchar;
+			TotalCorrect++;
+		}
+		else{
+			document.QuizForm.elements[(i*2)+1].value = wrongchar;
+		}
+	}
+	Score = Math.floor((TotalCorrect*100)/CorrectAnswers.length);
+	document.CheckForm.ScoreBox.value = Score + '%';
+}
+
+</SCRIPT>
+</HEAD>
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<BODY BACKGROUND="" BGCOLOR="#e6ffe6" TEXT="#000000" LINK="#0000cc" VLINK="#0000ff">
+
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="1" WIDTH="85%">
+
+
+<TR>
+<FORM NAME="NavButtons1">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></FONT></TD>
+</FORM>
+</TR>
+
+
+
+<TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000000">La evoluci&oacute;n darwinista<center><img src="image/darwin.gif" alt="Darwin" width="177" height="236" border="0"></img></center></FONT></TD></TR>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000"><BR>&nbsp;</FONT></TD></TR>
+
+
+<TR><TD ALIGN="LEFT"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000000">Ordena los siguientes hechos por el orden en que se dar&iacute;an seg&uacute;n la teor&iacute;a darwinista de la evoluci&oacute;n<br />
+</FONT><BR>&nbsp;</TD></TR>
+
+
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#e6ffe6">
+<FORM NAME="QuizForm">
+
+<CENTER>
+<TABLE BORDER=0 CELLPADDING="5" CELLSPACING="1">
+
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">a) Se produce una sequ&iacute;a prolongada </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="0">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="1" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">b) Tras muchas generaciones de repetirse el proceso, las jirafas que van teniendo &eacute;xito son siempre las de cuello m&aacute;s largo</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="2">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="3" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">c) Al cabo de varias generaciones las jirafas de cuello corto casi han desaparecido y todas tienen el cuello algo m&aacute;s largo</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="4">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="5" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">d) Hay comida para todas las jirafas</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="6">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="7" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">e) Como comen m&aacute;s las jirafas de cuello m&aacute;s largo est&aacute;n mejor alimentadas y tienen m&aacute;s descendientes </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="8">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="9" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">f) Todas las jirafas viven bien y dejan descendientes</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="10">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="11" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">g) Por mutaci&oacute;n aparecen jirafas con el cuello unos cent&iacute;metros m&aacute;s largo</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="12">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="13" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">h) Jirafas todas iguales</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="14">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="15" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">i) Las jirafas con el cuello m&aacute;s largo llegan a la comida que est&aacute; m&aacute;s alta</FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="16">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="17" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">j) Poco a poco va surgiendo una especie nueva de jirafa, de cuello muy largo </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="18">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="19" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial">k) La comida empieza a escasear </FONT></TD>
+<TD VALIGN=TOP><FONT FACE="Geneva,Arial"><SELECT NAME="20">
+<OPTION>??? 
+<OPTION>10
+<OPTION>6
+<OPTION>1
+<OPTION>11
+<OPTION>2
+<OPTION>3
+<OPTION>8
+<OPTION>7
+<OPTION>9
+<OPTION>5
+<OPTION>4
+</SELECT></FONT></TD>
+<TD VALIGN=TOP>
+
+<INPUT TYPE="TEXT" NAME="21" SIZE=3 MAXLENGTH=3>
+
+</TD>
+</TR>
+
+
+</TABLE>
+</CENTER>
+</FORM>
+
+</TD>
+</TR>
+
+<TR><FORM NAME="CheckForm">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER">
+<FONT FACE="Geneva,Arial"><INPUT TYPE="button" VALUE="Comprobar" onClick="CheckAnswer()"> Tu puntuaci&oacute;n es: <INPUT TYPE=TEXT NAME="ScoreBox" SIZE="4" MAXLENGTH="4"></FONT></TD>
+</FORM></TR>
+
+
+<TR>
+<FORM NAME="NavButtons2">
+<TD BGCOLOR="#e6ffe6" ALIGN="CENTER"><FONT FACE="Geneva,Arial" SIZE="-1"><INPUT TYPE="button" VALUE="Volver" onClick="parent.history.back()"></FONT></TD>
+</FORM>
+</TR>
+
+
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

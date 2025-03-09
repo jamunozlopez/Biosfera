@@ -1,0 +1,533 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [es] (Win98; I) [Netscape]">
+   <title>EXAMENES</title>
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script LANGUAGE="JavaScript">
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++) 
+ {  if (document.examen[i].checked)  
+  {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;      } 
+   if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  }error=contestadas-calificacion;mensaje=contestadas+" preguntas contestadas de 20.\r"+calificacion+" preguntas acertadas.\r"+error+" preguntas no acertadas:\r"+incorrectas;alert(mensaje);}</script>
+</head>
+<body bgcolor="#E6FFE6">
+<p>
+<font class="txtnegro">La materia y la energ&iacute;a en el Universo</font></p>
+
+<center><font class="txtbold">(nivel II)</font></center>
+<form NAME="examen">
+<p>
+<font class="txtnegro">1. Las estrellas capaces de atraer incluso
+a su propia luz, se denominan</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="3"><font class="txt">ambiciosas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="1"><font class="txt">agujeros
+negros</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="5"><font class="txt">estrellas
+de neutrones</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="4"><font class="txt">glotonas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="2"><font class="txt">gigantes
+rojas</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">2. Las estrellas peque&ntilde;as, de unas
+10 veces la masa de J&uacute;piter, reciben el nombre de</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="3"><font class="txt">enanas
+blancas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="4"><font class="txt">enanas
+negras</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="1"><font class="txt">enanas
+marrones</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 72/ 1" VALUE="5"><font class="txt">enanas
+naranjas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 72/ 2" VALUE="2"><font class="txt">enanas
+rojas</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">3. Las estrellas producen energ&iacute;a</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 36/ 3" VALUE="3"><font class="txt">porque
+arden por dentro</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 36/ 3" VALUE="1"><font class="txt">porque
+se unen &aacute;tomos de hidr&oacute;geno</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 36/ 3" VALUE="4"><font class="txt">porque
+son amarillas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 36/ 3" VALUE="2"><font class="txt">porque
+tienen unos 100 &ordm;C de temperatura</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 36/ 1" VALUE="5"><font class="txt">porque
+son gaseosas</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">4. La energ&iacute;a producida por las estrellas
+es en forma de</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 78/ 1" VALUE="5"><font class="txt">radioondas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 78/ 4" VALUE="3"><font class="txt">luz
+y calor</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 78/ 4" VALUE="4"><font class="txt">rayos
+X</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 78/ 4" VALUE="2"><font class="txt">microondas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 78/ 4" VALUE="1"><font class="txt">todo
+es cierto</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">5. Cuando una estrella estalla lanzando al
+exterior parte de su masa y mucha energ&iacute;a decimos que se ha convertido
+en una</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 32/ 5" VALUE="1"><font class="txt">nova</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 1" VALUE="5"><font class="txt">agujero
+negro</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 5" VALUE="4"><font class="txt">estrella
+de neutrones</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 5" VALUE="3"><font class="txt">asteroide</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 5" VALUE="2"><font class="txt">enana
+blanca</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">6. &iquest;Qu&eacute; diferencia hay entre
+una estrella y un planeta?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="3"><font class="txt">El
+planeta tiene luz</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="4"><font class="txt">La
+estrella tiene luz</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="1"><font class="txt">La
+estrella tiene mucha m&aacute;s masa que el planeta</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="5"><font class="txt">El
+planeta est&aacute; apagado</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 32/ 6" VALUE="2"><font class="txt">No
+hay diferencias</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">7. &iquest;De qu&eacute; depende el color
+de las estrellas?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="5"><font class="txt">De
+la masa inicial</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="4"><font class="txt">De
+su velocidad</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="1"><font class="txt">De
+la cantidad de hidr&oacute;geno que tenga</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="2"><font class="txt">De
+las reacciones de fusi&oacute;n</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 85/ 7" VALUE="3"><font class="txt">De
+la edad</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">8. &iquest;Qu&eacute; fueron las estrellas
+antes de emitir energ&iacute;a?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="3"><font class="txt">Un
+fragmento rocoso</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="5"><font class="txt">Un
+planeta</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="4"><font class="txt">Un
+agujero negro</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="1"><font class="txt">Parte
+de una nebulosa</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 38/ 8" VALUE="2"><font class="txt">Un
+qu&aacute;sar</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">9. &iquest;Qu&eacute; es un qu&aacute;sar?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="1"><font class="txt">Un
+tipo de galaxia muy lejano que emite muchas ondas electrom&eacute;gn&eacute;ticas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="2"><font class="txt">Un
+tipo de estrellas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="5"><font class="txt">Un
+tipo de planeta</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="3"><font class="txt">Una
+etapa de la vida de las estrellas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 94/ 9" VALUE="4"><font class="txt">Un
+tipo de nebulosa</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">10. &iquest;Qu&eacute; es un c&uacute;mulo
+de galaxias?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat  5/10" VALUE="2"><font class="txt">Un
+conjunto de galaxias muy r&aacute;pidas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  5/10" VALUE="3"><font class="txt">Un
+conjunto de galaxias muy viejas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  5/10" VALUE="5"><font class="txt">Un
+conjunto de galaxias que se separan entre si</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  5/10" VALUE="4"><font class="txt">Un
+conjunto de galaxias que desaparecer&aacute;n juntas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  5/10" VALUE="1"><font class="txt">Un
+conjunto de galaxias m&aacute;s o menos juntas, que se desplazan en grupo</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">11. Las estrellas de peque&ntilde;o tama&ntilde;o
+terminan su vida como</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 18/11" VALUE="3"><font class="txt">enanas
+marrones</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 18/11" VALUE="1"><font class="txt">enanas
+blancas o rojas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 18/11" VALUE="2"><font class="txt">enanas
+azules</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 18/11" VALUE="4"><font class="txt">enanas
+negras</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 18/11" VALUE="5"><font class="txt">estrella
+de neutrones</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">12. &iquest;Qu&eacute; es el Big Bang?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 75/12" VALUE="5"><font class="txt">El
+proceso de formaci&oacute;n de estrellas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 75/12" VALUE="2"><font class="txt">La
+explosi&oacute;n que origin&oacute; el Sistema Solar</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 75/12" VALUE="4"><font class="txt">El
+proceso de formaci&oacute;n de planetas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 75/12" VALUE="1"><font class="txt">La
+explosi&oacute;n que origin&oacute; el Universo actual</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 75/12" VALUE="3"><font class="txt">El
+proceso de formaci&oacute;n de galaxias</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">13. Nuestra galaxia se llama</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 109/13" VALUE="1"><font class="txt">V&iacute;a
+L&aacute;ctea</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 109/13" VALUE="5"><font class="txt">Andr&oacute;meda</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 109/13" VALUE="3"><font class="txt">Sistema
+Solar</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 109/13" VALUE="2"><font class="txt">Grupo
+Local</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 109/13" VALUE="4"><font class="txt">Magallanes</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">14. Si la velocidad de desplazamiento de las
+galaxias es inferior a la fuerza con que se atraen, el Universo</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 44/14" VALUE="4"><font class="txt">se
+expandir&aacute; indefinidamente</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 44/14" VALUE="1"><font class="txt">dejar&aacute;
+de expandirse y se contraer&aacute;</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 44/14" VALUE="5"><font class="txt">se
+frenar&aacute;</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 44/14" VALUE="2"><font class="txt">se
+quedar&aacute; estacionario</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 44/14" VALUE="3"><font class="txt">se
+inflar&aacute;</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">15. &iquest;Qu&eacute; es un p&uacute;lsar?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat 116/15" VALUE="2"><font class="txt">Un
+tipo de estrella que ha gastado su hidr&oacute;geno</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 116/15" VALUE="1"><font class="txt">Un
+tipo de estrella que gira muy deprisa y emite radioondas desde un &uacute;nico
+punto de su superficie</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 116/15" VALUE="5"><font class="txt">Un
+tipo de estrella de fuera de nuestra galaxia</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 116/15" VALUE="3"><font class="txt">Un
+tipo de estrella recien nacida</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 116/15" VALUE="4"><font class="txt">Un
+tipo de estrella que no emite energ&iacute;a</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">16. Las nebulosas son</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="mat   8/16" VALUE="2"><font class="txt">conjuntos
+de estrellas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  8/16" VALUE="4"><font class="txt">conjuntos
+de planetas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  8/16" VALUE="5"><font class="txt">conjuntos
+de galaxias</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  8/16" VALUE="1"><font class="txt">conjuntos
+interestelares de gases y polvo</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat  8/16" VALUE="3"><font class="txt">conjuntos
+de energ&iacute;as</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">17. Cuando una estrella agota su hidr&oacute;geno
+se convierte en</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="alg 12/17" VALUE="2"><font class="txt">Enana
+blanca</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 12/17" VALUE="5"><font class="txt">Agujero
+negro</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 12/17" VALUE="3"><font class="txt">Supernova</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 12/17" VALUE="4"><font class="txt">Estrella
+de neutrones</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 12/17" VALUE="1"><font class="txt">Gigante
+o supergigante roja</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">18. &iquest;De qu&eacute; est&aacute; hecho
+el Universo?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="alg 93/18" VALUE="1"><font class="txt">De
+materia y energ&iacute;a</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 93/18" VALUE="3"><font class="txt">De
+estrellas</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 93/18" VALUE="2"><font class="txt">De
+materia</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 93/18" VALUE="4"><font class="txt">De
+energ&iacute;a</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 93/18" VALUE="5"><font class="txt">De
+estrellas y planetas</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">19. &iquest;Qu&eacute; es un a&ntilde;o luz?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="alg 53/19" VALUE="4"><font class="txt">La
+distancia al Sol</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 53/19" VALUE="3"><font class="txt">La
+distancia iluminada por la luz en un a&ntilde;o</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 53/19" VALUE="2"><font class="txt">La
+distancia a la que se puede ver la luz de una estrella en cierto momento
+del a&ntilde;o</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 53/19" VALUE="5"><font class="txt">La
+distancia a la que se ve una estrella en movimiento</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 53/19" VALUE="1"><font class="txt">La
+distancia que recorre la luz en una a&ntilde;o viajando a 300.000 km/sg</font></li>
+</ol>
+
+<p>
+<font class="txtnegro">20. Seg&uacute;n su forma, &iquest;qu&eacute;
+tipos de galaxias conoces?</font></p>
+
+<ol class="txt">
+<li>
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="1"><font class="txt">Irregulares,
+el&iacute;pticas y espirales</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="3"><font class="txt">Redondas
+y alargadas</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="5"><font class="txt">Redondas
+y en remolino</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="2"><font class="txt">Difusas,
+planetarias y el&iacute;pticas</font></li>
+
+<li>
+<input TYPE="radio" NAME="alg 96/ 20" VALUE="3"><font class="txt">Espirales,
+en remolino e irregulares</font></li>
+</ol>
+
+
+<input TYPE="reset" VALUE="BORRAR"><input TYPE="submit" NAME="calificacion" VALUE="CALIFICACIÓN" onClick="nota(this.form)"></form>
+</body>
+</html>

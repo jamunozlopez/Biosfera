@@ -1,0 +1,520 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif')" language="Javascript1.2">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr> 
+                <td width="760"> 
+                  <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a onMouseOut="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln" onMouseOver="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" href="../../../profesor/2bachillerato/1.htm">
+                <img name="fpAnimswapImgFP1" border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/inicio2b.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img src="../img/introduccion.gif" border="0" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="a_inicial.htm" onMouseOut="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln" onMouseOver="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;">
+                <img name="fpAnimswapImgFP3" border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)">
+                <img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onMouseOut="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln" onMouseOver="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;">
+                <img name="fpAnimswapImgFP4" border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onMouseOut="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln" onMouseOver="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;">
+                <img name="fpAnimswapImgFP5" border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onMouseOut="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln" onMouseOver="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;">
+                <img name="fpAnimswapImgFP6" border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="autoevaluacion.htm" onMouseOut="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln" onMouseOver="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;">
+                <img name="fpAnimswapImgFP7" border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onMouseOut="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln" onMouseOver="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;">
+                <img name="fpAnimswapImgFP8" border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="titulmicro.jpg" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table width="761" border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td width="547" height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB">
+                            <p align="right"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><span class="txtnegrolink">
+                            <a class="txtnegrolink" title="Enlaza con la reproducción bacteriana" href="contenidos6.htm">anterior</a> 
+                              - (7/13) -
+                            <a class="txtnegrolink" title="Enlaza con las algas unicelulares" href="contenidos8.htm">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td   width="21" valign="top" rowspan="2">&nbsp;</td>
+                            <td valign="top" colspan="2" height="24"> 
+                              <table border="0" cellspacing="1" width="99%" id="AutoNumber3">
+                                <tr>
+                                  <td width="100%">
+                                  <p class="txtnegro">PROTOZOOS</p>
+                                  <p class="txt">Los protozoos, según la 
+                                  clasificación de Margulis, están incluidos en 
+                                  el Reino de los Protoctistas. Este Reino es un 
+                                  &#8220;cajón de sastre&#8221; que incluye individuos muy 
+                                  diversos.</p>
+                                  <p class="txt">Los protozoos son seres <b>
+                                  unicelulares</b>, <b>eucariotas</b>, <b>
+                                  heterótrofos </b>y <b>
+                                  microscópicos</b>. Tienen capacidad de 
+                                  movimiento, por eso responden de forma activa 
+                                  a los estímulos que se producen en el medio. 
+                                  Pueden tener vida libre o parásita. Los de 
+                                  vida libre requieren ambientes húmedos para su 
+                                  supervivencia pudiendo desarrollarse en el 
+                                  agua, el suelo o sobre plantas o animales. Su 
+                                  reproducción es, en la mayoría de los casos, 
+                                  por bipartición. Algunos grupos presentan 
+                                  ciclos sexuales donde se produce meiosis, 
+                                  con formación de gametos que conduce a la 
+                                  formación de un zigoto diploide.</p>
+                                  <p class="txt"><a name="clasif"></a>Los grupos más importantes son <span class="txtnegrolink">
+                                  <a class="txtnegrolink" href="#flagelado">Flagelados</a></span>, <span class="txtnegrolink">
+                                  <a class="txtnegrolink" href="#RIZOPODO">Rizópodos</a></span>, <span class="txtnegrolink">
+                                  <a class="txtnegrolink" href="#esporozoo">Esporozoos</a></span> y <span class="txtnegrolink">
+                                  <a class="txtnegrolink" href="#ciliado">Ciliados</a></span>.</p>
+                                  <p class="txt"><a name="flagelado"></a><b>
+                                  Flagelados, o Mastigóforos</b></p>
+                                  <p class="txt">Se los considera el grupo de 
+                                  protozoos más antiguo. Se caracterizan por 
+                                  presentar <b>flagelos </b>que utilizan para el 
+                                  desplazamiento. Pueden tener <b>vida libre</b>, 
+                                  en agua dulce o salada, presentándose en forma 
+                                  individual o en colonias. También existen 
+                                  grupos <b>parásitos</b>, entre ellos se pueden 
+                                  destacar los siguientes:</p>
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber5">
+                                    <tr>
+                                      <td width="61%">
+                                      <ul>
+                                        <li>
+                                        <p class="txt">Trypanosoma gambiense y 
+                                        Tripanosoma rhodesiense: son individuos 
+                                        parásitos que producen la mortal 
+                                        &#8220;enfermedad del sueño&#8221;.</li>
+                                        <li>
+                                        <p class="txt">Tripanosoma cruzi: 
+                                        aparece en Sudamérica y produce el &#8220;mal 
+                                        de Chagas&#8221;.</li>
+                                      </ul>
+                                      </td>
+                                      <td width="5%">&nbsp;</td>
+                                      <td width="34%">
+                                      <img border="0" src="imagenes/trypanosoma.jpg" width="247" height="166" alt="Trypanosomas en sangre"></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%">
+                                      <ul>
+                                        <li>
+                                        <p class="txt">Leishmania: presente en 
+                                        distintas partes del Mundo. Provoca 
+                                        enfermedades graves como el Kala-azar o 
+                                        fiebre negra.</li>
+                                      </ul>
+                                      </td>
+                                      <td width="5%">&nbsp;</td>
+                                      <td width="34%">
+                                      <img border="0" src="imagenes/leishmania.jpg" alt="Úlcera producida por leishmaniasis" width="247" height="166"></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%">
+                                      <ul>
+                                        <li>
+                                        <p class="txt">Gonyaulax catenella: 
+                                        especie de vida libre que forma grandes 
+                                        agrupamientos de individuos. Estas 
+                                        agrupaciones reciben el nombre de &#8220;marea 
+                                        roja&#8221; y son alimento de bivalvos 
+                                        (mejillones). Estos protozoos producen 
+                                        una toxina inofensiva para los 
+                                        mejillones, pero en el hombre produce el 
+                                        &#8220;envenenamiento por mejillones&#8221; que 
+                                        puede producir la muerte.</li>
+                                      </ul>
+                                      <p>&nbsp;</td>
+                                      <td width="5%">&nbsp;</td>
+                                      <td width="34%">
+                                      <img border="0" src="imagenes/gony.gif" width="247" height="262" alt="Gonyaulax. Imagen tomada de  http://www.mcb.harvard.edu/hastings/Images/gony.gif"></td>
+                                    </tr>
+                                  </table>
+                                  <p class="txt"><a name="RIZOPODO"></a><b>
+                                  Rizópodos, o Sarcodinos</b>&nbsp;</p>
+                                  <p class="txt">Incluye protozoos muy sencillos 
+                                  cuya característica general es que forman <b>
+                                  pseudópodos</b> para el desplazamiento, y como 
+									es 
+                                  típico de este grupo por eso es denominado 
+                                  desplazamiento amebiano, aplicándose a 
+                                  cualquier otro ser que se desplace de esta 
+                                  forma, por ejemplo al desplazamiento de los 
+                                  macrófagos.</p>
+                                  <p class="txt">Su estructura está formada por 
+                                  un citoplasma con núcleo y orgánulos no 
+                                  permanentes. Algunos grupos presentan una 
+                                  estructura externa dura llamada <b>teca</b>, que 
+                                  puede ser de carbonato cálcico como los 
+                                  Foraminíferos, o de sílice como los 
+                                  Radiolarios.</p>
+                                  <p class="txt">En este grupo aparecen 
+                                  individuos de vida libre y 
+                                  parásitos. Entre los más conocidos se 
+                                  encuentran:</p>
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber6">
+                                    <tr>
+                                      <td width="61%">
+                                  <ul>
+                                    <li>
+                                    <p class="txt">Amoeba proteus: especie de 
+                                    vida libre.</li>
+                                    <li>
+                                    <p class="txt">Entamoeba histolytica: 
+                                    especie parásita que produce la disentería 
+                                    amebiana.</li>
+                                    <li>
+                                    <p class="txt">Entamoeba gingivalis: vive en 
+                                    la boca de mamíferos, es comensal.</li>
+                                    <li>
+                                    <p class="txt">Nummulites: foraminífero 
+                                    fósil .</li>
+                                  </ul>
+                                      </td>
+                                      <td width="3%">&nbsp;</td>
+                                      <td width="36%">
+                                      <img border="0" src="imagenes/entamoebahistolitica.jpg" width="247" height="183" alt="Entamoeba Histolytica"></td>
+                                    </tr>
+                                  </table>
+                                  <p class="txt"><a name="esporozoo"></a><b>
+                                  Esporozoos</b>&nbsp;</p>
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber7">
+                                    <tr>
+                                      <td width="61%">
+                                  <p class="txt">Protozoos parásitos con una 
+                                  estructura muy simple, debido su forma de 
+                                  vida. Viven en el interior de células, 
+                                  cavidades corporales o líquidos corporales. 
+                                  Atacan a todo tipo de animales causando 
+                                  enfermedades muy graves. Son capaces de formar 
+                                  esporas muy resistentes. Los más 
+                                  representativos son:</p>
+                                  <ul>
+                                    <li>
+                                    <p class="txt">Toxoplasma: Produce la toxoplasmosis, la gravedad de esta 
+                                    enfermedad depende del tejido que se vea 
+                                    afectado.</li>
+                                    <li>
+                                    <p class="txt">Plasmodium malarie y P. 
+                                    Falciparum: estas dos especies provocan la 
+                                    grave enfermedad de la malaria. En la 
+                                    actualidad es la enfermedad que provoca más 
+                                    muertes en el mundo.</li>
+                                  </ul>
+                                      <p>&nbsp;</td>
+                                      <td width="5%">&nbsp;</td>
+                                      <td width="34%">
+                                      <img border="0" src="imagenes/plasmodium.jpg" alt="Plasmodium dentro de un glóbulo rojo" width="232" height="205"></td>
+                                    </tr>
+                                  </table>
+                                  <p class="txt"><a name="ciliado"></a><b>
+                                  Ciliados</b>&nbsp;</p>
+                                  <p class="txt">Se piensa que es el grupo de 
+                                  protozoos más evolucionado. Presentan <b>
+                                  cilios</b> distribuidos por toda la membrana 
+                                  celular o en localizaciones determinadas (en 
+                                  torno a la boca, periestomáticos). Los cilios 
+                                  sirven para el desplazamiento del individuo o 
+                                  para la captura de alimento. </p>
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber8">
+                                    <tr>
+                                      <td width="56%">
+                                  <p class="txt">La estructura del ciliado es 
+                                  compleja. Se puede distinguir una región 
+                                  deprimida, en cuyo final se presenta el
+									<b>citostoma </b>y la <b>citofaringe</b>. Estas estructuras 
+                                  se continúan, en el interior del citoplasma, 
+                                  con las vesículas alimenticias que realizan un 
+                                  movimiento predeterminado por el citoplasma 
+                                  llamado <b>Ciclosis</b>. Las vacuolas pueden 
+                                  unirse a vacuolas contráctiles que expulsan 
+                                  agua y al <b>citopigio </b>o <b>citoprocto</b>,<b>
+									</b>que es el ano 
+                                  celular.</p>
+                                  <p class="txt">Además, en el citoplasma se 
+                                  observa un <b>macronúcleo </b>que se encarga 
+                                  del control de la célula y un <b>micronúcleo</b> 
+                                  que actúa en la reproducción sexual que 
+                                  presenta este grupo.</p>
+                                  <p class="txt">Los ciliados pueden dividirse 
+                                  mediante <b>reproducción asexual</b>, por 
+                                  procesos de bipartición o gemación. También 
+                                  pueden reproducirse sexualmente mediante un 
+                                  proceso muy complejo denominado <b>conjugación</b>.</p>
+                                      </td>
+                                      <td width="10%">&nbsp;</td>
+                                      <td width="34%">
+                                      <a title="Pincha sobre la imagen para ver la explicación del proceso" target="_blank" href="ampliaparamecio.htm">
+                                      <img border="0" src="imagenes/animaparame.gif" alt="Reproducción por conjugación entre dos paramecios. Amplía información sobre la conjugación en Ciliados, pulsando en la imagen." width="300" height="250"></a></td>
+                                    </tr>
+                                  </table>
+                                  <p class="txt" style="text-align: center">&nbsp;</p>
+                                  <p class="txt" style="text-align: center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Amplía información sobre el sistema de reproducción por conjugación en protozoos ciliados" target="_blank" href="ampliaparamecio.htm">Ampliación de contenidos: la conjugación de 
+                                  ciliados</a></span></p>
+                                  <table border="0" cellspacing="1" width="100%" id="AutoNumber9">
+                                    <tr>
+                                      <td width="63%">
+                                    <p class="txt">Estos individuos tienen vida 
+                                  libre en aguas dulces, marinas o salobres. 
+                                  También aparecen algunas especies parásitas. 
+                                  Los representantes más conocidos son:<ul>
+                                        <li>
+                                    <p class="txt">Paramecium: ciliado que 
+                                    aparece en aguas dulces que contienen restos 
+                                    vegetales.</li>
+                                    <li>
+                                    <p class="txt">Vorticella: también aparece 
+                                    en aguas dulces. Se caracteriza por vivir 
+                                    fijo al sustrato. Es un individuo <b>sésil</b>. 
+                                    Utiliza los cilios para la captura de 
+                                    alimento.</li>
+                                      </ul>
+                                    <p class="txt">&nbsp;<p class="txt" style="text-align: center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="investripanosoma.htm">Actividad de investigación: enfermedades por 
+                                  Tripanosomas</a></span></p>
+                                      </td>
+                                      <td width="3%">&nbsp;</td>
+                                      <td width="34%">
+                                      <p align="center">
+                                      <img border="0" src="imagenes/Vorticella1.jpg" alt="Vorticella es un protozoo sésil, es decir, fijo a un sustrato" width="202" height="330"></td>
+                                    </tr>
+                                  </table>
+                                  <p class="txt">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td width="744"   valign="top" > 
+                              <p class="txtnegro">&nbsp;</p>
+                                    <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%">
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="actividades/act9.htm">Actividad 9</a></span><a target="_blank" href="actividades/act9.htm"><img border="0" src="imagenes/cuadritos/cuad9small.jpg" xthumbnail-orig-image="imagenes/cuadritos/cuad9.jpg" width="100" height="75"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%">
+                              <table border=0 cellspacing=0 cellpadding=3 width="142" align="center" >
+                                <tr bgcolor="#BBDDBB"> 
+                                  <td width="134"> 
+                                    <p align="center"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" target="_blank" href="actividades/act10.htm">Actividad 10</a></span><a target="_blank" href="actividades/act10.htm"><img border="0" src="imagenes/cuadritos/cuad10small.gif" xthumbnail-orig-image="imagenes/cuadritos/cuad10.gif" width="100" height="75"></a></p>
+                                  </td>
+                                </tr>
+                              </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                              <p class="txtnegro">&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr> 
+                                  <td> 
+                                    <p align="right"><span class="txtnegrolink">
+                                    <a class="txtnegrolink" title="Enlaza con la reproducción bacteriana" href="contenidos6.htm">anterior</a> 
+                                - (7/13) -
+                                    <a class="txtnegrolink" title="Enlaza con las algas unicelulares" href="contenidos8.htm">siguiente</a></span></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div align="center"> </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            </tr>
+                         </table>
+                      </td>
+                      </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+ <br>
+</body>
+</html>

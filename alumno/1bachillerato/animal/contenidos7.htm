@@ -1,0 +1,612 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../estilos/estilo.css">
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../animate.js">
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/ideas1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/introduccion1gif.gif','../img/inicio2b.gif','../img/contenidos1.gif')" link="#006666" vlink="#006666" alink="#006666">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="30" width="760">
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+              <tr>
+                <td width="760" background="../../3ESO/img/tierra_pq.gif"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="30">
+                    <tr> 
+                      <td width="380" height="29">
+                      <img border="0" src="../img/logo_biosfera.jpg" width="760" height="35"></td>
+                      <td width="365"  align="right" class="unnamed1" height="29">&nbsp; 
+                      </td>
+                      <td width="15"  align="right" class="unnamed1" height="29"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" width="760" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18">
+                <a href="../../../profesor/1bachillerato/1.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln">
+                <img border="0" src="../img/inicio2.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../img/unidades1.gif" width="80" height="18"></a></td>
+                <td width="77" height="18">
+                <a href="index.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln">
+                <img border="0" src="../img/introduccion.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../img/introduccion1.gif" width="77" height="18"></a></td>
+                <td width="98" height="18">
+                <a href="index_act.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln">
+                <img border="0" src="../img/actividadini.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="../img/actividadini1.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm">
+                <img border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18">
+                <a href="actividades.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln">
+                <img border="0" src="../img/actividades.gif" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="../img/actividades1.gif" width="82" height="18"></a></td>
+                <td width="69" height="18">
+                <a href="mapa.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln">
+                <img border="0" src="../img/mapa.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="../img/mapa1.gif" width="69" height="18"></a></td>
+                <td width="24" height="18">
+                <img border="0" src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18">
+                <a href="ideas.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln">
+                <img border="0" src="../img/ideas.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="../img/ideas1.gif" width="80" height="18"></a></td>
+                <td width="95" height="18">
+                <a href="Autoevaluacion.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln">
+                <img border="0" src="../img/autoevaluacion.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="../img/autoevaluacion1.gif" width="95" height="18"></a></td>
+                <td width="80" height="18">
+                <a href="enlaces.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln">
+                <img border="0" src="../img/enlaces.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="../img/enlaces1.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img border="0" src="../img/sombra.gif" width="760" height="6"></td>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center"> 
+                  <table width="723" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="723" height="25">
+                      <img border="0" src="tituanim.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" bgcolor="#006666">
+                    <tr align="center"> 
+                      <td valign="top">
+                        <table width="760" border="0" cellspacing="1" cellpadding="0">
+                          <tr bgcolor="#FFFFFF"> 
+                            <td bgcolor="#e6ffe6" align="center"> 
+                              <table width="758" border="0" cellspacing="0" cellpadding="6" style="border-collapse: collapse" bordercolor="#111111">
+                                <tr> 
+                                  <td width="486" height="19" bgcolor="#BBDDBB"><b><font class="txtnegro" face="Arial" size="2">CONTENIDOS</font></b> 
+                                  </td>
+                                  <td width="260" height="19" bgcolor="#BBDDBB" align="right">
+                                  <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                  <a class="txtnegrolink" title="Enlaza con las generalidades de la respiración" href="contenidos6.htm">anterior - (7/23) -</a>
+                                  <a class="txtnegrolink" title="Enlaza con el aparato respiratorio en humanos" href="contenidos8.htm">siguiente</a></font></b></td>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="6">
+                                <tr> 
+                                  <td> 
+                                    <p class="txtnegro"><font class="txtnegro"> <font face="Arial" size="2"><b>
+                                    TIPOS DE SISTEMAS DE RESPIRACIÓN</b></font></font></p>
+                                    <p class="txt">En los animales se dan 
+                                    distintos sistemas de respiración. Estos 
+                                    sistemas presentan distintos grados de 
+                                    complejidad, dependiendo del tipo de animal, 
+                                    de sus necesidades energéticas y del medio 
+                                    en el que vive.</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber1">
+                                      <tr>
+                                        <td width="61%">
+                                        <p class="txt">Los animales diblásticos, 
+                                        como las esponjas, o las medusas, no 
+                                        desarrollan  estructura 
+                                        respiratoria alguna, debido a que son animales 
+                                        sencillos, que realizan el intercambio de 
+                                        gases de todas sus células con el medio 
+                                        acuático que las rodea. En animales triblásticos aumenta el número de capas 
+                                        celulares y aumentan los problemas para 
+                                        realizar el intercambio de gases con 
+                                        todas las células del cuerpo. Sin 
+                                        embargo, la mayoría de los gusanos planos son capaces 
+                                        de efectuar el intercambio de gases sin 
+                                        necesidad de un sistema específico de 
+                                        respiración, debido al escaso número de 
+                                        células que componen su cuerpo.</td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/respira/fasciola.jpg" alt="Fasciola hepatica es un gusano plano." width="350" height="149"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">La mayor parte de los 
+                                    animales están constituidos por un número tan 
+                                    elevado de células que resulta imposible que 
+                                    todas ellas puedan realizar el intercambio 
+                                    gaseoso con el medio que los rodea. 
+                                    Por ello, es necesaria la presencia de un 
+                                    sistema respiratorio que capture el oxígeno 
+                                    suficiente para todas las células del 
+                                    cuerpo, recoja el dióxido de carbono 
+                                    liberado y se expulse fuera del animal.</p>
+                                    <p class="txt">Los tipos de sistemas 
+                                    respiratorios que podemos encontrar entre 
+                                    los distintos animales son la respiración <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#cutanea">
+                                    cutánea</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#branquial">
+                                    branquial</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#traqueal">
+                                    traqueal</a></font></b> y <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#pulmonar">
+                                    pulmonar</a></font></b>.</p>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="96%" id="AutoNumber8" height="179">
+                                      <tr>
+                                        <td width="77%" rowspan="2" height="160">
+                                    <p class="txt"><b><a name="cutanea"></a>Respiración cutánea</b></p>
+                                    <p class="txt">La estructura respiratoria es 
+                                    el <b>tegumento corporal</b>. La piel es la 
+                                    encargada de realizar el intercambio 
+                                    gaseoso. Para ello, la piel debe ser muy <b>
+                                    fina</b>, estar <b>húmeda </b>y <b>muy 
+                                    irrigada </b>por el medio interno del 
+                                    animal.</p>
+                                    <p class="txt">Encontramos este sistema 
+                                    respiratorio en animales como los anélidos, 
+                                    algunos moluscos, y anfibios; incluso, en 
+                                    ciertos equinodermos. En moluscos y 
+                                    anfibios es necesario complementar su 
+                                    función con otros sistemas respiratorios.</p>
+                                        </td>
+                                        <td width="8%" rowspan="2" height="160">&nbsp;</td>
+                                        <td width="17%" height="98">
+                                        <a target="_blank" title="Pulsa sobre la imagen y se verá con mayor detalle." href="imagenes/respira/lumbricus.jpg">
+                                        <img border="2" src="imagenes/respira/lumbricus_small.jpg" xthumbnail-orig-image="imagenes/respira/lumbricus.jpg" width="100" height="84"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="17%" height="80">
+                                        <a title="Pulsa sobre la imagen para ver con más detalle una rana adulta en el agua" target="_blank" href="imagenes/respira/rana.jpg">
+                                        <img border="2" src="imagenes/respira/rana_small.jpg" xthumbnail-orig-image="imagenes/respira/rana.jpg" width="99" height="75" align="right"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="77%" height="19">
+                                    &nbsp;</td>
+                                        <td width="8%" height="19">&nbsp;</td>
+                                        <td width="17%" height="19">
+                                        &nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellspacing="1" width="108%" id="AutoNumber4">
+                                      <tr>
+                                        <td width="58%" rowspan="2">
+                                        <p class="txt"><b><a name="branquial">
+                                        </a>Respiración branquial</b><p class="txt">Las estructuras respiratorias 
+                                    son las <b>branquias</b>, en forma de repliegues 
+                                    tegumentarios o estructuras muy finas que 
+                                    están muy irrigadas y envueltas por agua. 
+                                    Pueden ser branquias <b>externas</b>, poco 
+                                    evolucionadas, o <b>internas</b>, más 
+                                    evolucionadas, ya que al encontrarse en el 
+                                    interior están más protegidas. Sin embargo, 
+                                    necesitan un mecanismo para producir 
+                                    movimiento en el agua que las baña. Las 
+                                    branquias aparecen en muchos animales de <b>
+                                    vida acuática</b>, como anélidos, moluscos, 
+                                    crustáceos, peces y anfibios. Además se 
+                                        encuentran en crustáceos terrestres, como 
+                                        las  <b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" target="_blank" href="imagenes/respira/Porcell.jpg">
+                                        cochinillas de humedad</a></font></b> y las  <b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" target="_blank" href="imagenes/respira/amphipodo.jpg">
+                                        pulgas de playa</a></font></b>.<p class="txt">Los 
+                                        <b>peces </b>sujetan y extienden 
+                                    las branquias mediante <b>arcos branquiales</b>. 
+                                    En tiburones y rayas aparecen cinco arcos 
+                                    (seis en los menos evolucionados) y cuatro 
+                                    arcos en los peces óseos. Una estructura 
+                                    ósea llamada <b>opérculo</b>, protege estos 
+                                    arcos branquiales. El agua circula desde la 
+                                    boca a las hendiduras branquiales, 
+                                    presionada por la lengua y creando una 
+                                    corriente que favorece el intercambio 
+                                    gaseoso entre la branquia y el agua.</td>
+                                        <td width="4%">&nbsp;</td>
+                                        <td width="14%">
+                                        <a title="Pulsa sobre la imagen para ver con más detalle las branquias de un renacuajo" target="_blank" href="imagenes/respira/branqrana.jpg">
+                                        <img border="2" src="imagenes/respira/branqrana_small.jpg" xthumbnail-orig-image="imagenes/respira/branqrana.jpg" width="100" height="69"></a></td>
+                                        <td width="24%">
+                                        <a title="Pulsa sobre la imagen para ver con más detalle las branquias de una sepia" target="_blank" href="imagenes/respira/sepia1.gif">
+                                        <img border="2" src="imagenes/respira/sepia1_small.gif" xthumbnail-orig-image="imagenes/respira/sepia1.gif" width="100" height="66"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="4%">&nbsp;</td>
+                                        <td width="14%">
+                                        <a title="Pulsa sobre la imagen para ver con más detalle la estructura de un bogavante" target="_blank" href="imagenes/respira/bogavan.jpg">
+                                        <img border="2" src="imagenes/respira/bogavan_small.jpg" xthumbnail-orig-image="imagenes/respira/bogavan.jpg" width="100" height="158"></a></td>
+                                        <td width="24%">
+                                        <a title="Pulsa sobre la imagen para ver con más detalle los árboles branquiales de una holoturia" target="_blank" href="imagenes/respira/holoturia.jpg">
+                                        <img border="2" src="imagenes/respira/holoturia_small.jpg" xthumbnail-orig-image="imagenes/respira/holoturia.jpg" width="100" height="154"></a></td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber3">
+                                      <tr>
+                                        <td width="33%">
+                                        &nbsp;</td>
+                                        <td width="33%">
+                                        &nbsp;</td>
+                                        <td width="34%">
+                                        &nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="33%">
+                                        <img border="0" src="imagenes/respira/operculo.gif" align="right" width="249" height="182"></td>
+                                        <td width="33%">
+                                        <img border="0" src="imagenes/respira/opercgill2.gif" width="242" height="182"></td>
+                                        <td width="34%">
+                                        <img border="0" src="imagenes/respira/fishGills.jpg" alt="Estructura de las branquias de un pez vista al mciroscopio electrónico" width="230" height="182" align="right"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="33%">
+                                        &nbsp;</td>
+                                        <td width="33%">
+                                        &nbsp;</td>
+                                        <td width="34%">
+                                        &nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7" height="361">
+                                      <tr>
+                                        <td width="50%" height="178">
+                                        <p class="txt"><b><a name="traqueal">
+                                        </a>Respiración traqueal</b><p class="txt">Los 
+                                        <b>insectos</b>, <b>miriápodos</b> y, 
+                                    en menor medida, en los <b>arácnidos </b>con 
+                                        estructuras semejantes denominadas <b>
+                                        pulmones en libro</b>, utilizan un 
+                                        sistema de tubos, llamados <b>tráqueas</b>, que 
+                                    conectan las células de todo el cuerpo con 
+                                    el aire del exterior del animal. Este 
+                                        sistema respiratorio prescinde del 
+                                        sistema circulatorio para transportar el 
+                                        oxígeno a las células. Estos 
+                                    animales tienen un <b>sistema circulatorio 
+                                    abierto</b>, en el que la sangre (hemolinfa) 
+                                    circula demasiado lenta para aportar el 
+                                    suficiente oxígeno como para elaborar 
+                                    respuestas y movimientos tan rápidos como 
+                                    los producidos por estos seres. Los tubos se 
+                                    abren al exterior a través de unos orificios 
+                                    que se pueden cerrar mediante <b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Glosario" target="_blank" href="glosario.htm#espiraculo">espiráculos</a></font></b>.</p>
+                                        </td>
+                                        <td width="50%" rowspan="2" height="361">
+                                        <p align="center">
+                                        &nbsp;<p align="center">
+                                        <img border="0" src="imagenes/respira/traquea.gif" width="316" height="355"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="50%" height="183">
+                                        <p align="center">
+                                        <img border="0" src="imagenes/respira/copris.jpg" width="239" height="164" alt="Los insectos respiran por tráqueas."></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <p class="txt"><b><a name="pulmonar"></a>Respiración pulmonar</b></p>
+                                    <p class="txt">Los pulmones son las 
+                                    estructuras respiratorias, que conectan con 
+                                    el exterior mediante una serie de tubos. Son 
+                                    repliegues que se desarrollan en los 
+                                    vertebrados terrestres a partir del tubo 
+                                    digestivo. Existen dos tipos de pulmones. Unos 
+                                    tienen forma de <b>saco</b>: el pulmón
+                                    <b>sacular</b>, presente en <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#anfibios">
+                                    anfibios</a></font></b>, <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#reptiles">
+                                    reptiles</a></font></b> y <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#mamíferos">
+                                    mamíferos </a></font></b>muestra distintos 
+                                    grados de evolución. Otros, con forma <b>
+                                    tubular</b>, conectan con unos <b>
+                                    sacos aéreos</b> que se extienden por otras 
+                                    zonas del cuerpo y que se llenan de aire, 
+                                    disminuyendo la densidad del animal. Se 
+                                    encuentran en las <b><font color="#006666" size="2" face="Arial">
+                                    <a class="txtnegrolink" href="#aves">aves</a></font></b>.</p>
+                                    <div style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+                                    <p class="txt" style="text-align: center"><b>Pasa el cursor sobre las 
+                                    imágenes </b>y aparecerá información 
+                                    adicional en pantalla. </p>
+                                    </div>
+                                    <p class="txt" style="text-align: center">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber9">
+                                      <tr>
+                                        <td width="76%" class="txt">
+                                        <a name="anfibios"></a>En <b>anfibios</b>, 
+                                        el interior es casi liso, sin 
+                                        repliegues, por lo que la superficie de 
+                                        intercambio gaseoso es demasiado 
+                                        reducida. Esto implica la necesidad de 
+                                        otros sistemas respiratorios para 
+                                        satisfacer las necesidades de oxígeno de 
+                                        estos animales.
+                                        <p>La <b>respiración cutánea </b>y el 
+                                        intercambio de gases a nivel <b>
+                                        bucofaríngeo</b> en las <b>ranas</b> 
+                                        constituye un aporte de 
+                                        oxígeno vital, pues el intercambio 
+                                        pulmonar es insuficiente. La respiración 
+                                        pulmonar sólo se desarrolla en algunos 
+                                        adultos, puesto que en forma de 
+                                        renacuajo, la respiración es <b>branquial</b>. 
+                                        Este sistema puede perdurar, incluso, 
+                                        en adultos como sucede en las cecilias y tritones.</td>
+                                        <td width="3%">&nbsp;</td>
+                                        <td width="21%">
+                                        <img border="0" src="imagenes/respira/proteus.jpg" width="230" height="201" alt="Proteus anguinus es un anfibio que en estado adulto posee branquias"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="76%" class="txt" rowspan="2">
+                                        <a name="reptiles"></a>En <b>reptiles</b>, 
+                                        los pulmones presentan repliegues, con 
+                                        lo que la superficie de intercambio de 
+                                        gases aumenta respecto a los anfibios. 
+                                        Hay que tener en cuenta que los reptiles 
+                                        poseen una <b>piel gruesa seca</b>, con 
+                                        escamas e incapaz de producir 
+                                        intercambio de gases con el exterior. 
+                                        Unos pulmones con <b>más superficie 
+                                        interna </b>permitieron la colonización, 
+                                        por parte de estos animales, de la 
+                                        tierra seca , sin la dependencia del 
+                                        agua.
+                                        <p>Las <b>serpientes </b>poseen un único 
+                                        pulmón desarrollado, para evitar excesiva 
+                                        compresión en un cuerpo tan estrecho.
+                                        </p>
+                                        <p>Las <b>tortugas acuáticas </b>
+                                        manifiestan 
+                                        zonas de intercambio de gases con el 
+                                        agua en la zona rectal, en el 
+                                        tubo digestivo. Además, poseen 
+                                        modificaciones en su sistema circulatorio, que 
+                                        les permiten aguantar mucho tiempo bajo el 
+                                        agua sin necesidad de capturar oxígeno 
+                                        de la superficie.</td>
+                                        <td width="3%" rowspan="2">&nbsp;</td>
+                                        <td width="21%">
+                                        <img border="0" src="imagenes/respira/lagarto.jpg" width="230" height="152" alt="Los lagartos poseen piel con escamas"></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="21%">
+                                        <img border="0" src="imagenes/respira/tortuga.jpg" alt="Tortuga carey" width="230" height="158"></td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber10" height="1">
+                                      <tr>
+                                        <td width="50%" class="txt" rowspan="2" height="1">
+                                        <img border="0" src="imagenes/respira/pulmo.jpg" width="370" height="370"><p>&nbsp;</td>
+                                        <td width="3%" class="txt" rowspan="2" height="1">
+                                        </td>
+                                        <td width="47%" class="txt" height="1">
+                                        <a name="mamíferos"></a>En <b>mamíferos</b>, 
+                                        los pulmones muestran gran desarrollo 
+                                        de su superficie interna. Una serie de 
+                                        tubos ramificados transporta el aire a los
+                                        <b>sacos alveolares</b>, compuestos por 
+                                        pequeñas cámaras, llamadas <b>alveolos</b>, 
+                                        que son los lugares donde se produce el 
+                                        intercambio gaseoso con la sangre.</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="47%" class="txt" height="56">&nbsp;<p>
+                                        <a name="aves"></a>En <b>aves</b>, los 
+                                        pulmones reciben el aire del exterior 
+                                        mediante unos tubos ramificados. Además, 
+                                        los pulmones reciben el aporte de 
+                                        oxígeno de los <b>sacos aéreos</b>, que 
+                                        han sido llenados de aire cuando el 
+                                        animal ha inspirado. Como el aire 
+                                        atraviesa los pulmones y llega a estos 
+                                        sacos, se dice que estos pulmones tienen 
+                                        estructura <b>tubular</b>, con entrada y 
+                                        salida.</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="50%" class="txt" height="1">
+                                        <img border="0" src="imagenes/respira/vuelo.jpg" width="370" height="273"></td>
+                                        <td width="3%" class="txt" height="1">
+                                        </td>
+                                        <td width="47%" class="txt" height="56">
+                                        Este tipo de respiración es muy eficaz 
+                                        ya que el animal, al coger el aire, <b>
+                                        llena los pulmones y los sacos aéreos</b>. 
+                                        Los&nbsp; pulmones se pueden 
+                                        vaciar en la siguiente espiración y 
+                                        volver a llenarse con el aire de los 
+                                        sacos sin necesidad de usar para 
+                                        respirar los <b>músculos del vuelo</b>, 
+                                        que son los mismos que sirven para 
+                                        inspirar. Además, el animal <b>reduce su 
+                                        densidad </b>al llenar su interior de 
+                                        aire. Hay que tener en cuenta que los 
+                                        sacos aéreos, dependiendo de las 
+                                        especies, se introducen incluso en los 
+                                        huesos.</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table border="0" cellspacing="1" width="100%" id="AutoNumber11">
+                                      <tr>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%"> 
+                                    <table width="134" border="0" cellspacing="0" cellpadding="0" bgcolor="#BBDDBB">
+                                      <tr>
+                                        <td width="134" bgcolor="#BBDDBB"> 
+                                          <p align="center" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                          <a class="txtnegrolink" target="_blank" href="actividades/act7nueva.htm">Actividad
+                                          7</a></font></b><a target="_blank" href="actividades/act7nueva.htm"><img border="2" src="miniaturas/cuad7nuevasmal.gif" xthumbnail-orig-image="miniaturas/cuad7nueva.gif" width="100" height="75"></a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                        </td>
+                                        <td width="20%">&nbsp;</td>
+                                        <td width="20%">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                    <p class="txt">&nbsp;</p>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="00">
+                                      <tr align="right"> 
+                                        <td>
+                                        <p align="right" class="txtnegrolink"><b><font color="#006666" size="2" face="Arial">
+                                        <a class="txtnegrolink" title="Enlaza con las generalidades de la respiración" href="contenidos6.htm">anterior- (7/23) -</a>
+                                        <a class="txtnegrolink" title="Enlaza con el aparato respiratorio en humanos" href="contenidos8.htm">siguiente</a></font></b></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jbc-file>
+<version>5</version>
+
+<data>
+<title>Autoevaluación</title>
+
+<reading>
+<include-reading>0</include-reading>
+<include-timer>0</include-timer>
+<time-limit>1</time-limit>
+<internal-reading>1</internal-reading>
+<path-to-reading></path-to-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions>
+
+
+<question-record>
+<question>Señala la frase errónea:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Un mineral puede formar parte de diferentes rocas
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Las rocas siempre están formadas por varios minerales distintos
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Un cristal es un mineral con estructura interna ordenada
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Las rocas son consecuencia de ciertos fenómenos geológicos</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Todos los cristales tienen, al menos:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Centro de simetría
+
+
+
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Un plano de simetría
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Un eje binario
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Pueden no tener ninguno de estos elementos</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La celda unidad de un cristal viene definida por: </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Los elementos de simetría
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Los vectores que la configuran
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Los ángulos entre vectores
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Todo lo anterior
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Isomorfismo es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Igual composición química y distinta forma cristalográfica
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Igual forma cristalográfica y distinta composición química
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Igual forma cristalográfica e igual composición química
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Minerales con el mismo aspecto</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Polimorfismo es: </question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Igual composición química y distinta forma cristalográfica
+
+
+
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Igual forma cristalográfica y distinta composición química
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Distinta forma cristalográfica y diferente composición química
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Minerales con distinto aspecto</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Como sabes, hay ejemplares de un mismo mineral que presentan aspectos externos muy diferente. ¿Qué propiedad es la más utilizada para identificar minerales en laboratorio?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>El color y la raya
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>La conductividad eléctrica
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>La propagación de la luz
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Las propiedades mecánicas en general</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Los silicatos son los minerales más abundantes porque:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>La posición de la Tierra hace que el silicio se concentre en su órbita
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>No es cierto que sean los más abundantes
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Su estructura se puede unir consigo misma de diferentes formas
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>El silicio es un átomo muy pequeño</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las clasificaciones actuales de minerales se basan en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Su origen geológico
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>El tipo de roca en que aparecen
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Sus propiedades físicas
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Sus características químicas
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Las rocas endógenas se dividen en:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Ígneas y magmáticas
+
+
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Magmáticas y metamórficas
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Plutónicas y volcánicas
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Metamórficas y sedimentarias</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Cuando el magma enfría lentamente da lugar a las rocas</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Plutónicas
+
+
+
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Volcánicas
+
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Metamórficas
+
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>El magma no enfría lentamente, pues se &quot;congela&quot; en la superficie</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La diferencia entre rocas plutónicas y volcánicas es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Por la composición química
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Por su contenido en sílice
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Por el tipo de magma del que proceden
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Por la velocidad de enfriamiento del magma</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>Señala cual de las siguientes circunstancias no es condición para que se produzca metamorfismo:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aumentos de presión y temperatura
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Que la roca no llegue a fundirse
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Que la roca inicial sea sedimentaria
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Que las rocas se alejen de la superficie</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El mármol es una roca formada, básicamente, por el mineral calcita. ¿Qué tipo de roca es el mármol?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Sedimentaria, pues es una variedad de caliza
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Plutónica, ya que la calcita está cristalizada
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Metamórfica, procedente del metamorfismo de calizas
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>No es una roca, ya que es una variedad de calcita</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Cuál de los siguientes procesos no da lugar a rocas sedimentarias?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Aumentos de presión y temperatura
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Caída de materiales por gravedad
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Reacciones químicas
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Acumulación de restos de seres vivos</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Todos los restos de seres vivos pueden dar lugar a la formación de rocas orgánicas?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Sí, siempre que no los consuman otros seres vivos
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Solamente las partes duras (madera y esqueletos)
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Sólo si caen en un ambiente con falta de oxígeno
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Las rocas orgánicas no proceden de los seres vivos</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La serie evolutiva de los carbones, según su contenido en carbono, es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Hulla - Antracita - Lignito - Turba
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Antracita - Lignito - Hulla - Turba
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Lignito - Turba - Antracita - Hulla
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Turba - Lignito - Hulla - Antracita</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>¿Cuál de las siguientes condiciones no es condición necesaria para la formación del petróleo?</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Restos vegetales
+
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Plancton marino
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Roca almacén
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Acción bacteriana</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>La característica que mide la productividad de un yacimiento se llama:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Mena
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Ganga
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Ley
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Placer</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>El principal interés de los yacimientos minerales es:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Metalúrgico
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Energético
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Gemológico</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>
+Todos los anteriores</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+
+</question-record>
+
+<question-record>
+<question>En España son importantes las explotaciones de:</question>
+<must-select-all>0</must-select-all>
+<answer>
+<text>Diamantes
+
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Mercurio
+</text>
+<correct>1</correct>
+<feedback>¡Correcto!</feedback>
+</answer>
+<answer>
+<text>Petróleo
+</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+<answer>
+<text>Nitratos</text>
+<correct>0</correct>
+<feedback>¡Lo siento¡ prueba otra vez.</feedback>
+</answer>
+
+</question-record>
+</questions>
+</data>
+
+<hotpot-config-file>
+<jbc>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct></guess-correct>
+<guess-incorrect></guess-incorrect>
+<next-ex-url>../actividades/autoeva2.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<continuous-scoring>1</continuous-scoring>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-one-by-one>0</show-one-by-one>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+</jbc>
+
+<global>
+<your-score-is>Tu puntuación es</your-score-is>
+<correct-indicator>Bien</correct-indicator>
+<incorrect-indicator>Mal</incorrect-indicator>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<remaining-time>Tiempo restante:</remaining-time>
+<start-reading>Comenzar lectura</start-reading>
+<show-reading-again>Mostrar la lectura de nuevo</show-reading-again>
+<times-up>¡Se acabó el tiempo!</times-up>
+<click-to-show>Pulse en el botón para ver la lectura.</click-to-show>
+<next-ex-caption>Siguiente</next-ex-caption>
+<back-caption>Anterior</back-caption>
+<contents-caption>Volver</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>../autoevaluacion.htm</contents-url>
+<graphic-url>HalfBakedBG.gif</graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#e6ffe6</page-bg-color>
+<title-color>#006666</title-color>
+<ex-bg-color>#d1e9d1</ex-bg-color>
+<text-color>#000033</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#e6ffe6</nav-bar-color>
+<formmail-url>http://your.server.address/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourplace.com</email>
+<name-please>Please enter your name:</name-please>
+<correct-first-time>Respuestas correctas a la primera:</correct-first-time>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+</global>
+</hotpot-config-file>
+</hotpot-jbc-file>

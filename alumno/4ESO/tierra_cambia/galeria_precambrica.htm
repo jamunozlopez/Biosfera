@@ -1,0 +1,262 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Alejandro Romero."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+Galer&#237;a de f&#243;siles Prec&#225;mbricos
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=x.length-1; j>-1; j--){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+var ExerciseTitle = 'Galer&#237;a de f&#243;siles Prec&#225;mbricos';
+var ExerciseSubtitle = 'Presiona sobre el bot&#243;n.';
+var Instructions = 'Intenta recordar a qu&#233; tipo de ser vivo pertenece cada imagen.';
+
+var PreviousPage = history.length;
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#e6ffe6" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+NavBar+='<input type="button" value="Cerrar" onclick="parent.close()"></input>';
+
+
+
+NavBar+='</font></td></form></tr>';
+
+
+var TitleCode = '<tr><td colspan="2" align="center" valign="top" bgcolor="#e6ffe6">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000000">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000000">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var FlashButton = '<tr><form name="Flashcard" action="">';
+FlashButton += '<td align="center" valign="middle"><font face="Geneva,Arial" size="-1">';
+FlashButton += '<input type="button" name="Flash" value="  Pulsar  " onclick="parent.ShowItem()"></input>';
+FlashButton += '</td></form></tr>';
+
+var CurrItem = 0;
+var Stage = 1;
+
+var CellOpener = '<td valign="middle" align="center" width="50%" bgcolor="#e6ffe6"><font face="Geneva,Arial" size="+2">';
+var CellCloser = '</font></td>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+I = new Array();
+I[0] = new Array();
+I[0][0] = '<center><img src="imagenes/micro5small.gif" alt="Cianobacterias" width="265" height="149" border="0"></img></center>';
+I[0][1] = 'F&#243;siles m&#225;s antiguos, Cianobacterias';
+I[1] = new Array();
+I[1][0] = '<center><img src="imagenes/estromatolito_detalle.jpg" alt="Estromatolitos" width="200" height="138" border="0"></img></center>';
+I[1][1] = 'Estromatolitos';
+I[2] = new Array();
+I[2][0] = '<center><img src="imagenes/apex.jpg" alt="Primeros eucariotas" width="200" height="212" border="0"></img></center>';
+I[2][1] = 'Primeros Eucariotas';
+I[3] = new Array();
+I[3][0] = '<center><img src="imagenes/grypania_model.jpg" alt="Grypania" width="200" height="134" border="0"></img></center>';
+I[3][1] = 'Grypania, primer eucariota fotosint&#233;tico';
+I[4] = new Array();
+I[4][0] = '<center><img src="imagenes/roper_folds_acritarcos.jpg" alt="Acritarcos" width="200" height="200" border="0"></img></center>';
+I[4][1] = 'Acritarcos, eucariotas unicelulares';
+I[5] = new Array();
+I[5][0] = '<center><img src="imagenes/fauna_ediacara.gif" alt="Fauna de Ediacara" width="300" height="180" border="0"></img></center>';
+I[5][1] = 'Invertebrados de Ediacara';
+
+
+function Shuffle(){
+	var Temp;
+	var Num;
+	for (var i=0; i<I.length; i++){
+		Num = Math.round(Math.random() * (I.length-1));
+		Temp = I[i];
+		I[i] = I[Num];
+		I[Num] = Temp;
+	}
+}
+
+function StartUp(){
+	Shuffle();
+	WriteFeedback(Instructions);
+	WriteOutput(TitleCode);
+}
+
+function ShowItem(){
+	if (CurrItem >= I.length){
+		Shuffle();
+		CurrItem = 0;
+	}
+	var Output = TitleCode + '<tr>' + CellOpener + I[CurrItem][0] + CellCloser;
+	if (Stage == 1){
+		Output += CellOpener + '&nbsp;' + CellCloser;
+		Stage = 2;
+	}
+	else{
+		Output += CellOpener + I[CurrItem][1] + CellCloser;
+		Stage = 1;
+		CurrItem++;
+	}
+	Output += '</tr>';
+	WriteOutput(Output);
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000cc" vlink="#0000ff">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#e6ffe6" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += FlashButton;
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function WriteOutput(Output) {
+	if (is.CRAPBrowser){Output=ResolveAllURLs(Output);}
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.writeln ('<html>');
+	BottomFrame.document.writeln ('<body  background="" bgcolor="#e6ffe6" text="#000000" link="#0000cc" vlink="#0000ff">');
+	BottomFrame.document.writeln ('<center><table border="0" cellpadding="5" cellspacing="1" width="85%">');
+	BottomFrame.document.writeln (Output);
+	BottomFrame.document.writeln ('</table></center></body></html>');
+	BottomFrame.document.close();
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+<frameset rows="25%,*" framespacing="0" border="0" onload="StartUp()">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=x-user-defined">
+   <meta name="GENERATOR" content="Mozilla/4.75 [en] (Win98; U) [Netscape]">
+</head>
+<body bgcolor="#FFFFFF">
+<font class="txt">Cuestión 1</font><script LANGUAGE="JavaScript">
+var calificacion=0;function nota(form){calificacion=0;incorrectas="";contestadas=0;for (var i=0; i<document.examen.length-2; i++) 
+ {  if (document.examen[i].checked)  
+  {    contestadas=contestadas+1;    if (document.examen[i].value=="1")      {      calificacion=calificacion+1;      } 
+   if (document.examen[i].value!="1")      {      incorrectas=incorrectas+document.examen[i].name.substring(7,9)+" ";      }    }  }error=contestadas-calificacion;mensaje=contestadas+" pregunta contestada.\r"+calificacion+" pregunta acertada.\r"+error+" pregunta no acertada:\r"+incorrectas;alert(mensaje);}</script>
+<form NAME="examen"  ENCTYPE="text/plain">
+<h3>
+<a NAME="cuestion1"></a><font class="txt">1) ¿Sabes qué tipos
+de radiación puede producir una estrella?</font></h3>
+
+<ol>
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="3"><font class="txt">Sólo
+luz y calor</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="1"><font class="txt">Cualquier
+tipo de radiaciones electromagnéticas</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="4"><font class="txt">Magnetismo
+y electricidad</font></li>
+
+<li>
+<input TYPE="radio" NAME="mat 26/ 1" VALUE="2"><font class="txt">Rayos
+UVA</font></li>
+</ol>
+<img SRC="Bullet1.gif" height=13 width=13><font class="txt"><a href="estrellas.html#radiaciones">Ir
+a los contenidos</a></font>
+<br>&nbsp;
+<p><input TYPE="reset" VALUE="BORRAR"><input TYPE="submit" NAME="calificacion" VALUE="CALIFICACIÓN" onClick="nota(this.form)"></form>
+<p><font class="txt"><a href="articulo_II.htm#cuestion1">Volver</a></font>
+</body>
+</html>

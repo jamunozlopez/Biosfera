@@ -1,0 +1,552 @@
+<html>
+<head>
+<title>Proyecto Biosfera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<link rel="stylesheet" href="../estilos/estilo.css" type="text/css">
+<script language="JavaScript">
+<!--
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function yyLayerScroll(daTarget, delay, ex, ey, dx, dy, sx, sy, daT, daLoop, daFirst ) {//v4.05
+//copyright (c)2000,2001 Yaromat.com
+  var yyX; var yyY; var target = MM_findObj(daTarget);
+  if(!target.oritop){
+    target.oritop = (document.layers)?target.top:target.style.top;
+    target.orileft = (document.layers)?target.left:target.style.left
+  }
+  if (document.layers) {
+    var ct = target.clip.top; var cb = target.clip.bottom; var cl = target.clip.left; var cr = target.clip.right;
+    yyY=Math.abs(Math.round((ct-ey)/sy)); dy=Math.round(-(ct-ey)/yyY);
+    yyX=Math.abs(Math.round((cl-ex)/sx)); dx=Math.round(-(cl-ex)/yyX);
+    if(yyX<1){dx=0}else{yyX--}; if(yyY<1){dy=0}else{yyY--};
+    var t = target.top; var l = target.left;
+    target.clip.top = ct + (dy); target.clip.bottom = cb + (dy);target.top = t - (dy);
+    target.clip.left = cl + dx;target.clip.right = cr + dx; target.left = l - dx;
+  }else if ((document.all||document.getElementById)&&target.style.clip) {
+      var l = parseInt((document.getElementById)?target.style.left:target.style.pixelLeft);
+      var t = parseInt((document.getElementById)?target.style.top:target.style.pixelTop);
+      var clipv = target.style.clip;
+      clipv=clipv.replace(/x/gi, "").replace(/t/gi, "");
+      clipv=clipv.split("rec(")[1].split(")")[0].split("p");
+      var ct = Number(clipv[0]);var cr = Number(clipv[1]);var cb = Number(clipv[2]);var cl = Number(clipv[3]);
+      yyY=Math.abs(Math.round((ct-ey)/sy));dy=Math.round(-(ct-ey)/yyY);
+      yyX=Math.abs(Math.round((cl-ex)/sx));dx=Math.round(-(cl-ex)/yyX);
+      if(yyX<1)dx=0; if(yyY<1)dy=0;
+      ncl = cl + dx; nct = ct + dy; ncr = cr + dx;  ncb = cb + dy;
+      target.style.pixelTop = t - dy;
+      target.style.pixelLeft = l - dx;
+      target.style.left = l - dx;
+      target.style.top = t - dy;
+      eval("target.style.clip = 'rect(' + nct + ' ' +  ncr + ' ' + ncb + ' ' + ncl +')'");
+      yyY--; yyX--;
+   }
+   if(target.tmtScrollo)clearTimeout(target.tmtScrollo);
+   if(yyY>0||yyX>0){
+     var doTo = true;
+   }else if(delay>-1&&daLoop==true){
+     if(document.layers){
+      target.left = target.orileft; target.clip.left=0;
+      target.clip.right = (cr-cl); target.top = target.oritop;
+      target.clip.top=0; target.clip.bottom = (cb-ct);
+     }else{
+       eval("target.style.clip = 'rect(' + 0 + ' ' +  (cr-cl) + ' ' + (cb-ct) + ' ' +0 +')'");
+       target.style.top = target.oritop; target.style.left = target.orileft;
+     }
+     var doTo = true;
+   }
+   if(doTo==true)target.tmtScrollo = setTimeout("yyLayerScroll(\"" + daTarget + "\","  + delay + "," + ex+ "," + ey+ "," + dx+ "," + dy + "," +sx + "," + sy + "," + false +","+daLoop + ")", delay);
+}
+
+function YY_LS(daTarget, yy_x,yy_y, delay, step, loop){//v4.05
+if(document.layers||document.all||document.getElementById)
+  yyLayerScroll(daTarget,delay, yy_x, yy_y, 0, 0,step,step, false, loop, true);
+}
+
+function MZ_findObj(n){ //v3.6
+        var x,t; if((n.indexOf("?"))>0&&parent.frames.length){t=n.split("?");
+        x=eval("parent.frames['"+t[1]+"'].document.getElementById('"+t[0]+"')");
+        }else{x=document.getElementById(n)}return x;
+}
+
+function YY_StopLayerfx(){ //v3.09
+//copyright (c)1998-2000 Yaromat.com
+  var args = YY_StopLayerfx.arguments;var yydiv;
+  for (var i=0; i<args.length; i++){
+    yydiv=MM_findObj(args[i]);
+    if (yydiv&&(document.layers||document.all||document.getElementById)){
+      if(yydiv.yyto!=null)clearTimeout(yydiv.yyto);
+      if(yydiv.tmtScrollo!=null)clearTimeout(yydiv.tmtScrollo);
+    }
+  }
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(10);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 5;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 8, 72);
+    document.MM_Time[0][0].values = new Array(2);
+    document.MM_Time[0][0].values[0] = new Array("20","20","19");
+    document.MM_Time[0][0].values[0].prop = "zIndex";
+    if (!ns4)
+        document.MM_Time[0][0].values[0].prop2 = "style";
+    document.MM_Time[0][0].values[1] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][0].values[1].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    document.MM_Time[0][1] = new String("sprite");
+    document.MM_Time[0][1].slot = 2;
+    if (ns4)
+        document.MM_Time[0][1].obj = document["Layer2"];
+    else if (ns5)
+        document.MM_Time[0][1].obj = document.getElementById("Layer2");
+    else
+        document.MM_Time[0][1].obj = document.all ? document.all["Layer2"] : null;
+    document.MM_Time[0][1].keyFrames = new Array(1, 16, 72);
+    document.MM_Time[0][1].values = new Array(2);
+    document.MM_Time[0][1].values[0] = new Array("19","19","18");
+    document.MM_Time[0][1].values[0].prop = "zIndex";
+    if (!ns4)
+        document.MM_Time[0][1].values[0].prop2 = "style";
+    document.MM_Time[0][1].values[1] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][1].values[1].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][1].values[1].prop2 = "style";
+    document.MM_Time[0][2] = new String("sprite");
+    document.MM_Time[0][2].slot = 3;
+    if (ns4)
+        document.MM_Time[0][2].obj = document["Layer3"];
+    else if (ns5)
+        document.MM_Time[0][2].obj = document.getElementById("Layer3");
+    else
+        document.MM_Time[0][2].obj = document.all ? document.all["Layer3"] : null;
+    document.MM_Time[0][2].keyFrames = new Array(1, 24, 72);
+    document.MM_Time[0][2].values = new Array(1);
+    document.MM_Time[0][2].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][2].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][2].values[0].prop2 = "style";
+    document.MM_Time[0][3] = new String("sprite");
+    document.MM_Time[0][3].slot = 4;
+    if (ns4)
+        document.MM_Time[0][3].obj = document["Layer4"];
+    else if (ns5)
+        document.MM_Time[0][3].obj = document.getElementById("Layer4");
+    else
+        document.MM_Time[0][3].obj = document.all ? document.all["Layer4"] : null;
+    document.MM_Time[0][3].keyFrames = new Array(1, 32, 72);
+    document.MM_Time[0][3].values = new Array(1);
+    document.MM_Time[0][3].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][3].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][3].values[0].prop2 = "style";
+    document.MM_Time[0][4] = new String("sprite");
+    document.MM_Time[0][4].slot = 5;
+    if (ns4)
+        document.MM_Time[0][4].obj = document["Layer5"];
+    else if (ns5)
+        document.MM_Time[0][4].obj = document.getElementById("Layer5");
+    else
+        document.MM_Time[0][4].obj = document.all ? document.all["Layer5"] : null;
+    document.MM_Time[0][4].keyFrames = new Array(1, 40, 72);
+    document.MM_Time[0][4].values = new Array(1);
+    document.MM_Time[0][4].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][4].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][4].values[0].prop2 = "style";
+    document.MM_Time[0][5] = new String("sprite");
+    document.MM_Time[0][5].slot = 6;
+    if (ns4)
+        document.MM_Time[0][5].obj = document["Layer6"];
+    else if (ns5)
+        document.MM_Time[0][5].obj = document.getElementById("Layer6");
+    else
+        document.MM_Time[0][5].obj = document.all ? document.all["Layer6"] : null;
+    document.MM_Time[0][5].keyFrames = new Array(1, 48, 72);
+    document.MM_Time[0][5].values = new Array(1);
+    document.MM_Time[0][5].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][5].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][5].values[0].prop2 = "style";
+    document.MM_Time[0][6] = new String("sprite");
+    document.MM_Time[0][6].slot = 7;
+    if (ns4)
+        document.MM_Time[0][6].obj = document["Layer7"];
+    else if (ns5)
+        document.MM_Time[0][6].obj = document.getElementById("Layer7");
+    else
+        document.MM_Time[0][6].obj = document.all ? document.all["Layer7"] : null;
+    document.MM_Time[0][6].keyFrames = new Array(1, 56, 72);
+    document.MM_Time[0][6].values = new Array(1);
+    document.MM_Time[0][6].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][6].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][6].values[0].prop2 = "style";
+    document.MM_Time[0][7] = new String("sprite");
+    document.MM_Time[0][7].slot = 8;
+    if (ns4)
+        document.MM_Time[0][7].obj = document["Layer8"];
+    else if (ns5)
+        document.MM_Time[0][7].obj = document.getElementById("Layer8");
+    else
+        document.MM_Time[0][7].obj = document.all ? document.all["Layer8"] : null;
+    document.MM_Time[0][7].keyFrames = new Array(1, 64, 72);
+    document.MM_Time[0][7].values = new Array(1);
+    document.MM_Time[0][7].values[0] = new Array("inherit","hidden","hidden");
+    document.MM_Time[0][7].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][7].values[0].prop2 = "style";
+    document.MM_Time[0][8] = new String("sprite");
+    document.MM_Time[0][8].slot = 9;
+    if (ns4)
+        document.MM_Time[0][8].obj = document["Layer9"];
+    else if (ns5)
+        document.MM_Time[0][8].obj = document.getElementById("Layer9");
+    else
+        document.MM_Time[0][8].obj = document.all ? document.all["Layer9"] : null;
+    document.MM_Time[0][8].keyFrames = new Array(1, 72);
+    document.MM_Time[0][8].values = new Array(1);
+    document.MM_Time[0][8].values[0] = new Array("inherit","hidden");
+    document.MM_Time[0][8].values[0].prop = "visibility";
+    if (!ns4)
+        document.MM_Time[0][8].values[0].prop2 = "style";
+    document.MM_Time[0][9] = new String("behavior");
+    document.MM_Time[0][9].frame = 73;
+    document.MM_Time[0][9].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 73;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../img/actividadini1.gif','../img/autoevaluacion1.gif','../img/enlaces1.gif','../img/descargas1.gif','../img/contenidos1.gif','../img/actividades1.gif','../img/mapa1.gif','../img/introduccion1.gif');MM_timelinePlay('Timeline1')">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="761" valign="top"> 
+      <table width="760" border="0" cellspacing="0" cellpadding="0" >
+        <tr> 
+          <td height="30" width="761"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+              <tr> 
+                <td width="760" background="../img/logo_biosfera.jpg"> 
+                  <table width="760" border="0" cellspacing="0" cellpadding="0" height="35">
+                    <tr> 
+                      <td width="760" height="30"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" height="24"> 
+            <table width="760" border="0" cellspacing="0" cellpadding="0" height="24">
+              <tr> 
+                <td width="80" height="18"><a href="../../../profesor/3eso/1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio','','../img/inicio1.gif',1)"><img name="Inicio" border="0" src="../img/inicio2.gif" width="80" height="18"></a></td>
+                <td width="77" height="18"><a href="index.htm"><img src="../img/introduccion.gif" width="77" height="18" border="0"></a></td>
+                <td width="98" height="18"><a href="a_inicial.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../img/actividadini1.gif',1)"><img name="Image4" border="0" src="../img/actividadini.gif" width="98" height="18"></a></td>
+                <td width="75" height="18"><a href="contenidos.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../img/contenidos1.gif',1)"><img name="Image5" border="0" src="../img/contenidos1.gif" width="75" height="18"></a></td>
+                <td width="82" height="18"><a href="actividades.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../img/actividades1.gif',1)"><img name="Image6" border="0" src="../img/actividades.gif" width="82" height="18"></a></td>
+                <td width="69" height="18"><a href="mapa.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../img/mapa1.gif',1)"><img name="Image7" border="0" src="../img/mapa.gif" width="69" height="18"></a></td>
+                <td width="24" height="18"><img src="../img/intermedio.gif" width="24" height="18"></td>
+                <td width="80" height="18"><a href="ideas.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../img/ideas1.gif',1)"><img name="Image9" border="0" src="../img/ideas.gif" width="80" height="18"></a></td>
+                <td width="95" height="18"><a href="autoevaluacion.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../img/autoevaluacion1.gif',1)"><img name="Image10" border="0" src="../img/autoevaluacion.gif" width="95" height="18"></a></td>
+                <td width="80" height="18"><a href="enlaces.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../img/enlaces1.gif',1)"><img name="Image11" border="0" src="../img/enlaces.gif" width="80" height="18"></a></td>
+              </tr>
+              <tr> 
+                <td colspan="10" height="6" valign="top"><img src="../img/sombra.gif" width="760" height="6"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td  valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6ffe6">
+              <tr> 
+                <td height="25" align="center" width="761"> 
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="25"><img src="image/contenidos/contaminacion.gif" width="742" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td   valign="top"> 
+                  <table  border="0" cellspacing="1" cellpadding="0"bgcolor="#006666" >
+                    <tr bgcolor="#FFFFFF"> 
+                      <td   valign="top" > 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                          <tr> 
+                            <td  height="28" valign="top" bgcolor="#BBDDBB"><font class="txtnegro">CONTENIDOS</font> 
+                            </td>
+                            <td width="200" valign="top" bgcolor="#BBDDBB"><a class="txtnegrolink" href="contenidos.htm"><span class="txtnegrolink"> 
+                              </span></a><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                              - (5/8) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></td>
+                          </tr>
+                        </table>
+                        <table width="100%" border="0" cellspacing="0" bgcolor="#E6FFE6" >
+                          <tr> 
+                            <td colspan="3" height="24" valign="top">&nbsp;</td>
+                          </tr>
+                          <tr> 
+                            <td   width="21" height="617" valign="top">&nbsp;</td>
+                            <td   valign="top"> 
+                              <p class="txtnegro">5.- CONTAMINACI&Oacute;N DEL 
+                                SUELO:</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p><span class="txt">Se pueden diferenciar 
+                                            dos tipos de contaminantes que afectan 
+                                            al suelo: los dep&oacute;sitos de 
+                                            </span><span class="txtnegro">Residuos 
+                                            S&oacute;lidos Urbanos</span><span class="txt"> 
+                                            (basureros) depositados sobre &eacute;l 
+                                            y las </span><span class="txtnegro">sustancias 
+                                            contaminantes</span><span class="txt">, 
+                                            infiltradas y depositadas en su interior.</span></p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="center"> <img src="image/actividad17/basurero.jpg" width="250" height="175" align="left"><br>
+                                <br>
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a href="actividad10.htm"><font class="txtnegrolink"> 
+                                        Actividad 10</font></a> <a href="actividad10.htm"><img src="image/contenidos/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p>&nbsp;</p>
+                              <p>&nbsp;</p>
+                              <table width="98%" border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                <tr> 
+                                  <td> 
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                      <tr bgcolor="#e6ffe6"> 
+                                        <td class="txt"> 
+                                          <p>Las principales sustancias contaminantes 
+                                            infiltradas en el suelo son <i>los 
+                                            pesticidas, los metales pesados y 
+                                            las sales minerales.</i></p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <br>
+                              <div align="center"> 
+                                <table border="0" cellspacing="1" cellpadding="1" bgcolor="#006666">
+                                  <tr> 
+                                    <td width="504" height="166" valign="top"> 
+                                      <table width="100%" border="0" cellspacing="1" cellpadding="5">
+                                        <tr bgcolor="#e6ffe6"> 
+                                          <td width="492" valign="top" class="txt" height="162"> 
+                                            <p class="txt">&middot; Los <span class="txtnegro">pesticidas</span> 
+                                              (herbicidas generalmente) se acumulan 
+                                              en el suelo a consecuencia del uso 
+                                              agr&iacute;cola de los mismos.<br>
+                                              &middot; Los <span class="txtnegro">metales 
+                                              pesados</span> (mercurio, plomo, 
+                                              aluminio) se infiltran con el lavado, 
+                                              por el agua de lluvia, de los dep&oacute;sitos 
+                                              de RSU o con los vertidos de las 
+                                              industrias o minas.<br>
+                                              &middot; La concentraci&oacute;n 
+                                              e incremento de <span class="txtnegro">sales 
+                                              minerales</span> en el suelo (salinizaci&oacute;n) 
+                                              es consecuencia de la irrigaci&oacute;n 
+                                              continua de cultivos con algua de 
+                                              alta salinidad.</p>
+                                          </td>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p align="center" > <br>
+                              </p>
+                              <div id="Layer1" style="position:absolute; width:200px; height:115px; z-index:20; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/uno.gif" width="286" height="206" name="Image1"></div>
+                              <div id="Layer2" style="position:absolute; width:200px; height:115px; z-index:19; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/dos.gif" width="284" height="206" name="Image1"></div>
+                              <div id="Layer3" style="position:absolute; width:200px; height:115px; z-index:18; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/tres.gif" width="284" height="206" name="Image1"></div>
+                              <div id="Layer4" style="position:absolute; width:200px; height:115px; z-index:17; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/cuatro.gif" width="284" height="206" name="Image1"></div>
+                              <div id="Layer5" style="position:absolute; width:200px; height:115px; z-index:15; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/cinco.gif" width="284" height="206" name="Image1"></div>
+                              <div id="Layer6" style="position:absolute; width:200px; height:115px; z-index:14; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/seis.gif" width="284" height="206" name="Image1"></div>
+                              <div id="Layer7" style="position:absolute; width:200px; height:115px; z-index:13; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/siete.gif" width="286" height="206" name="Image1"></div>
+                              <div id="Layer8" style="position:absolute; width:200px; height:115px; z-index:12; left: 253px; top: 792px; visibility: inherit"><img src="image/actividad11/ocho.gif" width="286" height="206" name="Image1"></div>
+                              <div id="Layer9" style="position:absolute; width:200px; height:115px; z-index:11; left: 253px; top: 792px; visibility: inherit"><a href="javascript:;" onMouseOver="MM_preloadImages('image/actividad11/cinco.gif','image/actividad11/cuatro.gif','image/actividad11/nueve.gif','image/actividad11/dos.gif','image/actividad11/ocho.gif','image/actividad11/seis.gif','image/actividad11/siete.gif','image/actividad11/tres.gif','image/actividad11/uno.gif')"><img src="image/actividad11/nueve.gif" width="286" height="206" name="Image1" border="0"></a></div>
+                              <p align="center" >&nbsp; </p>
+                              <p align="center" >&nbsp;</p>
+                              <p align="center" >&nbsp;</p>
+                              <p align="center" >&nbsp;</p>
+                              <p align="center" >&nbsp;</p>
+                              <p align="center" >&nbsp;</p>
+                              <p align="center" >&nbsp;</p>
+                              <div align="center"> 
+                                <table width="100" border="0" cellspacing="0" cellpadding="3">
+                                  <tr bgcolor="#BBDDBB"> 
+                                    <td> 
+                                      <p><a href="actividad11.htm"><font class="txtnegrolink"> 
+                                        Actividad 11</font></a> <a href="actividad11.htm"><img src="image/contenidos/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                    <td width="7" valign="top" bgcolor="#e6ffe6">&nbsp;</td>
+                                    <td> 
+                                      <p><a href="actividad12.htm"><font class="txtnegrolink"> 
+                                        Actividad 12</font></a> <a href="actividad12.htm"><img src="image/contenidos/activ1.jpg" width="120" height="68" border="0"></a> 
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <p><br>
+                              </p>
+                              <p align="right"><a class="txtnegrolink" href="contenidos4.htm"><span class="txtnegrolink">anterior</span></a><span class="txtnegrolink"> 
+                                - (5/8) - <a href="contenidos6.htm" class="txtnegrolink">siguiente</a></span></p>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+</body>
+</html>
