@@ -4,8 +4,8 @@
 <META name="Author" content="Producido usando Galli's QuizFaber 2.8.3">
 <META name="generator" content="Galli's QuizFaber 2.8.3">
 <META name="keywords" content="quiz">
-<META name="description" content="El Universo, la Vía Láctea y el Sistema Solar">
-<TITLE>El Universo, la Vía Láctea y el Sistema Solar</TITLE>
+<META name="description" content="El Universo, la VÃ­a LÃ¡ctea y el Sistema Solar">
+<TITLE>El Universo, la VÃ­a LÃ¡ctea y el Sistema Solar</TITLE>
 <SCRIPT LANGUAGE='JavaScript'>
 <!--
 var qmakeVers = '2.8.3';
@@ -26,7 +26,7 @@ var questions=5;
 var qstHead = new init_array(5);
 var pageWidth = 80;
 var groups = new init_array(0,0,0,0,0);
-var quizTitle="El Universo, la Vía Láctea y el Sistema Solar";
+var quizTitle="El Universo, la VÃ­a LÃ¡ctea y el Sistema Solar";
 var maxtime=180;
 var keycode = new init_array(6);
 var keyword = 'syskey';
@@ -234,7 +234,7 @@ function ComputeMarks()
    }
  }
  else {
-   window.alert("Cuidado: no se puede calcular la puntuación final");
+   window.alert("Cuidado: no se puede calcular la puntuaciÃ³n final");
    computeMarkErr = 1;
    voto = 0;
  }
@@ -391,7 +391,7 @@ function isRightAns(nAns,risp)
 
 function DoneBefore()
 {
-  window.alert("¡Esta pregunda ya está contestada!");
+  window.alert("Â¡Esta pregunda ya estÃ¡ contestada!");
 }
 
 
@@ -416,8 +416,8 @@ function PrintStatusBar()
  if (nc==0) msg+=" nada exacto y ";
 
  if (ns>1) msg+=ns+" equivocado.";
- if (ns==1) msg+=" solo uno erróneo.";
- if (ns==0) msg+=" nada erróneo.";
+ if (ns==1) msg+=" solo uno errÃ³neo.";
+ if (ns==0) msg+=" nada errÃ³neo.";
 
  msg+=" Debes responder ";
 
@@ -528,7 +528,7 @@ function DataToStringa()
 
 function Retire()
 {
- if (window.confirm("¿Estás seguro?")) {
+ if (window.confirm("Â¿EstÃ¡s seguro?")) {
    end_test=1;
    EndQuiz();
  }
@@ -587,7 +587,7 @@ function PrintQuizResults(doc)
  doc.writeln("<TR><TD bgcolor='#000000'><TABLE cellpadding=3 border=0 cellspacing=1><TR><TD bgcolor=white colspan=2>");
  doc.writeln("<TABLE cellpadding=5 border=0 width=100%><TR><TD><FONT color=000000 face=arial size=4>"+quizTitle+"</TD>");
  doc.writeln("</TR></TABLE></TD></TR>");
- doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;Número  de preguntas &#160;&#160;</TD>");
+ doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;NÃºmero  de preguntas &#160;&#160;</TD>");
  doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;"+(questions-invisibleQuests)+"&#160;&#160;</TD></TR>");
  if (identityName!="") {
    doc.writeln("<TR><TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;Nombre del alumno &#160;&#160;</TD>");
@@ -614,12 +614,12 @@ function PrintQuizResults(doc)
  doc.writeln("<TR><TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;Fecha &#160;&#160;</TD>");
  doc.writeln("    <TD bgcolor=ffffdd nowrap><FONT face=arial size=2 class='table1'>&#160;&#160;"+DataToStringa()+"&#160;&#160;</TD></TR>");
 
- doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;PUNTUACIÓN&#160;&#160;</TD>");
+ doc.writeln("<TR><TD bgcolor=white nowrap><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;PUNTUACIÃ“N&#160;&#160;</TD>");
  if (computeMarkErr==0) {
    doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;<FONT SIZE=4 FACE='Arial' class='table1'>"+voto+"</FONT>/"+maxvoto+"&#160;&#160;</TD></TR>");
  }
  else {
-   doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;<FONT SIZE=2 FACE='Arial' class='table1'>Sin puntuación</FONT>&#160;&#160;</TD></TR>");
+   doc.writeln("    <TD bgcolor=white><FONT color=cc0000 face=arial size=2 class='table1'>&#160;&#160;<FONT SIZE=2 FACE='Arial' class='table1'>Sin puntuaciÃ³n</FONT>&#160;&#160;</TD></TR>");
  }
  doc.writeln("</TABLE></TD></TR></TABLE></TD></TABLE></center>");
 }
@@ -1017,11 +1017,11 @@ function PrintReport(documento)
     else if (valid[i]==5) {
       documento.write("puntuaciones "+nScore[i]);
       if (groups[i]==0)
-                documento.writeln(" (PUNTUACIÓN "+maxScore[i]+")<BR>");
+                documento.writeln(" (PUNTUACIÃ“N "+maxScore[i]+")<BR>");
       else if (groups[i]==1)
                 documento.writeln("<BR>La nota incluye la pregunta anterior<BR>");
       else if (groups[i]==2)
-                documento.writeln("<BR>PUNTUACIÓN (Calcula desde la suma de la puntuación de la siguiente pregunta): "+maxScore[i]+"<BR>");
+                documento.writeln("<BR>PUNTUACIÃ“N (Calcula desde la suma de la puntuaciÃ³n de la siguiente pregunta): "+maxScore[i]+"<BR>");
     }
     documento.writeln("</I>");
 
@@ -1418,7 +1418,7 @@ function Timer()
    SetClock(getTimeString(delta));
 
   if ((delta<=0)&&(end_test==0)) {
-   window.alert("Se excediÓ en el tiempo ¡¡");
+   window.alert("Se excediÃ“ en el tiempo Â¡Â¡");
    end_test=1;
    EndQuiz();
  }
@@ -1490,7 +1490,7 @@ function PrintAnswer(n,textField)
  else {
       if (valid[n]==1) {
           textField.value = "Respuesta correcta";
-     msg = "<FONT size=5 face='Arial' color='#000080'>Bien ¡ Respuesta correcta</FONT>";
+     msg = "<FONT size=5 face='Arial' color='#000080'>Bien Â¡ Respuesta correcta</FONT>";
    }
    else {
           msg = "Respuesta equivocada! La respuesta correcta es " + getListOfRightAns(n);
@@ -1519,7 +1519,7 @@ function PrintQuestionScore(n,textField)
 
  if (silent==0) {
    msg = "Nota : " + nScore[n];
-      if (groups[n]==0)       msg += " (PUNTUACIÓN "+maxScore[n]+")";
+      if (groups[n]==0)       msg += " (PUNTUACIÃ“N "+maxScore[n]+")";
 
    textField.value = msg;
    msgFormat = "<FONT size=5 face='Arial' color='#000080'>" + msg + "</FONT>";
@@ -1564,7 +1564,7 @@ function PrintBottomFrame()
  if (silent==0) {
    msg="<td width='23%' align='CENTER'><FONT FACE='Arial' SIZE='2'><B>correcto</B> : "+nc+"</FONT></TD>";
    msg+="<td width='23%' align='CENTER'><FONT FACE='Arial' SIZE='2'><B>equivocado</B> : "+ns+"</FONT></TD>";
-   msg+="<td width='23%' align='CENTER'><FONT FACE='Arial' SIZE='2'><B>qué hacer</B> : "+nr+"</FONT></TD>";
+   msg+="<td width='23%' align='CENTER'><FONT FACE='Arial' SIZE='2'><B>quÃ© hacer</B> : "+nr+"</FONT></TD>";
  }
  else {
    msg="<td width='69%' align='LEFT'>debes responder :<FONT SIZE=+1>"+nr+"</FONT></TD>";
@@ -1592,10 +1592,10 @@ function PrintWrongKeyword()
  frames.quiz_main.document.open();
  PrintOpenHTML(frames.quiz_main.document,"",1);
  frames.quiz_main.document.writeln ("<body BGCOLOR='"+bkCol1+"'>");
- frames.quiz_main.document.writeln("<CENTER><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>Cuidado¡¡</FONT><BR>");
+ frames.quiz_main.document.writeln("<CENTER><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>CuidadoÂ¡Â¡</FONT><BR>");
  frames.quiz_main.document.writeln ("<FONT SIZE=+2>Clave incorrecta</FONT><BR>");
  frames.quiz_main.document.writeln ("No es posible continuar con el test<BR>");
- frames.quiz_main.document.writeln ("Para mayor informaciÓn, contactese con el autor del quiz<BR>");
+ frames.quiz_main.document.writeln ("Para mayor informaciÃ“n, contactese con el autor del quiz<BR>");
  frames.quiz_main.document.writeln("<P><INPUT TYPE='BUTTON' VALUE='SALIR' OnClick='top.close()'>");
  frames.quiz_main.document.writeln("</CENTER>");
  frames.quiz_main.document.writeln ("</body></html>");
@@ -1616,10 +1616,10 @@ function PrintNoReload()
  frames.quiz_main.document.open();
  PrintOpenHTML(frames.quiz_main.document,"",1);
  frames.quiz_main.document.writeln ("<body BGCOLOR='"+bkCol1+"'>");
- frames.quiz_main.document.writeln("<CENTER><BR><BR><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>Cuidado¡¡</FONT><BR>");
+ frames.quiz_main.document.writeln("<CENTER><BR><BR><FONT SIZE=6 FACE='Arial' COLOR='#FF0000'>CuidadoÂ¡Â¡</FONT><BR>");
  frames.quiz_main.document.writeln ("<FONT SIZE=+2>Reinicio del quiz no disponible</FONT><BR>");
  frames.quiz_main.document.writeln ("No se puede iniciar el test<BR>");
- frames.quiz_main.document.writeln ("Para mayor informaciÓn, contactese con el autor del quiz<BR>");
+ frames.quiz_main.document.writeln ("Para mayor informaciÃ“n, contactese con el autor del quiz<BR>");
  frames.quiz_main.document.writeln("<P><INPUT TYPE='BUTTON' VALUE='SALIR' OnClick='top.close()'>");
  frames.quiz_main.document.writeln("</CENTER>");
  frames.quiz_main.document.writeln ("</body></html>");
@@ -1734,7 +1734,7 @@ function RepeatQuiz() {
 }
 
 function AskPrintQuiz() {
- if (window.confirm("¿Imprimir el test ?")) {
+ if (window.confirm("Â¿Imprimir el test ?")) {
    window.print();
  }
 }
@@ -1829,7 +1829,7 @@ function initShortQuestion() {
  qstHead[0]="  El Universo es:";
  qstHead[1]="La materia se distribuye en:";
  qstHead[2]="La materia forma:";
- qstHead[3]="La Vía Láctea es";
+ qstHead[3]="La VÃ­a LÃ¡ctea es";
  qstHead[4]="El Sistema Solar es";
 }
 

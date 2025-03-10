@@ -4,7 +4,7 @@
 <head><link rel="canonical" href="http://elblogdebiosfera.blogspot.com/2006/11/cuando-las-matemticas-emulan-la.html" />
 <meta http-equiv="refresh" content="30;url=http://elblogdebiosfera.blogspot.com/2006/11/cuando-las-matemticas-emulan-la.html" />
 
-  <title>Blog del Proyecto Biosfera: Cuando las matem·ticas emulan a la naturaleza: los algoritmos genÈticos</title>
+  <title>Blog del Proyecto Biosfera: Cuando las matem√°ticas emulan a la naturaleza: los algoritmos gen√©ticos</title>
 
   <script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){b=b;var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
  })();</script><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -434,20 +434,20 @@ p#powered-by, #sidebar p.profile-textblock {
     
     <h3 class="post-title">
 	 
-	 Cuando las matem·ticas emulan a la naturaleza: los algoritmos genÈticos
+	 Cuando las matem√°ticas emulan a la naturaleza: los algoritmos gen√©ticos
 	 
     </h3>
     
      
     <div class="post-body">
     
-      <p><div style="clear:both;"></div><span style="font-size:85%;">Muchos de los profesores de biologÌa habr·n oÌdo hablar de como, muchas veces, la ingenierÌa emula diseÒos de la naturaleza para fabricar determinados aparatos. Por ejemplo, la forma en huso de los submarinos, similar a las de los peces. Sin embargo, no son solamente los ingenenieros los que se inspiran en la naturaleza. TambiÈn cientÌficos tan abstractos como los matem·ticos lo hacen. Una de las similitudes m·s curiosas es la de los algoritmos genÈticos.</span><br /><span style="font-size:85%;"><br />Sobre este tipo de mÈtodos matem·ticos he oÌdo algunos comentarios, como que no son una buena idealizaciÛn de la evoluciÛn. Esto es cierto, pero es que tales algoritmos sÛlo se inspiran en la evoluciÛn biolÛgica, no intentan modelarla. Emplean un mÈtodo de resoluciÛn de problemas calcado del que usa la naturaleza para resolver el problema de adaptar una forma de vida al entorno, pero nada m·s.<br /><br />Un algoritmo genÈtico es, en esencia, un mÈtodo de optimizaciÛn de funciones matem·ticas que utiliza mecanismos similares a los que emplea la evoluciÛn natural, esto es: selecciÛn, recombinaciÛn y mutaciÛn. Por optimizaciÛn de funciones se entiende calcular el valor m·ximo que posee una funciÛn en un determinado dominio, o conjunto de valores posibles donde puede evaluarse.<br /><br />Si bien hay multitud de posibilidades para construir un algoritmo genÈtico, voy a describir, brevemente, uno sencillo, para dar idea de cÛmo se construyen este tipo de mÈtodos. Supongamos una funciÛn que toma valores enteros en un plano, esto es, una de la forma: z=f(x,y). Deseamos obtener su m·ximo en una regiÛn del plano denominada D (si queremos su mÌnimo, calculamos el m·ximo de -f(x,y) y le cambiamos el signo, es f·cil ver que es un problema equivalente). El primer paso es crear el "cÛdigo genÈtico" asociado a cada punto (x,y) del plano. Por lo general, y porque funciona mejor asÌ, se suele codificar en binario. AsÌ, a cada valor de una coordenada se le asocia un n˙mero binario. Por ejemplo, supongamos que codifico las coordenadas x e y con un binario de longitud 8 cada una - (01010011,00110011) por poner uno -. Como con 8 binarios puedo<br />llegar a escribir 256 n˙meros diferentes, este "cÛdigo genÈtico" puede representar 256 por 256 puntos de D. Es obvio que mientras m·s largo el cÛdigo genÈtico, m·s precisiÛn tendr· el mÈtodo.<br /><br />Una vez creado el "cÛdigo genÈtico", se genera una poblaciÛn aleatoria de "individuos", cada uno con un cÛdigo genÈtico determinado al azar. En los algoritmos genÈticos celulares, llamados asÌ porque se modelan con mÈtodos similares a los autÛmatas celulares, estos individuos se ordenan en un casillero. El procedimiento a seguir es sencillo: se recorre el casillero haciendo que cada individuo se aparee con otro y dÈ lugar, en su propia casilla, a un hijo que lo sustituye. Los pasos son:<br /><br />1) SelecciÛn: el individuo se "aparea" con el vecino que dÈ un valor m·s alto a f(x,y).<br />2) RecombinaciÛn: el "genoma" del nuevo individuo se obtendr· a partir del de sus progenitores, por medio de determinadas reglas.<br />3) MutaciÛn: el "genoma" resultante tendr· una probabilidad muy baja de sufrir cambios (un 1 por un 0 o al revÈs) aleatorios.<br /><br />Si se deja evolucionar el sistema un tiempo, los puntos tender·n a acercarse, cada vez m·s, al valor que maximice la funciÛn problema.<br /><br />Si desean ampliar informaciÛn, aquÌ tienen estos dos vÌnculos:</span><br /></span><a href="http://geneura.ugr.es/~jmerelo/ie/intro.htm"><span style="font-size:85%;">Inform·tica evolutiva</span></a><br /><a href="http://es.geocities.com/riotorto/ace/ace_ag/ace_ag.htm"><span style="font-size:85%;">Biotmates: algoritmos genÈticos</span></a><br /><span style="font-size:85%;"></span><br /><span style="font-size:85%;"></span><br /><span style="font-size:85%;">Juan Cuquejo Mira.</span><div style="clear:both; padding-bottom:0.25em"></div></p>
+      <p><div style="clear:both;"></div><span style="font-size:85%;">Muchos de los profesores de biolog√≠a habr√°n o√≠do hablar de como, muchas veces, la ingenier√≠a emula dise√±os de la naturaleza para fabricar determinados aparatos. Por ejemplo, la forma en huso de los submarinos, similar a las de los peces. Sin embargo, no son solamente los ingenenieros los que se inspiran en la naturaleza. Tambi√©n cient√≠ficos tan abstractos como los matem√°ticos lo hacen. Una de las similitudes m√°s curiosas es la de los algoritmos gen√©ticos.</span><br /><span style="font-size:85%;"><br />Sobre este tipo de m√©todos matem√°ticos he o√≠do algunos comentarios, como que no son una buena idealizaci√≥n de la evoluci√≥n. Esto es cierto, pero es que tales algoritmos s√≥lo se inspiran en la evoluci√≥n biol√≥gica, no intentan modelarla. Emplean un m√©todo de resoluci√≥n de problemas calcado del que usa la naturaleza para resolver el problema de adaptar una forma de vida al entorno, pero nada m√°s.<br /><br />Un algoritmo gen√©tico es, en esencia, un m√©todo de optimizaci√≥n de funciones matem√°ticas que utiliza mecanismos similares a los que emplea la evoluci√≥n natural, esto es: selecci√≥n, recombinaci√≥n y mutaci√≥n. Por optimizaci√≥n de funciones se entiende calcular el valor m√°ximo que posee una funci√≥n en un determinado dominio, o conjunto de valores posibles donde puede evaluarse.<br /><br />Si bien hay multitud de posibilidades para construir un algoritmo gen√©tico, voy a describir, brevemente, uno sencillo, para dar idea de c√≥mo se construyen este tipo de m√©todos. Supongamos una funci√≥n que toma valores enteros en un plano, esto es, una de la forma: z=f(x,y). Deseamos obtener su m√°ximo en una regi√≥n del plano denominada D (si queremos su m√≠nimo, calculamos el m√°ximo de -f(x,y) y le cambiamos el signo, es f√°cil ver que es un problema equivalente). El primer paso es crear el "c√≥digo gen√©tico" asociado a cada punto (x,y) del plano. Por lo general, y porque funciona mejor as√≠, se suele codificar en binario. As√≠, a cada valor de una coordenada se le asocia un n√∫mero binario. Por ejemplo, supongamos que codifico las coordenadas x e y con un binario de longitud 8 cada una - (01010011,00110011) por poner uno -. Como con 8 binarios puedo<br />llegar a escribir 256 n√∫meros diferentes, este "c√≥digo gen√©tico" puede representar 256 por 256 puntos de D. Es obvio que mientras m√°s largo el c√≥digo gen√©tico, m√°s precisi√≥n tendr√° el m√©todo.<br /><br />Una vez creado el "c√≥digo gen√©tico", se genera una poblaci√≥n aleatoria de "individuos", cada uno con un c√≥digo gen√©tico determinado al azar. En los algoritmos gen√©ticos celulares, llamados as√≠ porque se modelan con m√©todos similares a los aut√≥matas celulares, estos individuos se ordenan en un casillero. El procedimiento a seguir es sencillo: se recorre el casillero haciendo que cada individuo se aparee con otro y d√© lugar, en su propia casilla, a un hijo que lo sustituye. Los pasos son:<br /><br />1) Selecci√≥n: el individuo se "aparea" con el vecino que d√© un valor m√°s alto a f(x,y).<br />2) Recombinaci√≥n: el "genoma" del nuevo individuo se obtendr√° a partir del de sus progenitores, por medio de determinadas reglas.<br />3) Mutaci√≥n: el "genoma" resultante tendr√° una probabilidad muy baja de sufrir cambios (un 1 por un 0 o al rev√©s) aleatorios.<br /><br />Si se deja evolucionar el sistema un tiempo, los puntos tender√°n a acercarse, cada vez m√°s, al valor que maximice la funci√≥n problema.<br /><br />Si desean ampliar informaci√≥n, aqu√≠ tienen estos dos v√≠nculos:</span><br /></span><a href="http://geneura.ugr.es/~jmerelo/ie/intro.htm"><span style="font-size:85%;">Inform√°tica evolutiva</span></a><br /><a href="http://es.geocities.com/riotorto/ace/ace_ag/ace_ag.htm"><span style="font-size:85%;">Biotmates: algoritmos gen√©ticos</span></a><br /><span style="font-size:85%;"></span><br /><span style="font-size:85%;"></span><br /><span style="font-size:85%;">Juan Cuquejo Mira.</span><div style="clear:both; padding-bottom:0.25em"></div></p>
     
     </div>
     
     <p class="post-footer">publicado por Juan a las 
       <a href="http://recursos.cnice.mec.es/biosfera/blog/2006/11/cuando-las-matemticas-emulan-la.html" title="permanent link">11:38 PM</a> 
-       <span class="item-action"><a href="http://www.blogger.com/email-post.g?blogID=28078234&postID=116276683795702830" title="Enviar entrada por correo electrÛnico"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_email.gif" height="13" width="18"/></a></span></p>
+       <span class="item-action"><a href="http://www.blogger.com/email-post.g?blogID=28078234&postID=116276683795702830" title="Enviar entrada por correo electr√≥nico"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_email.gif" height="13" width="18"/></a></span></p>
   
   </div>
   <!-- End .post -->
@@ -466,7 +466,7 @@ p#powered-by, #sidebar p.profile-textblock {
       
       <li id="c4977615223893016071"><a name="c4977615223893016071"></a>
         <div class="comment-body">
-         <p>Seg˙n lo que he estudiado en an·lisis ya hay un mÈtodo para hacer este tipo de problemas. QuÈ varÌa en cuanto al resultado utilizando el sistema binario?<BR/>Saludos!</p>
+         <p>Seg√∫n lo que he estudiado en an√°lisis ya hay un m√©todo para hacer este tipo de problemas. Qu√© var√≠a en cuanto al resultado utilizando el sistema binario?<BR/>Saludos!</p>
         </div>
         <p class="comment-data">By <span style="line-height:16px" class="comment-icon blogger-comment-icon"><img src="http://www.blogger.com/img/b16-rounded.gif" alt="Blogger" style="display:inline;" /></span>&nbsp;<a href="http://www.blogger.com/profile/00159851166034149791" rel="nofollow">Anya</a>, at <a href="#c4977615223893016071" title="comment 
 
@@ -476,7 +476,7 @@ permalink">2:02 PM</a>
       
       <li id="c2455585489681449770"><a name="c2455585489681449770"></a>
         <div class="comment-body">
-         <p>Hola Anya<BR/><BR/>   En teorÌa, nada. El resultado deber· ser el mismo independientemente de la tÈcnica que emplees.<BR/><BR/>   Hay muchos mÈtodos de c·lculo numÈrico para cualquier tipo de problema matem·tico, entre ellos, el de calcular los m·ximos de una funciÛn. Lo que sucede es que, seg˙n quÈ funciÛn tengas, hay unos mÈtodos que funcionan mejor o peor, hasta el punto de que para un problema, una tÈcnica puede no converger hacia la soluciÛn deseada, mientras que esa misma tÈcnica puede ser usada con gran Èxito para resolver problemas diferentes. <BR/><BR/>   Los algoritmos genÈticos tienen la diferencia de ser mÈtodos basados en el azar e inspirarse en la naturaleza. De esta forma, tienen Èxito donde otros mÈtodos se atascan, ya que son menos sensibles a m·ximos locales; como un algoritmo genÈtico eval˙a al tiempo diferentes regiones del espacio, en el caso de que una poblaciÛn de puntos prospere en Èl, acabar· extinguiÈndose cuando alguna otra se aproxime al m·ximo.<BR/><BR/>   Un saludo.<BR/><BR/><BR/>                    Juan.</p>
+         <p>Hola Anya<BR/><BR/>   En teor√≠a, nada. El resultado deber√° ser el mismo independientemente de la t√©cnica que emplees.<BR/><BR/>   Hay muchos m√©todos de c√°lculo num√©rico para cualquier tipo de problema matem√°tico, entre ellos, el de calcular los m√°ximos de una funci√≥n. Lo que sucede es que, seg√∫n qu√© funci√≥n tengas, hay unos m√©todos que funcionan mejor o peor, hasta el punto de que para un problema, una t√©cnica puede no converger hacia la soluci√≥n deseada, mientras que esa misma t√©cnica puede ser usada con gran √©xito para resolver problemas diferentes. <BR/><BR/>   Los algoritmos gen√©ticos tienen la diferencia de ser m√©todos basados en el azar e inspirarse en la naturaleza. De esta forma, tienen √©xito donde otros m√©todos se atascan, ya que son menos sensibles a m√°ximos locales; como un algoritmo gen√©tico eval√∫a al tiempo diferentes regiones del espacio, en el caso de que una poblaci√≥n de puntos prospere en √©l, acabar√° extingui√©ndose cuando alguna otra se aproxime al m√°ximo.<BR/><BR/>   Un saludo.<BR/><BR/><BR/>                    Juan.</p>
         </div>
         <p class="comment-data">By <span style="line-height:16px" class="comment-icon blogger-comment-icon"><img src="http://www.blogger.com/img/b16-rounded.gif" alt="Blogger" style="display:inline;" /></span>&nbsp;<a href="http://www.blogger.com/profile/01857208774537450864" rel="nofollow">Juan</a>, at <a href="#c2455585489681449770" title="comment 
 
@@ -515,7 +515,7 @@ permalink">9:05 PM</a>
 
   <h2 class="sidebar-title">Acerca de</h2>
   
-  <p>Blog del Proyecto Biosfera del Ministerio de EducaciÛn (EspaÒa) para el profesorado de EnseÒanza Secundaria. Recoge artÌculos, experiencias educativas, proyectos de aula e innovaciones pedagÛgicas sobre BiologÌa y GeologÌa.</p>
+  <p>Blog del Proyecto Biosfera del Ministerio de Educaci√≥n (Espa√±a) para el profesorado de Ense√±anza Secundaria. Recoge art√≠culos, experiencias educativas, proyectos de aula e innovaciones pedag√≥gicas sobre Biolog√≠a y Geolog√≠a.</p>
   
  
     
@@ -554,20 +554,20 @@ permalink">9:05 PM</a>
   
   <!--<p id="powered-by"><a target="_blank" href="http://www.blogger.com"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/bloggerbutton1.gif" alt="Hecho con Blogger. " /></a></p>-->
   <p><a target="_blank" href="http://recursos.cnice.mec.es/biosfera/"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/pb.jpg" alt="Proyecto Biosfera. " target="_blank" href="http://recursos.cnice.mec.es/biosfera/"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/gif_tierra.gif" alt="Proyecto Biosfera. "/></a></p>
-  <p><a target="_blank" href="http://www.mepsyd.es/"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/gobierno_de_espana_con_educ.jpg" alt="Ministerio de EducaciÛn. " /></a></p>
+  <p><a target="_blank" href="http://www.mepsyd.es/"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/gobierno_de_espana_con_educ.jpg" alt="Ministerio de Educaci√≥n. " /></a></p>
   <p><!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>Esta obra est&#225; bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/">licencia de Creative Commons</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<Work rdf:about="">
 		<license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" />
 	<dc:title>Blog del Proyecto Biosfera</dc:title>
-	<dc:description>Blog del Proyecto Biosfera del Ministerio de EducaciÛn, PolÌtica Social y Deporte (EspaÒa) para el profesorado de EnseÒanza Secundaria. Recoge artÌculos, experiencias educativas, proyectos de aula e innovaciones pedagÛgicas sobre BiologÌa y GeologÌa.</dc:description>
-	<dc:creator><Agent><dc:title>Juan Antonio MuÒoz LÛpez</dc:title></Agent></dc:creator>
+	<dc:description>Blog del Proyecto Biosfera del Ministerio de Educaci√≥n, Pol√≠tica Social y Deporte (Espa√±a) para el profesorado de Ense√±anza Secundaria. Recoge art√≠culos, experiencias educativas, proyectos de aula e innovaciones pedag√≥gicas sobre Biolog√≠a y Geolog√≠a.</dc:description>
+	<dc:creator><Agent><dc:title>Juan Antonio Mu√±oz L√≥pez</dc:title></Agent></dc:creator>
 	<dc:source rdf:resource="http://recursos.cnice.mec.es/biosfera/blog/" />
 	</Work>
 	<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></p>
   
   
   <p><a target="_blank" href="http://www.ite.educacion.es/"><img src="http://recursos.cnice.mec.es/biosfera/blog/images/logo_ite.jpg" alt="ITE " /></a></p>
-  <p>Este blog est· alojado en el <a target="_blank" href="http://www.ite.educacion.es/">Instituto de TecnologÌas Educativas</a></p>
+  <p>Este blog est√° alojado en el <a target="_blank" href="http://www.ite.educacion.es/">Instituto de Tecnolog√≠as Educativas</a></p>
   
 
 </div>
@@ -576,7 +576,7 @@ permalink">9:05 PM</a>
 <div class="clear">&nbsp;</div>
 
 <div id="footer">
-   <p>© Copyright 2006-2009. Blog del Proyecto Biosfera. Ministerio de EducaciÛn (EspaÒa). Hecho con Blogger. DiseÒo y desarrollo por Juan Antonio MuÒoz.</p>
+   <p>¬© Copyright 2006-2009. Blog del Proyecto Biosfera. Ministerio de Educaci√≥n (Espa√±a). Hecho con Blogger. Dise√±o y desarrollo por Juan Antonio Mu√±oz.</p>
 </div>
 
 </div> <!-- end #wrap -->

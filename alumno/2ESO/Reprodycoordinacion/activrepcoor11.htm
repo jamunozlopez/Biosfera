@@ -1,7 +1,7 @@
 <HTML>
 <!--This file created 10:45  08/09/02 by Claris Home Page version 3.0-->
 <HEAD>
-   <TITLE>Fecundación y desarrollo embrionario</TITLE>
+   <TITLE>FecundaciÃ³n y desarrollo embrionario</TITLE>
    <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
    <X-CLARIS-WINDOW TOP=0 BOTTOM=435 LEFT=0 RIGHT=782>
    <X-CLARIS-TAGVIEW MODE=minimal>
@@ -17,20 +17,20 @@
 #boutonImage7 { background-image:url(imagenes/image8.gif); }
 #boutonCarte { background-image:url(imagenes/invisibl.gif); }</STYLE><BGSOUND ID="fondSon"><SCRIPT><!--
 
-//Régine B-D ; 30/08/02 
+//RÃ©gine B-D ; 30/08/02 
 //http://perso.wanadoo.fr/jeux.lulu/
 //regine.bd@wanadoo.fr
-//Tous droits réservés
+//Tous droits rÃ©servÃ©s
 
 
 var nbCartes=16;
 //test=0 joueur a la main; =1 non
 var test=1;
-//etat=0 pas de carte reournée; =1 1 carte ; =2 2 cartes
+//etat=0 pas de carte reournÃ©e; =1 1 carte ; =2 2 cartes
 var etat=0;
-//numero des cartes sélectionnées
+//numero des cartes sÃ©lectionnÃ©es
 var retournees=new Array (-1,-1);
-//numero des boutons sélectionnés
+//numero des boutons sÃ©lectionnÃ©s
 var selectiones=new Array (-1,-1);
 var cartes = new Array(nbCartes);
 var lesImages = new Array(nbCartes/2);
@@ -74,7 +74,7 @@ function depart() {
 	test=0;
 	etat=0;
 	bons=0;
-	document.Formu.elements["nbEssais"].value="Número de intentos : 0";
+	document.Formu.elements["nbEssais"].value="NÃºmero de intentos : 0";
 	essais=0;
 }
 
@@ -124,7 +124,7 @@ function choix(x) {
 			boutonMontre(x);
 			if (etat==1) {			
 				essais+=1;
-				document.Formu.elements["nbEssais"].value="Número de intentos : "+essais;
+				document.Formu.elements["nbEssais"].value="NÃºmero de intentos : "+essais;
 			}
 			if (retournees[0]==retournees[1]) {
 				test=1;
@@ -161,7 +161,7 @@ function choix(x) {
 
 function suite() {
 		nbFois+=1;
-		document.Formu.Message.value="   ¡ HAS GANADO !";
+		document.Formu.Message.value="   Â¡ HAS GANADO !";
 		boutonDisparait(selectiones[0]);
 		boutonDisparait(selectiones[1]);
 }
@@ -180,8 +180,8 @@ function melange() {
 //--></SCRIPT>
 </HEAD>
 <BODY BGCOLOR="#E6FFE6" onload="depart0();">
-<center><font size="+1">Fecundación y desarrollo embrionario</font><br>
-Relaciona cada especie con su tipo de fecundación</center>
+<center><font size="+1">FecundaciÃ³n y desarrollo embrionario</font><br>
+Relaciona cada especie con su tipo de fecundaciÃ³n</center>
 <P><FORM ACTION="" METHOD=POST name=Formu>
    <CENTER><A NAME=jeu></A><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=4>
       <TR>
@@ -241,7 +241,7 @@ Relaciona cada especie con su tipo de fecundación</center>
          </TD>
       </TR>
    </TABLE>
-    <INPUT TYPE=button NAME=nbEssais VALUE=" Número de intentos : 0 " class=essai><BR>
+    <INPUT TYPE=button NAME=nbEssais VALUE=" NÃºmero de intentos : 0 " class=essai><BR>
    <INPUT TYPE=text NAME=Message VALUE="" SIZE=20><BR>
    <INPUT TYPE=button NAME=Rejouer VALUE="Jugar de nuevo" onclick="depart()"></CENTER>
    <CENTER><INPUT TYPE="button" VALUE="Cerrar" OnClick="self.close(); return true"></input></CENTER>

@@ -7,7 +7,7 @@
    <X-CLARIS-WINDOW TOP=135 BOTTOM=480 LEFT=23 RIGHT=620>
    <X-CLARIS-TAGVIEW MODE=minimal>
 <SCRIPT><!--
-//Régine B-D ; 10/05/99
+//RÃ©gine B-D ; 10/05/99
 //http://perso.wanadoo.fr/jeux.lulu/
 //regine.bd@wanadoo.fr
 
@@ -17,7 +17,7 @@ var Contenutext = new Array(nbcartes);
 var Contenu = new Array(nbcartes);
 
 function depart() {
-	//récupération données
+	//rÃ©cupÃ©ration donnÃ©es
 	for (i=0; i<nbcartes; i++) {
 		if (i%2==0) {Contenutext[i/2]=document.Formu.elements["champ"+i].value;}
 		else {Contenutext[maxi+(i-1)/2]=document.Formu.elements["champ"+i].value;}
@@ -35,13 +35,13 @@ function melange() {
 	}
 	//init
 	for (i=0; i<nbcartes; i++) {Contenu[i]=i+1;}
-	//retourne=-1 ie pas de carte retournée; sinon contient la position de la première carte retournee
+	//retourne=-1 ie pas de carte retournÃ©e; sinon contient la position de la premiÃ¨re carte retournee
 	retourne = -1;
-	//test=0 pas de carte retournée, 1 une carte, 2 deux cartes
+	//test=0 pas de carte retournÃ©e, 1 une carte, 2 deux cartes
 	test = 0;
 
 	NbMaxi = maxi;
-	//"mélange" des cartes
+	//"mÃ©lange" des cartes
 	for (i=0; i<=nbcartes; i++) {
 		Nb1 = Math.floor(Math.random()*(nbcartes));
 		Nb2=Nb1;
@@ -56,10 +56,10 @@ function melange() {
 function affiche(num) {
 	if (test==2) {
 	} else {
-		//si ce n'est pas une case bleue, et si test=0 ou 1, et je ne reclique pas sur la première carte 
+		//si ce n'est pas une case bleue, et si test=0 ou 1, et je ne reclique pas sur la premiÃ¨re carte 
 		if ( Contenu[num] != 0 && (test==0 || test==1) && retourne != num) {
 			x=num;
-			//si première carte retournée;
+			//si premiÃ¨re carte retournÃ©e;
 			if (test==0) {
 				retourne = num;
 				document.Formu.elements["champ"+num].value=Contenutext[Contenu[num]-1];
@@ -83,11 +83,11 @@ function affiche2(num) {
 		fin = fin + 1;
 		if ( fin == NbMaxi ) {
 			for (i=0; i<nbcartes; i++) {
-			document.Formu.elements["champ"+i].value=" ¡¡¡HAS GANADO!!!";
+			document.Formu.elements["champ"+i].value=" Â¡Â¡Â¡HAS GANADO!!!";
 			document.Formu.elements["CaseAC"+i].checked=true;
 			}
 		}
-	//si 2 cartes différentes
+	//si 2 cartes diffÃ©rentes
 	} else {
 		document.Formu.elements["champ"+retourne].value=" ???????";
 		document.Formu.elements["champ"+num].value=" ???????";
@@ -116,7 +116,7 @@ function affiche2(num) {
 
 
 <TR><TD ALIGN="CENTER"><FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000033">Los sentidos</center><img src="imagenes/ojos.jpg" alt="Ojos animales. Tomada de www.terravista.pt/fernoronha" width="128" height="96" border="0"></img></center></FONT></TD></TR>
-<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000033"><BR>&nbsp;</FONT></TD></TR><tr><td>Relaciona cada tipo de estímulo con un órgano receptor. Según vayas acertando irán quedando en blanco los cuadros de la tabla.</td></tr></TABLE>
+<TR><TD ALIGN="CENTER"><FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000033"><BR>&nbsp;</FONT></TD></TR><tr><td>Relaciona cada tipo de estÃ­mulo con un Ã³rgano receptor. SegÃºn vayas acertando irÃ¡n quedando en blanco los cuadros de la tabla.</td></tr></TABLE>
  
 <P><FORM ACTION="" METHOD=POST name=Formu>
   
@@ -131,7 +131,7 @@ function affiche2(num) {
             <CENTER><INPUT TYPE=checkbox NAME=CaseAC1 VALUE=VALEUR onclick="affiche(1)"><INPUT TYPE=text NAME=champ1 VALUE="OCELO" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
-            <CENTER><INPUT TYPE=checkbox NAME=CaseAC2 VALUE=VALEUR onclick="affiche(2)"><INPUT TYPE=text NAME=champ2 VALUE="ONDAS MECÁNICAS" SIZE=16></CENTER>
+            <CENTER><INPUT TYPE=checkbox NAME=CaseAC2 VALUE=VALEUR onclick="affiche(2)"><INPUT TYPE=text NAME=champ2 VALUE="ONDAS MECÃNICAS" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
             <CENTER><INPUT TYPE=checkbox NAME=CaseAC3 VALUE=VALEUR onclick="affiche(3)"><INPUT TYPE=text NAME=champ3 VALUE="OIDO" SIZE=16></CENTER>
@@ -139,13 +139,13 @@ function affiche2(num) {
       </TR>
       <TR>
          <TD HEIGHT=40>
-            <CENTER><INPUT TYPE=checkbox NAME=CaseAC4 VALUE=VALEUR onclick="affiche(4)"><INPUT TYPE=text NAME=champ4 VALUE="SUSTANCIAS QUÍMICAS" SIZE=16></CENTER>
+            <CENTER><INPUT TYPE=checkbox NAME=CaseAC4 VALUE=VALEUR onclick="affiche(4)"><INPUT TYPE=text NAME=champ4 VALUE="SUSTANCIAS QUÃMICAS" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
             <CENTER><INPUT TYPE=checkbox NAME=CaseAC5 VALUE=VALEUR onclick="affiche(5)"><INPUT TYPE=text NAME=champ5 VALUE="ANTENAS" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
-            <CENTER><INPUT TYPE=checkbox NAME=CaseAC6 VALUE=VALEUR onclick="affiche(6)"><INPUT TYPE=text NAME=champ6 VALUE="POSICIÓN" SIZE=16></CENTER>
+            <CENTER><INPUT TYPE=checkbox NAME=CaseAC6 VALUE=VALEUR onclick="affiche(6)"><INPUT TYPE=text NAME=champ6 VALUE="POSICIÃ“N" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
             <CENTER><INPUT TYPE=checkbox NAME=CaseAC7 VALUE=VALEUR onclick="affiche(7)"><INPUT TYPE=text NAME=champ7 VALUE="OTOLITO" SIZE=16></CENTER>
@@ -167,7 +167,7 @@ function affiche2(num) {
       </TR>
       <TR>
          <TD HEIGHT=40>
-            <CENTER><INPUT TYPE=checkbox NAME=CaseAC12 VALUE=VALEUR onclick="affiche(12)"><INPUT TYPE=text NAME=champ12 VALUE="ESTADO ORGÁNICO" SIZE=16></CENTER>
+            <CENTER><INPUT TYPE=checkbox NAME=CaseAC12 VALUE=VALEUR onclick="affiche(12)"><INPUT TYPE=text NAME=champ12 VALUE="ESTADO ORGÃNICO" SIZE=16></CENTER>
          </TD>
          <TD HEIGHT=40>
             <CENTER><INPUT TYPE=checkbox NAME=CaseAC13 VALUE=VALEUR onclick="affiche(13)"><INPUT TYPE=text NAME=champ13 VALUE="PROPIOCEPTOR" SIZE=16></CENTER>
