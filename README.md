@@ -1,1 +1,9 @@
-# Biosfera
+El Proyecto Biosfera desarrolla el currículo de Ciencias de la Naturaleza (Biología y Geología) para la ESO y el Bachillerato como un recurso de apoyo didáctico que propone un sistema de aprendizaje interactivo multimedia. Se desarrolló entre los años 2001 y 2012. En el año 2013 dejó de estar accesible desde los servidores del Ministerio de Educación de España. Como coordinador y autor del diseño técnico y pedagógico, he decidido publicarlo en GitHub por si puede ser de utilidad para el alumnado y profesorado de estos niveles. 
+
+Hay que tener en cuenta que algunas de las actividades no funcionaran en los navegadores actuales ya que no admiten ciertos códigos que se utilizaron durante su desarrollo en aquello años. Además, debido al tiempo transcurrido, muchos de los enlaces externos ya no existen o no son accesibles por seguridad.
+
+Con el Proyecto Biosfera se pretende motivar al alumnado a través de una metodología activa y de un aprendizaje cooperativo o individualizado que, en muchas ocasiones, resultará de carácter lúdico. Se busca, además, que este aprendizaje facilite el uso de la información disponible en Internet. En cada una de las unidades didácticas se puede encontrar contenidos teóricos, actividades de aprendizaje, mapas conceptuales, ideas fundamentales, ejercicios de autoevaluación y diversos recursos de Internet.
+
+Algunas actividades son interactivas, pues permiten responder en pantalla y obtener una respuesta inmediata; otras, son de investigación, pues se debe realizar una tarea explorando en determinadas páginas de Internet. Contiene material de apoyo para el profesorado: experiencias educativas, proyectos de aula e innovaciones pedagógicas, tutoriales y un directorio de recursos de biología y geología en Internet. 
+
+En la zona del Público se informa a todos los usuarios de la organización actual de los estudios de Biología y Geología, así como de las salidas académicas y profesionales. Contiene, además, entrevistas a investigadores y recursos didácticos para disfrutar en familia.
